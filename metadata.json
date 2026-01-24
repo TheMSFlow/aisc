@@ -1,0 +1,8 @@
+{
+  "name": "AI Stakeholder Challenge",
+  "description": "A high-conversion leadership landing page designed to turn observers into strategic AI stakeholders through a 3-day challenge.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}

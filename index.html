@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/aisc.png" />
+
+    <title>AI Stakeholder Challenge | From Novice / Consumer to Leader</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=PT+Sans+Narrow:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              msblue: "rgb(1, 5, 121)",
+              msaccent: "rgb(233, 234, 255)",
+              lilac: "rgb(233, 234, 255)",
+              "lilac-hover": "rgb(211, 213, 255)",
+              "dark-blue": "rgb(0, 3, 76)",
+              "bg-heading": "rgba(169, 169, 169, 0.15)",
+              warning: "rgb(135, 5, 113)",
+            },
+            backgroundImage: {
+              "gradient-100":
+                "linear-gradient(135deg, #800080 0%, #8A2BE2 50%, #4B0082 100%)",
+              "gradient-200":
+                "linear-gradient(135deg, #2E3192 0%, #1B1464 100%)",
+            },
+            fontFamily: {
+              heading: ['"PT Sans Narrow"', "sans-serif"],
+              body: ["Inter", "sans-serif"],
+            },
+            screens: {
+              xs: "400px",
+              sm: "480px",
+              md: "768px",
+              lg: "1024px",
+              xl: "1280px",
+              "2xl": "1536px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .text-gradient-100 {
+        background: linear-gradient(135deg, #d1d9e6 0%, #8a2be2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .text-gradient-200 {
+        background: linear-gradient(135deg, #041986 0%, #6368da 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .btn-outline {
+        border: 2px solid rgb(1, 5, 121);
+        color: rgb(1, 5, 121);
+        transition: all 0.3s ease;
+      }
+      .btn-outline:hover {
+        background-color: rgb(1, 5, 121);
+        color: white;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+    <script type="importmap">
+      {
+        "imports": {
+          "react": "https://esm.sh/react@^19.2.3",
+          "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+          "react/": "https://esm.sh/react@^19.2.3/",
+          "@google/genai": "https://esm.sh/@google/genai@^1.38.0"
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="/index.css" />
+  </head>
+  <body
+    class="font-body text-slate-900 bg-white selection:bg-msaccent selection:text-msblue"
+  >
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
