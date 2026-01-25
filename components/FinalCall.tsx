@@ -50,7 +50,7 @@ export const FinalCall: React.FC<{ id: string }> = ({ id }) => {
           <Button
             as="a"
             href="https://intelligence.michaelsteve.com/pay/challenge/aisc"
-            className="scale-125 md:scale-150"
+            className="scale-105 md:scale-120"
           >
             Join the AI Stakeholder Challenge
           </Button>

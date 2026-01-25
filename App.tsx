@@ -25,7 +25,7 @@ const App: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-hidden">
       <Navigation isScrolled={isScrolled} />
 
       <main>

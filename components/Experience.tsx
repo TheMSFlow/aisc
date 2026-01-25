@@ -38,7 +38,7 @@ export const Experience: React.FC<{ id: string }> = ({ id }) => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Format */}
-            <div className="bg-white/5 border border-white/10 p-8">
+            <div className="bg-white/5 border border-white/10 p-6 md:p-8">
               <div className="flex items-center gap-4 mb-6">
                 <span className="text-3xl">🧭</span>
                 <h3 className="font-heading text-xl uppercase tracking-widest">
@@ -54,7 +54,7 @@ export const Experience: React.FC<{ id: string }> = ({ id }) => {
             </div>
 
             {/* Time */}
-            <div className="bg-white/5 border border-white/10 p-8">
+            <div className="bg-white/5 border border-white/10 p-6 md:p-8">
               <div className="flex items-center gap-4 mb-6">
                 <span className="text-3xl">⏱️</span>
                 <h3 className="font-heading text-xl uppercase tracking-widest">
@@ -70,7 +70,7 @@ export const Experience: React.FC<{ id: string }> = ({ id }) => {
             </div>
 
             {/* Effort */}
-            <div className="bg-white/5 border border-white/10 p-8">
+            <div className="bg-white/5 border border-white/10 p-6 md:p-8">
               <div className="flex items-center gap-4 mb-6">
                 <span className="text-3xl">🧠</span>
                 <h3 className="font-heading text-xl uppercase tracking-widest">
@@ -91,7 +91,7 @@ export const Experience: React.FC<{ id: string }> = ({ id }) => {
           {DAYS.map((d, i) => (
             <div
               key={i}
-              className="group relative bg-white/5 border border-white/10 p-8 md:p-12 hover:bg-white/10 transition-all rounded-sm overflow-hidden"
+              className="group relative bg-white/5 border border-white/10 p-6 md:p-12 hover:bg-white/10 transition-all rounded-sm overflow-hidden"
             >
               <div className="absolute top-0 right-0 p-8">
                 <span className="text-8xl md:text-[10rem] font-heading font-bold opacity-5 group-hover:opacity-10 transition-opacity">

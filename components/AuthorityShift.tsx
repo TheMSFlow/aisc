@@ -9,7 +9,7 @@ export const AuthorityShift: React.FC<{ id: string }> = ({ id }) => {
     >
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-msblue to-warning opacity-20"></div>
       <div className="max-w-5xl mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div>
             <h4 className="font-heading text-lg tracking-widest text-msblue mb-4">
               AUTHORITY SHIFT
@@ -63,7 +63,10 @@ export const AuthorityShift: React.FC<{ id: string }> = ({ id }) => {
                     key={i}
                     className={`flex items-center text-2xl md:text-3xl font-heading uppercase ${item.color}`}
                   >
-                    <span className="mr-4">→</span> {item.text}
+                    <span className="text-sm  md:text-xl mr-2 md:mr-4">
+                      →
+                    </span>{" "}
+                    {item.text}
                   </li>
                 ))}
               </ul>

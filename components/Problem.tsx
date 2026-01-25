@@ -21,12 +21,12 @@ export const Problem: React.FC<{ id: string }> = ({ id }) => {
   return (
     <section id={id} className="bg-dark-blue text-white py-24 md:py-32">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="mb-20 text-center">
+        <div className="mb-10 md:mb-20 text-center">
           <h2 className="text-3xl md:text-5xl font-heading mb-6">
             AI SEEMS INTIMIDATING
           </h2>
-          <p className="pt-2 italic">Because it demands a new level of</p>
-          <div className="text-5xl md:text-7xl font-bold italic text-gradient-100 mb-8 uppercase">
+          <p className="pt-2 italic text-sm md:text-base">Because it demands a new level of</p>
+          <div className="text-3xl sm:text-5xl md:text-7xl font-bold italic text-gradient-100 mb-8 uppercase">
             <p>COMPETENCE</p>
             <p>CAPACITY</p>
             <p>AND</p>
@@ -37,7 +37,7 @@ export const Problem: React.FC<{ id: string }> = ({ id }) => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 md:mb-20">
           {problems.map((p, i) => (
             <div
               key={i}
@@ -51,11 +51,11 @@ export const Problem: React.FC<{ id: string }> = ({ id }) => {
           ))}
         </div>
 
-        <div className="max-w-3xl mx-auto text-center border-t border-white/10 pt-16">
+        <div className="max-w-3xl mx-auto text-center border-t border-white/10 pt-8 md:pt-16">
           <p className="text-2xl md:text-3xl font-light italic mb-8">
             "The result is noise, distraction, and slow erosion of authority."
           </p>
-          <div className="inline-block py-4 px-8 bg-msaccent/10 border border-msaccent/20">
+          <div className="inline-block p-6 md:p-8 bg-msaccent/10 border border-msaccent/20">
             <p className="text-xl md:text-2xl font-heading tracking-widest uppercase">
               AI didn't create this problem.{" "}
               <span className="text-msaccent">It exposed it.</span>

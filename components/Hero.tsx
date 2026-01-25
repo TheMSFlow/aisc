@@ -22,7 +22,7 @@ export const Hero: React.FC<{ id: string }> = ({ id }) => {
       {/* Decorative Elements */}
       <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-msaccent/40 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
       <div className="absolute bottom-0 left-0 w-1/4 h-1/4 bg-lilac/30 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
-      <div className="flex flex-wrap justify-center gap-6 text-[10px] font-bold uppercase sm:tracking-widest text-slate-500 w-full">
+      <div className="flex flex-wrap justify-center gap-4 text-[0.563rem] md:text-[0.625rem] font-bold uppercase sm:tracking-widest text-slate-500 w-full">
         <span className="flex items-center">
           <span className="w-1 h-1 bg-msblue rounded-full mr-2"></span> 3 Days
         </span>
@@ -36,7 +36,7 @@ export const Hero: React.FC<{ id: string }> = ({ id }) => {
         </span>
       </div>
       <div className="relative z-10 max-w-5xl mx-auto px-4 text-center">
-        <h1 className="font-heading text-5xl md:text-8xl leading-tight mb-8">
+        <h1 className="font-heading text-5xl md:text-8xl leading-none mb-8 mt-4">
           <span className="block text-slate-900">AI STAKEHOLDER</span>
           <span className="text-gradient-100 font-bold italic">CHALLENGE</span>
         </h1>
@@ -52,7 +52,7 @@ export const Hero: React.FC<{ id: string }> = ({ id }) => {
           in 3 Days
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16 text-left max-w-4xl mx-auto bg-slate-50 p-8 md:p-12 border-l-4 border-msblue shadow-sm">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16 text-left max-w-4xl mx-auto bg-slate-50 p-6 md:p-12 border-l-4 border-msblue shadow-sm">
           <div className="space-y-4">
             <p className="text-lg md:text-xl leading-relaxed text-slate-700">
               Very few leaders use AI.

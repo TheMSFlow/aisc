@@ -129,7 +129,7 @@ export const Pricing: React.FC<{ id: string }> = ({ id }) => {
               <div
                 key={i}
                 className={[
-                  "relative flex flex-col p-10 border transition-all",
+                  "relative flex flex-col p-6 md:p-10 border transition-all",
                   isPopular
                     ? "bg-msblue text-white border-msblue shadow-2xl scale-[1.03]"
                     : "bg-slate-50 border-slate-200 text-slate-700",
@@ -196,7 +196,7 @@ export const Pricing: React.FC<{ id: string }> = ({ id }) => {
                         : "tertiary"
                   }
                   disabled={tier.available === false}
-                  className="w-full mt-auto"
+                  className="w-full text-nowrap"
                 >
                   {tier.available === false
                     ? "Not Yet Available"

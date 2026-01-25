@@ -27,7 +27,7 @@ export const Payoff: React.FC<{ id: string }> = ({ id }) => {
       </div>
 
       <div className="max-w-6xl mx-auto px-4 relative z-10">
-        <div className="text-center mb-16">
+        <div className="text-center mb-10 md:mb-16">
           <h4 className="font-heading text-lg tracking-widest text-msaccent mb-4">
             THE PAYOFF
           </h4>
@@ -55,7 +55,7 @@ export const Payoff: React.FC<{ id: string }> = ({ id }) => {
           ))}
         </div>
 
-        <div className="mt-20 text-center">
+        <div className="mt-10 md:mt-20 text-center">
           <p className="text-3xl md:text-5xl font-heading uppercase italic text-gradient-100 mb-6">
             This is not hype. <br /> It’s clarity, and the momentum that follows.
           </p>
