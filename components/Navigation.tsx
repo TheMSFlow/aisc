@@ -63,9 +63,9 @@ export const Navigation: React.FC<NavigationProps> = ({ isScrolled }) => {
               isScrolled
                 ? "text-msblue hover:text-warning border-msblue hover:border-warning"
                 : "text-white hover:text-warning hover:border-warning"
-            } border-2 px-4 md:px-10 py-2 md:py-4 text-xs md:text-sm font-bold tracking-[0.2em] uppercase transition-all duration-300 transform active:scale-95 font-narrow`}
+            } border-2 px-4 md:px-6 py-2 md:py-4 text-xs md:text-sm font-bold tracking-[0.2em] uppercase transition-all duration-300 transform active:scale-95 font-narrow`}
           >
-            Enroll Now
+            Join the top 1%
           </a>
         </div>
       </div>

@@ -7,7 +7,6 @@ import { Project } from "./components/Project";
 import { Payoff } from "./components/Payoff";
 import { FilterSection } from "./components/FilterSection";
 import { Pricing } from "./components/Pricing";
-import { SeriousNotes } from "./components/SeriousNotes";
 import { FinalCall } from "./components/FinalCall";
 import { Navigation } from "./components/Navigation";
 import { AIPreviewTool } from "./components/AIPreviewTool";

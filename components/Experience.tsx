@@ -1,4 +1,6 @@
 import React from "react";
+import { useOpenCohort } from "@/hooks/useOpenCohort";
+import { CohortDateBlock } from "./CohortDateBlock";
 
 const DAYS = [
   {
@@ -28,6 +30,9 @@ const DAYS = [
 ];
 
 export const Experience: React.FC<{ id: string }> = ({ id }) => {
+
+  const { cohort, loading } = useOpenCohort("aisc");
+
   return (
     <section id={id} className="bg-msblue py-24 md:py-32 text-white">
       <div className="max-w-6xl mx-auto px-4">
@@ -58,15 +63,17 @@ export const Experience: React.FC<{ id: string }> = ({ id }) => {
               <div className="flex items-center gap-4 mb-6">
                 <span className="text-3xl">⏱️</span>
                 <h3 className="font-heading text-xl uppercase tracking-widest">
-                  Time
+                  Date
                 </h3>
               </div>
 
-              <ul className="space-y-4 text-lg font-light opacity-80">
+              <CohortDateBlock cohort={cohort} loading={loading} />
+
+              {/* <ul className="space-y-4 text-lg font-light opacity-80">
                 <li>Thursday - Saturday</li>
                 <li>12noon - 1:00pm</li>
                 <li>60 minutes per day</li>
-              </ul>
+              </ul> */}
             </div>
 
             {/* Effort */}

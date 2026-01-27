@@ -76,7 +76,7 @@ const TIERS = [
     ngn: 100000,
     href: "https://intelligence.michaelsteve.com/pay/challenge/aisc?package=private-viewing",
     isPopular: false,
-    note: "Opportunity for an upgrade will be announced a few days before the challenge.",
+    note: "An upgrade will be available in the learning center 24hrs before the challenge.",
     available: false,
     features: [
       {
