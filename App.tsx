@@ -43,11 +43,11 @@ const App: React.FC = () => {
           <div className="max-w-4xl mx-auto px-4">
             <div className="text-center mb-12">
               <h2 className="font-heading text-3xl md:text-4xl text-msblue uppercase mb-4">
-                While Waiting for the Challenge...
+                While You’re Waiting for the Challenge…
               </h2>
               <p className="text-slate-600 max-w-2xl mx-auto">
-                Get a leadership-first perspective on your current AI
-                pain-point.
+                Gain a leadership-first perspective on your most pressing AI
+                challenge
               </p>
             </div>
             <AIPreviewTool />
@@ -58,7 +58,7 @@ const App: React.FC = () => {
       <footer className="bg-dark-blue text-white py-12 border-t border-slate-800">
         <div className="max-w-7xl mx-auto px-4 text-center ">
           <img
-          className='mx-auto pb-2'
+            className="mx-auto pb-2"
             src="/aisc_clean.svg"
             alt="AISC logo"
             style={{ width: "48px" }}

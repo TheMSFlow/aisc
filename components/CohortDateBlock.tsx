@@ -1,6 +1,7 @@
 import React from "react";
 import type { Cohort } from "@/hooks/useOpenCohort";
 import { formatCohortDates } from "@/utils/cohortDates";
+import { useCountdown } from "@/utils/useCountdown";
 
 type Props = {
   cohort: Cohort | null;
@@ -25,13 +26,14 @@ export function CohortDateBlock({ cohort, loading }: Props) {
     );
   }
 
-  const { dayRange, dateRange, timeRange } = formatCohortDates(cohort);
+  const { dateRange, timeRange } = formatCohortDates(cohort);
+  const { label } = useCountdown(cohort.start_date);
 
   return (
     <ul className="space-y-4 text-lg font-light opacity-80">
-      <li>{dayRange}</li>
       <li>{dateRange}</li>
       <li>{timeRange}</li>
+      <li className="">{label}</li>
     </ul>
   );
 }

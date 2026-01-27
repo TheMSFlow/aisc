@@ -1,8 +1,16 @@
-
-import React from 'react';
-import Button from './Button';
+import React from "react";
+import Button from "./Button";
+import { useOpenCohort } from "@/hooks/useOpenCohort";
+import { formatCohortCTA } from "@/utils/formatCohortCTA";
 
 export const FinalCall: React.FC<{ id: string }> = ({ id }) => {
+  const { cohort, loading } = useOpenCohort("aisc");
+
+  const buttonText =
+    !loading && cohort?.cohort_name
+      ? `Join ${cohort.cohort_name} Cohort`
+      : "Join the AI Stakeholder Challenge";
+
   return (
     <section
       id={id}
@@ -52,12 +60,14 @@ export const FinalCall: React.FC<{ id: string }> = ({ id }) => {
             href="https://intelligence.michaelsteve.com/pay/challenge/aisc"
             className="scale-105 md:scale-120"
           >
-            Join the AI Stakeholder Challenge
+            {buttonText}
           </Button>
 
-          <p className="pt-6 text-slate-400 text-xs font-bold tracking-[0.3em] uppercase">
-            Strategic Leadership commitment required.
-          </p>
+          {cohort?.cohort_name && (
+            <p className="text-slate-400 text-xs font-bold tracking-[0.3em] uppercase">
+              {formatCohortCTA(cohort)}
+            </p>
+          )}
         </div>
       </div>
     </section>

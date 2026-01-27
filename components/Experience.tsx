@@ -68,12 +68,6 @@ export const Experience: React.FC<{ id: string }> = ({ id }) => {
               </div>
 
               <CohortDateBlock cohort={cohort} loading={loading} />
-
-              {/* <ul className="space-y-4 text-lg font-light opacity-80">
-                <li>Thursday - Saturday</li>
-                <li>12noon - 1:00pm</li>
-                <li>60 minutes per day</li>
-              </ul> */}
             </div>
 
             {/* Effort */}

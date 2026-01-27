@@ -54,7 +54,7 @@ export const AIPreviewTool: React.FC = () => {
 
       {output && (
         <div className="mt-12 p-8 bg-msaccent/50 border-l-4 border-warning animate-fade-in">
-          <h4 className="font-heading text-lg text-warning uppercase mb-4 tracking-wider">The Leadership Reframe:</h4>
+          <h4 className="font-heading text-lg text-warning uppercase mb-4 tracking-wider">The Leadership Response:</h4>
           <p className="text-xl md:text-2xl text-dark-blue italic font-medium leading-relaxed">
             {output}
           </p>

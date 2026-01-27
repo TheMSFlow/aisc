@@ -58,7 +58,7 @@ export const Problem: React.FC<{ id: string }> = ({ id }) => {
           <div className="inline-block p-6 md:p-8 bg-msaccent/10 border border-msaccent/20">
             <p className="text-xl md:text-2xl font-heading tracking-widest uppercase">
               AI didn't create this problem.{" "}
-              <span className="text-msaccent">It exposed it.</span>
+              <span className="text-msaccent">AI exposed it.</span>
             </p>
           </div>
         </div>

@@ -76,7 +76,7 @@ const TIERS = [
     ngn: 100000,
     href: "https://intelligence.michaelsteve.com/pay/challenge/aisc?package=private-viewing",
     isPopular: false,
-    note: "An upgrade will be available in the learning center 24hrs before the challenge.",
+    note: "An upgrade will be available in the intelligence center 24hrs before the challenge.",
     available: false,
     features: [
       {
@@ -85,7 +85,7 @@ const TIERS = [
       },
       {
         label: "Pre-session private viewing",
-        info: "Observe live strategic discussions without active participation, 1hr before the general sessions.",
+        info: "Observe VIP questions get answered without active participation, 1hr before the general sessions.",
       },
       {
         label: "Project Review Option",
@@ -110,7 +110,7 @@ export const Pricing: React.FC<{ id: string }> = ({ id }) => {
           </h2>
           <div className="flex flex-col-reverse gap-1 items-center justify-center">
             <p className="text-sm text-slate-500 font-light">
-              Community Center access after payment
+              After payment you get access to the intelligence center
             </p>
             <img
               src="/paystack.webp"
