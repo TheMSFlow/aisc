@@ -5,7 +5,7 @@ import { CohortDateBlock } from "./CohortDateBlock";
 const DAYS = [
   {
     day: 1,
-    title: "Meaning, Mindset & Mechanics",
+    title: "Mindset, Meaning & Mechanics",
     subtitle: "Responsibility Before Tools",
     content:
       "You’ll reframe what AI actually is without jargon, and clarify what has changed, what hasn't, and what leadership now requires.",
