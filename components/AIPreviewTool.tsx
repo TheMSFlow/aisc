@@ -18,7 +18,7 @@ export const AIPreviewTool: React.FC = () => {
         contents: `I am a leader struggling with this AI-related issue: "${input}". 
         Act as a strategic advisor for the AI Stakeholder Challenge. 
         Reframe this problem from a "tools/tech" problem to a "leadership/judgment" problem. 
-        Provide a concise, punchy 3-sentence reframe that creates clarity. Use the tone of a high-end executive coach.`,
+        Provide a concise, punchy 3-sentence reframe that creates clarity. Use the tone of an experienced executive coach who understands the power of using simple words to maximize understanding.`,
       });
       setOutput(response.text || "Unexpected response. Please try again.");
     } catch (err) {
