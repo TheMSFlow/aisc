@@ -9,7 +9,7 @@ const DAYS = [
     subtitle: "Responsibility Before Tools",
     content:
       "You’ll reframe what AI actually is without jargon, and clarify what has changed, what hasn't, and what leadership now requires.",
-    outcome: "AI clarity and leadership mandate for your next phase.",
+    outcome: "AI clarity and leadership mindset for your next phase.",
   },
   {
     day: 2,

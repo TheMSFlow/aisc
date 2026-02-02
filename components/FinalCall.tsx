@@ -52,7 +52,7 @@ export const FinalCall: React.FC<{ id: string }> = ({ id }) => {
 
         <div className="flex flex-col items-center space-y-8">
           <p className="text-2xl md:text-3xl font-heading uppercase tracking-tighter">
-            If you're ready to stop observing and start owning —
+            If you're ready to stop observing and start owning
           </p>
 
           <Button

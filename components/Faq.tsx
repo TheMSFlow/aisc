@@ -24,7 +24,7 @@ const FAQ_ITEMS = [
   {
     question: "What is the daily time commitment?",
     answer:
-      "Each live session runs for 60 minutes — 40 minutes of guided teaching and 20 minutes of structured Q&A. Post-session tasks take approximately 60–90 minutes per day and are designed to integrate into your real work, not add busywork. VIP participants get 1 hour of strategic Q&A before the general sessions.",
+      "Each live session runs for 60 minutes. Post-session tasks take approximately 60–90 minutes per day and are designed to integrate into your real work, not add busywork. VIP participants get 1 hour of strategic Q&A before the general sessions.",
   },
   {
     question: "What is the quick win? This sounds long-term.",
@@ -39,18 +39,25 @@ const FAQ_ITEMS = [
   {
     question: "Will my project be reviewed?",
     answer:
-      "Submission confirms completion, not validation. Formal feedback is included only for participants with VIP access or participants who pay an extra add-on fee ($100 / N100,000 for Private Briefing and $200 / N200,000 for General Admission). Other participants may opt into structured peer reflection, which is anonymized and focused on sharpening clarity, not judgment.",
+      "Strategic feedback and strategy session is included only for participants with VIP access or participants who pay an extra add-on fee ($100 / N100,000 for Private Briefing and $200 / N200,000 for General Admission). Other participants may opt into structured peer reflection, which is anonymized and focused on sharpening clarity, not judgment.",
   },
   {
     question: "What is peer reflection, and will others critique my work?",
     answer:
-      "Peer reflection is optional and anonymized. Participants review up to three submissions using reflective words to improve their own clarity. It is not advice-giving, scoring, or critique.",
+      "Participants reflect on up to three submissions to improve clarity for both peers. It is not advice-giving, scoring, or critique. Peer reflection is optional and anonymized.",
   },
   {
     question: "What’s the difference between General Admission and VIP?",
     answer:
       "All participants receive the same core content and assignments. VIP access affords you direct feedback and decision confirmation. VIP is about confidence in direction, not additional material.",
   },
+  {
+    question:
+      "Can organizations or groups request a private version of the challenge?",
+    answer:
+      "Yes. Organizations, leadership teams, and high-trust groups may request a private version of the challenge if they meet the eligibility criteria. For enterprise teams, this can be used as an employee engagement and alignment experience around AI. For social groups and other organizations, it is delivered as a synchronized experience aligned around a shared goal.",
+  },
+
   {
     question: "Who is this challenge best suited for?",
     answer:

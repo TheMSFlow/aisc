@@ -22,7 +22,7 @@ export const AuthorityShift: React.FC<{ id: string }> = ({ id }) => {
             </p>
             <div className="p-6 bg-white shadow-xl rounded-sm border-l-8 border-warning">
               <p className="text-xl md:text-2xl font-heading uppercase tracking-wide">
-                Work is no longer the scarce resource. <br />
+                Time is no longer the scarce resource. <br />
                 <span className="text-warning">Judgment is.</span>
               </p>
             </div>
