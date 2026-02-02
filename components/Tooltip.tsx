@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+
 interface TooltipProps {
   content: React.ReactNode;
 }
@@ -19,9 +20,24 @@ const Tooltip: React.FC<TooltipProps> = ({ content }) => {
       <button
         type="button"
         aria-label="More information"
-        className="text-sm opacity-60 hover:opacity-100 transition"
+        className="text-sm opacity-60 hover:opacity-100 transition "
       >
-        ⓘ
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-info-icon lucide-info"
+        >
+          <circle cx="12" cy="12" r="8" />
+          <path d="M12 16v-4" />
+          <path d="M12 8h.01" />
+        </svg>
       </button>
 
       {/* Tooltip */}
