@@ -70,7 +70,7 @@ const TIERS = [
   {
     name: "Private Viewing (Upgrade)",
     usd: 100,
-    ngn: 100000,
+    ngn: 135000,
     href: "https://intelligence.michaelsteve.com/pay/challenge/aisc?package=private-viewing",
     isPopular: false,
     note: "An upgrade will be available in the intelligence center 24hrs before the challenge.",
