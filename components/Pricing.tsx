@@ -19,8 +19,8 @@ const TIERS = [
         info: "Leaders will have access to all the post-session tasks and assignments",
       },
       {
-        label: "Community access",
-        info: "Private whatsapp group for reflection and awareness, not constant discussion or noise.",
+        label: "Access to resources",
+        info: "You’ll receive supporting resources that enable execution of your tasks and ultimately the 6-month AI Stakeholder Roadmap.",
       },
       {
         label: "Post-Challenge Project",
@@ -34,9 +34,10 @@ const TIERS = [
         label: "Project Review Option",
         info: "You have the option to pay $200 / N200,000 for a VIP project submission, review and strategy session.",
       },
+
       {
-        label: "1-month Intelligence Center Access",
-        info: "You’ll receive access to supporting resources that enable execution of your 6-month AI Stakeholder Roadmap.",
+        label: "Community access",
+        info: "Private whatsapp group for reflection and awareness.",
       },
     ],
   },
@@ -62,11 +63,7 @@ const TIERS = [
       },
       {
         label: "Project Review & Feedback",
-        info: "30mins private strategy session and validation of your 6-month stakeholder mandate.",
-      },
-      {
-        label: "3-month Intelligence Center Access",
-        info: "You’ll receive access to supporting resources that enable execution of your 6-month AI Stakeholder Roadmap.",
+        info: "30mins private strategy session and assessment of your 6-month stakeholder mandate.",
       },
     ],
   },
@@ -90,10 +87,6 @@ const TIERS = [
       {
         label: "Project Review Option",
         info: "You have the option to pay $100 / N100,000 for a VIP project submission, review and strategy session.",
-      },
-      {
-        label: "2-month Intelligence Center Access",
-        info: "You’ll receive access to supporting resources that enable execution of your 6-month AI Stakeholder Roadmap.",
       },
     ],
   },
