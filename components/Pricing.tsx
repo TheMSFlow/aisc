@@ -85,7 +85,7 @@ const TIERS = [
       },
       {
         label: "Project Review Option",
-        info: "You have the option to pay $100 / N100,000 for a VIP project submission, review and strategy session.",
+        info: "You have the option to pay $300 / N350,000 for a VIP project submission, review and strategy session.",
       },
     ],
   },
