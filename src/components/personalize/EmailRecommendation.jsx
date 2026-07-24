@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "@/components/global/Button";
 import { trackEvent } from "@/lib/analytics";
 
@@ -14,8 +14,21 @@ export default function EmailRecommendation({ id, seat }) {
   const [open, setOpen] = useState(false);
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState("idle"); // idle | sending | sent | error
+  const [phase, setPhase] = useState("live"); // live | leaving | gone
 
-  if (!id) return null;
+  // Once the email is on its way, this section has done its job. Hold the
+  // confirmation briefly so it is read, fade it, then remove it entirely.
+  useEffect(() => {
+    if (status !== "sent") return;
+    const fade = setTimeout(() => setPhase("leaving"), 3500);
+    const drop = setTimeout(() => setPhase("gone"), 4000);
+    return () => {
+      clearTimeout(fade);
+      clearTimeout(drop);
+    };
+  }, [status]);
+
+  if (!id || phase === "gone") return null;
 
   const valid = EMAIL_RE.test(email.trim());
 
@@ -45,7 +58,11 @@ export default function EmailRecommendation({ id, seat }) {
   };
 
   return (
-    <div className="mt-10 border-t border-dark-blue/10 pt-8">
+    <div
+      className={`mt-10 border-t border-dark-blue/10 pt-8 transition-opacity duration-500 ${
+        phase === "leaving" ? "opacity-0" : "opacity-100"
+      }`}
+    >
       <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.35em] text-dark-blue/40">
         Keep this
       </p>

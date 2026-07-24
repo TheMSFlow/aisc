@@ -20,7 +20,13 @@ const variants = {
   "secondary-light":
     "bg-white text-dark-blue border border-dark-blue hover:bg-lilac-hover",
   ghost: "bg-transparent text-lilac hover:text-lilac-hover",
+  // Flush ghosts drop the left padding so the label sits flush with the
+  // container edge — keeps a ghost button vertically aligned with the
+  // content above it. Right padding is retained. pl-0 orders after px-4.
+  "ghost-flush": "bg-transparent text-lilac hover:text-lilac-hover pl-0",
   "ghost-light": "bg-transparent text-dark-blue/80 hover:text-dark-blue/60",
+  "ghost-light-flush":
+    "bg-transparent text-dark-blue/80 hover:text-dark-blue/60 pl-0",
   underline: "bg-transparent underline text-lilac hover:text-lilac-hover",
   "underline-light":
     "bg-transparent underline text-dark-blue hover:text-msblue",

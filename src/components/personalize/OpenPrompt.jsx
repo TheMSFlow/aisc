@@ -8,8 +8,8 @@ export default function OpenPrompt({
   value,
   onChange,
   onContinue,
-  onSkip,
   continueLabel = "Continue",
+  continueIcon,
 }) {
   const canContinue = prompt.required ? value.trim().length > 0 : true;
 
@@ -39,14 +39,10 @@ export default function OpenPrompt({
           className="px-8 py-3"
           disabled={!canContinue}
           onClick={onContinue}
+          iconLeft={continueIcon}
         >
           {continueLabel}
         </Button>
-        {!prompt.required && (
-          <Button variant="ghost-light" onClick={onSkip}>
-            Skip this one
-          </Button>
-        )}
       </div>
     </div>
   );

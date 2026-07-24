@@ -112,7 +112,7 @@ export default function PersonalizeFlow() {
   const prompts = getPrompts(answers.seat);
 
   return (
-    <Section width="narrow" spacing="default" containerClassName="min-h-[70vh]">
+    <Section width="narrow" spacing="compact" containerClassName="h-auto">
       {isQuestion && (
         <div className="mb-10 flex flex-col gap-6">
           <button
@@ -186,8 +186,8 @@ export default function PersonalizeFlow() {
           value={answers.picture}
           onChange={(v) => setAnswers((a) => ({ ...a, picture: v }))}
           onContinue={() => submit(answers)}
-          onSkip={() => submit({ ...answers, picture: "" })}
           continueLabel="See my path"
+          continueIcon={Sparkles}
         />
       )}
 

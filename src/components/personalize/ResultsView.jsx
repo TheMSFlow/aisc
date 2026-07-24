@@ -68,7 +68,7 @@ export default function ResultsView({ result, id, seat, onRestart }) {
       <EmailRecommendation id={id} seat={seat} />
 
       <div className="mt-10">
-        <Button variant="ghost-light" onClick={onRestart}>
+        <Button variant="ghost-light-flush" onClick={onRestart}>
           Start over
         </Button>
       </div>

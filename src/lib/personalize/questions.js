@@ -66,7 +66,7 @@ export const OPEN_PROMPTS = [
     eyebrow: "How you picture it",
     question: "How do you picture this working for you?",
     hint: "Just you, or people alongside you? Private, or with other leaders? A focused week, or support over the months that follow? Share anything you already know you want.",
-    required: false,
+    required: true,
     maxLength: 600,
     variants: {
       individual: {
