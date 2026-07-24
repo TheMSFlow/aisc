@@ -2,9 +2,9 @@
  * screenshot.mjs — AISC v2 screenshot utility
  *
  * Usage:
- *   node screenshot.mjs                          → http://localhost:3000, auto-label
- *   node screenshot.mjs http://localhost:3000    → explicit URL
- *   node screenshot.mjs http://localhost:3000 hero  → saves as screenshot-N-hero.png
+ *   node screenshot.mjs                          → http://localhost:3003, auto-label
+ *   node screenshot.mjs http://localhost:3003    → explicit URL
+ *   node screenshot.mjs http://localhost:3003 hero  → saves as screenshot-N-hero.png
  *
  * Screenshots are saved to ./screenshots/ with auto-incrementing filenames.
  * Requires: npm install puppeteer --save-dev
@@ -18,7 +18,7 @@ import { fileURLToPath } from "url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-const url = process.argv[2] || "http://localhost:3000";
+const url = process.argv[2] || "http://localhost:3003";
 const label = process.argv[3] || "";
 const viewportWidth = process.argv[4] ? parseInt(process.argv[4]) : 1440;
 const viewportHeight = process.argv[5] ? parseInt(process.argv[5]) : 900;

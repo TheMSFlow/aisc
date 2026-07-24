@@ -16,9 +16,9 @@ This version has breaking changes — APIs, conventions, and file structure may 
 
 **Screenshot comparison loop (mandatory for all design tasks):**
 
-- Dev server runs at `http://localhost:3000` via `npm run dev` — never start a second instance
+- Dev server runs at `http://localhost:3003` via `npm run dev` — never start a second instance
 - Take screenshots with: `node screenshot.mjs` (saves to `./screenshots/` with auto-increment)
-- Optional label: `node screenshot.mjs http://localhost:3000 hero`
+- Optional label: `node screenshot.mjs http://localhost:3003 hero`
 - After each change: screenshot → read the PNG → compare against intent → fix mismatches → re-screenshot
 - Do **at least 2 comparison rounds**. Stop only when no visible gaps remain or the user says so
 - When comparing, be specific: "heading tracking is too loose", "card border is dark-blue/10 but should be dark-blue/15"

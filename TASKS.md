@@ -4,20 +4,20 @@
 > Maintained by the `tasks` agent. Tasks are in **exact execution order** — do the first unchecked one.
 > Owner key: **[You]** = only Michael can do it · **[Claude]** = ask Claude to do it · **[You→Claude]** = you provide something, then Claude builds.
 >
-> Last updated: 2026-07-15
+> Last updated: 2026-07-24
 
 ## Phase 0 — This week (time-sensitive or blocking everything else)
 
-- [ ] 3. **[You→Claude] Merge `dev` → `main` and deploy.**
-  The entire blog exists only on the `dev` branch. Nothing else on this list matters publicly until it ships. Ask Claude to prepare the merge/PR when ready.
+- [x] 3. **[You→Claude] Merge `dev` → `main` and deploy.** *(done — confirmed 2026-07-24)*
+  The blog is live in production.
 
-- [ ] 6. **[You] Google Search Console.** *(blocked by #3)*
-  Verify the domain, submit `https://<domain>/sitemap.xml`. This is the "what are people actually searching" data source — it needs months of accumulation, which is why it starts now and not at post 100.
+- [x] 6. **[You] Google Search Console.** *(done — confirmed 2026-07-24)*
+  Domain verified, sitemap submitted. Query data now accumulating.
 
 ## Phase 1 — Foundations for leads (next 2–3 weeks)
 
-- [ ] 7. **[You→Claude] Finish personalize email with Resend.**
-  Still pending from the original personalize build. Create a Resend account + API key (`RESEND_API_KEY`), then ask Claude to build the send path (email the personalized recommendation to the user).
+- [x] 7. **[You→Claude] Finish personalize email with Resend.** *(built 2026-07-24)*
+  intelligence owns the send + data (not aisc), reusing its Resend. Optional "Email me this recommendation" button after the on-page result. Every real completion is stored in Supabase `aisc_personalize`; email enriches the row. Built both sides: intelligence endpoints A (insert) + B (send), libs in `src/lib/aisc/personalize/`; aisc route posts the completion and the results view offers the email. **Before it works, you must:** run the `aisc_personalize` SQL in Supabase, `npm install` in intelligence (adds `zod`), and set `ECOSYSTEM_INTERNAL_KEY` (both repos) + `PERSONALIZE_IP_SALT` (intelligence). Then run the end-to-end verification.
 
 - [ ] 8. **[You→Claude] Blog email capture — the "briefing list".** *(after #7, reuses Resend)*
   A subscribe block on the blog (footer and/or end of articles). A first-time SEO visitor rarely buys a $99–$1,099 program on that visit; the list is where unconverted readers go instead of vanishing.
@@ -28,7 +28,10 @@
 ## Phase 2 — Production run (ongoing from now)
 
 - [ ] 10. **[Claude] Publish the banked pipeline at 3/week (Mon/Wed/Fri).**
-  Drafting DONE 2026-07-12: all 25 briefings banked as `draft: true`. Drip in progress (Mon/Wed/Fri): Mon 2026-07-13 `what-ai-actually-is-for-the-seat-where-decisions-stop`, Wed 2026-07-15 `why-your-ai-pilot-went-nowhere`, Fri 2026-07-17 `the-hours-you-lose-every-week-to-work-ai-could-handle` → now **10 published + 22 banked = 32 in ledger**. Remaining work is the publish routine per post: Michael reviews → flip `draft: false` → set `date` to actual publish day → ledger row to Published → clean `npm run blog:links --write` → distribute per #9. Next drip: Mon 2026-07-20. Bank lasts ~7 weeks; refill comes from cohort exhaust (#14) and Search Console (#12), never invented topics.
+  Drafting DONE 2026-07-12: all briefings banked as `draft: true`. Drip ran Mon 2026-07-13 `what-ai-actually-is-for-the-seat-where-decisions-stop`, Wed 2026-07-15 `why-your-ai-pilot-went-nowhere`, Fri 2026-07-17 `the-hours-you-lose-every-week-to-work-ai-could-handle` → **10 published + 22 banked = 32 in ledger**.
+  **Drip STALLED after 07-17: slots Mon 07-20, Wed 07-22, Fri 07-24 missed.** No public/SEO cost — all 22 remaining are still `draft: true`, so nothing shipped-then-vanished. Do NOT backdate and do NOT bulk-publish to "catch up" (breaks the one-post-one-push rule in #9). **Restart Mon 2026-07-27**, forward-dated, one post per Mon/Wed/Fri slot.
+  Per-post routine: Michael reviews → flip `draft: false` → set `date` to actual publish day → ledger row to Published → clean `npm run blog:links --write` → distribute per #9.
+  **Chief-first restart shortlist:** Mon 07-27 `the-cfos-ai-question-is-a-capital-question` · Wed 07-29 `ai-fiduciary-duty-what-boards-now-expect` · Fri 07-31 `ai-agents-before-you-hand-over-the-keys`. Optional: a temporary 4th day/week for ~2 weeks to seed pieces around the Jul 30–Aug 5 cohort. Bank lasts ~7 weeks; refill comes from cohort exhaust (#14) and Search Console (#12), never invented topics.
 
 - [ ] 11. **[You] Log the Jul 30 – Aug 5 cohort into the capture doc.** *(uses #1)*
   Every live session. Repeat for every future cohort — this becomes standing practice, not a one-off.

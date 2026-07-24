@@ -4,8 +4,9 @@
  *
  * Lead funnel events:
  *   cta_click             { placement, destination }
- *   personalize_start     {}
- *   personalize_complete  { seat }
+ *   personalize_start          {}
+ *   personalize_complete       { seat }
+ *   personalize_email_request  { seat }
  */
 export function trackEvent(name, params = {}) {
   if (typeof window === "undefined" || typeof window.gtag !== "function") {

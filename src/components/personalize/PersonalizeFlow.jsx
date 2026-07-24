@@ -47,6 +47,7 @@ export default function PersonalizeFlow() {
   const [step, setStep] = useState("intro");
   const [answers, setAnswers] = useState(EMPTY_ANSWERS);
   const [result, setResult] = useState(null);
+  const [resultId, setResultId] = useState(null);
   const [rateLimited, setRateLimited] = useState(false);
   const { currency } = useLocation();
   const advanceTimer = useRef(null);
@@ -92,6 +93,7 @@ export default function PersonalizeFlow() {
         return;
       }
       setResult(data.result);
+      setResultId(data.id ?? null);
       trackEvent("personalize_complete", { seat: finalAnswers.seat });
       setStep("results");
     } catch {
@@ -102,6 +104,7 @@ export default function PersonalizeFlow() {
   const restart = () => {
     setAnswers(EMPTY_ANSWERS);
     setResult(null);
+    setResultId(null);
     setStep("intro");
   };
 
@@ -191,7 +194,12 @@ export default function PersonalizeFlow() {
       {step === "loading" && <LoadingState />}
 
       {step === "results" && result && (
-        <ResultsView result={result} onRestart={restart} />
+        <ResultsView
+          result={result}
+          id={resultId}
+          seat={answers.seat}
+          onRestart={restart}
+        />
       )}
 
       {step === "error" && (

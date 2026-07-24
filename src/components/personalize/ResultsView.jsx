@@ -2,8 +2,9 @@
 
 import Button from "@/components/global/Button";
 import RecommendationCard from "./RecommendationCard";
+import EmailRecommendation from "./EmailRecommendation";
 
-export default function ResultsView({ result, onRestart }) {
+export default function ResultsView({ result, id, seat, onRestart }) {
   const { headline, confidence, primary, alternate, awakeningNote } = result;
 
   return (
@@ -63,6 +64,8 @@ export default function ResultsView({ result, onRestart }) {
           </div>
         </div>
       )}
+
+      <EmailRecommendation id={id} seat={seat} />
 
       <div className="mt-10">
         <Button variant="ghost-light" onClick={onRestart}>

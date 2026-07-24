@@ -92,6 +92,51 @@ function toPayload(raw, fallbackUsed) {
   };
 }
 
+// Best-effort: store the completion in intelligence (Endpoint A) and attach the
+// returned id to the payload so the browser can show the email button. Bounded
+// by a short timeout and fully swallowed on failure; this must never block or
+// break the recommendation. Skipped on the honeypot path (see POST).
+async function attachId(payload, input, request) {
+  const apiBase = process.env.NEXT_PUBLIC_API_BASE;
+  const key = process.env.ECOSYSTEM_INTERNAL_KEY;
+  if (!apiBase || !key) return payload;
+
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 2000);
+  try {
+    const res = await fetch(`${apiBase}/api/public/aisc/personalize`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+        "x-ecosystem-key": key,
+      },
+      body: JSON.stringify({
+        seat: input.seat,
+        currency: input.currency,
+        answers: {
+          leads: input.leads,
+          pressing: input.pressing,
+          picture: input.picture,
+        },
+        fallbackUsed: payload.fallbackUsed,
+        recommendation: payload.result,
+        clientIp: clientIp(request),
+        userAgent: request.headers.get("user-agent") || "",
+      }),
+      signal: controller.signal,
+    });
+    if (res.ok) {
+      const data = await res.json();
+      if (data?.ok && data?.id) payload.id = data.id;
+    }
+  } catch {
+    // Storage unavailable: return the recommendation without an id.
+  } finally {
+    clearTimeout(timer);
+  }
+  return payload;
+}
+
 function sameOriginOk(request) {
   if (process.env.NODE_ENV !== "production") return true;
   const site = process.env.NEXT_PUBLIC_SITE_URL;
@@ -139,7 +184,7 @@ export async function POST(request) {
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) {
     console.warn("[personalize] ANTHROPIC_API_KEY not set; serving fallback");
-    return NextResponse.json(toPayload(fallbackResult(input.seat), true));
+    return NextResponse.json(await attachId(toPayload(fallbackResult(input.seat), true), input, request));
   }
 
   try {
@@ -173,9 +218,9 @@ export async function POST(request) {
     const enforced = enforceUpsell(checked.data);
 
     scanVoice(enforced);
-    return NextResponse.json(toPayload(enforced, false));
+    return NextResponse.json(await attachId(toPayload(enforced, false), input, request));
   } catch (err) {
     console.error("[personalize] recommendation failed:", err?.message || err);
-    return NextResponse.json(toPayload(fallbackResult(input.seat), true));
+    return NextResponse.json(await attachId(toPayload(fallbackResult(input.seat), true), input, request));
   }
 }
