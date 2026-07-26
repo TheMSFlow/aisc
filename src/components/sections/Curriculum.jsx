@@ -8,7 +8,7 @@ const DAYS = [
     type: "self-paced",
     duration: null,
     description:
-      "Get access to the platform, finish onboarding, and prepare for Day 1.",
+      "Get access to the AISC Learning Center, finish onboarding, and prepare for Day 1.",
     output: null,
     vipNote: null,
     milestone: false,
