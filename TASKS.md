@@ -4,7 +4,7 @@
 > Maintained by the `tasks` agent. Tasks are in **exact execution order** — do the first unchecked one.
 > Owner key: **[You]** = only Michael can do it · **[Claude]** = ask Claude to do it · **[You→Claude]** = you provide something, then Claude builds.
 >
-> Last updated: 2026-07-24
+> Last updated: 2026-07-28
 
 ## Phase 0 — This week (time-sensitive or blocking everything else)
 
@@ -28,10 +28,11 @@
 ## Phase 2 — Production run (ongoing from now)
 
 - [ ] 10. **[Claude] Publish the banked pipeline at 3/week (Mon/Wed/Fri).**
-  Drafting DONE 2026-07-12: all briefings banked as `draft: true`. Drip ran Mon 2026-07-13 `what-ai-actually-is-for-the-seat-where-decisions-stop`, Wed 2026-07-15 `why-your-ai-pilot-went-nowhere`, Fri 2026-07-17 `the-hours-you-lose-every-week-to-work-ai-could-handle` → **10 published + 22 banked = 32 in ledger**.
-  **Drip STALLED after 07-17: slots Mon 07-20, Wed 07-22, Fri 07-24 missed.** No public/SEO cost — all 22 remaining are still `draft: true`, so nothing shipped-then-vanished. Do NOT backdate and do NOT bulk-publish to "catch up" (breaks the one-post-one-push rule in #9). **Restart Mon 2026-07-27**, forward-dated, one post per Mon/Wed/Fri slot.
+  Drafting DONE 2026-07-12: all briefings banked as `draft: true`. Drip ran Mon 2026-07-13 `what-ai-actually-is-for-the-seat-where-decisions-stop`, Wed 2026-07-15 `why-your-ai-pilot-went-nowhere`, Fri 2026-07-17 `the-hours-you-lose-every-week-to-work-ai-could-handle`.
+  **Drip STALLED after 07-17: slots Mon 07-20, Wed 07-22, Fri 07-24 missed.** No public/SEO cost — all remaining were still `draft: true`, so nothing shipped-then-vanished. Do NOT backdate and do NOT bulk-publish to "catch up" (breaks the one-post-one-push rule in #9).
+  **RESTARTED 2026-07-28** with `the-cfos-ai-question-is-a-capital-question`. The Mon 07-27 slot slipped a day; published Tue 07-28 dated 07-28 (not backdated) → **11 published + 21 banked = 32 in ledger**. Two link fixes shipped with it: its "margin audit" anchor was re-pointed from `what-to-delegate…` to `the-hours-you-lose…` (the draft predated that piece), and `the-briefing-your-board-expects-you-to-have-had` now links in, clearing the orphan flag.
   Per-post routine: Michael reviews → flip `draft: false` → set `date` to actual publish day → ledger row to Published → clean `npm run blog:links --write` → distribute per #9.
-  **Chief-first restart shortlist:** Mon 07-27 `the-cfos-ai-question-is-a-capital-question` · Wed 07-29 `ai-fiduciary-duty-what-boards-now-expect` · Fri 07-31 `ai-agents-before-you-hand-over-the-keys`. Optional: a temporary 4th day/week for ~2 weeks to seed pieces around the Jul 30–Aug 5 cohort. Bank lasts ~7 weeks; refill comes from cohort exhaust (#14) and Search Console (#12), never invented topics.
+  **Next slots:** Wed 07-29 `ai-fiduciary-duty-what-boards-now-expect` · Fri 07-31 `ai-agents-before-you-hand-over-the-keys`. Note 07-29 lands one day after the CFO piece; spacing to Thu 07-30 is fine if the two chief/finance pieces feel stacked. Optional: a temporary 4th day/week for ~2 weeks to seed pieces around the Jul 30–Aug 5 cohort. Bank lasts ~7 weeks; refill comes from cohort exhaust (#14) and Search Console (#12), never invented topics.
 
 - [ ] 11. **[You] Log the Jul 30 – Aug 5 cohort into the capture doc.** *(uses #1)*
   Every live session. Repeat for every future cohort — this becomes standing practice, not a one-off.

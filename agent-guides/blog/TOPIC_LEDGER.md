@@ -39,6 +39,7 @@ The category pages are the hubs; briefings are the spokes. Google ranks hubs tha
 | `what-ai-actually-is-for-the-seat-where-decisions-stop` | what is AI explained for leaders | Day 1 clarity in public: an honest, plain-language picture built for decision seats | insight | chiefs | business | 2026-07-13 |
 | `why-your-ai-pilot-went-nowhere` | why AI pilots fail | Pilots die of no owner, no territory, no standard; the tool was never the problem | insight | chiefs, leaders-of-leaders | business | 2026-07-15 |
 | `the-hours-you-lose-every-week-to-work-ai-could-handle` | how much time does AI save leaders | Run the margin audit: most leaders find 10 to 20 hours on paper, larger than expected | value | chiefs, leaders-of-leaders | business, finance | 2026-07-17 |
+| `the-cfos-ai-question-is-a-capital-question` | CFO AI strategy | AI is an allocation problem: where margin moves, what gets funded, what gets stopped | insight | chiefs | finance, business | 2026-07-28 |
 
 ## Pipeline (reserved)
 
@@ -60,7 +61,6 @@ Topics reserved from the current source material. Reserving is cheap; only genui
 | `ai-agents-before-you-hand-over-the-keys` | what are AI agents for business leaders | Automate, Augment, Agency: what the third mode requires before it is safe | insight | chiefs, leaders-of-leaders | business, finance | banked (draft written 2026-07-12, awaiting review + staggered publish) |
 | `the-discernment-checklist-before-you-trust-an-ai-output` | how to verify AI output before using it | Four questions after every output; confidence is not a signal of correctness | guide | leaders-of-leaders, emerging-leaders | business, finance | banked (draft written 2026-07-12, awaiting review + staggered publish) |
 | `before-you-sign-a-leaders-ai-vendor-questions` | how to evaluate AI vendors as a leader | Diligence for non-technical buyers: the questions that expose weak AI products | guide | chiefs, leaders-of-leaders | business, healthcare | banked (draft written 2026-07-12, awaiting review + staggered publish) |
-| `the-cfos-ai-question-is-a-capital-question` | CFO AI strategy | AI is an allocation problem: where margin moves, what gets funded, what gets stopped | insight | chiefs | finance, business | banked (draft written 2026-07-12, awaiting review + staggered publish) |
 | `the-school-leaders-ai-position-beyond-the-cheating-debate` | AI strategy for school leaders | The cheating frame shrinks the question; the school leader's real AI position | insight | chiefs, leaders-of-leaders | education | banked (draft written 2026-07-12, awaiting review + staggered publish) |
 | `the-care-hours-buried-in-healthcare-paperwork` | reduce administrative burden in healthcare with AI | Healthcare's margin audit: patterned admin absorbs care hours; reclaiming them deliberately | value | leaders-of-leaders, chiefs | healthcare | banked (draft written 2026-07-12, awaiting review + staggered publish) |
 | `write-your-personal-ai-policy-before-someone-writes-it-for-you` | personal AI policy for leaders | Org policies say what is forbidden; your standard says what you refuse even unwatched | guide | chiefs, emerging-leaders | business, education | banked (draft written 2026-07-12, awaiting review + staggered publish) |
@@ -79,7 +79,7 @@ Topics reserved from the current source material. Reserving is cheap; only genui
 
 ## Link graph (generated)
 
-Posts scanned: 32  (generated 2026-07-17)
+Posts scanned: 32  (generated 2026-07-28)
 
 | Post | Out → siblings | Out → categories | In ← siblings | Flags |
 |------|----------------|------------------|---------------|-------|
@@ -96,18 +96,18 @@ Posts scanned: 32  (generated 2026-07-17)
 | `reactive-leadership-is-a-margin-problem` | `what-to-delegate-to-ai-and-what-to-never`, `ai-governance-the-risk-is-already-inside` | — | 0 | draft |
 | `relationships-beat-reach-in-the-ai-ecosystem` | `your-congregation-is-already-asking-about-ai`, `territory-not-tools-the-ai-opportunity-for-leaders` | — | 0 | draft |
 | `territory-not-tools-the-ai-opportunity-for-leaders` | `what-ai-actually-is-for-the-seat-where-decisions-stop`, `the-briefing-your-board-expects-you-to-have-had`, `what-to-delegate-to-ai-and-what-to-never`, `the-service-you-could-not-afford-to-offer-last-year`, `why-your-ai-pilot-went-nowhere`, `ai-governance-the-risk-is-already-inside` | — | 12 | OK |
-| `the-briefing-your-board-expects-you-to-have-had` | `ai-governance-the-risk-is-already-inside`, `territory-not-tools-the-ai-opportunity-for-leaders` | — | 8 | OK |
+| `the-briefing-your-board-expects-you-to-have-had` | `ai-governance-the-risk-is-already-inside`, `the-cfos-ai-question-is-a-capital-question`, `territory-not-tools-the-ai-opportunity-for-leaders` | — | 8 | OK |
 | `the-care-hours-buried-in-healthcare-paperwork` | `what-to-delegate-to-ai-and-what-to-never`, `ai-governance-the-risk-is-already-inside` | — | 0 | draft |
-| `the-cfos-ai-question-is-a-capital-question` | `what-to-delegate-to-ai-and-what-to-never`, `territory-not-tools-the-ai-opportunity-for-leaders`, `ai-governance-the-risk-is-already-inside`, `the-briefing-your-board-expects-you-to-have-had` | — | 0 | draft |
+| `the-cfos-ai-question-is-a-capital-question` | `the-hours-you-lose-every-week-to-work-ai-could-handle`, `territory-not-tools-the-ai-opportunity-for-leaders`, `ai-governance-the-risk-is-already-inside`, `the-briefing-your-board-expects-you-to-have-had` | — | 1 | OK |
 | `the-data-line-what-never-goes-into-an-ai-tool` | `ai-governance-the-risk-is-already-inside`, `what-to-delegate-to-ai-and-what-to-never` | — | 0 | draft |
 | `the-discernment-checklist-before-you-trust-an-ai-output` | `the-briefing-your-board-expects-you-to-have-had`, `what-to-delegate-to-ai-and-what-to-never` | — | 0 | draft |
-| `the-hours-you-lose-every-week-to-work-ai-could-handle` | `what-to-delegate-to-ai-and-what-to-never`, `territory-not-tools-the-ai-opportunity-for-leaders`, `the-service-you-could-not-afford-to-offer-last-year` | — | 1 | OK |
+| `the-hours-you-lose-every-week-to-work-ai-could-handle` | `what-to-delegate-to-ai-and-what-to-never`, `territory-not-tools-the-ai-opportunity-for-leaders`, `the-service-you-could-not-afford-to-offer-last-year` | — | 2 | OK |
 | `the-nonprofit-leverage-moment` | `what-to-delegate-to-ai-and-what-to-never`, `the-service-you-could-not-afford-to-offer-last-year`, `territory-not-tools-the-ai-opportunity-for-leaders` | — | 0 | draft |
 | `the-school-leaders-ai-position-beyond-the-cheating-debate` | `your-students-adopted-ai-before-your-policy-did`, `what-to-delegate-to-ai-and-what-to-never`, `ai-governance-the-risk-is-already-inside` | — | 0 | draft |
 | `the-service-you-could-not-afford-to-offer-last-year` | `ai-governance-the-risk-is-already-inside`, `territory-not-tools-the-ai-opportunity-for-leaders` | — | 5 | OK |
 | `the-trusted-voice-premium-ai-and-your-audience` | `territory-not-tools-the-ai-opportunity-for-leaders`, `your-congregation-is-already-asking-about-ai` | — | 0 | draft |
 | `what-ai-actually-is-for-the-seat-where-decisions-stop` | `what-to-delegate-to-ai-and-what-to-never`, `ai-governance-the-risk-is-already-inside`, `the-briefing-your-board-expects-you-to-have-had` | — | 1 | OK |
-| `what-to-delegate-to-ai-and-what-to-never` | `ai-governance-the-risk-is-already-inside`, `the-hours-you-lose-every-week-to-work-ai-could-handle`, `territory-not-tools-the-ai-opportunity-for-leaders`, `the-service-you-could-not-afford-to-offer-last-year` | — | 19 | OK |
+| `what-to-delegate-to-ai-and-what-to-never` | `ai-governance-the-risk-is-already-inside`, `the-hours-you-lose-every-week-to-work-ai-could-handle`, `territory-not-tools-the-ai-opportunity-for-leaders`, `the-service-you-could-not-afford-to-offer-last-year` | — | 18 | OK |
 | `what-to-tell-your-team-about-ai-and-their-jobs` | `what-to-delegate-to-ai-and-what-to-never`, `ai-governance-the-risk-is-already-inside` | — | 0 | draft |
 | `why-your-ai-pilot-went-nowhere` | `territory-not-tools-the-ai-opportunity-for-leaders`, `the-service-you-could-not-afford-to-offer-last-year`, `ai-governance-the-risk-is-already-inside` | — | 1 | OK |
 | `write-your-personal-ai-policy-before-someone-writes-it-for-you` | `ai-governance-the-risk-is-already-inside`, `what-to-delegate-to-ai-and-what-to-never` | — | 0 | draft |
