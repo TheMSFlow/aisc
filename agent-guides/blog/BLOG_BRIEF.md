@@ -58,17 +58,47 @@ The canonical machine-readable taxonomy lives in `src/lib/blog/taxonomy.js`. Thi
 | `nonprofit` | Nonprofit | `/awakening/industry/nonprofit` |
 | `finance` | Finance | `/awakening/industry/finance` |
 
-### Content types (`type` in frontmatter)
+### Themes (`theme` in frontmatter)
 
-Each format delivers exactly one AISC pillar. Before writing, name which pillar the piece serves; that decides its type.
+**The user-facing browse dimension.** Exactly one per post. Themes replaced formats in July 2026, because three formats left governance and leadership without a home.
 
-| ID | Pillar | What it delivers | Length guidance |
-|----|--------|------------------|-----------------|
-| `insight` | AI Clarity | Changes how the reader sees AI, their exposure, or the moment. Analysis, reframes, the honest picture | 1,000–1,800 words |
-| `guide` | AI Fluency | A playbook the leader can run this week to work with AI deliberately (effective, efficient, ethical, safe) | 1,200–2,500 words |
-| `value` | AI Value | Trains the reader to spot the money AI opens in their own world (the problems they ignore or work around, the ground innovation opens) and to claim it. We never pretend to know their territory better than they do; we sharpen their eye and show the claiming move | 1,200–2,000 words |
+| ID | Label | What belongs here | URL |
+|----|-------|-------------------|-----|
+| `ai-clarity` | AI Clarity | Explains AI itself: what it is, what it is not, what the moment asks | `/awakening/theme/ai-clarity` |
+| `ai-fluency` | AI Fluency | Working with AI deliberately: directing, delegating, verifying, briefing | `/awakening/theme/ai-fluency` |
+| `ai-value` | AI Value | Margin, revenue, new offers, territory: the money AI opens in the reader's world | `/awakening/theme/ai-value` |
+| `ai-governance` | AI Governance | Risk, data lines, policy, vendor diligence, oversight | `/awakening/theme/ai-governance` |
+| `ai-leadership` | AI Leadership | The position the leader takes and the direction they set | `/awakening/theme/ai-leadership` |
 
-The `article` format was retired in July 2026 and folded into `insight`. Never use it in frontmatter; the build rejects it.
+**The Clarity/Leadership line:** Clarity helps the reader *see* AI. Leadership helps them *stand on it*. A piece telling a leader to take a position is Leadership even when it opens by explaining something.
+
+### Covers (`cover` in frontmatter)
+
+**Social media only.** Picks the video-cover background for LinkedIn and Instagram assets. Never rendered on the site, never a URL. Exactly one per post.
+
+Five mirror the themes (`ai-clarity`, `ai-fluency`, `ai-value`, `ai-governance`, `ai-leadership`) and are the default: `cover` usually equals `theme`.
+
+Three are the audience-dedicated lines, used **only when the piece's subject is that seat itself**, not merely when it targets that audience:
+
+| ID | Cover reads | For pieces about |
+|----|-------------|------------------|
+| `chiefs-briefing` | The Chief's Briefing | The chief's own accountability: the board, fiduciary duty, the seat where the decision stops |
+| `second-seat` | The Second Seat | The Leader of Leaders' squeeze: accountable upward, directing downward |
+| `emerging-leader` | Emerging Leader | The emerging leader's problem: influence before mandate |
+
+**These three names are social-only.** On the blog these audiences stay **Chiefs**, **Leaders of Leaders**, and **Emerging Leaders**, under `audiences` and `/awakening/for/*`. Never use the cover names in site copy.
+
+### Formats (`type` in frontmatter) — internal only
+
+Formats were retired from the user-facing surface in July 2026: no routes, no chips, no OG eyebrow. The field is still required and still validated, retained for historical continuity and nothing else. The old `/awakening/type/*` pages permanently redirect (308) to their pillar themes. Length guidance still keyed to format:
+
+| ID | Was | Length guidance |
+|----|-----|-----------------|
+| `insight` | AI Clarity | 1,000–1,800 words |
+| `guide` | AI Fluency | 1,200–2,500 words |
+| `value` | AI Value | 1,200–2,000 words |
+
+The `article` format was retired earlier in July 2026 and folded into `insight`. Never use it in frontmatter; the build rejects it.
 
 ## URL Map
 
@@ -78,10 +108,12 @@ The `article` format was retired in July 2026 and folded into `insight`. Never u
 | Article | `/awakening/<slug>` | `content/awakening/<slug>.mdx` |
 | Industry page | `/awakening/industry/<id>` | taxonomy |
 | Audience page | `/awakening/for/<id>` | taxonomy |
-| Type page | `/awakening/type/<id>` | taxonomy |
+| Theme page | `/awakening/theme/<id>` | taxonomy |
 | RSS feed | `/awakening/feed.xml` | all published posts |
 
-Article slugs must never be `industry`, `for`, `type`, or `feed` (reserved route segments; the frontmatter validator enforces this).
+Retired July 2026: `/awakening/type/insight|guide|value` → 308 permanent redirect to `/awakening/theme/ai-clarity|ai-fluency|ai-value` (`next.config.mjs`).
+
+Article slugs must never be `industry`, `for`, `theme`, `type`, or `feed` (reserved route segments; the frontmatter validator enforces this).
 
 ## What The Awakening Is NOT
 

@@ -1,14 +1,14 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { formatDate } from "@/lib/blog/format";
-import { getType } from "@/lib/blog/taxonomy";
+import { getTheme } from "@/lib/blog/taxonomy";
 
 /**
  * Hub feature, rendered as a self-contained dark card that rests on the light
  * hub background.
  */
 export default function FeaturedArticle({ post }) {
-  const type = getType(post.type);
+  const theme = getTheme(post.theme);
 
   return (
     <div className="relative overflow-hidden rounded-3xl bg-dark-blue text-white shadow-[0_2px_4px_rgba(0,3,76,0.12),0_24px_60px_rgba(0,3,76,0.22)]">
@@ -24,7 +24,7 @@ export default function FeaturedArticle({ post }) {
       <div className="relative grid gap-10 p-8 sm:p-10 lg:grid-cols-[7fr_5fr] lg:p-12">
         <div className="flex flex-col">
           <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-white/40">
-            Featured {type.shortLabel}
+            Featured <span className="text-white/25">/</span> {theme.label}
           </p>
           <Link href={`/awakening/${post.slug}`} className="group mt-4 block">
             <h2 className="font-ptsans text-3xl font-bold uppercase leading-[1.05] tracking-tight text-white sm:text-4xl lg:text-5xl">

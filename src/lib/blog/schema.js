@@ -1,12 +1,21 @@
 import { z } from "zod";
 import {
   ALL_AUDIENCE_IDS,
+  ALL_COVER_IDS,
   ALL_INDUSTRY_IDS,
+  ALL_THEME_IDS,
   ALL_TYPE_IDS,
 } from "./taxonomy";
 
 // Slugs that collide with static route segments under /awakening
-export const RESERVED_SLUGS = ["industry", "for", "type", "feed", "feed.xml"];
+export const RESERVED_SLUGS = [
+  "industry",
+  "for",
+  "theme",
+  "type",
+  "feed",
+  "feed.xml",
+];
 
 const SLUG_PATTERN = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const DATE_PATTERN = /^\d{4}-\d{2}-\d{2}$/;
@@ -24,6 +33,12 @@ export const frontmatterSchema = z.object({
   date: z.string().regex(DATE_PATTERN, "date must be YYYY-MM-DD"),
   updated: z.string().regex(DATE_PATTERN, "updated must be YYYY-MM-DD").optional(),
   author: z.string().default("michael-steve"),
+  // The user-facing browse dimension. Exactly one per post.
+  theme: z.enum(ALL_THEME_IDS),
+  // Social video-cover background. Never rendered on the site.
+  cover: z.enum(ALL_COVER_IDS),
+  // Internal only since July 2026: no routes, no chips. Kept for the
+  // related-post signal and historical continuity.
   type: z.enum(ALL_TYPE_IDS),
   industries: z.array(z.enum(ALL_INDUSTRY_IDS)).min(1),
   audiences: z.array(z.enum(ALL_AUDIENCE_IDS)).min(1),

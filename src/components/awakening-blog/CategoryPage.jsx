@@ -5,7 +5,7 @@ import TaxonomyNav from "./TaxonomyNav";
 import { breadcrumbJsonLd, collectionJsonLd, JsonLd } from "@/lib/blog/jsonld";
 
 /**
- * Shared layout for taxonomy landing pages (/awakening/industry|for|type/[id]).
+ * Shared layout for taxonomy landing pages (/awakening/industry|for|theme/[id]).
  */
 export default function CategoryPage({ entry, dimension, path, eyebrow, posts }) {
   return (

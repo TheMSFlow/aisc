@@ -60,12 +60,14 @@ export function getPostBySlug(slug) {
   return loadPosts().find((p) => p.slug === slug) ?? null;
 }
 
+const SINGULAR_DIMENSIONS = new Set(["theme", "type"]);
+
 /**
- * @param {"industries"|"audiences"|"type"} dimension
+ * @param {"industries"|"audiences"|"theme"|"type"} dimension
  */
 export function getPostsByTaxonomy(dimension, id) {
   return loadPosts().filter((p) =>
-    dimension === "type" ? p.type === id : p[dimension].includes(id)
+    SINGULAR_DIMENSIONS.has(dimension) ? p[dimension] === id : p[dimension].includes(id)
   );
 }
 
@@ -89,7 +91,7 @@ export function getRelatedPosts(post, limit = 3) {
       score += p.audiences.filter((a) => post.audiences.includes(a)).length * 3;
       score += p.industries.filter((i) => post.industries.includes(i)).length * 2;
       score += p.tags.filter((t) => post.tags.includes(t)).length;
-      if (p.type === post.type) score += 1;
+      if (p.theme === post.theme) score += 1;
       return { post: p, score };
     })
     .sort((a, b) => b.score - a.score || (a.post.date < b.post.date ? 1 : -1))

@@ -17,6 +17,8 @@ Copy this exactly and fill it in. The build validates every field and fails loud
 title: "Your headline, 70 characters or fewer"
 description: "The SERP and card description. Between 70 and 160 characters. Written as copy, not summary."
 date: "2026-07-11"
+theme: ai-governance
+cover: ai-governance
 type: insight
 audiences:
   - chiefs
@@ -52,7 +54,9 @@ related:                     # manual override; otherwise related posts are scor
 | `title` | Must pass all three Headline Rules from `COPY_GUIDE.md`: visualizable, falsifiable, distinctive |
 | `description` | 70–160 characters. This is sales copy for the click, not an abstract |
 | `date` | Publication date, `YYYY-MM-DD`. Never postdate |
-| `type` | Exactly one of `insight` (AI Clarity), `guide` (AI Fluency), `value` (AI Value). See BLOG_BRIEF for the pillar mapping; `article` is retired |
+| `theme` | Exactly one of the five themes. The user-facing browse dimension: it sets the hub the piece lives on, the card and breadcrumb chip, and the OG image eyebrow. See BLOG_BRIEF § Themes |
+| `cover` | Exactly one of the eight covers. Social media only: it picks the video-cover background. Never rendered on the site. Usually the same id as `theme`; use `chiefs-briefing`, `second-seat`, or `emerging-leader` when the piece's subject is that seat itself |
+| `type` | **Internal only since July 2026.** No routes, no chips, no eyebrow. Still required and still one of `insight` / `guide` / `value`; retained for historical continuity. Never referenced in copy or UI |
 | `audiences` | 1–2 entries. Who is this piece written for, not who might tolerate it |
 | `industries` | 1–3 entries. Only worlds the piece genuinely speaks to |
 | `tags` | Free-form kebab-case, used for related-post scoring. Reuse existing tags before inventing new ones |

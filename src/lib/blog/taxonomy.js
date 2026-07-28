@@ -172,7 +172,148 @@ export const AUDIENCES = {
   },
 };
 
-// Formats map one-to-one onto the AISC pillars:
+// THEMES are the user-facing browse dimension (July 2026). They superseded
+// formats, which had only three values and left governance and leadership
+// homeless. Every post carries exactly one theme.
+export const THEMES = {
+  "ai-clarity": {
+    id: "ai-clarity",
+    label: "AI Clarity",
+    shortLabel: "Clarity",
+    description:
+      "An honest picture of AI: what it is, what it is not, and what it means for the seat you hold.",
+    seo: {
+      title: "AI Clarity for Leaders | What AI Actually Is",
+      description:
+        "Briefings that give leaders an honest picture of AI: plain language, no hype, no vendor spin, and a clear read on what this moment asks of your seat.",
+    },
+    blurb:
+      "The clarity pieces. Each one changes how you see AI, your exposure, and your moment, so the position you hold is one you built rather than borrowed.",
+  },
+  "ai-fluency": {
+    id: "ai-fluency",
+    label: "AI Fluency",
+    shortLabel: "Fluency",
+    description:
+      "Working with AI deliberately, in ways that are effective, efficient, ethical, and safe.",
+    seo: {
+      title: "AI Fluency for Leaders | Direct AI With Confidence",
+      description:
+        "Practical briefings that build AI fluency: how to direct AI, what to delegate, how to verify what comes back, and the standards that keep it safe.",
+    },
+    blurb:
+      "The fluency pieces. Playbooks, not theory: each one is a sequence of moves a leader can run this week to work with AI deliberately.",
+  },
+  "ai-value": {
+    id: "ai-value",
+    label: "AI Value",
+    shortLabel: "Value",
+    description:
+      "How to spot the money AI opens in your world and claim it before anyone else does.",
+    seo: {
+      title: "AI Value for Leaders | Turn AI Into Money and Margin",
+      description:
+        "Value briefings for leaders: how to spot where AI turns into revenue, margin, and new offers in your world, and how to claim that ground first.",
+    },
+    blurb:
+      "The money pieces. Nobody knows your world better than you, so each one trains you to spot the value AI just opened in it, and to claim it deliberately.",
+  },
+  "ai-governance": {
+    id: "ai-governance",
+    label: "AI Governance",
+    shortLabel: "Governance",
+    description:
+      "The exposure already inside your organization: data, risk, policy, oversight, and the standards only leadership can set.",
+    seo: {
+      title: "AI Governance for Leaders | Direction Before Exposure",
+      description:
+        "Briefings on governing AI: the risk already inside your organization, what never goes into a tool, how to vet vendors, and the oversight your seat owns.",
+    },
+    blurb:
+      "The governance pieces. AI is already inside your organization, directed or drifting. Each briefing covers a line leadership has to draw before something draws it for you.",
+  },
+  "ai-leadership": {
+    id: "ai-leadership",
+    label: "AI Leadership",
+    shortLabel: "Leadership",
+    description:
+      "The position your seat requires, the direction your people need, and what happens when neither is declared.",
+    seo: {
+      title: "AI Leadership | The Position Your Seat Requires",
+      description:
+        "Briefings on leading through AI: taking a position instead of holding an opinion, directing your team, and setting the agenda before someone sets it for you.",
+    },
+    blurb:
+      "The leadership pieces. Clarity is what you see; leadership is what you do about it. Each briefing is about the position you take and the direction you set.",
+  },
+};
+
+// COVERS pick the social video-cover background. Social media only: never
+// rendered on the site, never a URL. Five mirror the themes; three are the
+// audience-dedicated lines, which on the blog stay Chiefs / Leaders of
+// Leaders / Emerging Leaders under AUDIENCES and /awakening/for/*.
+//
+// `label`      the strapline set at the foot of the cover
+// `background` source art, content/backgrounds/<file>. Filename always
+//              matches the cover id, so the pipeline never needs a lookup
+//              table and no filename carries an apostrophe or a space.
+// `headline`   how the headline is set. "light" = white type on a colour
+//              field; "gradient-100" / "gradient-200" = gradient type on the
+//              paper field; "card" = white type inside a translucent panel
+//              over fluted art. See agent-guides/blog/SOCIAL_GUIDE.md.
+export const COVERS = {
+  "ai-clarity": {
+    id: "ai-clarity",
+    label: "AI Clarity",
+    background: "ai-clarity.jpg",
+    headline: "light",
+  },
+  "ai-fluency": {
+    id: "ai-fluency",
+    label: "AI Fluency",
+    background: "ai-fluency.jpg",
+    headline: "light",
+  },
+  "ai-value": {
+    id: "ai-value",
+    label: "AI Value",
+    background: "ai-value.jpg",
+    headline: "light",
+  },
+  "ai-governance": {
+    id: "ai-governance",
+    label: "AI Governance",
+    background: "ai-governance.jpg",
+    headline: "gradient-100",
+  },
+  "ai-leadership": {
+    id: "ai-leadership",
+    label: "AI Leadership",
+    background: "ai-leadership.jpg",
+    headline: "gradient-200",
+  },
+  "chiefs-briefing": {
+    id: "chiefs-briefing",
+    label: "The Chief's Briefing",
+    background: "chiefs-briefing.jpg",
+    headline: "card",
+  },
+  "second-seat": {
+    id: "second-seat",
+    label: "The Second Seat",
+    background: "second-seat.jpg",
+    headline: "card",
+  },
+  "emerging-leader": {
+    id: "emerging-leader",
+    label: "Emerging Leader",
+    background: "emerging-leader.jpg",
+    headline: "card",
+  },
+};
+
+// Formats. Retired from the user-facing surface July 2026: no routes, no
+// chips, no OG eyebrow. Retained in frontmatter as an internal field only.
 // insight -> AI Clarity, guide -> AI Fluency, value -> AI Value.
 // The "article" format was retired 2026-07 (folded into insight).
 export const TYPES = {
@@ -225,6 +366,8 @@ export const TYPES = {
 
 export const ALL_INDUSTRY_IDS = Object.keys(INDUSTRIES);
 export const ALL_AUDIENCE_IDS = Object.keys(AUDIENCES);
+export const ALL_THEME_IDS = Object.keys(THEMES);
+export const ALL_COVER_IDS = Object.keys(COVERS);
 export const ALL_TYPE_IDS = Object.keys(TYPES);
 
 export function getIndustry(id) {
@@ -233,6 +376,14 @@ export function getIndustry(id) {
 
 export function getAudience(id) {
   return AUDIENCES[id] ?? null;
+}
+
+export function getTheme(id) {
+  return THEMES[id] ?? null;
+}
+
+export function getCover(id) {
+  return COVERS[id] ?? null;
 }
 
 export function getType(id) {

@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 import { getAllPosts, getPostBySlug } from "@/lib/blog/posts";
-import { getType } from "@/lib/blog/taxonomy";
+import { getTheme } from "@/lib/blog/taxonomy";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
@@ -13,9 +13,9 @@ export function generateStaticParams() {
 export default async function Image({ params }) {
   const { slug } = await params;
   const post = getPostBySlug(slug);
-  const type = post ? getType(post.type) : null;
-  const eyebrow = type
-    ? `The Awakening / ${type.shortLabel}`
+  const theme = post ? getTheme(post.theme) : null;
+  const eyebrow = theme
+    ? `The Awakening / ${theme.shortLabel}`
     : "The Awakening";
   const title = post?.title ?? "AI leadership briefings";
 

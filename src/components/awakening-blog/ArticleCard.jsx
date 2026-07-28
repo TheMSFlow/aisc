@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { formatDate } from "@/lib/blog/format";
-import { getIndustry, getType } from "@/lib/blog/taxonomy";
+import { getIndustry, getTheme } from "@/lib/blog/taxonomy";
 
 export default function ArticleCard({ post }) {
-  const type = getType(post.type);
+  const theme = getTheme(post.theme);
   const industries = post.industries
     .map((id) => getIndustry(id)?.shortLabel)
     .filter(Boolean);
@@ -21,7 +21,7 @@ export default function ArticleCard({ post }) {
         </div>
         <div className="flex flex-1 flex-col p-6 sm:p-7">
           <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-dark-blue/40">
-            <span className="font-bold text-msblue">{type.shortLabel}</span>
+            <span className="font-bold text-msblue">{theme.shortLabel}</span>
             <span className="text-dark-blue/25"> / </span>
             {industries.join(", ")}
           </p>

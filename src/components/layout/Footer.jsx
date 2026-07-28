@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { getAllPosts } from "@/lib/blog/posts";
 import { formatDate } from "@/lib/blog/format";
-import { getType } from "@/lib/blog/taxonomy";
+import { getTheme } from "@/lib/blog/taxonomy";
 
 function FooterLink({ href, children, external = false }) {
   const className =
@@ -73,7 +73,7 @@ export default function Footer() {
                   <p className="text-[10px] font-semibold uppercase tracking-[0.35em] text-dark-blue/40">
                     <span className="font-bold text-msblue">0{i + 1}</span>
                     {"  /  "}
-                    {getType(post.type)?.shortLabel}
+                    {getTheme(post.theme)?.shortLabel}
                   </p>
                   <p className="font-ptsans text-lg font-bold uppercase leading-tight tracking-tight text-dark-blue">
                     {post.title}

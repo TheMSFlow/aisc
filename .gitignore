@@ -48,3 +48,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# social cover source art (large binaries, local-only design inputs).
+# Never read at build time: COVERS.background in src/lib/blog/taxonomy.js
+# names these files, but nothing on the site consumes them. Covers are
+# produced locally on request. Keep a backup copy off this machine.
+/content/backgrounds/
+

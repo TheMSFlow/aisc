@@ -22,8 +22,16 @@
 - [ ] 8. **[You→Claude] Blog email capture — the "briefing list".** *(after #7, reuses Resend)*
   A subscribe block on the blog (footer and/or end of articles). A first-time SEO visitor rarely buys a $99–$1,099 program on that visit; the list is where unconverted readers go instead of vanishing.
 
-- [ ] 9. **[You] Establish the distribution habit.**
-  Decide the per-briefing routine: each published piece becomes at least one LinkedIn post from Michael + one email to the list. For months 1–6, owned channels — not SEO — are where visitors come from.
+- [ ] 9a. **[You→Claude] Social production: LinkedIn + Instagram.** *(split from the old #9 on 2026-07-28; runs independently of 9b)*
+  **Claude's scope is the video cover (Instagram) and the infographic (LinkedIn, only where the piece has structure worth visualizing), plus video key points on request.** Michael produces the video, writes the post, and posts manually. Posting Mon/Wed/Fri, working the **published** backlog least-recent-first, tiebroken by inbound links. Carousels join later once the routine holds.
+  Post spec settled 2026-07-28: standalone value not a teaser, ~900–1,300 characters, hook must survive the ~200-character "see more" fold, and **the link always goes in the first comment, never the post body**.
+  **Taxonomy landed 2026-07-28:** every post now carries `theme` (5, user-facing on the blog) and `cover` (8, social-only, picks the video-cover background). See `agent-guides/blog/BLOG_BRIEF.md` § Themes and § Covers.
+  **Settled 2026-07-28:** the 8 cover backgrounds are in `content/backgrounds/` (gitignored, filename = cover id), the design spec is in `agent-guides/blog/SOCIAL_GUIDE.md`, and the UTM convention is fixed (`utm_source` linkedin/instagram · `utm_medium` social · `utm_campaign` briefing-&lt;slug&gt; · `utm_content` video/infographic/carousel).
+  The queue and manifest are stubbed at `agent-guides/blog/DISTRIBUTION_LOG.md` (11 published briefings in production order, no assets made yet).
+  **Still open, to settle on the first test run:** where finished assets are stored, the infographic-vs-pull-quote fallback rule, and the cover typeface.
+
+- [ ] 9b. **[You→Claude] Email the list per published briefing.** *(blocked on #8 — there is no list yet)*
+  Each published piece becomes one email. For months 1–6, owned channels — not SEO — are where visitors come from.
 
 ## Phase 2 — Production run (ongoing from now)
 

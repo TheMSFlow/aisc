@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { formatDate } from "@/lib/blog/format";
-import { getAudience, getIndustry, getType } from "@/lib/blog/taxonomy";
+import { getAudience, getIndustry, getTheme } from "@/lib/blog/taxonomy";
 
 function MetaChip({ href, children }) {
   return (
@@ -14,7 +14,7 @@ function MetaChip({ href, children }) {
 }
 
 export default function ArticleHeader({ post }) {
-  const type = getType(post.type);
+  const theme = getTheme(post.theme);
 
   return (
     <header>
@@ -36,7 +36,7 @@ export default function ArticleHeader({ post }) {
           </li>
           <li aria-hidden="true" className="text-msaccent">/</li>
           <li aria-current="page" className="text-dark-blue/60">
-            {type.shortLabel}
+            {theme.shortLabel}
           </li>
         </ol>
       </nav>

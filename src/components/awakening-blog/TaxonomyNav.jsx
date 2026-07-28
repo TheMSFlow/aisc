@@ -1,10 +1,10 @@
 import Link from "next/link";
-import { AUDIENCES, INDUSTRIES, TYPES } from "@/lib/blog/taxonomy";
+import { AUDIENCES, INDUSTRIES, THEMES } from "@/lib/blog/taxonomy";
 
 const GROUPS = [
   { label: "For", entries: AUDIENCES, basePath: "/awakening/for", dimension: "audiences" },
   { label: "Worlds", entries: INDUSTRIES, basePath: "/awakening/industry", dimension: "industries" },
-  { label: "Formats", entries: TYPES, basePath: "/awakening/type", dimension: "type" },
+  { label: "Themes", entries: THEMES, basePath: "/awakening/theme", dimension: "theme" },
 ];
 
 function Chip({ href, active, children }) {

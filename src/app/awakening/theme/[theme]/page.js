@@ -1,46 +1,46 @@
 import { notFound } from "next/navigation";
 import CategoryPage from "@/components/awakening-blog/CategoryPage";
 import { getPostsByTaxonomy } from "@/lib/blog/posts";
-import { ALL_TYPE_IDS, getType } from "@/lib/blog/taxonomy";
+import { ALL_THEME_IDS, getTheme } from "@/lib/blog/taxonomy";
 
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return ALL_TYPE_IDS.map((type) => ({ type }));
+  return ALL_THEME_IDS.map((theme) => ({ theme }));
 }
 
 export async function generateMetadata({ params }) {
-  const { type } = await params;
-  const entry = getType(type);
+  const { theme } = await params;
+  const entry = getTheme(theme);
   if (!entry) return {};
 
   return {
     title: entry.seo.title,
     description: entry.seo.description,
     alternates: {
-      canonical: `/awakening/type/${type}`,
+      canonical: `/awakening/theme/${theme}`,
     },
     openGraph: {
       title: entry.seo.title,
       description: entry.seo.description,
-      url: `/awakening/type/${type}`,
+      url: `/awakening/theme/${theme}`,
       type: "website",
     },
   };
 }
 
-export default async function TypePage({ params }) {
-  const { type } = await params;
-  const entry = getType(type);
+export default async function ThemePage({ params }) {
+  const { theme } = await params;
+  const entry = getTheme(theme);
   if (!entry) notFound();
 
   return (
     <CategoryPage
       entry={entry}
-      dimension="type"
-      path={`/awakening/type/${type}`}
-      eyebrow="Briefings by format"
-      posts={getPostsByTaxonomy("type", type)}
+      dimension="theme"
+      path={`/awakening/theme/${theme}`}
+      eyebrow="Briefings by theme"
+      posts={getPostsByTaxonomy("theme", theme)}
     />
   );
 }
