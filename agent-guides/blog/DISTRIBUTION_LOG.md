@@ -3,7 +3,7 @@
 > Read `agent-guides/blog/SOCIAL_GUIDE.md` first for the cover spec, the infographic-fit rule, and the UTM convention.
 > This file is the manifest: what has been produced, what has shipped, and where the queue stands. It exists so the state of distribution lives here rather than in anyone's head.
 
-**Stubbed 2026-07-28. No assets produced yet.**
+**Stubbed 2026-07-28.** First cover built the same day (row 1, `ai-governance`), which settled the cover build process. See `SOCIAL_GUIDE.md` § Building a Cover.
 
 ---
 
@@ -28,23 +28,34 @@ Asset columns record production. Platform columns record the actual post: date a
 
 | # | Briefing | Cover | Video | Cover img | Infographic | LinkedIn | Instagram |
 |---|----------|-------|-------|-----------|-------------|----------|-----------|
-| 1 | `ai-governance-the-risk-is-already-inside` | ai-governance | — | — | — | — | — |
+| 1 | `ai-governance-the-risk-is-already-inside` | ai-governance | — | ✓ Drive | ✓ Drive (list) | — | — |
 | 2 | `territory-not-tools-the-ai-opportunity-for-leaders` | ai-value | — | — | — | — | — |
 | 3 | `the-briefing-your-board-expects-you-to-have-had` | chiefs-briefing | — | — | — | — | — |
 | 4 | `the-service-you-could-not-afford-to-offer-last-year` | ai-value | — | — | — | — | — |
 | 5 | `your-congregation-is-already-asking-about-ai` | ai-leadership | — | — | — | — | — |
 | 6 | `your-students-adopted-ai-before-your-policy-did` | ai-governance | — | — | — | — | — |
-| 7 | `what-to-delegate-to-ai-and-what-to-never` | ai-fluency | — | — | — | — | — |
+| 7 | `what-to-delegate-to-ai-and-what-to-never` | ai-fluency | — | — | ✓ Drive (matrix) | — | — |
 | 8 | `what-ai-actually-is-for-the-seat-where-decisions-stop` | ai-clarity | — | — | — | — | — |
 | 9 | `why-your-ai-pilot-went-nowhere` | ai-leadership | — | — | — | — | — |
 | 10 | `the-hours-you-lose-every-week-to-work-ai-could-handle` | ai-value | — | — | — | — | — |
 | 11 | `the-cfos-ai-question-is-a-capital-question` | ai-value | — | — | — | — | — |
+| 12 | `ai-fiduciary-duty-what-boards-now-expect` | chiefs-briefing | — | — | — | — | — |
 
-11 published briefings as of 2026-07-28. The 21 banked drafts join this table as they publish.
+12 published briefings as of 2026-07-30. The 20 banked drafts join this table as they publish.
 
 ## Asset locations
 
-**Not yet decided.** Finished videos, covers, and infographics do not belong in this repo: it deploys from git, and video would bloat history permanently (the same reason `content/backgrounds/` is gitignored). Record the chosen home here once settled, and put the per-asset path or link in the row.
+**Settled 2026-07-29: Google Drive, via the Drive for Desktop mount.**
+
+```
+G:\My Drive\SOCIAL MEDIA\covers\
+G:\My Drive\SOCIAL MEDIA\infographics\
+G:\My Drive\SOCIAL MEDIA\videos\
+```
+
+Filenames are `<publish-date>_<cover-id>_<slug>.jpg`, so a plain name sort in Drive reproduces this queue's order. Covers ship as JPEG quality 92, roughly a third the size of the PNG with no visible loss.
+
+Uploading is a file copy onto the mount, not an API call. **After every verified upload the project copy is deleted**: `content/covers/` is a staging area, never an asset library. A row marked `✓ Drive` means the asset exists only in Drive.
 
 ## Notes
 

@@ -2,6 +2,36 @@
 // label is always accurate regardless of the viewer's own timezone.
 const TZ = "Africa/Lagos";
 
+const dayKeyFormat = new Intl.DateTimeFormat("en-CA", {
+  timeZone: TZ,
+  year: "numeric",
+  month: "2-digit",
+  day: "2-digit",
+});
+
+// "2026-08-05" for the given instant, as it falls on the Lagos calendar.
+// Sortable as a plain string.
+function lagosDayKey(date) {
+  const parts = dayKeyFormat.formatToParts(date);
+  const get = (type) => parts.find((p) => p.type === type)?.value;
+  return `${get("year")}-${get("month")}-${get("day")}`;
+}
+
+// Day 7's session runs 2 hours from 7PM, so the cohort is treated as live
+// until 9PM WAT on the final day. Lagos is a fixed +01:00 with no DST, so the
+// cutoff can be pinned directly to that offset.
+const LIVE_CUTOFF_WAT = "T21:00:00+01:00";
+
+// A running cohort stays "live" in the UI through its final day (day 7) and
+// hands over to the next cohort once that day's session has ended.
+export function isCohortLive(cohort, now = new Date()) {
+  if (!cohort) return false;
+  const finalDay = cohort.final_date ?? cohort.end_date;
+  if (!finalDay) return false;
+  const cutoff = new Date(`${lagosDayKey(new Date(finalDay))}${LIVE_CUTOFF_WAT}`);
+  return now.getTime() < cutoff.getTime();
+}
+
 function ordinal(n) {
   if (n % 100 >= 11 && n % 100 <= 13) return `${n}th`;
   switch (n % 10) {

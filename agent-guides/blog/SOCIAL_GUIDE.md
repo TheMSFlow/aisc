@@ -66,6 +66,82 @@ Both utilities are defined in `src/app/globals.css` under `@layer utilities`. Us
 
 The Field and Card families set the headline in white.
 
+## Building a Cover
+
+```
+node scripts/cover.mjs <slug> "Headline" ["Subhead"]
+```
+
+The script reads the briefing's `cover` from its frontmatter, resolves the background art and headline treatment from `COVERS` in `src/lib/blog/taxonomy.js`, and writes `content/covers/<slug>.png` at the art's native **1080×1350**. Output is gitignored and rebuildable.
+
+**The art is a finished frame.** It already carries the wordmark, the texture, the halftone floor, and the theme label in the right colour. The script adds the headline block and nothing else. Never re-draw those elements.
+
+**A dedicated `cover` agent carries these rules.** See `.claude/agents/cover.md`. Ask it for a cover rather than rebuilding the reasoning each time.
+
+### Layout rules
+
+Reverse-engineered from the eight templates in `content/backgrounds/themes.jpg` and implemented in the script:
+
+1. **Type auto-fits.** The script binary-searches the largest size where no word overflows the 660px measure and the block fits the 790px zone. Headlines are meant to be big. **A cover with small type and dead space beneath it is a failed cover.**
+2. **The block is vertically centred in the zone, never top-anchored.** This is why the six-line template starts high and the two-line template starts low. Both stay balanced.
+3. **A short headline does not stretch to fill.** It centres at its width-limited maximum and the background motif carries the rest of the frame. Necessary empty space only.
+4. **The measure is 830px** in a 1080px frame. Narrower than the frame so the headline stacks, but wide enough that ordinary word pairs stay together. It was 660px at first, which put nearly every word on its own row and read as ragged rather than stacked.
+5. **No arrow.** The templates carry a "→" but it reads as a swipe affordance. A cover is a **video poster**, so an arrow tells the viewer the wrong thing. Dropped 2026-07-29.
+
+Reading the fitted size the script reports: the **56px floor** means the headline is too long, so rewrite it. The **156px ceiling** is normal and usually means the measure is the real limit. Single-word lines mean the measure is fighting the type.
+
+**Descenders and `background-clip: text`.** The gradient paints only inside the element box, and a sub-1 line-height pushes descenders past it, where they get no background and vanish. The `y` in "Policy" rendered clipped until `padding-bottom: 0.13em` extended the box under them. Never remove that padding.
+
+### Storage
+
+Covers are written to `content/covers/` (gitignored) as a **staging area only**, then uploaded to Google Drive once Michael confirms them.
+
+**Format is JPEG at quality 100**, produced directly by the script. Never ship a cover as PNG, and never lower the quality: covers are the poster frame for a video and go out at full quality. For reference, the same cover is about 505KB at q100, 205KB at q92, and 605KB as PNG.
+
+Filename, identical in both places:
+
+```
+<publish-date>_<cover-id>_<slug>.jpg
+2026-07-11_ai-governance_ai-governance-the-risk-is-already-inside.jpg
+```
+
+Date first so a plain name sort in Drive reproduces production order, oldest published first. Cover id second so themes group. Slug last so the piece stays identifiable and searchable.
+
+**Upload route: the Drive for Desktop mount, not the API.** `G:\My Drive` is live-synced, so uploading is a file copy. The MCP Drive API takes base64, which for a cover means about 788KB of encoded text per upload and is not worth it.
+
+```
+G:\My Drive\SOCIAL MEDIA\covers\
+G:\My Drive\SOCIAL MEDIA\infographics\
+G:\My Drive\SOCIAL MEDIA\videos\
+```
+
+**After every upload, delete the project copy.** Standing rule, set 2026-07-29. `content/` is a staging area, never an asset library; Drive is the only home for finished assets.
+
+**But confirm the file actually reached the cloud before deleting anything.** Copying onto the mount only queues an upload. Verify with `md5sum` on both paths *and* confirm the file is visible through the Drive API (`search_files` on its title). If either check fails, keep the project copy and say so.
+
+> **Known failure, 2026-07-29: Drive for Desktop paused.** `G:` mounts and lists files normally, writes appear to succeed, and nothing moves in either direction. Root cause was a 0-byte `user-paused` marker in `%LOCALAPPDATA%\Google\DriveFS\`, dated months earlier. The tray-level Resume did not clear it.
+>
+> **Tell-tale symptom:** the mount is a *stale snapshot*. Folders that exist in the cloud are missing from `G:` entirely, and the ones present all predate the marker's date. Compare `ls "/g/My Drive/"` against a `search_files` listing; if they disagree, sync is not running.
+>
+> **Fix:** stop `GoogleDriveFS`, rename the marker to `user-paused.bak`, relaunch `GoogleDriveFS.exe` from `C:\Program Files\Google\Drive File Stream\<version>\`. The mount repopulates and queued uploads go up on their own.
+>
+> Not the account: verify by comparing the folder name under `%LOCALAPPDATA%\Google\DriveFS\` with the `ouid` in any `viewUrl` the API returns.
+
+### Type
+
+- **Headline face is Inter 800.** Not the site's PT Sans Narrow, which is condensed and does not match the templates.
+- **Line height is 1.08, unitless**, so the leading scales with whatever size the auto-fit lands on. Tight enough to read as a stacked block, loose enough that a descender never crowds the cap height of the line beneath it. It was 0.95 at first and the lines touched.
+- **The subhead gap does not scale the same way.** Leading is proportional because it sits between lines of one element; the subhead is a separate element sitting below an `h1` that already carries descender padding. Stacking a proportional margin on top of that threw it far down the frame. It is `max(12px, 0.08 × size)`, near-constant, so the subhead reads as attached to the headline at every fitted size.
+- **The gradient runs on the diagonal**, 135deg, not the 90deg of the CSS token. Same two stops. On a tall stack the diagonal makes the colour progress down the block the way the templates do; a horizontal fill leaves short lines flat in a single colour.
+
+### Headlines are the whole cover
+
+Briefing titles are built for search: long, query-first, and they name the topic. The theme label already sits at the foot of the art, so **the headline never has to name the topic.** Mine the briefing's own argument instead; its pull quote is usually better raw material than its title.
+
+Every headline passes all three checks in `COPY_GUIDE.md` § Headline Rules: visualizable, falsifiable, distinctive.
+
+Worked example from the first cover: `"AI Governance: The Risk Is Already Inside Your Organization"` shortened to `"The Risk Is Already Inside"` still fails the distinctiveness check, since any consultancy could run it. The piece's real argument, that staff usage has already become de facto policy, gives **"Your Staff Already Wrote Your AI Policy"** with the subhead **"You Just Have Not Read It Yet"**.
+
 ## Backgrounds
 
 Source art lives in `content/backgrounds/`, which is **gitignored**. The files are large local-only design inputs; they are never read at build time and nothing on the site consumes them, so a fresh clone will not have them and does not need them. Keep a backup copy off the machine, because git is not holding one.
@@ -120,6 +196,70 @@ An infographic needs **extractable structure**: a list, a sequence, a matrix, a 
 - No structure → do not force one. A forced infographic is a quote card wearing a costume, and it reads as filler.
 
 The fallback for structureless pieces is **still open** (see below). Until it is settled, say so rather than shipping a weak infographic.
+
+### Building one
+
+```
+node scripts/infographic.mjs <slug> <spec.json>
+```
+
+Output is `content/infographics/<date>_<cover-id>_<slug>.jpg`, same 1080×1350 frame and same filename convention as covers, JPEG quality 100, gitignored. The script reports fit; **`OVERFLOW` means cut copy, never shrink the type.**
+
+Spec file:
+
+```json
+{
+  "type": "list",
+  "title": "What AI Governance Actually Answers",
+  "standfirst": "One optional line.",
+  "items": [{ "label": "...", "body": "..." }],
+  "axes": { "x": "...", "y": "..." }
+}
+```
+
+### The style, settled 2026-07-30
+
+An infographic is a **sibling of the cover**, not a new species: same frame, same wordmark at top and theme label at foot, same Inter, same per-theme accent. A Governance infographic carries `gradient-100` exactly as its cover does.
+
+It extends two existing languages:
+
+- **The covers** give it the frame, chrome placement, and accent.
+- **The article SVGs in `public/awakening`** give it the geometry. Those are a flat `msblue` field, quiet `lilac` marks at low opacity, and `warning` reserved for the few elements that carry meaning. No icons, no decoration, one motif.
+
+| Decision | Rule |
+|---|---|
+| Ground | Flat **`dark-blue` `rgb(0,3,76)`** for **all eight themes**. Drawn, not supplied art. Only the accent changes. `DESIGN_GUIDE` reserves dark-blue for maximum authority, which is the right register, and it sits deeper than `msblue` so the accent lifts further. A dark ground also stops the scroll in a mostly-white LinkedIn feed |
+| Mark | `public/ms-icon.svg`, the studio mark, inlined at render so a change to the file is picked up automatically. It pairs with the wordmark at top and is built for dark grounds |
+| Motif | The article-SVG dot field at 5% lilac. Texture, never pattern. If you can read it as wallpaper it is too strong |
+| Accent | Per theme, lifted for legibility on the dark ground. Carries the numerals, the rule under the standfirst, and the foot label. Nothing else |
+| Type | Inter. Title 800, item labels 700 white, body 400 lilac at 58% |
+| Fill | The content fills the frame. A matrix uses `flex:1` so quadrants stretch; a grid that stops halfway leaves the same dead band the covers avoid |
+
+**Archetypes:** `list` (3–5 numbered items, the common case) and `matrix` (2×2, already native to the material via the Delegation Matrix).
+
+### More archetypes, as briefings call for them
+
+Add one when a real briefing needs it, never speculatively. Each new archetype is a permanent maintenance cost and a chance for the system to drift. Likely candidates, in order of how often the corpus seems to want them:
+
+| Archetype | For | Seen in |
+|---|---|---|
+| `comparison` | Two-column before/after, human vs AI | Day 1 material, `what-to-tell-your-team-about-ai-and-their-jobs` |
+| `sequence` | Ordered steps or a timeline where order carries meaning | `territory-not-tools`, the 6-month roadmap phases |
+| `stat` | One number set large with its context | `the-hours-you-lose-every-week`, the margin audit |
+
+### Icons — allowed, with conditions
+
+Icons are welcome **where they carry meaning**, not as decoration on every item.
+
+The tension to respect: the article-SVG language this system inherits uses no icons at all. Its restraint is what makes it read as premium rather than as a template. A generic icon set would undo that faster than any other single change. So:
+
+- **Draw them in the house geometry**, not from a library. Single-weight strokes, brand tokens, the same vocabulary as the article SVGs: circles, rules, dashed boundaries, simple containers.
+- **One visual idea per icon**, drawn from the item's actual content, the way each article SVG takes one motif from its briefing.
+- **All or none within a graphic.** Icons on three of four items looks unfinished.
+- **Never on the `matrix`.** Quadrants are defined by their axes; an icon competes with that reading.
+- **Skip the icon if it only restates the label.** A padlock next to "Who is accountable?" adds nothing and costs restraint.
+
+When icons land, they get their own contrast pass: stroke colour against `dark-blue` at the same AA thresholds as text.
 
 ## The Post
 

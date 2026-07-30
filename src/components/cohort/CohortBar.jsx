@@ -1,22 +1,35 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { useCohort } from "@/context/CohortContext";
 import { useCountdown } from "@/hooks/useCountdown";
-import { formatCohortDates } from "@/utils/cohortFormat";
+import { formatCohortDates, isCohortLive } from "@/utils/cohortFormat";
 import Button from "../global/Button";
 
 export default function CohortBar() {
   const { openCohort, activeCohort, loading } = useCohort();
   const { label } = useCountdown(openCohort?.start_date ?? null);
 
-  if (loading || !openCohort) return null;
+  // Re-evaluated every minute so the bar hands over on the final day
+  // without needing a reload.
+  const [now, setNow] = useState(() => new Date());
+  useEffect(() => {
+    const id = setInterval(() => setNow(new Date()), 60_000);
+    return () => clearInterval(id);
+  }, []);
 
-  const isLive = activeCohort !== null;
+  const isLive = isCohortLive(activeCohort, now);
+
+  // While live, the bar belongs to the running cohort. From its final day on,
+  // it switches to the next open cohort.
+  const cohort = isLive ? activeCohort : openCohort;
+
+  if (loading || !cohort) return null;
 
   // Use final_date (day 7) as the display end so the range spans the full program
   const displayCohort = {
-    ...openCohort,
-    end_date: openCohort.final_date ?? openCohort.end_date,
+    ...cohort,
+    end_date: cohort.final_date ?? cohort.end_date,
   };
   const { dateRange, startTime } = formatCohortDates(displayCohort);
 
