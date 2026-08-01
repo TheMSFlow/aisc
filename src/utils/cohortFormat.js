@@ -32,20 +32,6 @@ export function isCohortLive(cohort, now = new Date()) {
   return now.getTime() < cutoff.getTime();
 }
 
-function ordinal(n) {
-  if (n % 100 >= 11 && n % 100 <= 13) return `${n}th`;
-  switch (n % 10) {
-    case 1:
-      return `${n}st`;
-    case 2:
-      return `${n}nd`;
-    case 3:
-      return `${n}rd`;
-    default:
-      return `${n}th`;
-  }
-}
-
 export function formatCohortDates(cohort) {
   const start = new Date(cohort.start_date);
   const end = new Date(cohort.end_date);
@@ -140,22 +126,4 @@ export function formatPricingDate(date) {
     year: "numeric",
     timeZone: TZ,
   });
-}
-
-export function formatCohortCTA(cohort) {
-  const start = new Date(cohort.start_date);
-  const end = new Date(cohort.end_date);
-
-  const startDay = start.toLocaleDateString(undefined, {
-    weekday: "long",
-    timeZone: TZ,
-  });
-  const endDay = end.toLocaleDateString(undefined, {
-    weekday: "long",
-    timeZone: TZ,
-  });
-
-  return `${startDay} ${ordinal(start.getDate())} \u2013 ${endDay} ${ordinal(
-    end.getDate(),
-  )}, 12PM (WAT)`;
 }
