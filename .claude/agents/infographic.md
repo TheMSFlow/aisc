@@ -68,7 +68,7 @@ Show the render and wait. **Never upload an unconfirmed infographic.**
 
 Once the user confirms:
 
-1. Copy it to `G:\My Drive\SOCIAL MEDIA\infographics\`, the Drive for Desktop mount. Do not use the MCP Drive API: it takes base64, which for one of these is most of a megabyte of encoded text.
+1. Copy it to `G:\My Drive\SOCIAL MEDIA\<publish-date>_<cover-id>_<slug>\`, the briefing's own folder, on the Drive for Desktop mount. Create the folder if this is the first asset for that post. Do not use the MCP Drive API: it takes base64, which for one of these is most of a megabyte of encoded text.
 2. Verify with `md5sum` on both paths.
 3. **Confirm it reached the cloud** via `search_files` on the filename. A copy onto the mount only queues an upload.
 4. **Only when both checks pass, delete the project copy.** If either fails, keep it and tell the user. See the stalled-sync note in `SOCIAL_GUIDE.md`.

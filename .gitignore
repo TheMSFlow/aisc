@@ -52,6 +52,7 @@ next-env.d.ts
 # scripts/infographic.mjs, rebuildable, deleted after upload to Drive)
 /content/covers/
 /content/infographics/
+/content/session-notes/
 
 # social cover source art (large binaries, local-only design inputs).
 # Never read at build time: COVERS.background in src/lib/blog/taxonomy.js

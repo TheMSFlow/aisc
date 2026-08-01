@@ -26,38 +26,39 @@ Asset columns record production. Platform columns record the actual post: date a
 
 ## Queue
 
-| # | Briefing | Cover | Video | Cover img | Infographic | LinkedIn | Instagram |
-|---|----------|-------|-------|-----------|-------------|----------|-----------|
-| 1 | `ai-governance-the-risk-is-already-inside` | ai-governance | — | ✓ Drive | ✓ Drive (list) | — | — |
-| 2 | `territory-not-tools-the-ai-opportunity-for-leaders` | ai-value | — | — | — | — | — |
-| 3 | `the-briefing-your-board-expects-you-to-have-had` | chiefs-briefing | — | — | — | — | — |
-| 4 | `the-service-you-could-not-afford-to-offer-last-year` | ai-value | — | — | — | — | — |
-| 5 | `your-congregation-is-already-asking-about-ai` | ai-leadership | — | — | — | — | — |
-| 6 | `your-students-adopted-ai-before-your-policy-did` | ai-governance | — | — | — | — | — |
-| 7 | `what-to-delegate-to-ai-and-what-to-never` | ai-fluency | — | — | ✓ Drive (matrix) | — | — |
-| 8 | `what-ai-actually-is-for-the-seat-where-decisions-stop` | ai-clarity | — | — | — | — | — |
-| 9 | `why-your-ai-pilot-went-nowhere` | ai-leadership | — | — | — | — | — |
-| 10 | `the-hours-you-lose-every-week-to-work-ai-could-handle` | ai-value | — | — | — | — | — |
-| 11 | `the-cfos-ai-question-is-a-capital-question` | ai-value | — | — | — | — | — |
-| 12 | `ai-fiduciary-duty-what-boards-now-expect` | chiefs-briefing | — | — | — | — | — |
+| # | Briefing | Cover | Session notes | Video | Cover img | Infographic | LinkedIn | Instagram |
+|---|----------|-------|---------------|-------|-----------|-------------|----------|-----------|
+| 1 | `ai-governance-the-risk-is-already-inside` | ai-governance | ✓ Drive (pptx notes + pdf slides) | — | ✓ Drive | ✓ Drive (list) | — | — |
+| 2 | `territory-not-tools-the-ai-opportunity-for-leaders` | ai-value | — | — | — | — | — | — |
+| 3 | `the-briefing-your-board-expects-you-to-have-had` | chiefs-briefing | — | — | — | — | — | — |
+| 4 | `the-service-you-could-not-afford-to-offer-last-year` | ai-value | — | — | — | — | — | — |
+| 5 | `your-congregation-is-already-asking-about-ai` | ai-leadership | — | — | — | — | — | — |
+| 6 | `your-students-adopted-ai-before-your-policy-did` | ai-governance | — | — | — | — | — | — |
+| 7 | `what-to-delegate-to-ai-and-what-to-never` | ai-fluency | — | — | — | ✓ Drive (matrix) | — | — |
+| 8 | `what-ai-actually-is-for-the-seat-where-decisions-stop` | ai-clarity | — | — | — | — | — | — |
+| 9 | `why-your-ai-pilot-went-nowhere` | ai-leadership | — | — | — | — | — | — |
+| 10 | `the-hours-you-lose-every-week-to-work-ai-could-handle` | ai-value | — | — | — | — | — | — |
+| 11 | `the-cfos-ai-question-is-a-capital-question` | ai-value | — | — | — | — | — | — |
+| 12 | `ai-fiduciary-duty-what-boards-now-expect` | chiefs-briefing | — | — | — | — | — | — |
+| 13 | `ai-agents-before-you-hand-over-the-keys` | ai-governance | — | — | — | — | — | — |
 
-12 published briefings as of 2026-07-30. The 20 banked drafts join this table as they publish.
+13 published briefings as of 2026-07-31. The 19 banked drafts join this table as they publish.
 
 ## Asset locations
 
-**Settled 2026-07-29: Google Drive, via the Drive for Desktop mount.**
+**Settled 2026-07-29: Google Drive, via the Drive for Desktop mount. Restructured 2026-08-01 to one folder per briefing**, because a post now carries several documents and filing by asset type scattered them.
 
 ```
-G:\My Drive\SOCIAL MEDIA\covers\
-G:\My Drive\SOCIAL MEDIA\infographics\
-G:\My Drive\SOCIAL MEDIA\videos\
+G:\My Drive\SOCIAL MEDIA\<publish-date>_<cover-id>_<slug>\
 ```
 
-Filenames are `<publish-date>_<cover-id>_<slug>.jpg`, so a plain name sort in Drive reproduces this queue's order. Covers ship as JPEG quality 92, roughly a third the size of the PNG with no visible loss.
+Cover, infographic, and session notes for one briefing all live in its folder. Files inside carry an asset-type token, `<publish-date>_<TYPE>_<cover-id>_<slug>.<ext>` where `TYPE` is `COVER`, `INFOGRAPHIC`, or `SESSION-NOTES`. Sorting folders by name still reproduces this queue's order. Covers ship as JPEG quality 100.
+
+**Videos are not in Drive.** They stay on Michael's machine because of their size.
 
 Uploading is a file copy onto the mount, not an API call. **After every verified upload the project copy is deleted**: `content/covers/` is a staging area, never an asset library. A row marked `✓ Drive` means the asset exists only in Drive.
 
 ## Notes
 
-- **Cover coverage in the current queue:** ai-value ×4, ai-governance ×2, ai-leadership ×2, ai-clarity ×1, ai-fluency ×1, chiefs-briefing ×1. `second-seat` and `emerging-leader` do not appear — their only briefings are still drafts, so those two cover designs get no outing until `reactive-leadership-is-a-margin-problem` and `become-the-ai-authority-at-work-without-the-title` publish.
+- **Cover coverage in the current queue:** ai-value ×4, ai-governance ×3, ai-leadership ×2, chiefs-briefing ×2, ai-clarity ×1, ai-fluency ×1. `second-seat` and `emerging-leader` do not appear — their only briefings are still drafts, so those two cover designs get no outing until `reactive-leadership-is-a-margin-problem` and `become-the-ai-authority-at-work-without-the-title` publish.
 - Row 3 is the first to need a background other than a theme cover (`chiefs-briefing`), and row 8 is the only `ai-clarity` outing in the backlog.

@@ -98,7 +98,10 @@ const [accentA, accentB] = ACCENTS[entry.headline] ?? ACCENTS.light;
 const accentGrad = `linear-gradient(135deg, ${accentA}, ${accentB})`;
 
 const pubDate = raw.match(/^date: "(.+)"$/m)?.[1] ?? "undated";
-const assetName = `${pubDate}_${coverId}_${slug}.jpg`;
+// <date>_<TYPE>_<cover>_<slug>. The type token was added 2026-08-01, when Drive
+// moved to one folder per post: every asset for a briefing now sits together,
+// so the filename has to say which asset it is.
+const assetName = `${pubDate}_INFOGRAPHIC_${coverId}_${slug}.jpg`;
 
 const esc = (s = "") =>
   String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");

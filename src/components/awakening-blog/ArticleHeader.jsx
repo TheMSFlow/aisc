@@ -1,17 +1,6 @@
 import Link from "next/link";
 import { formatDate } from "@/lib/blog/format";
-import { getAudience, getIndustry, getTheme } from "@/lib/blog/taxonomy";
-
-function MetaChip({ href, children }) {
-  return (
-    <Link
-      href={href}
-      className="border border-dark-blue/15 px-3 py-1.5 text-xs text-dark-blue/70 transition-colors hover:border-dark-blue/40 hover:text-dark-blue"
-    >
-      {children}
-    </Link>
-  );
-}
+import { getTheme } from "@/lib/blog/taxonomy";
 
 export default function ArticleHeader({ post }) {
   const theme = getTheme(post.theme);
@@ -64,25 +53,6 @@ export default function ArticleHeader({ post }) {
           className="aspect-video w-full object-cover"
         />
       </figure>
-
-      <div className="mt-6 flex flex-wrap gap-2">
-        {post.audiences.map((id) => {
-          const audience = getAudience(id);
-          return (
-            <MetaChip key={id} href={`/awakening/for/${id}`}>
-              For {audience.shortLabel}
-            </MetaChip>
-          );
-        })}
-        {post.industries.map((id) => {
-          const industry = getIndustry(id);
-          return (
-            <MetaChip key={id} href={`/awakening/industry/${id}`}>
-              {industry.shortLabel}
-            </MetaChip>
-          );
-        })}
-      </div>
     </header>
   );
 }

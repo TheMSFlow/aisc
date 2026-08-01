@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import Section from "@/components/layout/Section";
 import ArticleHeader from "@/components/awakening-blog/ArticleHeader";
+import ArticleTaxonomy from "@/components/awakening-blog/ArticleTaxonomy";
 import AuthorBlock from "@/components/awakening-blog/AuthorBlock";
 import RelatedPosts from "@/components/awakening-blog/RelatedPosts";
 import { renderPostBody } from "@/lib/blog/mdx";
@@ -70,6 +71,7 @@ export default async function ArticlePage({ params }) {
         <ArticleHeader post={post} />
         <div className="awakening-prose mt-10">{renderPostBody(post.content)}</div>
         <AuthorBlock />
+        <ArticleTaxonomy post={post} />
       </Section>
 
       {related.length > 0 && (

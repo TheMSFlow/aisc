@@ -15,12 +15,13 @@ One published briefing produces, on request and one at a time:
 |-------|----------|---------|
 | **Video cover** | Instagram | **Claude** |
 | **Infographic** | LinkedIn | **Claude**, only where the briefing has structure worth visualizing |
-| Video | Instagram, LinkedIn | Michael. Claude supplies **key points** on request, never a script |
+| **Session notes** | YouTube | **Claude.** The deck Michael records the long-form video from |
+| Video | YouTube, cut down for Instagram and LinkedIn | Michael records from the session notes, and cuts the short versions himself |
 | Post copy | Both | Michael, written to the spec below |
 | Posting, scheduling, first comment | Both | Michael, manually |
 | Carousel | LinkedIn | Later, once the routine holds. Template pending |
 
-**Claude's job is the cover image and the infographic.** Everything else is Michael's, handled manually. Offer the rest only when asked.
+**Claude's job is the cover image, the infographic, and the session notes.** Everything else is Michael's, handled manually. Offer the rest only when asked.
 
 **Assets are never produced in batch.** Each is built when Michael asks for it, against the queue below.
 
@@ -101,19 +102,23 @@ Covers are written to `content/covers/` (gitignored) as a **staging area only**,
 Filename, identical in both places:
 
 ```
-<publish-date>_<cover-id>_<slug>.jpg
-2026-07-11_ai-governance_ai-governance-the-risk-is-already-inside.jpg
+<publish-date>_<TYPE>_<cover-id>_<slug>.<ext>
+2026-07-11_COVER_ai-governance_ai-governance-the-risk-is-already-inside.jpg
 ```
 
-Date first so a plain name sort in Drive reproduces production order, oldest published first. Cover id second so themes group. Slug last so the piece stays identifiable and searchable.
+Date first so a plain name sort reproduces production order, oldest published first. `TYPE` second, one of `COVER`, `INFOGRAPHIC`, `SESSION-NOTES`. Cover id third so themes group. Slug last so the piece stays identifiable and searchable. The three builder scripts emit these names; never rename by hand.
 
 **Upload route: the Drive for Desktop mount, not the API.** `G:\My Drive` is live-synced, so uploading is a file copy. The MCP Drive API takes base64, which for a cover means about 788KB of encoded text per upload and is not worth it.
 
+**One folder per briefing. Restructured 2026-08-01**, because a post now carries several documents and filing by asset type scattered them:
+
 ```
-G:\My Drive\SOCIAL MEDIA\covers\
-G:\My Drive\SOCIAL MEDIA\infographics\
-G:\My Drive\SOCIAL MEDIA\videos\
+G:\My Drive\SOCIAL MEDIA\<publish-date>_<cover-id>_<slug>\
 ```
+
+Everything for one briefing lives in that folder: cover, infographic, session notes deck and PDF. The folder name is the asset stem without the type token, so sorting folders by name still reproduces the queue order. The old `covers\`, `infographics\` and `videos\` folders are gone.
+
+**Videos are not in Drive.** They stay on Michael's machine because of their size.
 
 **After every upload, delete the project copy.** Standing rule, set 2026-07-29. `content/` is a staging area, never an asset library; Drive is the only home for finished assets.
 
@@ -173,7 +178,7 @@ https://aistakeholderchallenge.com/awakening/<slug>?utm_source=<platform>&utm_me
 
 | Parameter | Value | Notes |
 |-----------|-------|-------|
-| `utm_source` | `linkedin` \| `instagram` | Lowercase always. One token per platform, never abbreviated |
+| `utm_source` | `linkedin` \| `instagram` \| `youtube` | Lowercase always. One token per platform, never abbreviated. `youtube` added 2026-08-01 with the long-form video |
 | `utm_medium` | `social` | Constant |
 | `utm_campaign` | `briefing-<slug>` | The post's own slug, so every briefing is its own campaign |
 | `utm_content` | `video` \| `infographic` \| `carousel` | Which asset earned the click. This is what tells us whether infographics are worth making |
@@ -247,6 +252,10 @@ Add one when a real briefing needs it, never speculatively. Each new archetype i
 | `sequence` | Ordered steps or a timeline where order carries meaning | `territory-not-tools`, the 6-month roadmap phases |
 | `stat` | One number set large with its context | `the-hours-you-lose-every-week`, the margin audit |
 
+**Designing one is main-session work, not agent work. Settled 2026-07-31.** A new archetype is a one-off design act, so it gets the `frontend-design` skill and a stated design plan before any code. The `infographic` agent deliberately does not carry that skill: it builds against an archetype already specified here, and a template series gains nothing from per-build novelty. Specify the archetype in this section first, then let the agent produce against it.
+
+One question worth answering while designing: the `list` archetype numbers its items, and numbering should encode something true about the content. Where the items are a set rather than a sequence, consider whether the numerals are earning their place.
+
 ### Icons — allowed, with conditions
 
 Icons are welcome **where they carry meaning**, not as decoration on every item.
@@ -296,17 +305,79 @@ Same reframe, adapted to the caption. Captions carry no clickable link, so the b
 
 `michaelsteve.com/links` already exists as a Linktree-style page and is the natural bio destination rather than swapping a raw URL each time.
 
-## Video Key Points
+## Session Notes
 
-Michael speaks off the top of his head, following a sequence. **Deliver key points, never a script.** A written script produces a read-aloud performance, which is the opposite of what the video is for.
+**Settled 2026-08-01, replacing the old "video key points" sketch**, which was written for a short clip and never used.
 
-The format, on request:
+One published briefing becomes one **YouTube long-form video of at least 15 minutes**. Instagram and LinkedIn get summaries and excerpts cut down from it, by Michael, manually. Session notes are the deck he records from.
 
-- **Opening line.** One sentence, the way the video should start. This is the only thing written to be said close to verbatim.
-- **3 to 5 beats**, in order. Each beat is one idea in a phrase, not a sentence to recite. Enough to hold in the head while talking.
-- **Closing thought.** Where to land, not the words to land it with.
+```
+node scripts/session-notes.mjs <slug> <spec.json>
+node scripts/deck-preview.mjs <the .pptx>     # then actually look at it
+```
 
-Beats come from the briefing's own argument structure, in the order it makes them. Keep the whole thing to something scannable at a glance before recording, and never exceed seven items total.
+Output is a 16:9 deck plus a PDF, both in `content/session-notes/` (gitignored staging), and both ship to the briefing's Drive folder.
+
+**The two files are not the same thing, and the split is deliberate:**
+
+| File | What it holds | For |
+|---|---|---|
+| `.pptx` | Slides **and** speaker notes | Recording. Presenter view puts the private layer in front of Michael |
+| `.pdf` | Slides only, one page per slide | Showing. Clean, nothing on it that is not for viewers |
+
+LibreOffice can append a notes page per slide via `ExportNotesPages`, and that was the first cut. It was dropped 2026-08-01: it doubles the file and repeats every slide. **Notes belong to the pptx alone.**
+
+### Two layers, and the split is the point
+
+- **The slide** is audience-facing. Sparse, no cues, nothing that only makes sense to the speaker.
+- **The speaker notes** are private, seen only in presenter view. They carry the expansion prompt, the repeated line, the timing, and what to cut when running long.
+
+### The arc
+
+Three named parts, sequenced on film pacing rather than as a flat list. Part names are announced on camera and are alliterative wherever it arrives naturally, because that is what makes three parts repeatable afterwards.
+
+| Block | Share | Job |
+|---|---|---|
+| **OPEN** | ~10% | The scene the viewer recognizes from their own week, then the promise |
+| **PART 1** | ~25% | Sets up what the viewer currently assumes |
+| **PART 2** | ~30% | The turn. What is actually true |
+| **PART 3** | ~25% | What it costs and what to do. The objection is named here |
+| **CLOSE** | ~10% | The decision, the stakes line, then where the briefing lives |
+
+**Timings are indicative, not targets.** Runtime varies with the briefing and the delivery is off the top of his head. What is fixed is the order and the relative weight.
+
+Each part carries exactly four things, in this order:
+
+1. **The expansion prompt first**, cueing Michael's own story, cohort example, or worked number. The story earns the principle; stating the principle first kills it.
+2. **Part name and subtitle.**
+3. **2 to 4 rows**, each a bold label and a muted sub-line. Phrases, never sentences.
+4. **One speakable line**, verbatim from the briefing's pull quote or sharpest sentence, said twice: once entering the part, once leaving it.
+
+### Why the expansion prompt is not optional
+
+A briefing runs 1,000 to 1,800 words, which is 7 to 13 minutes read aloud, and these pieces are written tight with nothing to trim. Notes that only re-sequence the briefing run dry around nine minutes and the rest becomes padding. Roughly half the runtime has to come from material the briefing does not contain. The prompt is where that comes from, and it asks for the same point from a different angle rather than a new idea.
+
+### Hard rules
+
+- **Never a script.** Only the opening line and the one repeated line per part are written to be said close to verbatim. Everything else is a cue.
+- Only published briefings, same rule as covers.
+- The builder **fails the build** on an em-dash anywhere in the spec, and names the field. Do not work around it.
+- **pptxgenjs drops a speaker note entirely if the string contains `\n`**, silently, writing the notesSlide with only its slide number. The builder translates newlines to CR, the only separator that survives. Do not call `addNotes` with `\n`.
+
+### The title asymmetry, which is easy to get backwards
+
+A **cover headline** never names the topic, because the theme label at the foot already does. A **YouTube title** must do the opposite and front-load the phrase people search, tracking the briefing's primary query from `TOPIC_LEDGER.md`. Two different jobs on the same briefing.
+
+### Design
+
+The deck reproduces the AISC Day 1-3 session notes template, screenshots in `content/session-notes-template/`. Two slide families:
+
+- **Dark** (title, part dividers, close): deep navy ground `#0D0A47`, periwinkle `#6368DA` bands top and bottom, everything centred.
+- **Light** (content): white ground, navy hairline at the top, eyebrow, indigo `#1A237E` headline, a short thick rule under it, numbered rows on an indigo-to-periwinkle ramp, the speakable line in a pale `#F0F0FA` strip with a speech bubble, then a grey foot bar with a right-aligned label.
+
+The per-theme accent the covers and infographics use is deliberately **not** used here: this template is navy and periwinkle only, and the theme survives in the foot label. Type is Inter.
+
+**Do not put `transparency` on a text run.** It loses its alignment on export and the text overflows the slide edge. Use a pre-dimmed solid colour.
 
 ## Copy Rules for Social
 
@@ -326,7 +397,6 @@ These are unsettled. Do not invent an answer; ask. All three of the first are ex
 
 | Decision | Status |
 |----------|--------|
-| **Asset storage** | Where finished videos, covers, and infographics live, and how the log records their location. Not the git repo: it deploys from git and video would bloat it. Note `content/backgrounds/` is already gitignored, so source art needs a backup home regardless |
 | **Infographic fallback** | What LinkedIn gets when a briefing has no structure to visualize. Pull-quote card, or video only that day |
-| **Cover typeface** | The template set's headline face is not yet confirmed against the site's `ptsans`. Confirm before the first cover is built |
+| **Session-notes spec files** | The `.spec.json` per briefing is the editorial source of its deck, but it currently sits in gitignored staging, so it is lost on a fresh clone. Decide whether specs move into version control alongside the MDX |
 | **Carousel template** | Michael supplies later |

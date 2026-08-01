@@ -23,7 +23,7 @@ Show the render and wait. **Never upload an unconfirmed cover.**
 
 Once the user confirms:
 
-1. Copy it to `G:\My Drive\SOCIAL MEDIA\covers\`. That path is the Drive for Desktop mount, so uploading is a plain file copy. Do not use the MCP Drive API: it takes base64, which for a cover is most of a megabyte of encoded text.
+1. Copy it to `G:\My Drive\SOCIAL MEDIA\<publish-date>_<cover-id>_<slug>\`, the briefing's own folder. Create the folder if this is the first asset for that post. That path is the Drive for Desktop mount, so uploading is a plain file copy. Do not use the MCP Drive API: it takes base64, which for a cover is most of a megabyte of encoded text.
 2. Verify with `md5sum` on both paths.
 3. **Confirm it reached the cloud**, via `search_files` on the filename. A copy onto the mount only queues an upload; it does not prove one happened.
 4. **Only when both checks pass, delete the project copy.** Standing rule: `content/covers/` is a staging area, never an asset library. If either check fails, keep the project copy and tell the user.
