@@ -106,7 +106,7 @@ export default function Coaching() {
             </div>
 
             <Button
-              href="https://calendly.com/michaelsteve/ai-stakeholder-coaching-discovery-call"
+              href="https://cal.com/michaelsteve/ai-stakeholder-coaching-discovery-call"
               variant="primary"
               className="mt-6 w-full justify-center py-3 font-semibold"
             >

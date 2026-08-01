@@ -77,7 +77,7 @@ export const CATALOG = {
       { label: "Annual", price: PRICING.coaching.year, note: "Best value" },
     ],
     cta: "Start with Coaching",
-    href: "https://calendly.com/michaelsteve/ai-stakeholder-coaching-discovery-call",
+    href: "https://cal.com/michaelsteve/ai-stakeholder-coaching-discovery-call",
     buttonVariant: "dark",
     ctaNote: "Your first step is a 15-minute discovery call.",
     description:
