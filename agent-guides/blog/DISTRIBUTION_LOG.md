@@ -41,8 +41,10 @@ Asset columns record production. Platform columns record the actual post: date a
 | 11 | `the-cfos-ai-question-is-a-capital-question` | ai-value | — | — | — | — | — | — |
 | 12 | `ai-fiduciary-duty-what-boards-now-expect` | chiefs-briefing | — | — | — | — | — | — |
 | 13 | `ai-agents-before-you-hand-over-the-keys` | ai-governance | — | — | — | — | — | — |
+| 14 | `reactive-leadership-is-a-margin-problem` | second-seat | — | — | — | — | — | — |
+| 15 | `brief-ai-like-you-brief-your-team` | ai-fluency | — | — | — | — | — | — |
 
-13 published briefings as of 2026-07-31. The 19 banked drafts join this table as they publish.
+15 published briefings as of 2026-08-05. The 17 banked drafts join this table as they publish.
 
 ## Asset locations
 
@@ -60,5 +62,5 @@ Uploading is a file copy onto the mount, not an API call. **After every verified
 
 ## Notes
 
-- **Cover coverage in the current queue:** ai-value ×4, ai-governance ×3, ai-leadership ×2, chiefs-briefing ×2, ai-clarity ×1, ai-fluency ×1. `second-seat` and `emerging-leader` do not appear — their only briefings are still drafts, so those two cover designs get no outing until `reactive-leadership-is-a-margin-problem` and `become-the-ai-authority-at-work-without-the-title` publish.
+- **Cover coverage in the current queue:** ai-value ×4, ai-governance ×3, ai-fluency ×2, ai-leadership ×2, chiefs-briefing ×2, ai-clarity ×1, second-seat ×1. `second-seat` entered the queue at row 14 on 2026-08-03. `emerging-leader` still has no outing; its only briefing, `become-the-ai-authority-at-work-without-the-title`, is still a draft.
 - Row 3 is the first to need a background other than a theme cover (`chiefs-briefing`), and row 8 is the only `ai-clarity` outing in the backlog.
