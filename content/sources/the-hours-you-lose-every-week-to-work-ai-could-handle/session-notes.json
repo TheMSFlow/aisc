@@ -1,0 +1,138 @@
+{
+  "sections": [
+    { "name": "Where the week went", "subtitle": "The question you cannot answer" },
+    { "name": "Two kinds of work", "subtitle": "Wearing the same disguise" },
+    { "name": "The audit", "subtitle": "One question per task" },
+    { "name": "The arithmetic", "subtitle": "Turn the hours into money" },
+    { "name": "The hours are the beginning", "subtitle": "Not the win" },
+    { "name": "Margin", "subtitle": "A leadership asset, not a trick" }
+  ],
+  "slides": [
+    { "type": "title" },
+    {
+      "type": "content",
+      "section": 1,
+      "headline": "Could you say where the week went?",
+      "standfirst": "Think back to Friday. Most leaders cannot answer with a straight face.",
+      "rows": [
+        {
+          "label": "The week was full of the wrong thing",
+          "body": "Not empty. Full of reading, sorting, checking, compiling, reformatting, chasing status. Work that felt necessary in the moment and left nothing behind."
+        },
+        {
+          "label": "The calendar and the direction disagree",
+          "body": "The calendar says you were busy. The direction of your organization says the busyness did not buy very much."
+        },
+        {
+          "label": "There is a number hiding inside that feeling",
+          "body": "It is almost certainly larger than you think. Finding it, and then deciding what to do about it, is the whole job."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 2,
+      "headline": "Two kinds of work wearing the same disguise",
+      "standfirst": "Every task on your calendar is one of two things.",
+      "rows": [
+        {
+          "label": "Judgment work depletes",
+          "body": "It requires discernment and trade-offs, carries real consequences, cannot be safely repeated without context, and improves with your experience. Deciding what not to pursue. Calling it with incomplete information."
+        },
+        {
+          "label": "Attention work expands",
+          "body": "It requires focus, not judgment. Repeatable, pattern-driven, predictable outputs. Reading and sorting, compiling reports, rewriting the same explanation. It does not get better because you are senior."
+        },
+        {
+          "label": "The disguise works because attention work is loud",
+          "body": "It feels urgent because it is noisy, not because it is consequential. If delaying something by 24 hours would not change the outcome, it is attention work wearing urgency as a costume."
+        }
+      ],
+      "quote": "If everything needs your attention, nothing gets your judgment."
+    },
+    {
+      "type": "content",
+      "section": 3,
+      "headline": "The audit: one question per task",
+      "standfirst": "One sitting, one question, and a calendar you already have.",
+      "rows": [
+        {
+          "label": "Pull up last week and list what you did",
+          "body": "Calendar, sent messages, the documents you touched. What you personally did, not what your team did. Include the meeting you attend out of habit and the report you compile because you always have."
+        },
+        {
+          "label": "Ask whether a capable person could do most of it",
+          "body": "If someone with clear instructions could do 80 percent of a task, it is not judgment work. It is a delegation candidate, to a person or to AI, and every hour it took belongs in your count."
+        },
+        {
+          "label": "Expect ten to twenty hours",
+          "body": "That is what leaders find when they run this with structure. On paper, in their own handwriting, from their own calendar. The number is usually where this stops being interesting and becomes uncomfortable."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 4,
+      "headline": "Turn the hours into money",
+      "standfirst": "Your own arithmetic. You do not need a research firm for this part.",
+      "rows": [
+        {
+          "label": "The calculation",
+          "body": "Take what your time costs the organization in a year, divide by the hours you actually work, and multiply by the number you just found. Multiply by fifty for the annual figure."
+        },
+        {
+          "label": "And it is still the smaller half of the cost",
+          "body": "The arithmetic only prices the hours. It does not price what the hours were taken from: the thinking that kept getting deferred, the patterns you would have seen early, the decisions that waited so long they made themselves."
+        },
+        {
+          "label": "Why the number comes back larger than expected",
+          "body": "Attention work hides because it arrives in small pieces, and no single status email costs an hour. The audit works because it counts the pieces all at once, where they can no longer pretend to be small."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 5,
+      "headline": "The hours are the beginning, not the win",
+      "standfirst": "Recovered hours with no destination do not stay recovered.",
+      "rows": [
+        {
+          "label": "The same work grows back within a month",
+          "body": "Because the system that produced it is still running. This is where most time-saving advice stops, and it is exactly where it goes wrong."
+        },
+        {
+          "label": "So decide what the hours buy before you recover them",
+          "body": "Naming the destination in advance is what stops the recovered time refilling with the work you just cleared out of it."
+        },
+        {
+          "label": "The strongest destinations are the ones only you can pursue",
+          "body": "Sorting the work deliberately, task by task. Claiming a specific position in your world that nobody has taken. Building the thing that was unaffordable until this year."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 6,
+      "headline": "Margin is a leadership asset",
+      "standfirst": "The deeper point here is not efficiency.",
+      "rows": [
+        {
+          "label": "Margins are the space where decisions breathe",
+          "body": "Where context gets considered, trade-offs get weighed, and direction gets chosen instead of reacted to."
+        },
+        {
+          "label": "When margins collapse, the loudest issue wins",
+          "body": "Everything feels urgent and everything feels risky. That is not a personality flaw. It is what happens when a leader's judgment has been pre-spent on work that never needed it."
+        },
+        {
+          "label": "Treat the number like any other asset that size",
+          "body": "With a plan, and with some respect for how long you let it leak before you looked."
+        }
+      ]
+    },
+    {
+      "type": "close",
+      "line": "Run the audit this week. Get the number. The hours were never missing. They were unexamined."
+    }
+  ]
+}

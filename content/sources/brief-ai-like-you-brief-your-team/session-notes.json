@@ -1,0 +1,168 @@
+{
+  "sections": [
+    { "name": "The briefing problem", "subtitle": "You have been doing this for years" },
+    { "name": "The mental model", "subtitle": "A capable stranger, not a search box" },
+    { "name": "The three-part brief", "subtitle": "Role, stage, deliverable" },
+    { "name": "A real brief", "subtitle": "Written out in full" },
+    { "name": "When the first draft misses", "subtitle": "Direct rather than restart" },
+    { "name": "Two disciplines", "subtitle": "What keeps the skill trustworthy" },
+    { "name": "One task", "subtitle": "This week, and only one" }
+  ],
+  "slides": [
+    { "type": "title" },
+    {
+      "type": "content",
+      "section": 1,
+      "headline": "Getting good work out of AI is a briefing problem",
+      "standfirst": "And you have been briefing people for years.",
+      "rows": [
+        {
+          "label": "Think about the best delegator you ever worked for",
+          "body": "When they handed something off, you knew what it was for, who it was for, what good looked like, and when they wanted to see it again."
+        },
+        {
+          "label": "Now think about the worst",
+          "body": "Just take a pass at this, followed three days later by disappointment that you read their mind wrong."
+        },
+        {
+          "label": "The people getting poor results are not under-skilled",
+          "body": "They are delegating like the second manager. Vague in, vague out, then blaming the intern. This is why leaders are better positioned for AI than the technical people they assume have the advantage."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 2,
+      "headline": "A capable stranger, not a search engine",
+      "standfirst": "Most people's results are capped by one wrong habit.",
+      "rows": [
+        {
+          "label": "They type into AI the way they type into a search box",
+          "body": "Three words, no context, take what comes. Leaders who treat AI like a search engine get search-engine results."
+        },
+        {
+          "label": "Replace the model",
+          "body": "Treat it as a highly capable new team member: intelligent, fast, tireless, astonishingly widely read, and completely new to your organization."
+        },
+        {
+          "label": "It knows the world, not your world",
+          "body": "It knows how things are generally done and nothing about your audience, your standards, your situation, your voice. Everything you would tell a talented stranger on their first day is what it needs."
+        },
+        {
+          "label": "Where the analogy breaks",
+          "body": "A new hire accumulates context. AI largely starts cold. Some tools added memory features as of mid-2026, but it is uneven across products, so assume yesterday's explanation is gone and the context travels with the brief."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 3,
+      "headline": "The three-part brief",
+      "standfirst": "Every strong brief you have ever given carries these three things.",
+      "rows": [
+        {
+          "label": "Assign the role",
+          "body": "Tell it who to be before what to do. Act as a senior HR director preparing for a difficult conversation produces categorically different work than write some talking points, because the role sets the lens."
+        },
+        {
+          "label": "Set the stage",
+          "body": "Who the audience is, what the purpose is, what has already happened. One sentence of this transforms everything produced after it. It is the difference between generically correct and made for your situation."
+        },
+        {
+          "label": "Define the deliverable",
+          "body": "Be precise about the shape of done: format, length, tone, what it must include and what it must avoid. You would never tell a designer to make something nice."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 4,
+      "headline": "A real brief, written out in full",
+      "standfirst": "A division head owes a monthly update upward, and the month went badly.",
+      "rows": [
+        {
+          "label": "The role, in the first sentence",
+          "body": "Act as a chief of staff who has written monthly updates for a decade, for executives who read fast and dislike preamble."
+        },
+        {
+          "label": "The situation and the audience, in the middle",
+          "body": "I run operations for a 40-person division and report to a COO who has been supportive but is under pressure too. We missed our delivery target by 9 percent this month, mostly because two people left in April."
+        },
+        {
+          "label": "The shape of done, at the end",
+          "body": "A one-page update in three short sections, what happened, why, and what I am doing about it, under 400 words, plain declarative sentences, leading with the miss rather than burying it."
+        }
+      ],
+      "quote": "Nothing technical. No special syntax. It is what you would say to a competent assistant in your doorway, and it takes ninety seconds to type."
+    },
+    {
+      "type": "content",
+      "section": 5,
+      "headline": "When the first output misses, direct rather than restart",
+      "standfirst": "Amateurs start over or give up. Leaders redirect, as they would a person.",
+      "rows": [
+        {
+          "label": "Redirect what is close",
+          "body": "Keep the structure and tone. The opening is too formal, make it direct. Sharpen the recommendation in the second paragraph. Progress preserved, correction targeted."
+        },
+        {
+          "label": "Narrow the frame when the output is generic",
+          "body": "Do not write this for a general audience. Write it for a CFO who has already approved the budget and needs to communicate the decision, not justify it."
+        },
+        {
+          "label": "Set the contrast when it keeps defaulting",
+          "body": "Say what you do not want with the same precision as what you do. No corporate announcement voice. One leader, writing honestly to their team."
+        },
+        {
+          "label": "Ask for the thinking first on complex work",
+          "body": "List the key tensions and trade-offs in this decision first. Review the reasoning, then build. You would run a big decision with a strategist exactly that way."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 6,
+      "headline": "Two disciplines that keep the skill safe",
+      "standfirst": "Briefing gets you quality. These two keep it trustworthy.",
+      "rows": [
+        {
+          "label": "Verify before it travels",
+          "body": "AI produces errors with the same confidence as accuracies. Any fact, figure or claim gets checked before the work leaves your hands, and anything AI-assisted that reaches colleagues or clients gets your eyes first."
+        },
+        {
+          "label": "The brief was yours, so the output is yours",
+          "body": "The same discipline decides what gets briefed at all. A team briefing AI without shared standards is running ungoverned whether anyone meant it that way or not."
+        },
+        {
+          "label": "Save what works",
+          "body": "When a brief produces excellent output, keep it. Six months of this and you have your own operating manual for directing AI in your world, which no subscription provides."
+        }
+      ],
+      "quote": "The quality of what AI gives you is set almost entirely by the quality of what you give it. That has always been true of delegation. This is delegation."
+    },
+    {
+      "type": "content",
+      "section": 7,
+      "headline": "One task this week",
+      "standfirst": "Do not transform your workflow. Pick one thing and do it properly.",
+      "rows": [
+        {
+          "label": "Pick one recurring piece of writing or analysis",
+          "body": "Ideally something from the attention work that quietly eats a manager's week, and something you will have to do again next month."
+        },
+        {
+          "label": "Brief it properly, then redirect twice",
+          "body": "Role, stage, deliverable. Then two rounds of direction rather than starting over. Then verify it, and save the brief that worked."
+        },
+        {
+          "label": "One task teaches more than a month of experimenting",
+          "body": "Done well, and the confidence it builds is the real product. The first brief needs nothing except the next task on your list and three honest sentences."
+        }
+      ]
+    },
+    {
+      "type": "close",
+      "line": "You have been training for this skill your whole leadership life. Use it."
+    }
+  ]
+}

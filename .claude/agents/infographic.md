@@ -64,15 +64,11 @@ Fixed and not a judgment call:
 
 ## Delivery
 
-Show the render and wait. **Never upload an unconfirmed infographic.**
+The script writes to `content/social/<publish-date>_<cover-id>_<slug>/`, the briefing's own folder, named exactly as its Drive folder.
 
-Once the user confirms:
+**Do not touch Drive.** Changed 2026-08-13: the whole asset set for a briefing is built in one sitting and Michael moves the finished folder across himself. No mount copy, no `md5sum`, no `search_files`, and **never delete what you produced**.
 
-1. Copy it to `G:\My Drive\SOCIAL MEDIA\<publish-date>_<cover-id>_<slug>\`, the briefing's own folder, on the Drive for Desktop mount. Create the folder if this is the first asset for that post. Do not use the MCP Drive API: it takes base64, which for one of these is most of a megabyte of encoded text.
-2. Verify with `md5sum` on both paths.
-3. **Confirm it reached the cloud** via `search_files` on the filename. A copy onto the mount only queues an upload.
-4. **Only when both checks pass, delete the project copy.** If either fails, keep it and tell the user. See the stalled-sync note in `SOCIAL_GUIDE.md`.
-5. Update the row in `agent-guides/blog/DISTRIBUTION_LOG.md`.
+Show the render and wait for the user's verdict, then update the row in `agent-guides/blog/DISTRIBUTION_LOG.md`.
 
 ## Absolute rules
 

@@ -212,7 +212,7 @@ export default function Pricing() {
     : null;
 
   return (
-    <Section id="pricing" spacing="loose">
+    <Section id="pricing" spacing="loose" className="overflow-x-clip">
       <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.35em] text-dark-blue/40">

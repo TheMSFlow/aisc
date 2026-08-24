@@ -48,11 +48,18 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# generated social assets (output of scripts/cover.mjs and
-# scripts/infographic.mjs, rebuildable, deleted after upload to Drive)
+# generated social assets. One folder per briefing under content/social/,
+# named exactly as its Drive folder, holding the whole set for that post:
+# cover, script, infographic, session notes. Michael moves the folder to
+# Drive himself, so nothing here is uploaded or deleted by an agent.
+# The four dirs below are the pre-2026-08-13 per-asset-type staging layout,
+# kept ignored so any stragglers on an old clone stay out of the repo.
+/content/social/
+/content/.preview/
 /content/covers/
 /content/infographics/
 /content/session-notes/
+/content/scripts/
 
 # social cover source art (large binaries, local-only design inputs).
 # Never read at build time: COVERS.background in src/lib/blog/taxonomy.js

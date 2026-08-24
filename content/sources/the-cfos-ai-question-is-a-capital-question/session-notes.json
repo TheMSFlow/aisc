@@ -1,0 +1,117 @@
+{
+  "sections": [
+    { "name": "The framing to reject", "subtitle": "It arrives dressed as technology" },
+    { "name": "Where it lands first", "subtitle": "Inside your own function" },
+    { "name": "Three allocation decisions", "subtitle": "Hiding inside the AI noise" },
+    { "name": "The number the board wants", "subtitle": "Build it before the question" },
+    { "name": "The unclaimed territory", "subtitle": "An owner for the economics" }
+  ],
+  "slides": [
+    { "type": "title" },
+    {
+      "type": "content",
+      "section": 1,
+      "headline": "Every AI request arrives dressed as technology",
+      "standfirst": "Convenient for the requesters. It should not survive contact with your seat.",
+      "rows": [
+        {
+          "label": "How they arrive",
+          "body": "Platforms, licenses, pilots, transformation. Framed as technology because technology budgets get evaluated on plausibility and enthusiasm rather than on returns."
+        },
+        {
+          "label": "What AI actually is from the finance chair",
+          "body": "A repricing event. The cost of certain categories of work, analysis, drafting, processing, reporting, monitoring, is falling steeply and unevenly across your industry."
+        },
+        {
+          "label": "Repricing events are capital allocation stories",
+          "body": "Not technology stories. And capital allocation is the question you already own, which makes this yours rather than the technology function's."
+        }
+      ],
+      "quote": "Every AI proposal is a capital allocation wearing a technology costume. Undress it before you fund it."
+    },
+    {
+      "type": "content",
+      "section": 2,
+      "headline": "Where the repricing lands first",
+      "standfirst": "Start inside your own function. Finance is unusually exposed, usefully.",
+      "rows": [
+        {
+          "label": "A large share of finance work is patterned",
+          "body": "Reconciliation, report assembly, variance narrative, compliance documentation, and the monthly close's long tail of checking and formatting. Patterned work is precisely what AI absorbs under direction."
+        },
+        {
+          "label": "Run the audit on your own department",
+          "body": "Which of these hours require judgment, and which merely require attention? Finance leaders who run it typically find the attention share embarrassingly large."
+        },
+        {
+          "label": "That is good news in an uncomfortable costume",
+          "body": "It means capacity for the work the function never has hours for: forward-looking analysis, decision support, and the partnership with the business that every transformation deck promises and every month-end buries."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 3,
+      "headline": "Three allocation decisions hiding in the noise",
+      "standfirst": "The personal version was the smaller half. This is the capital question.",
+      "rows": [
+        {
+          "label": "Which friction is worth funding?",
+          "body": "Requests arrive as tool proposals. Evaluate them as friction claims. Not is this capability impressive, but what recurring cost does this remove and who is bleeding from it weekly. Fund the ones with a named friction and an owner attached."
+        },
+        {
+          "label": "What does the repricing do to your competitive economics?",
+          "body": "Somewhere a competitor is rebuilding a cost structure on the assumption that analysis and processing are cheap. They will not announce it. It surfaces as pricing you cannot match and margins you cannot explain."
+        },
+        {
+          "label": "What is the risk book?",
+          "body": "Confidential data entering unvetted tools, material numbers shaped by unverified outputs, vendor dependencies with unread liability ceilings. The discipline is not refusal. It is pricing."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 4,
+      "headline": "The number the board will eventually ask for",
+      "standfirst": "Within a few quarters someone will ask what the AI spend is buying.",
+      "rows": [
+        {
+          "label": "The question is already on its way",
+          "body": "AI has crossed from the innovation agenda to the fiduciary one, and directors are expected to notice. This is a prediction you can bank."
+        },
+        {
+          "label": "The CFOs who answer well built the measurement first",
+          "body": "Baseline hours and costs on the frictions being addressed, actual time and error movement after, and subscription spend consolidated in one place instead of scattered across departmental budgets."
+        },
+        {
+          "label": "Point a flashlight at the spend this quarter",
+          "body": "Most organizations already spend more on AI than any single person knows, in seats, add-ons and personal-card subscriptions. Consolidating the real number is unglamorous and clarifying."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 5,
+      "headline": "The territory nobody has claimed",
+      "standfirst": "Every organization is about to need an owner for the economics of AI.",
+      "rows": [
+        {
+          "label": "Not the technology. The economics",
+          "body": "What it costs, what it returns, what it risks, and what it changes about the competitive position of the organization."
+        },
+        {
+          "label": "It belongs to the seat that already owns capital discipline",
+          "body": "That territory is unclaimed in most organizations, and it sits far more naturally with finance than with technology."
+        },
+        {
+          "label": "Claiming it requires what it always requires",
+          "body": "Clarity you own rather than borrow, fluency with the tools your organization is already buying, and a declared position. The CFO who claims it becomes the voice the board relies on."
+        }
+      ]
+    },
+    {
+      "type": "close",
+      "line": "The repricing is underway either way. The only open question at your desk is the one your desk was built for: who allocates it."
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "sections": [
+    { "name": "The agenda moved", "subtitle": "From innovation to duty of care" },
+    { "name": "Why the duty attaches now", "subtitle": "Three realities, no new law needed" },
+    { "name": "What oversight means", "subtitle": "Three questions, kept current" },
+    { "name": "The five questions", "subtitle": "Serious boards ask these" },
+    { "name": "For the executive", "subtitle": "Arrive with a position" }
+  ],
+  "slides": [
+    { "type": "title" },
+    {
+      "type": "content",
+      "section": 1,
+      "headline": "AI moved from one agenda to another",
+      "standfirst": "If the board packet still files it under innovation, the packet is out of date.",
+      "rows": [
+        {
+          "label": "It used to sit under innovation",
+          "body": "A forward-looking slide, safely down the agenda, owned by whoever ran technology. Not long ago that was entirely reasonable."
+        },
+        {
+          "label": "Now it is a duty-of-care matter",
+          "body": "Directors owe care and diligence on matters material to the organization. AI touches revenue, cost structure, workforce, customer trust and risk exposure at once, in most organizations simultaneously."
+        },
+        {
+          "label": "Materiality is not the board's decision to make",
+          "body": "It is a condition the board is expected to notice. No regulator had to announce this on a particular Tuesday for it to be true."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 2,
+      "headline": "Why the duty attaches now",
+      "standfirst": "Three realities, and none of them require a new law to be true.",
+      "rows": [
+        {
+          "label": "It is already inside the organization",
+          "body": "Employees adopt AI faster than organizations govern it. Confidential information moving through unapproved tools, uneven work shipping under the organization's name, decisions quietly shaped by systems nobody vetted."
+        },
+        {
+          "label": "It is material to strategy",
+          "body": "When a technology can move cost structure and open or close revenue, capital is being allocated around it, by your organization or by whoever competes with it. Directors who cannot engage with that cannot oversee strategy."
+        },
+        {
+          "label": "Failure now has precedent shape",
+          "body": "Boards have watched a generation of technology-driven governance failures. Nobody at a board table in 2026 can credibly call AI risk unforeseeable, and foreseeability is what converts a surprise into a finding."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 3,
+      "headline": "What oversight actually means here",
+      "standfirst": "Not directors becoming technologists. Three questions, kept current.",
+      "rows": [
+        {
+          "label": "Where does AI touch us today?",
+          "body": "An inventory: operations, products, informal employee use, and what vendors embed in what they sell you. Most boards asking this for the first time are surprised by the informal column, and the surprise is the point."
+        },
+        {
+          "label": "Who is accountable, and for what?",
+          "body": "Not who is enthusiastic. A named owner for standards, a clear line for AI-assisted outcomes, and a reporting rhythm that brings exposure to the board on schedule rather than after an incident."
+        },
+        {
+          "label": "Are we building capability or borrowing opinions?",
+          "body": "Diligence is ongoing because the technology moves. A board that heard one briefing in 2024 has not discharged anything."
+        }
+      ],
+      "quote": "A board needs to understand AI the way it understands debt: well enough to govern how much, where, and on what terms."
+    },
+    {
+      "type": "content",
+      "section": 4,
+      "headline": "Questions that separate serious boards",
+      "standfirst": "Ask these at the next meeting, and notice how the room responds.",
+      "rows": [
+        {
+          "label": "What AI is in use here right now?",
+          "body": "Including informally. And how would we know if we were wrong?"
+        },
+        {
+          "label": "Which material decisions are already AI-assisted?",
+          "body": "And who is accountable for those outcomes by name?"
+        },
+        {
+          "label": "What must AI never be used for here?",
+          "body": "What are our standards, and who actually set them?"
+        },
+        {
+          "label": "What would an incident in our industry look like?",
+          "body": "Would we find out about ours before it found us?"
+        },
+        {
+          "label": "Where is AI moving the economics of our sector?",
+          "body": "And what position have we taken on it?"
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 5,
+      "headline": "For the executive in the room",
+      "standfirst": "The shift in the board's posture is not a threat. It is an opening.",
+      "rows": [
+        {
+          "label": "Directors will get their AI clarity from someone",
+          "body": "A consultant's deck, a peer's anecdote, or you. That is the whole choice, and it is being made right now whether or not you take part in it."
+        },
+        {
+          "label": "Arrive with a position, not a briefing",
+          "body": "An inventory, named accountability, standards, and a claimed direction. The executive who brings that does not just survive the turn. They become the person the board relies on for it."
+        },
+        {
+          "label": "None of those five questions were technical",
+          "body": "All of them were governance questions. A management team that cannot answer them crisply has told the board something important, and a board that has never asked has told itself something worse."
+        }
+      ]
+    },
+    {
+      "type": "close",
+      "line": "The question is no longer whether AI belongs on the agenda. It is whether you were ready when it arrived."
+    }
+  ]
+}

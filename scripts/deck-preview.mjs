@@ -13,14 +13,18 @@
  * filter only ever writes the first slide), and its HTML export carries no
  * slide images at all, so the PDF hop is not avoidable.
  *
- * Speaker notes are NOT in these renders. They are private, and the PDF export
- * shows slides only. Verify notes separately, straight out of the pptx.
+ * The PDF here is a throwaway on the way to the PNGs, not a deliverable. The
+ * deck itself has shipped as pptx alone since 2026-08-14, and it carries no
+ * speaker notes, so these renders are the whole artifact.
  */
 
 import fs from "node:fs";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
 import { pdf } from "pdf-to-img";
+import { fileURLToPath } from "node:url";
+
+const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
 
 const SOFFICE_CANDIDATES = [
   "C:/Program Files/LibreOffice/program/soffice.exe",
@@ -51,8 +55,18 @@ if (!soffice) {
   process.exit(1);
 }
 
+// Previews are a verification artifact, never a deliverable. They used to
+// default beside the deck, which since 2026-08-13 is the briefing folder
+// Michael drags to Drive: a preview/ dir in there would ship with the assets.
+// Default under content/.preview/ instead, outside every briefing folder.
 const outDir = path.resolve(
-  outArg ?? path.join(path.dirname(deckPath), "preview")
+  outArg ??
+    path.join(
+      ROOT,
+      "content",
+      ".preview",
+      path.basename(deckPath, path.extname(deckPath))
+    )
 );
 fs.rmSync(outDir, { recursive: true, force: true });
 fs.mkdirSync(outDir, { recursive: true });

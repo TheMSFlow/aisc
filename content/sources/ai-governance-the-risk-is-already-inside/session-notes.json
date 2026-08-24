@@ -1,0 +1,165 @@
+{
+  "sections": [
+    {
+      "name": "The premise",
+      "subtitle": "Adoption already happened, without a meeting"
+    },
+    {
+      "name": "The costs",
+      "subtitle": "Four of them, all already running"
+    },
+    {
+      "name": "The failed fixes",
+      "subtitle": "Why the ban and the borrowed policy both miss"
+    },
+    {
+      "name": "The four questions",
+      "subtitle": "What governance actually answers"
+    },
+    {
+      "name": "The three moves",
+      "subtitle": "What a leader can do this month"
+    },
+    {
+      "name": "The mandate",
+      "subtitle": "What governance becomes once the clarity is there"
+    }
+  ],
+  "slides": [
+    { "type": "title" },
+    {
+      "type": "content",
+      "section": 1,
+      "headline": "Your organization already adopted AI",
+      "standfirst": "The evaluation phase your leadership team thinks it is in ended some time ago, informally, without a meeting.",
+      "rows": [
+        {
+          "label": "Ask leaders and staff the same question and you get two answers",
+          "body": "Ask a room of senior leaders whether their organization uses AI and most will say they are still evaluating it. Ask their employees the same question privately and the answer is different. That gap between the official position and the actual behaviour is the whole subject."
+        },
+        {
+          "label": "It already happened this week, three times over",
+          "body": "Somebody pasted something sensitive into a chatbot. Somebody summarized a confidential document with a free tool a relative recommended. Somebody made a judgment call on an AI answer they never verified, and it went out under the organization's name."
+        },
+        {
+          "label": "None of it appears in a risk register",
+          "body": "Nobody wrote any of it down, which is precisely the problem and precisely why it does not feel like it is happening. So the question is not whether the organization will adopt AI. It is whether that adoption happens under your direction or merely on your watch."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 2,
+      "headline": "What ungoverned AI actually costs",
+      "standfirst": "Ungoverned does not mean malicious. The costs arrive anyway, in four forms.",
+      "rows": [
+        {
+          "label": "Data walks out quietly",
+          "body": "Every time an employee pastes internal content into a consumer AI tool, your information crosses a boundary nobody assessed. In healthcare it may belong to a patient, in government to a citizen, in business to your competitors."
+        },
+        {
+          "label": "Decisions lose their author",
+          "body": "AI output is confident by design, including when it is wrong. When an unverified answer flows into a diagnosis pathway or a client deliverable, accountability sits with a system that cannot hold it. Your signature is still on the work."
+        },
+        {
+          "label": "Inconsistency becomes policy",
+          "body": "With no direction from the top, every team develops its own habits. One department blocks AI and falls behind, the next automates half its workflow with no review. That patchwork, not the binder, is your actual policy."
+        },
+        {
+          "label": "Trust erodes on the leader's ledger",
+          "body": "When the first incident surfaces publicly, the coverage will not name the intern. Boards, regulators and constituents all send one question to one place: who was leading this. A leadership exposure in a technology costume."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 3,
+      "headline": "Why the two usual responses fail",
+      "standfirst": "Most organizations reach for one of two instruments. Both miss, and for the same reason.",
+      "rows": [
+        {
+          "label": "The ban",
+          "body": "Prohibiting AI feels decisive and governs nothing. Usage does not stop, it goes underground, beyond even the informal visibility you had before. The organization keeps all of the risk and surrenders all of the benefit, and leadership trades actual control for the feeling of it."
+        },
+        {
+          "label": "The borrowed policy",
+          "body": "A template downloaded from a consultant, lightly edited, circulated by email. Nobody follows it because it answers questions nobody in your organization was asking and reflects no decision anyone there actually made. It was never the product of leadership judgment, so it cannot substitute for it."
+        },
+        {
+          "label": "Both govern a capability the leadership has not understood",
+          "body": "That is the common failure. Governance is not paperwork. It is judgment, applied to a capability, by someone with the authority to direct it. That order of operations cannot be reversed, which is why the work starts with the leader's own clarity and not with the document."
+        }
+      ],
+      "quote": "Ask three people at different levels what the rules for AI use are. Three different answers means you do not have a governance problem coming. You have one now."
+    },
+    {
+      "type": "content",
+      "section": 4,
+      "headline": "What real governance answers",
+      "standfirst": "Stripped of the jargon, governance answers four questions in plain language.",
+      "rows": [
+        {
+          "label": "Where does AI belong in our work?",
+          "body": "Named uses and named boundaries, specific enough that a reasonable person cannot misread them. A principle is not a line."
+        },
+        {
+          "label": "Where does it not belong?",
+          "body": "The decisions that stay human. In healthcare and government especially, naming these lines is the difference between deliberate adoption and quiet drift."
+        },
+        {
+          "label": "Who is accountable?",
+          "body": "AI can hold a task. It cannot hold responsibility. Every AI-assisted output still needs a human name attached, and everyone needs to know whose."
+        },
+        {
+          "label": "What are our standards?",
+          "body": "Your definition of acceptable use, translated into the specifics of your world: effective, efficient, ethical and safe."
+        }
+      ],
+      "quote": "Not one of the four is technical. Deciding where AI belongs is the same judgment as deciding where capital belongs."
+    },
+    {
+      "type": "content",
+      "section": 5,
+      "headline": "Where to start without boiling the ocean",
+      "standfirst": "Governance has a reputation for arriving as a two-hundred-page program with a steering committee attached. Resist that. Three moves any leader can make this month.",
+      "rows": [
+        {
+          "label": "Bring the usage into the light",
+          "body": "Announce, without threat, that you want to know how people are actually using AI today. Amnesty first, direction second. You cannot govern what your people are hiding, and they will hide it exactly as long as the official posture is denial. What surfaces will be more extensive than you expect, and more useful: your future policy is hiding inside their current workarounds."
+        },
+        {
+          "label": "Draw the two or three brightest lines now",
+          "body": "You do not need a complete framework to name the non-negotiables. Client data never enters unapproved tools. Nothing AI-drafted leaves the building without a named human owner. Decisions about people are made by people. Publishing three enforceable lines this month beats thirty aspirational ones next year."
+        },
+        {
+          "label": "Put your own hours in first",
+          "body": "A leader who has never directed AI personally will govern it badly, the way a board that has never read a balance sheet oversees finance badly. A few structured hours working with it directly will teach you more about where the real boundaries belong than any vendor briefing."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 6,
+      "headline": "The mandate, not the memo",
+      "standfirst": "There is a reason governance closes the AI Stakeholder Challenge rather than opening it.",
+      "rows": [
+        {
+          "label": "It comes after the clarity, never before it",
+          "body": "On Day 7, after a leader has built clarity about what AI is, worked with it directly, and mapped where it creates value in their world, governance stops being a compliance chore and becomes what it actually is."
+        },
+        {
+          "label": "The mandate is the authority to say three things",
+          "body": "This is how we will use it. This is where we will not. This is who answers for it. And to have that carry weight, because everyone knows the judgment behind it is genuinely yours."
+        },
+        {
+          "label": "The leaders who get there first inherit authority nobody claimed",
+          "body": "They do not merely contain a risk. Their people stop guessing, their boards stop probing, and the quiet experimenting either stops or comes into the light where it belongs."
+        }
+      ]
+    },
+    {
+      "type": "close",
+      "line": "The risk is already inside. So is the mandate. They are currently held by the same people, and they are not you yet."
+    }
+  ]
+}

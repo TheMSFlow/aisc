@@ -1,0 +1,121 @@
+{
+  "sections": [
+    { "name": "The week you know", "subtitle": "And the private conclusion after it" },
+    { "name": "The mechanism", "subtitle": "Judgment runs out before the day does" },
+    { "name": "What just changed", "subtitle": "The attention layer became delegable" },
+    { "name": "Rebuilding the margin", "subtitle": "Three moves, and one warning" },
+    { "name": "The identity shift", "subtitle": "What dissolves a few weeks in" }
+  ],
+  "slides": [
+    { "type": "title" },
+    {
+      "type": "content",
+      "section": 1,
+      "headline": "The week that starts with a plan and ends in a blur",
+      "standfirst": "Then the private conclusion arrives, and it is the wrong diagnosis.",
+      "rows": [
+        {
+          "label": "How the week actually goes",
+          "body": "The loudest issue won every day. Decisions got made at the speed of the inbox. The strategic thing slid to Friday and then to never, and you went home having worked flat out on nothing you chose."
+        },
+        {
+          "label": "The conclusion almost every manager reaches",
+          "body": "Maybe I am just not disciplined enough. Maybe I am a firefighter by nature. It arrives eventually, and it is wrong."
+        },
+        {
+          "label": "The wrong diagnosis leads to the wrong cures",
+          "body": "The time-management book, the earlier alarm, the guilt. Reactive leadership is not a personality type and not a character flaw, and margins, unlike personalities, can be rebuilt."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 2,
+      "headline": "Judgment runs out before the day does",
+      "standfirst": "Two kinds of demand compete for the day, and they feel alike in the moment.",
+      "rows": [
+        {
+          "label": "Judgment is finite and expensive",
+          "body": "Real trade-offs, real consequences, calls that improve with your experience and deplete you to make."
+        },
+        {
+          "label": "Attention work is infinite",
+          "body": "Reading, sorting, checking, compiling, re-explaining, being the final pass on work that never needed you. It expands to consume whatever it is given."
+        },
+        {
+          "label": "So judgment gets pre-spent, not saved",
+          "body": "By the time the genuinely consequential question arrives at 3pm, the discernment it deserved was already burned on an inbox and two status meetings. The big call gets made tired, at the speed of everything else."
+        }
+      ],
+      "quote": "Reactive leadership is not a personality. It is what any leader becomes when their judgment is spent before their decisions arrive."
+    },
+    {
+      "type": "content",
+      "section": 3,
+      "headline": "Why this got worse, and what just changed",
+      "standfirst": "The squeeze is structural, which is why personal-discipline cures keep failing.",
+      "rows": [
+        {
+          "label": "The middle seat is where attention work concentrates",
+          "body": "Accountable upward for results, responsible downward for direction, and positioned exactly where the reports, the approvals, the escalations and the being copied on everything all collect."
+        },
+        {
+          "label": "For the first time the attention layer is delegable",
+          "body": "Without headcount. The patterned share of a manager's week is precisely what AI absorbs under direction, and direction here means briefing it the way you would brief a capable new hire."
+        },
+        {
+          "label": "Not the judgment",
+          "body": "No tool makes your trade-offs, owns your consequences, or has the conversation your struggling report needs. The honest offer is narrower and better: it carries the attention work so your judgment arrives at 3pm intact."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 4,
+      "headline": "Rebuilding the margin: three moves this month",
+      "standfirst": "And one warning about where most attempts actually die.",
+      "rows": [
+        {
+          "label": "Reclaim, deliberately",
+          "body": "Run the audit across last week, one question per task. Take back three hours this month, not twenty. The point is establishing that the direction is reversible."
+        },
+        {
+          "label": "Protect, structurally",
+          "body": "Margin that is not scheduled gets eaten. Put the thinking, the real decisions and the difficult conversation you keep deferring on the calendar as immovable blocks."
+        },
+        {
+          "label": "Push the discipline downward",
+          "body": "Your team inherits your margins. When you rebuild yours, narrate it: what you stopped doing, the standard for what interrupts you now, and the same audit for their own week."
+        },
+        {
+          "label": "The second move is where attempts die",
+          "body": "You do not fully own your calendar. Make the trade visible: framed as availability it sounds like a boundary and gets overruled, framed as output it gets defended by the person who would otherwise have interrupted it."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 5,
+      "headline": "The identity shift at the end of it",
+      "standfirst": "A few weeks in, something strange happens to leaders who do this.",
+      "rows": [
+        {
+          "label": "The identity dissolves",
+          "body": "The firefighter, the not-a-strategic-thinker, the just-not-disciplined. These turn out to have been descriptions of a margin condition rather than of a person."
+        },
+        {
+          "label": "Decisions start being chosen instead of triggered",
+          "body": "The strategic work stops sliding to Friday. The judgment was always there. It was just never available at the moment it was needed."
+        },
+        {
+          "label": "That availability is the foundation under everything else",
+          "body": "Every larger move, the claimed ground, the team capability, the authority upward, runs on judgment that has room to breathe."
+        }
+      ]
+    },
+    {
+      "type": "close",
+      "line": "You were never the fire. You were standing in one, and there is a door."
+    }
+  ]
+}

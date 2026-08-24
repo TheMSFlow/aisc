@@ -1,0 +1,142 @@
+{
+  "sections": [
+    { "name": "The two starts", "subtitle": "Tools or territory, and they diverge fast" },
+    { "name": "Day one", "subtitle": "Write down what you actually believe" },
+    { "name": "Day two", "subtitle": "Audit where your week actually goes" },
+    { "name": "Day three", "subtitle": "Map the ground that just opened" },
+    { "name": "Day four", "subtitle": "Pressure-test it against reality" },
+    { "name": "Day five", "subtitle": "Decide what kind of week this was" }
+  ],
+  "slides": [
+    { "type": "title" },
+    {
+      "type": "content",
+      "section": 1,
+      "headline": "Two ways to start, and only one gains ground",
+      "standfirst": "You can tell the two apart within a month.",
+      "rows": [
+        {
+          "label": "The tool question has no bottom",
+          "body": "The first leader collects tools. A subscription here, an app a nephew recommended, a folder of bookmarked demos. Six months later they are busier than before, mildly more efficient at tasks that never mattered, and no clearer about what any of it means."
+        },
+        {
+          "label": "The territory question has an answer",
+          "body": "Where, in my specific world, has AI opened ground that nobody has claimed yet? That question has an answer, the answer is specific, and pursuing it changes a leader's position rather than just their pace."
+        },
+        {
+          "label": "This is a week of sessions, not a shopping list",
+          "body": "Five working sessions, roughly an hour each, alone, with a document open. No purchases required. What it produces is four documents and one honest decision."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 2,
+      "headline": "Write down what you actually believe",
+      "standfirst": "Not what the keynote said. What you believe.",
+      "rows": [
+        {
+          "label": "What do I think AI actually is?",
+          "body": "One paragraph a smart friend outside your industry would understand. If your own paragraph comes out hazier than you would like, that is the finding, not a failure."
+        },
+        {
+          "label": "What do I suspect it means for us?",
+          "body": "For your organization, your audience, or your mission. Plain sentences, no borrowed vocabulary, and nobody else ever reads this page."
+        },
+        {
+          "label": "What have I been pretending to understand?",
+          "body": "This is the valuable one. Most leaders have been nodding along for a year or more, and the gap between public confidence and private clarity has quietly widened. Naming it on paper is the fastest unlock in the week."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 3,
+      "headline": "Audit where your week actually goes",
+      "standfirst": "Territory requires capacity, and most leaders have none to spare.",
+      "rows": [
+        {
+          "label": "List the work that follows a pattern",
+          "body": "Anything you could describe to a competent assistant. Drafting, summarizing, formatting, reorganizing, and questions you have answered before in nearly the same words."
+        },
+        {
+          "label": "Expect ten to twenty hours",
+          "body": "That is what leaders who run this with structure find sitting in the list. Real hours going to work AI could handle, while decisions only they can make wait at the edge of the calendar."
+        },
+        {
+          "label": "Do not act on the list today",
+          "body": "The instinct is to grab a tool and start clearing it, which is the trap this week exists to avoid. Hours recovered with no destination refill within a month. Today is only the number at the bottom."
+        }
+      ],
+      "quote": "The first thing AI should give any leader is not a capability. It is their mornings back."
+    },
+    {
+      "type": "content",
+      "section": 4,
+      "headline": "Map the ground that just opened",
+      "standfirst": "AI made some things abundant that used to be scarce. That always opens ground.",
+      "rows": [
+        {
+          "label": "For a business owner",
+          "body": "Abundance of analysis and drafting means the operational bottleneck that defined your margins may no longer be fixed. The territory might be a service you could not afford to offer last year."
+        },
+        {
+          "label": "For a creator",
+          "body": "Abundance of content makes a trusted voice scarcer. The territory is rarely more output. It is becoming the signal your audience checks against the noise, including about AI itself."
+        },
+        {
+          "label": "For a nonprofit leader",
+          "body": "Abundance of intelligence at low cost is the first real leverage the sector has been offered in decades. The territory might be the program your team of six could never staff."
+        },
+        {
+          "label": "Now write your own sentence",
+          "body": "AI has just made blank abundant, which makes blank scarce and valuable, and nobody around me has claimed it. Draft it badly, then redraft. Precision matters more than polish."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 5,
+      "headline": "Pressure-test it against reality",
+      "standfirst": "A territory is only real if it survives three tests.",
+      "rows": [
+        {
+          "label": "The specificity test",
+          "body": "Could you explain it to your team in two sentences without a single abstract word? Digital transformation fails. Every donor report goes out in a week instead of a quarter passes."
+        },
+        {
+          "label": "The authority test",
+          "body": "Does claiming this ground fit who you already are to your people? The best territories extend trust you already hold rather than requiring new credentials."
+        },
+        {
+          "label": "The regret test",
+          "body": "If someone else in your world claimed exactly this ground twelve months from now, would it genuinely cost you? If not, keep looking. Territory you would not miss is territory you do not want."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 6,
+      "headline": "Decide what kind of week this was",
+      "standfirst": "Four documents in front of you, and one honest assessment to make.",
+      "rows": [
+        {
+          "label": "If it came out sharp, move",
+          "body": "Put a weekly session on the calendar to advance it, and name a single owner even if that owner is you. Then treat governance as the very next stop, because ground claimed without standards can be lost in one incident."
+        },
+        {
+          "label": "If it came out blurry, that is not failure",
+          "body": "A real leak in your hours, a territory you half believe, a nagging sense that your understanding is still borrowed. That is exactly what a structured, guided process is for."
+        },
+        {
+          "label": "Working alone gets you to the edge of this",
+          "body": "The seven days exist for the distance past it: clarity you build rather than borrow, hours recovered and counted, and a territory declared with a six-month roadmap behind it."
+        }
+      ]
+    },
+    {
+      "type": "close",
+      "line": "You are done collecting tools. That question has no bottom. The territory question does, and this week you touched it."
+    }
+  ]
+}

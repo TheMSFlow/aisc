@@ -1,0 +1,23 @@
+{
+  "type": "list",
+  "title": "What to Do When AI's First Draft Misses",
+  "standfirst": "Amateurs restart. Leaders redirect.",
+  "items": [
+    {
+      "label": "Redirect what is close",
+      "body": "Keep the structure and tone, then name the exact fix. Correction beats a blanket rewrite."
+    },
+    {
+      "label": "Narrow the frame",
+      "body": "When the output reads generic, name the exact audience and the situation it must speak to."
+    },
+    {
+      "label": "Set the contrast",
+      "body": "Say what you do not want as precisely as what you do, so it stops defaulting to the safe voice."
+    },
+    {
+      "label": "Ask for the thinking first",
+      "body": "On complex work, request the key tensions and trade-offs before the draft, then build from there."
+    }
+  ]
+}

@@ -2,29 +2,41 @@
  * session-notes.mjs — long-form video session notes builder (YouTube)
  *
  * Usage:
- *   node scripts/session-notes.mjs <slug> <spec.json>
+ *   node scripts/session-notes.mjs <slug> [spec.json]
  *   node scripts/deck-preview.mjs <the .pptx>     <- then look at it
  *
- * Builds a 16:9 PowerPoint deck for recording a long-form video from a
- * published briefing. Two layers in one file:
+ * Builds a 16:9 PowerPoint deck from a published briefing. The deck is a
+ * DETAILED SUMMARY OF THE BRIEFING, and nothing else.
  *
- *   - The SLIDE is what viewers see. Sparse, audience-facing, no cues.
- *   - The SPEAKER NOTES are private, visible only in presenter view. They
- *     carry the expansion prompt, the repeated line, and the timing.
+ * REBUILT 2026-08-14. The previous version was a two-layer artifact: sparse
+ * audience-facing slides over a private speaker-notes layer carrying locked
+ * passages, expansion prompts, re-hooks and embeds. Michael does not read the
+ * notes layer, so in practice the deck was a stack of one-line labels with the
+ * substance in a place nobody opened. Three things went with that model:
  *
- * DESIGN SYSTEM: the AISC Day 1-3 session notes decks, reproduced. Two slide
- * families, and the split is the whole system:
+ *   - NO SPEAKER NOTES. Everything the deck has to say is on the slide.
+ *   - NO PDF. The pptx is the only output.
+ *   - NO FILM ARC. The old OPEN/PART/CLOSE structure reorganized the briefing,
+ *     so no slide corresponded to anything findable in the post. Slides now
+ *     follow the briefing's own sections, in the briefing's own order.
  *
- *   - DARK slides (title, part dividers, close): deep navy ground, thin
- *     periwinkle bands top and bottom, everything centred.
+ * The job of a slide is: read it once, understand the point, expand on it on
+ * camera in your own words. That means a row carries a claim AND the reasoning
+ * under it, not a cryptic phrase that only means something to someone who
+ * already holds the argument.
+ *
+ * DESIGN SYSTEM: unchanged. The AISC Day 1-3 session notes decks, reproduced.
+ * Two slide families, and the split is the whole system:
+ *
+ *   - DARK slides (title, close): deep navy ground, thin periwinkle bands top
+ *     and bottom, everything centred.
  *   - LIGHT slides (content): white ground, thin navy rule at the top,
  *     eyebrow, headline, a short thick accent rule beneath it, the body,
- *     the speakable-line strip, then a grey foot bar with a right-aligned
- *     label.
+ *     an optional quote strip, then a grey foot bar with a right-aligned label.
  *
  * Body rows follow the Day 1 "AI Turns Data Into Intelligence" treatment: a
  * numeral chip stepping down an indigo ramp, then a grey panel holding a bold
- * label and a muted sub-line.
+ * label and the explanation under it.
  *
  * The per-theme accent used by the covers and infographics is deliberately
  * NOT used here. This template is navy and periwinkle only, and the theme
@@ -32,26 +44,25 @@
  *
  * Spec file shape:
  *   {
- *     "parts": [ { "name": "Denial", "subtitle": "..." }, ... ],
+ *     "sections": [ { "name": "The premise", "subtitle": "..." }, ... ],
  *     "slides": [
- *       { "type": "title",   "notes": "..." },
- *       { "type": "divider", "part": 1, "notes": "..." },
- *       { "type": "content", "part": 1, "headline": "...", "standfirst": "...",
+ *       { "type": "title" },
+ *       { "type": "content", "section": 1, "headline": "...",
+ *         "standfirst": "...",
  *         "rows": [ { "label": "...", "body": "..." } ],
- *         "quote": "...", "notes": "..." },
- *       { "type": "close",   "line": "...", "notes": "..." }
+ *         "quote": "..." },
+ *       { "type": "close", "line": "..." }
  *     ]
  *   }
  *
- * Output: content/session-notes/<date>_<cover>_<slug>.pptx  (gitignored)
- * Staging only. It goes to Drive after Michael confirms it, never before.
+ * Output: content/social/<date>_<cover>_<slug>/<date>_SESSION-NOTES_...pptx
+ * Staging only. Michael moves the folder to Drive himself.
  * See agent-guides/blog/SOCIAL_GUIDE.md.
  */
 
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { execFileSync } from "node:child_process";
 import matter from "gray-matter";
 import PptxGenJS from "pptxgenjs";
 import { COVERS } from "../src/lib/blog/taxonomy.js";
@@ -86,10 +97,19 @@ const H = 7.5;
 const M = 0.62; // left and right margin
 const CW = W - M * 2; // content width
 
-const [, , slug, specPath] = process.argv;
+const [, , slug, specArg] = process.argv;
 
-if (!slug || !specPath) {
-  console.error("Usage: node scripts/session-notes.mjs <slug> <spec.json>");
+if (!slug) {
+  console.error("Usage: node scripts/session-notes.mjs <slug> [spec.json]");
+  process.exit(1);
+}
+
+// The spec is tracked source and has a canonical home, so the path argument
+// is optional. Pass one only to build from a draft spec somewhere else.
+const specPath =
+  specArg ?? path.join(ROOT, "content", "sources", slug, "session-notes.json");
+if (!fs.existsSync(path.resolve(specPath))) {
+  console.error(`No spec: ${path.relative(ROOT, path.resolve(specPath))}`);
   process.exit(1);
 }
 
@@ -117,10 +137,35 @@ if (!cover) {
 const spec = JSON.parse(fs.readFileSync(path.resolve(specPath), "utf8"));
 
 /**
+ * The retired arc format used `parts`, `divider` slides and a `notes` field on
+ * every slide. A spec written against it would still parse here and quietly
+ * build a deck missing most of its content, so say so instead.
+ */
+{
+  const legacy = [];
+  if (spec.parts) legacy.push("`parts` (now `sections`)");
+  const slidesIn = spec.slides ?? [];
+  if (slidesIn.some((s) => s.type === "divider"))
+    legacy.push("`divider` slides (removed, sections carry the structure)");
+  if (slidesIn.some((s) => s.notes))
+    legacy.push("`notes` (removed, the slide carries everything)");
+  if (legacy.length) {
+    console.error(
+      "This spec is written against the retired arc format. Found:"
+    );
+    legacy.forEach((l) => console.error(`  ${l}`));
+    console.error(
+      "Rewrite it as a section-by-section summary of the briefing. See the"
+    );
+    console.error("spec shape at the top of this file.");
+    process.exit(1);
+  }
+}
+
+/**
  * COPY_GUIDE bans the em-dash everywhere, and SOCIAL_GUIDE extends every voice
- * rule to each word that leaves this system. Speaker notes are read by exactly
- * one person, but the slides are not, and a spec is easy to write in a hurry.
- * Fail the build rather than ship one.
+ * rule to each word that leaves this system. Fail the build rather than ship
+ * one: a spec is easy to write in a hurry and this deck is now all slide.
  */
 {
   const offenders = [];
@@ -141,8 +186,8 @@ const spec = JSON.parse(fs.readFileSync(path.resolve(specPath), "utf8"));
   }
 }
 
-const parts = (spec.parts ?? []).map((p) =>
-  typeof p === "string" ? { name: p, subtitle: "" } : p
+const sections = (spec.sections ?? []).map((s) =>
+  typeof s === "string" ? { name: s, subtitle: "" } : s
 );
 const FOOT = `THE AWAKENING · ${(cover.label ?? fm.theme).toUpperCase()}`;
 
@@ -153,14 +198,24 @@ pptx.author = "Michael Steve Clarity Studio";
 pptx.title = fm.title;
 
 /**
- * pptxgenjs 4.0.1 drops the entire note when the string contains "\n": the
- * notesSlide is written with only its slide-number placeholder and no error
- * is raised. Verified against CR, CRLF, VT, U+2028 and U+2029; only a bare
- * CR survives serialization. Do not pass "\n" to addNotes directly.
+ * TEXT MEASUREMENT. pptxgenjs cannot measure, and a detailed summary is the
+ * one thing the old sparse format never had to worry about: four rows of real
+ * explanation will overflow a fixed row height every time.
+ *
+ * Inter's average advance width sits near 0.52em for mixed-case prose. That is
+ * an estimate, not a metric read from the font, so every fit is checked with a
+ * 5% safety margin and the deck is still looked at with deck-preview.mjs.
  */
-function addNotes(slide, notes) {
-  if (!notes) return;
-  slide.addNotes(notes.replace(/\r?\n/g, "\r"));
+const CHAR_EM = 0.52;
+const LINE = 1.22; // line-height multiple used across the template
+
+const lineH = (pt) => (pt / 72) * LINE;
+
+function estLines(text, pt, widthIn) {
+  if (!text) return 0;
+  const charW = (pt / 72) * CHAR_EM;
+  const perLine = Math.max(1, Math.floor((widthIn * 0.95) / charW));
+  return Math.max(1, Math.ceil(text.length / perLine));
 }
 
 /** Linear ramp between two hex colours, so every numeral chip differs. */
@@ -272,7 +327,7 @@ function lightChrome(slide) {
   });
 }
 
-/** The speakable line, in the pale strip the Day 1-3 decks put it in. */
+/** The briefing's own line, in the pale strip the Day 1-3 decks put it in. */
 function quoteStrip(slide, quote) {
   const y = H - 1.28;
   slide.addShape(pptx.ShapeType.rect, {
@@ -297,13 +352,22 @@ function quoteStrip(slide, quote) {
   });
 }
 
-function titleSlide(s) {
+/**
+ * TITLE SLIDE. The old version carried a card per part, which worked at three
+ * and breaks at six: a briefing has as many sections as it has, and six cards
+ * across a 12in measure leaves 1.8in each.
+ *
+ * It is now a contents list, which is also the more honest object. This deck
+ * is a summary of a written piece, so its opening slide is a table of contents
+ * and the numerals encode the briefing's reading order.
+ */
+function titleSlide() {
   const slide = pptx.addSlide();
   darkChrome(slide);
 
   slide.addText("THE AWAKENING", {
     x: 0,
-    y: 0.75,
+    y: 0.62,
     w: W,
     h: 0.3,
     align: "center",
@@ -316,12 +380,12 @@ function titleSlide(s) {
 
   slide.addText(fm.title, {
     x: W * 0.11,
-    y: 1.35,
+    y: 1.12,
     w: W * 0.78,
-    h: 1.7,
+    h: 1.5,
     align: "center",
     fontFace: FACE,
-    fontSize: 34,
+    fontSize: 32,
     bold: true,
     color: WHITE,
     lineSpacingMultiple: 1.1,
@@ -330,126 +394,92 @@ function titleSlide(s) {
 
   slide.addText("Session Notes", {
     x: 0,
-    y: 3.12,
+    y: 2.72,
     w: W,
-    h: 0.5,
+    h: 0.44,
     align: "center",
     fontFace: FACE,
-    fontSize: 22,
+    fontSize: 20,
     italic: true,
     color: PERI_SOFT,
   });
 
   slide.addShape(pptx.ShapeType.rect, {
     x: W / 2 - 2.2,
-    y: 3.86,
+    y: 3.36,
     w: 4.4,
     h: 0.045,
     fill: { color: PERI },
   });
 
-  const gap = 0.26;
-  const cardW = (CW - gap * (parts.length - 1)) / parts.length;
-  parts.forEach((p, i) => {
-    const x = M + i * (cardW + gap);
-    slide.addShape(pptx.ShapeType.rect, {
-      x,
-      y: 4.28,
-      w: cardW,
-      h: 1.72,
-      fill: { color: PERI, transparency: 72 },
-      line: { color: PERI, width: 0.75 },
-    });
+  // The list is a centred block with left-aligned rows: centred text would
+  // make the numerals ragged and they are the thing carrying the order.
+  //
+  // Its width is measured from the longest row rather than fixed. A fixed
+  // width centres the BOX, not the ink, so a list of short section names sat
+  // visibly left of centre with dead space down the right.
+  const NUM_W = 0.62;
+  const textW = (t, pt) => (t ? t.length * (pt / 72) * CHAR_EM : 0);
+  const listW = Math.min(
+    CW,
+    Math.max(
+      ...sections.map(
+        (s) => NUM_W + textW(s.name, 15) + textW(`   ${s.subtitle}`, 12)
+      ),
+      4
+    ) + 0.1
+  );
+  const listX = (W - listW) / 2;
+  const rowH = Math.min(0.5, (6.55 - 3.85) / Math.max(sections.length, 1));
+  const top = 3.85 + (6.55 - 3.85 - rowH * sections.length) / 2;
+
+  sections.forEach((s, i) => {
+    const y = top + i * rowH;
     slide.addText(String(i + 1).padStart(2, "0"), {
-      x: x + 0.3,
-      y: 4.5,
-      w: cardW - 0.6,
-      h: 0.28,
+      x: listX,
+      y,
+      w: 0.62,
+      h: rowH,
       fontFace: FACE,
-      fontSize: 10,
+      fontSize: 12,
       bold: true,
-      color: PERI_SOFT,
+      color: PERI,
+      valign: "middle",
     });
-    slide.addText(p.name, {
-      x: x + 0.3,
-      y: 4.83,
-      w: cardW - 0.6,
-      h: 0.42,
-      fontFace: FACE,
-      fontSize: 19,
-      bold: true,
-      color: WHITE,
-    });
-    if (p.subtitle) {
-      slide.addText(p.subtitle, {
-        x: x + 0.3,
-        y: 5.32,
-        w: cardW - 0.6,
-        h: 0.6,
+    slide.addText(
+      [
+        { text: s.name, options: { bold: true, color: WHITE, fontSize: 15 } },
+        ...(s.subtitle
+          ? [
+              {
+                text: `   ${s.subtitle}`,
+                options: { color: PERI_SOFT, fontSize: 12 },
+              },
+            ]
+          : []),
+      ],
+      {
+        x: listX + 0.62,
+        y,
+        w: listW - 0.62,
+        h: rowH,
         fontFace: FACE,
-        fontSize: 10,
-        color: PERI_SOFT,
-        lineSpacingMultiple: 1.25,
-        valign: "top",
-      });
-    }
+        valign: "middle",
+      }
+    );
   });
-
-  addNotes(slide, s.notes);
 }
 
-function dividerSlide(s) {
+/**
+ * CONTENT SLIDE. One per briefing section. Everything the section argues is
+ * on this slide, because there is nowhere else for it to be.
+ */
+function contentSlide(s, index) {
   const slide = pptx.addSlide();
-  const p = parts[s.part - 1] ?? { name: "", subtitle: "" };
-  darkChrome(slide);
-
-  slide.addText(`PART ${s.part} OF ${parts.length}`, {
-    x: 0,
-    y: 0.95,
-    w: W,
-    h: 0.3,
-    align: "center",
-    fontFace: FACE,
-    fontSize: 10,
-    bold: true,
-    charSpacing: 3,
-    color: PERI_SOFT,
-  });
-
-  slide.addText(p.name, {
-    x: 0,
-    y: 3.05,
-    w: W,
-    h: 1.1,
-    align: "center",
-    fontFace: FACE,
-    fontSize: 48,
-    bold: true,
-    color: WHITE,
-  });
-
-  if (p.subtitle) {
-    slide.addText(p.subtitle, {
-      x: W * 0.15,
-      y: 4.2,
-      w: W * 0.7,
-      h: 0.5,
-      align: "center",
-      fontFace: FACE,
-      fontSize: 16,
-      color: PERI_SOFT,
-    });
-  }
-
-  addNotes(slide, s.notes);
-}
-
-function contentSlide(s) {
-  const slide = pptx.addSlide();
-  const p = parts[s.part - 1] ?? { name: "" };
+  const section = sections[s.section - 1] ?? { name: "" };
   lightChrome(slide);
 
-  slide.addText(p.name.toUpperCase(), {
+  slide.addText(section.name.toUpperCase(), {
     x: M,
     y: 0.36,
     w: CW,
@@ -461,49 +491,109 @@ function contentSlide(s) {
     color: MUTED,
   });
 
+  const headW = CW * 0.92;
+  const headLines = estLines(s.headline, 26, headW);
   slide.addText(s.headline, {
     x: M,
     y: 0.68,
-    w: CW * 0.92,
-    h: 0.72,
+    w: headW,
+    h: Math.max(0.5, headLines * lineH(26)),
     fontFace: FACE,
-    fontSize: 28,
+    fontSize: 26,
     bold: true,
     color: INK,
     valign: "top",
   });
 
+  let y = 0.68 + Math.max(0.5, headLines * lineH(26)) + 0.12;
+
   slide.addShape(pptx.ShapeType.rect, {
     x: M,
-    y: 1.5,
+    y,
     w: 1.35,
     h: 0.075,
     fill: { color: PERI_SOFT },
   });
+  y += 0.32;
 
-  let y = 1.86;
-
+  // The standfirst is the section's thesis in one sentence. It wraps often at
+  // this length, so its height is measured rather than assumed: the old fixed
+  // 0.52in advance put a two-line standfirst under the first row.
   if (s.standfirst) {
+    const sfW = CW * 0.88;
+    const sfH = estLines(s.standfirst, 14, sfW) * lineH(14);
     slide.addText(s.standfirst, {
       x: M,
       y,
-      w: CW * 0.86,
-      h: 0.34,
+      w: sfW,
+      h: sfH,
       fontFace: FACE,
       fontSize: 14,
       bold: true,
       color: INK,
+      lineSpacingMultiple: LINE,
+      valign: "top",
     });
-    y += 0.52;
+    y += sfH + 0.26;
+  }
+
+  const rows = s.rows ?? [];
+  const rowGap = 0.14;
+  const chipW = 0.72;
+  const padX = 0.42; // panel text inset
+  const padY = 0.2; // total vertical padding inside a panel
+
+  const rowsBottom = (s.quote ? H - 1.28 : H - 0.82) - 0.12;
+  const rowH =
+    rows.length > 0
+      ? (rowsBottom - y - (rows.length - 1) * rowGap) / rows.length
+      : 0;
+  const textW = CW - chipW - 0.1 - padX * 2;
+
+  /**
+   * BODY TYPE AUTO-FITS. The label stays at 15pt because it is the scan layer;
+   * the explanation gives ground first. Same principle as the cover's headline
+   * fitter: find the largest size that does not overflow, and say what it was.
+   */
+  const needed = (bodyPt) =>
+    Math.max(
+      ...rows.map(
+        (r) =>
+          estLines(r.label, 15, textW) * lineH(15) +
+          (r.body ? 0.06 + estLines(r.body, bodyPt, textW) * lineH(bodyPt) : 0) +
+          padY
+      )
+    );
+
+  const SIZES = [12.5, 12, 11.5, 11, 10.5, 10];
+  let bodyPt = SIZES[SIZES.length - 1];
+  let fits = false;
+  if (rows.length) {
+    for (const pt of SIZES) {
+      if (needed(pt) <= rowH) {
+        bodyPt = pt;
+        fits = true;
+        break;
+      }
+    }
+  } else {
+    fits = true;
+  }
+
+  const fill = rows.length ? Math.round((needed(bodyPt) / rowH) * 100) : 0;
+  const label = `slide ${index}  "${s.headline}"`;
+  if (!fits) {
+    console.log(
+      `  OVERFLOW  ${label}: ${rows.length} rows do not fit at ${bodyPt}pt. Cut copy or split the slide.`
+    );
+  } else {
+    console.log(
+      `  ok        ${label}: ${rows.length} rows, body ${bodyPt}pt, ${fill}% of the row box`
+    );
   }
 
   // The numeral ramp steps from deepest to lightest across the rows, the way
   // the Day 1 deck does it. Two rows or five, the ends stay fixed.
-  const rows = s.rows ?? [];
-  const rowH = rows.length >= 4 ? 0.78 : 0.92;
-  const rowGap = 0.16;
-  const chipW = 0.72;
-
   rows.forEach((r, i) => {
     const ry = y + i * (rowH + rowGap);
     const shade = ramp(INK, PERI, i, rows.length);
@@ -535,33 +625,45 @@ function contentSlide(s) {
       h: rowH,
       fill: { color: PANEL },
     });
-    slide.addText(r.label, {
-      x: M + chipW + 0.42,
-      y: ry + (r.body ? 0.11 : 0),
-      w: CW - chipW - 0.85,
-      h: r.body ? 0.32 : rowH,
-      fontFace: FACE,
-      fontSize: 15,
-      bold: true,
-      color: INK,
-      valign: r.body ? "top" : "middle",
-    });
-    if (r.body) {
-      slide.addText(r.body, {
-        x: M + chipW + 0.42,
-        y: ry + 0.42,
-        w: CW - chipW - 0.85,
-        h: rowH - 0.5,
+    /**
+     * Label and explanation are ONE vertically centred block, not two boxes at
+     * fixed offsets from the top: top-anchored text leaves a pool of empty
+     * panel underneath it and the row reads unfinished.
+     */
+    slide.addText(
+      [
+        {
+          text: r.label,
+          options: {
+            fontSize: 15,
+            bold: true,
+            color: INK,
+            breakLine: Boolean(r.body),
+            paraSpaceAfter: r.body ? 4 : 0,
+          },
+        },
+        ...(r.body
+          ? [
+              {
+                text: r.body,
+                options: { fontSize: bodyPt, color: BODY_INK },
+              },
+            ]
+          : []),
+      ],
+      {
+        x: M + chipW + 0.1 + padX,
+        y: ry,
+        w: textW,
+        h: rowH,
         fontFace: FACE,
-        fontSize: 12.5,
-        color: BODY_INK,
-        valign: "top",
-      });
-    }
+        lineSpacingMultiple: LINE,
+        valign: "middle",
+      }
+    );
   });
 
   if (s.quote) quoteStrip(slide, s.quote);
-  addNotes(slide, s.notes);
 }
 
 function closeSlide(s) {
@@ -589,27 +691,23 @@ function closeSlide(s) {
     h: 0.045,
     fill: { color: PERI },
   });
-
-  addNotes(slide, s.notes);
 }
 
-const BUILDERS = {
-  title: titleSlide,
-  divider: dividerSlide,
-  content: contentSlide,
-  close: closeSlide,
-};
-
-for (const s of spec.slides ?? []) {
-  const build = BUILDERS[s.type];
-  if (!build) {
-    console.error(`Unknown slide type "${s.type}"`);
+const slides = spec.slides ?? [];
+slides.forEach((s, i) => {
+  const n = i + 1;
+  if (s.type === "title") titleSlide();
+  else if (s.type === "content") contentSlide(s, n);
+  else if (s.type === "close") closeSlide(s);
+  else {
+    console.error(`Unknown slide type "${s.type}" at slide ${n}`);
     process.exit(1);
   }
-  build(s);
-}
+});
 
-const outDir = path.join(ROOT, "content", "session-notes");
+// One folder per briefing, named exactly as its Drive folder. See cover.mjs.
+const briefingDir = `${fm.date}_${fm.cover}_${slug}`;
+const outDir = path.join(ROOT, "content", "social", briefingDir);
 fs.mkdirSync(outDir, { recursive: true });
 // <date>_<TYPE>_<cover>_<slug>. The type token was added 2026-08-01, when Drive
 // moved to one folder per post: every asset for a briefing now sits together,
@@ -619,51 +717,6 @@ const outPath = path.join(outDir, `${stem}.pptx`);
 
 await pptx.writeFile({ fileName: outPath });
 
-/**
- * The PDF is the clean slide deck and nothing else: one page per slide, no
- * notes. It is what gets shown, so the private layer must not be in it.
- *
- * LibreOffice can append a notes page per slide via ExportNotesPages, and that
- * was the first cut, but it doubles the file and repeats every slide. The
- * speaker notes live in the pptx alone, read from presenter view.
- */
-const SOFFICE = [
-  "C:/Program Files/LibreOffice/program/soffice.exe",
-  "C:/Program Files (x86)/LibreOffice/program/soffice.exe",
-  "soffice",
-].find((p) => p === "soffice" || fs.existsSync(p));
-
-let pdfMade = false;
-if (SOFFICE) {
-  try {
-    execFileSync(
-      SOFFICE,
-      [
-        "--headless",
-        "--convert-to",
-        "pdf",
-        "--outdir",
-        outDir,
-        outPath,
-      ],
-      { stdio: "ignore" }
-    );
-    pdfMade = fs.existsSync(path.join(outDir, `${stem}.pdf`));
-  } catch {
-    pdfMade = false;
-  }
-}
-
-const slides = spec.slides ?? [];
-const noteCount = slides.filter((s) => s.notes).length;
-console.log(`Wrote content/session-notes/${stem}.pptx`);
-if (pdfMade) {
-  console.log(`      content/session-notes/${stem}.pdf  (slides only, no notes)`);
-} else {
-  console.log(`  WARNING: no PDF. LibreOffice missing or the deck is open elsewhere.`);
-}
-console.log(`  ${slides.length} slides, ${noteCount} with speaker notes`);
-if (noteCount < slides.length) {
-  console.log(`  WARNING: ${slides.length - noteCount} slide(s) carry no notes`);
-}
+console.log(`Wrote content/social/${briefingDir}/${stem}.pptx`);
+console.log(`  ${slides.length} slides, ${sections.length} sections`);
 console.log(`  Now look at it: node scripts/deck-preview.mjs "${outPath}"`);

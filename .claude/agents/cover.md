@@ -15,18 +15,23 @@ Read `agent-guides/blog/SOCIAL_GUIDE.md` and `agent-guides/COPY_GUIDE.md` before
 node scripts/cover.mjs <slug> "Headline" ["Subhead"]
 ```
 
-It reads the briefing's `cover` id from its MDX frontmatter, resolves the background art and headline treatment from `COVERS` in `src/lib/blog/taxonomy.js`, auto-fits the type, and writes `content/covers/<publish-date>_<cover-id>_<slug>.jpg` at 1080×1350, JPEG quality 92.
+It reads the briefing's `cover` id from its MDX frontmatter, resolves the background art and headline treatment from `COVERS` in `src/lib/blog/taxonomy.js`, auto-fits the type, and writes `content/covers/<publish-date>_<cover-id>_<slug>.jpg` at 1080×1350, JPEG quality 100.
+
+A cover is the poster frame for a video and goes out at full quality. Never lower the quality and never ship a cover as PNG.
 
 ## Delivery
 
-Show the render and wait. **Never upload an unconfirmed cover.**
+**Get the headline approved before you render anything.** Propose the headline, and a subhead only if it passes the cover-it-up test in `SOCIAL_GUIDE.md`. Wait for a yes. The whole asset set is built off this line, so a late change means rebuilding four things.
 
-Once the user confirms:
+The script writes to `content/social/<publish-date>_<cover-id>_<slug>/`, the briefing's own folder, named exactly as its Drive folder. Copy the finished cover into `content/social/_covers/` as well.
 
-1. Copy it to `G:\My Drive\SOCIAL MEDIA\<publish-date>_<cover-id>_<slug>\`, the briefing's own folder. Create the folder if this is the first asset for that post. That path is the Drive for Desktop mount, so uploading is a plain file copy. Do not use the MCP Drive API: it takes base64, which for a cover is most of a megabyte of encoded text.
-2. Verify with `md5sum` on both paths.
-3. **Confirm it reached the cloud**, via `search_files` on the filename. A copy onto the mount only queues an upload; it does not prove one happened.
-4. **Only when both checks pass, delete the project copy.** Standing rule: `content/covers/` is a staging area, never an asset library. If either check fails, keep the project copy and tell the user.
+**Do not touch Drive.** Changed 2026-08-13: the whole asset set for a briefing is built in one sitting and Michael moves the finished folder across himself. No mount copy, no `md5sum`, no `search_files`, and **never delete what you produced**.
+
+Show the render and wait for the user's verdict.
+
+Once confirmed, **record the headline and subhead** in `agent-guides/blog/DISTRIBUTION_LOG.md` § Cover headlines, and mark the row's Cover img cell. The headline is not recoverable from the JPEG, and the Instagram script for this briefing has to open against it (`SCRIPT_GUIDE.md` § STOP). Skipping this strands the script agent.
+
+If § Cover headlines already holds a row for this slug, its script was written first. **Build to that headline** rather than inventing a new one, or if it is genuinely wrong, say so and settle it with the user before rendering.
 
 Drive for Desktop can be mounted and readable while its upload queue is stalled, so step 3 is not optional. If nothing reaches the cloud, tell the user to check the Drive icon in the Windows system tray for Paused or a sign-in prompt.
 

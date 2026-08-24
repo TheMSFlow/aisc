@@ -1,0 +1,117 @@
+{
+  "sections": [
+    { "name": "The question in the car", "subtitle": "Where it is actually being asked" },
+    { "name": "The shepherd question", "subtitle": "This has happened before" },
+    { "name": "What silence costs", "subtitle": "Three arguments against waiting" },
+    { "name": "Clarity is a stewardship", "subtitle": "Not a specialty" },
+    { "name": "Where to begin", "subtitle": "Two quiet hours this week" }
+  ],
+  "slides": [
+    { "type": "title" },
+    {
+      "type": "content",
+      "section": 1,
+      "headline": "The question is moving, and not from the pulpit",
+      "standfirst": "It is asked in the car, in the small group, at the kitchen table.",
+      "rows": [
+        {
+          "label": "What they are actually asking",
+          "body": "Is this thing safe? Is it honest? Should I be using it? Is it taking my job? What does our faith say about it? These are the questions, in these words."
+        },
+        {
+          "label": "They are taking them to whoever answers",
+          "body": "The news cycle, a coworker, a video with confident music, a stranger with a following. All of it in the absence of an answer from the leader they trust most."
+        },
+        {
+          "label": "The forming happens either way",
+          "body": "The only open question is who is doing it. Your people are being shaped on this subject this week, by someone, and that someone is currently not you."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 2,
+      "headline": "The shepherd question, restated",
+      "standfirst": "Strip away the technology and this is not a new situation.",
+      "rows": [
+        {
+          "label": "Every generation has faced this moment",
+          "body": "Television, the internet, the smartphone, social media. Something powerful arrived in the lives of the people before it arrived in the teaching."
+        },
+        {
+          "label": "Pretending it was not there protected nobody",
+          "body": "People adopted it anyway, alone, without wisdom, and quietly learned that leadership had nothing to say about the thing reshaping their daily lives. The trust did not break loudly. It thinned."
+        },
+        {
+          "label": "The ones who fared differently were not technicians",
+          "body": "They got clear on what the thing actually was, decided what faithful use looked like, and said so plainly. Their people never needed them to be experts. They needed them to be clear."
+        }
+      ],
+      "quote": "Your congregation does not need you to understand AI like an engineer. They need you to understand it like their shepherd."
+    },
+    {
+      "type": "content",
+      "section": 3,
+      "headline": "What silence is currently costing",
+      "standfirst": "It is tempting to let this wait behind the building fund. Three things argue otherwise.",
+      "rows": [
+        {
+          "label": "Your people are forming positions without you",
+          "body": "Every week without a word from leadership, hundreds of private verdicts are reached. Some fearful, some reckless, most of them lonely. The absence of teaching is itself a teaching."
+        },
+        {
+          "label": "Your staff and volunteers are already using it",
+          "body": "Someone has pasted ministry information into a free tool nobody vetted. Someone is drafting communications with it. None of this is rebellion. It is people solving real capacity problems without direction."
+        },
+        {
+          "label": "The window for leading rather than reacting is open now",
+          "body": "The first time AI causes a visible incident in your community, whatever you say next is damage control. What you say before that moment is leadership. Only one of those builds authority."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 4,
+      "headline": "Clarity is a stewardship, not a specialty",
+      "standfirst": "The distance to where your congregation needs you is shorter than it sounds.",
+      "rows": [
+        {
+          "label": "You do not need code or conference vocabulary",
+          "body": "You need a clean understanding of what AI is and is not, the discernment to know where it belongs in ministry and where it must never stand in for the human and the sacred, and enough direct use to speak from knowledge."
+        },
+        {
+          "label": "A borrowed position collapses at the second question",
+          "body": "One assembled from headlines will not survive a thoughtful member. A position built through a few structured hours of real understanding and real use holds, because it is genuinely yours."
+        },
+        {
+          "label": "There is ground here, not only risk",
+          "body": "Time recovered from administrative weight is time returned to prayer, people and presence, which no algorithm can offer. A ministry that reaches further with less friction is territory to claim."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 5,
+      "headline": "Where to begin this week",
+      "standfirst": "Not with a technology committee. Get clear yourself, first.",
+      "rows": [
+        {
+          "label": "What do I actually believe AI is?",
+          "body": "Two quiet hours and a blank page. Plain answers, in your own words, with nobody watching and nothing borrowed from a headline."
+        },
+        {
+          "label": "What would faithful use look like here?",
+          "body": "And what would be off limits. Name both halves, because the second one is what your people are most anxious to hear you say out loud."
+        },
+        {
+          "label": "What will I say when someone asks on Sunday?",
+          "body": "If the answers come out clear, start saying them, and your people will be visibly relieved that someone finally did. If they will not come, that is an honest finding, not a failing."
+        }
+      ]
+    },
+    {
+      "type": "close",
+      "line": "Do not leave the question circulating unanswered. It will be answered by someone. The people you shepherd are hoping it will be you."
+    }
+  ]
+}

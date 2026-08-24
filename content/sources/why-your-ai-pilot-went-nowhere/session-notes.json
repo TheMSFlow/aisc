@@ -1,0 +1,138 @@
+{
+  "sections": [
+    { "name": "The dead pilot", "subtitle": "You have one, and so does everyone" },
+    { "name": "Absence one", "subtitle": "Nobody owned it" },
+    { "name": "Absence two", "subtitle": "Nobody was bleeding from it" },
+    { "name": "Absence three", "subtitle": "No standard, so no trust" },
+    { "name": "The pattern that works", "subtitle": "Unglamorous, and it does not die" },
+    { "name": "The part about you", "subtitle": "The absence upstream of the three" }
+  ],
+  "slides": [
+    { "type": "title" },
+    {
+      "type": "content",
+      "section": 1,
+      "headline": "Somewhere in your organization there is a dead pilot",
+      "standfirst": "This is the standard outcome, in every industry, at every size.",
+      "rows": [
+        {
+          "label": "How it went",
+          "body": "An enthusiastic email eight or fourteen months ago. A tool, a working group, maybe a lunch demo that genuinely impressed people. For a few weeks, real activity."
+        },
+        {
+          "label": "Then it stopped",
+          "body": "The sponsor got busy, the novelty wore off, the working group's meetings got shorter and then optional. Today the subscription quietly renews unused, or somebody finally cancelled it."
+        },
+        {
+          "label": "The standard explanation is wrong",
+          "body": "The post-mortem blames the tool, the timing, or the team's readiness. Look closely at your own dead pilot and the tool mostly worked, the timing was fine, and the team was willing."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 2,
+      "headline": "Absence one: nobody owned it",
+      "standfirst": "Someone was always assigned. Assignment is not ownership.",
+      "rows": [
+        {
+          "label": "What ownership actually means",
+          "body": "A specific person whose own standing rises or falls with the outcome, who has the authority to change how work is actually done, and who wants the ground."
+        },
+        {
+          "label": "Pilots get added to somebody's real job",
+          "body": "The moment the real job pressed, and it always presses, the pilot became the thing that could slip without consequence."
+        },
+        {
+          "label": "A committee has diffusion, an owner has a heartbeat",
+          "body": "What survives in organizations is what someone claims, not what someone staffs. If you cannot name the single person for whom this was territory, that is cause of death number one."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 3,
+      "headline": "Absence two: nobody was bleeding from it",
+      "standfirst": "Recall how the pilot was chosen. Almost always, it started from the tool.",
+      "rows": [
+        {
+          "label": "The backwards question",
+          "body": "Here is an impressive capability, where could we use it? That feels strategic and is actually backwards, because it selects for what is demonstrable rather than what is valuable."
+        },
+        {
+          "label": "Value hides in friction",
+          "body": "The delays everyone plans around, the manual work nobody trusts but everyone repeats, the recurring cost so normalized that people answer questions about it with that is just how it works."
+        },
+        {
+          "label": "The retrospective test is unsparing",
+          "body": "When your pilot stalled, who was harmed? If the answer is nobody in particular, it never had a reason to exist beyond its own announcement. A pilot aimed at friction has customers. One aimed at a capability has an audience, and audiences applaud and leave."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 4,
+      "headline": "Absence three: no standard, so no trust",
+      "standfirst": "The quietest killer of the three.",
+      "rows": [
+        {
+          "label": "What people need before AI output enters real work",
+          "body": "They need to know what good looks like, what gets verified, and who answers if it is wrong. Most pilots launch with none of the three."
+        },
+        {
+          "label": "The failure runs in both directions",
+          "body": "Some trust the output too much, and the first visible error poisons the well. Others never trust it at all, do every task twice, and correctly conclude the pilot made their week longer."
+        },
+        {
+          "label": "Adoption is a trust problem, not an enthusiasm problem",
+          "body": "And trust is built from standards. Ungoverned use does not stay at zero, it goes informal, which is the worst of both worlds: the risk of adoption with none of the compounding benefit."
+        }
+      ],
+      "quote": "Pilots do not die of bad technology. They die of no owner, no wound and no standard, and all three were visible at launch."
+    },
+    {
+      "type": "content",
+      "section": 5,
+      "headline": "The pattern the successful ones share",
+      "standfirst": "Flip the three absences, and notice how unglamorous the result is.",
+      "rows": [
+        {
+          "label": "One named owner who wants the ground",
+          "body": "Not a working group. A person whose standing moves with the outcome, and who would feel it if this quietly stopped."
+        },
+        {
+          "label": "One real friction that costs hours or money every week",
+          "body": "Somebody is bleeding from it, and will drag the solution into their own workflow without being asked to."
+        },
+        {
+          "label": "One written standard, and only then a tool",
+          "body": "What good output is, what gets checked, who answers. Then a tool chosen because it fits the problem, given long enough to become a habit rather than an event."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 6,
+      "headline": "The part that is about you",
+      "standfirst": "The three absences trace back to a single upstream one.",
+      "rows": [
+        {
+          "label": "The sponsor had not done their own work",
+          "body": "Not the tool evaluation. The position work: personal, owned clarity about what AI actually is, where it belongs in this specific organization, and which ground is worth claiming with it."
+        },
+        {
+          "label": "Sponsors without a position launch capabilities",
+          "body": "Leaders with one solve frictions, because the position is what tells them which frictions are theirs."
+        },
+        {
+          "label": "Your next pilot does not need a better vendor",
+          "body": "It needs the three absences filled before launch, starting with the one in the sponsor's chair."
+        }
+      ]
+    },
+    {
+      "type": "close",
+      "line": "Fill them, relaunch small, and let the dead pilot's subscription finally rest in peace."
+    }
+  ]
+}

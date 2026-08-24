@@ -28,7 +28,7 @@ const AUDIENCES = [
 export default function Audience() {
   return (
     <div className="bg-offwhite">
-      <Section id="audience" spacing="compact">
+      <Section id="audience" spacing="compact" className="overflow-x-clip">
         <p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.35em] text-dark-blue/40">
           This challenge is for
         </p>

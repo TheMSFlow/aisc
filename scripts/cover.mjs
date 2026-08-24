@@ -108,12 +108,32 @@ if (isLight || isCard) {
   `;
 }
 
-// The card family sets its headline inside a translucent panel, so the panel
-// eats padding out of the usable measure and zone.
+/**
+ * THE CARD FAMILY SITS INSIDE THE FOLDER THAT IS ALREADY IN THE ART.
+ *
+ * Fixed 2026-08-13. The script used to draw its own translucent panel sized
+ * to the text, on top of art that already contains a folder graphic. Two
+ * overlapping rounded rectangles, and on any headline over two lines the
+ * drawn panel grew past the folder, so the headline read as sitting outside
+ * the thing it is supposed to be written on. It also broke the standing rule
+ * that the art is a finished frame and the script adds the headline block
+ * and nothing else.
+ *
+ * These bounds are measured off chiefs-briefing.jpg. The folder body runs
+ * x 180 to 905, y 383 to 968, with a tab notch across the upper left that
+ * the text has to clear. All three card backgrounds share the geometry.
+ */
 const CARD_PAD_X = 54;
 const CARD_PAD_Y = 50;
-const measure = isCard ? MEASURE - CARD_PAD_X * 2 : MEASURE;
-const zoneHeight = ZONE_BOTTOM - ZONE_TOP - (isCard ? CARD_PAD_Y * 2 : 0);
+const CARD_LEFT = 180 + CARD_PAD_X;
+const CARD_ZONE_TOP = 470;
+const CARD_ZONE_BOTTOM = 968 - CARD_PAD_Y;
+const CARD_MEASURE = 905 - 180 - CARD_PAD_X * 2;
+
+const measure = isCard ? CARD_MEASURE : MEASURE;
+const zoneTop = isCard ? CARD_ZONE_TOP : ZONE_TOP;
+const zoneBottom = isCard ? CARD_ZONE_BOTTOM : ZONE_BOTTOM;
+const zoneHeight = zoneBottom - zoneTop;
 
 const subheadColor = isCard || isLight ? "rgba(255,255,255,0.78)" : "#2a2f52";
 
@@ -150,22 +170,16 @@ const html = `<!doctype html>
   }
   #stage {
     position: absolute;
-    left: ${MARGIN_X}px;
-    top: ${ZONE_TOP}px;
-    width: ${isCard ? MEASURE : measure}px;
-    height: ${ZONE_BOTTOM - ZONE_TOP}px;
+    left: ${isCard ? CARD_LEFT : MARGIN_X}px;
+    top: ${zoneTop}px;
+    width: ${measure}px;
+    height: ${zoneHeight}px;
     display: flex;
     flex-direction: column;
     justify-content: center;   /* rule 2: centre in the zone */
   }
-  #card {
-    ${isCard
-      ? `background: rgba(4, 25, 134, 0.44);
-         backdrop-filter: blur(7px);
-         border-radius: 30px;
-         padding: ${CARD_PAD_Y}px ${CARD_PAD_X}px;`
-      : ""}
-  }
+  /* No panel is drawn. The folder in the art is the panel. */
+  #card {}
   h1 {
     width: ${measure}px;
     font-weight: 800;
@@ -194,7 +208,11 @@ const html = `<!doctype html>
   </div></div>
 </body></html>`;
 
-const tmpDir = path.join(ROOT, "content", "covers");
+// One folder per briefing, named exactly as its Drive folder, so the whole
+// set for a post is built in one sitting and moved across in one drag.
+// Changed 2026-08-13 from the old per-asset-type staging dirs.
+const briefingDir = `${pubDate}_${coverId}_${slug}`;
+const tmpDir = path.join(ROOT, "content", "social", briefingDir);
 fs.mkdirSync(tmpDir, { recursive: true });
 const tmpHtml = path.join(tmpDir, `.${slug}.html`);
 fs.writeFileSync(tmpHtml, html, "utf8");
@@ -247,10 +265,27 @@ try {
         }
       }
       fits(best);
+
+      /**
+       * Measure the real line boxes, not the element box. The h1 is always
+       * exactly the measure wide, so scrollWidth tells you nothing about how
+       * much of that width the type is actually using. A Range over the text
+       * node returns one client rect per rendered line, which is the only way
+       * to see that a headline is stacking narrow and leaving the right side
+       * of the frame empty.
+       */
+      const range = document.createRange();
+      range.selectNodeContents(h);
+      const lineWidths = Array.from(range.getClientRects())
+        .map((r) => Math.round(r.width))
+        .filter((w) => w > 1);
+
       return {
         fontSize: best,
         lines: Math.round(h.scrollHeight / (best * lineHeight)),
         blockHeight: card.scrollHeight,
+        lineWidths,
+        widest: lineWidths.length ? Math.max(...lineWidths) : 0,
       };
     },
     {
@@ -270,8 +305,40 @@ try {
   console.log(
     `type:       ${fitted.fontSize}px, ~${fitted.lines} lines, block ${fitted.blockHeight}px of ${zoneHeight}px zone`
   );
-  console.log(`saved:      content/covers/${assetName}`);
-  console.log(`drive:      SOCIAL MEDIA/covers/${assetName}`);
+  const fill = Math.round((fitted.widest / measure) * 100);
+  console.log(
+    `width:      widest line ${fitted.widest}px of ${measure}px measure (${fill}%)  [${fitted.lineWidths.join(", ")}]`
+  );
+  if (fill < 85) {
+    console.log(
+      `  WARNING: the headline is stacking narrow and leaving the right side empty.`
+    );
+    console.log(
+      `  Fix it in the words, not the type size: this is already the largest size that fits.`
+    );
+    console.log(
+      `  Longer words, or fewer of them, pack wider at the same height.`
+    );
+  }
+  /**
+   * The flat set at content/social/_covers/ holds a copy of every cover, for
+   * the reader-path work in TASKS.md #16 that will want them together.
+   *
+   * This used to be a manual step and it was missed twice in two days (row 15
+   * on 2026-08-14, and the four headline rebuilds the same day), while
+   * SOCIAL_GUIDE.md claimed every build dropped a copy here. A step that is
+   * documented as automatic has to actually be automatic.
+   */
+  const flatDir = path.join(ROOT, "content", "social", "_covers");
+  fs.mkdirSync(flatDir, { recursive: true });
+  fs.copyFileSync(
+    path.join(tmpDir, assetName),
+    path.join(flatDir, assetName)
+  );
+
+  console.log(`saved:      content/social/${briefingDir}/${assetName}`);
+  console.log(`            content/social/_covers/${assetName}`);
+  console.log(`drive:      SOCIAL MEDIA/${briefingDir}/${assetName}`);
 } finally {
   await browser.close();
   fs.rmSync(tmpHtml, { force: true });

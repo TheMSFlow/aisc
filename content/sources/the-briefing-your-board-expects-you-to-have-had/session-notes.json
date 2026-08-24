@@ -1,0 +1,117 @@
+{
+  "sections": [
+    { "name": "The question changed", "subtitle": "It used to be asked downward" },
+    { "name": "Opinion or position", "subtitle": "They feel alike from the inside" },
+    { "name": "Why the gap is widening", "subtitle": "Three reasons the window is closing" },
+    { "name": "What it requires", "subtitle": "Less than the noise suggests" },
+    { "name": "The first move", "subtitle": "Two hours and five sentences" }
+  ],
+  "slides": [
+    { "type": "title" },
+    {
+      "type": "content",
+      "section": 1,
+      "headline": "The question changed shape without announcing itself",
+      "standfirst": "It used to be asked downward. Now it is asked upward, and inward.",
+      "rows": [
+        {
+          "label": "It used to go to a deputy",
+          "body": "What are we doing about AI? You could hand that question to a deputy, a committee or a vendor, and the room accepted it. That was delegation, and it looked like leadership."
+        },
+        {
+          "label": "Now it comes to you",
+          "body": "What is your position on AI? The board asks in the language of risk and capital allocation, investors in the language of strategy, and your leadership team asks silently every time an AI decision stalls on your desk."
+        },
+        {
+          "label": "Handing it on now reads as absence",
+          "body": "Not as delegation. Nobody is certain what you actually think, and that uncertainty is doing damage the org chart cannot show you."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 2,
+      "headline": "An opinion is not a position",
+      "standfirst": "The two feel similar from the inside and look nothing alike from outside.",
+      "rows": [
+        {
+          "label": "An opinion is what you absorb",
+          "body": "From briefings, from vendors, from the articles your peers forward you. It is borrowed, it shifts with the last conversation you had, and under pressure it collapses into generalities."
+        },
+        {
+          "label": "A position is what you build",
+          "body": "It answers three questions in plain language for your organization: what AI actually is, where it belongs and where it does not, and what you personally are directing everyone toward."
+        },
+        {
+          "label": "More briefings will not produce one",
+          "body": "Briefings produce informed spectators. A position is produced the way every other real leadership asset is produced: you sit down, do the structured work, and come out with something you built."
+        }
+      ],
+      "quote": "The people you lead are not waiting for you to become technical. They are waiting for you to become clear."
+    },
+    {
+      "type": "content",
+      "section": 3,
+      "headline": "Why the gap is widening now",
+      "standfirst": "We are evaluating it was acceptable for a while. That window is closing.",
+      "rows": [
+        {
+          "label": "Your organization did not wait for you",
+          "body": "The people below you are already using AI in ways nobody has mapped and nobody signed off on. Every week without direction, your real AI strategy is written informally by whoever happens to be experimenting."
+        },
+        {
+          "label": "Capital is already moving",
+          "body": "AI has moved from the innovation agenda to the fiduciary one. Boards ask about it the way they ask about liquidity and succession. Not is this interesting, but who owns this and what is our exposure."
+        },
+        {
+          "label": "Authority is being reassigned",
+          "body": "Your world is going to have an AI-clear voice. The only open question is whether it is yours. It is being claimed right now, mostly by people with less responsibility than you and more confidence than they have earned."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 4,
+      "headline": "What closing the gap actually requires",
+      "standfirst": "Less than the noise suggests, and more than a briefing deck delivers.",
+      "rows": [
+        {
+          "label": "Understand it like a leader, not an engineer",
+          "body": "Clarity about what the technology does, fluency in directing it effectively, efficiently, ethically and safely, and a decision about where it creates value in your world. None of that requires code."
+        },
+        {
+          "label": "It cannot be passive",
+          "body": "Watching a keynote is consumption. Reading an article is consumption. The shift happens the first time you produce something: a written position, a mapped account of your leaking hours, a named territory."
+        },
+        {
+          "label": "The common failure is assigning it",
+          "body": "A position ghost-written by a strategy team reads impressively and collapses at the first follow-up question, because the judgment inside it was never yours. Boards recognize borrowed conviction in one exchange."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 5,
+      "headline": "The first move",
+      "standfirst": "Two hours on your own calendar this week, alone, with one question.",
+      "rows": [
+        {
+          "label": "Write the five sentences",
+          "body": "If my board asked me tomorrow to state our AI position in five sentences, what would I say? Write them out. Do not delegate the draft to anyone."
+        },
+        {
+          "label": "The paper is not the point",
+          "body": "The point is the honest discovery of how much of your current answer is borrowed. Nobody else needs to see the page, which is exactly what makes it useful."
+        },
+        {
+          "label": "What most chiefs find",
+          "body": "The confusion they have been quietly carrying is not a personal failing. It is the natural result of being briefed by everyone and equipped by no one."
+        }
+      ]
+    },
+    {
+      "type": "close",
+      "line": "Nobody built the framework for the person at the top. That is a solvable problem, and the leaders who solve it first become the ones everyone else quietly follows."
+    }
+  ]
+}

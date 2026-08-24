@@ -1,0 +1,117 @@
+{
+  "sections": [
+    { "name": "The private test", "subtitle": "Could you answer it at dinner?" },
+    { "name": "What it is", "subtitle": "Three honest sentences" },
+    { "name": "What it is not", "subtitle": "Three confusions, cleared" },
+    { "name": "Why it changes the question", "subtitle": "From opinion to operations" },
+    { "name": "The relief", "subtitle": "On the other side of clarity" }
+  ],
+  "slides": [
+    { "type": "title" },
+    {
+      "type": "content",
+      "section": 1,
+      "headline": "A private test, just between you and the page",
+      "standfirst": "Could you answer in plain sentences you fully believe?",
+      "rows": [
+        {
+          "label": "The question a smart friend asks over dinner",
+          "body": "So what actually is this AI thing? Not the keynote answer. Not the vendor's answer. Yours, in sentences you would stand behind."
+        },
+        {
+          "label": "Most leaders cannot, and it is not ignorance",
+          "body": "You have sat through the briefings. You may have approved budgets for it. The problem is the opposite of ignorance: you have heard too many explanations, from too many people with something to prove."
+        },
+        {
+          "label": "Underneath all of it is something understandable",
+          "body": "A technology that can be understood plainly, by you, in an evening. Not the engineer's version, which you do not need."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 2,
+      "headline": "What it is, in three honest sentences",
+      "standfirst": "Modern AI is a pattern engine. That is the whole trick.",
+      "rows": [
+        {
+          "label": "It was built by processing human work",
+          "body": "Writing, conversation, code, analysis, in enormous quantity. It is, in effect, the accumulated patterns of human work made available on demand."
+        },
+        {
+          "label": "It produces output by predicting what comes next",
+          "body": "Given everything you have shown it and asked of it, it produces what plausibly follows. That is the mechanism, stated completely, with nothing left out."
+        },
+        {
+          "label": "Which explains everything it is good at",
+          "body": "Anything patterned: drafting, summarizing, translating, reorganizing, producing options, imitating a format it has seen ten million times. With clear instructions it works like a tireless, widely-read assistant."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 3,
+      "headline": "What it is not",
+      "standfirst": "Hold the pattern-engine picture and the confusions fall away one by one.",
+      "rows": [
+        {
+          "label": "It is not a mind",
+          "body": "It does not want anything, know it exists, or understand your organization the way your worst intern does. Treating it as a colleague with intentions leads to both errors at once: trusting it too much and fearing it wrongly."
+        },
+        {
+          "label": "It is not a database",
+          "body": "It does not look up facts, it produces what is plausible. Most of the time plausible and true overlap. Sometimes they do not, and it delivers its mistakes with exactly the same confidence as its accuracies."
+        },
+        {
+          "label": "It is not an oracle",
+          "body": "It reflects what people have already written and done, including their blind spots. Asking what to do with your organization returns an averaged echo of what leaders like you have generally done."
+        }
+      ],
+      "quote": "Confidence is the one signal it always produces and the one signal that means nothing."
+    },
+    {
+      "type": "content",
+      "section": 4,
+      "headline": "Why this picture changes the question",
+      "standfirst": "It stops being what do I think about AI, and becomes operational.",
+      "rows": [
+        {
+          "label": "The new question is which work here is pattern work",
+          "body": "The recurring reports, the drafting, the sorting, the summarizing. That work can now be delegated the way you would delegate to a capable assistant, under standards you set."
+        },
+        {
+          "label": "The work that is not patterned becomes more valuable",
+          "body": "The judgment calls, the relationships, the accountability for outcomes. They matter more, not less, because everything around them got faster."
+        },
+        {
+          "label": "The seat gets more exposed, not smaller",
+          "body": "The technology strips away the parts of the week that were never really leadership, and leaves the seat more purely about the decisions only you can make."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 5,
+      "headline": "The relief on the other side of clarity",
+      "standfirst": "The discomfort was never really about the technology.",
+      "rows": [
+        {
+          "label": "Publicly fluent, privately unsure",
+          "body": "Many leaders have carried that quietly for a couple of years: fluent in the vocabulary, and not confident they could defend a word of it under a follow-up question."
+        },
+        {
+          "label": "It was about position, not knowledge",
+          "body": "You cannot take a position on something you hold only through other people's descriptions, and everything a leader is asked to do about AI requires a position."
+        },
+        {
+          "label": "The leader's version is buildable",
+          "body": "What this thing is, where it belongs in your world, where it must never be, and what it changes about the ground you compete on. Everything else in a leader's AI journey stands on it."
+        }
+      ]
+    },
+    {
+      "type": "close",
+      "line": "Start with the dinner-table test. The leaders who can answer it plainly, in sentences they own, are about to be very easy to tell apart from the ones who cannot."
+    }
+  ]
+}

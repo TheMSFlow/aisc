@@ -1,0 +1,151 @@
+{
+  "sections": [
+    { "name": "The pitch", "subtitle": "It has probably reached you already" },
+    { "name": "The mode, not the model", "subtitle": "Agency is the third step" },
+    { "name": "The wrong comfort", "subtitle": "Why a good deputy is not the analogy" },
+    { "name": "The readiness ladder", "subtitle": "Most organizations skip it" },
+    { "name": "Five questions", "subtitle": "Before anyone hands over keys" },
+    { "name": "The horizon", "subtitle": "Held correctly" }
+  ],
+  "slides": [
+    { "type": "title" },
+    {
+      "type": "content",
+      "section": 1,
+      "headline": "The pitch has probably reached you already",
+      "standfirst": "The capability underneath it is real, and as of mid-2026 arriving fast.",
+      "rows": [
+        {
+          "label": "What it promises",
+          "body": "Not a tool you open and close, but an AI that works while you sleep. It monitors the pipeline, flags deals going quiet, drafts the outreach, files the follow-ups, and interrupts only when something needs a human."
+        },
+        {
+          "label": "Which is exactly why it deserves a clearer look",
+          "body": "Clearer than the demo provides. Unlike a lot of AI marketing, this one is not overselling the capability."
+        },
+        {
+          "label": "An agent is not a better chatbot",
+          "body": "It is a different kind of delegation entirely, and the difference is precisely where the risk lives."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 2,
+      "headline": "What changes is the mode, not the model",
+      "standfirst": "The useful way to see agents is as the third step of a progression.",
+      "rows": [
+        {
+          "label": "Automation",
+          "body": "Handing AI one structured task. Compile the weekly report, same format, every Monday. You set the parameters and you review the output."
+        },
+        {
+          "label": "Augmentation",
+          "body": "Collaboration on judgment work. AI researches and drafts, you evaluate and decide. In both of these modes nothing happens without you starting it, and every output passes through your hands."
+        },
+        {
+          "label": "Agency removes that property",
+          "body": "An agent monitors, decides within boundaries you define, executes sequences of tasks, and escalates only the exceptions. It takes your review out of the loop for everything inside its boundary."
+        }
+      ],
+      "quote": "The value of an agent and the risk of an agent are the same fact: things happen under your name that you did not individually approve."
+    },
+    {
+      "type": "content",
+      "section": 3,
+      "headline": "Why delegating to a person is the wrong comfort",
+      "standfirst": "A good deputy also acts without asking. The analogy fails in three places.",
+      "rows": [
+        {
+          "label": "A person knows when they are out of their depth",
+          "body": "Mostly. And they feel the weight of your name on their actions. An agent has no such sense, and proceeds with the same mechanical confidence inside and outside the situations you anticipated."
+        },
+        {
+          "label": "A person learns your standards from a hundred corrections",
+          "body": "An agent holds exactly the standards you wrote into its boundaries, no more, and it inherits every ambiguity in them."
+        },
+        {
+          "label": "A person usually errs once",
+          "body": "An agent runs its error at machine speed and scale until something stops it. Fifty wrong emails, not one."
+        },
+        {
+          "label": "So the leadership work moves to the boundaries",
+          "body": "A boundary is a short, unglamorous document saying five things: what the agent may do without a human, what information it may touch, what forces it to stop and ask, who reviews it, and who can switch it off."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 4,
+      "headline": "The readiness ladder most organizations skip",
+      "standfirst": "Each mode builds the capability the next one depends on.",
+      "rows": [
+        {
+          "label": "Automation teaches you to define good output",
+          "body": "And to write standards precise enough that a machine can actually follow them."
+        },
+        {
+          "label": "Augmentation teaches discernment",
+          "body": "Where AI is strong, where it fails, what its confident wrongness looks like in your domain, and how to draw the line between work it gets and work it never gets."
+        },
+        {
+          "label": "Only with both is agency safe to enter",
+          "body": "An agent's boundary document is nothing but your delegation judgment and your quality standards, written down and made executable with your review removed. A leader who cannot yet brief AI on one task has no business granting a continuous mandate."
+        }
+      ],
+      "quote": "An agent is your judgment, running unattended. If the judgment has not been built, that is what runs unattended."
+    },
+    {
+      "type": "content",
+      "section": 5,
+      "headline": "Five questions before anyone hands over keys",
+      "standfirst": "When an agent proposal reaches your desk, from a vendor or your own team.",
+      "rows": [
+        {
+          "label": "What exactly can it do without a human?",
+          "body": "Not the category. The list. Every unreviewed action is a standing authorization under your name."
+        },
+        {
+          "label": "Where are the boundaries written, and who owns them?",
+          "body": "If the answer is the defaults, the vendor's judgment has replaced yours."
+        },
+        {
+          "label": "What does it escalate, and how would we know it failed to?",
+          "body": "An agent that never interrupts you may be failing silently."
+        },
+        {
+          "label": "What is the blast radius of its worst hour?",
+          "body": "Fifty wrong client messages? A mispriced quote? Anything touching money or reputation."
+        },
+        {
+          "label": "Who is accountable for what it does?",
+          "body": "The only acceptable answer is a name, and the name is not the tool's."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 6,
+      "headline": "The horizon, held correctly",
+      "standfirst": "Both things are true, and the order between them is what matters.",
+      "rows": [
+        {
+          "label": "The prize is real",
+          "body": "Leaders who eventually run agents well will operate at a scale their peers cannot match: one person's judgment, encoded carefully, working continuously across everything patterned in their world."
+        },
+        {
+          "label": "It goes to whoever built the ladder underneath it",
+          "body": "Fluency first, then standards, then boundaries. The first agent pilot arrives as a roadmap milestone in the months after, not as a leap in week one."
+        },
+        {
+          "label": "Take the demo meeting anyway",
+          "body": "Be genuinely interested. Notice that all five questions are governance questions rather than procurement ones. Agent readiness is a leadership condition."
+        }
+      ]
+    },
+    {
+      "type": "close",
+      "line": "Before anyone hands over keys, make sure the thing being scaled is judgment that actually exists."
+    }
+  ]
+}

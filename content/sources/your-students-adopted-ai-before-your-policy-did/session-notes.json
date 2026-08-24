@@ -1,0 +1,126 @@
+{
+  "sections": [
+    { "name": "The situation in miniature", "subtitle": "One sentence holds all of it" },
+    { "name": "How the gap looks", "subtitle": "Four textures, seen from the middle" },
+    { "name": "Why the usual moves failed", "subtitle": "The ban and the borrowed policy" },
+    { "name": "Closing it from the middle", "subtitle": "Four moves, in order" },
+    { "name": "The stakes", "subtitle": "This sector is not managing money" }
+  ],
+  "slides": [
+    { "type": "title" },
+    {
+      "type": "content",
+      "section": 1,
+      "headline": "The whole situation, in one sentence",
+      "standfirst": "Adoption did not wait for permission, and the official machinery is behind.",
+      "rows": [
+        {
+          "label": "A student drafted an assignment with it today",
+          "body": "And a teacher wrote a parent email with it. Both happened in your building this morning, without anyone asking anyone."
+        },
+        {
+          "label": "A committee has an agenda item, three meetings out",
+          "body": "About developing a preliminary position on both. That distance between the institution's behaviour and the institution's machinery is the entire problem."
+        },
+        {
+          "label": "You live in the middle of that gap",
+          "body": "Above you, a board or district office that wants an answer. Below you, classrooms where the answer is already being improvised daily. Nobody is coming to close it for you."
+        }
+      ],
+      "quote": "Students learned the tool in a weekend. Institutions have been drafting the memo for two years. Leadership is what closes that distance."
+    },
+    {
+      "type": "content",
+      "section": 2,
+      "headline": "How the gap looks from the middle",
+      "standfirst": "The education version has its own texture, and naming it precisely comes first.",
+      "rows": [
+        {
+          "label": "The integrity conversation swallowed everything",
+          "body": "Two years of institutional energy went to one question: are students cheating with it? Real, but it consumed the agenda while larger ones sat unasked. A detection posture is not a position."
+        },
+        {
+          "label": "The staff room split quietly",
+          "body": "One teacher builds lessons with AI every evening and has doubled their preparation capacity. The teacher next door bans every trace of it. Same school, same students, opposite worlds, widening every term."
+        },
+        {
+          "label": "The data question nobody signed off on",
+          "body": "Student work, names, learning difficulties, family circumstances, pasted into free consumer tools by staff solving real workload problems. In education, that data belongs to children."
+        },
+        {
+          "label": "The mission question waiting underneath",
+          "body": "What are we preparing students for, if this is the world? Parents feel it, students sense it, boards circle it. A leader with a confident answer holds authority no policy document can grant."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 3,
+      "headline": "Why the usual moves have not worked",
+      "standfirst": "Most institutions tried both defaults, and by now the results are visible.",
+      "rows": [
+        {
+          "label": "The ban",
+          "body": "Decisive in the first semester, unenforceable within weeks. It pushed usage underground where no wisdom could reach it, and guaranteed students would use the most consequential technology of their lifetime with no adult formation at all."
+        },
+        {
+          "label": "The borrowed policy",
+          "body": "A document adapted from another district, adopted in a meeting, filed on the intranet. Nobody follows it because it answers no question anyone in your building was asking, and staff can feel that immediately."
+        },
+        {
+          "label": "Both share one root",
+          "body": "They attempt to govern a capability the leadership itself has not personally understood. That order cannot be reversed, in a school any more than in a company. Judgment first, then policy."
+        }
+      ],
+      "quote": "Ask one teacher, one student and one administrator what your rules for AI are. Three different answers means the real policy is being written classroom by classroom."
+    },
+    {
+      "type": "content",
+      "section": 4,
+      "headline": "Closing the gap from the middle seat",
+      "standfirst": "You control more than the middle seat usually believes. Four moves, in order.",
+      "rows": [
+        {
+          "label": "Get personally fluent before the next term",
+          "body": "Not certified, fluent. A few structured hours working with AI on your own real tasks teaches more than a year of briefings, and it changes how every later conversation goes. The room can tell."
+        },
+        {
+          "label": "Bring the real usage into the light",
+          "body": "Declare an amnesty and ask, without threat, how staff are actually using AI today. Your future guidelines are hiding inside your best teachers' current workarounds."
+        },
+        {
+          "label": "Draw three bright lines now",
+          "body": "Student data never enters unapproved tools. AI-drafted family communication goes out under a named human who read it. Assessment decisions are made by educators, not machines."
+        },
+        {
+          "label": "Claim the question, visibly",
+          "body": "Someone will become the person trusted on AI: the one colleagues consult, the one parents believe. That position is vacant in most schools and it will not stay vacant."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 5,
+      "headline": "The stakes are the students",
+      "standfirst": "Every other sector is managing money, output or reputation. This one is not.",
+      "rows": [
+        {
+          "label": "Education forms the people who live longest inside this",
+          "body": "Whatever this technology becomes, the generation currently in your classrooms will spend more years inside it than anyone now making decisions about it."
+        },
+        {
+          "label": "They are learning to think alongside machines",
+          "body": "Machines that answer instantly and convincingly. Whether they learn judgment, honesty and discernment in that partnership, or learn nothing except how not to get caught, is being settled now."
+        },
+        {
+          "label": "It depends on whether the adults got clear early enough",
+          "body": "Clear enough to teach from clarity rather than react from fear. That is not a committee's job, and it is claimable this term."
+        }
+      ]
+    },
+    {
+      "type": "close",
+      "line": "The students are not waiting. The staff room is not waiting. The gap closes when someone in the middle decides that closing it is theirs to do."
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "sections": [
+    { "name": "Two questions", "subtitle": "They sort every task on your plate" },
+    { "name": "Pattern work", "subtitle": "Goes to AI, under standards" },
+    { "name": "Judgment work", "subtitle": "Stays with you, permanently" },
+    { "name": "The shared pile", "subtitle": "Where leadership actually lives" },
+    { "name": "The fourth pile", "subtitle": "Should not be delegated at all" },
+    { "name": "Draw the line", "subtitle": "Through the week you just had" }
+  ],
+  "slides": [
+    { "type": "title" },
+    {
+      "type": "content",
+      "section": 1,
+      "headline": "Two questions sort every task",
+      "standfirst": "Ask about the task, not the technology. What AI can do has no bottom.",
+      "rows": [
+        {
+          "label": "How well does this fit what AI is good at?",
+          "body": "AI is strongest where work is structured, patterned and predictable. A daily report pulling the same data into the same format fits perfectly. A conversation with a high performer quietly thinking about leaving does not fit at all."
+        },
+        {
+          "label": "How much does it demand things distinctly human?",
+          "body": "Emotional intelligence. Ethical judgment. Trust that took years to build. The ability to read what is not being said in a room. Some work barely touches these. Some work is nothing but these."
+        },
+        {
+          "label": "Both answers put the task in one of four piles",
+          "body": "Work AI should own, work you must own, work you should split with it, and work that deserves a harder question. Each pile gets its own treatment."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 2,
+      "headline": "Pattern work goes to AI",
+      "standfirst": "Fits AI well, asks almost nothing distinctly human.",
+      "rows": [
+        {
+          "label": "How to recognise it",
+          "body": "It follows the same shape every time, it mostly collects, sorts or summarizes, and you have done it so often you could do it in your sleep. Scheduling, status reports, meeting notes, intake summaries."
+        },
+        {
+          "label": "Hand it over, but not casually and not silently",
+          "body": "You set the parameters, you define what good looks like, and you check the output until it earns your trust, the same way you would with a new hire. Work handed over with no standards is how ungoverned AI takes root."
+        },
+        {
+          "label": "Every hour you keep costs more than it looks",
+          "body": "It is an hour taken from work only you can do. The standards you write here are also what the next stage runs on, when AI begins acting continuously on your behalf instead of task by task."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 3,
+      "headline": "Judgment work stays with you",
+      "standfirst": "Fits AI poorly, and demands everything human.",
+      "rows": [
+        {
+          "label": "How to recognise it",
+          "body": "The outcome depends on a relationship. A poor outcome would damage trust in ways that outlast the task. The other person needs to feel heard rather than processed. The stakes are ethical rather than operational."
+        },
+        {
+          "label": "The line does not move as AI gets more fluent",
+          "body": "It was never about what AI can imitate. It is about what your people need to receive from you, and about who carries the outcome afterward."
+        },
+        {
+          "label": "At most, let it help you prepare",
+          "body": "The background, the history, the options on paper. The moment itself stays yours."
+        }
+      ],
+      "quote": "AI can summarize, analyze and generate options all day. It cannot take responsibility for a decision."
+    },
+    {
+      "type": "content",
+      "section": 4,
+      "headline": "The shared pile is where leadership lives",
+      "standfirst": "Fits AI well and demands real judgment. Most delegation advice misses it.",
+      "rows": [
+        {
+          "label": "What is in it",
+          "body": "Strategic planning. Board presentations. Client proposals. The analysis in front of a pricing decision, a staffing model, or a quality problem you have been circling for months."
+        },
+        {
+          "label": "It gets split, not handed over",
+          "body": "AI does the groundwork: gathering, drafting, structuring, surfacing the pattern in the data, and arguing the other side of your position back at you."
+        },
+        {
+          "label": "You do the deciding",
+          "body": "What the presentation argues, what the proposal promises, what the numbers actually mean for the direction you set. You arrive with better groundwork than ever, and still arrive as the one who decides."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 5,
+      "headline": "The fourth pile should not be delegated at all",
+      "standfirst": "Poor fit for AI, and no real human judgment involved either.",
+      "rows": [
+        {
+          "label": "What lands here",
+          "body": "The recurring meeting nobody would miss for two weeks. The duplicate approval chain. The internal report producing information no one uses, which exists because it has always existed."
+        },
+        {
+          "label": "Automating it preserves the waste",
+          "body": "At higher speed, and it hides it from scrutiny. Handing a pointless task to AI does not redeem the task."
+        },
+        {
+          "label": "This pile gets a different question",
+          "body": "Does this need to exist at all? Usually the answer is no, and deleting it recovers more than automating it ever would."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 6,
+      "headline": "Draw the line through last week",
+      "standfirst": "One sitting, four steps, using a calendar you already have.",
+      "rows": [
+        {
+          "label": "List what you personally did",
+          "body": "Use your calendar and sent messages to keep yourself honest. The meetings, the reports, the reviews, the conversations."
+        },
+        {
+          "label": "Ask the two questions of every item",
+          "body": "How well does it fit what AI does well, and how much does it demand of your distinctly human judgment."
+        },
+        {
+          "label": "Sort into four piles, then act on one from each",
+          "body": "Hand one pattern task over with clear standards. Put one judgment task back on the calendar with the time it deserves. Split one significant decision. Kill one task outright."
+        },
+        {
+          "label": "Redraw it quarterly",
+          "body": "The first question moves, because the technology's reach grows monthly. The second does not. Expect the first pile to grow while the second holds."
+        }
+      ]
+    },
+    {
+      "type": "close",
+      "line": "Time is spent. Judgment is invested. Delegation done deliberately is refusing to spend judgment on work that only requires attention."
+    }
+  ]
+}

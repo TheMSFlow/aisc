@@ -1,0 +1,117 @@
+{
+  "sections": [
+    { "name": "The quiet list", "subtitle": "Every organization keeps one" },
+    { "name": "What changed", "subtitle": "The arithmetic under expert work" },
+    { "name": "Three logs", "subtitle": "Where the priced-out service hides" },
+    { "name": "The test", "subtitle": "Before it touches a price list" },
+    { "name": "From spotted to claimed", "subtitle": "Proof, then standard, then volume" }
+  ],
+  "slides": [
+    { "type": "title" },
+    {
+      "type": "content",
+      "section": 1,
+      "headline": "Every organization keeps a quiet list",
+      "standfirst": "Nobody writes it down. Everyone who leads the organization knows it by heart.",
+      "rows": [
+        {
+          "label": "The requests you politely decline",
+          "body": "The client ask you turn down because the hours would eat the margin. The proposal tier you never built because it needs a hire you cannot justify."
+        },
+        {
+          "label": "The touches you know would win loyalty",
+          "body": "The follow-up, the reporting, the personal attention. All of it priced out by the simple arithmetic of expert time."
+        },
+        {
+          "label": "That list is where the first AI money hides",
+          "body": "Not in doing your current work slightly faster, but in the offers that were never economical until now. In most industries nobody has re-read the list since the arithmetic moved."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 2,
+      "headline": "What actually changed in the arithmetic",
+      "standfirst": "AI did one economically important thing, and it is worth naming precisely.",
+      "rows": [
+        {
+          "label": "The preparation layer collapsed in cost",
+          "body": "Drafting, structuring, summarizing, first-pass analysis, translating between formats and audiences. The work that used to consume most of the billable hours behind any premium service."
+        },
+        {
+          "label": "The judgment did not",
+          "body": "It is still yours, still scarce, and still what the customer is paying for. What fell is the cost of everything wrapped around it."
+        },
+        {
+          "label": "So the opportunity is not cheaper delivery",
+          "body": "It is that services whose economics failed at last year's preparation costs now clear the bar. And the arithmetic moved for your competitors on the same day it moved for you."
+        }
+      ],
+      "quote": "The first AI revenue rarely comes from a new invention. It comes from an old no that quietly became a yes."
+    },
+    {
+      "type": "content",
+      "section": 3,
+      "headline": "Three places the priced-out service hides",
+      "standfirst": "You are looking for demand you already turned away.",
+      "rows": [
+        {
+          "label": "The declined-request log",
+          "body": "What do clients, members or donors keep asking for that you keep deflecting? Not the unreasonable asks, the reasonable ones that failed on cost. If three asked and you declined three times, someone will offer it."
+        },
+        {
+          "label": "The workaround log",
+          "body": "Where does your team improvise because the proper version was too expensive to build? Workarounds mark exactly where value was rationed, and rationing caused by preparation cost is rationing you can now end."
+        },
+        {
+          "label": "The someday tier",
+          "body": "The premium version of your organization you would offer with two more skilled people. Write it down and re-cost it honestly. What clears is a new tier with your reputation already attached."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 4,
+      "headline": "The test before you stake revenue on it",
+      "standfirst": "A candidate service is not an offer yet. Three questions, answered honestly.",
+      "rows": [
+        {
+          "label": "Does the value come from your judgment?",
+          "body": "AI collapsed preparation costs for everyone, including people with no expertise in your field. If the service is only cheap production it is a race to the bottom. Price on the judgment, not the hours you saved."
+        },
+        {
+          "label": "Would you sign it?",
+          "body": "Every deliverable carries your name and reputation. The standard is the one that applies to all serious AI use: effective, efficient, ethical and safe, with a named human owning the output."
+        },
+        {
+          "label": "Does it survive the regret test?",
+          "body": "If a competitor launched exactly this service twelve months from now, at the price you are hesitating over, would it genuinely cost you? If yes, you have found real ground."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 5,
+      "headline": "From spotted to claimed",
+      "standfirst": "One paying proof beats a quarter of internal debate.",
+      "rows": [
+        {
+          "label": "Build it for one real customer at a real price",
+          "body": "Pick the single strongest candidate from your three logs and deliver it with your judgment visibly in the loop. It teaches you the true cost curve faster than any projection will."
+        },
+        {
+          "label": "Do not price it as a discount",
+          "body": "The temptation is to pass the fallen preparation cost straight to the customer. That reads the shift backward. They are not buying your lowered costs, they are buying a service they wanted and could not get."
+        },
+        {
+          "label": "Do not scale it before it has a standard",
+          "body": "One customer served brilliantly, with a written picture of what good looks like and who signs it, becomes a repeatable offer. Five served improvisationally becomes reputation risk multiplied by five."
+        }
+      ]
+    },
+    {
+      "type": "close",
+      "line": "Somewhere on that list, a no became a yes while nobody was looking. It is worth real money to be the first one in your world who notices."
+    }
+  ]
+}

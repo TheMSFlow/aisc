@@ -272,7 +272,9 @@ const html = `<!doctype html>
   </div>
 </body></html>`;
 
-const outDir = path.join(ROOT, "content", "infographics");
+// One folder per briefing, named exactly as its Drive folder. See cover.mjs.
+const briefingDir = `${pubDate}_${coverId}_${slug}`;
+const outDir = path.join(ROOT, "content", "social", briefingDir);
 fs.mkdirSync(outDir, { recursive: true });
 const tmpHtml = path.join(outDir, `.${slug}.html`);
 fs.writeFileSync(tmpHtml, html, "utf8");
@@ -363,8 +365,8 @@ try {
   } else {
     console.log("contrast:   all text passes WCAG AA");
   }
-  console.log(`saved:      content/infographics/${assetName}`);
-  console.log(`drive:      SOCIAL MEDIA/infographics/${assetName}`);
+  console.log(`saved:      content/social/${briefingDir}/${assetName}`);
+  console.log(`drive:      SOCIAL MEDIA/${briefingDir}/${assetName}`);
 } finally {
   await browser.close();
   fs.rmSync(tmpHtml, { force: true });
