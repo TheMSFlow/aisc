@@ -4,12 +4,12 @@ import { getAllPosts } from "@/lib/blog/posts";
 import { formatDate } from "@/lib/blog/format";
 import { getTheme } from "@/lib/blog/taxonomy";
 
-function FooterLink({ href, children, external = false }) {
+function FooterLink({ href, children, external = false, newTab = false }) {
   const className =
     "relative inline-block text-sm font-light text-lilac/70 transition-colors hover:text-white after:absolute after:-bottom-0.5 after:left-0 after:h-px after:w-0 after:bg-msaccent after:transition-[width] after:duration-200 hover:after:w-full";
   return (
     <li>
-      {external ? (
+      {external || newTab ? (
         <a
           href={href}
           className={className}
@@ -139,7 +139,9 @@ export default function Footer() {
               <ul className="flex flex-col gap-2">
                 <FooterLink href="/awakening">The Awakening</FooterLink>
                 <FooterLink href="/personalize">Find your path</FooterLink>
-                <FooterLink href="/awakening/feed.xml">RSS feed</FooterLink>
+                <FooterLink href="/ai-apprentice" newTab>
+                  Career Apprentice
+                </FooterLink>
                 <FooterLink href="https://aiclarityforchiefs.com" external>
                   AI Clarity for Chiefs
                 </FooterLink>

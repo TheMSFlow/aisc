@@ -2,12 +2,12 @@ import Link from "next/link";
 import ArticleCta from "./ArticleCta";
 import { AUDIENCES } from "@/lib/blog/taxonomy";
 
-function FooterLink({ href, children, external = false }) {
+function FooterLink({ href, children, external = false, newTab = false }) {
   const className =
     "relative inline-block text-sm text-lilac/70 transition-colors hover:text-white after:absolute after:-bottom-0.5 after:left-0 after:h-px after:w-0 after:bg-msaccent after:transition-[width] after:duration-200 hover:after:w-full";
   return (
     <li>
-      {external ? (
+      {external || newTab ? (
         <a
           href={href}
           className={className}
@@ -81,8 +81,10 @@ export default function BriefingsFooter() {
                 Explore
               </p>
               <ul className="flex flex-col gap-2">
-                <FooterLink href="/awakening/feed.xml">RSS feed</FooterLink>
                 <FooterLink href="/awakening">All briefings</FooterLink>
+                <FooterLink href="/ai-apprentice" newTab>
+                  Career Apprentice
+                </FooterLink>
                 <FooterLink href="https://aiclarityforchiefs.com" external>
                   AI Clarity for Chiefs
                 </FooterLink>

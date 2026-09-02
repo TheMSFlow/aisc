@@ -29,6 +29,12 @@ export default function sitemap() {
       changeFrequency: "weekly",
       priority: 0.8,
     },
+    {
+      url: `${baseUrl}/ai-apprentice`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
     // Add entries as these surfaces ship:
     // `${baseUrl}/coaching`
   ];
