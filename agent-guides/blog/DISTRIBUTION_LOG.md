@@ -20,6 +20,20 @@
 7. **Record the cover headline.** Every built cover gets a row in § Cover headlines the same session. The script that follows it depends on that text, and it is not recoverable from the JPEG.
 8. **Session notes: the pause is under review.** It was set 2026-08-13 because there is no shooting equipment for the 15-minute long-form, and the deck existed only to be recorded from. **That reasoning weakened when the format changed on 2026-08-14**, because a detailed summary of the briefing is useful to read whether or not anything is ever filmed. Row 15 was built on request the same day, so the queue currently has a deck for every published briefing. **Whether row 16 gets one automatically is Michael's call and is not yet settled.** Until it is, ask rather than assume. The Script column still carries the active video asset either way.
 
+## The dashboard
+
+**Added 2026-09-03.** `npm run dashboard` serves a local control room at `http://localhost:3010` that reads this file, `TOPIC_LEDGER.md` and `content/`, and shows the queue, the publish pipeline, taxonomy coverage, and drift between what this log claims and what is actually on disk.
+
+**It writes back.** Ticking a post writes the date and live URL into the platform cell of the queue table below, and only that cell. This file stays the source of truth; the dashboard is a view onto it with one write path. Nothing else in the file is touched, and the write is verified by reading it back before it commits.
+
+**A YouTube column was added to the queue table the same day**, because the dashboard tracks all three platforms and a tick needs a cell to write into. Every existing row was padded with `—`. The column stays empty while the channel is paused.
+
+**It shows the assets, not just their status.** Clicking a briefing opens a drawer with the cover and infographic as images (click to enlarge), the script rendered from its markdown source, and the session-notes deck rendered slide by slide from its spec, so a deck can be read without opening PowerPoint. A Files tab lists what is in the folder with sizes, and Open launches any file in its own application. Deep link: `#assets/<slug>` opens a drawer, `#assets/<slug>/script` opens it on a given tab.
+
+The browser half lives in `scripts/dashboard.client.js` and is served at `/dashboard.js`. It is a separate file on purpose: inlined in a template literal, every backslash was silently eaten, which turned one regex into a block comment.
+
+The dashboard is local only. It binds to 127.0.0.1, makes no network calls, and nothing it renders leaves the machine.
+
 ## Legend
 
 `—` not started · `WIP` in progress · `✓ local` built and finished, living in `content/social/` · `n/a` not applicable
@@ -32,28 +46,31 @@ Asset columns record production. Platform columns record the actual post: date a
 
 ## Queue
 
-| # | Briefing | Cover | Script | Session notes | Video | Cover img | Infographic | LinkedIn | Instagram |
-|---|----------|-------|--------|---------------|-------|-----------|-------------|----------|-----------|
-| 1 | `ai-governance-the-risk-is-already-inside` | ai-governance | ✓ local (docx, v2) | ✓ local (pptx, v3 summary format) | — | ✓ local | ✓ local (list) | — | — |
-| 2 | `territory-not-tools-the-ai-opportunity-for-leaders` | ai-value | ✓ local (docx, v2) | ✓ local (pptx, v3 summary format) | — | ✓ local | ✓ local (list) | — | — |
-| 3 | `the-briefing-your-board-expects-you-to-have-had` | chiefs-briefing | ✓ local (docx, v2) | ✓ local (pptx, v3 summary format) | — | ✓ local | ✓ local (list) | — | — |
-| 4 | `the-service-you-could-not-afford-to-offer-last-year` | ai-value | ✓ local (docx, v2) | ✓ local (pptx, v3 summary format) | — | ✓ local | ✓ local (list) | — | — |
-| 5 | `your-congregation-is-already-asking-about-ai` | ai-leadership | ✓ local (docx, v2) | ✓ local (pptx, v3 summary format) | — | ✓ local | ✓ local (list) | — | — |
-| 6 | `your-students-adopted-ai-before-your-policy-did` | ai-governance | ✓ local (docx, v2) | ✓ local (pptx, v3 summary format) | — | ✓ local | ✓ local (list) | — | — |
-| 7 | `what-to-delegate-to-ai-and-what-to-never` | ai-fluency | ✓ local (docx, v2) | ✓ local (pptx, v3 summary format) | — | ✓ local | ✓ local (matrix, rebuilt) | — | — |
-| 8 | `what-ai-actually-is-for-the-seat-where-decisions-stop` | ai-clarity | ✓ local (docx) | ✓ local (pptx, v3 summary format) | — | ✓ local | ✓ local (list) | — | — |
-| 9 | `why-your-ai-pilot-went-nowhere` | ai-leadership | ✓ local (docx) | ✓ local (pptx, v3 summary format) | — | ✓ local | ✓ local (list) | — | — |
-| 10 | `the-hours-you-lose-every-week-to-work-ai-could-handle` | ai-value | ✓ local (docx) | ✓ local (pptx, v3 summary format) | — | ✓ local | ✓ local (list) | — | — |
-| 11 | `the-cfos-ai-question-is-a-capital-question` | ai-value | ✓ local (docx) | ✓ local (pptx, v3 summary format) | — | ✓ local | ✓ local (list) | — | — |
-| 12 | `ai-fiduciary-duty-what-boards-now-expect` | chiefs-briefing | ✓ local (docx) | ✓ local (pptx, v3 summary format) | — | ✓ local | ✓ local (list) | — | — |
-| 13 | `ai-agents-before-you-hand-over-the-keys` | ai-governance | ✓ local (docx) | ✓ local (pptx, v3 summary format) | — | ✓ local | ✓ local (list) | — | — |
-| 14 | `reactive-leadership-is-a-margin-problem` | second-seat | ✓ local (docx) | ✓ local (pptx, v3 summary format) | — | ✓ local | ✓ local (list) | — | — |
-| 15 | `brief-ai-like-you-brief-your-team` | ai-fluency | ✓ local (docx) | ✓ local (pptx, v3 summary format) | — | ✓ local | ✓ local (list) | — | — |
-| 16 | `what-to-tell-your-team-about-ai-and-their-jobs` | ai-leadership | — | — | — | — | — | — | — |
+| # | Briefing | Cover | Script | Session notes | Video | Cover img | Infographic | LinkedIn | Instagram | YouTube |
+|---|----------|-------|--------|---------------|-------|-----------|-------------|----------|-----------|------|
+| 1 | `ai-governance-the-risk-is-already-inside` | ai-governance | ✓ local (docx, v2) | ✓ local (pptx, v3 summary format) | — | ✓ local | ✓ local (list) | 2026-09-04 · https://lnkd.in/p/et6ezjif | — | — |
+| 2 | `territory-not-tools-the-ai-opportunity-for-leaders` | ai-value | ✓ local (docx, v2) | ✓ local (pptx, v3 summary format) | — | ✓ local | ✓ local (list) | — | — | — |
+| 3 | `the-briefing-your-board-expects-you-to-have-had` | chiefs-briefing | ✓ local (docx, v2) | ✓ local (pptx, v3 summary format) | — | ✓ local | ✓ local (list) | — | — | — |
+| 4 | `the-service-you-could-not-afford-to-offer-last-year` | ai-value | ✓ local (docx, v2) | ✓ local (pptx, v3 summary format) | — | ✓ local | ✓ local (list) | — | — | — |
+| 5 | `your-congregation-is-already-asking-about-ai` | ai-leadership | ✓ local (docx, v2) | ✓ local (pptx, v3 summary format) | — | ✓ local | ✓ local (list) | — | — | — |
+| 6 | `your-students-adopted-ai-before-your-policy-did` | ai-governance | ✓ local (docx, v2) | ✓ local (pptx, v3 summary format) | — | ✓ local | ✓ local (list) | — | — | — |
+| 7 | `what-to-delegate-to-ai-and-what-to-never` | ai-fluency | ✓ local (docx, v2) | ✓ local (pptx, v3 summary format) | — | ✓ local | ✓ local (matrix, rebuilt) | — | — | — |
+| 8 | `what-ai-actually-is-for-the-seat-where-decisions-stop` | ai-clarity | ✓ local (docx) | ✓ local (pptx, v3 summary format) | — | ✓ local | ✓ local (list) | — | — | — |
+| 9 | `why-your-ai-pilot-went-nowhere` | ai-leadership | ✓ local (docx) | ✓ local (pptx, v3 summary format) | — | ✓ local | ✓ local (list) | — | — | — |
+| 10 | `the-hours-you-lose-every-week-to-work-ai-could-handle` | ai-value | ✓ local (docx) | ✓ local (pptx, v3 summary format) | — | ✓ local | ✓ local (list) | — | — | — |
+| 11 | `the-cfos-ai-question-is-a-capital-question` | ai-value | ✓ local (docx) | ✓ local (pptx, v3 summary format) | — | ✓ local | ✓ local (list) | — | — | — |
+| 12 | `ai-fiduciary-duty-what-boards-now-expect` | chiefs-briefing | ✓ local (docx) | ✓ local (pptx, v3 summary format) | — | ✓ local | ✓ local (list) | — | — | — |
+| 13 | `ai-agents-before-you-hand-over-the-keys` | ai-governance | ✓ local (docx) | ✓ local (pptx, v3 summary format) | — | ✓ local | ✓ local (list) | — | — | — |
+| 14 | `reactive-leadership-is-a-margin-problem` | second-seat | ✓ local (docx) | ✓ local (pptx, v3 summary format) | — | ✓ local | ✓ local (list) | — | — | — |
+| 15 | `brief-ai-like-you-brief-your-team` | ai-fluency | ✓ local (docx) | ✓ local (pptx, v3 summary format) | — | ✓ local | ✓ local (list) | — | — | — |
+| 16 | `what-to-tell-your-team-about-ai-and-their-jobs` | ai-leadership | — | — | — | — | — | — | — | — |
+| 17 | `ai-in-the-clinic-what-stays-human` | ai-governance | — | — | — | — | — | — | — | — |
 
-16 published briefings as of 2026-08-24. The 16 banked drafts join this table as they publish.
+17 published briefings as of 2026-09-03. The 15 banked drafts join this table as they publish.
 
 **Row 16 added 2026-08-24 on publish, per rule 4. No asset built yet.** It is the first row where gate 1 (published) has cleared and gate 2 (headline approved as text) has not, so nothing downstream starts until Michael approves a cover headline. **Its Session notes cell is `—` deliberately:** rule 8's open question ("whether row 16 gets one automatically is Michael's call") is now live rather than hypothetical, and it is still unanswered, so the deck was not assumed.
+
+**Row 17 added 2026-09-03 on publish, per rule 4. No asset built yet.** Same state as row 16: gate 1 cleared, gate 2 open, nothing downstream started, Session notes left `—` pending rule 8's unanswered question. **Two rows now sit waiting on the same thing**, which is a cover headline approved as text. Rule 2 puts row 16 first in production order regardless, since it published earlier. It is the first row whose cover is `ai-governance` since row 13, so the background will have had a rest by the time it is built.
 
 ## Asset locations
 

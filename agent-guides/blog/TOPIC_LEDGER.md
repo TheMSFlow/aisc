@@ -45,6 +45,7 @@ The category pages are the hubs; briefings are the spokes. Google ranks hubs tha
 | `reactive-leadership-is-a-margin-problem` | how to stop being a reactive leader | Firefighting is collapsed margins, not character; the AI-era route back to deliberate | AI Value | The Second Seat | leaders-of-leaders | business | 2026-08-03 |
 | `brief-ai-like-you-brief-your-team` | how to give AI instructions as a leader | Briefing is a leadership skill leaders already have: role, context, deliverable | AI Fluency | AI Fluency | leaders-of-leaders, chiefs | business | 2026-08-05 |
 | `what-to-tell-your-team-about-ai-and-their-jobs` | what to tell employees about AI and their jobs | The conversation leaders keep postponing; honesty as the only durable script | AI Leadership | AI Leadership | chiefs, leaders-of-leaders | business | 2026-08-24 |
+| `ai-in-the-clinic-what-stays-human` | AI clinical governance for healthcare executives | The lines that stay human in care, and how clinical leaders draw them early | AI Governance | AI Governance | chiefs, leaders-of-leaders | healthcare | 2026-09-03 |
 
 ## Pipeline (reserved)
 
@@ -57,7 +58,6 @@ Topics reserved from the current source material. Reserving is cheap; only genui
 | `ai-in-public-office-lead-the-agenda-or-answer-to-it` | AI policy for public officials | The official who gets clear first sets the agenda; the one who waits responds to someone else's | AI Leadership | AI Leadership | chiefs, leaders-of-leaders | government | banked (draft written 2026-07-12, awaiting review + staggered publish) |
 | `the-trusted-voice-premium-ai-and-your-audience` | monetize AI as a creator / creator trust AI | AI made content abundant and trust scarce; the trusted-voice position pays | AI Value | AI Value | chiefs, emerging-leaders | creators | banked (draft written 2026-07-12, awaiting review + staggered publish) |
 | `digital-ministry-reach-without-losing-the-shepherd` | AI digital ministry | Reach further with less friction without automating the sacred: the ministry value map | AI Value | AI Value | chiefs, leaders-of-leaders | faith | banked (draft written 2026-07-12, awaiting review + staggered publish) |
-| `ai-in-the-clinic-what-stays-human` | AI clinical governance for healthcare executives | The lines that stay human in care, and how clinical leaders draw them early | AI Governance | AI Governance | chiefs, leaders-of-leaders | healthcare | banked (draft written 2026-07-12, awaiting review + staggered publish) |
 | `the-nonprofit-leverage-moment` | AI for nonprofit leaders capacity | Abundance of intelligence is the first real leverage the sector has been offered | AI Value | AI Value | chiefs, leaders-of-leaders | nonprofit | banked (draft written 2026-07-12, awaiting review + staggered publish) |
 | `the-data-line-what-never-goes-into-an-ai-tool` | what data is safe to put into AI tools | Task delegation has a data twin: the always-on line for sensitive information | AI Governance | AI Governance | chiefs, leaders-of-leaders | business, healthcare, finance | banked (draft written 2026-07-12, awaiting review + staggered publish) |
 | `the-discernment-checklist-before-you-trust-an-ai-output` | how to verify AI output before using it | Four questions after every output; confidence is not a signal of correctness | AI Fluency | AI Fluency | leaders-of-leaders, emerging-leaders | business, finance | banked (draft written 2026-07-12, awaiting review + staggered publish) |
@@ -79,15 +79,15 @@ Topics reserved from the current source material. Reserving is cheap; only genui
 
 ## Link graph (generated)
 
-Posts scanned: 32  (generated 2026-08-24)
+Posts scanned: 32  (generated 2026-09-03)
 
 | Post | Out → siblings | Out → categories | In ← siblings | Flags |
 |------|----------------|------------------|---------------|-------|
-| `ai-agents-before-you-hand-over-the-keys` | `what-to-delegate-to-ai-and-what-to-never`, `ai-governance-the-risk-is-already-inside`, `ai-fiduciary-duty-what-boards-now-expect` | — | 1 | OK |
+| `ai-agents-before-you-hand-over-the-keys` | `what-to-delegate-to-ai-and-what-to-never`, `ai-governance-the-risk-is-already-inside`, `ai-fiduciary-duty-what-boards-now-expect` | — | 2 | OK |
 | `ai-fiduciary-duty-what-boards-now-expect` | `ai-governance-the-risk-is-already-inside`, `the-briefing-your-board-expects-you-to-have-had` | — | 2 | OK |
 | `ai-governance-the-risk-is-already-inside` | `your-students-adopted-ai-before-your-policy-did`, `your-congregation-is-already-asking-about-ai`, `the-briefing-your-board-expects-you-to-have-had` | — | 23 | OK |
 | `ai-in-public-office-lead-the-agenda-or-answer-to-it` | `ai-governance-the-risk-is-already-inside`, `your-students-adopted-ai-before-your-policy-did` | — | 0 | draft |
-| `ai-in-the-clinic-what-stays-human` | `what-to-delegate-to-ai-and-what-to-never`, `ai-governance-the-risk-is-already-inside` | — | 0 | draft |
+| `ai-in-the-clinic-what-stays-human` | `what-to-delegate-to-ai-and-what-to-never`, `ai-governance-the-risk-is-already-inside`, `ai-agents-before-you-hand-over-the-keys` | — | 1 | OK |
 | `become-the-ai-authority-at-work-without-the-title` | `territory-not-tools-the-ai-opportunity-for-leaders`, `ai-governance-the-risk-is-already-inside`, `your-students-adopted-ai-before-your-policy-did` | — | 0 | draft |
 | `before-you-sign-a-leaders-ai-vendor-questions` | `ai-governance-the-risk-is-already-inside`, `what-to-delegate-to-ai-and-what-to-never` | — | 0 | draft |
 | `brief-ai-like-you-brief-your-team` | `what-ai-actually-is-for-the-seat-where-decisions-stop`, `what-to-delegate-to-ai-and-what-to-never`, `ai-governance-the-risk-is-already-inside`, `reactive-leadership-is-a-margin-problem` | — | 2 | OK |
@@ -107,7 +107,7 @@ Posts scanned: 32  (generated 2026-08-24)
 | `the-service-you-could-not-afford-to-offer-last-year` | `ai-governance-the-risk-is-already-inside`, `territory-not-tools-the-ai-opportunity-for-leaders` | — | 5 | OK |
 | `the-trusted-voice-premium-ai-and-your-audience` | `territory-not-tools-the-ai-opportunity-for-leaders`, `your-congregation-is-already-asking-about-ai` | — | 0 | draft |
 | `what-ai-actually-is-for-the-seat-where-decisions-stop` | `what-to-delegate-to-ai-and-what-to-never`, `ai-governance-the-risk-is-already-inside`, `the-briefing-your-board-expects-you-to-have-had` | — | 2 | OK |
-| `what-to-delegate-to-ai-and-what-to-never` | `ai-governance-the-risk-is-already-inside`, `ai-agents-before-you-hand-over-the-keys`, `the-hours-you-lose-every-week-to-work-ai-could-handle`, `territory-not-tools-the-ai-opportunity-for-leaders`, `the-service-you-could-not-afford-to-offer-last-year`, `what-to-tell-your-team-about-ai-and-their-jobs` | — | 18 | OK |
+| `what-to-delegate-to-ai-and-what-to-never` | `ai-governance-the-risk-is-already-inside`, `ai-agents-before-you-hand-over-the-keys`, `ai-in-the-clinic-what-stays-human`, `the-hours-you-lose-every-week-to-work-ai-could-handle`, `territory-not-tools-the-ai-opportunity-for-leaders`, `the-service-you-could-not-afford-to-offer-last-year`, `what-to-tell-your-team-about-ai-and-their-jobs` | — | 18 | OK |
 | `what-to-tell-your-team-about-ai-and-their-jobs` | `what-to-delegate-to-ai-and-what-to-never`, `ai-governance-the-risk-is-already-inside`, `brief-ai-like-you-brief-your-team` | — | 2 | OK |
 | `why-your-ai-pilot-went-nowhere` | `territory-not-tools-the-ai-opportunity-for-leaders`, `the-service-you-could-not-afford-to-offer-last-year`, `ai-governance-the-risk-is-already-inside` | — | 1 | OK |
 | `write-your-personal-ai-policy-before-someone-writes-it-for-you` | `ai-governance-the-risk-is-already-inside`, `what-to-delegate-to-ai-and-what-to-never` | — | 0 | draft |
