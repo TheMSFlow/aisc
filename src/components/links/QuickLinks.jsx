@@ -30,7 +30,7 @@ const links = [
   {
     id: "aica",
     badge: "Career Programme",
-    headline: "AI Career Apprentice",
+    headline: "AI Career Apprentice [Cohort BETA]",
     // Diagnosis then promise, drawn from the founder's LinkedIn post of
     // 2026-09: the hiring criteria moved, most graduates have not moved with
     // them. The promise is the skill set, not the artifacts. A certificate,
@@ -39,7 +39,12 @@ const links = [
     // ApprenticeProgramme.jsx.
     persona:
       "The way employers search for talent has changed. They now want responsibility, social capital, initiative and, since 2025, AI fluency. Most graduates have not readjusted. Here, you readjust: real AI fluency you can put to work rather than talk about, the skill to solve your ideal employer's problems with AI, and the judgment to read any room, find where the value sits, and start delivering without being told how.",
-    highlight: "Only 100 seats available",
+    // "Sprint 1 is free", not "the programme is free": Sprint 1 is the free
+    // part and mentorship plus the apprenticeship that follow are paid, which
+    // the persona copy above already says. Wording tracks the programme page's
+    // own "Sprint 1 · Free" label in ApprenticeProgramme.jsx.
+    // Offer before constraint: free earns the read, scarcity moves the click.
+    highlights: ["Sprint 1&2 is free", "Only 100 seats available"],
     cta: "See the Programme",
     href: "/ai-apprentice",
     external: false,
@@ -244,14 +249,23 @@ function HeroCard({ link }) {
           {link.persona}
         </p>
 
-        {/* The one loud element on the page. Solid `warning` is the palette's
-            urgency colour and it is spent here, on a real constraint, so it
-            does not compete with anything else on the card. */}
-        {link.highlight && (
-          <div className="bg-warning rounded-lg px-3 py-2 inline-block">
-            <span className="text-xs font-semibold text-white">
-              {link.highlight}
-            </span>
+        {/* The loud element on the page. Solid `warning` is the palette's
+            urgency colour and it is spent here, on the offer and the real
+            constraint behind it, so it does not compete with anything else on
+            the card. Both pills share the one colour deliberately: they read as
+            a single statement (free, but limited) rather than two claims. */}
+        {link.highlights?.length > 0 && (
+          <div className="flex flex-wrap gap-2">
+            {link.highlights.map((highlight) => (
+              <div
+                key={highlight}
+                className="bg-warning rounded-lg px-3 py-2 inline-block"
+              >
+                <span className="text-xs font-semibold text-white">
+                  {highlight}
+                </span>
+              </div>
+            ))}
           </div>
         )}
 
