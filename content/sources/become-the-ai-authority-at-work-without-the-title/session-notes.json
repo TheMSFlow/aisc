@@ -1,0 +1,221 @@
+{
+  "sections": [
+    { "name": "The gap", "subtitle": "Usage everywhere, direction nowhere" },
+    { "name": "Step one: clarity you own", "subtitle": "Built in private" },
+    { "name": "Step two: one visible task", "subtitle": "A process, not a vision" },
+    { "name": "Counting it", "subtitle": "A number that survives a challenge" },
+    { "name": "Step three: the structure", "subtitle": "What nobody else brought" },
+    { "name": "Step four: teach", "subtitle": "Before anyone asks" },
+    { "name": "Step five: mark the position", "subtitle": "Say it plainly" },
+    { "name": "When the answer is no", "subtitle": "Taken ground, or a wary manager" },
+    { "name": "What not to do", "subtitle": "Three failure modes" },
+    { "name": "A career event", "subtitle": "The vacancy gets filled once" }
+  ],
+  "slides": [
+    { "type": "title" },
+    {
+      "type": "content",
+      "section": 1,
+      "headline": "Authority is built in the gap between usage and direction",
+      "standfirst": "Nobody asking you to lead AI is not the obstacle. It is the opening.",
+      "rows": [
+        {
+          "label": "People are using AI, but nobody is directing it",
+          "body": "Some openly, most quietly, none consistently. What almost no organization has is someone who can say what the tools are for, where they do not belong, and what good looks like."
+        },
+        {
+          "label": "Judgment closes the gap, not app knowledge",
+          "body": "The gap is what the people above you are worried about, whether or not they can articulate it. The colleague who knows the most apps does not close it. The person who brings judgment to it does."
+        },
+        {
+          "label": "Titles go to ground that is already mapped",
+          "body": "AI leadership in most organizations is unmapped and unowned, waiting for the first person who brings structure instead of enthusiasm. That person does not need permission. They need a plan."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 2,
+      "headline": "Build a position that is actually yours, before anything public",
+      "standfirst": "One page, written for yourself, in plain sentences.",
+      "rows": [
+        {
+          "label": "Answer three questions",
+          "body": "What AI actually is. What it means for your team's work specifically. Where you believe it should and should not be used. Spend a week on it, privately, before you say anything in public."
+        },
+        {
+          "label": "Owned answers survive follow-up questions",
+          "body": "That is the difference between the AI enthusiast and the AI authority. Borrowed opinions collapse under one why. Owned ones hold, and the page is the foundation for every step that follows."
+        },
+        {
+          "label": "A structured first week exists if you want one",
+          "body": "The first-week guide walks through building exactly this page, starting from the question of where AI creates value in your world rather than which tool to use."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 3,
+      "headline": "Claim a process, not a vision",
+      "standfirst": "Pick work you already touch, with an obvious pattern and survivable stakes.",
+      "rows": [
+        {
+          "label": "Choose the unglamorous recurring work",
+          "body": "The weekly report, the onboarding documents, the response templates, the meeting summaries. In a school, the parent-communication drafts or the scheduling grind. In a company, the status reporting nobody loves."
+        },
+        {
+          "label": "Run it deliberately",
+          "body": "Define what good output looks like, brief the work properly as you would a capable new hire, check everything, and track what it saves."
+        },
+        {
+          "label": "The point is the demonstration, not the hours",
+          "body": "The hours will come. The point is a working demonstration with your name on it, running where people can see it."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 4,
+      "headline": "Produce a small number you can defend",
+      "standfirst": "Without a title, the number gets questioned harder.",
+      "rows": [
+        {
+          "label": "Time it before you change anything",
+          "body": "Two or three real instances, written down, not remembered. Then run the task your new way and time it the same way, so the before and after figures measure the same thing."
+        },
+        {
+          "label": "Count your checking time inside the after figure",
+          "body": "The check is part of the work now. A number that quietly omits it will not survive the first person who asks what verification costs."
+        },
+        {
+          "label": "Claim only the task you actually ran",
+          "body": "Four hours down to ninety minutes including review, over six weeks, is a sentence nobody can take apart. AI could save the department thirty percent invites someone senior to take it apart in public."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 5,
+      "headline": "Write down how it works, then offer it upward",
+      "standfirst": "This is what separates you from every tool enthusiast in the building.",
+      "rows": [
+        {
+          "label": "One page again",
+          "body": "What the task was, what AI does, what a human still checks, what it must never be used for, and what it saved."
+        },
+        {
+          "label": "Frame it as a proposal, not a complaint",
+          "body": "We are all using this anyway; here is a structure that makes it safe and useful. Ungoverned AI use is already inside most teams, and leadership usually discovers it through an incident."
+        },
+        {
+          "label": "A standard instead of a scandal",
+          "body": "The person who surfaces it that way becomes the adult in the room on this topic. Recommending tools makes you the person asked which app. Bringing structure makes you the person asked what to do."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 6,
+      "headline": "Teach before anyone asks you to",
+      "standfirst": "Authority compounds when other people get capable because of you.",
+      "rows": [
+        {
+          "label": "Make the small offers",
+          "body": "Offer the lunch-and-learn. Write the two-paragraph explainer when the team is confused about what a tool can and cannot do. Sit with the colleague who is quietly overwhelmed and walk them through one real task."
+        },
+        {
+          "label": "Teaching makes your clarity visible without a claim",
+          "body": "The people you help become the people who mention your name when AI comes up in rooms you are not in."
+        },
+        {
+          "label": "In schools it lands hardest",
+          "body": "Students adopted AI before most institutions were ready, so whole staff rooms are waiting for exactly this person."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 7,
+      "headline": "Name what you have built, out loud",
+      "standfirst": "A declared claim backed by demonstrated work is not arrogance.",
+      "rows": [
+        {
+          "label": "Say it at the next real opportunity",
+          "body": "The next review, the next planning conversation, the next time someone asks about your goals: you intend to own how the team works with AI, and here is what you have already done. Bring the one-pagers and the numbers."
+        },
+        {
+          "label": "This is the step capable people skip",
+          "body": "Out of modesty, or fear of overreach. Skipping it is how the quiet builder watches someone louder get handed the ground they cleared."
+        },
+        {
+          "label": "It is how organizations find out who owns what",
+          "body": "A claim backed by work people have already seen is not self-promotion. It is the information the organization needs."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 8,
+      "headline": "When the ground is taken, or the answer is no",
+      "standfirst": "The plan assumes clear ground. The two blockers have different answers.",
+      "rows": [
+        {
+          "label": "Someone senior owns AI on paper and nothing moves",
+          "body": "Do not contest the title. Bring them the work, offered as something they can use with their name on the rollout. They have the authority you are missing, and you have the work they are missing."
+        },
+        {
+          "label": "Your manager reads it as overreach",
+          "body": "Usually a framing problem. Keep the claim strictly inside your existing job until results argue for widening it. A demonstration on your own tasks is hard to refuse; a proposal about the department is easy to."
+        },
+        {
+          "label": "If it stays no, you have built something portable",
+          "body": "The one-pagers, the standard and the measured result describe work you actually did, and read as clearly to another employer. That is information about the organization, not about you."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 9,
+      "headline": "Three failure modes that take the plan down",
+      "standfirst": "Your care is the product.",
+      "rows": [
+        {
+          "label": "Do not become the tool person",
+          "body": "The moment your identity is \"knows the apps\", you are support staff, not direction."
+        },
+        {
+          "label": "Do not shame the room",
+          "body": "People above you feeling behind is your opportunity. Making them feel it is how the opportunity closes."
+        },
+        {
+          "label": "Do not skip the standards",
+          "body": "One embarrassing AI output shipped without checking undoes months of credibility."
+        }
+      ]
+    },
+    {
+      "type": "content",
+      "section": 10,
+      "headline": "The vacancy gets filled once",
+      "standfirst": "Every organization will eventually have someone who owns AI direction. Most have nobody yet.",
+      "rows": [
+        {
+          "label": "This is a career event, not a side quest",
+          "body": "That vacancy gets filled once, and it is being filled somewhere every week. The window matters."
+        },
+        {
+          "label": "The challenge compresses the arc",
+          "body": "Clarity is built on Day 1, the delegation discipline and recovered hours land on Day 2, the territory is declared on Day 3, and the Certificate of Declaration on Day 7 marks the claim in writing."
+        },
+        {
+          "label": "The sequence is the same either way",
+          "body": "Through the challenge or through five deliberate weeks on your own: clarity, a small win, structure, teaching, then saying it out loud."
+        }
+      ]
+    },
+    {
+      "type": "close",
+      "line": "Nobody is going to ask you. Go first."
+    }
+  ]
+}

@@ -65,12 +65,19 @@ Asset columns record production. Platform columns record the actual post: date a
 | 15 | `brief-ai-like-you-brief-your-team` | ai-fluency | ✓ local (docx) | ✓ local (pptx, v3 summary format) | — | ✓ local | ✓ local (list) | — | — | — |
 | 16 | `what-to-tell-your-team-about-ai-and-their-jobs` | ai-leadership | — | — | — | — | — | — | — | — |
 | 17 | `ai-in-the-clinic-what-stays-human` | ai-governance | — | — | — | — | — | — | — | — |
+| 18 | `become-the-ai-authority-at-work-without-the-title` | emerging-leader | ✓ local (docx) | ✓ local (pptx, v3 summary format) | — | ✓ local | ✓ local (list) | — | — | — |
 
-17 published briefings as of 2026-09-03. The 15 banked drafts join this table as they publish.
+18 published briefings as of 2026-09-05. The 14 banked drafts join this table as they publish.
 
 **Row 16 added 2026-08-24 on publish, per rule 4. No asset built yet.** It is the first row where gate 1 (published) has cleared and gate 2 (headline approved as text) has not, so nothing downstream starts until Michael approves a cover headline. **Its Session notes cell is `—` deliberately:** rule 8's open question ("whether row 16 gets one automatically is Michael's call") is now live rather than hypothetical, and it is still unanswered, so the deck was not assumed.
 
 **Row 17 added 2026-09-03 on publish, per rule 4. No asset built yet.** Same state as row 16: gate 1 cleared, gate 2 open, nothing downstream started, Session notes left `—` pending rule 8's unanswered question. **Two rows now sit waiting on the same thing**, which is a cover headline approved as text. Rule 2 puts row 16 first in production order regardless, since it published earlier. It is the first row whose cover is `ai-governance` since row 13, so the background will have had a rest by the time it is built.
+
+**Row 18 added 2026-09-05 on publish, per rule 4. No asset built yet.** Third row in a row to stop at gate 2, so the headline backlog is now 16, 17 and 18 rather than a single stalled row. Rule 2 keeps them in publish order, so 16 is still first.
+
+**It is the first `emerging-leader` cover in the queue.** That cover line has existed since the taxonomy landed on 2026-07-28 and has never been built, so this row is also the first test of that background. Worth building before the queue reaches it rather than discovering a layout problem on the day.
+
+**Row 18 built 2026-09-12, ahead of rows 16 and 17, at Michael's instruction.** Rule 2 puts it third; Michael chose it because the `emerging-leader` line had never had an asset. Rows 16 and 17 are still at gate 2 and still first in line. Headline approved as text ("You Can Lead AI at Work Before Anyone Promotes You", no subhead), cover rendered and confirmed, then script, infographic and deck in one sitting. **The `emerging-leader` background works:** the card fitter set the headline at 88px, 4 lines, 99% of the measure, so no layout problem was waiting for it. Script 395 words, new STOP form "the question at your desk" (added to `SCRIPT_GUIDE.md`). Infographic is a 5-item list of the briefing's own five steps, one-line bodies, fit with 0px slack. **Rule 8 answered for this row only:** Michael asked for the deck. That does not decide rows 16 and 17. Deck is 12 slides, the largest in the set at 10 sections; every body fit at 12.5pt and all slides were checked by preview.
 
 ## Asset locations
 
@@ -127,6 +134,7 @@ So the cover agent records it here on delivery, and the script agent reads it he
 | 13 | `ai-agents-before-you-hand-over-the-keys` | An AI Agent Acts Under Your Name Without Asking You | none |
 | 14 | `reactive-leadership-is-a-margin-problem` | Firefighting Is Not a Personality. It Is a Symptom. | none |
 | 15 | `brief-ai-like-you-brief-your-team` | AI Is Not a Search Box. It Is a New Hire. | none |
+| 18 | `become-the-ai-authority-at-work-without-the-title` | You Can Lead AI at Work Before Anyone Promotes You | none |
 
 **Rows 8, 10, 12 and 13 rewritten 2026-08-14** on Michael's review, each for a different fault, all four now recorded in `SOCIAL_GUIDE.md` § Four more ways a headline fails. Their covers were rebuilt against the new text and the flat set updated. Superseded: "Nobody Has Explained AI to You Without Selling Something" (a jab where clarity was the job), "Ten to Twenty Hours of Your Week Could Go to AI" (vague about what AI does with them), "AI Left the Innovation Agenda for the Fiduciary One" (a word the reader has to stop and parse), "An AI Agent Is Your Judgment, Running Unattended" (abstract, nothing to picture).
 

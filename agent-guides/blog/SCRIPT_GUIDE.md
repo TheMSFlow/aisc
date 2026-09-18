@@ -146,6 +146,7 @@ The six beats are fixed. Everything inside them should not be, and the first sev
 | The pitch that already reached them | Name the sales pitch they have heard, then concede it is true | Row 13, agents |
 | The private conclusion | Say the thing they have decided about themselves, then contradict it | Row 14, margin |
 | The manager you remember | A person from their own past, then the turn onto them | Row 15, briefing |
+| The question at your desk | A colleague's small request, answered helpfully, then the turn onto what answering it made them | Row 18, authority without the title |
 
 **Never repeat the previous script's form**, and check the two before it as well. Six forms is enough that nothing needs reusing inside a run.
 

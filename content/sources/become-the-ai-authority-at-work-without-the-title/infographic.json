@@ -1,0 +1,27 @@
+{
+  "type": "list",
+  "title": "Leading AI at Work Before You Have the Title",
+  "standfirst": "The move is structure, not tool tips.",
+  "items": [
+    {
+      "label": "Build a position you own",
+      "body": "One private page on what AI is and where it belongs in your work."
+    },
+    {
+      "label": "Claim one visible task",
+      "body": "Run one recurring team task deliberately, and check everything."
+    },
+    {
+      "label": "Write down the standard",
+      "body": "What AI does, what a person checks, what it must never touch."
+    },
+    {
+      "label": "Teach before anyone asks",
+      "body": "Walk one colleague through one real task, start to finish."
+    },
+    {
+      "label": "Say the claim out loud",
+      "body": "Name it at your next review, and bring the measured result."
+    }
+  ]
+}
