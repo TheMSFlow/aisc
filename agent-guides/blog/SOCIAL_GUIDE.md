@@ -303,6 +303,8 @@ https://aistakeholderchallenge.com/awakening/the-cfos-ai-question-is-a-capital-q
 
 Never invent a fifth parameter, never reuse a campaign name across two briefings, and never post a bare URL.
 
+**Scope, settled 2026-09-22. UTMs belong to links pointing at an AISC briefing, not to social posts as such.** The parameters above exist to answer one question: which asset earned a click through to the blog. A social post that drives no traffic to a briefing has nothing to tag and needs no UTM, and that includes repurposed material such as carousels and standalone posts built from session or talk content rather than from a published briefing. Do not invent a campaign name to make such a post fit the scheme. If a post does link to a briefing, the full convention applies with no exceptions.
+
 ## Infographics — only where they fit
 
 An infographic needs **extractable structure**: a list, a sequence, a matrix, a set of questions, a real number. Many briefings are built on a single reframe and have none.
@@ -378,11 +380,68 @@ Three items will not fill at any body length: a 3-item list left a quarter of th
 
 Add one when a real briefing needs it, never speculatively. Each new archetype is a permanent maintenance cost and a chance for the system to drift. Likely candidates, in order of how often the corpus seems to want them:
 
-| Archetype | For | Seen in |
+| Archetype | For | Status |
 |---|---|---|
-| `comparison` | Two-column before/after, human vs AI | Day 1 material, `what-to-tell-your-team-about-ai-and-their-jobs` |
-| `sequence` | Ordered steps or a timeline where order carries meaning | `territory-not-tools`, the 6-month roadmap phases |
-| `stat` | One number set large with its context | `the-hours-you-lose-every-week`, the margin audit |
+| `comparison` | Two-column before/after, human vs AI | **Built and specified below**, 2026-09-22 |
+| `sequence` | Ordered steps or a timeline where order carries meaning | **Built and specified below**, 2026-09-22 |
+| `stat` | One number set large with its context | **Built and specified below**, 2026-09-22 |
+
+### The three built archetypes, specified 2026-09-22
+
+**These were designed and shipped outside this guide, and are recorded here so the system stops drifting.** Fifteen infographics for a text-native executive session were built in mid-September 2026 using `comparison`, `sequence` and `stat`, plus a leverage panel this guide had never defined. They are not the output of `scripts/infographic.mjs`, which only knows `list` and `matrix`, only renders 1080x1350, and only writes `.jpg`. Those fifteen are `.png`, in two sizes. **No spec files for them exist on disk**, so a one-word correction to any of them is a re-author rather than an edit. That is the cost this section exists to prevent repeating.
+
+**What follows is observed from the rendered images, not read from source.** Proportions and relationships are reliable; exact pixel values and tokens are not. Treat it as the design intent to build against, and correct it the first time one of these is rebuilt properly.
+
+#### `comparison`
+
+Two columns, equal width, each in its own bordered container. Above each, a letterspaced caps label naming that side ("YOUR WEEK WITHOUT AI" / "YOUR WEEK WITH AI"). Items stack down each column, separated by hairlines.
+
+**The asymmetry is the argument, and it is carried by weight, not by colour.** The unwanted state sits left in lilac at body weight. The wanted state sits right in white at 700. A reader who never reads a word should still know which column they want to be in. Do not reverse the sides, and do not give the left column the accent: nothing on the losing side should look attractive.
+
+A column may close with one summary line below a final rule, set in the accent, stating what that state produces ("AI gives you generic answers." against "AI gives you answers about your business."). All or neither.
+
+| Rule | Requirement |
+|---|---|
+| Items per column | 4 or 5 |
+| Balance | **Both columns carry the same count.** A 1-against-4 split reads as a rendering fault, not as emphasis. This is the known failure: one built image left a single centred line facing a four-item column and also dropped a word from that line |
+| Body length | One line per item, or two where the item genuinely needs it. Match roughly across the two columns |
+| Fill | Same rule as `list`: content fills the frame, no dead band under the last row |
+
+#### `sequence`
+
+A vertical spine down the left with an outlined circle at each step, the numeral inside it in the accent. Label and a one-line body sit to the right of each node. The spine is what carries the meaning, so it is drawn continuously through the nodes rather than as separate bullets.
+
+The sequence may terminate in a pill containing the next instruction ("Then do the next one"), attached to the bottom of the spine. Use it only where the sequence actually repeats or continues. It is the one place in this system a filled, rounded shape is allowed, and it earns that by being the only one.
+
+| Rule | Requirement |
+|---|---|
+| Steps | 5. Four leaves a dead band, six crowds the spine |
+| Body length | One line, roughly 30 to 45 characters. Shorter than `list` bodies, because the spine needs the vertical room |
+| Numerals | Plain digits, not zero-padded. `sequence` is the one archetype where numbering is always earning its place |
+| Ratio | Fills 1080x1080 at five steps. Do not use the tall frame without a leverage panel |
+
+#### `stat`
+
+One figure, set enormous in the accent, occupying roughly a third of the frame height. The context sentence sits directly beneath it in white at body size, and carries the units and the scope ("spent by Amazon, Microsoft, Google and Meta on capital investment in 2025 alone").
+
+**A `stat` always shows its source**, one line, muted, directly under the context sentence. A number without a source on a dark-ground graphic reads as decoration, and it is the one thing in this system that can be screenshotted and quoted back at us.
+
+An optional closing block sits at the foot, indented behind a left accent rule, for the one sentence that says why the number matters. Keep it to three lines.
+
+| Rule | Requirement |
+|---|---|
+| Figures | One. The moment there are two, this is a `list` |
+| Rounding | Round hard and mark it: `$400B+`, not `$410.3 billion`. The precision is not the point and invites a fight about the decimal |
+| Source | Required. Publication and date, minimum |
+| Ratio | Fills 1080x1080. The figure is doing the filling |
+
+#### The leverage panel
+
+A full-width block at the foot of the frame, inset behind a left accent bar, labelled with a letterspaced accent caps eyebrow ("YOUR LEVERAGE") and a body in white at regular weight. It answers "so what does this mean for me" in the reader's own terms.
+
+**Its presence is what makes a frame 1080x1350.** Every graphic with a leverage panel is tall and every graphic without one is square, with no exceptions across the fifteen built. Keep that invariant: it is what lets a reader tell at a glance whether a graphic is making a claim or handing them something to do.
+
+Where the panel carries one line per item rather than a single paragraph, lead each with the item's label in the accent, then the sentence in white.
 
 **Designing one is main-session work, not agent work. Settled 2026-07-31.** A new archetype is a one-off design act, so it gets the `frontend-design` skill and a stated design plan before any code. The `infographic` agent deliberately does not carry that skill: it builds against an archetype already specified here, and a template series gains nothing from per-build novelty. Specify the archetype in this section first, then let the agent produce against it.
 

@@ -49,8 +49,8 @@ Asset columns record production. Platform columns record the actual post: date a
 | # | Briefing | Cover | Script | Session notes | Video | Cover img | Infographic | LinkedIn | Instagram | YouTube |
 |---|----------|-------|--------|---------------|-------|-----------|-------------|----------|-----------|------|
 | 1 | `ai-governance-the-risk-is-already-inside` | ai-governance | ✓ local (docx, v2) | ✓ local (pptx, v3 summary format) | — | ✓ local | ✓ local (list) | 2026-09-04 · https://lnkd.in/p/et6ezjif | — | — |
-| 2 | `territory-not-tools-the-ai-opportunity-for-leaders` | ai-value | ✓ local (docx, v2) | ✓ local (pptx, v3 summary format) | — | ✓ local | ✓ local (list) | — | — | — |
-| 3 | `the-briefing-your-board-expects-you-to-have-had` | chiefs-briefing | ✓ local (docx, v2) | ✓ local (pptx, v3 summary format) | — | ✓ local | ✓ local (list) | — | — | — |
+| 2 | `territory-not-tools-the-ai-opportunity-for-leaders` | ai-value | ✓ local (docx, v2) | ✓ local (pptx, v3 summary format) | — | ✓ local | ✓ local (list) | 2026-09-05 | — | — |
+| 3 | `the-briefing-your-board-expects-you-to-have-had` | chiefs-briefing | ✓ local (docx, v2) | ✓ local (pptx, v3 summary format) | — | ✓ local | ✓ local (list) | 2026-09-06 | — | — |
 | 4 | `the-service-you-could-not-afford-to-offer-last-year` | ai-value | ✓ local (docx, v2) | ✓ local (pptx, v3 summary format) | — | ✓ local | ✓ local (list) | — | — | — |
 | 5 | `your-congregation-is-already-asking-about-ai` | ai-leadership | ✓ local (docx, v2) | ✓ local (pptx, v3 summary format) | — | ✓ local | ✓ local (list) | — | — | — |
 | 6 | `your-students-adopted-ai-before-your-policy-did` | ai-governance | ✓ local (docx, v2) | ✓ local (pptx, v3 summary format) | — | ✓ local | ✓ local (list) | — | — | — |
@@ -66,8 +66,11 @@ Asset columns record production. Platform columns record the actual post: date a
 | 16 | `what-to-tell-your-team-about-ai-and-their-jobs` | ai-leadership | — | — | — | — | — | — | — | — |
 | 17 | `ai-in-the-clinic-what-stays-human` | ai-governance | — | — | — | — | — | — | — | — |
 | 18 | `become-the-ai-authority-at-work-without-the-title` | emerging-leader | ✓ local (docx) | ✓ local (pptx, v3 summary format) | — | ✓ local | ✓ local (list) | — | — | — |
+| 19 | `your-data-is-the-advantage-competitors-cannot-buy` | ai-value | — | — | — | — | — | — | — | — |
 
-18 published briefings as of 2026-09-05. The 14 banked drafts join this table as they publish.
+19 published briefings as of 2026-09-22. The 14 banked drafts join this table as they publish.
+
+**Row 19 added 2026-09-22 on publish, per rule 4. No asset built yet.** Gate 1 (published) has cleared and gate 2 (headline approved as text) has not, so nothing downstream starts until Michael approves a cover headline. **Its Session notes cell is `—` deliberately**, for the same reason as row 16: rule 8's open question is still unanswered, so a deck was not assumed. Unlike rows 16 to 18, this briefing did not come from the 2026-07-12 banked set. It was written from separate session material, which is why it publishes out of the drip order.
 
 **Row 16 added 2026-08-24 on publish, per rule 4. No asset built yet.** It is the first row where gate 1 (published) has cleared and gate 2 (headline approved as text) has not, so nothing downstream starts until Michael approves a cover headline. **Its Session notes cell is `—` deliberately:** rule 8's open question ("whether row 16 gets one automatically is Michael's call") is now live rather than hypothetical, and it is still unanswered, so the deck was not assumed.
 

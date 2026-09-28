@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="rgb(0,3,76)"/>
+  <!-- the same twelve pieces of information, scattered -->
+  <g fill="none" stroke="rgba(233,234,255,0.28)" stroke-width="3">
+    <rect x="196" y="214" width="92" height="52" transform="rotate(-7 242 240)"/>
+    <rect x="352" y="182" width="78" height="48" transform="rotate(5 391 206)"/>
+    <rect x="520" y="246" width="96" height="54" transform="rotate(-3 568 273)"/>
+    <rect x="168" y="352" width="84" height="50" transform="rotate(9 210 377)"/>
+    <rect x="318" y="330" width="100" height="56" transform="rotate(-11 368 358)"/>
+    <rect x="498" y="404" width="80" height="46" transform="rotate(6 538 427)"/>
+    <rect x="214" y="486" width="94" height="52" transform="rotate(-5 261 512)"/>
+    <rect x="386" y="470" width="76" height="48" transform="rotate(12 424 494)"/>
+    <rect x="546" y="556" width="88" height="50" transform="rotate(-8 590 581)"/>
+    <rect x="182" y="620" width="98" height="54" transform="rotate(4 231 647)"/>
+    <rect x="356" y="642" width="82" height="46" transform="rotate(-10 397 665)"/>
+    <rect x="512" y="700" width="90" height="52" transform="rotate(7 557 726)"/>
+  </g>
+  <!-- the line the work crosses -->
+  <line x1="800" y1="150" x2="800" y2="750" stroke="rgba(233,234,255,0.16)" stroke-width="2"/>
+  <!-- the same twelve, organized -->
+  <g fill="rgb(99,104,218)">
+    <rect x="980" y="340" width="100" height="60"/>
+    <rect x="1100" y="340" width="100" height="60"/>
+    <rect x="1220" y="340" width="100" height="60"/>
+    <rect x="1340" y="340" width="100" height="60"/>
+    <rect x="980" y="420" width="100" height="60"/>
+    <rect x="1100" y="420" width="100" height="60"/>
+    <rect x="1220" y="420" width="100" height="60"/>
+    <rect x="1340" y="420" width="100" height="60"/>
+    <rect x="980" y="500" width="100" height="60"/>
+    <rect x="1100" y="500" width="100" height="60"/>
+    <rect x="1220" y="500" width="100" height="60"/>
+    <rect x="1340" y="500" width="100" height="60"/>
+  </g>
+</svg>

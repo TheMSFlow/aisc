@@ -10,6 +10,9 @@
  *         content/sources/<slug>/                editorial sources on disk
  *         content/social/<folder>/               built deliverables on disk
  *
+ * Links   http://localhost:3003                  "view" opens a briefing on the local
+ *                                                site; `npm run aisc` starts both.
+ *
  * Writes  agent-guides/blog/DISTRIBUTION_LOG.md  ONLY the platform cells of the
  *                                                queue table, when you tick a post.
  *
@@ -28,6 +31,8 @@ import matter from "gray-matter";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const PORT = Number(process.env.DASHBOARD_PORT || 3010);
+// The local Next site (`npm run dev`). Preview links point here; drafts render in dev.
+const SITE_URL = "http://localhost:3003";
 
 const LEDGER = path.join(ROOT, "agent-guides/blog/TOPIC_LEDGER.md");
 const DISTLOG = path.join(ROOT, "agent-guides/blog/DISTRIBUTION_LOG.md");
@@ -40,6 +45,11 @@ const PLATFORMS = [
   { key: "Instagram", short: "IG", label: "Instagram" },
   { key: "YouTube", short: "YT", label: "YouTube" },
 ];
+
+// The platform that sets the pace for the Overview's "Post next" card.
+// LinkedIn production runs ahead of the others, so once a row is ticked on
+// LinkedIn the card moves on even if Instagram and YouTube are still pending.
+const PACE_PLATFORM = PLATFORMS.find((p) => p.key === "LinkedIn");
 
 const THEME_LABEL = {
   "ai-clarity": "AI Clarity",
@@ -75,6 +85,10 @@ const esc = (s) =>
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
+
+// The briefing name is the link to the post on the local site.
+const postLink = (slug) =>
+  `<a class="slug slug-link" href="${SITE_URL}/awakening/${encodeURIComponent(slug)}" target="_blank" rel="noreferrer" title="Open on the local site (localhost:3003)">${esc(slug)}</a>`;
 
 const today = () => {
   const d = new Date();
@@ -578,7 +592,7 @@ function build() {
   // what to do next: the first row that is blocked, in queue order
   const blocked = rows.filter((r) => !r.complete);
   const readyToPost = rows.filter(
-    (r) => r.complete && r.postedCount < PLATFORMS.length,
+    (r) => r.complete && !isPosted(r.posts[PACE_PLATFORM.key]),
   );
 
   // next to publish: banked drafts scored on how stale their ground is
@@ -749,7 +763,7 @@ function overview(s) {
     ? {
         eyebrow: "Post next",
         title: nextPost.slug,
-        body: `Row ${nextPost.n}. Every asset is built. ${PLATFORMS.filter((p) => !isPosted(nextPost.posts[p.key])).map((p) => p.label).join(", ")} still to go.`,
+        body: `Row ${nextPost.n}. Every asset is built. ${PACE_PLATFORM.label} still to go.`,
         cta: "Open the queue",
       }
     : firstBlocked
@@ -870,9 +884,7 @@ function distribution(s) {
               )}" class="${r.complete ? "" : "is-blocked"}">
               <td class="c-n">${r.n}</td>
               <td class="c-brief">
-                <button class="slug slug-btn" data-assets="${esc(r.slug)}" ${
-                  r.disk.files.length ? "" : "disabled"
-                } title="${r.disk.files.length ? "Open the asset set" : "No assets built yet"}">${esc(r.slug)}</button>
+                ${r.post ? postLink(r.slug) : `<span class="slug">${esc(r.slug)}</span>`}
                 <span class="meta">${chip(r.cover)}${
                   r.post ? chip(r.post.date) : chip("no file", "bad")
                 }${r.inbound === 0 && r.post && !r.post.draft ? chip("orphan", "bad") : ""}${
@@ -921,7 +933,7 @@ function pipeline(s) {
   const row = (p, extra = "") => `
     <tr data-search="${esc([p.slug, p.title, p.theme, ...p.industries, ...p.audiences].join(" ").toLowerCase())}">
       <td class="c-brief">
-        <span class="slug">${esc(p.slug)}</span>
+        ${postLink(p.slug)}
         <span class="title">${esc(p.title)}</span>
       </td>
       <td>${chip(THEME_LABEL[p.theme] || p.theme)}</td>
@@ -1454,14 +1466,15 @@ dialog::backdrop{background:rgba(0,3,76,.42)}
 }
 .lightbox img{max-width:100%;max-height:100%;border-radius:6px}
 
-.slug-btn{
-  background:none;border:0;padding:0;text-align:left;color:var(--ink);
-  font-family:var(--mono);font-size:12px;font-weight:600;
+.c-brief .slug-link{
+  display:inline-block;color:var(--ink);text-decoration:none;
   border-bottom:1px dotted rgba(0,3,76,.35);
 }
-.slug-btn:hover:not(:disabled){color:var(--blue);border-bottom-style:solid}
-.slug-btn:disabled{border-bottom:0;cursor:default;color:var(--dim)}
+.c-brief .slug-link:hover{color:var(--blue);border-bottom-style:solid}
 .chip.files{background:rgba(99,104,218,.14);color:var(--blue)}
+.sitelink{display:block;margin:10px 20px 0;padding:8px 10px;border:1px solid rgba(255,255,255,.2);border-radius:6px;
+  color:rgba(255,255,255,.8);font-size:12px;text-decoration:none}
+.sitelink:hover{background:rgba(255,255,255,.08);color:#fff}
 
 /* ---- toast ---- */
 .toast{
@@ -1504,6 +1517,7 @@ dialog::backdrop{background:rgba(0,3,76,.42)}
       <a href="#pipeline" data-view="pipeline"><span>Pipeline</span><i>3</i></a>
       <a href="#coverage" data-view="coverage"><span>Coverage</span><i>4</i></a>
     </nav>
+    <a class="sitelink" href="${SITE_URL}" target="_blank" rel="noreferrer" title="npm run dev, or npm run aisc for both">Local site &#8599;</a>
     <div class="railfoot">
       Reads and writes the markdown in<br><code>agent-guides/blog/</code>.<br>
       Local only. Nothing leaves this machine.
