@@ -93,7 +93,7 @@ The landing page has 9 sections in narrative order. Each entry below states the 
 **Job:** Name the four things a participant leaves with — clearly, directly — before the program structure is explained. This is the section currently missing from the page.
 
 **Must include:**
-- All four value points in priority order: AI Clarity → AI Fluency → Time Redemption → AI Value + Territory
+- All four value points in priority order: AI Clarity → AI Fluency (Time Redemption lives inside it) → AI Value + Territory → AI Governance *(Governance added 2026-09-28)*
 - Under Fluency: the authority shift — the leader becomes the AI-clear voice their people turn to
 - Under Time: a specific number of hours recovered (not "improved efficiency")
 - Under Territory: the connection to the 6-Month Roadmap — declared on Day 3, built over 6 months
@@ -213,12 +213,29 @@ The landing page has 9 sections in narrative order. Each entry below states the 
 
 **Must include:**
 - The continuation framing: the Roadmap tells you where to go; Coaching walks with you as you get there
-- What coaching delivers: live group coaching, one facilitated session per week, facilitated Roadmap execution as fluency grows. Coaching is a group setting, not 1:1 — questions still get answered directly, alongside leaders executing their own Roadmaps
+- What coaching delivers: the challenge delivered privately first (VVIP level), then live group coaching three Saturdays a month, facilitated Roadmap execution as fluency grows. Coaching is a group setting, not 1:1 — questions still get answered directly, alongside leaders executing their own Roadmaps
 - The key fact: Coaching includes AISC at no additional fee
 - All three pricing plans (monthly, 6-month, annual) in USD and NGN
 - CTA: "Start with Coaching"
+- A "See how coaching works" link to `/coaching`
 
 **Must feel:** Unhurried and confident. No pressure. The leader who belongs here will recognize themselves without being sold to.
+
+---
+
+## `/coaching` page (added 2026-09-28)
+
+A dedicated sales page for AI Stakeholder Coaching, with its own `CoachingHeader` (wordmark "AI STAKEHOLDER **COACHING**", in-page links Roadmap → `#the-roadmap`, Plans → `#plans` and FAQ → `#faq` only; no "Guide me", no Coaching link, no cohort countdown; hamburger menu below `lg`, wordmark always on one line; no eyebrow label in the hero, since the header already names the offer; founder, 2026-09-28) and the global `Footer` with `showBriefings={false}` (no blog zone on a single-offer sales page; founder, 2026-09-28). The nav and footer "Coaching" links point here. The home Coaching section stays and links to it. Sections live in `src/components/coaching/`; facts, plans and the booking URL come from `src/lib/coaching.js`.
+
+Order: Hero (dark-blue, aurora; a three-fact strip flush under the header, then a single-column headline) → The process (label only, no H2; four real steps) → The private challenge (`#the-challenge`, four cards, 2×2 on phones; each opens the matching home-page section in a full-screen pop-up, `SectionModal.jsx`: Curriculum → `Curriculum`, Transformation → `Value`, Toolbox → `Demo`, Roadmap → `Demo` opened on its Roadmap panel; each card carries an icon in the Toolbox tile style (calendar, sparkles, wrench, map). The pop-up renders the real component so it never drifts from the home page; the visitor never leaves `/coaching`. The pop-up uses a floating round X, top right *(founder preferred it to a top bar, 2026-09-28)*, so every section shown in it must start low enough to clear the X, the way Curriculum does; **Home-page section components are never edited for `/coaching`** *(founder, 2026-09-28)*: every pop-up adjustment lives in `src/components/coaching/ModalSections.jsx` as wrapper overrides (compact spacing for Curriculum; top padding and a taller phone height for the Toolbox so the pop-up scrolls instead of clipping; the Roadmap start panel by pressing the Toolbox's own Next control on open). If a home section changes shape, fix the override there. X, Escape and the back button all close it) → **the 180-day track** (`#the-roadmap`) → The rhythm (a month drawn as four Saturday cards, three live, plus four glass "between Saturdays" cards) → Why a group (italic display pull quote, "Coaching is not" row) → Plans (`#plans`, three cards, 6 Months is the dark anchor, "In every plan" list) → Coaching FAQ → Footer. No closing CTA band after the FAQ (removed by the founder, 2026-09-28).
+
+**Signature element, the 180-day track:** a dark aurora card showing the Roadmap's three overlapping phases to scale on a 180-day axis (1–60, 31–120, 91–180), dashed guides at the 30/90/180 review days, and one tick per coaching Saturday (18 in six months). It is data, not decoration. Keep it true to AISC_BRIEF if the phases or the cadence change. **On phones the session ticks and review guides are hidden** (they cannot read at that width) and replaced by one sentence; phase labels stack.
+
+Mobile rules for this page: four-up grids become 2×2 (the month of Saturdays, the challenge tabs); never use "1:1" as a standalone fact (readers take the whole program to be one-on-one).
+
+**Section spacing:** every section on `/coaching` uses `Section spacing="compact"` (hero bottom padding matches), so the gap between any two sections is the same: 96px on phones, 128px on desktop *(founder, 2026-09-28: consistent and not too wide)*. Do not mix spacings on this page.
+
+No proof section until real coaching testimonials exist. Never add placeholder quotes.
 
 ---
 

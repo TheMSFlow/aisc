@@ -27,13 +27,16 @@ function FooterLink({ href, children, external = false, newTab = false }) {
   );
 }
 
-export default function Footer() {
-  const briefings = getAllPosts().slice(0, 3);
+// showBriefings={false} on single-offer sales pages (e.g. /coaching), where
+// the blog zone pulls attention away from the one decision on the page.
+export default function Footer({ showBriefings = true }) {
+  const briefings = showBriefings ? getAllPosts().slice(0, 3) : [];
 
   return (
     <footer>
-      {/* Zone 1 — Briefings, in daylight. Starts on the FAQ's tone, fades
-          vertically to lilac: a single 180° descent, no lateral tints. */}
+      {showBriefings && (
+      /* Zone 1 — Briefings, in daylight. Starts on the FAQ's tone, fades
+          vertically to lilac: a single 180° descent, no lateral tints. */
       <div className="relative overflow-hidden bg-linear-to-b from-offwhite to-[#e9eaff]">
         <div className="relative mx-auto max-w-6xl px-4 pb-20 pt-16 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-end justify-between gap-5">
@@ -87,6 +90,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
+      )}
 
       {/* The horizon — where day meets night */}
       <div className="h-0.5 bg-[linear-gradient(90deg,#6368da,#e9eaff,#860471)]" />
@@ -129,7 +133,7 @@ export default function Footer() {
                 <FooterLink href="/#curriculum">Curriculum</FooterLink>
                 <FooterLink href="/#pricing">Pricing</FooterLink>
                 <FooterLink href="/#faq">FAQ</FooterLink>
-                <FooterLink href="/#coaching">Coaching</FooterLink>
+                <FooterLink href="/coaching">Coaching</FooterLink>
               </ul>
             </div>
             <div>

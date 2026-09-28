@@ -68,13 +68,13 @@ These three together are what AISC produces. The challenge is not a course. It i
 
 **Day 2 — AI Labs / Margins:** Run the Description-Discernment Loop on a real AUGMENT task using Claude or ChatGPT. Use the Margin Calculator to quantify how much leadership capacity they reclaim weekly, quarterly, annually. (Demo different case studies so participants can see AI in action)
 
-**Day 3 — Money / AI Value:** Use the Territory Builder and AI Value Map to identify where real AI value exists in their industry and declare the territory they will lead. (This also applies to leaders working in an organisation. The organisation becomes the territory). The Territory Builder also assigns a **Competitive Position** — Optimizer, Producer, Advisor, Educator, or Curator (see "The 6-Month Roadmap System" below). This position determines the participant's track through every Roadmap document that follows.
+**Day 3 — Money / AI Value:** Use the Territory Builder and AI Value Map to identify where real AI value exists in their industry and declare the territory they will lead. (This also applies to leaders working in an organisation. The organisation becomes the territory). The Territory Builder also assigns a **Competitive Position** — Optimizer, Producer, Advisor, Educator, or Curator (see "The 6-Month Roadmap System" below). This position determines the participant's track through the Roadmap and its prerequisite tasks.
 
 **Day 4:** Reflect on peers' milestone work (Available to General Admission) and get strategic feedback from facilitator (Available to VIP and VVIP)
 
 **Day 5:** Reflect on peers' milestone work (Available to General Admission) and get strategic feedback from facilitator + 1hr Q&A session (Available to VIP and VVIP)
 
-**Day 6:** Gain access to the full 6-Month Roadmap system — five documents, not one (see "The 6-Month Roadmap System" below) — with an instructional video guide (For General Admission) and 2hr Roadmap deep dive + Follow-up Q&A for (VIP & VVIP).
+**Day 6:** Gain access to the 6-Month Roadmap (see "The 6-Month Roadmap" below), with an instructional video guide (For General Admission) and 2hr Roadmap deep dive + Follow-up Q&A for (VIP & VVIP).
 
 **Day 7:** AI Governance live session — the mandate and ethics of leading in an AI environment. General Q&A, Certificate of Declaration and Next Steps.
 
@@ -92,17 +92,19 @@ These three together are what AISC produces. The challenge is not a course. It i
 - What they stop doing
 - Where they apply AI deliberately
 
-The Roadmap is unlocked on Day 6 and serves as a living filter for the next 180 days, reusable every 6 months. But the territory is the prize. See "The 6-Month Roadmap System" below for what it's actually made of — it is five documents, not one, and that fact is currently underrepresented in the site copy.
+The Roadmap is unlocked on Day 6 and serves as a living filter for the next 180 days, reusable every 6 months. But the territory is the prize. See "The 6-Month Roadmap" below for what it contains.
 
 ---
 
-## The 6-Month Roadmap System
+## The 6-Month Roadmap
 
-> Sourced from a direct read of the five source documents in `website-context/aisc_resources/6-MONTH ROADMAP/`. Use this section as the factual base any time the Roadmap is described in copy — the site currently undersells it as a single document plus a video.
+> Sourced from a direct read of the source documents in `website-context/aisc_resources/6-MONTH ROADMAP/`. Use this section as the factual base any time the Roadmap is described in copy.
 
-The Roadmap is not one document. It is a **five-part system**, unlocked together on Day 6, built to carry the Day 3 territory declaration through 180 days of execution.
+**Definition (founder, 2026-09-28): the Roadmap is ONE document, containing the three phases and how to approach them. Refer to it that way everywhere.** It is unlocked on Day 6 and carries the Day 3 territory declaration through 180 days of execution.
 
-**1. The 6-Month AI Stakeholder Roadmap (the North Star document)** — the central commitment document. Its five sections build on each other in order:
+**Copy rule:** four other documents come with it (listed under "Prerequisite tasks" below). They are **prerequisites, not the Roadmap**. In any user-facing copy, never name them, never count them, and never describe the Roadmap as several documents, a "system", or "five documents"; it confuses readers. It is fine to describe the *detail* they produce (the gaps a leader needs to close, the relationships to build, the personal standards they hold themselves to) as context for what the Roadmap helps a leader do.
+
+**The 6-Month AI Stakeholder Roadmap** — the central commitment document. Its sections build on each other in order:
 - **Executive Summary** — personal mandate, position, territory, and six-month intention, written as a creed the leader could say aloud
 - **Proof of Leverage** — pulls the leader's actual Day 1/2 numbers (Delegation Worksheet + Margin Calculator) into the Roadmap as evidence they can already execute, before they commit to more. This is quantified, not aspirational: before/after time, capacity reclaimed, recurrence
 - **Territory Declaration** — the friction, who feels it most, why the leader is positioned to act, and the value created, refined from the Day 3 Territory Builder output into the version that drives the roadmap
@@ -110,13 +112,17 @@ The Roadmap is not one document. It is a **five-part system**, unlocked together
 - **Constraints & Reality Check** — named gaps, risks, and blockers pulled directly from the Capability Gap Audit and the AI Stakeholder Identifier, plus a pre-committed protocol for the momentum drops that reliably hit around Day 45 and Day 100
 - Closes with a **7-Day Activation Sprint**: 7 specific, unmisunderstandable actions for the first week (at least 2 completed the same day)
 
-**2. Capability Gap Audit** — a self-rating across four domains (Foundation capabilities, Domain & Market capabilities, Leadership & Influence capabilities, Network & Ecosystem capabilities), plus a fifth section of Competitive-Position-specific "Must Have Now" requirements. Produces the honest gap list that becomes the Roadmap's Constraints section and Phase 1's development priorities. Revisited at 90 and 180 days.
+### Prerequisite tasks (internal context only; never named or counted in user-facing copy)
 
-**3. AI Stakeholder Identifier** — a stakeholder-mapping framework, not a contact list. Maps relationships into four categories (Internal, Industry, Ecosystem, Governance), places the highest-priority ones on an Activate / Convert / Nurture / Monitor matrix (by influence × alignment), and produces a top-10 engagement plan with a specific first action per person. That engagement plan becomes Phase 2's relationship milestones.
+These are completed alongside the Roadmap and feed its sections. Agents may use what they produce as detail; they are not the Roadmap.
 
-**4. My Personal AI Policy** — a private document, not an organizational one. The leader writes six standards for themselves: task delegation, data governance (what goes into which AI tool), disclosure & transparency, output quality control, continuous learning, and personal ethical lines. Closes with a signed commitment statement. Reviewed at 30/90/180 days.
+**Capability Gap Audit** — a self-rating across four domains (Foundation capabilities, Domain & Market capabilities, Leadership & Influence capabilities, Network & Ecosystem capabilities), plus a fifth section of Competitive-Position-specific "Must Have Now" requirements. Produces the honest gap list that becomes the Roadmap's Constraints section and Phase 1's development priorities. Revisited at 90 and 180 days.
 
-**5. Post-Challenge Guide — "The Power of Super Connections"** — a relationship-strategy framework for the AI era, meant to be read alongside the Stakeholder Identifier. Core reframe: relationships used to be about *access* (to information, to rooms); AI made information abundant, so relationships now exist to exchange what AI still can't — judgment, pattern recognition, contextual insight. Includes a Competitive-Position-specific table of relationship currency (what each position brings to a conversation, who to build with, and the specific signal that shows the position is working).
+**AI Stakeholder Identifier** — a stakeholder-mapping framework, not a contact list. Maps relationships into four categories (Internal, Industry, Ecosystem, Governance), places the highest-priority ones on an Activate / Convert / Nurture / Monitor matrix (by influence × alignment), and produces a top-10 engagement plan with a specific first action per person. That engagement plan becomes Phase 2's relationship milestones.
+
+**My Personal AI Policy** — a private document, not an organizational one. The leader writes six standards for themselves: task delegation, data governance (what goes into which AI tool), disclosure & transparency, output quality control, continuous learning, and personal ethical lines. Closes with a signed commitment statement. Reviewed at 30/90/180 days.
+
+**Post-Challenge Guide — "The Power of Super Connections"** — a relationship-strategy framework for the AI era, meant to be read alongside the Stakeholder Identifier. Core reframe: relationships used to be about *access* (to information, to rooms); AI made information abundant, so relationships now exist to exchange what AI still can't — judgment, pattern recognition, contextual insight. Includes a Competitive-Position-specific table of relationship currency (what each position brings to a conversation, who to build with, and the specific signal that shows the position is working).
 
 ### The Three Phases
 
@@ -132,9 +138,9 @@ Each phase carries a distinct milestone track **per Competitive Position** — t
 
 Every phase also names a **Daily Win Pattern** — a short list of what counts as a good day (an automation ran unattended, a brief got written faster, a relationship advanced, an assumption got tested) — so progress is visible daily, not only at 60/120/180-day milestones.
 
-### Competitive Position (declared Day 3, used throughout the Roadmap system)
+### Competitive Position (declared Day 3, used throughout the Roadmap)
 
-The Territory Builder assigns each participant one of five Competitive Positions on Day 3. This is the thread that ties the Territory Builder, the Roadmap's three phases, the Capability Gap Audit's "Must Have Now" requirements, and the Stakeholder Identifier's guidance together — every document downstream of Day 3 branches by this position:
+The Territory Builder assigns each participant one of five Competitive Positions on Day 3. This is the thread that ties the Territory Builder, the Roadmap's three phases, the Capability Gap Audit's "Must Have Now" requirements, and the Stakeholder Identifier's guidance together — everything downstream of Day 3 branches by this position:
 
 - **Optimizer** — improves speed, cost, and margin inside an existing system
 - **Producer** — builds a new product or service that solves a real friction point others feel
@@ -159,8 +165,8 @@ The Toolbox is the operating environment participants access throughout the chal
 | **Guides, Frameworks & Templates** *(Resource)* | All guides, frameworks, and session insights from Days 1, 2, and 3. Organized by day, downloadable, and updated as the program evolves. The reference library for the thought leadership participants are now positioned to deliver. |
 | **Delegation Tool** *(Tool)* | A mini app built on Michael Steve's Delegation Matrix. Leaders rate tasks on AI fit and human judgment required, receive quadrant assignments (Automate, Augment, Streamline, Own), and download results as a formatted spreadsheet. Reusable on any new batch of tasks at any time. |
 | **Margin Calculator** *(Tool)* | A mini app that records real time saved per AI-assisted task. Entries accumulate a weekly, quarterly, and annual total of leadership capacity reclaimed. Downloadable as a spreadsheet. |
-| **Territory Builder** *(Tool)* | A mini app that maps industry friction points, scores them by pain, credibility, and clarity of value, surfaces the best one to claim, and uses AI to polish the leader's declaration into a final statement. Also assigns one of five Competitive Positions (Optimizer, Producer, Advisor, Educator, Curator) that determines the leader's track through the entire Roadmap system. Outputs a full PDF including friction scorecard, declaration elements, and statement. This declaration feeds directly into the Certificate of Declaration issued on Day 7. |
-| **Roadmap** | Five documents, not one: the 6-Month AI Stakeholder Roadmap itself, the Capability Gap Audit, the AI Stakeholder Identifier, My Personal AI Policy, and the Post-Challenge Guide on Super Connections. Together they define what to focus on, what to delegate, what to stop, and where AI belongs — branched by the Competitive Position declared on Day 3. See "The 6-Month Roadmap System" above for full detail. Reusable every 6 months as the territory expands. |
+| **Territory Builder** *(Tool)* | A mini app that maps industry friction points, scores them by pain, credibility, and clarity of value, surfaces the best one to claim, and uses AI to polish the leader's declaration into a final statement. Also assigns one of five Competitive Positions (Optimizer, Producer, Advisor, Educator, Curator) that determines the leader's track through the Roadmap. Outputs a full PDF including friction scorecard, declaration elements, and statement. This declaration feeds directly into the Certificate of Declaration issued on Day 7. |
+| **Roadmap** | One document: the 6-Month AI Stakeholder Roadmap, with its three phases and how to approach them. It defines what to focus on, what to delegate, what to stop, and where AI belongs, branched by the Competitive Position declared on Day 3. See "The 6-Month Roadmap" above (and its copy rule: never name or count the prerequisite documents). Reusable every 6 months as the territory expands. |
 | **AI Labs** *(Resource)* | A dedicated video platform for leadership-focused AI fluency instruction. Covers AI setup, effective direction, and domain application from a leader's perspective, not an engineer's. Free access is tiered and starts when the challenge ends: 1 month with General Admission, 3 months with VIP, 6 months with VVIP. This is where fluency compounds after the challenge ends. |
 
 **Key notes for all copy and content work:**
@@ -262,7 +268,7 @@ Young and Emerging Leaders use AISC to get hired, promoted, or given more respon
 | VIP (10 seats only) | $399 | ₦520,000 | GA + Milestone Review, Day 5 live Q&A (1 hr), Day 6 Deep Dive with Q&A (2 hrs) |
 | VVIP | $1,099 | ₦1,350,000 | Private, one-on-one delivery with direct facilitator access throughout |
 | Private / Enterprise | Custom | Custom | Same foundation, delivered privately to leadership teams/organizations |
-| Coaching (includes AISC) | $1,200/mo · $6,000/6mo · $10,000/yr | ₦1.5M/mo · ₦7.5M/6mo · ₦12.5M/yr | Guided through the 6-Month Roadmap in weekly live group coaching sessions (group setting, not 1:1) |
+| Coaching (includes AISC) | $1,200/mo · $6,000/6mo · $10,000/yr | ₦1.5M/mo · ₦7.5M/6mo · ₦12.5M/yr | Opens with the challenge delivered privately at VVIP level (1:1), then guided through the 6-Month Roadmap in live group coaching three Saturdays a month, 7PM WAT, 2 hrs (group setting, not 1:1). Rolling entry. All plans include everything. Page: `/coaching` |
 
 **Payment links (general):**  
 GA: `intelligence.michaelsteve.com/pay/challenge/aisc?package=general-admission`  

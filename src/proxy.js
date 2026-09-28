@@ -12,6 +12,12 @@ export default function proxy(request) {
   // Vercel sets this on every deployment. Empty locally and on
   // non-Vercel hosts, in which case the client falls back to timezone.
   const country = request.headers.get("x-vercel-ip-country");
+  // No geo header: set nothing. Writing a USD cookie here would stop the
+  // client's timezone fallback from ever running (it trusts the cookie),
+  // so every visitor without the header saw dollars.
+  if (!country) {
+    return NextResponse.next();
+  }
   const currency = country === "NG" ? "NGN" : "USD";
 
   const response = NextResponse.next();

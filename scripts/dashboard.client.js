@@ -23,6 +23,24 @@ function h(x) {
     .replace(/"/g, "&quot;");
 }
 
+/* Clipboard API first; the textarea fallback covers browsers that refuse it. */
+function copyText(text) {
+  if (navigator.clipboard && window.isSecureContext)
+    return navigator.clipboard.writeText(text);
+  return new Promise(function (resolve, reject) {
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    var ok = document.execCommand("copy");
+    ta.remove();
+    if (ok) resolve();
+    else reject(new Error("copy failed"));
+  });
+}
+
 function bytes(n) {
   if (n < 1024) return n + " B";
   if (n < 1048576) return (n / 1024).toFixed(0) + " KB";
@@ -166,10 +184,22 @@ function imgPane(a, kind, label) {
   );
 }
 
+/* Published briefings only: the server sends live as null for a draft. */
+function liveRow(a) {
+  if (!a.live) return "";
+  return (
+    "<ul class='files'><li class='live'><span class='f-kind'>live</span>" +
+    "<span class='f-name'>" + h(a.live) + "</span>" +
+    '<a class="f-open" href="' + h(a.live) +
+    '" target="_blank" rel="noreferrer">Open</a>' +
+    '<button class="f-open" data-copy="' + h(a.live) + '">Copy link</button></li></ul>'
+  );
+}
+
 function fileList(a) {
   if (!a.files.length)
-    return "<p class='dr-empty'>Nothing built for this briefing yet.</p>";
-  var out = "<ul class='files'>";
+    return liveRow(a) + "<p class='dr-empty'>Nothing built for this briefing yet.</p>";
+  var out = liveRow(a) + "<ul class='files'>";
   for (var i = 0; i < a.files.length; i++) {
     var f = a.files[i];
     out +=
@@ -312,6 +342,19 @@ document.addEventListener("click", function (e) {
   }
   if (e.target.closest("#lightbox")) {
     lb.hidden = true;
+    return;
+  }
+
+  var cp = e.target.closest("[data-copy]");
+  if (cp) {
+    copyText(cp.dataset.copy).then(
+      function () {
+        toast("Live link copied");
+      },
+      function () {
+        toast("Could not copy the link", true);
+      },
+    );
     return;
   }
 

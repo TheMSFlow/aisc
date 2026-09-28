@@ -9,7 +9,7 @@ import CohortBar from "@/components/cohort/CohortBar";
 const NAV = [
   { label: "Pricing", href: "/#pricing" },
   { label: "FAQ", href: "/#faq" },
-  { label: "Coaching", href: "/#coaching" },
+  { label: "Coaching", href: "/coaching" },
 ];
 
 // Hash links stay plain anchors (in-page scroll); routes get Link prefetch.

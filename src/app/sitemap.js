@@ -35,8 +35,12 @@ export default function sitemap() {
       changeFrequency: "monthly",
       priority: 0.8,
     },
-    // Add entries as these surfaces ship:
-    // `${baseUrl}/coaching`
+    {
+      url: `${baseUrl}/coaching`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
   ];
 
   const postEntries = posts.map((post) => ({

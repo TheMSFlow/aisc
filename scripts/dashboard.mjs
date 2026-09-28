@@ -33,6 +33,8 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const PORT = Number(process.env.DASHBOARD_PORT || 3010);
 // The local Next site (`npm run dev`). Preview links point here; drafts render in dev.
 const SITE_URL = "http://localhost:3003";
+// The production site. Live links in the asset drawer point here.
+const LIVE_URL = "https://aistakeholderchallenge.com";
 
 const LEDGER = path.join(ROOT, "agent-guides/blog/TOPIC_LEDGER.md");
 const DISTLOG = path.join(ROOT, "agent-guides/blog/DISTRIBUTION_LOG.md");
@@ -392,10 +394,13 @@ function assetsFor(slug) {
       return null;
     }
   };
+  // Only a published briefing has a live URL; a draft's link is a 404.
+  const post = loadPosts().find((p) => p.slug === slug);
   return {
     slug,
     folder,
     files,
+    live: post && !post.draft ? `${LIVE_URL}/awakening/${encodeURIComponent(slug)}` : null,
     script: read(path.join(srcDir, "script.md")) || null,
     notes: readJSON("session-notes.json"),
     infographic: readJSON("infographic.json"),
@@ -1458,6 +1463,10 @@ dialog::backdrop{background:rgba(0,3,76,.42)}
   font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);
   font-family:var(--display);font-variation-settings:"wdth" 87;white-space:nowrap;
 }
+a.f-open{text-decoration:none}
+.f-open:hover{background:var(--lilac)}
+.files li.live{background:var(--offwhite);border-radius:8px;padding:11px 10px;margin-bottom:6px}
+.files li.live .f-kind{background:var(--blue);color:#fff}
 .f-open:hover{background:var(--blue);border-color:var(--blue);color:#fff}
 
 .lightbox{

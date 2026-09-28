@@ -25,6 +25,14 @@ const VALUES = [
     accent:
       "For leaders with responsibility, influence and resources, exploiting AI Value is a rewarding experience. It's no more about how much you know, but how much you can leverage from the access you get in the AI stakeholder ecosystem. ",
   },
+  {
+    number: "04",
+    name: "AI Governance",
+    tag: "The mandate to decide how AI operates in the world you lead",
+    body: "Once AI is at work in your world, someone has to set the rules: what it is trusted with, what information it sees, what gets disclosed, and where it is never allowed to go. Most organizations leave that to chance, or to whoever adopted the tool first. This challenge gives you the standards to govern it yourself, starting with your own use of AI, and a mandate you can extend to the people you lead.",
+    accent:
+      "Anyone can use AI. A stakeholder decides how it is used. The leader who sets clear standards early becomes the one their world trusts when the harder questions arrive.",
+  },
 ];
 
 export default function Value() {

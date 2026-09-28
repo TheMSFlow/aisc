@@ -15,7 +15,7 @@ const FALLBACKS = {
       offerId: "coaching",
       subPath: null,
       reasoning:
-        "If you want a guide alongside you for the months that follow, coaching walks with you through the full 6-month plan and includes the complete challenge at no additional fee. It starts with a 15-minute discovery call.",
+        "If you want a guide alongside you for the months that follow, coaching walks with you through the full 6-month plan and includes the complete challenge, delivered to you privately, at no additional fee. It starts with a 15-minute discovery call.",
     },
     awakeningNote: null,
     confidence: "low",
@@ -98,7 +98,7 @@ export const UPSELL_ALTERNATES = {
     offerId: "coaching",
     subPath: null,
     reasoning:
-      "If you want a guide alongside you for the months that follow, coaching walks with you through the full 6-month plan and includes the complete challenge at no additional fee. It starts with a 15-minute discovery call.",
+      "If you want a guide alongside you for the months that follow, coaching walks with you through the full 6-month plan and includes the complete challenge, delivered to you privately, at no additional fee. It starts with a 15-minute discovery call.",
   },
   coaching: {
     offerId: "awakening",

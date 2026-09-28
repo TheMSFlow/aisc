@@ -1,32 +1,15 @@
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import Section from "@/components/layout/Section";
 import Button from "@/components/global/Button";
 import CurrencyToggle from "@/components/global/CurrencyToggle";
 import CurrencyPrice from "@/components/global/CurrencyPrice";
-import { PRICING } from "@/lib/pricing";
-
-const PLANS = [
-  {
-    period: "Monthly",
-    price: PRICING.coaching.month,
-    note: null,
-  },
-  {
-    period: "6 Months",
-    price: PRICING.coaching.sixMonths,
-    note: "Save ~17% vs monthly",
-  },
-  {
-    period: "Annual",
-    price: PRICING.coaching.year,
-    note: "Best value, save ~30%",
-  },
-];
-
-const FACTS = [
-  { value: "1×", label: "Group session per week" },
-  { value: "180", label: "Days of guided execution" },
-  { value: "$0", label: "Additional AISC fee" },
-];
+import {
+  COACHING_CALL_NOTE,
+  COACHING_CALL_URL,
+  COACHING_FACTS as FACTS,
+  COACHING_PLANS as PLANS,
+} from "@/lib/coaching";
 
 export default function Coaching() {
   return (
@@ -51,12 +34,13 @@ export default function Coaching() {
               Mandate. Most leaders do not want to navigate that alone.
             </p>
             <p className="mt-4 max-w-lg text-base leading-relaxed text-white/55">
-              The AI Stakeholder Coaching Program is live group coaching: one
-              facilitated session each week, alongside leaders executing their
-              own Roadmaps. Your questions get answered directly, and your
-              thinking sharpens as you watch other leaders navigate the same
-              phases. Your fluency compounds. The territory you discovered in
-              the challenge gets built.
+              The AI Stakeholder Coaching Program opens with the challenge
+              delivered to you privately, then continues as live group
+              coaching: three Saturday sessions a month, alongside leaders
+              executing their own Roadmaps. Your questions get answered
+              directly, and your thinking sharpens as you watch other leaders
+              navigate the same phases. Your fluency compounds. The territory
+              you discovered in the challenge gets built.
             </p>
 
             <div className="mt-10 grid grid-cols-3 gap-px bg-white/8">
@@ -77,6 +61,13 @@ export default function Coaching() {
               fee. If you already know you want a guide through the roadmap,
               this is the more complete path.
             </p>
+            <Link
+              href="/coaching"
+              className="group mt-6 inline-flex items-center gap-2 text-sm font-medium text-lilac transition-colors hover:text-white"
+            >
+              See how coaching works
+              <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+            </Link>
           </div>
 
           {/* Pricing panel */}
@@ -106,14 +97,14 @@ export default function Coaching() {
             </div>
 
             <Button
-              href="https://cal.com/michaelsteve/ai-stakeholder-coaching-discovery-call"
+              href={COACHING_CALL_URL}
               variant="primary"
               className="mt-6 w-full justify-center py-3 font-semibold"
             >
               Start with Coaching
             </Button>
             <p className="mt-3 text-center text-xs text-white/25">
-              Your first step is a 15-minute discovery call.
+              {COACHING_CALL_NOTE}
             </p>
           </div>
         </div>

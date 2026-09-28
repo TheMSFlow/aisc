@@ -1,4 +1,5 @@
 import { PRICING } from "@/lib/pricing";
+import { COACHING_CALL_URL } from "@/lib/coaching";
 
 // Single source of truth for everything the recommendation UI and the
 // system prompt know about the offers. The model only ever outputs offerIds
@@ -77,12 +78,12 @@ export const CATALOG = {
       { label: "Annual", price: PRICING.coaching.year, note: "Best value" },
     ],
     cta: "Start with Coaching",
-    href: "https://cal.com/michaelsteve/ai-stakeholder-coaching-discovery-call",
+    href: COACHING_CALL_URL,
     buttonVariant: "dark",
     ctaNote: "Your first step is a 15-minute discovery call.",
     description:
-      "Live group coaching through the 6-Month Roadmap. One facilitated session per week, 180 days of guided execution, and the full challenge included at no additional fee. Always mention that the first step is a 15-minute discovery call.",
-    fit: "For leaders who want a guide alongside them for the months after the challenge, or who already know they want ongoing support. A soft, natural next step, never a hard close.",
+      "Opens with the full challenge delivered privately at VVIP level, one-on-one, at no additional fee. Then live group coaching through the 6-Month Roadmap: three Saturday sessions a month at 7PM WAT, 2 hours each, with recordings, a private group channel, direct facilitator messages, and AI Labs for as long as coaching lasts. Rolling entry, no intake to wait for. Every plan includes everything; only the commitment length and total cost differ. Always mention that the first step is a 15-minute discovery call.",
+    fit: "For leaders who want a guide alongside them for the months after the challenge, or who already know they want ongoing support. The primary answer for anyone who wants both private delivery and coaching, since it includes the private VVIP-level challenge. A soft, natural next step, never a hard close.",
   },
   awakening: {
     id: "awakening",
