@@ -26,7 +26,7 @@ export const COACHING_SESSION = {
 export const COACHING_FACTS = [
   { value: `${COACHING_SESSION.perMonth}`, label: "sessions a month" },
   { value: `${COACHING_SESSION.hours}`, label: "hrs live" },
-  { value: "1", label: "private challenge included" },
+  { value: "1", label: "private 7-day challenge included" },
 ];
 
 export const COACHING_PLANS = [

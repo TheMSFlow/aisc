@@ -3,7 +3,7 @@ import { ImageResponse } from "next/og";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 export const alt =
-  "AI Stakeholder Coaching | You declare your AI territory in seven days. Coaching is where it gets built.";
+  "AI Stakeholder Coaching | Find where AI pays off in the world you lead. Then build it with a coach.";
 
 export default function Image() {
   return new ImageResponse(
@@ -49,10 +49,10 @@ export default function Image() {
             }}
           >
             <div style={{ display: "flex" }}>
-              You declare your AI territory in seven days.
+              Find where AI pays off in the world you lead.
             </div>
             <div style={{ display: "flex", color: "rgb(233, 234, 255)" }}>
-              Coaching is where it gets built.
+              Then build it with a coach.
             </div>
           </div>
         </div>

@@ -19,7 +19,7 @@ const OG_IMAGE = {
   url: "/coaching/opengraph-image",
   width: 1200,
   height: 630,
-  alt: "AI Stakeholder Coaching | You declare your AI territory in seven days. Coaching is where it gets built.",
+  alt: "AI Stakeholder Coaching | Find where AI pays off in the world you lead. Then build it with a coach.",
 };
 
 export const metadata = {
