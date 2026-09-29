@@ -51,7 +51,7 @@ Asset columns record production. Platform columns record the actual post: date a
 | 1 | `ai-governance-the-risk-is-already-inside` | ai-governance | ✓ local (docx, v2) | ✓ local (pptx, v3 summary format) | — | ✓ local | ✓ local (list) | 2026-09-04 · https://lnkd.in/p/et6ezjif | — | — |
 | 2 | `territory-not-tools-the-ai-opportunity-for-leaders` | ai-value | ✓ local (docx, v2) | ✓ local (pptx, v3 summary format) | — | ✓ local | ✓ local (list) | 2026-09-05 | — | — |
 | 3 | `the-briefing-your-board-expects-you-to-have-had` | chiefs-briefing | ✓ local (docx, v2) | ✓ local (pptx, v3 summary format) | — | ✓ local | ✓ local (list) | 2026-09-06 | — | — |
-| 4 | `the-service-you-could-not-afford-to-offer-last-year` | ai-value | ✓ local (docx, v2) | ✓ local (pptx, v3 summary format) | — | ✓ local | ✓ local (list) | — | — | — |
+| 4 | `the-service-you-could-not-afford-to-offer-last-year` | ai-value | ✓ local (docx, v2) | ✓ local (pptx, v3 summary format) | — | ✓ local | ✓ local (list) | 2026-09-28 · https://www.linkedin.com/posts/michael-steve_every-organization-keeps-a-quiet-list-of-activity-7510250720076558337-P2cH?utm_source=share&utm_medium=member_desktop&rcm=ACoAAGEym7kBy4Wu1T0BLDdEi13YvJN-D1UEO_Q | — | — |
 | 5 | `your-congregation-is-already-asking-about-ai` | ai-leadership | ✓ local (docx, v2) | ✓ local (pptx, v3 summary format) | — | ✓ local | ✓ local (list) | — | — | — |
 | 6 | `your-students-adopted-ai-before-your-policy-did` | ai-governance | ✓ local (docx, v2) | ✓ local (pptx, v3 summary format) | — | ✓ local | ✓ local (list) | — | — | — |
 | 7 | `what-to-delegate-to-ai-and-what-to-never` | ai-fluency | ✓ local (docx, v2) | ✓ local (pptx, v3 summary format) | — | ✓ local | ✓ local (matrix, rebuilt) | — | — | — |

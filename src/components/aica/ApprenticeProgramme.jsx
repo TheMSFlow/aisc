@@ -20,9 +20,9 @@ import { Flag } from "lucide-react";
 //    sponsorship from the AI Stakeholder Challenge.
 //    Organisations can cover that $100 to put someone through
 //    at no cost to them, or back a whole cohort. Write to
-//    careers@michaelsteve.com. You register inside the AI
-//    Career Apprentice Learning Center, which you get access
-//    to in Sprint 1."
+//    careers@michaelsteve.com. You claim your seat inside the
+//    AI Career Apprentice Learning Center, which you get
+//    access to in Sprint 1."
 //
 // Also recorded in SOURCE_OF_TRUTH.md.
 // ─────────────────────────────────────────────

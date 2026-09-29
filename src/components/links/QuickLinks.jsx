@@ -44,7 +44,7 @@ const links = [
     // the persona copy above already says. Wording tracks the programme page's
     // own "Sprint 1 · Free" label in ApprenticeProgramme.jsx.
     // Offer before constraint: free earns the read, scarcity moves the click.
-    highlights: ["Sprint 1&2 is free", "Only 100 seats available"],
+    highlights: ["Sprint 1 is free", "Only 100 seats available"],
     cta: "See the Programme",
     href: "/ai-apprentice",
     external: false,

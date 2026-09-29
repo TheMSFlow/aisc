@@ -17,6 +17,9 @@ export const metadata = {
       "Briefings, guides, and insights on AI leadership for Chiefs, Leaders of Leaders, and Emerging Leaders.",
     url: "/awakening",
     type: "website",
+    // Declaring openGraph here replaces the parent's wholesale, so the root
+    // generated card must be named again or the hub shares with no image.
+    images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
   },
 };
 
