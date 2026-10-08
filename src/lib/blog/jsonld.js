@@ -3,6 +3,7 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL;
 const AUTHOR = {
   "@type": "Person",
   name: "Michael Steve",
+  jobTitle: "AI Clarity Consultant",
   url: SITE_URL,
 };
 

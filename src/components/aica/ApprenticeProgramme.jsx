@@ -38,7 +38,7 @@ const stages = [
     badge: "Free",
     title: "The Awakening",
     desc: "Two days on the one thing that decides everything after it: how you think. You see today's realities clearly, you see AI for what it actually is, and you look honestly at what you are already worth, then write that down as a one-page value summary. Tools get replaced and skills need updating. The mindset you set here does not expire, and it is what keeps you productive and pointed in the right direction.",
-    gate: "Submit your value summary to move into AI Career Labs.",
+    gate: "Submit your value summary. Once it is approved, you move into AI Career Labs.",
     cta: true,
     variant: "accent",
   },
