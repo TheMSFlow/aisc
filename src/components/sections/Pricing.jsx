@@ -20,7 +20,7 @@ const TIERS = [
     features: [
       {
         label: "All 4 live sessions",
-        info: "Four live facilitated sessions: AI Clarity (Day 1), AI Labs (Day 2), AI Value (Day 3), and AI Governance (Day 7). Each runs 2 hours. Day 7's session includes a live Q&A within that time.",
+        info: "Four live facilitated sessions: AI Clarity (Day 1), AI Readiness (Day 2), AI Value (Day 3), and AI Governance (Day 7). Each runs 2 hours. Day 7's session includes a live Q&A within that time.",
       },
       {
         label: "Session resources",
@@ -28,19 +28,19 @@ const TIERS = [
       },
       {
         label: "Mini apps",
-        info: "Tools in the Toolbox: the Delegation Tool for rating tasks on AI fit and human judgment, the Margin Calculator for tracking real time saved, and the Territory Builder for mapping and declaring your AI territory. All three are reusable after the challenge ends.",
+        info: "Tools in the Toolbox: the Delegation Tool for rating tasks on AI fit and human judgment, the Readiness Scorecard for measuring how ready you are, the Territory Builder for mapping and declaring your AI territory, and the Margin Calculator for tracking real time saved. All four are reusable after the challenge ends.",
       },
       {
         label: "All Assignments and Milestone Task",
-        info: "Post-session assignments for Days 1, 2, and 3, plus the Day 3 Milestone Task that produces your territory declaration and feeds into your 6-Month AI Stakeholder Roadmap.",
+        info: "Post-session assignments for Days 1, 2, 3, and 7, plus the Day 3 Milestone Task that produces your territory declaration and feeds into your 6-Month AI Stakeholder Roadmap.",
       },
       {
         label: "6-Month AI Stakeholder Roadmap",
         info: "Turns the territory you declared on Day 3 into a 180-day plan across three phases, built around your capability gaps, the relationships you need, and your own standards for using AI. Unlocked on Day 6.",
       },
       {
-        label: "AI Labs (1 month free access)",
-        info: "A dedicated platform with leadership-focused instruction on setting up AI, directing it, and applying it across your domain. 1 month of free access that starts when the challenge ends. VIP extends this to 3 months and VVIP to 6.",
+        label: "AI Labs (first month free)",
+        info: "Labs is where you practise what the challenge taught, inside real AI environments. AI Labs is by subscription, and your first month is free. VIP makes it three months and VVIP six. The platform guides and your Toolbox stay open for good.",
       },
       {
         label: "Peer-to-peer reflection (optional)",
@@ -52,7 +52,7 @@ const TIERS = [
       },
       {
         label: "Certificate of Declaration",
-        info: "Issued on Day 7. Recognizes your declared AI territory and marks your transition from participant to AI Stakeholder.",
+        info: "Issued the day after Day 7. Recognizes your declared AI territory and marks your transition from participant to AI Stakeholder.",
       },
     ],
     cta: "Secure Your Spot",
@@ -72,8 +72,8 @@ const TIERS = [
         info: "Includes the full General Admission experience.",
       },
       {
-        label: "AI Labs (3 months free access)",
-        info: "Extends AI Labs free access to 3 months from the end of the challenge, up from 1 month with General Admission.",
+        label: "AI Labs (first 3 months free)",
+        info: "Your first 3 months of AI Labs are free, up from 1 month with General Admission.",
       },
       {
         label: "Strategic facilitator feedback on milestone task",
@@ -121,8 +121,8 @@ const TIERS = [
         info: "Every instrument, resource, output, and access point from General Admission and VIP, delivered in a fully private setting.",
       },
       {
-        label: "AI Labs (6 months free access)",
-        info: "The longest AI Labs access of any tier: 6 months free from the end of the challenge.",
+        label: "AI Labs (first 6 months free)",
+        info: "The longest free period of any tier: your first 6 months of AI Labs.",
       },
     ],
     cta: "Secure 1:1 Access",

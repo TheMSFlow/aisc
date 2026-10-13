@@ -4,7 +4,7 @@ import FAQAccordion from "@/components/ui/FAQAccordion";
 const QUESTIONS = [
   {
     q: "What do I actually leave with after 7 days?",
-    a: "Four things change, and you leave with something to show for each one. AI Clarity: an honest picture of what AI means for your world, which you build yourself on Day 1. AI Fluency: you know how to direct AI and what to hand over to it, and the Margin Calculator shows how many hours a week you get back. AI Value: one specific problem or opportunity in your world where AI can pay off, found with the Territory Builder and declared on Day 3. AI Governance: your own written rules for how you use AI, and the mandate to set them for the people you lead. The 6-Month AI Stakeholder Roadmap, unlocked on Day 6, turns all of this into a plan for the next 180 days: the gaps you need to close, the relationships you need to build, and the standards you will hold yourself to. You keep your Toolbox in your challenger profile. AI Labs, a platform where your AI fluency keeps growing, is free after the challenge ends: one month with General Admission, three months with VIP, and six months with VVIP. You receive a Certificate of Declaration on Day 7.",
+    a: "Four things change, and you leave with something to show for each one. AI Clarity: an honest picture of what AI means for your world, which you build yourself on Day 1. AI Readiness: six scores that show where you are strongest and where to begin, and a one-page audit of the data your work runs on. AI Value: one specific problem or opportunity in your world where AI can pay off, found with the Territory Builder and declared on Day 3. AI Governance: your own written rules for how you use AI, and the mandate to set them for the people you lead. The 6-Month AI Stakeholder Roadmap, unlocked on Day 6, turns all of this into a plan for the next 180 days: the gaps you need to close, the relationships you need to build, and the standards you will hold yourself to. You keep your Toolbox in your challenger profile. Labs opens the day after Day 7. It is where you build fluency by doing the work. AI Labs is by subscription, and your first months are free: one with General Admission, three with VIP, six with VVIP. Your Certificate of Declaration is issued the same day.",
   },
   {
     q: "Do I need to know anything about AI before I join?",
@@ -20,7 +20,7 @@ const QUESTIONS = [
   },
   {
     q: "What happens after the 7 days?",
-    a: "You leave with the 6-Month AI Stakeholder Roadmap, which turns the territory you declared on Day 3 into a 180-day plan across three phases: proving you can execute, applying your leverage and building key relationships, then extending your authority. It names your capability gaps and sets the personal standards you'll hold yourself to as you go. It is designed to be reused every 6 months. Your Toolbox access remains in your challenger profile. AI Labs, a dedicated platform where your AI fluency keeps developing as you execute the roadmap, is included free after the challenge ends: one month with General Admission, three months with VIP, and six months with VVIP. For leaders who want guided execution through that roadmap, the AI Stakeholder Coaching Program provides live group coaching three Saturdays a month.",
+    a: "You leave with the 6-Month AI Stakeholder Roadmap, which turns the territory you declared on Day 3 into a 180-day plan across three phases: proving you can execute, applying your leverage and building key relationships, then extending your authority. It names your capability gaps and sets the personal standards you'll hold yourself to as you go. It is designed to be reused every 6 months. Your Toolbox access remains in your challenger profile. Labs opens the day after Day 7. There you build fluency by doing the work, then take it to the people you lead. AI Labs is by subscription, and your first months are free: one with General Admission, three with VIP, six with VVIP. For leaders who want guided execution through that roadmap, the AI Stakeholder Coaching Program provides live group coaching three Saturdays a month.",
   },
   {
     q: "Is Coaching separate from the challenge?",
@@ -28,7 +28,7 @@ const QUESTIONS = [
   },
   {
     q: "What makes this different from an AI course or webinar?",
-    a: "AISC is not a course and not a webinar. There are no passive videos to watch at your own pace and quietly forget. Every live session builds on the last. Every assignment produces an output you keep. The Delegation Tool, the Margin Calculator, and the Territory Builder are tools you use on your own real situation, not case studies you observe. By Day 3, you have made three real decisions. A webinar gives you information. AISC gives you a decision.",
+    a: "AISC is not a course and not a webinar. There are no passive videos to watch at your own pace and quietly forget. Every live session builds on the last. Every assignment produces an output you keep. The Delegation Tool, the Readiness Scorecard, and the Territory Builder are tools you use on your own real situation, not case studies you observe. By Day 3, you have made three real decisions. A webinar gives you information. AISC gives you a decision.",
   },
   {
     q: "How many people are in each cohort?",

@@ -19,7 +19,7 @@ const AUDIENCES = [
   {
     tier: "Emerging Leader",
     qualifier: "Responsibility · Building toward influence",
-    who: "You are doing the work. You often see what others above you are missing when it comes to AI. But no one has handed you the authority to lead it yet. AI Fluency is a career asset, the kind that earns trust, positions you for the roles you actually want, and gives you a foundation to build something worth noticing. AISC gives you the clarity, the fluency, and a declared AI position before anyone above you has thought to look for it.",
+    who: "You are doing the work. You often see what others above you are missing when it comes to AI. But no one has handed you the authority to lead it yet. AI Fluency is a career asset, the kind that earns trust, positions you for the roles you actually want, and gives you a foundation to build something worth noticing. AISC gives you the clarity, the readiness, and a declared AI position before anyone above you has thought to look for it.",
     dark: false,
     accent: false,
   },

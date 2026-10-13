@@ -2,17 +2,22 @@
 import { useEffect, useState } from "react";
 import {
   ArrowRight,
+  Blocks,
+  Bot,
   ChevronLeft,
   ChevronRight,
   ClipboardCheck,
   Download,
+  FolderKanban,
+  Gauge,
+  ListChecks,
   Lock,
   Map,
   Maximize2,
   Scale,
   ScrollText,
   ShieldCheck,
-  Compass,
+  Workflow,
   X,
 } from "lucide-react";
 
@@ -24,17 +29,17 @@ const PANELS = [
     type: "docs",
     docs: [
       { name: "Task Delegation Guide", icon: ClipboardCheck },
-      { name: "AI Safety Guidelines", icon: ShieldCheck },
-      { name: "The Leadership Brief", icon: Compass },
+      { name: "AI Readiness Guide", icon: Gauge },
       { name: "AI Value Map", icon: Map },
       { name: "The Mandate & Ethics Guide", icon: Scale },
-      { name: "AI Policy Template", icon: ScrollText },
+      { name: "My Personal AI Policy", icon: ScrollText },
+      { name: "AI Safety Guidelines", icon: ShieldCheck },
     ],
   },
   {
     id: "mini-apps",
     name: "Mini Apps",
-    body: "The Delegation tool helps you sort tasks into three buckets: what needs your judgement, what AI can handle, and where you should collaborate. The Margin Calculator shows you how much time AI is actually saving you, so you can decide where to reinvest it. The Territory Builder helps you find the problem in your ecosystem you're best positioned to solve, and gives you the clarity to start.",
+    body: "The Delegation Tool sorts your tasks into what needs your judgement, what AI can handle, and where you work together. The Readiness Scorecard shows how ready you are, one dimension at a time. The Territory Builder finds the problem in your ecosystem you are best placed to solve. The Margin Calculator shows how much time AI is saving you, so you can decide where to reinvest it.",
     type: "apps",
   },
   {
@@ -65,16 +70,18 @@ const PANELS = [
   },
   {
     id: "ai-labs",
-    name: "AI Labs",
-    body: "A platform built for leaders: instruction on setting up AI, directing it, and applying it to your domain. The fluency you built during the challenge deepens here as you execute your roadmap. Free access included with every tier: one month with General Admission, three with VIP, six with VVIP.",
+    name: "Labs",
+    body: "Labs is where you practise what the challenge taught, inside real AI environments. AI Labs is by subscription, and your first months are free: one with General Admission, three with VIP, six with VVIP. The platform guides and your Toolbox stay open for good.",
     type: "tools",
+    // Claude is the platform Labs opens with (founder, 2026-10-13). The other
+    // five tiles are kinds of work done there, not tools.
     tools: [
       { name: "Claude", src: "/demo/tools/claude.svg" },
-      { name: "Copilot", src: "/demo/tools/copilot.svg" },
-      { name: "Gemini", src: "/demo/tools/gemini.svg" },
-      { name: "Antigravity", src: "/demo/tools/antigravity.png" },
-      { name: "Google AI Studio", src: "/demo/tools/ai-studio.png" },
-      { name: "NotebookLM", src: "/demo/tools/notebooklm.svg" },
+      { name: "Tasks", icon: ListChecks },
+      { name: "Workflows", icon: Workflow },
+      { name: "Projects", icon: FolderKanban },
+      { name: "AI Agents", icon: Bot },
+      { name: "Frameworks", icon: Blocks },
     ],
   },
 ];
@@ -331,6 +338,7 @@ function MiniAppsDemo({ isActive }) {
   const [tab, setTab] = useState("delegation");
   const TABS = [
     { id: "delegation", label: "Delegation" },
+    { id: "readiness", label: "Readiness" },
     { id: "margin", label: "Margin" },
     { id: "territory", label: "Territory", locked: true },
   ];
@@ -350,18 +358,25 @@ function MiniAppsDemo({ isActive }) {
       {/* Glass card */}
       <div className="relative h-full lg:h-auto rounded-t-2xl md:rounded-2xl border border-white/12 bg-white/6 backdrop-blur-xl shadow-2xl p-4 sm:p-6 flex flex-col">
         <div className="shrink-0 flex items-center justify-between gap-3 mb-3 sm:mb-4">
-          <div className="flex items-center gap-1 rounded-full border border-white/10 bg-white/4 p-0.5">
+          {/* Four tabs do not fit a phone at the desktop size. Below md they
+              share the row equally, in a tighter setting. */}
+          <div className="flex min-w-0 flex-1 md:flex-none items-center gap-0.5 md:gap-1 rounded-full border border-white/10 bg-white/4 p-0.5">
             {TABS.map((t) => (
               <button
                 key={t.id}
                 onClick={() => setTab(t.id)}
-                className={`flex items-center gap-1 rounded-full px-2.5 sm:px-3.5 py-1 text-[9px] sm:text-[10px] font-semibold uppercase tracking-[0.15em] transition-colors duration-150 ${
+                className={`flex flex-1 md:flex-none items-center justify-center gap-0.5 md:gap-1 whitespace-nowrap rounded-full px-0.5 md:px-3.5 py-1 text-[8px] sm:text-[9px] md:text-[10px] font-semibold uppercase tracking-[0.02em] sm:tracking-[0.1em] md:tracking-[0.15em] transition-colors duration-150 ${
                   tab === t.id
                     ? "bg-white/15 text-white/90"
                     : "text-white/40 hover:text-white/70"
                 }`}
               >
-                {t.locked && <Lock className="w-2.5 h-2.5" strokeWidth={2} />}
+                {t.locked && (
+                  <Lock
+                    className="w-2 h-2 md:w-2.5 md:h-2.5 shrink-0"
+                    strokeWidth={2}
+                  />
+                )}
                 {t.label}
               </button>
             ))}
@@ -374,6 +389,11 @@ function MiniAppsDemo({ isActive }) {
         <div className="flex-1 min-h-0 lg:h-75 flex items-stretch *:w-full">
           {tab === "delegation" && (
             <DelegationSim running={isActive && tab === "delegation"} />
+          )}
+          {/* Keyed on the panel being in view, so it starts from the top
+              each time the panel comes back. */}
+          {tab === "readiness" && (
+            <ReadinessSim key={isActive ? "on" : "off"} running={isActive} />
           )}
           {tab === "margin" && (
             <MarginSim running={isActive && tab === "margin"} />
@@ -416,30 +436,10 @@ function DelegationSim({ running }) {
 
   return (
     <div className="min-h-0 rounded-lg sm:rounded-xl bg-white text-slate-700 shadow-2xl overflow-hidden flex flex-col">
-      {/* Stepper */}
-      <div className="shrink-0 flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 bg-slate-50 border-b border-slate-200">
-        {["Add Tasks", "Rate Tasks", "Results"].map((label, s) => (
-          <div key={label} className="flex items-center gap-1.5 sm:gap-2">
-            {s > 0 && <ChevronRight className="w-2.5 h-2.5 text-slate-300" />}
-            <span
-              className={`flex items-center justify-center w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full text-[7px] sm:text-[8px] font-bold transition-colors duration-300 ${
-                stage >= s
-                  ? "bg-indigo-600 text-white"
-                  : "bg-slate-200 text-slate-400"
-              }`}
-            >
-              {s + 1}
-            </span>
-            <span
-              className={`text-[8px] sm:text-[9px] font-semibold transition-colors duration-300 ${
-                stage === s ? "text-slate-800" : "text-slate-400"
-              }`}
-            >
-              {label}
-            </span>
-          </div>
-        ))}
-      </div>
+      <SimStepper
+        labels={["Add Tasks", "Rate Tasks", "Results"]}
+        stage={stage}
+      />
 
       {/* Body */}
       <div className="flex-1 min-h-0 p-3 sm:p-4 overflow-hidden">
@@ -586,6 +586,34 @@ function DelegationSim({ running }) {
   );
 }
 
+function SimStepper({ labels, stage }) {
+  return (
+    <div className="shrink-0 flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 bg-slate-50 border-b border-slate-200">
+      {labels.map((label, s) => (
+        <div key={label} className="flex items-center gap-1.5 sm:gap-2">
+          {s > 0 && <ChevronRight className="w-2.5 h-2.5 text-slate-300" />}
+          <span
+            className={`flex items-center justify-center w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full text-[7px] sm:text-[8px] font-bold transition-colors duration-300 ${
+              stage >= s
+                ? "bg-indigo-600 text-white"
+                : "bg-slate-200 text-slate-400"
+            }`}
+          >
+            {s + 1}
+          </span>
+          <span
+            className={`text-[8px] sm:text-[9px] font-semibold transition-colors duration-300 ${
+              stage === s ? "text-slate-800" : "text-slate-400"
+            }`}
+          >
+            {label}
+          </span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 function SimSlider({ label, hint }) {
   const [slid, setSlid] = useState(false);
   useEffect(() => {
@@ -614,6 +642,193 @@ function SimSlider({ label, hint }) {
           className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-white border-2 border-indigo-500 shadow transition-all duration-700 ease-out"
           style={{ left: slid ? "75%" : "25%" }}
         />
+      </div>
+    </div>
+  );
+}
+
+/* Readiness Scorecard. The dimension, its question, the two statements and
+   the scale are the real tool's own words (intelligence,
+   utils/challenge/ReadinessScorecard.jsx). The scores are made up. */
+
+const READY_SCALE = [
+  "No",
+  "Not yet, but planned",
+  "Partly",
+  "Yes",
+  "Yes, and I could show it",
+];
+
+const READY_STATEMENTS = [
+  {
+    text: "My reasons for using AI are written down and tied to my goals.",
+    value: 4,
+  },
+  { text: "I can say, in one sentence, why I am turning to AI.", value: 2 },
+];
+
+// Each score is out of 20, as in the tool. There is no total.
+const READY_SCORES = [
+  { name: "Strategy", score: 17, mark: "Strongest" },
+  { name: "Data Governance", score: 9 },
+  { name: "Talent", score: 14 },
+  { name: "Processes", score: 12 },
+  { name: "Impact Evaluation", score: 7, mark: "Start here" },
+  { name: "Collaboration", score: 13 },
+];
+
+const READY_PHASES = ["open", "one", "two", "profile"];
+const READY_DUR = { open: 1200, one: 1400, two: 1900, profile: 5200 };
+
+function ReadinessSim({ running }) {
+  const [i, setI] = useState(0);
+
+  useEffect(() => {
+    if (!running) return;
+    const t = setTimeout(
+      () => setI((p) => (p + 1) % READY_PHASES.length),
+      READY_DUR[READY_PHASES[i]],
+    );
+    return () => clearTimeout(t);
+  }, [i, running]);
+
+  const step = READY_PHASES[i];
+  const rated = step === "open" ? 0 : step === "one" ? 1 : 2;
+
+  return (
+    <div className="min-h-0 rounded-lg sm:rounded-xl bg-white text-slate-700 shadow-2xl overflow-hidden flex flex-col">
+      <SimStepper
+        labels={["How to Rate", "Rate", "My Profile"]}
+        stage={step === "profile" ? 2 : 1}
+      />
+
+      <div className="flex-1 min-h-0 p-3 sm:p-4 overflow-hidden">
+        {step !== "profile" && (
+          <div className="h-full flex flex-col">
+            <p className="text-[7px] sm:text-[8px] font-semibold uppercase tracking-[0.2em] text-slate-400 mb-0.5">
+              Dimension 1 of 6
+            </p>
+            <p className="text-[10px] sm:text-xs font-bold text-slate-800">
+              Strategy
+            </p>
+            <p className="text-[8px] sm:text-[9px] italic text-slate-400 mb-2">
+              Do I have a plan for AI, tied to where I am going?
+            </p>
+            <div className="space-y-1.5">
+              {READY_STATEMENTS.map((s, idx) => {
+                const done = idx < rated;
+                return (
+                  <div
+                    key={s.text}
+                    className="rounded-md border border-slate-200 px-2.5 py-1.5 sm:py-2"
+                  >
+                    <p className="text-[9px] sm:text-[10px] leading-snug text-slate-700 mb-1.5">
+                      {s.text}
+                    </p>
+                    <div className="flex items-center gap-1">
+                      {READY_SCALE.map((label, v) => (
+                        <span
+                          key={label}
+                          className={`flex items-center justify-center w-4 h-4 sm:w-5 sm:h-5 rounded text-[7px] sm:text-[8px] font-bold tabular-nums transition-colors duration-300 ${
+                            done && v + 1 === s.value
+                              ? "bg-indigo-600 text-white"
+                              : "bg-slate-100 text-slate-400"
+                          }`}
+                        >
+                          {v + 1}
+                        </span>
+                      ))}
+                      <span
+                        className={`ml-1.5 text-[7px] sm:text-[8px] font-semibold text-indigo-600 transition-opacity duration-300 ${
+                          done ? "opacity-100" : "opacity-0"
+                        }`}
+                      >
+                        {READY_SCALE[s.value - 1]}
+                      </span>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+            <div className="mt-auto flex items-center justify-between gap-2 pt-2">
+              <div className="flex-1 flex gap-0.5 max-w-[45%]">
+                {READY_SCORES.map((d, s) => (
+                  <span
+                    key={d.name}
+                    className={`h-1 flex-1 rounded-full ${
+                      s === 0 ? "bg-indigo-500" : "bg-slate-200"
+                    }`}
+                  />
+                ))}
+              </div>
+              <div
+                className={`flex items-center gap-1 rounded-md px-2.5 py-1.5 text-[9px] sm:text-[10px] font-semibold transition-colors duration-500 ${
+                  rated === 2
+                    ? "bg-indigo-600 text-white"
+                    : "bg-indigo-50 text-indigo-400"
+                }`}
+              >
+                Next dimension <ArrowRight className="w-2.5 h-2.5" />
+              </div>
+            </div>
+          </div>
+        )}
+
+        {step === "profile" && <ReadinessProfile />}
+      </div>
+    </div>
+  );
+}
+
+function ReadinessProfile() {
+  // Bars start empty and grow once the view is on screen.
+  const [grown, setGrown] = useState(false);
+  useEffect(() => {
+    const raf = requestAnimationFrame(() =>
+      requestAnimationFrame(() => setGrown(true)),
+    );
+    return () => cancelAnimationFrame(raf);
+  }, []);
+
+  return (
+    <div className="h-full flex flex-col">
+      <p className="text-[7px] sm:text-[8px] font-semibold uppercase tracking-[0.2em] text-slate-400 mb-2">
+        Six scores, side by side. No total.
+      </p>
+      <div className="mb-2.5 space-y-1.5 sm:space-y-3">
+        {READY_SCORES.map((d, idx) => (
+          <div
+            key={d.name}
+            className="sim-rise grid grid-cols-[5.25rem_1fr_4.5rem] sm:grid-cols-[7rem_1fr_5.5rem] items-center gap-2"
+            style={{ animationDelay: `${idx * 0.1}s` }}
+          >
+            <span className="truncate text-[8px] sm:text-[9px] font-semibold text-slate-700">
+              {d.name}
+            </span>
+            <span className="h-1.5 rounded-full bg-indigo-100 overflow-hidden">
+              <span
+                className="block h-full rounded-full bg-indigo-500 transition-all duration-700 ease-out"
+                style={{ width: grown ? `${(d.score / 20) * 100}%` : "0%" }}
+              />
+            </span>
+            <span className="flex items-center justify-end gap-1.5">
+              {d.mark && (
+                <span className="whitespace-nowrap rounded-full bg-indigo-100 px-1.5 py-0.5 text-[6px] sm:text-[7px] font-bold text-indigo-700">
+                  {d.mark}
+                </span>
+              )}
+              <span className="w-3 text-right text-[9px] sm:text-[10px] font-bold tabular-nums text-slate-700">
+                {d.score}
+              </span>
+            </span>
+          </div>
+        ))}
+      </div>
+      <div
+        className="sim-rise mt-auto flex items-center gap-1.5 self-start rounded-md bg-indigo-950 text-white px-2.5 py-1.5 text-[9px] sm:text-[10px] font-semibold"
+        style={{ animationDelay: "0.9s" }}
+      >
+        <Download className="w-2.5 h-2.5" /> Download Summary
       </div>
     </div>
   );
@@ -946,7 +1161,7 @@ function ToolsLibrary({ tools, isActive }) {
       <div className="relative h-full rounded-t-2xl md:rounded-2xl border border-white/12 bg-white/6 backdrop-blur-xl shadow-2xl p-4 sm:p-6 lg:p-8 flex flex-col">
         <div className="shrink-0 flex items-center justify-between mb-3 sm:mb-5">
           <p className="whitespace-nowrap text-[9px] font-semibold uppercase tracking-[0.3em] text-white/40">
-            Tool Library
+            Inside Labs
           </p>
           <p className="whitespace-nowrap text-[9px] font-semibold uppercase tracking-[0.2em] text-white/30">
             <span className="hidden sm:inline">The Essentials · </span>More
@@ -961,15 +1176,24 @@ function ToolsLibrary({ tools, isActive }) {
               className="demo-tile rounded-xl border border-white/8 bg-white/4 p-2.5 sm:p-4 flex items-center sm:flex-col sm:items-start gap-2.5 sm:gap-4"
               style={{ animationDelay: `${0.1 + i * 0.07}s` }}
             >
-              <span className="shrink-0 w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-white inset-ring-1 inset-ring-white/25 shadow-lg flex items-center justify-center p-1.5 sm:p-2">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={tool.src}
-                  alt={tool.name}
-                  loading="lazy"
-                  className="w-full h-full object-contain"
-                />
-              </span>
+              {tool.icon ? (
+                <span className="shrink-0 w-8 h-8 sm:w-10 sm:h-10 rounded-lg gradient-200 inset-ring-1 inset-ring-white/25 shadow-lg flex items-center justify-center">
+                  <tool.icon
+                    className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-white"
+                    strokeWidth={1.75}
+                  />
+                </span>
+              ) : (
+                <span className="shrink-0 w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-white inset-ring-1 inset-ring-white/25 shadow-lg flex items-center justify-center p-1.5 sm:p-2">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={tool.src}
+                    alt={tool.name}
+                    loading="lazy"
+                    className="w-full h-full object-contain"
+                  />
+                </span>
+              )}
               <span className="text-[11px] sm:text-xs font-medium leading-snug text-white/75">
                 {tool.name}
               </span>

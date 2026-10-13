@@ -26,8 +26,8 @@ const BETWEEN = [
   },
   {
     icon: FlaskConical,
-    title: "AI Labs, for as long as you coach",
-    body: "Leadership-focused AI instruction stays open for the whole of your coaching, not a fixed window.",
+    title: "All of Labs, for as long as you coach",
+    body: "Every tier of Labs stays open for the whole of your coaching, not a fixed window.",
   },
   {
     icon: Users,

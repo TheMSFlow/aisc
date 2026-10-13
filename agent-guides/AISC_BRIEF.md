@@ -39,6 +39,51 @@ These three together are what AISC produces. The challenge is not a course. It i
 | **AI Leadership** | How to delegate, reclaim capacity, and lead a team in an AI environment. Task delegation, time redemption, Michael Steve's Delegation Matrix and AI governance. |
 | **AI Value** | Where real AI value lives in your industry. How to claim territory, declare your mandate, and generate measurable returns from AI. |
 
+**The pillars above stand as written.** Where fluency is built, and what the seven days themselves hand over, changed in October 2026. Read the next section before writing about any of the three.
+
+---
+
+## What the Seven Days Deliver, and What Labs Carries
+
+*(Founder decisions, 2026-10-08 to 2026-10-13. Read this before writing any copy about outcomes. The facts in full are in `SOURCE_OF_TRUTH.md` at the ecosystem root.)*
+
+The three pillars are what the programme is about, across the challenge and Labs together. They are not a list of what the seven days hand over.
+
+**The seven days deliver four things,** in the same four words as the live sessions:
+
+| A leader leaves with | Day | What it is |
+|---|---|---|
+| **AI Clarity** | Day 1 | An honest picture of what AI is, built by the leader |
+| **AI Readiness** | Day 2 | Six scores that show where the leader is strongest and where to begin, and a one-page audit of the data their work runs on |
+| **AI Value** | Day 3 | A declared territory |
+| **AI Governance** | Day 7 | The leader's own written standards for using AI, and the mandate to extend them |
+
+**After Day 7 comes AI Fluency & Adoption, in Labs.** Fluency is built there by doing the work: directing AI on real tasks, judging what it returns, and counting the hours it gives back. Adoption is taking it to the people the leader leads. **No work with AI happens inside the seven days.**
+
+### AI Fluency: when it stays as it is
+
+**AI Fluency is still a major pillar. Do not write it out of the programme because AI Readiness took its place among the four** *(founder, 2026-10-13: "It's important to not leave AI Fluency out just because it was replaced with readiness. AI Fluency is one of the major pillars... in our copy we need to know when to leave AI Fluency as is.")*
+
+**Leave AI Fluency as it is when the copy is about:**
+- the programme as a whole, its pillars, or the AI Stakeholder identity;
+- The Awakening, whose title names it;
+- Day 1, which teaches what fluency requires at the leader's level and what to hand over;
+- Labs and coaching, where it is built and keeps growing;
+- what fluency is worth to a leader: the authority shift, the career asset, the brand asset;
+- the blog, where fluency is one of the pillars briefings are filed under.
+
+**Write AI Readiness in its place only when the copy:**
+- lists what a leader leaves the seven days with (the four above);
+- names Day 2 or its live session.
+
+**Never promise inside the seven days:** working fluency, hands-on work with AI, hours recovered, or a number from the Margin Calculator. Those are true of Labs. Time Redemption is still the first thing fluency returns, and it is still named and felt in copy, where Labs is described.
+
+**The test for any sentence:** is it a promise about what the seven days hand over? If so, it uses the four above. If it is about the pillar, the journey, Day 1's frame, Labs or coaching, AI Fluency stays.
+
+*(The quotation is the founder's. The two lists and the test are this guide's reading of it, and of his decisions the same day.)*
+
+**"Leadership" is not the name for what comes after Day 7** *(founder, 2026-10-13)*. The seven days are the leadership part. What follows is fluency, then adoption among the people the leader leads.
+
 ---
 
 ## The 7-Day Journey
@@ -48,7 +93,7 @@ These three together are what AISC produces. The challenge is not a course. It i
 | Day 0 | Pre-Challenge Setup | Self-paced | — |
 | **Day 1** | **Mindset, Meaning & Mechanics** | **Live Session: AI Clarity** | **2 hrs** |
 | | Day 1 Assignment | Self-paced | — |
-| **Day 2** | **Margins** | **Live Session: AI Labs** | **2 hrs** |
+| **Day 2** | **Measure** | **Live Session: AI Readiness** | **2 hrs** |
 | | Day 2 Assignment | Self-paced | — |
 | **Day 3** | **Money** | **Live Session: AI Value** | **2 hrs** |
 | | Day 3 Milestone Task | Self-paced | — |
@@ -56,17 +101,20 @@ These three together are what AISC produces. The challenge is not a course. It i
 | Day 5 | Milestone Peer Reflection / Review | Self-paced (VIP: +1 hr Q&A) | — |
 | Day 6 | 6-Month Roadmap | Self-paced (VIP: Deep Dive + Q&A, 2 hrs) | — |
 | **Day 7** | **The Mandate** | **Live Session: AI Governance** | **1 hr live + 1 hr Q&A** |
+| Beyond Day 7 | AI Fluency & Adoption | Labs, opening the day after Day 7 | Ongoing |
 
 **Live sessions total: 4 sessions** (Days 1, 2, 3, 7)  
 **VIP gets extra touchpoints:** Q&A on Day 5, deep dive session on Day 6
+
+**Day 7's theme on the site is "Ethics & Mandate"** *(founder, 2026-10-13)*; the Learning Center says "The Mandate". Both are right where they are.
 
 ---
 
 ## What Participants Actually Do
 
-**Day 1 — AI Clarity:** Shift their leadership frame. Understand AI fundamentals is simple words. Begin the Delegation Audit using the Michael Steve Delegation Matrix (rates tasks on AI-suitability vs. human judgment required). Produces a Delegation Worksheet with concrete 30-day actions per task quadrant (AUTOMATE / AUGMENT / STREAMLINE / OWN).
+**Day 1 — AI Clarity:** Shift their leadership frame. Understand AI fundamentals is simple words. Begin the Delegation Audit using the Michael Steve Delegation Matrix (rates tasks on AI-suitability vs. human judgment required). Produces a Delegation Worksheet with concrete 30-day actions per task quadrant (AUTOMATE / AUGMENT / STREAMLINE / OWN). No AI tool is needed during the seven days: work with AI begins in Labs.
 
-**Day 2 — AI Labs / Margins:** Run the Description-Discernment Loop on a real AUGMENT task using Claude or ChatGPT. Use the Margin Calculator to quantify how much leadership capacity they reclaim weekly, quarterly, annually. (Demo different case studies so participants can see AI in action)
+**Day 2 — AI Readiness / Measure:** Find out how ready they are for AI, personally. Prerequisite Task: the Readiness Scorecard, a mini app where the leader rates 24 statements about themselves and gets six scores (Strategy, Data Governance, Talent, Processes, Impact Evaluation, Collaboration) with no total, then chooses three moves for the week. Primary Task: the Data Readiness Audit of three sets of data their work depends on: how each is collected, where it is stored, who answers for it, and whether it is ready for AI. Nothing is put into an AI tool. *(Replaced "AI Labs / Margins" on 2026-10-09. The Description-Discernment Loop, the live demos and the Margin Calculator's work moved to Labs.)*
 
 **Day 3 — Money / AI Value:** Use the Territory Builder and AI Value Map to identify where real AI value exists in their industry and declare the territory they will lead. (This also applies to leaders working in an organisation. The organisation becomes the territory). The Territory Builder also assigns a **Competitive Position** — Optimizer, Producer, Advisor, Educator, or Curator (see "The 6-Month Roadmap System" below). This position determines the participant's track through the Roadmap and its prerequisite tasks.
 
@@ -74,9 +122,9 @@ These three together are what AISC produces. The challenge is not a course. It i
 
 **Day 5:** Reflect on peers' milestone work (Available to General Admission) and get strategic feedback from facilitator + 1hr Q&A session (Available to VIP and VVIP)
 
-**Day 6:** Gain access to the 6-Month Roadmap (see "The 6-Month Roadmap" below), with an instructional video guide (For General Admission) and 2hr Roadmap deep dive + Follow-up Q&A for (VIP & VVIP).
+**Day 6:** Gain access to the 6-Month Roadmap (see "The 6-Month Roadmap" below), with an instructional video guide (For General Admission) and 2hr Roadmap deep dive + Follow-up Q&A for (VIP & VVIP). The Roadmap is worked through after the challenge.
 
-**Day 7:** AI Governance live session — the mandate and ethics of leading in an AI environment. General Q&A, Certificate of Declaration and Next Steps.
+**Day 7:** AI Governance live session (1 hr): the mandate and ethics of leading in an AI environment, then a General Q&A (1 hr). Prerequisite Task: the Ethics Self-Assessment, in The Mandate & Ethics Guide. Primary Task: My Personal AI Policy, six standards written and signed by the leader. **The Certificate of Declaration, Next Steps and Labs open the day after Day 7**, not on it.
 
 ---
 
@@ -106,7 +154,7 @@ The Roadmap is unlocked on Day 6 and serves as a living filter for the next 180 
 
 **The 6-Month AI Stakeholder Roadmap** — the central commitment document. Its sections build on each other in order:
 - **Executive Summary** — personal mandate, position, territory, and six-month intention, written as a creed the leader could say aloud
-- **Proof of Leverage** — pulls the leader's actual Day 1/2 numbers (Delegation Worksheet + Margin Calculator) into the Roadmap as evidence they can already execute, before they commit to more. This is quantified, not aspirational: before/after time, capacity reclaimed, recurrence
+- **Proof of Leverage** — the leader's own numbers, as evidence they can execute before they commit to more: the Delegation Worksheet from Day 1, and time recorded in the Margin Calculator from their work in Labs. It is built after the challenge *(founder, 2026-10-08; until then it drew on Day 2)*. This is quantified, not aspirational: before/after time, capacity reclaimed, recurrence
 - **Territory Declaration** — the friction, who feels it most, why the leader is positioned to act, and the value created, refined from the Day 3 Territory Builder output into the version that drives the roadmap
 - **The 6-Month Roadmap** — the three phases (below), each phase carrying milestones, a Competitive-Position-specific focus, a Daily Win Pattern, and 5-7 key activities
 - **Constraints & Reality Check** — named gaps, risks, and blockers pulled directly from the Capability Gap Audit and the AI Stakeholder Identifier, plus a pre-committed protocol for the momentum drops that reliably hit around Day 45 and Day 100
@@ -120,7 +168,7 @@ These are completed alongside the Roadmap and feed its sections. Agents may use 
 
 **AI Stakeholder Identifier** — a stakeholder-mapping framework, not a contact list. Maps relationships into four categories (Internal, Industry, Ecosystem, Governance), places the highest-priority ones on an Activate / Convert / Nurture / Monitor matrix (by influence × alignment), and produces a top-10 engagement plan with a specific first action per person. That engagement plan becomes Phase 2's relationship milestones.
 
-**My Personal AI Policy** — a private document, not an organizational one. The leader writes six standards for themselves: task delegation, data governance (what goes into which AI tool), disclosure & transparency, output quality control, continuous learning, and personal ethical lines. Closes with a signed commitment statement. Reviewed at 30/90/180 days.
+**My Personal AI Policy** — a private document, not an organizational one. The leader writes six standards for themselves: task delegation, data governance (what goes into which AI tool), disclosure & transparency, output quality control, continuous learning, and personal ethical lines. Closes with a signed commitment statement. Reviewed at 30/90/180 days. *(Since 2026-10-10 it is written on Day 7, as that day's Primary Task. It still feeds the Roadmap.)*
 
 **Post-Challenge Guide — "The Power of Super Connections"** — a relationship-strategy framework for the AI era, meant to be read alongside the Stakeholder Identifier. Core reframe: relationships used to be about *access* (to information, to rooms); AI made information abundant, so relationships now exist to exchange what AI still can't — judgment, pattern recognition, contextual insight. Includes a Competitive-Position-specific table of relationship currency (what each position brings to a conversation, who to build with, and the specific signal that shows the position is working).
 
@@ -158,22 +206,23 @@ The Roadmap is designed to be revisited, not filed away: **30 days** (Activation
 
 ## The Toolbox
 
-The Toolbox is the operating environment participants access throughout the challenge and retain for six months after it ends. It is not supplementary material — it is the infrastructure that makes the challenge's outputs executable. It holds resources and tools.
+The Toolbox is the operating environment participants access throughout the challenge and keep after it ends *(founder, 2026-10-12: "The toolbox will always be available to users with challenge access"; this read "retain for six months" until then)*. It is not supplementary material — it is the infrastructure that makes the challenge's outputs executable. It holds resources and tools.
 
 | Resource or Tool | What it is |
 |------------------|------------|
-| **Guides, Frameworks & Templates** *(Resource)* | All guides, frameworks, and session insights from Days 1, 2, and 3. Organized by day, downloadable, and updated as the program evolves. The reference library for the thought leadership participants are now positioned to deliver. |
+| **Guides, Frameworks & Templates** *(Resource)* | All guides, frameworks, and session insights from Days 1, 2, 3 and 7. Organized by day, downloadable, and updated as the program evolves. The reference library for the thought leadership participants are now positioned to deliver. |
 | **Delegation Tool** *(Tool)* | A mini app built on Michael Steve's Delegation Matrix. Leaders rate tasks on AI fit and human judgment required, receive quadrant assignments (Automate, Augment, Streamline, Own), and download results as a formatted spreadsheet. Reusable on any new batch of tasks at any time. |
-| **Margin Calculator** *(Tool)* | A mini app that records real time saved per AI-assisted task. Entries accumulate a weekly, quarterly, and annual total of leadership capacity reclaimed. Downloadable as a spreadsheet. |
-| **Territory Builder** *(Tool)* | A mini app that maps industry friction points, scores them by pain, credibility, and clarity of value, surfaces the best one to claim, and uses AI to polish the leader's declaration into a final statement. Also assigns one of five Competitive Positions (Optimizer, Producer, Advisor, Educator, Curator) that determines the leader's track through the Roadmap. Outputs a full PDF including friction scorecard, declaration elements, and statement. This declaration feeds directly into the Certificate of Declaration issued on Day 7. |
+| **Readiness Scorecard** *(Tool)* | A mini app for Day 2. The leader rates 24 statements about themselves, one dimension at a time, and gets six scores side by side (Strategy, Data Governance, Talent, Processes, Impact Evaluation, Collaboration), with the strongest and the place to start marked. There is no total and no overall level: the gaps between the scores are the finding. Downloadable as a PDF summary, and reusable. |
+| **Margin Calculator** *(Tool)* | A mini app that records real time saved per AI-assisted task. Entries accumulate a weekly, quarterly, and annual total of leadership capacity reclaimed. Downloadable as a spreadsheet. It stays in the Toolbox, and the work it records is done in Labs, after the challenge: it is no longer a Day 2 exercise. |
+| **Territory Builder** *(Tool)* | A mini app that maps industry friction points, scores them by pain, credibility, and clarity of value, surfaces the best one to claim, and uses AI to polish the leader's declaration into a final statement. Also assigns one of five Competitive Positions (Optimizer, Producer, Advisor, Educator, Curator) that determines the leader's track through the Roadmap. Outputs a full PDF including friction scorecard, declaration elements, and statement. This declaration feeds directly into the Certificate of Declaration issued the day after Day 7. |
 | **Roadmap** | One document: the 6-Month AI Stakeholder Roadmap, with its three phases and how to approach them. It defines what to focus on, what to delegate, what to stop, and where AI belongs, branched by the Competitive Position declared on Day 3. See "The 6-Month Roadmap" above (and its copy rule: never name or count the prerequisite documents). Reusable every 6 months as the territory expands. |
-| **AI Labs** *(Resource)* | A dedicated video platform for leadership-focused AI fluency instruction. Covers AI setup, effective direction, and domain application from a leader's perspective, not an engineer's. Free access is tiered and starts when the challenge ends: 1 month with General Admission, 3 months with VIP, 6 months with VVIP. This is where fluency compounds after the challenge ends. |
+| **Labs** *(Resource)* | The place a leader goes after the challenge, and where AI fluency is built by doing the work: directing AI on real tasks, inside real AI environments. It opens the day after Day 7. It has four tiers (Platform Awareness, AI Labs, AISC+, AI Stakeholder Labs), but **site copy gives a summary and never the ladder or prices** *(founder, 2026-10-13)*: what Labs is; that AI Labs is by subscription and the first months are free (1 with General Admission, 3 with VIP, 6 with VVIP); and that the platform guides and the Toolbox stay open for good. The full picture is in `SOURCE_OF_TRUTH.md` at the ecosystem root and in `program/LABS_BLUEPRINT.md`. *(Until 2026-10-08 this row was "AI Labs", described as one video platform.)* |
 
 **Key notes for all copy and content work:**
 - The Toolbox is always referred to by name. Do not describe it as "materials" or "course access." It holds resources and tools.
-- AI Labs must always name the free access period when mentioned, and the access is tiered: 1 month (General Admission), 3 months (VIP), 6 months (VVIP). Never state a single blanket duration; the tier distinction must appear wherever AI Labs access is described. This is a significant value extension that distinguishes AISC from a 7-day program with nothing after it. AI Labs is a resource.
-- The Territory Builder's PDF output feeds the Certificate of Declaration on Day 7. This connection must be preserved in any copy about the Territory Builder.
-- The Delegation Tool and Margin Calculator are reusable after the challenge ends, not just during it. This distinguishes them from in-session exercises and must be reflected in copy. These two, along with the Territory Builder, are the three tools (mini apps) in the Toolbox.
+- **Say "Labs" for the place, and "AI Labs" only for the tier that carries the free months.** Whenever the free months are mentioned, name all three (1 month General Admission, 3 months VIP, 6 months VVIP) and never a single blanket duration, and say that AI Labs is by subscription with the first months free. Write as though Labs is open *(founder, 2026-10-13)*. This is still the value extension that distinguishes AISC from a 7-day program with nothing after it.
+- The Territory Builder's PDF output feeds the Certificate of Declaration, issued the day after Day 7. This connection must be preserved in any copy about the Territory Builder.
+- The mini apps are reusable after the challenge ends, not just during it, and copy must reflect that. There are four in the Toolbox: the Delegation Tool, the Readiness Scorecard, the Territory Builder and the Margin Calculator *(three until 2026-10-09, when the Readiness Scorecard joined)*.
 - Guides, Frameworks & Templates frames as thought leadership infrastructure, not a document archive. The leader who completes the challenge is now positioned to answer AI questions their world brings to them. This is the reference they reach for.
 
 ---
@@ -281,7 +330,7 @@ Enterprise inquiry: `intelligence.michaelsteve.com/form/inquiry?src=AISC`
 
 **Not a technology course.** There is no code to write, no algorithm to understand, no software to master. AISC is a leadership program. Leaders direct — they don't build the tools. You need to understand AI the way a general understands terrain, not the way an engineer builds the road.
 
-**Not a webinar.** Webinars are for listening. AISC is for producing. By Day 3, you have a Delegation Plan on paper, a real number for how much time you are losing to work AI could handle, and a territory you have declared out loud. These are not ideas — they are decisions.
+**Not a webinar.** Webinars are for listening. AISC is for producing. By Day 3, you have a Delegation Plan on paper, six scores that show how ready you are, and a territory you have declared out loud. These are not ideas — they are decisions.
 
 **Not an AI tool review.** We are not here to tell you which AI tool to use. Every leader's situation is different. AISC gives you the clarity to evaluate any tool from the right position — as someone who leads, not someone who is chasing a recommendation.
 
@@ -306,6 +355,7 @@ These are the reframes that make AISC distinct. Use them as anchors in any commu
 4. **"Most leaders are not confused about what to do. They are confused about what AI means for what they already do."**
 
 ### Time Redemption
+*These are true of fluency, and of what Labs returns. Since 2026-10-13 they are not attached to Day 2 or to the seven days: see "What the Seven Days Deliver, and What Labs Carries".*
 5. **"Most leaders are losing 10 to 20 hours a week to work that AI could handle. They just don't know which hours yet."**
 6. **"Time is not the constraint. Not knowing where AI fits is."**
 7. **"The first thing AI should do for any leader is give them their mornings back."**

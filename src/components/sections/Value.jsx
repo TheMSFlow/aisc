@@ -11,11 +11,11 @@ const VALUES = [
   },
   {
     number: "02",
-    name: "AI Fluency",
-    tag: "Interacting with AI effectively, efficiently, ethically, and safely",
-    body: "Fluency is knowing how to work with AI as a leader. That means directing it, delegating to it, and knowing where it does not belong. The first thing fluency returns to a leader is time: real hours, on paper, that were being lost to work AI can handle. Most leaders find the number larger than they expected.",
+    name: "AI Readiness",
+    tag: "A clear view of your readiness and your data",
+    body: "Most leaders assume they are ready for AI, or assume they are not. Few have measured it. In this challenge you score yourself across six dimensions and audit the data your work runs on. You leave knowing where you are strongest, where to begin, and which of your data is ready.",
     accent:
-      "The leaders who are fluent in AI become the voice their world turns to. The people they lead start coming to them for direction, not just information.",
+      "You are not ready for AI because you have bought AI. The leader who knows exactly where they stand decides better what to buy, what to fix, and what to leave alone.",
   },
   {
     number: "03",

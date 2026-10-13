@@ -54,7 +54,7 @@ export default function Hero() {
 
               <p className="mt-8 max-w-lg text-sm lg:text-base leading-relaxed text-white/55">
                 In seven days, you won't just have the right answer. You'll have
-                the clarity, the fluency, and the value to back it up. <br />
+                the clarity, the readiness, and the value to back it up. <br />
                 This engagement is for leaders with{" "}
                 <strong className="text-lilac">Responsibility</strong>,{" "}
                 <strong className="text-lilac">Influence</strong>, and access to{" "}

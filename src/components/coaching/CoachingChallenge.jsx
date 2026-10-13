@@ -34,7 +34,7 @@ const CARDS = [
     id: "changes",
     title: "Transformation",
     icon: Sparkles,
-    summary: "Four changes you leave with: AI clarity, fluency, value and governance.",
+    summary: "Four changes you leave with: AI clarity, readiness, value and governance.",
     render: () => <ValueInModal />,
   },
   {

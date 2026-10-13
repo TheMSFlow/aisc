@@ -34,7 +34,7 @@ const QUESTIONS = [
   },
   {
     q: "What is the difference between the plans?",
-    a: "Only the length of your commitment and what you pay. Every plan includes the private challenge, the live sessions, direct facilitator access, recordings, the group channel and AI Labs for as long as you are in coaching. Six months takes you through one full Roadmap. A year gives you a steadier pace through it, for leaders whose calendar will not fit it into six months.",
+    a: "Only the length of your commitment and what you pay. Every plan includes the private challenge, the live sessions, direct facilitator access, recordings, the group channel and all of Labs for as long as you are in coaching. Six months takes you through one full Roadmap. A year gives you a steadier pace through it, for leaders whose calendar will not fit it into six months.",
   },
   {
     q: "I have already done the challenge. Can I join?",

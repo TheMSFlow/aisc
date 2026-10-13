@@ -6,6 +6,13 @@
 #context files
 /website-context
 
+# The program resources as Markdown: imported once from
+# website-context/aisc_resources by scripts/program-convert.mjs, edited by hand
+# since, and now the reference copy. Paid, confidential material, so it stays
+# out of the repo exactly as its source does. The rest of program/
+# (README.md, PROGRAM_REFERENCE.md) is hand-written and not ignored.
+/program/resources/
+
 
 # dependencies
 /node_modules

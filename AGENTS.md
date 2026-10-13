@@ -37,6 +37,15 @@ This project is the landing page for the **AI Stakeholder Challenge (AISC)** —
 
 - **`agent-guides/DESIGN_GUIDE.md`** — For design and frontend tasks. v2 visual direction (premium/editorial), color and typography guidance, section architecture, component reuse notes from v1, and screenshot references.
 
+### Program reference (`program/`) — what each day actually teaches
+
+- **`program/PROGRAM_REFERENCE.md`** — The day-by-day report: theme, format, draft objectives, session content, tasks, outputs and resources for Day 0 through Day 7 and the Roadmap, plus a list of where the program's own materials disagree. Read it before editing or moving program content. AISC_BRIEF stays the source for copy; this is the source for curriculum detail.
+- **`program/resources/`** — The program resources as Markdown, one folder per day. **These are the reference for program content (founder, 2026-10-08): edit them here, not the Office files in `website-context/aisc_resources/`, which are the frozen originals. Never alter the Google Docs participants receive (founder, 2026-10-08).** Gitignored, so there is no undo: never run `scripts/program-convert.mjs --force`, which re-imports and discards edits. See `program/README.md`.
+- **`scripts/program-docx.mjs`** — Builds the designed document for a resource: `node scripts/program-docx.mjs program/resources/<folder>/<slug>.md` writes a `.docx` beside it, in the look of the existing day resources. **A resource ends up as a Word file or Google Doc, so Michael reviews it as the designed document (founder, 2026-10-08)**: rebuild it whenever a resource is written or edited. Skills, agent instructions and other files that are finished as Markdown are still reviewed as Markdown. Never edit the `.docx` by hand.
+- **`scripts/program-deck.mjs`** — The same for session notes, which are slides: `node scripts/program-deck.mjs program/resources/<folder>/<slug>.md` writes a `.pptx` beside the Markdown by copying the slide designs of the original Day 2 deck. Render it with `scripts/deck-preview.mjs` and look before handing it over.
+- **`program/DAY_7_AI_GOVERNANCE_SCOPE.md`** — The agreed scope for giving Day 7 ("AI Governance") material of its own, with `program/DAY_7_GOVERNANCE_INVENTORY.md` showing where that material sat before. Work in progress.
+- **`program/DAY_2_AI_READINESS_SCOPE.md`** — The agreed scope for replacing Day 2 ("AI Labs") with "AI Readiness". Work in progress: `PROGRAM_REFERENCE.md` still describes the program as it runs today.
+
 ### Blog guides (`agent-guides/blog/`) — for "The Awakening" at `/awakening`
 
 - **`agent-guides/blog/BLOG_BRIEF.md`** — Start here for any blog task. What The Awakening blog is, content pillars, taxonomy (audiences, industries, types), URL map, and what the blog is NOT.
@@ -58,6 +67,7 @@ This project is the landing page for the **AI Stakeholder Challenge (AISC)** —
 | Building a new component | AISC_BRIEF + DESIGN_GUIDE |
 | Refining pricing, FAQ, or curriculum | AISC_BRIEF + COPY_GUIDE + DESIGN_GUIDE |
 | Any task involving AI Governance or Day 7 content | AISC_BRIEF — note this is the closing capstone session |
+| Editing, restructuring, or checking what a day covers | program/PROGRAM_REFERENCE + the day's files in program/resources/ |
 | Writing or editing a blog article | blog/BLOG_BRIEF + blog/CONTENT_GUIDE + blog/SEO_GUIDE + COPY_GUIDE |
 | Researching a blog topic | blog/BLOG_BRIEF + blog/RESEARCH_GUIDE |
 | Blog UI, routes, or components | blog/BLOG_BRIEF + DESIGN_GUIDE |

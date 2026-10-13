@@ -93,9 +93,9 @@ The landing page has 9 sections in narrative order. Each entry below states the 
 **Job:** Name the four things a participant leaves with — clearly, directly — before the program structure is explained. This is the section currently missing from the page.
 
 **Must include:**
-- All four value points in priority order: AI Clarity → AI Fluency (Time Redemption lives inside it) → AI Value + Territory → AI Governance *(Governance added 2026-09-28)*
-- Under Fluency: the authority shift — the leader becomes the AI-clear voice their people turn to
-- Under Time: a specific number of hours recovered (not "improved efficiency")
+- All four value points in priority order: AI Clarity → AI Readiness → AI Value + Territory → AI Governance *(Governance added 2026-09-28. AI Readiness took the second place from AI Fluency on 2026-10-13; AI Fluency is still a pillar, and is shown in the curriculum as what follows Day 7)*
+- The authority shift (the leader becomes the AI-clear voice their people turn to) belongs with Clarity, and with what follows Day 7. It is not placed under Readiness
+- No hours-recovered figure in this section since 2026-10-13. Recovered time is a Labs outcome, shown where Labs is described
 - Under Territory: the connection to the 6-Month Roadmap — declared on Day 3, built over 6 months
 
 **Must feel:** Cumulative. Each value point lands on the previous. By the time the reader reaches Territory, they understand why it's the prize and not the pitch.
@@ -122,9 +122,10 @@ The landing page has 9 sections in narrative order. Each entry below states the 
 
 **Must include:**
 - All 7 days with clear distinction between live sessions and self-paced work
-- The 4 live sessions named with their outputs: AI Clarity → AI Labs → AI Value → AI Governance
+- The 4 live sessions named with their outputs: AI Clarity → AI Readiness → AI Value → AI Governance
 - Day 7 / The Mandate weighted as a capstone — not just another session
 - VIP differentiation on Days 5 and 6: visible but not dominant
+- A last row beyond the seven days, "Beyond Day 7 · AI Fluency & Adoption · Labs" *(built 2026-10-13)*. It uses the same three columns as a day. The rule above it is dashed and it has none beneath: solid rules hold the seven days, and the dashed one marks where the challenge ends and something continues. Its badge reads "Ongoing" in a quiet lilac, the only lilac in the section, kept no brighter than the "Self-paced" badge so it does not pull the eye past Day 7. It has no duration
 
 **Must feel:** Structured and earned. Every day should feel like it produces something real.
 
@@ -149,16 +150,18 @@ The landing page has 9 sections in narrative order. Each entry below states the 
 - Headline: "Rate every task. Recover every hour. Declare your territory."
 - Visual: Three cascading tool screenshots (Delegation Tool, Margin Calculator, Territory Builder)
 - Screenshots in `public/demo/`: `delegation-matrix.png`, `margin-calculator.png`, `territory.png`
+- **As built 2026-10-13:** the visual is a live demo in a glass card, not screenshots, with four tabs: Delegation, Readiness, Margin, and Territory (locked). Each open tab plays a short scripted run of the real tool in a white app card. Below 768px the four tabs share the row equally in a tighter setting, because they do not fit a phone at the desktop size. Measured from 320px to 1440px
 
 **Panel 03 — Roadmap (Resource)**
 - Headline: "Day 6 unlocks it. The next six months run on it."
 - Visual: Single roadmap screenshot filling the full right-column height (object-cover, object-top)
 - Screenshot in `public/demo/`: `roadmap.png`
 
-**Panel 04 — AI Labs (Resource)**
+**Panel 04 — Labs (Resource)** *(was "AI Labs" until 2026-10-13)*
 - Headline: "Built for leaders who direct AI. Not engineers who build it."
 - Visual: Editorial card filling the full right-column height — large typographic anchor, module list, tiered-access footer (AI Labs free access: 1 month GA / 3 months VIP / 6 months VVIP — never a single blanket duration)
 - No screenshot available; use the card treatment
+- **As built 2026-10-13:** the panel is named "Labs". It is a glass card of six tiles under the small heading "Inside Labs": the Claude logo on a white tile, then five icon tiles in the style of the document tiles (Tasks, Workflows, Projects, AI Agents, Frameworks). The logos of other AI tools are not shown: Labs opens with Claude alone *(founder, 2026-10-13)*. The free months are still never given as a single blanket duration
 
 **Screenshot arrangement (cascade panels):**
 - Three screenshots stacked diagonally: width 82%, offsets top: 2/15/28%, left: 0/9/18%

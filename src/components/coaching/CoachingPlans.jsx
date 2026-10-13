@@ -37,7 +37,7 @@ const INCLUDED = [
   "Direct messages with your facilitator",
   "Recordings of every session",
   "The private coaching group channel",
-  "AI Labs for as long as you are in coaching",
+  "All of Labs for as long as you are in coaching",
 ];
 
 export default function CoachingPlans() {

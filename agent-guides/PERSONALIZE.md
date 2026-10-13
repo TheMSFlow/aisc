@@ -27,19 +27,19 @@ Runtime price source of truth is `src/lib/pricing.js` (raw `{usd, ngn}` numbers)
 
 ### ga — General Admission
 - **Price:** $99 / ₦120,000
-- **What it is:** The full 7-day challenge. All 4 live sessions (AI Clarity Day 1, AI Labs Day 2, AI Value Day 3, AI Governance Day 7), all session resources, mini apps (Delegation Tool, Margin Calculator, Territory Builder), assignments and the Day 3 Milestone Task, the 6-Month AI Stakeholder Roadmap, 1 month of AI Labs, community access, Certificate of Declaration.
+- **What it is:** The full 7-day challenge. All 4 live sessions (AI Clarity Day 1, AI Readiness Day 2, AI Value Day 3, AI Governance Day 7), all session resources, mini apps (Delegation Tool, Readiness Scorecard, Territory Builder, Margin Calculator), assignments and the Day 3 Milestone Task, the 6-Month AI Stakeholder Roadmap, the first month of AI Labs free, community access, Certificate of Declaration.
 - **Who qualifies:** Anyone. Open cohort, no seat cap. Framed as full access, never "basic".
 - **CTA:** "Secure Your Spot" → `https://intelligence.michaelsteve.com/pay/challenge/aisc?package=general-admission` (Button variant `primary`)
 
 ### vip — VIP
 - **Price:** $399 / ₦520,000
-- **What it adds to GA:** 3 months AI Labs, strategic facilitator feedback on the milestone task (up to 3 iterations), a 30-minute private strategy session if all 3 iterations are used, Day 5 VIP-only live Q&A, Day 6 2-hour Roadmap deep dive.
+- **What it adds to GA:** the first 3 months of AI Labs free, strategic facilitator feedback on the milestone task (up to 3 iterations), a 30-minute private strategy session if all 3 iterations are used, Day 5 VIP-only live Q&A, Day 6 2-hour Roadmap deep dive.
 - **Who qualifies:** Leaders who want the facilitator close to their specific situation. **Capped at 10 seats** (a real constraint: milestone feedback needs a manageable group).
 - **CTA:** "Secure Your VIP Spot" → `https://intelligence.michaelsteve.com/pay/challenge/aisc?package=vip` (variant `dark`)
 
 ### vvip — VVIP
 - **Price:** $1,099 / ₦1,350,000
-- **What it is:** The full 7-day experience delivered privately, one-on-one, scheduled around the participant's availability. Direct facilitator access all 7 days. All GA and VIP inclusions. 6 months AI Labs.
+- **What it is:** The full 7-day experience delivered privately, one-on-one, scheduled around the participant's availability. Direct facilitator access all 7 days. All GA and VIP inclusions. The first 6 months of AI Labs free.
 - **Who qualifies:** The natural fit for the most senior Chiefs: private, conversational, directional.
 - **CTA:** "Secure 1:1 Access" → `https://intelligence.michaelsteve.com/pay/challenge/aisc?package=vvip` (variant `vvip`)
 
@@ -53,7 +53,7 @@ Runtime price source of truth is `src/lib/pricing.js` (raw `{usd, ngn}` numbers)
 
 ### coaching — AI Stakeholder Coaching Program (Group Coaching)
 - **Price:** $1,200/month (₦1,500,000), $6,000/6 months (₦7,500,000, save ~17%), $10,000/year (₦12,500,000, best value, save ~30%)
-- **What it is:** Opens with the full challenge delivered privately at VVIP level (1:1). Then live group coaching (not 1:1) through the 6-Month Roadmap: three Saturday sessions a month at 7PM WAT, 2 hours each, with recordings, a private group channel, direct facilitator messages and AI Labs for as long as coaching lasts. Rolling entry. **Includes AISC at no additional fee.** Every plan includes everything. Full page: `/coaching`.
+- **What it is:** Opens with the full challenge delivered privately at VVIP level (1:1). Then live group coaching (not 1:1) through the 6-Month Roadmap: three Saturday sessions a month at 7PM WAT, 2 hours each, with recordings, a private group channel, direct facilitator messages and all of Labs for as long as coaching lasts. Rolling entry. **Includes AISC at no additional fee.** Every plan includes everything. Full page: `/coaching`.
 - **Who qualifies:** Leaders who want a guide alongside them for the months after the challenge, or who already know they want ongoing support (better to start here than bolt coaching on later). Soft, natural next step, never a hard close.
 - **CTA:** "Start with Coaching" → `https://cal.com/michaelsteve/ai-stakeholder-coaching-discovery-call` (variant `dark`). Always mention: the first step is a 15-minute discovery call.
 
@@ -284,6 +284,7 @@ From COPY_GUIDE.md, non-negotiable:
 - **Forbidden:** "Master AI", "Stay relevant", "Stay ahead of the curve", "Learn AI", "Sign up", "Register", "Leverage AI", "Game-changing", "Revolutionary", "Transform your business", "Unlock the power of AI", "Gain access to", "Step-by-step", "In today's fast-moving AI landscape", "Whether you're a beginner or experienced", decorative "AI-powered".
 - **Never apologize for price, difficulty, or exclusivity.** The filter is a feature.
 - **AI Fluency** always lands near its definition: effective, efficient, ethical, safe.
+- **Never promise fluency, hands-on work with AI, or hours recovered inside the seven days** *(2026-10-13)*. The seven days deliver clarity, readiness, value and governance. Fluency is still a major pillar, and is built in Labs after Day 7. See AISC_BRIEF, "What the Seven Days Deliver, and What Labs Carries".
 - CTA labels come from the catalog verbatim; never invent CTA verbs.
 - Voice: a trusted, straight-talking advisor. Clear, direct, simple, warm, credible, ambitious. Second person, plain declarative sentences.
 

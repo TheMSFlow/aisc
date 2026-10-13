@@ -27,12 +27,12 @@ const DAYS = [
   },
   {
     day: "Day 2",
-    name: "AI Labs",
-    subtitle: "Margins",
+    name: "AI Readiness",
+    subtitle: "Measure",
     type: "live",
     duration: "2 hrs",
     description:
-      "You stop wondering and start experiencing. Live demos on real leadership problems show what AI can actually do.  See exactly how much time can be reclaimed, then put it to work yourself, using AI directly on a real task.",
+      "You find out how ready you are for AI. You score yourself across six dimensions, see where you are strongest and where to begin. You also audit the data your work runs on: how it is collected, where it is kept, and who answers for it. So you start from where you actually stand, not where you assume you are.",
     output: null,
     vipNote: null,
     milestone: false,
@@ -85,7 +85,46 @@ const DAYS = [
     vipNote: null,
     milestone: false,
   },
+  {
+    day: "Beyond Day 7",
+    name: "AI Fluency & Adoption",
+    subtitle: "Labs",
+    type: "ongoing",
+    duration: null,
+    description:
+      "In Labs you do the work. You practise directing AI on your own tasks, effectively, efficiently, ethically and safely, and you count the hours it gives back. Then you take it to the people you lead. Labs opens the day after Day 7.",
+    output: null,
+    vipNote: null,
+    milestone: false,
+  },
 ];
+
+const BADGES = {
+  live: {
+    label: "Live",
+    box: "border-warning/35 text-warning",
+    dot: "bg-warning",
+  },
+  "self-paced": {
+    label: "Self-paced",
+    box: "border-white/15 text-white/40",
+    dot: "bg-white/30",
+  },
+  ongoing: {
+    label: "Ongoing",
+    box: "border-lilac/25 text-lilac/60",
+    dot: "bg-lilac/50",
+  },
+};
+
+// Solid rules hold the seven days. The rule under the last day is dashed, and
+// the row beyond it has none: the challenge closes, and what follows stays open.
+function rowRule(d, next) {
+  if (d.type === "ongoing") return "";
+  if (d.milestone) return "border-b border-white/15 bg-white/4";
+  if (next?.type === "ongoing") return "border-b border-dashed border-white/25";
+  return "border-b border-white/8";
+}
 
 export default function Curriculum() {
   return (
@@ -110,11 +149,10 @@ export default function Curriculum() {
           {DAYS.map((d, i) => (
             <div
               key={i}
-              className={`grid gap-3 border-b py-6 lg:grid-cols-[160px_1fr_120px] lg:gap-8 ${
-                d.milestone
-                  ? "border-white/15 bg-white/4"
-                  : "border-white/8"
-              }`}
+              className={`grid gap-3 py-6 lg:grid-cols-[160px_1fr_120px] lg:gap-8 ${rowRule(
+                d,
+                DAYS[i + 1],
+              )}`}
             >
               {/* Day + live badge */}
               <div className="flex flex-row items-start gap-3 lg:flex-col lg:gap-3 lg:pt-0.5">
@@ -125,17 +163,14 @@ export default function Curriculum() {
                 >
                   {d.day}
                 </span>
-                {d.type === "live" ? (
-                  <span className="inline-flex items-center gap-1.5 border border-warning/35 px-2 py-0.5 text-[9px] font-semibold uppercase tracking-widest text-warning">
-                    <span className="inline-block h-1.5 w-1.5 rounded-full bg-warning" />
-                    Live
-                  </span>
-                ) : (
-                  <span className="inline-flex items-center gap-1.5 border border-white/15 px-2 py-0.5 text-[9px] font-semibold uppercase tracking-widest text-white/40">
-                    <span className="inline-block h-1.5 w-1.5 rounded-full bg-white/30" />
-                    Self-paced
-                  </span>
-                )}
+                <span
+                  className={`inline-flex items-center gap-1.5 border px-2 py-0.5 text-[9px] font-semibold uppercase tracking-widest ${BADGES[d.type].box}`}
+                >
+                  <span
+                    className={`inline-block h-1.5 w-1.5 rounded-full ${BADGES[d.type].dot}`}
+                  />
+                  {BADGES[d.type].label}
+                </span>
                 {d.milestone && (
                   <span className="inline-flex items-center gap-1.5 border border-msaccent/35 px-2 py-0.5 text-[9px] font-semibold uppercase tracking-widest text-msaccent/70">
                     <span className="inline-block h-1.5 w-1.5 rounded-full bg-msaccent/50" />
