@@ -58,7 +58,7 @@ The three pillars are what the programme is about, across the challenge and Labs
 | **AI Value** | Day 3 | A declared territory |
 | **AI Governance** | Day 7 | The leader's own written standards for using AI, and the mandate to extend them |
 
-**After Day 7 comes AI Fluency & Adoption, in Labs.** Fluency is built there by doing the work: directing AI on real tasks, judging what it returns, and counting the hours it gives back. Adoption is taking it to the people the leader leads. **No work with AI happens inside the seven days.**
+**After Day 7 comes AI Adoption & Fluency, in Labs** *(founder, 2026-10-13: "based on the sequence with which it happens, it should actually be 'AI Adoption & Fluency' and not 'AI Fluency & Adoption'". It was "AI Fluency & Adoption" earlier that day)*. **Adoption comes first, and it is the leader's own:** taking AI into their own work, on the platforms. **Fluency follows from practice:** directing AI on real tasks, judging what it returns, and counting the hours it gives back. **Taking it to the people the leader leads comes after both.** Do not use "adoption" alone for that last step: say "take it to the people you lead", or "leading adoption" where it is plainly other people's. **No work with AI happens inside the seven days.**
 
 ### AI Fluency: when it stays as it is
 
@@ -82,7 +82,7 @@ The three pillars are what the programme is about, across the challenge and Labs
 
 *(The quotation is the founder's. The two lists and the test are this guide's reading of it, and of his decisions the same day.)*
 
-**"Leadership" is not the name for what comes after Day 7** *(founder, 2026-10-13)*. The seven days are the leadership part. What follows is fluency, then adoption among the people the leader leads.
+**"Leadership" is not the name for what comes after Day 7** *(founder, 2026-10-13)*. The seven days are the leadership part. What follows is the leader's own adoption of AI, then fluency, then taking it to the people they lead *(the order and the meaning of adoption were changed later the same day: see "After Day 7 comes AI Adoption & Fluency" above)*.
 
 ---
 
@@ -101,7 +101,7 @@ The three pillars are what the programme is about, across the challenge and Labs
 | Day 5 | Milestone Peer Reflection / Review | Self-paced (VIP: +1 hr Q&A) | — |
 | Day 6 | 6-Month Roadmap | Self-paced (VIP: Deep Dive + Q&A, 2 hrs) | — |
 | **Day 7** | **The Mandate** | **Live Session: AI Governance** | **1 hr live + 1 hr Q&A** |
-| Beyond Day 7 | AI Fluency & Adoption | Labs, opening the day after Day 7 | Ongoing |
+| Beyond Day 7 | AI Adoption & Fluency | Labs, opening the day after Day 7 | Ongoing |
 
 **Live sessions total: 4 sessions** (Days 1, 2, 3, 7)  
 **VIP gets extra touchpoints:** Q&A on Day 5, deep dive session on Day 6
@@ -216,7 +216,7 @@ The Toolbox is the operating environment participants access throughout the chal
 | **Margin Calculator** *(Tool)* | A mini app that records real time saved per AI-assisted task. Entries accumulate a weekly, quarterly, and annual total of leadership capacity reclaimed. Downloadable as a spreadsheet. It stays in the Toolbox, and the work it records is done in Labs, after the challenge: it is no longer a Day 2 exercise. |
 | **Territory Builder** *(Tool)* | A mini app that maps industry friction points, scores them by pain, credibility, and clarity of value, surfaces the best one to claim, and uses AI to polish the leader's declaration into a final statement. Also assigns one of five Competitive Positions (Optimizer, Producer, Advisor, Educator, Curator) that determines the leader's track through the Roadmap. Outputs a full PDF including friction scorecard, declaration elements, and statement. This declaration feeds directly into the Certificate of Declaration issued the day after Day 7. |
 | **Roadmap** | One document: the 6-Month AI Stakeholder Roadmap, with its three phases and how to approach them. It defines what to focus on, what to delegate, what to stop, and where AI belongs, branched by the Competitive Position declared on Day 3. See "The 6-Month Roadmap" above (and its copy rule: never name or count the prerequisite documents). Reusable every 6 months as the territory expands. |
-| **Labs** *(Resource)* | The place a leader goes after the challenge, and where AI fluency is built by doing the work: directing AI on real tasks, inside real AI environments. It opens the day after Day 7. It has four tiers (Platform Awareness, AI Labs, AISC+, AI Stakeholder Labs), but **site copy gives a summary and never the ladder or prices** *(founder, 2026-10-13)*: what Labs is; that AI Labs is by subscription and the first months are free (1 with General Admission, 3 with VIP, 6 with VVIP); and that the platform guides and the Toolbox stay open for good. The full picture is in `SOURCE_OF_TRUTH.md` at the ecosystem root and in `program/LABS_BLUEPRINT.md`. *(Until 2026-10-08 this row was "AI Labs", described as one video platform.)* |
+| **Labs** *(Resource)* | The place a leader goes after the challenge, and where AI fluency is built by doing the work: directing AI on real tasks, inside real AI environments. It opens the day after Day 7. It has four tiers (Platform Awareness, AI Labs, AISC+, AI Stakeholder Labs), but **site copy gives a summary and never the ladder or prices** *(founder, 2026-10-13)*: what Labs is; that AI Labs is by subscription and the first months are free (1 with General Admission, 3 with VIP, 6 with VVIP); and that the platform guides and the Toolbox stay open for good. The platform guides cover four platforms, all open when Labs opens: Claude, ChatGPT, Copilot and Gemini *(founder, 2026-10-13)*. What a tier holds may be said without naming the tier, so copy may speak of going deeper into the challenge's concepts and into leading adoption and change, but never as something the free months open *(founder, 2026-10-13)*. On the site's Toolbox this row is the first panel, named "AI Fluency in Labs". The full picture is in `SOURCE_OF_TRUTH.md` at the ecosystem root and in `program/LABS_BLUEPRINT.md`. *(Until 2026-10-08 this row was "AI Labs", described as one video platform.)* |
 
 **Key notes for all copy and content work:**
 - The Toolbox is always referred to by name. Do not describe it as "materials" or "course access." It holds resources and tools.

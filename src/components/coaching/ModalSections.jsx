@@ -29,7 +29,7 @@ export function ValueInModal() {
 // - top padding so its arrows clear the pop-up's floating X;
 // - more height on phones (the inline 100dvh clips the visuals), so the
 //   pop-up scrolls instead. `!` is required to beat the inline style.
-// startPanel: opens on that panel (2 = Roadmap) by pressing the section's
+// startPanel: opens on that panel (3 = Roadmap) by pressing the section's
 // own "Next" control on mount, with the slide animation suppressed.
 export function DemoInModal({ startPanel = 0 }) {
   const ref = useRef(null);

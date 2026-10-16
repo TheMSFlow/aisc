@@ -2,15 +2,12 @@
 import { useEffect, useState } from "react";
 import {
   ArrowRight,
-  Blocks,
   Bot,
   ChevronLeft,
   ChevronRight,
   ClipboardCheck,
   Download,
-  FolderKanban,
   Gauge,
-  ListChecks,
   Lock,
   Map,
   Maximize2,
@@ -22,6 +19,23 @@ import {
 } from "lucide-react";
 
 const PANELS = [
+  {
+    id: "ai-labs",
+    name: "AI Fluency in Labs",
+    body: "Fluency is built by practice. In Labs you put AI to work on your own tasks until you direct it effectively, efficiently, ethically and safely. Then you go deeper into the challenge's concepts, and into leading adoption and change. The platform guides and your Toolbox stay open for good. AI Labs is by subscription, and your first months are free: one with General Admission, three with VIP, six with VVIP.",
+    type: "tools",
+    // The four platforms Labs teaches (founder, 2026-10-13), then two kinds
+    // of work done on them. `wide` tiles span two columns on large screens,
+    // so the platforms hold one row and the work sits beneath.
+    tools: [
+      { name: "Claude", src: "/demo/tools/claude.svg" },
+      { name: "ChatGPT", src: "/demo/tools/chatgpt.svg" },
+      { name: "Copilot", src: "/demo/tools/copilot.svg" },
+      { name: "Gemini", src: "/demo/tools/gemini.svg" },
+      { name: "AI Agents", icon: Bot, wide: true },
+      { name: "Workflows", icon: Workflow, wide: true },
+    ],
+  },
   {
     id: "guides",
     name: "Guides, Frameworks & Templates",
@@ -66,22 +80,6 @@ const PANELS = [
         name: "Governance & Mandate",
         line: "Authority proven, direction extended responsibly.",
       },
-    ],
-  },
-  {
-    id: "ai-labs",
-    name: "Labs",
-    body: "Labs is where you practise what the challenge taught, inside real AI environments. AI Labs is by subscription, and your first months are free: one with General Admission, three with VIP, six with VVIP. The platform guides and your Toolbox stay open for good.",
-    type: "tools",
-    // Claude is the platform Labs opens with (founder, 2026-10-13). The other
-    // five tiles are kinds of work done there, not tools.
-    tools: [
-      { name: "Claude", src: "/demo/tools/claude.svg" },
-      { name: "Tasks", icon: ListChecks },
-      { name: "Workflows", icon: Workflow },
-      { name: "Projects", icon: FolderKanban },
-      { name: "AI Agents", icon: Bot },
-      { name: "Frameworks", icon: Blocks },
     ],
   },
 ];
@@ -304,7 +302,7 @@ function DocLibrary({ docs, isActive }) {
   );
 }
 
-/* ── Mini Apps demo (slide 2) — scripted simulations ── */
+/* ── Mini Apps demo (slide 3) — scripted simulations ── */
 
 const SIM_TASKS = [
   {
@@ -1169,11 +1167,13 @@ function ToolsLibrary({ tools, isActive }) {
           </p>
         </div>
 
-        <div className="flex-1 grid grid-cols-2 lg:grid-cols-3 auto-rows-fr gap-2 sm:gap-3">
+        <div className="flex-1 grid grid-cols-2 lg:grid-cols-4 auto-rows-fr gap-2 sm:gap-3">
           {tools.map((tool, i) => (
             <div
               key={tool.name}
-              className="demo-tile rounded-xl border border-white/8 bg-white/4 p-2.5 sm:p-4 flex items-center sm:flex-col sm:items-start gap-2.5 sm:gap-4"
+              className={`demo-tile rounded-xl border border-white/8 bg-white/4 p-2.5 sm:p-4 flex items-center sm:flex-col sm:items-start gap-2.5 sm:gap-4 ${
+                tool.wide ? "lg:col-span-2" : ""
+              }`}
               style={{ animationDelay: `${0.1 + i * 0.07}s` }}
             >
               {tool.icon ? (

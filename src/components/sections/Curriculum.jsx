@@ -87,12 +87,12 @@ const DAYS = [
   },
   {
     day: "Beyond Day 7",
-    name: "AI Fluency & Adoption",
+    name: "AI Adoption & Fluency",
     subtitle: "Labs",
     type: "ongoing",
     duration: null,
     description:
-      "In Labs you do the work. You practise directing AI on your own tasks, effectively, efficiently, ethically and safely, and you count the hours it gives back. Then you take it to the people you lead. Labs opens the day after Day 7.",
+      "In Labs you do the work. First you take AI into your own tasks, on the platforms you already have. With practice you direct it effectively, efficiently, ethically and safely, and you count the hours it gives back. Then you take it to the people you lead. Labs opens the day after Day 7.",
     output: null,
     vipNote: null,
     milestone: false,

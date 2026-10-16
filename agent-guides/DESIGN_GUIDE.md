@@ -125,7 +125,7 @@ The landing page has 9 sections in narrative order. Each entry below states the 
 - The 4 live sessions named with their outputs: AI Clarity → AI Readiness → AI Value → AI Governance
 - Day 7 / The Mandate weighted as a capstone — not just another session
 - VIP differentiation on Days 5 and 6: visible but not dominant
-- A last row beyond the seven days, "Beyond Day 7 · AI Fluency & Adoption · Labs" *(built 2026-10-13)*. It uses the same three columns as a day. The rule above it is dashed and it has none beneath: solid rules hold the seven days, and the dashed one marks where the challenge ends and something continues. Its badge reads "Ongoing" in a quiet lilac, the only lilac in the section, kept no brighter than the "Self-paced" badge so it does not pull the eye past Day 7. It has no duration
+- A last row beyond the seven days, "Beyond Day 7 · AI Adoption & Fluency · Labs" *(built 2026-10-13 as "AI Fluency & Adoption"; the two words changed places later that day, at the founder's word)*. It uses the same three columns as a day. The rule above it is dashed and it has none beneath: solid rules hold the seven days, and the dashed one marks where the challenge ends and something continues. Its badge reads "Ongoing" in a quiet lilac, the only lilac in the section, kept no brighter than the "Self-paced" badge so it does not pull the eye past Day 7. It has no duration
 
 **Must feel:** Structured and earned. Every day should feel like it produces something real.
 
@@ -135,6 +135,8 @@ The landing page has 9 sections in narrative order. Each entry below states the 
 **Job:** Make the Toolbox's resources and tools tangible — show what participants actually access and what they leave with.
 
 **Structure:** Full-viewport-height section with a fixed header strip and four horizontally-sliding full-height panels. Arrow navigation (left/right) with a panel counter (01/04) in the header. Dot indicators at the bottom.
+
+**Order as built 2026-10-13** *(founder: "this tab will come first in the toolbox")*: AI Fluency in Labs, then Guides, Frameworks & Templates, then Mini Apps, then Roadmap. The panel numbers below are the earlier order, kept as headings. The coaching page opens this section on the Roadmap by its position, now the fourth (`startPanel={3}` in `CoachingChallenge.jsx`): move that number if the order changes again.
 
 **Header (persistent across all panels):**
 - Label: "THE TOOLBOX"
@@ -157,11 +159,11 @@ The landing page has 9 sections in narrative order. Each entry below states the 
 - Visual: Single roadmap screenshot filling the full right-column height (object-cover, object-top)
 - Screenshot in `public/demo/`: `roadmap.png`
 
-**Panel 04 — Labs (Resource)** *(was "AI Labs" until 2026-10-13)*
+**Panel 04 — AI Fluency in Labs (Resource), now shown first** *(founder, 2026-10-13. It was "Labs" earlier that day, and "AI Labs" before that)*
 - Headline: "Built for leaders who direct AI. Not engineers who build it."
 - Visual: Editorial card filling the full right-column height — large typographic anchor, module list, tiered-access footer (AI Labs free access: 1 month GA / 3 months VIP / 6 months VVIP — never a single blanket duration)
 - No screenshot available; use the card treatment
-- **As built 2026-10-13:** the panel is named "Labs". It is a glass card of six tiles under the small heading "Inside Labs": the Claude logo on a white tile, then five icon tiles in the style of the document tiles (Tasks, Workflows, Projects, AI Agents, Frameworks). The logos of other AI tools are not shown: Labs opens with Claude alone *(founder, 2026-10-13)*. The free months are still never given as a single blanket duration
+- **As built 2026-10-13:** the panel is named "AI Fluency in Labs" and is the first of the four. It is a glass card of six tiles under the small heading "Inside Labs": the four platforms Labs teaches, each logo on a white tile (Claude, ChatGPT, Copilot, Gemini, files in `public/demo/tools/`), then two icon tiles in the style of the document tiles (AI Agents, Workflows). From 1024px the grid is four across, so the platforms hold one row and the two icon tiles sit beneath at double width; below that it is two across. No other logos are shown: these four are the platforms Platform Awareness covers *(founder, 2026-10-13, replacing "Claude alone" from earlier that day)*. The ChatGPT mark was drawn from its published outline, not downloaded; swap in the official file if the founder supplies one. The free months are still never given as a single blanket duration
 
 **Screenshot arrangement (cascade panels):**
 - Three screenshots stacked diagonally: width 82%, offsets top: 2/15/28%, left: 0/9/18%

@@ -25,7 +25,7 @@ Content (steps 32 to 36) is the founder's, and runs alongside everything else. I
 
 - [x] The structure, as a preview with placeholder content: five kinds of page, the menu, search, Browse, locked states (2026-10-11)
 - [x] The colours: one dark, a lighter shade, each tier's colour as a small mark (2026-10-11)
-- [x] The menu at six lines, with one line to mark where a leader is (2026-10-11)
+- [x] The menu at six lines, with one line to mark where a leader is (2026-10-11). *The marking line was taken out on 2026-10-13, at his word: nothing is drawn beneath a tier.*
 - [x] Step 37, the switch that keeps Labs shut in production (2026-10-11)
 
 ## A. Sign off the structure
@@ -89,7 +89,7 @@ Nothing is gated today. The "View as" bar only draws the locks.
 
 ## G. Content (founder), alongside everything else
 
-- [ ] **32. F** Platform Awareness: which platforms first, and their videos recorded. *(Answered in part, founder, 2026-10-13: "For the platform awareness, I'll have to focus on Claude alone for now, so in Labs others can be locked for now." So Claude is first and alone. **For A, when Labs work resumes:** show the other platforms in the preview as locked. Today it shows five open, one of them empty.)*
+- [ ] **32. F** Platform Awareness: which platforms first, and their videos recorded. *(Answered, founder, 2026-10-13: "For platform awareness we will focus only on 4 platforms. Anthropic's Claude, Open AI's ChatGPT, Microsoft's Copilot and Google's Gemini." All four are open when Labs opens: "No worries, all four will be ready." This replaces "Claude alone", said earlier the same day. The videos are still his to record. The preview now lists the same four: NotebookLM, a fifth placeholder with nothing in it, was taken out the same day at his word, "Take NotebookLM out" (`intelligence/src/lib/labs/library.js`, uncommitted). Platform Awareness also has to serve a leader who arrives with none of the four: "If they arrive with none, platform awareness teaches them the most suitable platform for their needs." So its content shows which platform suits which need, as well as how each one works.)*
 - [ ] **33. F** AI Labs: the first videos, modules or course.
 - [ ] **34. F** AISC+: the deep dives made from what left the challenge. Their documents exist.
 - [ ] **35. F** For each video: title, one-line summary, what the leader will be able to do, the task.
