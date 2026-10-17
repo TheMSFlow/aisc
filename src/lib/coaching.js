@@ -8,8 +8,12 @@ import { PRICING } from "@/lib/pricing";
 export const COACHING_CALL_URL =
   "https://cal.com/michaelsteve/ai-stakeholder-coaching-discovery-call";
 
+// The button says "Book Your 15-Minute Call" everywhere, so this line says
+// what the call is for, not how long it is (founder, 2026-10-17).
+export const COACHING_CALL_LABEL = "Book Your 15-Minute Call";
+
 export const COACHING_CALL_NOTE =
-  "Your first step is a 15-minute call to confirm coaching is the right fit.";
+  "Your first step: we confirm coaching is the right fit and where you would start.";
 
 // Confirmed by the founder 2026-09-28. The last week of each month belongs to
 // the public monthly challenge, which is why it is three Saturdays, not four.

@@ -3,7 +3,7 @@ import ApprenticeProgramme from "@/components/aica/ApprenticeProgramme";
 
 const TITLE = "AI Career Apprentice | Michael Steve";
 const DESCRIPTION =
-  "Five days that end with your own website online, then 26 weeks of mentorship, an AI-optimised CV and portfolio, and a certificate when you graduate. A paid apprenticeship follows for those who go further.";
+  "Five days that end with your own website online, then 6 months of mentorship, an AI-optimised CV and portfolio, and a certificate when you graduate. A paid apprenticeship follows for those who go further.";
 
 // Set here rather than as an `opengraph-image` file so the art stays with the
 // rest of the page's assets in public/aica/. Without this the page inherits the

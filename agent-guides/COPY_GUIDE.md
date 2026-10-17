@@ -487,7 +487,7 @@ The final section. The premium close. Not a product pitch — a path for leaders
 - Name what coaching delivers: facilitated execution of the 6-Month Roadmap through live group coaching, three Saturday sessions a month, with a guide who walks alongside them as their AI fluency keeps growing. Coaching is a group setting, not 1:1 (only the challenge that opens it is private). Frame the group as an asset: questions get answered directly, and thinking sharpens by watching other leaders navigate the same phases
 - State the key fact clearly: Coaching includes AISC at no additional fee. A leader who already knows they want ongoing support is better served starting here than joining the challenge and adding coaching later
 - Pricing should be visible and complete — but secondary to the recognition ask: "If you already know you want a guide, this is the path"
-- CTA: "Start with Coaching" with sub-note: "Your first step is a 15-minute discovery call."
+- CTA: "Book Your 15-Minute Call" with sub-note: "Your first step: we confirm coaching is the right fit and where you would start." *(founder, 2026-10-17: the CTA always says to book the 15-minute call, never "Start with Coaching")*
 - Tone: calm, unhurried, confident. No pressure. The leader who belongs here will recognize themselves without being sold to
 - Do not summarize or repeat the challenge. Assume the reader has already decided AISC is right. The only remaining question is whether they want the challenge alone or the challenge with a guide alongside them
 
@@ -505,7 +505,7 @@ Facts: 3 sessions a month / 2 hrs live / 1 private 7-day challenge included (the
 
 Closing note: Coaching includes the AI Stakeholder Challenge at no additional fee. If you already know you want a guide through the roadmap, this is the more complete path.
 
-CTA: "Start with Coaching"
+CTA: "Book Your 15-Minute Call"
 Sub-note: "Your first step is a 15-minute call to confirm coaching is the right fit." (Lives in `src/lib/coaching.js` as `COACHING_CALL_NOTE`.)
 
 Pricing plans: Monthly (no note) / 6 Months ("Save ~17% vs monthly") / Annual ("Best value, save ~30%")
@@ -518,8 +518,8 @@ The dedicated page sells Coaching actively, as a package in its own right, while
 - The challenge is delivered **privately at VVIP level** first, then the leader joins the group. Rolling entry, no intake to wait for.
 - Live group sessions **three Saturdays a month, 7PM WAT, 2 hours each**. The fourth week belongs to the public challenge cohort (internal reason; on the page say only "There is no session in the fourth week"). Never write "weekly" or "once a week".
 - Between sessions: recordings, a private group channel, direct messages with the facilitator, all of Labs for as long as coaching lasts.
-- **Every plan includes everything.** Monthly is paid a month at a time and costs the most over time; 6 Months is one full Roadmap; Annual is **a steadier pace** through the Roadmap for leaders who cannot fit it into six months *(founder, 2026-09-28: it is not "two Roadmap cycles")*. Plans H2 is "Choose your plan", with a single "Start with Coaching" button under the three cards, directly above the 15-minute-call note (no per-card buttons).
-- CTA "Start with Coaching" to the Cal.com discovery call, sub-note "Your first step is a 15-minute call to confirm coaching is the right fit."
+- **Every plan includes everything.** Monthly is paid a month at a time and costs the most over time; 6 Months is one full Roadmap; Annual is **a steadier pace** through the Roadmap for leaders who cannot fit it into six months *(founder, 2026-09-28: it is not "two Roadmap cycles")*. Plans H2 is "Choose your plan", with a single "Book Your 15-Minute Call" button under the three cards, directly above the note on what the call is for (no per-card buttons).
+- CTA "Book Your 15-Minute Call" to the Cal.com discovery call, sub-note "Your first step: we confirm coaching is the right fit and where you would start." Both live once in `src/lib/coaching.js` (`COACHING_CALL_LABEL`, `COACHING_CALL_NOTE`).
 - Confirmed headlines *(founder, 2026-09-28; each passes the three headline rules)*:
   - Hero H1: "Find where AI pays off in the world you lead. Then build it with a coach." *("the world you lead", not "what you lead": founder preferred a domain word that fits all three audiences, not only organisations.) *(2026-09-28: replaced "You declare your AI territory in seven days. Coaching is where it gets built.", which was too insider for a cold visitor: "AI territory" and "seven days" meant nothing without context.)*
   - Hero first sentence (the connector, written for someone who has never heard of AISC): "AI Stakeholder Coaching is live group coaching for leaders. It starts with the AI Stakeholder Challenge: seven days, delivered to you privately, where you get clear on AI and choose the one place it can make the biggest difference in your world. Then, three times a month, a facilitator helps you turn that into results." Keep "territory" out of the hero; it is explained further down the page.

@@ -72,14 +72,14 @@ const stages = [
   {
     id: "the-mentorship",
     name: "Sprint 2",
-    tag: "26 weeks",
+    tag: "6 months",
     badgeStrike: "$1,000",
     badge: "$100",
     title: "The Mentorship",
-    desc: "Twenty-six weeks of group mentorship with an AI executive educator. Each week brings a session of mentorship teaching, an AI Lab, tasks and a live group call, moving from foundations and character through visibility, relationships and leadership to career readiness and graduation. The early AI Labs build your basic AI fluency. The aim is not to make you good at one job. It is to make you productive in any room you walk into, able to read a new environment, find where the value sits, and start delivering without being told how. You close the gaps in the website you started in AI Career Labs until it is the best representation of your value, and finish with an AI-optimised CV and a portfolio of high-impact work.",
+    desc: "Six months of group mentorship with an AI executive educator. Each week brings a session of mentorship teaching, an AI Lab, tasks and a live group call, moving from foundations and character through visibility, relationships and leadership to career readiness and graduation. The early AI Labs build your basic AI fluency. Along the way you work with ideas drawn from entrepreneurship, and see why it is an important tool for growth, whether in a career or in a business. The aim is not to make you good at one job. It is to make you productive in any room you walk into, able to read a new environment, find where the value sits, and start delivering without being told how. You close the gaps in the website you started in AI Career Labs until it is the best representation of your value, and finish with an AI-optimised CV and a portfolio of high-impact work.",
     checkpointLabel: "Checkpoint · to graduate",
     checkpoint:
-      "At least 70% attendance, 19 of the 26 weeks, and every task finished. Meet both and you graduate with a certificate.",
+      "At least 70% attendance, 19 of the 26 weekly sessions, and every task finished. Meet both and you graduate with a certificate.",
     variant: "dark",
   },
   {
@@ -118,7 +118,8 @@ const whatYouGain = [
   {
     label: "Sprint 2 · The Mentorship",
     items: [
-      "26 weeks of mentorship from an AI executive educator, with an AI Lab every week",
+      "Six months of mentorship from an AI executive educator, with an AI Lab every week",
+      "Ideas from entrepreneurship, and why it is an important tool for growth in a career or a business",
       "Your website finished into real proof, with an AI-optimised CV and a portfolio behind it",
       "Job readiness for the roles that now expect AI skill, which is most of them",
       "A certificate when you graduate",
@@ -148,7 +149,7 @@ const needs = [
   {
     label: "Commitment",
     value: "Five days, then one session a week.",
-    note: "Sprint 1 takes five days. The mentorship is a session and a group call each week for 26 weeks.",
+    note: "Sprint 1 takes five days. The mentorship is a session and a group call each week for six months.",
   },
 ];
 

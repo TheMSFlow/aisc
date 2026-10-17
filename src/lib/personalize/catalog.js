@@ -1,5 +1,9 @@
 import { PRICING } from "@/lib/pricing";
-import { COACHING_CALL_URL } from "@/lib/coaching";
+import {
+  COACHING_CALL_LABEL,
+  COACHING_CALL_NOTE,
+  COACHING_CALL_URL,
+} from "@/lib/coaching";
 
 // Single source of truth for everything the recommendation UI and the
 // system prompt know about the offers. The model only ever outputs offerIds
@@ -77,10 +81,10 @@ export const CATALOG = {
       { label: "6 Months", price: PRICING.coaching.sixMonths, note: "Save ~17%" },
       { label: "Annual", price: PRICING.coaching.year, note: "Best value" },
     ],
-    cta: "Start with Coaching",
+    cta: COACHING_CALL_LABEL,
     href: COACHING_CALL_URL,
     buttonVariant: "dark",
-    ctaNote: "Your first step is a 15-minute discovery call.",
+    ctaNote: COACHING_CALL_NOTE,
     description:
       "Opens with the full challenge delivered privately at VVIP level, one-on-one, at no additional fee. Then live group coaching through the 6-Month Roadmap: three Saturday sessions a month at 7PM WAT, 2 hours each, with recordings, a private group channel, direct facilitator messages, and all of Labs for as long as coaching lasts. Rolling entry, no intake to wait for. Every plan includes everything; only the commitment length and total cost differ. Always mention that the first step is a 15-minute discovery call.",
     fit: "For leaders who want a guide alongside them for the months after the challenge, or who already know they want ongoing support. The primary answer for anyone who wants both private delivery and coaching, since it includes the private VVIP-level challenge. A soft, natural next step, never a hard close.",

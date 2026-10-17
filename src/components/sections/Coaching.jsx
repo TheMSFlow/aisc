@@ -5,6 +5,7 @@ import Button from "@/components/global/Button";
 import CurrencyToggle from "@/components/global/CurrencyToggle";
 import CurrencyPrice from "@/components/global/CurrencyPrice";
 import {
+  COACHING_CALL_LABEL,
   COACHING_CALL_NOTE,
   COACHING_CALL_URL,
   COACHING_FACTS as FACTS,
@@ -101,7 +102,7 @@ export default function Coaching() {
               variant="primary"
               className="mt-6 w-full justify-center py-3 font-semibold"
             >
-              Start with Coaching
+              {COACHING_CALL_LABEL}
             </Button>
             <p className="mt-3 text-center text-xs text-white/25">
               {COACHING_CALL_NOTE}

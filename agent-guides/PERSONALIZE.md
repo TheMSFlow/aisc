@@ -55,7 +55,7 @@ Runtime price source of truth is `src/lib/pricing.js` (raw `{usd, ngn}` numbers)
 - **Price:** $1,200/month (₦1,500,000), $6,000/6 months (₦7,500,000, save ~17%), $10,000/year (₦12,500,000, best value, save ~30%)
 - **What it is:** Opens with the full challenge delivered privately at VVIP level (1:1). Then live group coaching (not 1:1) through the 6-Month Roadmap: three Saturday sessions a month at 7PM WAT, 2 hours each, with recordings, a private group channel, direct facilitator messages and all of Labs for as long as coaching lasts. Rolling entry. **Includes AISC at no additional fee.** Every plan includes everything. Full page: `/coaching`.
 - **Who qualifies:** Leaders who want a guide alongside them for the months after the challenge, or who already know they want ongoing support (better to start here than bolt coaching on later). Soft, natural next step, never a hard close.
-- **CTA:** "Start with Coaching" → `https://cal.com/michaelsteve/ai-stakeholder-coaching-discovery-call` (variant `dark`). Always mention: the first step is a 15-minute discovery call.
+- **CTA:** "Book Your 15-Minute Call" → `https://cal.com/michaelsteve/ai-stakeholder-coaching-discovery-call` (variant `dark`). Always mention: the first step is a 15-minute discovery call.
 
 ### awakening — The Awakening (Private Briefing)
 Two sub-paths (the "Request Access to the article" path is intentionally excluded from personalization results):
@@ -73,7 +73,7 @@ Two sub-paths (the "Request Access to the article" path is intentionally exclude
 | vip | $399 | ₦520,000 | 10 seats max | Secure Your VIP Spot | `.../pay/challenge/aisc?package=vip` |
 | vvip | $1,099 | ₦1,350,000 | Private 1:1 | Secure 1:1 Access | `.../pay/challenge/aisc?package=vvip` |
 | customCohort | Custom | Custom | 3 VIP + 5 GA, or 10+ VIP | Contact Sales | `.../form/inquiry?src=CC` |
-| coaching | $1,200+/mo | ₦1.5M+/mo | Private challenge, then group 3 Saturdays/mo | Start with Coaching | `cal.com/michaelsteve/ai-stakeholder-coaching-discovery-call` |
+| coaching | $1,200+/mo | ₦1.5M+/mo | Private challenge, then group 3 Saturdays/mo | Book Your 15-Minute Call | `cal.com/michaelsteve/ai-stakeholder-coaching-discovery-call` |
 | awakening.briefing | On request | On request | Any org/community | Request Briefing | `intelligence.michaelsteve.com/pay/vip` |
 | awakening.sponsor | Free | Free | Convene 50+ leaders | Partner with us | `intelligence.michaelsteve.com/community/sponsor` |
 

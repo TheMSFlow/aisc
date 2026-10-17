@@ -2,6 +2,7 @@ import Section from "@/components/layout/Section";
 import Button from "@/components/global/Button";
 import CurrencyPrice from "@/components/global/CurrencyPrice";
 import {
+  COACHING_CALL_LABEL,
   COACHING_CALL_NOTE,
   COACHING_CALL_URL,
   COACHING_PLANS,
@@ -144,7 +145,7 @@ export default function CoachingPlans() {
             variant="dark"
             className="px-8 py-3 font-semibold"
           >
-            Start with Coaching
+            {COACHING_CALL_LABEL}
           </Button>
           <p className="mt-4 text-center text-xs text-dark-blue/45">
             {COACHING_CALL_NOTE}

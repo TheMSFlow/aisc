@@ -1,6 +1,7 @@
 import Section from "@/components/layout/Section";
 import Button from "@/components/global/Button";
 import {
+  COACHING_CALL_LABEL,
   COACHING_CALL_NOTE,
   COACHING_CALL_URL,
   COACHING_FACTS as FACTS,
@@ -57,7 +58,7 @@ export default function CoachingHero() {
               variant="primary"
               className="justify-center px-7 py-3 font-semibold"
             >
-              Start with Coaching
+              {COACHING_CALL_LABEL}
             </Button>
             <Button
               href="#plans"

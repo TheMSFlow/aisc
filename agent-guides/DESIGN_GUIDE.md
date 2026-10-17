@@ -218,7 +218,7 @@ The landing page has 9 sections in narrative order. Each entry below states the 
 - What coaching delivers: the challenge delivered privately first (VVIP level), then live group coaching three Saturdays a month, facilitated Roadmap execution as fluency grows. Coaching is a group setting, not 1:1 — questions still get answered directly, alongside leaders executing their own Roadmaps
 - The key fact: Coaching includes AISC at no additional fee
 - All three pricing plans (monthly, 6-month, annual) in USD and NGN
-- CTA: "Start with Coaching"
+- CTA: "Book Your 15-Minute Call"
 - A "See how coaching works" link to `/coaching`
 
 **Must feel:** Unhurried and confident. No pressure. The leader who belongs here will recognize themselves without being sold to.
