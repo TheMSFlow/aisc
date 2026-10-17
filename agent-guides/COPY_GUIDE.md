@@ -259,13 +259,13 @@ They do not enter AISC with influence or resources. They leave with a path to ea
 ### 1. Hero
 **Confirmed copy (do not rewrite without instruction):**
 
-Headline:
-> Every leader is being asked about AI. Seven days from now, you'll be the one with the answer worth hearing.
+Headline (the audience word rotates):
+> How will you respond when your [Boss / Congregation / Following / Audience / Staff / Student] asks you about AI?
 
-Body (3 sentences max — the entire hero must be visible on large screens without scrolling):
-> AI Fluency is not a technical skill. It is the next leadership layer, and the leaders who have it become the authority their world turns to. AISC is the seven-day program that gets you there.
+Body (the entire hero must be visible on large screens without scrolling):
+> In seven days, you won't just have the right answer. You'll have the clarity, the readiness, and the value to back it up. This engagement is for leaders with **Responsibility**, **Influence**, and access to **Resources**.
 
-**As live on 2026-10-13 (this section had drifted from the page before then):** the live headline is "How will you respond when your [Boss / Congregation / Following / Audience / Staff / Student] asks you about AI?", and the live body is "In seven days, you won't just have the right answer. You'll have the clarity, the readiness, and the value to back it up." The founder approved "readiness" in place of "fluency" there on 2026-10-13. **Do not use the body above as written:** "the seven-day program that gets you there" promises fluency inside seven days.
+*(Confirmed as live by the founder on 2026-10-16, replacing the earlier record "Every leader is being asked about AI. Seven days from now, you'll be the one with the answer worth hearing." The founder approved "readiness" in place of "fluency" in the body on 2026-10-13: never promise fluency inside the seven days.)*
 
 CTAs:
 - Primary: "Secure Your Spot" (links to #pricing)
@@ -358,25 +358,21 @@ Who: You are doing the work. You often see what others above you are missing whe
 **Confirmed copy (do not rewrite without instruction):**
 
 Label: The Toolbox
-H2: The challenge ends on Day 7. The Toolbox doesn't.
+H2: The challenge ends on Day 7. Your support doesn't. *(as live; founder, 2026-10-16)*
 Body: The Toolbox holds resources and tools: a reference library your thought leadership is built from, mini apps that make delegation and coordination easier every time your situation changes, and Labs, where fluency is built after the challenge, with the first months of AI Labs free by tier.
 
-The Demo section presents the Toolbox as four full-height horizontal panels. Each panel has a headline, body, and a visual (screenshots or editorial card). The "does + produces" structure no longer applies at the per-panel level — copy is integrated into the panel body.
+The Demo section presents the Toolbox as four full-height horizontal panels. Each panel has its name, a body, and a visual (screenshots or editorial card). There is no per-panel headline *(founder, 2026-10-16: the live page is right; the panels show their name and body, with no headline of their own)*. The "does + produces" structure no longer applies at the per-panel level — copy is integrated into the panel body.
 
 **Panel 01 — Guides, Frameworks & Templates (Resource)**
-Headline: "The sessions give you direction. These make sure your team gets it too."
-Body: "Not everything lands fully in a live session. These guides let you re-enter any concept from Days 1, 2, and 3 at your own depth and go further. As you execute your roadmap, you will reach for the AI Value Map, the Task Delegation Guide, the Mandate and Ethics framework. When your team needs direction, these are what you hand them."
+Body: "Not everything lands fully in a live session. The guides let you revisit each session at your own pace and go deeper. As you execute your roadmap, you'll return to the frameworks and templates again and again. And when your team needs direction, you'll have something concrete to point them to." *(As live, 2026-10-16.)*
 
 **Panel 02 — Mini Apps (Tools)**
-Headline: "Rate every task. Recover every hour. Declare your territory."
 Body: "The Delegation Tool sorts your tasks into what needs your judgement, what AI can handle, and where you work together. The Readiness Scorecard shows how ready you are, one dimension at a time. The Territory Builder finds the problem in your ecosystem you are best placed to solve. The Margin Calculator shows how much time AI is saving you, so you can decide where to reinvest it." *(As live, 2026-10-13: four tools.)*
 
 **Panel 03 — Roadmap (Resource)**
-Headline: "Day 6 unlocks it. The next six months run on it."
-Body: "The 6-Month AI Stakeholder Roadmap carries your territory through three phases over 180 days: proving you can execute, applying your leverage and building the relationships that matter, then extending your authority. Along the way it names your capability gaps, maps who you need in your corner, and sets the personal standards you'll hold yourself to. Reusable every six months as your direction compounds."
+Body: "The 6-Month AI Stakeholder Roadmap moves you through three phases: proving you can execute, building leverage and allies, then extending your authority. Along the way it names your capability gaps, maps who you need in your corner, and sets the personal standards you'll hold yourself to." *(As live, 2026-10-16.)*
 
 **Panel 04 — AI Fluency in Labs (Resource), now shown first** *(founder, 2026-10-13: "'Labs' will now be 'AI Fluency in Labs' or simply 'AI Fluency' and this tab will come first in the toolbox". He chose the longer name. It was "Labs" earlier that day, and "AI Labs" before that)*
-Headline: "Built for leaders who direct AI. Not engineers who build it."
 Body: "Fluency is built by practice. In Labs you put AI to work on your own tasks until you direct it effectively, efficiently, ethically and safely. Then you go deeper into the challenge's concepts, and into leading adoption and change. The platform guides and your Toolbox stay open for good. AI Labs is by subscription, and your first months are free: one with General Admission, three with VIP, six with VVIP." *(As built, 2026-10-13. His direction: "The description should lean more towards the fluency learnt and deep dives of AISC concepts." The last two sentences are the wording he approved earlier that day, kept as they were.)*
 
 **Direction notes:**

@@ -13,29 +13,43 @@ import { Flag } from "lucide-react";
 // screen on a desktop, and back down so it still fits a
 // 360px phone. Sizes are measured, not guessed.
 //
-// PARKED COPY — Sprint 2 sponsorship. Removed from this page
-// on 2026-09-01, kept for the organisation-facing surface:
+// A cohort is the package, Sprint 1 and Sprint 2 together
+// (founder, 2026-10-17), so Sprint 1 reads "Included" and the
+// price sits on Sprint 2. The full fee is $1,000, brought down
+// to $100 by sponsorship from the AI Stakeholder Challenge:
+// always "sponsors", never was/now (SOURCE_OF_TRUTH.md, Money).
+// Dollars only on this page; naira is shown at checkout.
+//
+// The CTA points at the free application form while a free
+// cohort is open, and moves to /pay/aica ("Claim Your Seat")
+// when paid cohorts begin. BETA_NOTE goes with it.
+//
+// PARKED COPY — organisation-facing sponsorship. Kept off this
+// page, which speaks to participants (2026-09-01; reworded for
+// the package 2026-10-17):
 //
 //   "The full fee is $1,000, brought down to $100 by
 //    sponsorship from the AI Stakeholder Challenge.
 //    Organisations can cover that $100 to put someone through
-//    at no cost to them, or back a whole cohort. Write to
-//    careers@michaelsteve.com. You claim your seat inside the
-//    AI Career Apprentice Learning Center, which you get
-//    access to in Sprint 1."
+//    at no cost to them, or bring a whole cohort of their own.
+//    Write to careers@michaelsteve.com."
 //
 // Also recorded in SOURCE_OF_TRUTH.md.
 // ─────────────────────────────────────────────
 
 const APPLY_URL =
   "https://intelligence.michaelsteve.com/form/opportunity/ai-apprentice";
+const APPLY_LABEL = "Apply Now";
+
+// Shown beside the bottom button while the CTA points at the free form.
+const BETA_NOTE = "Applications are open for the beta cohort, which is free.";
 
 const stages = [
   {
     id: "the-awakening",
     name: "Sprint 1",
     tag: "Phase 1 · 2 days",
-    badge: "Free",
+    badge: "Included",
     title: "The Awakening",
     desc: "Two days on the one thing that decides everything after it: how you think. You see today's realities clearly, you see AI for what it actually is, and you look honestly at what you are already worth, then write that down as a one-page value summary. Tools get replaced and skills need updating. The mindset you set here does not expire, and it is what keeps you productive and pointed in the right direction.",
     gate: "Submit your value summary. Once it is approved, you move into AI Career Labs.",
@@ -46,26 +60,26 @@ const stages = [
     id: "ai-career-labs",
     name: "Sprint 1",
     tag: "Phase 2 · 3 days",
-    badge: "Free",
+    badge: "Included",
     title: "AI Career Labs",
     desc: "Three days turning that value summary into a personal website recruiters and employers can visit. The website is what you walk away with, but it is not the skill. The skill is doing real work through AI: directing it, seeing where it helps and where it quietly gets things wrong, and applying strategy, design and marketing while you build. You finish able to build with AI, not just use it.",
     gate: "A skill you can earn from, and proof to anyone hiring that you can build something real.",
-    checkpointLabel: "Checkpoint · to reach Sprint 2",
+    checkpointLabel: "Checkpoint · end of Sprint 1",
     checkpoint:
-      "Put your own website online, built the way you were taught here, using your value summary as the starting point. Get it online to qualify for the 6-month mentorship.",
+      "Put your own website online, built the way you were taught here, using your value summary as the starting point. You keep improving it through the mentorship.",
     variant: "magenta",
   },
   {
     id: "the-mentorship",
     name: "Sprint 2",
-    tag: "6 months",
+    tag: "26 weeks",
     badgeStrike: "$1,000",
     badge: "$100",
     title: "The Mentorship",
-    desc: "Six months of group mentorship with an AI executive educator: deeper AI fluency, AI clarity and AI value work, alongside leadership development and social awareness. The aim is not to make you good at one job. It is to make you productive in any room you walk into, able to read a new environment, find where the value sits, and start delivering without being told how. You close the gaps in the website you started in AI Career Labs until it is the best representation of your value, and finish with an AI-optimised CV and a portfolio of high-impact work.",
+    desc: "Twenty-six weeks of group mentorship with an AI executive educator. Each week brings a session of mentorship teaching, an AI Lab, tasks and a live group call, moving from foundations and character through visibility, relationships and leadership to career readiness and graduation. The early AI Labs build your basic AI fluency. The aim is not to make you good at one job. It is to make you productive in any room you walk into, able to read a new environment, find where the value sits, and start delivering without being told how. You close the gaps in the website you started in AI Career Labs until it is the best representation of your value, and finish with an AI-optimised CV and a portfolio of high-impact work.",
     checkpointLabel: "Checkpoint · to graduate",
     checkpoint:
-      "At least 70% attendance and every task completed. Meet the requirements and you graduate with a certificate.",
+      "At least 70% attendance, 19 of the 26 weeks, and every task finished. Meet both and you graduate with a certificate.",
     variant: "dark",
   },
   {
@@ -94,7 +108,7 @@ const whoFor = [
 
 const whatYouGain = [
   {
-    label: "Sprint 1 · Free",
+    label: "Sprint 1 · Five days",
     items: [
       "Real AI fluency. Practical, not theoretical",
       "A website that shows recruiters and employers what you are worth, instead of just telling them",
@@ -104,7 +118,7 @@ const whatYouGain = [
   {
     label: "Sprint 2 · The Mentorship",
     items: [
-      "Six months of mentorship from an AI executive educator",
+      "26 weeks of mentorship from an AI executive educator, with an AI Lab every week",
       "Your website finished into real proof, with an AI-optimised CV and a portfolio behind it",
       "Job readiness for the roles that now expect AI skill, which is most of them",
       "A certificate when you graduate",
@@ -133,9 +147,17 @@ const needs = [
   },
   {
     label: "Commitment",
-    value: "Availability for Sprint 1 · Five days.",
-    note: "Finish Sprint 1 and you leave with skills you can apply immediately.",
+    value: "Five days, then one session a week.",
+    note: "Sprint 1 takes five days. The mentorship is a session and a group call each week for 26 weeks.",
   },
+];
+
+// Under What You Will Need. The founder will send the link for a third
+// line, "Not ready to join? The programme's videos are free to watch on
+// YouTube." (2026-10-17); it is added here once the link exists.
+const notes = [
+  "Scholarships covering the full fee are awarded privately.",
+  "The programme is a bridge to your next step, not a place to stay. You can join at most two cohorts.",
 ];
 
 // Text colour is set per background, not shared. msaccent is a mid-tone and
@@ -264,7 +286,7 @@ function StageScreen({ s }) {
             href={APPLY_URL}
             className={`inline-flex w-full items-center justify-center rounded-lg px-8 py-3 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white sm:w-auto sm:text-base ${t.cta}`}
           >
-            Apply for Sprint 1
+            {APPLY_LABEL}
           </a>
         )}
 
@@ -294,7 +316,7 @@ function ApplyButton({ className = "" }) {
       href={APPLY_URL}
       className={`gradient-200 inline-flex w-full items-center justify-center rounded-lg py-3 px-8 font-semibold text-white transition-[filter] hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-msaccent focus-visible:ring-offset-2 sm:w-auto ${className}`}
     >
-      Apply for Sprint 1
+      {APPLY_LABEL}
     </a>
   );
 }
@@ -349,6 +371,11 @@ function SprintIndex() {
           );
         })}
       </ul>
+
+      <p className="border-t border-dark-blue/15 pt-4 font-inter text-sm font-light text-dark-blue/80 sm:text-base">
+        One payment covers Sprints 1 and 2. The full fee is $1,000, brought
+        down to $100 by sponsorship from the AI Stakeholder Challenge.
+      </p>
     </div>
   );
 }
@@ -436,7 +463,20 @@ export default function ApprenticeProgramme() {
                 </div>
               ))}
             </div>
-            <ApplyButton />
+            <ul className="space-y-2 text-sm font-light text-dark-blue/80">
+              {notes.map((note) => (
+                <li key={note} className="flex gap-2 items-start">
+                  <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-msaccent shrink-0" />
+                  {note}
+                </li>
+              ))}
+            </ul>
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-5">
+              <ApplyButton />
+              <p className="font-inter text-sm font-light text-dark-blue/70">
+                {BETA_NOTE}
+              </p>
+            </div>
           </section>
         </article>
       </div>

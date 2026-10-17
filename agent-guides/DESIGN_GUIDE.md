@@ -140,27 +140,24 @@ The landing page has 9 sections in narrative order. Each entry below states the 
 
 **Header (persistent across all panels):**
 - Label: "THE TOOLBOX"
-- H2: "The challenge ends on Day 7. The Toolbox doesn't."
+- H2: "The challenge ends on Day 7. Your support doesn't." *(as live; founder, 2026-10-16)*
+- Each panel shows its name as a small heading, then its body; there is no per-panel headline *(founder, 2026-10-16: the live page is right; the panels show their name and body, with no headline of their own)*
 - Counter + prev/next arrows top right
 
 **Panel 01 — Guides, Frameworks & Templates (Resource)**
-- Headline: "The sessions give you direction. These make sure your team gets it too."
 - Visual: Three cascading screenshots (Day 1, 2, 3 from the learning center) in a Stripe-style layered stack
 - Screenshots in `public/demo/`: `day-1.png`, `day-2.png`, `day-3.png`
 
 **Panel 02 — Mini Apps (Tools)**
-- Headline: "Rate every task. Recover every hour. Declare your territory."
 - Visual: Three cascading tool screenshots (Delegation Tool, Margin Calculator, Territory Builder)
 - Screenshots in `public/demo/`: `delegation-matrix.png`, `margin-calculator.png`, `territory.png`
 - **As built 2026-10-13:** the visual is a live demo in a glass card, not screenshots, with four tabs: Delegation, Readiness, Margin, and Territory (locked). Each open tab plays a short scripted run of the real tool in a white app card. Below 768px the four tabs share the row equally in a tighter setting, because they do not fit a phone at the desktop size. Measured from 320px to 1440px
 
 **Panel 03 — Roadmap (Resource)**
-- Headline: "Day 6 unlocks it. The next six months run on it."
 - Visual: Single roadmap screenshot filling the full right-column height (object-cover, object-top)
 - Screenshot in `public/demo/`: `roadmap.png`
 
 **Panel 04 — AI Fluency in Labs (Resource), now shown first** *(founder, 2026-10-13. It was "Labs" earlier that day, and "AI Labs" before that)*
-- Headline: "Built for leaders who direct AI. Not engineers who build it."
 - Visual: Editorial card filling the full right-column height — large typographic anchor, module list, tiered-access footer (AI Labs free access: 1 month GA / 3 months VIP / 6 months VVIP — never a single blanket duration)
 - No screenshot available; use the card treatment
 - **As built 2026-10-13:** the panel is named "AI Fluency in Labs" and is the first of the four. It is a glass card of six tiles under the small heading "Inside Labs": the four platforms Labs teaches, each logo on a white tile (Claude, ChatGPT, Copilot, Gemini, files in `public/demo/tools/`), then two icon tiles in the style of the document tiles (AI Agents, Workflows). From 1024px the grid is four across, so the platforms hold one row and the two icon tiles sit beneath at double width; below that it is two across. No other logos are shown: these four are the platforms Platform Awareness covers *(founder, 2026-10-13, replacing "Claude alone" from earlier that day)*. The ChatGPT mark was drawn from its published outline, not downloaded; swap in the official file if the founder supplies one. The free months are still never given as a single blanket duration

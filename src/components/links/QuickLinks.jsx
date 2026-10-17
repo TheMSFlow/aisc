@@ -39,12 +39,13 @@ const links = [
     // ApprenticeProgramme.jsx.
     persona:
       "The way employers search for talent has changed. They now want responsibility, social capital, initiative and, since 2025, AI fluency. Most graduates have not readjusted. Here, you readjust: real AI fluency you can put to work rather than talk about, the skill to solve your ideal employer's problems with AI, and the judgment to read any room, find where the value sits, and start delivering without being told how.",
-    // "Sprint 1 is free", not "the programme is free": Sprint 1 is the free
-    // part and mentorship plus the apprenticeship that follow are paid, which
-    // the persona copy above already says. Wording tracks the programme page's
-    // own "Sprint 1 · Free" label in ApprenticeProgramme.jsx.
-    // Offer before constraint: free earns the read, scarcity moves the click.
-    highlights: ["Sprint 1 is free", "Only 100 seats available"],
+    // "The beta cohort is free", not "the programme is free": a cohort is
+    // Sprint 1 and Sprint 2 together and paid cohorts cost $100 (founder,
+    // 2026-10-17), but this card is the beta cohort's, which is free, and so
+    // is the 100-seat cap. Rewrite the card for the package when the beta
+    // cohort closes. Offer before constraint: free earns the read, scarcity
+    // moves the click.
+    highlights: ["The beta cohort is free", "Only 100 seats available"],
     cta: "See the Programme",
     href: "/ai-apprentice",
     external: false,
