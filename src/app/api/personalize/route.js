@@ -6,9 +6,16 @@ import { buildSystemPrompt, buildUserMessage } from "@/lib/personalize/prompt";
 import { fallbackResult, UPSELL_ALTERNATES } from "@/lib/personalize/fallback";
 import { allowRequest, clientIp } from "@/lib/personalize/rateLimit";
 import { presentOffer } from "@/lib/personalize/catalog";
+import { qualityProblems } from "@/lib/personalize/quality";
+
+// Thinking plus one retry can take longer than a single quick call.
+export const maxDuration = 60;
 
 const MAX_BODY_BYTES = 8192;
-const MODEL = "claude-sonnet-5";
+const MODEL = "claude-sonnet-5-5";
+// A result whose words fail the quality check is asked for again once, then
+// replaced by the hand-written fallback.
+const MAX_ATTEMPTS = 2;
 
 // Built once per instance; contains no per-visitor content.
 const SYSTEM_PROMPT = buildSystemPrompt();
@@ -39,7 +46,23 @@ function cleanText(text) {
     prev = t;
     t = t.replace(/([.!?]) ?[a-z0-9]*_[a-z0-9_.]*$/i, "$1");
   } while (t !== prev);
-  return t;
+  return trimTail(t.replace(/\s+/g, " "));
+}
+
+// It also leaves symbol debris after the last sentence (`."}`, `◦ ◦ ◦`). Drop
+// everything after the final terminator that holds no letters or digits,
+// keeping a closing quote or bracket only when the text needs it to balance.
+// Words are never removed here; worded leaks are rejected by the quality check.
+function trimTail(text) {
+  const m = text.match(/[.!?][^\p{L}\p{N}]*$/u);
+  if (!m) return text;
+  let head = text.slice(0, m.index + 1);
+  const tail = m[0].slice(1);
+  const count = (re) => (head.match(re) || []).length;
+  if (count(/\(/g) > count(/\)/g) && tail.includes(")")) head += ")";
+  if (count(/"/g) % 2 === 1 && tail.includes('"')) head += '"';
+  if (count(/“/g) > count(/”/g) && tail.includes("”")) head += "”";
+  return head;
 }
 
 // The four core packages form a commitment ladder. The alternate must sit
@@ -187,40 +210,69 @@ export async function POST(request) {
     return NextResponse.json(await attachId(toPayload(fallbackResult(input.seat), true), input, request));
   }
 
-  try {
-    const client = new Anthropic({ apiKey, timeout: 30_000, maxRetries: 1 });
+  const client = new Anthropic({ apiKey, timeout: 30_000, maxRetries: 1 });
 
-    const response = await client.messages.parse({
-      model: MODEL,
-      max_tokens: 1500,
-      thinking: { type: "disabled" },
-      system: [
-        {
-          type: "text",
-          text: SYSTEM_PROMPT,
-          cache_control: { type: "ephemeral" },
-        },
-      ],
-      messages: [{ role: "user", content: buildUserMessage(input) }],
-      output_config: { format: zodOutputFormat(resultSchema) },
-    });
+  for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
+    try {
+      const enforced = await recommend(client, input);
+      const payload = toPayload(enforced, false);
 
-    const raw = response.parsed_output;
-    if (!raw) throw new Error("unparsed output");
+      const problems = qualityProblems(payload.result);
+      if (problems.length) {
+        // Logged in full so a rejected answer can be read later.
+        console.warn(
+          `[personalize] output rejected (attempt ${attempt}/${MAX_ATTEMPTS}):`,
+          problems,
+          JSON.stringify(payload.result).slice(0, 4000)
+        );
+        continue;
+      }
 
-    const checked = resultSchema.safeParse(raw);
-    if (!checked.success) throw new Error("schema mismatch");
-
-    if (checked.data.primary.offerId === checked.data.alternate.offerId) {
-      throw new Error("primary equals alternate");
+      scanVoice(enforced);
+      return NextResponse.json(await attachId(payload, input, request));
+    } catch (err) {
+      console.error("[personalize] recommendation failed:", err?.message || err);
+      break;
     }
-
-    const enforced = enforceUpsell(checked.data);
-
-    scanVoice(enforced);
-    return NextResponse.json(await attachId(toPayload(enforced, false), input, request));
-  } catch (err) {
-    console.error("[personalize] recommendation failed:", err?.message || err);
-    return NextResponse.json(await attachId(toPayload(fallbackResult(input.seat), true), input, request));
   }
+
+  return NextResponse.json(await attachId(toPayload(fallbackResult(input.seat), true), input, request));
+}
+
+// One call to the model, checked for shape and routing. Throws on any failure
+// so the caller serves the fallback.
+async function recommend(client, input) {
+  const response = await client.messages.parse({
+    model: MODEL,
+    // Thinking draws on this budget too, so it sits well above the answer size.
+    max_tokens: 8000,
+    // Thinking stays on: with it off, the model worked through the rules inside
+    // the visible reasoning text. Medium keeps a brief think before every answer.
+    thinking: { type: "adaptive" },
+    system: [
+      {
+        type: "text",
+        text: SYSTEM_PROMPT,
+        cache_control: { type: "ephemeral" },
+      },
+    ],
+    messages: [{ role: "user", content: buildUserMessage(input) }],
+    output_config: { effort: "medium", format: zodOutputFormat(resultSchema) },
+  });
+
+  if (response.stop_reason !== "end_turn") {
+    throw new Error(`stop_reason ${response.stop_reason}`);
+  }
+
+  const raw = response.parsed_output;
+  if (!raw) throw new Error("unparsed output");
+
+  const checked = resultSchema.safeParse(raw);
+  if (!checked.success) throw new Error("schema mismatch");
+
+  if (checked.data.primary.offerId === checked.data.alternate.offerId) {
+    throw new Error("primary equals alternate");
+  }
+
+  return enforceUpsell(checked.data);
 }

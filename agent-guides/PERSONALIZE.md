@@ -220,7 +220,7 @@ src/lib/personalize/
 ```
 
 - **Reuse:** `src/components/global/Button.jsx` (variants incl. `vvip`, `premium`, `loading`, href handling), `src/components/layout/Section.jsx`, `SectionHeading.jsx`, `ui/Card.jsx`. Mirror `src/app/api/cohorts/route.js` for the route handler (env-guard, try/catch, `NextResponse.json`).
-- **Model:** `claude-sonnet-5`. Non-streaming single `messages.create` (or `messages.parse`). `max_tokens: 1500`. `thinking: { type: "disabled" }`. Do NOT set temperature or top_p. Optional `cache_control: { type: "ephemeral" }` on the system block (it exceeds the 2K-token cache minimum).
+- **Model:** `claude-sonnet-5-5` (changed 2026-10-22). Non-streaming single `messages.parse`. `max_tokens: 8000`. `thinking: { type: "adaptive" }` with `output_config.effort: "medium"`: thinking stays on, because with it off the model worked through its rules inside the visible reasoning text (a live GA result ended "Honest framing: ... (internal note removed) ... stop. stop."). `thinking: { type: "disabled" }` is a 400 on this model anyway. Every result passes `src/lib/personalize/quality.js` (length, sentence count, leaked working notes, repeats, stray symbols) before it is shown or stored; a failure is logged in full, retried once, then replaced by the fallback. Do NOT set temperature or top_p. Optional `cache_control: { type: "ephemeral" }` on the system block (it exceeds the 2K-token cache minimum).
 - **Structured output:** use structured outputs (`output_config.format` with a JSON schema, or the SDK `zodOutputFormat` helper). Schema:
 
 ```json

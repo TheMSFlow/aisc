@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="rgb(0,3,76)"/>
+  <!-- the arc the positions sit on -->
+  <path d="M 260 640 Q 800 240 1340 640" fill="none" stroke="rgba(233,234,255,0.16)" stroke-width="2"/>
+  <!-- six positions; with six there is no middle one, so the one chosen is a choice -->
+  <circle cx="357" cy="563" r="14" fill="rgba(233,234,255,0.35)"/>
+  <circle cx="534" cy="462" r="14" fill="rgba(233,234,255,0.35)"/>
+  <circle cx="711" cy="411" r="14" fill="rgba(233,234,255,0.35)"/>
+  <circle cx="889" cy="411" r="14" fill="rgb(233,234,255)"/>
+  <circle cx="1066" cy="462" r="14" fill="rgba(233,234,255,0.35)"/>
+  <circle cx="1243" cy="563" r="14" fill="rgba(233,234,255,0.35)"/>
+  <!-- the chosen one, held -->
+  <circle cx="889" cy="411" r="46" fill="none" stroke="rgb(99,104,218)" stroke-width="6"/>
+  <line x1="889" y1="457" x2="889" y2="700" stroke="rgb(99,104,218)" stroke-width="6"/>
+</svg>

@@ -5,7 +5,7 @@
 
 ## What is the AI Stakeholder Challenge?
 
-The AI Stakeholder Challenge (AISC) is a 7-day community based engagement for senior leaders who want to move from passive AI awareness to active, deliberate AI leadership. Rather than start with tools, this 7-day engagement focuses on AI Fluency, Leadership and Value. It is a leadership clarity program that culminates in an AI Value territory to exploit and a personal 6-Month AI Stakeholder Roadmap that takes you there.
+The AI Stakeholder Challenge (AISC) is a 7-day community based engagement for senior leaders who want to move from passive AI awareness to active, deliberate AI leadership. Rather than start with tools, this 7-day engagement focuses on AI Fluency, Leadership and Value. It is a leadership clarity program that culminates in an AI Value territory to exploit, with a personal 6-Month AI Stakeholder Roadmap given as a bonus to guide you there after the challenge.
 
 **Core premise:** 
 Every leader is tasked primarily with DIRECTION: where the organisation goes, PEOPLE: Who does the work, how they grow, and what they are capable of, and EXECUTION:How things get done (the systems, processes, and standards)
@@ -116,13 +116,13 @@ The three pillars are what the programme is about, across the challenge and Labs
 
 **Day 2 — AI Readiness / Measure:** Find out how ready they are for AI, personally. Prerequisite Task: the Readiness Scorecard, a mini app where the leader rates 24 statements about themselves and gets six scores (Strategy, Data Governance, Talent, Processes, Impact Evaluation, Collaboration) with no total, then chooses three moves for the week. Primary Task: the Data Readiness Audit of three sets of data their work depends on: how each is collected, where it is stored, who answers for it, and whether it is ready for AI. Nothing is put into an AI tool. *(Replaced "AI Labs / Margins" on 2026-10-09. The Description-Discernment Loop, the live demos and the Margin Calculator's work moved to Labs.)*
 
-**Day 3 — Money / AI Value:** Use the Territory Builder and AI Value Map to identify where real AI value exists in their industry and declare the territory they will lead. (This also applies to leaders working in an organisation. The organisation becomes the territory). The Territory Builder also assigns a **Competitive Position** — Optimizer, Producer, Advisor, Educator, or Curator (see "The 6-Month Roadmap System" below). This position determines the participant's track through the Roadmap and its prerequisite tasks.
+**Day 3 — Money / AI Value:** Use the Territory Builder and AI Value Map to identify where real AI value exists in their industry and declare the territory they will lead. (This also applies to leaders working in an organisation. The organisation becomes the territory). The leader also chooses a **stakeholder position**: Optimizer, Producer, Advisor, Educator, Convener or Guardian (see "The 6-Month Roadmap System" below). This position determines the participant's track through the Roadmap and its prerequisite tasks.
 
 **Day 4:** Reflect on peers' milestone work (Available to General Admission) and get strategic feedback from facilitator (Available to VIP and VVIP)
 
 **Day 5:** Reflect on peers' milestone work (Available to General Admission) and get strategic feedback from facilitator + 1hr Q&A session (Available to VIP and VVIP)
 
-**Day 6:** Gain access to the 6-Month Roadmap (see "The 6-Month Roadmap" below), with an instructional video guide (For General Admission) and 2hr Roadmap deep dive + Follow-up Q&A for (VIP & VVIP). The Roadmap is worked through after the challenge.
+**Day 6:** Gain access to the 6-Month Roadmap (see "The 6-Month Roadmap" below), with an instructional video guide (For General Admission) and 2hr Roadmap deep dive + Follow-up Q&A for (VIP & VVIP). The Roadmap is worked through after the challenge. It is a bonus for every tier, not part of what the seven days deliver (see "Positioning" under "The 6-Month Roadmap").
 
 **Day 7:** AI Governance live session (1 hr): the mandate and ethics of leading in an AI environment, then a General Q&A (1 hr). Prerequisite Task: the Ethics Self-Assessment, in The Mandate & Ethics Guide. Primary Task: My Personal AI Policy, six standards written and signed by the leader. **The Certificate of Declaration, Next Steps and Labs open the day after Day 7**, not on it.
 
@@ -149,6 +149,14 @@ The Roadmap is unlocked on Day 6 and serves as a living filter for the next 180 
 > Sourced from a direct read of the source documents in `website-context/aisc_resources/6-MONTH ROADMAP/`. Use this section as the factual base any time the Roadmap is described in copy.
 
 **Definition (founder, 2026-09-28): the Roadmap is ONE document, containing the three phases and how to approach them. Refer to it that way everywhere.** It is unlocked on Day 6 and carries the Day 3 territory declaration through 180 days of execution.
+
+**Positioning (founder, 2026-10-22): the Roadmap is a bonus, and post-challenge material.** "The Day 6 Roadmap should not be seen as something to attempt during the challenge. It is a post challenge material." "The roadmap has to be seen as a generous offer. I say this because they can leave without it and still get the value."
+- **Every tier receives it.** He said "The roadmap should be for people who opted in for coaching" and, asked whether that limits who gets it, chose every tier, as a bonus. Coaching is how it is worked through with a facilitator.
+- **It is not one of the four things the seven days deliver** (see "What the Seven Days Deliver, and What Labs Carries"): "They leave with the items mentioned in the AISC transformation section. The roadmap is there to guide them afterwards." Copy never has the leader drafting, finishing or leaving with a built Roadmap, and never sets it to work during the week.
+- **Day 6 introduces it:** the instructional video, and for VIP the 2-hour deep dive, which happens on Day 6 but is not there because of Day 7.
+- **The capstone is the Day 3 Milestone Task** ("Day 3 is the capstone a.k.a milestone"), never the Roadmap. Day 7 is the closing session.
+
+*(The quotations are his. The four points are this guide's reading of them and of his answer.)*
 
 **Copy rule:** four other documents come with it (listed under "Prerequisite tasks" below). They are **prerequisites, not the Roadmap**. In any user-facing copy, never name them, never count them, and never describe the Roadmap as several documents, a "system", or "five documents"; it confuses readers. It is fine to describe the *detail* they produce (the gaps a leader needs to close, the relationships to build, the personal standards they hold themselves to) as context for what the Roadmap helps a leader do.
 
@@ -182,19 +190,22 @@ The Roadmap itself unfolds across three phases. They are iterative and may overl
 | 2 | 31–120 | Implementation & Relationships | Leverage is applied at scale, the first AI agent is piloted, relationships are built deliberately |
 | 3 | 91–180 | Governance & Mandate | Authority is proven through results, at least one agent runs independently, the mandate extends outward through mentoring |
 
-Each phase carries a distinct milestone track **per Competitive Position** — the Roadmap branches by the position the leader claimed on Day 3, not generic advice. Example: in Phase 1, an Optimizer's first win is "one workflow running without manual intervention," while a Curator's is "60 days of consistent, quality curation." In Phase 3, an Optimizer is targeting a formal leadership presentation on their redesign's impact, while an Advisor is targeting a documented, teachable advisory methodology.
+Each phase carries a distinct milestone track **per stakeholder position** — the Roadmap branches by the position the leader claimed on Day 3, not generic advice. Example: in Phase 1, an Optimizer's first win is "one workflow running without manual intervention," while a Convener's is "a first gathering of the right people, and one next step they agree to take together." In Phase 3, an Optimizer is targeting a formal leadership presentation on their redesign's impact, while an Advisor is targeting a documented, teachable advisory methodology.
 
 Every phase also names a **Daily Win Pattern** — a short list of what counts as a good day (an automation ran unattended, a brief got written faster, a relationship advanced, an assumption got tested) — so progress is visible daily, not only at 60/120/180-day milestones.
 
-### Competitive Position (declared Day 3, used throughout the Roadmap)
+### Stakeholder Position (chosen on Day 3, used throughout the Roadmap)
 
-The Territory Builder assigns each participant one of five Competitive Positions on Day 3. This is the thread that ties the Territory Builder, the Roadmap's three phases, the Capability Gap Audit's "Must Have Now" requirements, and the Stakeholder Identifier's guidance together — everything downstream of Day 3 branches by this position:
+Each participant chooses one of six stakeholder positions on Day 3, in the AI Value Map and the Territory Builder. Never call them "competitive positions" (founder, 2026-10-23). This is the thread that ties the Territory Builder, the Roadmap's three phases, the Capability Gap Audit's "Must Have Now" requirements, and the Stakeholder Identifier's guidance together — everything downstream of Day 3 branches by this position:
 
-- **Optimizer** — improves speed, cost, and margin inside an existing system
-- **Producer** — builds a new product or service that solves a real friction point others feel
-- **Advisor** — provides judgment, direction, and clarity to others navigating AI decisions
-- **Educator** — designs and delivers learning that builds AI capability in others at scale
-- **Curator** — researches, evaluates, and synthesises AI knowledge into trusted intelligence
+- **Optimizer:** improve speed, reduce cost, and strengthen margins inside an existing system.
+- **Producer:** build a new product or service that solves a real friction point, for a market or for the people you serve.
+- **Advisor:** provide judgment, direction, and trusted intelligence the people who look to you can act on. (The Curator merged into it on 2026-10-23.)
+- **Educator:** design and deliver learning that builds AI capability in others, starting with the people you lead.
+- **Convener:** build relationships and community around a friction no single organisation can solve alone.
+- **Guardian:** set the standards a whole institution, sector or community can trust AI under.
+
+**A job or a tool is not a position.** An AI consultant is usually an Advisor. Content made with AI takes the position of what it does: teaching makes an Educator, guiding decisions an Advisor, a product people use or pay for a Producer, gathering people a Convener.
 
 Not a personality label — a determination of what the leader's next six months are actually built around.
 
@@ -214,8 +225,8 @@ The Toolbox is the operating environment participants access throughout the chal
 | **Delegation Tool** *(Tool)* | A mini app built on Michael Steve's Delegation Matrix. Leaders rate tasks on AI fit and human judgment required, receive quadrant assignments (Automate, Augment, Streamline, Own), and download results as a formatted spreadsheet. Reusable on any new batch of tasks at any time. |
 | **Readiness Scorecard** *(Tool)* | A mini app for Day 2. The leader rates 24 statements about themselves, one dimension at a time, and gets six scores side by side (Strategy, Data Governance, Talent, Processes, Impact Evaluation, Collaboration), with the strongest and the place to start marked. There is no total and no overall level: the gaps between the scores are the finding. Downloadable as a PDF summary, and reusable. |
 | **Margin Calculator** *(Tool)* | A mini app that records real time saved per AI-assisted task. Entries accumulate a weekly, quarterly, and annual total of leadership capacity reclaimed. Downloadable as a spreadsheet. It stays in the Toolbox, and the work it records is done in Labs, after the challenge: it is no longer a Day 2 exercise. |
-| **Territory Builder** *(Tool)* | A mini app that maps industry friction points, scores them by pain, credibility, and clarity of value, surfaces the best one to claim, and uses AI to polish the leader's declaration into a final statement. Also assigns one of five Competitive Positions (Optimizer, Producer, Advisor, Educator, Curator) that determines the leader's track through the Roadmap. Outputs a full PDF including friction scorecard, declaration elements, and statement. This declaration feeds directly into the Certificate of Declaration issued the day after Day 7. |
-| **Roadmap** | One document: the 6-Month AI Stakeholder Roadmap, with its three phases and how to approach them. It defines what to focus on, what to delegate, what to stop, and where AI belongs, branched by the Competitive Position declared on Day 3. See "The 6-Month Roadmap" above (and its copy rule: never name or count the prerequisite documents). Reusable every 6 months as the territory expands. |
+| **Territory Builder** *(Tool)* | A mini app that maps industry friction points, scores them by pain, credibility, and clarity of value, surfaces the best one to claim, and uses AI to polish the leader's declaration into a final statement. The leader also chooses one of six stakeholder positions (Optimizer, Producer, Advisor, Educator, Convener, Guardian), which sets their track through the Roadmap. Outputs a full PDF including friction scorecard, declaration elements, and statement. This declaration feeds directly into the Certificate of Declaration issued the day after Day 7. |
+| **Roadmap** | One document: the 6-Month AI Stakeholder Roadmap, with its three phases and how to approach them. It defines what to focus on, what to delegate, what to stop, and where AI belongs, branched by the stakeholder position chosen on Day 3. See "The 6-Month Roadmap" above (and its copy rule: never name or count the prerequisite documents). Reusable every 6 months as the territory expands. |
 | **Labs** *(Resource)* | The place a leader goes after the challenge, and where AI fluency is built by doing the work: directing AI on real tasks, inside real AI environments. It opens the day after Day 7. It has four tiers (Platform Awareness, AI Labs, AISC+, AI Stakeholder Labs), but **site copy gives a summary and never the ladder or prices** *(founder, 2026-10-13)*: what Labs is; that AI Labs is by subscription and the first months are free (1 with General Admission, 3 with VIP, 6 with VVIP); and that the platform guides and the Toolbox stay open for good. The platform guides cover four platforms, all open when Labs opens: Claude, ChatGPT, Copilot and Gemini *(founder, 2026-10-13)*. What a tier holds may be said without naming the tier, so copy may speak of going deeper into the challenge's concepts and into leading adoption and change, but never as something the free months open *(founder, 2026-10-13)*. On the site's Toolbox this row is the first panel, named "AI Fluency in Labs". The full picture is in `SOURCE_OF_TRUTH.md` at the ecosystem root and in `program/LABS_BLUEPRINT.md`. *(Until 2026-10-08 this row was "AI Labs", described as one video platform.)* |
 
 **Key notes for all copy and content work:**

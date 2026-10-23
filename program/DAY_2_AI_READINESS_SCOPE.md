@@ -52,7 +52,7 @@ Case material: three short contrast stories of leaders (prepared, over-confident
 
 ## 2. The readiness dimensions (approved by the founder, 2026-10-08)
 
-The resource the founder shared (`AI Readiness ENG.pdf`) measures an organisation: strategy, data, talent, processes, governance. So do the Cisco and Microsoft readiness indexes. Those do not fit a leader scoring themselves. Research on **individual** readiness points to a different set.
+The resource the founder shared (`AI Readiness ENG.pdf`) measures an organisation: strategy, data, talent, processes, governance. So do other published readiness indexes. Those do not fit a leader scoring themselves. Research on **individual** readiness points to a different set.
 
 | Source | What it measures in a person |
 |---|---|

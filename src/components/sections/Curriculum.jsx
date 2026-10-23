@@ -68,7 +68,7 @@ const DAYS = [
     type: "self-paced",
     duration: null,
     description:
-      "Your 6-Month AI Stakeholder Roadmap is unlocked with an instructional video guide. It turns the territory you declared on Day 3 into a 180-day plan across three phases, built around your specific capability gaps, the people you need in your corner, and the standards you set for how you'll use AI.",
+      "Your 6-Month AI Stakeholder Roadmap, a bonus for after the challenge, is unlocked with an instructional video guide. It turns the territory you declared on Day 3 into a 180-day plan across three phases, built around your specific capability gaps, the people you need in your corner, and the standards you set for how you'll use AI.",
     output: null,
     vipNote: "2-hour Roadmap deep dive + follow-up Q&A",
     milestone: false,

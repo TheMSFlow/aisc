@@ -80,7 +80,7 @@ const links = [
     badge: "Next Cohort",
     headline: "Claim Your Seat",
     persona:
-      "The next cohort is open. Take your seat now and walk out in seven days with a roadmap you built yourself.",
+      "The next cohort is open. Take your seat now and leave in seven days with AI Clarity, AI Readiness, AI Value and AI Governance.",
     cta: "Secure Your Spot",
     href: CHECKOUT_URL,
     external: true,

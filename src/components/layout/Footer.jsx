@@ -27,8 +27,9 @@ function FooterLink({ href, children, external = false, newTab = false }) {
   );
 }
 
-// showBriefings={false} on single-offer sales pages (e.g. /coaching), where
-// the blog zone pulls attention away from the one decision on the page.
+// showBriefings={false} on single-offer sales pages, where the blog zone
+// pulls attention away from the one decision on the page. (/coaching used it
+// until 2026-10-22; it now has no footer at all.)
 export default function Footer({ showBriefings = true }) {
   const briefings = showBriefings ? getAllPosts().slice(0, 3) : [];
 
@@ -141,13 +142,21 @@ export default function Footer({ showBriefings = true }) {
                 Explore
               </p>
               <ul className="flex flex-col gap-2">
-                <FooterLink href="/awakening">The Awakening</FooterLink>
+                {/* Four links at most (founder, 2026-10-17). "The Awakening"
+                    gave way to "Partner with us": the briefings band above
+                    already links the blog. */}
                 <FooterLink href="/personalize">Find your path</FooterLink>
                 <FooterLink href="/ai-apprentice" newTab>
                   Career Apprentice
                 </FooterLink>
                 <FooterLink href="https://aiclarityforchiefs.com" external>
                   AI Clarity for Chiefs
+                </FooterLink>
+                <FooterLink
+                  href="https://intelligence.michaelsteve.com/community/sponsor"
+                  external
+                >
+                  Partner with us
                 </FooterLink>
               </ul>
             </div>

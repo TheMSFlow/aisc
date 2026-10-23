@@ -38,7 +38,7 @@ For program facts, frameworks, and positioning, these are canonical and require 
 
 `website-context/` is read-only reference. Quote its ideas, never copy its text verbatim into articles.
 
-**Program facts must match the brief exactly.** 7 days, 4 live sessions, the Day 7 governance capstone, tier pricing: get one wrong in public and it undermines the sales page that says otherwise. When an article states a program fact, check it against `COPY_GUIDE.md` § Numbers to Know in the same session.
+**Program facts must match the brief exactly.** 7 days, 4 live sessions, the Day 7 governance session that closes the challenge, tier pricing: get one wrong in public and it undermines the sales page that says otherwise. When an article states a program fact, check it against `COPY_GUIDE.md` § Numbers to Know in the same session.
 
 ## Research Output
 

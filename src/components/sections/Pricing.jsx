@@ -35,8 +35,8 @@ const TIERS = [
         info: "Post-session assignments for Days 1, 2, 3, and 7, plus the Day 3 Milestone Task that produces your territory declaration and feeds into your 6-Month AI Stakeholder Roadmap.",
       },
       {
-        label: "6-Month AI Stakeholder Roadmap",
-        info: "Turns the territory you declared on Day 3 into a 180-day plan across three phases, built around your capability gaps, the relationships you need, and your own standards for using AI. Unlocked on Day 6.",
+        label: "Bonus: 6-Month AI Stakeholder Roadmap",
+        info: "Turns the territory you declared on Day 3 into a 180-day plan across three phases, built around your capability gaps, the relationships you need, and your own standards for using AI. Unlocked on Day 6, to guide you after the challenge.",
       },
       {
         label: "AI Labs (first month free)",
@@ -81,7 +81,7 @@ const TIERS = [
       },
       {
         label: "30-minute private strategy session",
-        info: "If you've used all 3 milestone task iterations and still want more clarity, get 30 minutes of direct, 1:1 time with the facilitator to work through your territory and direction.",
+        info: "If you've used all 3 milestone task iterations and still want more clarity, get 30 minutes of direct, 1:1 time with the facilitator to refine your AI Value work.",
       },
       {
         label: "Day 5: 1-hour live Q&A session",
@@ -89,7 +89,7 @@ const TIERS = [
       },
       {
         label: "Day 6: 2-hour Roadmap deep dive + Q&A",
-        info: "A 2-hour facilitated session on your 6-Month Roadmap on Day 6. Includes a Q&A to sharpen your plan before the Day 7 Governance session.",
+        info: "A 2-hour facilitated walk through the 6-Month Roadmap on Day 6, with a Q&A, so you know how to use it after the challenge.",
       },
     ],
     cta: "Secure Your VIP Spot",

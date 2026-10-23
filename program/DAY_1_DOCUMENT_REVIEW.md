@@ -4,6 +4,7 @@
 > It follows rule 16 of `WORKING_RULES.md`: the edits to the five documents are small, so they come as parts to replace in the existing Google Docs. No link changes. The deck is an edited copy of the founder's own file.
 > Nothing here is committed or pushed by an agent, and no Google Doc has been touched by one.
 > **Skip every edit below that is marked "Em dash".** The founder adjusts em dashes himself (2026-10-10). Where an edit is marked as an em dash with something else, such as a spelling, make only the other change.
+> **Finished 2026-10-23, directly in his Google Docs** (`WORKING_RULES.md` rule 26; his word: "make the approved Day 1 and Day 3 edits directly in my Google Docs"). A check of his five documents that day found most of the edits below already pasted. The rest were made through the Google Docs connector and read back: 2.2 to 2.5 and 5.2 to 5.5 ("Human Demand", four in each guide), 5.7 ("four-step"), the spelling in 3.3 ("optimise") and in 5.12 ("practise"), 1.2's "about" ("Aim for about six to start", where he had written "Aim for six"), and 1.5 (Section C had the label typed over its heading; it now has the small "SECTION C" label and the heading "My Action Plan", styled as Sections A and B). The em dash edits are still his, as above: 4.2 to 4.6 and 4.10 in the fuller worksheet are not in his document. The report is `DOCUMENT_CHECK_2026-10-23.md`.
 
 ## Where each thing stands
 

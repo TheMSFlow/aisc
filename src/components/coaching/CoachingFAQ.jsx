@@ -1,6 +1,12 @@
 import Section from "@/components/layout/Section";
 import FAQAccordion from "@/components/ui/FAQAccordion";
 import { SessionTime } from "@/components/coaching/useSessionTime";
+import Button from "@/components/global/Button";
+import {
+  COACHING_CALL_LABEL,
+  COACHING_CALL_NOTE,
+  COACHING_CALL_URL,
+} from "@/lib/coaching";
 
 const QUESTIONS = [
   {
@@ -53,6 +59,22 @@ export default function CoachingFAQ() {
           Before you book the call.
         </h2>
         <FAQAccordion items={QUESTIONS} />
+
+        {/* The page has no footer (founder, 2026-10-22), so it closes on the
+            same CTA as the plans: a reader who finishes the questions books
+            from here instead of scrolling back up. */}
+        <div className="mt-12 flex flex-col items-center">
+          <Button
+            href={COACHING_CALL_URL}
+            variant="dark"
+            className="px-8 py-3 font-semibold"
+          >
+            {COACHING_CALL_LABEL}
+          </Button>
+          <p className="mt-4 text-center text-xs text-dark-blue/45">
+            {COACHING_CALL_NOTE}
+          </p>
+        </div>
       </Section>
     </div>
   );

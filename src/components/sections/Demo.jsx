@@ -647,22 +647,24 @@ function SimSlider({ label, hint }) {
 
 /* Readiness Scorecard. The dimension, its question, the two statements and
    the scale are the real tool's own words (intelligence,
-   utils/challenge/ReadinessScorecard.jsx). The scores are made up. */
+   utils/challenge/ReadinessScorecard.jsx). The scores are made up.
+   Brought to the tool's wording of 2026-10-23: push this with that tool, as
+   the site and the Learning Center change together. */
 
 const READY_SCALE = [
   "No",
-  "Not yet, but planned",
+  "Not yet, but I plan to",
   "Partly",
   "Yes",
-  "Yes, and I could show it",
+  "Yes, and I can show it",
 ];
 
 const READY_STATEMENTS = [
   {
-    text: "My reasons for using AI are written down and tied to my goals.",
+    text: "I have written down why I want to use AI and how it links to my goals.",
     value: 4,
   },
-  { text: "I can say, in one sentence, why I am turning to AI.", value: 2 },
+  { text: "I can explain in one sentence why I want to use AI.", value: 2 },
 ];
 
 // Each score is out of 20, as in the tool. There is no total.

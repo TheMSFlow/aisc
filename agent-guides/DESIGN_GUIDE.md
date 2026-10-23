@@ -123,7 +123,7 @@ The landing page has 9 sections in narrative order. Each entry below states the 
 **Must include:**
 - All 7 days with clear distinction between live sessions and self-paced work
 - The 4 live sessions named with their outputs: AI Clarity → AI Readiness → AI Value → AI Governance
-- Day 7 / The Mandate weighted as a capstone — not just another session
+- Day 7 / The Mandate weighted as the closing session — not just another session (the capstone is the Day 3 Milestone Task)
 - VIP differentiation on Days 5 and 6: visible but not dominant
 - A last row beyond the seven days, "Beyond Day 7 · AI Adoption & Fluency · Labs" *(built 2026-10-13 as "AI Fluency & Adoption"; the two words changed places later that day, at the founder's word)*. It uses the same three columns as a day. The rule above it is dashed and it has none beneath: solid rules hold the seven days, and the dashed one marks where the challenge ends and something continues. Its badge reads "Ongoing" in a quiet lilac, the only lilac in the section, kept no brighter than the "Self-paced" badge so it does not pull the eye past Day 7. It has no duration
 

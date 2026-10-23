@@ -1,5 +1,16 @@
 # Day 6 documents: the review, and what was pasted. Closed 2026-10-11
 
+> **Follow-up, 2026-10-22 to 10-23**, after the founder decided the Roadmap is post-challenge material and a bonus for every tier, and that "Day 3 is the capstone a.k.a milestone" (`agent-guides/AISC_BRIEF.md`, "Positioning").
+> - **"Territory work" is "AI Value work"** in the Roadmap and the Capability Gap Audit. He first wrote it with a small v in his Google Docs ("They all say AI value work now"); the capital V, to match the site, the Learning Center and the session's name, was made directly in both documents later that day (below). Our references have it.
+> - **"Capstone" is out of all three documents that had it**, five places: the Audit's and the Identifier's page headers (now "Resource 01" and "Resource 02"), the two lines under the guide's title, and its heading (now "Your Reflection"). He made it in his Google Docs ("Capstone word removed").
+> - **The old My Personal AI Policy** ("Roadmap Resource #3") moved to `resources/6-month-roadmap/superseded/`, at his approval. The policy is a Day 7 document.
+> - **The Roadmap's order of sections:** "Do not begin a section until the previous one is complete" could not be met at Section 2. It now reads: "The five sections build on each other, so work through them in order. The one exception is Section 2: name your task, leave the numbers open, and move on to Section 3. You add the numbers after your first work in AI Labs." Approved 2026-10-23; it is in his Google Doc, and our reference has it.
+> - **Checked against his four Google Docs, 2026-10-23**, read directly through the Google Docs connector for the first time, in every place edited since 2026-10-11. **F went in in its first wording** ("work you do in AI Labs" in the Roadmap; "is not failing… built in AI Labs" in the Audit), not the "Labs" wording shown to him later on 2026-10-11. **G was not pasted**: the Roadmap's 90-day row and the Audit's revisit line are as they were. The Roadmap's Connects To options end with "Territory Declaration". Our four references were corrected to match his documents, which settles the "take it that he pasted both" note at the top.
+>
+> - **The first direct edits, 2026-10-23** (`WORKING_RULES.md` rule 26). At his word, "Make edits 1 and 2 directly in my Google Docs… Leave G.", made through the Google Docs connector and read back: in the Roadmap, "your AI value work" became "your AI Value work" and "work you do in AI Labs, where AI agents are taught" became "work you do in Labs, where AI agents are taught"; in the Audit, "early AI value work" became "early AI Value work" and "All three are built in AI Labs." became "All three are built in Labs.". Each phrase occurred once; the Roadmap's other five "AI Labs" are untouched, and the new words keep their sentence's style. Our references match.
+>
+> **G is left out, at his word.** Nothing from this follow-up is open.
+
 > **CLOSED 2026-10-11.** The founder: "Close issues with Day 6!" All eight questions, A to H, are sorted by him in his Google Docs. Our four Markdown references carry A to G as written below. He did not say which of F and G he pasted, so the references take it that he pasted both: check that first if these documents are uploaded again.
 > **F and G shown again on 2026-10-11, at his asking, so he can finish.** F's two sentences now say "Labs" where they said "AI Labs": the four tiers of Labs stand alone since that day, and Agency and the three skills are not known to sit in the AI Labs tier. G is written out as edits 1.10, 1.11 and 2.7.
 > **Closed by the founder on 2026-10-11:** "All day 6 issues have been sorted from A - H." He made the edits in his Google Docs himself. **Our Markdown references have A to E.** What he did for F (the two AI Labs sentences) and G (the 90-day review) is not yet known here, so the references are unchanged on those two until he says or uploads the files.
@@ -372,7 +383,7 @@ Replace with:
 ## Left as they are
 
 - **The em dashes,** which the founder adjusts by hand. Counted in the uploads: 20 in 6-Month AI Stakeholder Roadmap, 8 in The Capability Gap Audit, 49 in The AI Stakeholder Identifier, 35 in The Power of Super Connections.
-- **"Capstone"** in the two resources' page headers ("Capstone Resource 01", "02") and in the guide ("Capstone Project", "Your Capstone Reflection"). The Learning Center calls the page "Roadmap", and the pricing card says "6-month AI roadmap (capstone project)", so the word is still in use for it.
+- ~~**"Capstone"** in the two resources' page headers ("Capstone Resource 01", "02") and in the guide ("Capstone Project", "Your Capstone Reflection"). The Learning Center calls the page "Roadmap", and the pricing card says "6-month AI roadmap (capstone project)", so the word is still in use for it.~~ **Removed 2026-10-23** (see the follow-up at the top): the pricing card no longer says it, and the capstone is Day 3.
 - **"My team"** in the Roadmap's mandate and milestone examples. They are the founder's words and they speak of the leader's duty to others (rule 17 was checked against them).
 - **"Territory Declaration Template"** in the Roadmap, three times. It is the name the other documents are brought to.
 - **The phase names and the overlap of their dates.** The document says the phases are iterative.
@@ -381,3 +392,11 @@ Replace with:
 
 - `intelligence/src/app/(protected)/challenge/roadmap/page.jsx`: the hint beside Section 2 says "In Labs you run that task". It becomes "In AI Labs", to match.
 - `resources/6-month-roadmap/`: the four Markdown references take the approved edits. The Roadmap's reference already has Section 2 rewritten, with "Labs" where the edits here say "AI Labs".
+
+## The six stakeholder positions (2026-10-23)
+
+Day 3 now has six stakeholder positions (`DAY_3_POSITIONS_SCOPE.md`), and the four Roadmap documents that work position by position were brought in line at the founder's approval, directly in his Google Docs (`WORKING_RULES.md` rule 26). The full list, Now and New, is `DAY_3_POSITIONS_ROADMAP_CHANGES.md`.
+
+- **The Roadmap** (all three "Focus by Position" tables), **the Capability Audit** (Section 5), **the Stakeholder Identifier** (Part 4) and **Super Connections** ("Your Position, Your Relationship Strategy"): the Advisor row takes in the Curator's point for those who advise by publishing, the Curator row became the Convener, and a Guardian row was added under it.
+- **"My Competitive Position"** became "My Stakeholder Position" in the header tables, with the six positions listed, and "Each competitive position…" became "stakeholder" throughout. "Competitive Clarity", a capability, stays.
+- **Read back** (matching our Markdown apart from his layout) and the new rows looked at as exported pages. Our copies follow.

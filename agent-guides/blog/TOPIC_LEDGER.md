@@ -55,7 +55,7 @@ Topics reserved from the current source material. Reserving is cheap; only genui
 
 | Working slug | Primary query | Angle (one line) | Theme | Cover | Audiences | Industries | Status |
 |--------------|---------------|------------------|-------|-------|-----------|------------|--------|
-| `five-positions-a-leader-can-take-on-ai` | AI strategy positions for leaders | Optimizer, Producer, Advisor, Educator, Curator: which position fits your seat | AI Leadership | AI Leadership | chiefs, emerging-leaders | business, creators | banked (draft written 2026-07-12, awaiting review + staggered publish) |
+| `six-positions-a-leader-can-take-on-ai` | AI strategy positions for leaders | Optimizer, Producer, Advisor, Educator, Convener, Guardian: which position fits your seat (rewritten from `five-positions-a-leader-can-take-on-ai` on 2026-10-23, when Day 3 moved to six stakeholder positions) | AI Leadership | AI Leadership | chiefs, emerging-leaders | business, creators | banked (draft written 2026-07-12, awaiting review + staggered publish) |
 | `ai-in-public-office-lead-the-agenda-or-answer-to-it` | AI policy for public officials | The official who gets clear first sets the agenda; the one who waits responds to someone else's | AI Leadership | AI Leadership | chiefs, leaders-of-leaders | government | banked (draft written 2026-07-12, awaiting review + staggered publish) |
 | `the-trusted-voice-premium-ai-and-your-audience` | monetize AI as a creator / creator trust AI | AI made content abundant and trust scarce; the trusted-voice position pays | AI Value | AI Value | chiefs, emerging-leaders | creators | banked (draft written 2026-07-12, awaiting review + staggered publish) |
 | `digital-ministry-reach-without-losing-the-shepherd` | AI digital ministry | Reach further with less friction without automating the sacred: the ministry value map | AI Value | AI Value | chiefs, leaders-of-leaders | faith | banked (draft written 2026-07-12, awaiting review + staggered publish) |
@@ -80,7 +80,7 @@ Topics reserved from the current source material. Reserving is cheap; only genui
 
 ## Link graph (generated)
 
-Posts scanned: 33  (generated 2026-09-22)
+Posts scanned: 33  (generated 2026-10-23)
 
 | Post | Out → siblings | Out → categories | In ← siblings | Flags |
 |------|----------------|------------------|---------------|-------|
@@ -93,9 +93,9 @@ Posts scanned: 33  (generated 2026-09-22)
 | `before-you-sign-a-leaders-ai-vendor-questions` | `ai-governance-the-risk-is-already-inside`, `what-to-delegate-to-ai-and-what-to-never` | — | 0 | draft |
 | `brief-ai-like-you-brief-your-team` | `what-ai-actually-is-for-the-seat-where-decisions-stop`, `what-to-delegate-to-ai-and-what-to-never`, `ai-governance-the-risk-is-already-inside`, `reactive-leadership-is-a-margin-problem` | — | 4 | OK |
 | `digital-ministry-reach-without-losing-the-shepherd` | `what-to-delegate-to-ai-and-what-to-never`, `your-congregation-is-already-asking-about-ai` | — | 0 | draft |
-| `five-positions-a-leader-can-take-on-ai` | `territory-not-tools-the-ai-opportunity-for-leaders`, `the-briefing-your-board-expects-you-to-have-had` | — | 0 | draft |
 | `reactive-leadership-is-a-margin-problem` | `brief-ai-like-you-brief-your-team`, `what-to-delegate-to-ai-and-what-to-never`, `ai-governance-the-risk-is-already-inside`, `the-hours-you-lose-every-week-to-work-ai-could-handle`, `what-to-tell-your-team-about-ai-and-their-jobs` | — | 2 | OK |
 | `relationships-beat-reach-in-the-ai-ecosystem` | `your-congregation-is-already-asking-about-ai`, `territory-not-tools-the-ai-opportunity-for-leaders` | — | 0 | draft |
+| `six-positions-a-leader-can-take-on-ai` | `territory-not-tools-the-ai-opportunity-for-leaders`, `the-briefing-your-board-expects-you-to-have-had` | — | 0 | draft |
 | `territory-not-tools-the-ai-opportunity-for-leaders` | `what-ai-actually-is-for-the-seat-where-decisions-stop`, `the-briefing-your-board-expects-you-to-have-had`, `what-to-delegate-to-ai-and-what-to-never`, `the-service-you-could-not-afford-to-offer-last-year`, `why-your-ai-pilot-went-nowhere`, `become-the-ai-authority-at-work-without-the-title`, `ai-governance-the-risk-is-already-inside` | — | 12 | OK |
 | `the-briefing-your-board-expects-you-to-have-had` | `ai-governance-the-risk-is-already-inside`, `the-cfos-ai-question-is-a-capital-question`, `territory-not-tools-the-ai-opportunity-for-leaders` | — | 8 | OK |
 | `the-care-hours-buried-in-healthcare-paperwork` | `what-to-delegate-to-ai-and-what-to-never`, `ai-governance-the-risk-is-already-inside` | — | 0 | draft |

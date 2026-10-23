@@ -25,7 +25,9 @@
  * the one way to re-import, and it throws away every edit made since. The
  * hashes in .convert-state.json let the manifest say which files have been
  * edited since import. Nothing is ever deleted: a file whose source has gone
- * is listed as having no source and left alone.
+ * is listed as having no source and left alone. A file moved into a
+ * superseded/ folder beside where it was imported is still its original's
+ * Markdown, so it is not imported again.
  */
 
 import fs from "node:fs";
@@ -638,7 +640,10 @@ for (const file of listFiles(SRC).sort()) {
   }
   const folder = slug(path.basename(path.dirname(file)));
   const name = slug(path.basename(file, ext));
-  const rel = `${folder}/${name}.md`;
+  // A retired file is moved into superseded/ beside where it was imported,
+  // and stays there: an import must not bring it back (2026-10-23).
+  const retired = `${folder}/superseded/${name}.md`;
+  const rel = fs.existsSync(path.join(OUT, retired)) ? retired : `${folder}/${name}.md`;
   const buf = fs.readFileSync(file);
   const stat = fs.statSync(file);
   const ctx = { slug: name, title: path.basename(file, ext).replace(/^AISC_\s*/i, "").replace(/_/g, " "), notes: [] };

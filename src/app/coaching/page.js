@@ -1,4 +1,3 @@
-import Footer from "@/components/layout/Footer";
 import CoachingHeader from "@/components/coaching/CoachingHeader";
 import CoachingHero from "@/components/coaching/CoachingHero";
 import CoachingJourney from "@/components/coaching/CoachingJourney";
@@ -57,7 +56,8 @@ export default function CoachingPage() {
         <CoachingPlans />
         <CoachingFAQ />
       </main>
-      <Footer showBriefings={false} />
+      {/* No footer (founder, 2026-10-22): the page exists to book the
+          coaching call, so it carries no links that lead away from it. */}
     </>
   );
 }
