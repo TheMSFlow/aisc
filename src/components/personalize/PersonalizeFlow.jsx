@@ -43,7 +43,7 @@ function LoadingState() {
   );
 }
 
-export default function PersonalizeFlow() {
+export default function PersonalizeFlow({ emailOptInText = null }) {
   const [step, setStep] = useState("intro");
   const [answers, setAnswers] = useState(EMPTY_ANSWERS);
   const [result, setResult] = useState(null);
@@ -198,6 +198,7 @@ export default function PersonalizeFlow() {
           result={result}
           id={resultId}
           seat={answers.seat}
+          emailOptInText={emailOptInText}
           onRestart={restart}
         />
       )}

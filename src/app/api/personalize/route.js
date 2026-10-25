@@ -117,15 +117,21 @@ function toPayload(raw, fallbackUsed) {
 
 // Best-effort: store the completion in intelligence (Endpoint A) and attach the
 // returned id to the payload so the browser can show the email button. Bounded
-// by a short timeout and fully swallowed on failure; this must never block or
-// break the recommendation. Skipped on the honeypot path (see POST).
+// by a timeout and fully swallowed on failure; this must never block or break
+// the recommendation. Skipped on the honeypot path (see POST).
+//
+// The bound was 2 seconds until 2026-10-25 (founder approved 6): a slower save
+// hid the email button, and with it the lead, without any sign. 6 seconds is
+// small beside the model's answer, and only a slow save ever waits that long.
+const STORE_TIMEOUT_MS = 6000;
+
 async function attachId(payload, input, request) {
   const apiBase = process.env.NEXT_PUBLIC_API_BASE;
   const key = process.env.ECOSYSTEM_INTERNAL_KEY;
   if (!apiBase || !key) return payload;
 
   const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), 2000);
+  const timer = setTimeout(() => controller.abort(), STORE_TIMEOUT_MS);
   try {
     const res = await fetch(`${apiBase}/api/public/aisc/personalize`, {
       method: "POST",

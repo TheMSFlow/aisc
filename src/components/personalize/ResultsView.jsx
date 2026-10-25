@@ -4,7 +4,7 @@ import Button from "@/components/global/Button";
 import RecommendationCard from "./RecommendationCard";
 import EmailRecommendation from "./EmailRecommendation";
 
-export default function ResultsView({ result, id, seat, onRestart }) {
+export default function ResultsView({ result, id, seat, emailOptInText, onRestart }) {
   const { headline, confidence, primary, alternate, awakeningNote } = result;
 
   return (
@@ -65,7 +65,7 @@ export default function ResultsView({ result, id, seat, onRestart }) {
         </div>
       )}
 
-      <EmailRecommendation id={id} seat={seat} />
+      <EmailRecommendation id={id} seat={seat} emailOptInText={emailOptInText} />
 
       <div className="mt-10">
         <Button variant="ghost-light-flush" onClick={onRestart}>

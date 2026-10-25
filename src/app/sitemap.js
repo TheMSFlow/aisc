@@ -53,6 +53,12 @@ export default function sitemap() {
       changeFrequency: "yearly",
       priority: 0.3,
     },
+    {
+      url: `${baseUrl}/policy/find-your-path`,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
   ];
 
   const postEntries = posts.map((post) => ({
