@@ -12,6 +12,18 @@
 > - **3. Section A's edits** are in the documents, except two. The fuller Delegation Worksheet's "(Advanced — do this when you're ready)" is an em dash edit, which stays his. The Value Map's Part 3 sentence was his to write, and he had written his own, which stays. The Territory Declaration's page header, which he had reported done, still read "AI Value Template"; it now reads "Territory Declaration".
 > - **4. Day 2,** narrowed at his word ("Only adjust places where the sentence isn't clear with ambiguous words"; "say Labs not AI Labs"), was applied to three of the four Google Docs and to the deck, now 18 slides, then our Markdown, `.docx` files, local deck and the tool's questions and first moves were brought in line (`DAY_2_PLAIN_WORDS_CHANGES.md`). The tool's 24 statements still need the same test before it is pushed.
 > - **Still open:** 5 (our Markdown to match his Agency "12 months", the contents lines and the fuller Leadership Brief) and 6 (the Labs documents and Day 1's "AI Labs" line, which rule 28 now settles as "Labs", along with the other places listed at the end of `DAY_2_PLAIN_WORDS_CHANGES.md`).
+>
+> **Done later the same day, after the founder pushed,** at his word ("the tool is live, so add the held Section B sentence"; "'AI Labs' lines that mean work in Labs: these still need to become 'Labs'"), each read back afterwards:
+> - **The Scorecard Worksheet's** held Section B sentence is in his Google Doc, which now matches our Markdown.
+> - **6, the "AI Labs" lines:** "Labs" in his Roadmap (5 places), Delegation Worksheet v2 (1) and My Personal AI Policy (1), on slide 9 of the Day 1 deck, and on the Learning Center pages for Day 1 (3 lines), Day 7 (1) and the Roadmap (1). Our Markdown, the Roadmap's `.docx` and the local Day 1 deck follow.
+> - **Still open:** 5, and 6's Labs documents (section D), whose wording is drafted for his review in `LABS_DOCUMENTS_DAY_FIXES.md`.
+>
+> **Then, at his approval** ("Approved as drafted in LABS_DOCUMENTS_DAY_FIXES.md, including A6, A7 and the Toolbox tile"):
+> - **Section D is done** for Agency (A1 to A7) and the Leadership Brief (B1, B2), directly in his documents, read back, and the Learning Center's Toolbox tile says "Labs". Our Agency Markdown now matches his document, "12 months" included, which settles 5's Agency part.
+> - **Missed by this check:** the AI Safety Guidelines ("Matches" in the table above) still speak of "Day 1", "Today" and "all days". Wording drafted for his review (S1 to S3 in `LABS_DOCUMENTS_DAY_FIXES.md`).
+> - **Still open:** 5 (the four "This document covers two areas" lines and a Markdown copy of the fuller Leadership Brief), and S1 to S3.
+> - **S1 to S3 done,** at his word ("Approved: make S1 to S3 in my AI Safety Guidelines Google Doc as drafted in LABS_DOCUMENTS_DAY_FIXES.md, and bring our copy in line."), in his document and our copy, read back. Of 6, nothing is left. **Still open:** 5 alone.
+> - **5 done,** at his word ("Yes: finish item 5. Add the four 'This document covers two areas' lines to our Markdown and make a Markdown copy of the fuller Leadership Brief from my Google Doc."). Our Agency copy already had his "12 months". The four "This document covers two areas" lines turned out to be written by `scripts/program-docx.mjs`, from each copy's Part, Section or Loop headings, into the designed documents he posted; typed into the Markdown as well, they printed twice, so they were taken out again, and each copy's header now says where they come from. Each rebuilt document has them once, matching his Google Doc. `resources/toolbox/the-leadership-brief.md` is a copy of the fuller Leadership Brief, checked word for word against his document. **Nothing from this check is open.**
 
 ## The documents
 

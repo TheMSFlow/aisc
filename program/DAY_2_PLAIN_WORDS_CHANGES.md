@@ -63,7 +63,7 @@ And one new row in the table "Tips for getting data ready", after "It is incompl
 |---|---|
 | …what comes after is marked "In AI Labs" in the guide. | …what comes after is marked "In Labs" in the guide. |
 
-**Held back:** Section B's new opening, "Your scorecard summary already suggests the first two moves…". The Readiness Scorecard tool that makes those suggestions has been changed only on this machine and is not live yet. If the sentence went in now, participants would look for suggestions the tool does not give. It goes in when the tool does.
+**Held back:** Section B's new opening, "Your scorecard summary already suggests the first two moves…". The Readiness Scorecard tool that makes those suggestions has been changed only on this machine and is not live yet. If the sentence went in now, participants would look for suggestions the tool does not give. It goes in when the tool does. **Done 2026-10-23:** the tool was pushed, and at the founder's word ("the tool is live, so add the held Section B sentence") the sentence went into his Google Doc, which now matches our Markdown.
 
 ## 3. Data Readiness Audit Worksheet
 
@@ -116,4 +116,4 @@ No change. "Who answers for it" stays.
 ## Not in this list
 
 - **The Readiness Scorecard tool** (`intelligence/src/utils/challenge/ReadinessScorecard.jsx`, changed on this machine, not pushed) carries the full rewrite: its 24 statements, six questions and first moves. Its first moves must match the guide's. It needs the same test before it is pushed.
-- **"AI Labs" meaning work in Labs, outside Day 2:** in the Learning Center pages for Day 1 (3 lines), Day 2 (2), Day 7 (1) and the Roadmap (1); in Day 1's deck, slide 9 ("the work of AI Labs"); and in your Google Docs: the Roadmap (5 places, as read this morning), the Delegation Worksheet v2 (1) and My Personal AI Policy (1). Where the tier itself is meant ("AI Labs is by subscription", the "AI Labs" line in the curriculum schedule), the name stays.
+- **"AI Labs" meaning work in Labs, outside Day 2:** in the Learning Center pages for Day 1 (3 lines), Day 2 (2), Day 7 (1) and the Roadmap (1); in Day 1's deck, slide 9 ("the work of AI Labs"); and in your Google Docs: the Roadmap (5 places, as read this morning), the Delegation Worksheet v2 (1) and My Personal AI Policy (1). Where the tier itself is meant ("AI Labs is by subscription", the "AI Labs" line in the curriculum schedule), the name stays. **Done 2026-10-23, after the push,** at the founder's word: each of these now says "Labs" and was read back (`DOCUMENT_CHECK_2026-10-23.md`).

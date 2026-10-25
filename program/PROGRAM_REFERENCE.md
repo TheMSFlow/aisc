@@ -6,6 +6,8 @@ The AI Stakeholder Challenge, day by day: what each day is for, what is taught, 
 
 > **Day 3 now has six stakeholder positions** (2026-10-23, `DAY_3_POSITIONS_SCOPE.md`): where this report says five Competitive Positions, read six.
 >
+> **Finding 6, 2026-10-23:** The Leadership Brief and Agency: The Next Frontier no longer speak of a Day 1 automation task or of the trilogy on Days 1 to 3 (`LABS_DOCUMENTS_DAY_FIXES.md`). Nor, since the same day, do the AI Safety Guidelines.
+>
 > **This report has not been rewritten since, and the program has moved on (noted 2026-10-13).** Day 2 is now AI Readiness. Day 7 has material of its own, taken from Day 3 (the Mandate) and from the Roadmap (My Personal AI Policy). Margins, the Description-Discernment Loop, the AI Safety Guidelines, Agency and Proof of Leverage left the seven days for Labs. Read this file for how the program ran before, and for what each original document holds. For the program as it runs now, read `DAY_2_AI_READINESS_SCOPE.md`, `DAY_7_AI_GOVERNANCE_SCOPE.md` and `LABS_BLUEPRINT.md` in this folder, and for the facts in brief, `SOURCE_OF_TRUTH.md` at the ecosystem root and `agent-guides/AISC_BRIEF.md`.
 
 ## How to read this

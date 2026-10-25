@@ -22,7 +22,10 @@ const CHECKOUT_URL =
 // Order is deliberate (2026-09-04): AICA leads because it is the programme
 // being pushed; the AISC explainer and its checkout link sit adjacent so
 // "decide" and "act" read as one unit; the briefings close as the low-intent
-// option for anyone not ready for either.
+// option for anyone not ready for either. The free readiness check
+// (2026-10-24) opens the standard cards, because it is where the Becoming an
+// AI Stakeholder series sends viewers from Day 5, and it sits above the
+// AISC pair so the free step comes before the paid one.
 //
 // Copy note: no em-dashes, and no "Register"/"Sign up" as CTA language. Both
 // are hard rules in agent-guides/COPY_GUIDE.md.
@@ -60,6 +63,25 @@ const links = [
       aspect: "aspect-[1440/450]",
     },
     tags: ["Graduates", "Corps Members", "Young Professionals"],
+  },
+  {
+    id: "readiness",
+    badge: "Free Check",
+    headline: "The AI Readiness Check",
+    persona:
+      "Twenty-four plain statements about your own work. Six scores side by side, with no total, so you see where you are strongest and where to start. About ten minutes, and your report comes by email.",
+    cta: "Take the Free Check",
+    href: "/ai-readiness",
+    external: false,
+    // The six dimensions, in the check's own order.
+    tags: [
+      "Strategy",
+      "Data Governance",
+      "Talent",
+      "Processes",
+      "Impact Evaluation",
+      "Collaboration",
+    ],
   },
   {
     id: "aisc",
