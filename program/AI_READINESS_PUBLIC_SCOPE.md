@@ -372,3 +372,41 @@ The founder, the same day: "The check and policy are done. Give me the final pus
 2. `aistakeholderchallenge.com/ai-readiness` shows the gate with both boxes; the policy link opens `/policy/ai-readiness-check`; `/links` shows the Free Check card.
 3. One live run with `?src=test`, with the founder's go-ahead: the row in `leads` carries a country and a referrer, and the report arrives.
 4. Then the `/personalize` move into `leads` (section 13, item 5), so that `aisc_personalize` can be deleted.
+
+---
+
+## 15. Live, 2026-10-25
+
+Both repos pushed (`934d2fa` intelligence, `85274b3` aisc, on `main` and `dev`) and deployed. At the founder's word: "Run the live checks and one test with ?src=test to my address."
+
+**Working live**
+- intelligence returns the 24 statements and both box wordings; a request from another site is refused (403); the site's own address (`www.aistakeholderchallenge.com`, which the plain domain redirects to) is allowed.
+- `aistakeholderchallenge.com/ai-readiness` shows the gate with both boxes and the policy link; `/policy/ai-readiness-check` loads; `/privacy` is gone; the sitemap lists both pages; `/links` shows the Free Check card.
+- **One live test**, both boxes ticked, `?src=test`, to the founder's own address: the row was saved with **country `NG`** (Vercel's header, which could not be tested on this machine), the test tag, both opt-ins and the page. The report was sent; `details` holds the 24 ratings and six scores; no note stored. Asking again was refused (`already`).
+- The success page showed the Value and Pricing sections and the Awakening block with its WhatsApp button and date; no footer and no briefings.
+- The referrer read `www.aistakeholderchallenge.com` because the page was reloaded before the test. A visitor arriving from another site records that site.
+
+**Not working: the readiness community invite.** The live report came back with no invite although the box was ticked, so neither the success page nor the email carried it. The code returns the invite only when `READINESS_WHATSAPP_INVITE_URL` is set in the live intelligence deployment. To check on Vercel: the intelligence project's environment variables, set for **Production**, then a **redeploy** (a variable added or changed after a deployment does not reach it).
+
+**A stale 404, cleared by itself.** For a while after the deploy, Vercel's cache still served a 404 from before the deploy at the plain `/api/public/aisc/readiness/scorecard` address. Visitors were not affected, because the page receives the statements on the server. By the end of the checks the address answered normally.
+
+**The test row stays in `leads`** (id `3bd0ac5a-9624-4422-b1e5-35fbbae01e35`, `attribution.src = test`), for the founder to keep or delete.
+
+## 16. After going live, 2026-10-25
+
+**Where each invite setting goes.** The founder: "Please be very clear where what goes." Each one lives in exactly one project:
+
+| Setting | Project | Local file | Read by |
+|---|---|---|---|
+| `READINESS_WHATSAPP_INVITE_URL` | **intelligence only** | `intelligence/.env.local` | `api/public/aisc/readiness/report`, which returns it only to a lead who ticked the box and puts it in the report email |
+| `THE_AWAKENING_WHATSAPP_INVITE_URL` | **AISC only** | `aisc/.env.local` | `app/ai-readiness/page.js`, for the Awakening block on the success page |
+
+A copy in the other project does nothing. The missing community invite in the live test (section 15) came from the readiness setting being absent from the live intelligence deployment.
+
+**The site footer's Explore column** now reads Find your path, Career Apprentice, **AI Readiness Check** (`/ai-readiness`), Partner with us. The check replaced "AI Clarity for Chiefs" at the founder's word: "add the AI Readiness Check as a link in the footer. Replace the 'AI Clarity For Chiefs' link with it." The blog's own footer (`BriefingsFooter.jsx`) still links to aiclarityforchiefs.com, so the AICC site keeps an inbound link (`LINK_MAP.md` updated).
+
+**Emails dark on mobile.** Every ecosystem email is drawn by `intelligence/src/lib/emails/emailTheme.js`: a light grey canvas with dark text and dark cards, and no instruction to mail apps about dark mode. Phone mail apps in dark mode recolour such emails themselves; desktop Gmail does not, which is why desktop looks right. A fix was proposed under rule 21 and approved the same day: "Approved. Make both email steps, then send one test report to my address so I can check it on my phone."
+- **Step 1, every email:** the shell is now a full email page that tells mail apps the design is light only (`color-scheme` and `supported-color-schemes`). Apple Mail and Outlook keep it as on desktop.
+- **Step 2, for the Gmail apps, which recolour anyway:** body text `#585b86` to `#45486f` and muted text `#8b8dab` to `#6b6e8f`, so they stay readable when flipped; the logo (dark ink on a transparent image, which vanished on a dark background) sits on a white backing that Gmail does not recolour, because it is drawn as a background image. In the readiness email, the "Your profile at a glance" label is less faint.
+- **Checked:** all 22 senders pass the shell straight to Resend, so none breaks; lint and build pass; renders of the readiness email old and new, in light and in Chrome's forced dark mode (`scratchpad` previews, not kept). One test report was sent to the founder's own address through local intelligence (row `1d4a57e8-7a06-4a98-9054-b90dda9bab1f`, `src=test`), with the community invite, for him to check on his phone.
+- **Not covered:** the `/personalize` recommendation email has its own design and is left until it moves into `leads`. Files: `intelligence/src/lib/emails/emailTheme.js` and `sendReadinessReportEmail.js`. Not pushed.

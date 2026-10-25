@@ -144,14 +144,14 @@ export default function Footer({ showBriefings = true }) {
               <ul className="flex flex-col gap-2">
                 {/* Four links at most (founder, 2026-10-17). "The Awakening"
                     gave way to "Partner with us": the briefings band above
-                    already links the blog. */}
+                    already links the blog. "AI Clarity for Chiefs" gave way to
+                    the free AI Readiness Check (founder, 2026-10-25); the
+                    blog's own footer still links to aiclarityforchiefs.com. */}
                 <FooterLink href="/personalize">Find your path</FooterLink>
                 <FooterLink href="/ai-apprentice" newTab>
                   Career Apprentice
                 </FooterLink>
-                <FooterLink href="https://aiclarityforchiefs.com" external>
-                  AI Clarity for Chiefs
-                </FooterLink>
+                <FooterLink href="/ai-readiness">AI Readiness Check</FooterLink>
                 <FooterLink
                   href="https://intelligence.michaelsteve.com/community/sponsor"
                   external
