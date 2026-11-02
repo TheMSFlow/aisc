@@ -2,10 +2,10 @@ import QuickLinks from "@/components/links/QuickLinks";
 
 const TITLE = "Links | AI Stakeholder Challenge";
 const DESCRIPTION =
-  "The AI Career Apprentice, the AI Stakeholder Challenge, the next open cohort, and The Awakening briefings. Every way in, in one place.";
+  "A private 1:1 discovery call, the free AI Readiness Check, the AI Stakeholder Challenge and its next cohort, a private Awakening briefing, and the AI Career Apprentice. Every way in, in one place.";
 
 // The share card stays the generated AISC one from src/app/opengraph-image.js
-// The AI Career Apprentice artwork lives inside the hero card instead, so
+// The VVIP call artwork lives inside the hero card instead, so
 // sharing this URL previews the site it actually lands on. It has to be named
 // explicitly: declaring an `openGraph` block replaces the parent's entirely,
 // and a file-based image is not merged back in.
@@ -13,7 +13,7 @@ const OG_IMAGE = {
   url: "/opengraph-image",
   width: 1200,
   height: 630,
-  alt: "AI Stakeholder Challenge | From AI Consumer to AI Leader",
+  alt: "AI Stakeholder Challenge | From Passive AI Awareness to AI Leader",
 };
 
 export const metadata = {

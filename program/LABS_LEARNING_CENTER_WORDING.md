@@ -1,6 +1,7 @@
 # Labs: the Learning Center's words about it (tracker step 40)
 
 > **What this is:** step 40 set out for the founder's review, 2026-10-16, at his word: "Set out step 40 for my review: the Learning Center's words about Labs, with the exact wording before anything changes." **Nothing has been changed.** **Not approved, the same day:** "I do not appprove. I don't see this as relevant at this time." Kept for when he raises it again. Each proposed line is mine, for him to approve, change or refuse.
+> **Overtaken 2026-11-02:** Labs is no longer free and Platform Awareness is hidden, so the free months and "Platform Awareness and the Toolbox, for good" in the lines below no longer apply. The Learning Center's Labs wording was changed that day as part of the Labs change (`LabsOpenNotice.jsx`, `CurriculumSchedule.jsx`, `NextStepsHub.jsx`; see `LABS_TRACKER.md`, 2026-11-02). If he raises this step again, start from the code as it now stands.
 > **Measured against:** `SOURCE_OF_TRUTH.md` (Labs: "Say 'Labs' for the whole", AI Labs is "Recorded Sessions" to a leader, "say the first months are free and that AI Labs is by subscription", "the day after Day 7, not Day 8", and what stays open for good: Platform Awareness and the Toolbox) and `LABS_BLUEPRINT.md` ("Two kinds of access").
 
 ## In short

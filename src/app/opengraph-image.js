@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
-export const alt = "AI Stakeholder Challenge | From AI Consumer to AI Leader";
+export const alt = "AI Stakeholder Challenge | From Passive AI Awareness to AI Leader";
 
 export default function Image() {
   return new ImageResponse(
@@ -44,7 +44,7 @@ export default function Image() {
               maxWidth: 1000,
             }}
           >
-            From AI Consumer to AI Leader
+            From Passive AI Awareness to AI Leader
           </div>
         </div>
         <div

@@ -1,6 +1,6 @@
 # Labs: the blueprint
 
-> **Status:** a structure preview, built 2026-10-11 on the founder's answers that day: five kinds of page, placeholder content, no gates. **The founder signed off the structure on 2026-10-16** ("His answers of 2026-10-16", near the foot). It replaced the scaffold of 2026-10-08. Labs is not open to participants: a switch keeps it shut in production (`LABS_LIVE`, see "Settled after his first look"). **Read "The structure" at the foot of this file first.** Where it disagrees with a section above it, it is the later word.
+> **Status:** a structure preview, built 2026-10-11 on the founder's answers that day: five kinds of page, placeholder content, no gates. **The founder signed off the structure on 2026-10-16** ("His answers of 2026-10-16", near the foot). It replaced the scaffold of 2026-10-08. Labs is not open to participants: a switch keeps it shut in production (`LABS_LIVE`, see "Settled after his first look"). **Read "The structure" at the foot of this file first.** Where it disagrees with a section above it, it is the later word. **Since 2026-11-02, "Labs is no longer free", the first section below, is the latest word of all.**
 > **Goes with:** `DAY_2_AI_READINESS_SCOPE.md`, which moved Margins, the Loop, Agency, Proof of Leverage and the AI Safety Guidelines out of the 7-day challenge. This file says where they land.
 > **In code:** `intelligence/src/lib/labs/` (the catalogue and the access rule) and `intelligence/src/app/(protected)/labs/` (the pages).
 
@@ -10,17 +10,57 @@ Labs is where a leader goes after the challenge to put the seven days into pract
 
 **"Labs" is the name of the place.** The four shelves each have their own name. Say "Labs" for the whole, and the shelf's name for a part.
 
+## Labs is no longer free (founder, 2026-11-02)
+
+**This section is the latest word.** Wherever a line below speaks of free months, of Platform Awareness as a shelf leaders see, or of Platform Awareness and the Toolbox "for good", this replaces it. Those lines are kept as the record of how Labs got here.
+
+**What he said, word for word.**
+
+The change: "Labs will no longer be free for anyone. Whether they are a challenger or not. The new idea is that they can subscribe after the challenge. But before we make those changes, let's look at how this currently affects the ecosystem in all areas."
+
+After seeing the impact: "First, understand that I currently have no paid customers so we can still refine things without worrying about existing customers. Secondly, I'm dropping platform awareness. I might not delete the work done for labs, I'll hide it instead for now. The reason is that Platform awareness will be stressful as I have to cover lultiple platforms. This also means we remove it from what we display in the AISC page. Thirdly, the toolbox and any thing in it will always be what the challengers go with to help continue their work. Instead, I'll focus on teaching AI Fluency using the ICM methodology or at least parts of it. We will still have AI Labs which is the ICM training. We will still have AISC + which is the people that want deeper dives into the AISC program, then we will still maintain the AISC Coaching tier."
+
+His answers to the six questions:
+
+1. What a challenger keeps: "Users keep the toolboxbut no part of labs is free."
+2. Paid customers on the old terms: "None yet."
+3. Subscribing opens the day after Day 7: "Yes, correct."
+4. AICC: "AICC get's all of labs free for 6 months. They paid premium. After six months they subscribe."
+5. On Demand: "Yes, on demand now gets only the AISC teachings and toolbox."
+6. The series: "The series would no longer insinuate a free labs. But they can still mention it because its available. The only difference is that it's paid."
+
+His answers to the follow-ups:
+
+1. AICC after six months: "Everything a challenger keeps, the AICC participants keep."
+2. On Demand and subscriptions: "Yes, the next natural step for on demand is to subscribe to labs."
+3. How the AISC site names it: "It should simply say AI Fluency."
+4. Platform Awareness itself: "Also note that platform awareness is still real. We are just taking a different approach. In the series the platform awareness takes an evergreen standpoint so it shouldn't be touched. Labs copy will most likely not change i many places. Mostly, there will just be a subscription disclaimer."
+
+On the AISC site's price cards: "If Labs is by subscription is there any need to add it in the place where a user is making a buying decision? Also, What's the need of saying the toolbox stays for good. Instead, add the toolbox as a feature and the tooltip gives more detail."
+
+**What this makes the rules.**
+
+- **Nothing in Labs is free,** for anyone: no free months for any seat, and no free tier. Leaders subscribe after the challenge.
+- **The Toolbox stays with every challenger,** and with everyone whose Labs access has begun (AICC included, after the six months). It is the floor, rung 1, and subscribing is open from it.
+- **Labs shows three tiers:** AI Labs, which teaches AI Fluency through ICM (or parts of it); AISC+, the deeper dives into the AISC program; AI Stakeholder Labs, for coaching. **Platform Awareness is hidden, not deleted.** Its content and code stay. The tier value `platforms` remains the internal name of rung 1, shown to leaders as "the Toolbox".
+- **AICC:** all of Labs free for six months, then a subscription. They keep the Toolbox.
+- **On Demand:** the AISC teachings and the Toolbox only, with no free months. Its next step is a subscription.
+- **The AISC site** says "AI Fluency", never "ICM". Labs is off the price cards, and the Toolbox is a feature on the General Admission card, never sold with "for good".
+- **The series** may mention Labs, never as free. Its Platform Awareness episodes are evergreen and are not touched.
+
+**Built the same day** (uncommitted; the founder commits): in `intelligence`, the free months are gone from `labsAccess.js` and `subscriptionRules.js`; Platform Awareness is `hidden` in `library.js` and its pages return not found; the leader-facing wording and the four plan emails say the Toolbox stays and AI Labs and AISC+ are by subscription. On the AISC site: Pricing, the FAQ, the "AI Fluency in Labs" panel and the personalised page's catalog, with the guides. Details in `LABS_TRACKER.md` (2026-11-02).
+
 ## Founder decisions (2026-10-08)
 
 - **The whole place is "Labs".** Its header reads **"AISC Labs"**.
 - **Labs carries the design of the AISC Learning Center:** the same frame, sidebar and dark content panel, with Home and Profile at the foot of the sidebar.
-- **Platform Awareness** keeps its name, and is **"Platforms"** for short. Always available to any signed-in leader.
+- **Platform Awareness** keeps its name, and is **"Platforms"** for short. Always available to any signed-in leader. *(Superseded 2026-11-02: see "Labs is no longer free" at the top.)*
 - **AISC+** is the name for the challenge deep dives. It needs AI Labs access from the beginning.
 - **The 4Ds are split between the challenge and AI Labs** (founder, 2026-10-10). The challenge takes Delegation, on Day 1, and Diligence, on Day 7. Description and Discernment belong to AI Labs. **No AI tool is needed during the seven days:** work with AI begins in AI Labs, and Day 0 tells participants to plan for a tool by then. Made stricter the same day, at the Day 2 review: **any task that involves AI is pushed to AI Labs**, watching a colleague use it included. In the challenge's documents that work sits under the label "In AI Labs", so participants know what to expect. **The rule is about work the participant does with AI, not work a tool does for them:** the Territory Builder on Day 3 still writes the declaration with AI, once, because "this is done for them" (founder, 2026-10-10).
 - **What does not fit into Day 2 is kept for AISC+** (founder, 2026-10-10). From his readiness notes and the resource they follow: the maturity levels, the principles of responsible AI, the roles for scaling AI and interdisciplinary teams, a culture of testing, learning and trust, change management, pilots, iteration and scaling, measuring return, governance frameworks and alignment with business objectives, the final readiness checklist, the worked cases and the common mistakes. **Day 2's guide already names six of these to participants, one under each dimension, as what AI Labs holds:** choosing a first use case; getting data ready; roles and training; a first pilot; measuring return; and a culture of testing, learning and trust. Those six are commitments to keep when AISC+ is built. The list is in `DAY_2_DOCUMENT_REVIEW.md`.
 - **AI Labs, with AISC+ under it, is recorded sessions only** (2026-10-09). To a leader, what AI Labs offers is called "Recorded Sessions".
 - **Say what is free and what is paid** (2026-10-09). A bare "3 months" confuses. Wherever a leader's months are shown, say that the first months are free and that AI Labs is by subscription.
-- **AI Labs** is the paid shelf, by subscription. The free months are the way in: **1 month for General Admission, 3 for VIP, 6 for VVIP.**
+- **AI Labs** is the paid shelf, by subscription. The free months are the way in: **1 month for General Admission, 3 for VIP, 6 for VVIP.** *(Superseded 2026-11-02: see "Labs is no longer free" at the top.)*
 - **Labs opens a day after Day 7 opens, with Next Steps and the Profile, and the free months count from then** (founder, 2026-10-11): "I think it's wise to allow day 7 breathe with the AI governance. Day 8 is a good time for profile, labs and next steps to open." The three open at the same moment, 24 hours after the Day 7 page does. The pages say "the day after Day 7" and not "Day 8", because the challenge is seven days. This replaces the rule of 2026-10-09, under which Labs opened on Day 7 itself. The start date is Day 1. In the schedule Labs is still the entry after Day 7, "Beyond Day 7".
 - **AI Stakeholder Labs** is live sessions for participants in group coaching, and only for them (2026-10-09). This replaces what the name meant before (the whole post-challenge resource).
 - **Private Viewing is an add-on, not a tier.** It does not change anyone's free months.
@@ -45,7 +85,7 @@ Labs is where a leader goes after the challenge to put the seven days into pract
 
 Three keys open four shelves: being signed in, AI Labs access, and being a coaching client.
 
-**AI Labs access today** comes only from the free months. It runs from Day 7 of the leader's latest challenge (six days after the cohort's start date, from the first minute of that day) for 1, 3 or 6 months, to the end of the last day, by the package on their challenge row. A subscription, when it is built, becomes a second way to hold the same key.
+**AI Labs access today** comes only from the free months. It runs from Day 7 of the leader's latest challenge (six days after the cohort's start date, from the first minute of that day) for 1, 3 or 6 months, to the end of the last day, by the package on their challenge row. A subscription, when it is built, becomes a second way to hold the same key. *(Superseded 2026-11-02: see "Labs is no longer free" at the top.)*
 
 ## One catalogue
 
@@ -440,15 +480,15 @@ He asked which category should come next and in what order the project should fi
 
 He asked to think it through before moving on: "The labs originally should only be accessible to users with challenge access. Also remember the on-demand plan, when it's built, will have immediate access to labs but not the learning center... I think one clear thing I can see is challenge access gives access to AISC and labs, while Labs Access gives access to only AISC Labs. This way, AICC clients do not need challenge access, only labs access." A critique and a plan were put to him, and he answered point by point.
 
-- **Challenge access** is a seat in a cohort. It opens the Learning Center for that challenge, and Labs from the day after Day 7: Platform Awareness and the Toolbox for good, and AI Labs for the free months.
+- **Challenge access** is a seat in a cohort. It opens the Learning Center for that challenge, and Labs from the day after Day 7: Platform Awareness and the Toolbox for good, and AI Labs for the free months. *(Superseded 2026-11-02: see "Labs is no longer free" at the top.)*
 - **Labs access** is a row in `labs_access`. It opens Labs only, at its tier, for its dates, from its first day. It never opens the Learning Center. AICC clients, On Demand participants, coaching, and subscriptions are held this way. The words "record of access" are dropped for it.
 - **Labs opens with either one.** With neither, there is no Labs.
-- **Platform Awareness and the Toolbox, for good** (founder, 2026-10-17): open to everyone with Labs access, and kept once any Labs access has begun, ended or not. For challenge access this was already so. Built in `resolveLabsAccessLevel()` (`labsAccess.js`): a person whose rows have all ended stands at level 1.
+- **Platform Awareness and the Toolbox, for good** (founder, 2026-10-17): open to everyone with Labs access, and kept once any Labs access has begun, ended or not. For challenge access this was already so. Built in `resolveLabsAccessLevel()` (`labsAccess.js`): a person whose rows have all ended stands at level 1. *(Still so on 2026-11-02, with level 1 now the Toolbox alone.)*
 - **Who may subscribe:** first "Only users with challenge access have access to buy subscription plans," then, the same day, "Anyone who has access to labs can subscribe before or after their free months expire." So anyone who has or has had Labs may subscribe, through either kind of access, AICC clients included. A stranger cannot. The Toolbox, the AISC page included, comes with any Labs access without a gate of its own.
   - **During the free months:** a subscription to AI Labs starts when the free months end, so no paid day overlaps a free one, as the paid terms run back to back. A higher tier starts at once (step 43).
   - **The Labs icon's pop-up** (step 60), as read here and to confirm when it is built: someone who has had Labs is offered a subscription. Someone with challenge access whose Labs has not opened yet is told the day it opens. Someone who has never had Labs is shown the way in: the challenge, and On Demand once it exists.
-- **On Demand:** "For on-demand, they'll pay the current general admission cost (Meaning general admission costs will increase once on demand is ready) to gain access to labs... Then subscriptions continue after the first month of free AI Labs." So it costs today's General Admission price ($99 or ₦120,000) and General Admission rises when it launches. It gives one month of AI Labs free, then a subscription. With point 2, agreed, it also keeps Platform Awareness and the Toolbox for good, as a cohort participant does.
-- **AICC** (point 2, agreed): the six months end, and with them Labs. *(Changed 2026-10-17, founder: "Please note that Platform Awareness and the Toolbox is available to every one with labs access," and, asked whether that holds once Labs access ends: "Yes, for good". So when the six months end, AISC+ and the rest close, and Platform Awareness and the Toolbox stay open.)*
+- **On Demand:** "For on-demand, they'll pay the current general admission cost (Meaning general admission costs will increase once on demand is ready) to gain access to labs... Then subscriptions continue after the first month of free AI Labs." So it costs today's General Admission price ($99 or ₦120,000) and General Admission rises when it launches. It gives one month of AI Labs free, then a subscription. With point 2, agreed, it also keeps Platform Awareness and the Toolbox for good, as a cohort participant does. *(Superseded 2026-11-02: On Demand gets the AISC teachings and the Toolbox only, and its next step is a subscription.)*
+- **AICC** (point 2, agreed): the six months end, and with them Labs. *(Changed 2026-10-17, founder: "Please note that Platform Awareness and the Toolbox is available to every one with labs access," and, asked whether that holds once Labs access ends: "Yes, for good". So when the six months end, AISC+ and the rest close, and Platform Awareness and the Toolbox stay open.)* *(2026-11-02: the six months are all of Labs, free; afterwards they keep the Toolbox and may subscribe.)*
 - **Settings, not a second profile:** "Let's use a settings icon beside the profile icon instead that takes them to subscriptions and other useful settings." The Profile icon stays the challenge profile, for those who have one.
 - **A Labs icon on every dashboard:** "In the dashboard of every leader (leader, sponsor, vip etc) There will now be a labs icon beside the challenge access. It'll give access to those with lab access but open a pop up for subscription for those without. Similar behavior like the challenge access button." The challenge access button checks on the server and either goes to the challenge or opens its offer (`ChallengeAccessButton.jsx`, in the leader, sponsor, VIP and VVIP headers; commented out in the chief's).
 - **The Labs icon, built the same day** (tracker step 60): beside Challenge Access on every leader's dashboard, hidden where Labs is shut. It goes into Labs for whoever may enter. Otherwise it opens a pop-up: the day Labs opens, for challenge access before then; the plans and "Subscribing opens here soon", for Labs access that has ended; or Labs and the challenge offer, for someone who has never had Labs. No prices until the naira prices are set. *(Since 2026-10-17, ended Labs access keeps Platform Awareness and the Toolbox, so it goes into Labs. The ended-access pop-up was replaced the same day, at his word ("Approved. Build the pop-up change with the wording as set out"), by one for Labs access still to begin: "Labs opens to you on [first day]", and what it opens until when. Wording in `LABS_SUBSCRIPTIONS_PLAN.md`.)*
@@ -484,6 +524,6 @@ Planned, approved and built the same day: "I've run the subscriptions SQL in Sup
 1. Changes from his walk, until he says the structure is solid.
 2. **One table for the library, and the admin to fill it.** The tree is shaped to be one table of items that point to their parent, so there is one list to manage and not one per tier. Progress can be one small table, or one column on a row a leader already has. "I don't want too much tables in my backend." The schema goes to him as SQL.
 3. The video player, on Cloudflare, with a link a leader cannot pass on.
-4. Real access: the ladder, decided on the server, with the free months as a free AI Labs subscription.
+4. Real access: the ladder, decided on the server, with the free months as a free AI Labs subscription. *(No free months since 2026-11-02.)*
 5. Saved progress.
 6. Subscriptions and their prices.

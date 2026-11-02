@@ -27,19 +27,19 @@ Runtime price source of truth is `src/lib/pricing.js` (raw `{usd, ngn}` numbers)
 
 ### ga — General Admission
 - **Price:** $99 / ₦120,000
-- **What it is:** The full 7-day challenge. All 4 live sessions (AI Clarity Day 1, AI Readiness Day 2, AI Value Day 3, AI Governance Day 7), all session resources, mini apps (Delegation Tool, Readiness Scorecard, Territory Builder, Margin Calculator), assignments and the Day 3 Milestone Task, the 6-Month AI Stakeholder Roadmap, the first month of AI Labs free, community access, Certificate of Declaration.
+- **What it is:** The full 7-day challenge. All 4 live sessions (AI Clarity Day 1, AI Readiness Day 2, AI Value Day 3, AI Governance Day 7), all session resources, mini apps (Delegation Tool, Readiness Scorecard, Territory Builder, Margin Calculator), assignments and the Day 3 Milestone Task, the 6-Month AI Stakeholder Roadmap, the Toolbox, community access, Certificate of Declaration.
 - **Who qualifies:** Anyone. Open cohort, no seat cap. Framed as full access, never "basic".
 - **CTA:** "Secure Your Spot" → `https://intelligence.michaelsteve.com/pay/challenge/aisc?package=general-admission` (Button variant `primary`)
 
 ### vip — VIP
 - **Price:** $399 / ₦520,000
-- **What it adds to GA:** the first 3 months of AI Labs free, strategic facilitator feedback on the milestone task (up to 3 iterations), a 30-minute private strategy session if all 3 iterations are used, Day 5 VIP-only live Q&A, Day 6 2-hour Roadmap deep dive.
+- **What it adds to GA:** strategic facilitator feedback on the milestone task (up to 3 iterations), a 30-minute private strategy session if all 3 iterations are used, Day 5 VIP-only live Q&A, Day 6 2-hour Roadmap deep dive.
 - **Who qualifies:** Leaders who want the facilitator close to their specific situation. **Capped at 10 seats** (a real constraint: milestone feedback needs a manageable group).
 - **CTA:** "Secure Your VIP Spot" → `https://intelligence.michaelsteve.com/pay/challenge/aisc?package=vip` (variant `dark`)
 
 ### vvip — VVIP
 - **Price:** $1,099 / ₦1,350,000
-- **What it is:** The full 7-day experience delivered privately, one-on-one, scheduled around the participant's availability. Direct facilitator access all 7 days. All GA and VIP inclusions. The first 6 months of AI Labs free.
+- **What it is:** The full 7-day experience delivered privately, one-on-one, scheduled around the participant's availability. Direct facilitator access all 7 days. All GA and VIP inclusions.
 - **Who qualifies:** The natural fit for the most senior Chiefs: private, conversational, directional.
 - **CTA:** "Secure 1:1 Access" → `https://intelligence.michaelsteve.com/pay/challenge/aisc?package=vvip` (variant `vvip`)
 

@@ -149,3 +149,12 @@ Approved: "Approved as written. Build it." Not pushed.
 **The box always shows (2026-10-25).** The founder: "In the personalize flow, there's no checkbox when trying to receive the personalization by email." His dev server reads the box's wording from the live intelligence, which did not yet have `api/public/leads/opt-ins`, so the page had no wording and left the box out. At his word ("Yes, add the built-in copy of the wording so the box always shows, with the drift check"):
 - `aisc/src/lib/leads/optIns.js` holds a built-in copy of the wording, used by `app/personalize/page.js` whenever intelligence's cannot be read;
 - `intelligence/scripts/check-readiness-wording.mjs` now also fails if that copy and `intelligence/src/lib/leads/optIns.js` differ (proved on an altered temporary copy). The server still stores its own wording with each lead.
+
+---
+
+## 10. Live, 2026-10-25
+
+Pushed by the founder: aisc `018d253` and intelligence `2073ab4` ("Personalize refinements"), on `main` after intelligence's `dev` was merged into it (the first push reached only `dev`, so the live email step was still the old one for a while). At his word, "Run the live /personalize and readiness tests with ?src=test to my address":
+- **The wizard on the live site** showed the email button, the form with the box in its shared wording, and the policy link. The recommendation was sent to his address ("Sent. It is on its way to your inbox.").
+- **The lead** (`b1576c1e-9836-4d36-b9c5-ed56b9664272`): source `aisc_personalize`, name and email, country `NG`, the test tag, the box ticked with its exact wording, delivered `personalize_recommendation`, and in `details` the session id, seat and headline.
+- **The session row** (`09aaf456-2357-43c8-a140-dfab631ee951`) is marked as emailed, and **its email is empty**, as planned.

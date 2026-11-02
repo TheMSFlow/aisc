@@ -50,8 +50,9 @@ const CARDS = [
     // Same icon the Toolbox uses for its Roadmap panel.
     icon: Map,
     summary: "Three phases and how to approach each one, unlocked on Day 6.",
-    // Toolbox panel 4 of 4 is the Roadmap.
-    render: () => <DemoInModal startPanel={3} />,
+    // Toolbox panel 3 of 4 is the Roadmap (AI Fluency in Labs moved last,
+    // 2026-11-02).
+    render: () => <DemoInModal startPanel={2} />,
   },
 ];
 

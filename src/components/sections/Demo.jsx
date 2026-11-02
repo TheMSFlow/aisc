@@ -11,31 +11,16 @@ import {
   Lock,
   Map,
   Maximize2,
+  MessageSquareText,
   Scale,
   ScrollText,
   ShieldCheck,
+  Users,
   Workflow,
   X,
 } from "lucide-react";
 
 const PANELS = [
-  {
-    id: "ai-labs",
-    name: "AI Fluency in Labs",
-    body: "Fluency is built by practice. In Labs you put AI to work on your own tasks until you direct it effectively, efficiently, ethically and safely. Then you go deeper into the challenge's concepts, and into leading adoption and change. The platform guides and your Toolbox stay open for good. AI Labs is by subscription, and your first months are free: one with General Admission, three with VIP, six with VVIP.",
-    type: "tools",
-    // The four platforms Labs teaches (founder, 2026-10-13), then two kinds
-    // of work done on them. `wide` tiles span two columns on large screens,
-    // so the platforms hold one row and the work sits beneath.
-    tools: [
-      { name: "Claude", src: "/demo/tools/claude.svg" },
-      { name: "ChatGPT", src: "/demo/tools/chatgpt.svg" },
-      { name: "Copilot", src: "/demo/tools/copilot.svg" },
-      { name: "Gemini", src: "/demo/tools/gemini.svg" },
-      { name: "AI Agents", icon: Bot, wide: true },
-      { name: "Workflows", icon: Workflow, wide: true },
-    ],
-  },
   {
     id: "guides",
     name: "Guides, Frameworks & Templates",
@@ -80,6 +65,23 @@ const PANELS = [
         name: "Governance & Mandate",
         line: "Authority proven, direction extended responsibly.",
       },
+    ],
+  },
+  {
+    id: "ai-labs",
+    name: "AI Fluency in Labs",
+    body: "Fluency is built by practice. In Labs you put AI to work on your own tasks until you direct it effectively, efficiently, ethically and safely. Then you go deeper into the challenge's concepts, and into leading adoption and change. Labs is by subscription.",
+    type: "tools",
+    // Last of the four since 2026-11-02 (founder), first before that.
+    // What Labs teaches (founder, 2026-11-02: the platform logos came off
+    // when Platform Awareness left Labs). Every tile is `wide`, so large
+    // screens show two across, the same 2×2 as tablets; phones stack them.
+    // /coaching replaces this body's last sentence (ModalSections.jsx).
+    tools: [
+      { name: "AI Fluency", icon: MessageSquareText, wide: true },
+      { name: "AI Agents", icon: Bot, wide: true },
+      { name: "Workflows", icon: Workflow, wide: true },
+      { name: "Adoption & Change", icon: Users, wide: true },
     ],
   },
 ];
@@ -1169,7 +1171,7 @@ function ToolsLibrary({ tools, isActive }) {
           </p>
         </div>
 
-        <div className="flex-1 grid grid-cols-2 lg:grid-cols-4 auto-rows-fr gap-2 sm:gap-3">
+        <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 auto-rows-fr gap-2 sm:gap-3">
           {tools.map((tool, i) => (
             <div
               key={tool.name}

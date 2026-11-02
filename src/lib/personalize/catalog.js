@@ -24,7 +24,7 @@ export const CATALOG = {
     buttonVariant: "dark",
     // Prompt-facing description and qualification rules.
     description:
-      "The full 7-day challenge. All 4 live sessions (AI Clarity, AI Readiness, AI Value, AI Governance), every resource, the mini apps (Delegation Tool, Readiness Scorecard, Territory Builder, Margin Calculator), the Day 3 Milestone Task, the 6-Month AI Stakeholder Roadmap, the first month of AI Labs free, community access, and the Certificate of Declaration.",
+      "The full 7-day challenge. All 4 live sessions (AI Clarity, AI Readiness, AI Value, AI Governance), every resource, the mini apps (Delegation Tool, Readiness Scorecard, Territory Builder, Margin Calculator), the Day 3 Milestone Task, the 6-Month AI Stakeholder Roadmap, the Toolbox, community access, and the Certificate of Declaration.",
     fit: "Open cohort, no seat cap. The complete experience and the default path for any qualified leader. Never framed as basic; it is full access.",
   },
   vip: {
@@ -38,7 +38,7 @@ export const CATALOG = {
     href: `${PAY_BASE}?package=vip`,
     buttonVariant: "primary",
     description:
-      "Everything in General Admission, plus the facilitator close to your specific situation: written feedback on up to 3 iterations of the milestone task, a 30-minute private strategy session if all 3 are used, a VIP-only live Q&A on Day 5, a 2-hour Roadmap deep dive on Day 6, and the first 3 months of AI Labs free.",
+      "Everything in General Admission, plus the facilitator close to your specific situation: written feedback on up to 3 iterations of the milestone task, a 30-minute private strategy session if all 3 are used, a VIP-only live Q&A on Day 5, and a 2-hour Roadmap deep dive on Day 6.",
     fit: "For leaders who want direct guidance on their specific situation during the challenge. Capped at 10 seats because milestone feedback requires a manageable group. Frame as deeper access, never as more content.",
   },
   vvip: {
@@ -52,7 +52,7 @@ export const CATALOG = {
     href: `${PAY_BASE}?package=vvip`,
     buttonVariant: "vvip",
     description:
-      "The full 7-day experience delivered privately, one on one, scheduled around the participant's calendar. Direct facilitator access across all 7 days, every GA and VIP inclusion, and the first 6 months of AI Labs free.",
+      "The full 7-day experience delivered privately, one on one, scheduled around the participant's calendar. Direct facilitator access across all 7 days, and every GA and VIP inclusion.",
     fit: "The natural fit for the most senior leaders who set direction: private, conversational, directional delivery with no cohort schedule to follow.",
   },
   customCohort: {

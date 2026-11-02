@@ -39,8 +39,8 @@ const TIERS = [
         info: "Turns the territory you declared on Day 3 into a 180-day plan across three phases, built around your capability gaps, the relationships you need, and your own standards for using AI. Unlocked on Day 6, to guide you after the challenge.",
       },
       {
-        label: "AI Labs (first month free)",
-        info: "Labs is where you practise what the challenge taught, inside real AI environments. AI Labs is by subscription, and your first month is free. VIP makes it three months and VVIP six. The platform guides and your Toolbox stay open for good.",
+        label: "The Toolbox",
+        info: "The session resources, the four mini apps and your Roadmap, kept together in your challenger profile to help you continue your work after the challenge.",
       },
       {
         label: "Peer-to-peer reflection (optional)",
@@ -70,10 +70,6 @@ const TIERS = [
       {
         label: "Everything in General Admission",
         info: "Includes the full General Admission experience.",
-      },
-      {
-        label: "AI Labs (first 3 months free)",
-        info: "Your first 3 months of AI Labs are free, up from 1 month with General Admission.",
       },
       {
         label: "Strategic facilitator feedback on milestone task",
@@ -119,10 +115,6 @@ const TIERS = [
       {
         label: "All GA + VIP inclusions",
         info: "Every instrument, resource, output, and access point from General Admission and VIP, delivered in a fully private setting.",
-      },
-      {
-        label: "AI Labs (first 6 months free)",
-        info: "The longest free period of any tier: your first 6 months of AI Labs.",
       },
     ],
     cta: "Secure 1:1 Access",

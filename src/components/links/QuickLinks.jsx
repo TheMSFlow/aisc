@@ -13,63 +13,61 @@ import { PRICING } from "@/lib/pricing";
 
 const SITE_URL = "https://aistakeholderchallenge.com";
 
-// Only the payment link leaves the domain, so it is the only one that carries
-// UTMs. Tagging the internal links would split the GA session.
+// Only the payment links leave the domain, so they are the only ones that
+// carry UTMs. Tagging the internal links would split the GA session.
 const CHECKOUT_URL =
   "https://intelligence.michaelsteve.com/pay/challenge/aisc" +
   "?utm_source=links&utm_medium=bio&utm_campaign=aisc_register";
+const BRIEFING_URL =
+  "https://intelligence.michaelsteve.com/pay/vip" +
+  "?utm_source=links&utm_medium=bio&utm_campaign=awakening_briefing";
 
-// Order is deliberate (2026-09-04): AICA leads because it is the programme
-// being pushed; the AISC explainer and its checkout link sit adjacent so
-// "decide" and "act" read as one unit; the briefings close as the low-intent
-// option for anyone not ready for either. The free readiness check
-// (2026-10-24) opens the standard cards, because it is where the Becoming an
-// AI Stakeholder series sends viewers from Day 5, and it sits above the
-// AISC pair so the free step comes before the paid one.
+// Order is the founder's (2026-11-02), with the studio now focused on AISC
+// and on VVIP seats in particular: the VVIP discovery call leads; the free
+// readiness check comes next, as the free step before the paid ones; the AISC
+// explainer and its checkout link sit adjacent so "decide" and "act" read as
+// one unit; the paid Awakening briefing follows; AICA closes, for the
+// graduates and young professionals this page is not mainly for.
 //
 // Copy note: no em-dashes, and no "Register"/"Sign up" as CTA language. Both
 // are hard rules in agent-guides/COPY_GUIDE.md.
 const links = [
   {
-    id: "aica",
-    badge: "Career Programme",
-    headline: "AI Career Apprentice [Cohort BETA]",
-    // Diagnosis then promise, drawn from the founder's LinkedIn post of
-    // 2026-09: the hiring criteria moved, most graduates have not moved with
-    // them. The promise is the skill set, not the artifacts. A certificate,
-    // a portfolio and a placement are where the skill shows up; they are not
-    // what makes anyone hireable. Second half is Sprint 2's own language from
-    // ApprenticeProgramme.jsx.
+    id: "vvip_call",
+    badge: "Private 1:1",
+    headline: "AI Stakeholder Challenge, VVIP",
     persona:
-      "The way employers search for talent has changed. They now want responsibility, social capital, initiative and, since 2025, AI fluency. Most graduates have not readjusted. Here, you readjust: real AI fluency you can put to work rather than talk about, the skill to solve your ideal employer's problems with AI, and the judgment to read any room, find where the value sits, and start delivering without being told how.",
-    // "The beta cohort is free", not "the programme is free": a cohort is
-    // Sprint 1 and Sprint 2 together and paid cohorts cost $100 (founder,
-    // 2026-10-17), but this card is the beta cohort's, which is free, and so
-    // is the 100-seat cap. Rewrite the card for the package when the beta
-    // cohort closes. Offer before constraint: free earns the read, scarcity
-    // moves the click.
-    highlights: ["The beta cohort is free", "Only 100 seats available"],
-    cta: "See the Programme",
-    href: "/ai-apprentice",
+      "You are the one people turn to for the AI answer, and your calendar does not wait for a cohort. VVIP is the full seven days delivered to you alone, with the facilitator beside you throughout. On the call we confirm it fits and set your start date.",
+    highlights: ["Starts when you choose", "Facilitator with you all 7 days"],
+    cta: "Book Your 30-Minute Call",
+    // Our own hop to Cal.com, not the Cal.com link itself: see
+    // app/discovery-call/page.js.
+    href: "/discovery-call",
     external: false,
-    // banner.png, not og-image_ai_career_apprentice.jpg. The OG card carries a
-    // large "FREE" flash and an "APPLY NOW" button baked into the artwork: the
-    // first contradicts the scarcity chip below it, the second is a painted-on
-    // control that does nothing. The banner is the same identity without
-    // either, and its 3.2:1 crop leaves the copy as the tallest thing here.
+    // The founder's artwork, 1440x450. The artwork is the button's promise
+    // ("Book A 1:1 Discovery Call"), so the card's headline names the offer.
     image: {
-      src: "/aica/banner.png",
-      alt: "AI Career Apprentice, a programme by Michael Steve",
+      src: "/discovery-call/banner.jpg",
+      alt: "Book a 1:1 discovery call with Michael Steve",
       aspect: "aspect-[1440/450]",
     },
-    tags: ["Graduates", "Corps Members", "Young Professionals"],
+    // Balanced across business, government and faith; managers and team
+    // leads added by the founder, 2026-11-02.
+    tags: [
+      "CEOs and Founders",
+      "Managers",
+      "Team Leads",
+      "Public Office",
+      "Faith Leaders",
+    ],
   },
   {
     id: "readiness",
     badge: "Free Check",
     headline: "The AI Readiness Check",
+    // The change it makes, not how it works (founder, 2026-11-02).
     persona:
-      "Twenty-four plain statements about your own work. Six scores side by side, with no total, so you see where you are strongest and where to start. About ten minutes, and your report comes by email.",
+      "Most leaders only guess whether they are ready for AI. Ten minutes from now, you stop guessing: you know where you already stand strong, and exactly where to start.",
     cta: "Take the Free Check",
     href: "/ai-readiness",
     external: false,
@@ -87,8 +85,10 @@ const links = [
     id: "aisc",
     badge: "Flagship Programme",
     headline: "AI Stakeholder Challenge",
+    // Speaks to Emerging Leaders too (founder, 2026-11-02): their
+    // organization is already looking for someone AI fluent.
     persona:
-      "You are the one people turn to for the AI answer. Seven days is what it takes to have one worth hearing.",
+      "If you set the direction, you are the one people turn to for the AI answer. If you are still rising, your organization is already looking for someone who knows how to use AI well. Why not you? Seven days is what it takes.",
     cta: "See the Full Programme",
     href: "/",
     external: false,
@@ -101,35 +101,68 @@ const links = [
     id: "register",
     badge: "Next Cohort",
     headline: "Claim Your Seat",
+    // The four outcomes as things a leader can picture holding, from the
+    // FAQ's "What do I actually leave with", not the four pillar names
+    // (founder, 2026-11-02).
     persona:
-      "The next cohort is open. Take your seat now and leave in seven days with AI Clarity, AI Readiness, AI Value and AI Governance.",
+      "The next cohort is open. Seven days from your first session, you hold an honest picture of what AI means for your world, six scores that show where to begin, one problem in your world where AI can pay off, claimed as yours, and your own written rules for using AI.",
     cta: "Secure Your Spot",
     href: CHECKOUT_URL,
     external: true,
     showCohort: true,
-    tags: ["General Admission", "VIP", "VVIP"],
+    // No VVIP: VVIP always runs as its own private cohort (founder,
+    // 2026-11-02), so it is not a seat in this one.
+    tags: ["General Admission", "VIP"],
   },
   {
-    id: "awakening",
-    badge: "Briefings",
+    // The paid briefing replaced the link to the briefings blog on
+    // 2026-11-02 (founder). No price here: the briefing's fee is shared on
+    // the page, never quoted in copy (lib/personalize/catalog.js).
+    id: "briefing",
+    badge: "Paid Private Briefing",
     headline: "The Awakening",
-    subline: "AI Leadership Briefings",
-    // The gain, in the blog masthead's own terms: see clearly, govern early,
-    // claim territory first.
+    subline: "A private AI leadership briefing",
     persona:
-      "AI made intelligence abundant and judgment scarce. Each briefing takes one decision your seat already owns and works it through plainly, so you see clearly, govern early, and claim the territory first.",
-    cta: "Read the Briefings",
-    href: "/awakening",
-    external: false,
-    // The five live themes from lib/blog/taxonomy.js, so the card shows what
-    // is actually inside instead of describing the format.
-    tags: [
-      "AI Clarity",
-      "AI Fluency",
-      "AI Value",
-      "AI Governance",
-      "AI Leadership",
+      "One focused session on the leadership shift AI has started, for you alone or for the leaders around you. Book one seat, or a block for your team.",
+    // The founder, 2026-11-02: the card has to say it is paid and booked.
+    // Still no figure (see above). The order is the real flow on /pay/vip:
+    // pay for the seats, then book the time in Calendly.
+    highlights: [
+      "Paid by the seat",
+      "Book your seats, then choose your time",
     ],
+    cta: "Book a Private Briefing",
+    href: BRIEFING_URL,
+    external: true,
+    tags: ["Executives", "Leadership Teams", "Communities"],
+  },
+  {
+    id: "aica",
+    // Drawn under its own divider: the one card here not for leaders.
+    section: "For Graduates and Young Professionals",
+    badge: "CSR Initiative",
+    headline: "AI Career Apprentice [Cohort BETA]",
+    // Diagnosis then promise, drawn from the founder's LinkedIn post of
+    // 2026-09: the hiring criteria moved, most graduates have not moved with
+    // them. The promise is the skill set, not the artifacts. A certificate,
+    // a portfolio and a placement are where the skill shows up; they are not
+    // what makes anyone hireable. Second half is Sprint 2's own language from
+    // ApprenticeProgramme.jsx.
+    persona:
+      "The way employers search for talent has changed. They now want responsibility, social capital, initiative and, since 2025, AI fluency. Most graduates have not readjusted. Here, you readjust: real AI fluency you can put to work rather than talk about, the skill to solve your ideal employer's problems with AI, and the judgment to read any room, find where the value sits, and start delivering without being told how.",
+    // Founder, 2026-11-02: a CSR initiative, free for a limited time and
+    // starting soon, and they apply to hear when it opens. The "100 seats"
+    // line is gone. "Apply", not "Register": COPY_GUIDE bans the latter.
+    highlights: [
+      "Free for a limited time",
+      "Starting soon. Apply now to get updates.",
+    ],
+    cta: "See the Programme and Apply",
+    href: "/ai-apprentice",
+    external: false,
+    // A standard card since 2026-11-02, so no artwork: the banner belongs to
+    // the hero alone.
+    tags: ["Graduates", "Corps Members", "Young Professionals"],
   },
 ];
 
@@ -230,9 +263,10 @@ function CohortLine() {
   );
 }
 
-// The hero is a light card on purpose. The AI Career Apprentice artwork is
-// already deep blue, so a blue card behind it reads as one flat block; lilac
-// is the palette's own light surface and lets the art carry the colour.
+// The hero is a light card on purpose. Its artwork (the VVIP call banner since
+// 2026-11-02) is already deep blue, so a blue card behind it reads as one flat
+// block; lilac is the palette's own light surface and lets the art carry the
+// colour.
 // Everything inside therefore runs on dark-blue ink, not white.
 function HeroCard({ link }) {
   return (
@@ -346,6 +380,21 @@ function StandardCard({ link }) {
           {link.persona}
         </p>
 
+        {/* Quieter than the hero's warning pills: that colour is spent on the
+            hero. */}
+        {link.highlights?.length > 0 && (
+          <div className="bg-lilac rounded-lg px-3 py-2 space-y-0.5">
+            {link.highlights.map((highlight) => (
+              <p
+                key={highlight}
+                className="text-xs font-semibold text-msaccent"
+              >
+                {highlight}
+              </p>
+            ))}
+          </div>
+        )}
+
         {link.showCohort && (
           <div className="bg-lilac rounded-lg px-3 py-2 space-y-0.5">
             <p className="text-xs font-semibold text-msaccent">
@@ -374,8 +423,29 @@ function StandardCard({ link }) {
   );
 }
 
+// `strong` marks a change of audience, not just of offer, so it reads as a
+// real break: more air above, a darker rule and an accent label.
+function Divider({ label, strong = false }) {
+  const rule = strong ? "bg-msaccent/30" : "bg-dark-blue/10";
+  return (
+    <div className={`flex items-center gap-3 ${strong ? "pt-6" : ""}`}>
+      <div className={`flex-1 h-px ${rule}`} />
+      <span
+        className={`text-[10px] font-semibold tracking-[0.2em] uppercase text-center ${
+          strong ? "text-msaccent" : "text-dark-blue/30"
+        }`}
+      >
+        {label}
+      </span>
+      <div className={`flex-1 h-px ${rule}`} />
+    </div>
+  );
+}
+
 export default function QuickLinks() {
   const [hero, ...rest] = links;
+  const leaders = rest.filter((link) => !link.section);
+  const sectioned = rest.filter((link) => link.section);
 
   return (
     <div className="min-h-dvh bg-white/95">
@@ -394,25 +464,28 @@ export default function QuickLinks() {
             AI STAKEHOLDER <span className="font-bold">CHALLENGE</span>
           </h1>
           <p className="text-sm font-inter font-light text-dark-blue/60">
-            From AI Consumer to AI Leader
+            From Passive AI Awareness to AI Leader
           </p>
         </header>
 
         <HeroCard link={hero} />
 
-        <div className="flex items-center gap-3">
-          <div className="flex-1 h-px bg-dark-blue/10" />
-          <span className="text-[10px] font-semibold tracking-[0.2em] uppercase text-dark-blue/30">
-            More Opportunities
-          </span>
-          <div className="flex-1 h-px bg-dark-blue/10" />
-        </div>
+        <Divider label="More Opportunities" />
 
         <div className="space-y-3">
-          {rest.map((link) => (
+          {leaders.map((link) => (
             <StandardCard key={link.id} link={link} />
           ))}
         </div>
+
+        {/* Cards with a `section` sit after the leader cards, each under its
+            own divider, so a leader can see where their part of the page ends. */}
+        {sectioned.map((link) => (
+          <div key={link.id} className="space-y-8">
+            <Divider label={link.section} strong />
+            <StandardCard link={link} />
+          </div>
+        ))}
 
         {/* Legal line only, matching layout/Footer.jsx. The studio is the
             copyright holder, not the branding on this page. */}

@@ -2,6 +2,7 @@
 
 > **What this is:** the plan for tracker steps 44 to 47 and 61, written 2026-10-17 for the founder's approval, at his word: "Start the subscriptions work (steps 44 to 47 and 61). I'll give you the naira prices for Premium (N25,000) and VIP (N120,000)." One table was needed, as SQL at the foot of this file, tested on a throwaway database. **Approved, run and built the same day:** see "Built" below. Uncommitted.
 > **Goes with:** `LABS_TRACKER.md` (the steps), `LABS_BLUEPRINT.md` ("Two kinds of access"), `LABS_ACCESS_TABLE.md` (Labs access, and "Paid terms: the usual practice").
+> **Since 2026-11-02, nothing in Labs is free** (founder: "Labs will no longer be free for anyone"). There are no free months, so a plan always begins at once or when a plan already held ends; Platform Awareness is hidden, and what stays is the Toolbox. Lines below that speak of free months or of Platform Awareness are kept as the record. The decisions, word for word, are in `LABS_BLUEPRINT.md`, "Labs is no longer free". The prices and how a plan runs are unchanged.
 > **Sources:** Paystack's own documentation, read 2026-10-17 (Subscriptions, and the Subscription API), and the app's existing Paystack code.
 
 ## In short
@@ -12,7 +13,7 @@ A leader chooses a plan in Labs and pays once at Paystack's checkout, and Paysta
 
 ## Who may subscribe
 
-"Anyone who has access to labs can subscribe before or after their free months expire" (2026-10-16). So anyone who has or has had Labs may subscribe: a leader with challenge access once Labs has opened for them, an On Demand participant, an AICC client. A stranger cannot.
+"Anyone who has access to labs can subscribe before or after their free months expire" (2026-10-16). So anyone who has or has had Labs may subscribe: a leader with challenge access once Labs has opened for them, an On Demand participant, an AICC client. A stranger cannot. *(Still so on 2026-11-02, with no free months: a challenger may subscribe from the day after Day 7, when the Toolbox floor is reached; On Demand's "next natural step" is a subscription; AICC subscribe after their six free months.)*
 
 ## How it works, for a leader
 
@@ -21,7 +22,7 @@ A leader chooses a plan in Labs and pays once at Paystack's checkout, and Paysta
 3. **When the paid month begins.**
    - **VIP:** at once, even inside the free months ("If a user subscribes to something higher than AI Labs during the free period, that's okay").
    - **Premium after the free months:** at once.
-   - **Premium during the free months:** paid now, but the paid month begins the day the free months end, so no paid day overlaps a free one.
+   - **Premium during the free months:** paid now, but the paid month begins the day the free months end, so no paid day overlaps a free one. *(Superseded 2026-11-02: no free months. See `LABS_BLUEPRINT.md`, "Labs is no longer free".)* Premium bought while a higher tier is held (AICC's six months, or VIP) still begins when that ends.
 4. **Each month after.** Paystack charges the card on the same date each month, and each payment opens the next month, starting where the last ended. A month that begins on the 29th, 30th or 31st renews on the 28th: that is Paystack's rule.
 5. **Cancelling,** from Labs settings. The subscription stops renewing. The leader keeps what they paid for until that month ends, and is not charged again.
 6. **A failed renewal.** Paystack does not try the card again until the next month. So Labs gives a short grace period (his number, below) and emails the leader a link to Paystack's own page for updating their card. They can also restart at once from the plans page. Labs then stops the failing subscription so they are never charged twice. When the grace ends with no payment, Labs falls back to what their challenge gives them, and Platform Awareness and the Toolbox stay open to them in any case. *(Corrected 2026-10-17, founder: "Please note that Platform Awareness and the Toolbox is available to every one with labs access." Asked whether that holds once their Labs access has ended: "Yes, for good". This line first said "or to nothing for someone who held Labs access only".)*
@@ -103,7 +104,7 @@ At his word: "I've run the subscriptions SQL in Supabase. Start building the sub
 - **Paystack's notices:** `src/app/api/paystack/handlers/labs.js`, run first in the existing webhook. It looks a payment up only when its reference begins `LABS-`, which every Labs checkout's does, or when it is a renewal on one of the four Labs plans. Every other payment goes on to the AISC, AICC and VIP handlers as before, without a Labs read. The signature check is unchanged.
 - **The pages:** the plans at `/labs/plans`; Labs settings at `/labs/settings`, behind a settings icon beside Home and the Profile at the foot of the Labs menu; "See the plans" on every locked panel.
 - **Admin:** a "Subscriptions" list under the Labs access list, on the Labs Manager's Access tab. Read only. A checkout not yet paid is left out.
-- **Platform Awareness and the Toolbox for good,** his rule the same day: anyone whose Labs access has ever begun keeps them, ended or not, AICC clients after six months included (`resolveLabsAccessLevel()` in `labsAccess.js`).
+- **Platform Awareness and the Toolbox for good,** his rule the same day: anyone whose Labs access has ever begun keeps them, ended or not, AICC clients after six months included (`resolveLabsAccessLevel()` in `labsAccess.js`). *(2026-11-02: the Toolbox alone, Platform Awareness being hidden. "Everything a challenger keeps, the AICC participants keep.")*
 
 **Found and fixed while checking:** on a change of plan, the first build marked the new subscription active before stopping the old one. The table allows one renewing subscription per leader, so the live database would have refused it, and Paystack's retry could have set up the monthly charge twice. The old plan now stops first, and the pending row is taken in one guarded write, so a notice and the leader's return arriving together set up renewals once.
 
@@ -214,6 +215,8 @@ At his word: "Set out the fix for the Labs icon's 'access ended' pop-up for my r
 | Platform Awareness | From that day, Platform Awareness and the Toolbox are yours for good. |
 
 With no end set, "until [last day]" is left out. The last day is the last day held, as Labs Home shows it.
+
+**Reworded 2026-11-02** (`LabsPromo.jsx`; founder: "Approved, make the Labs wording changes"), with Platform Awareness hidden and the Toolbox named as part of what opens, never promised "for good": "From that day, all of Labs is open to you until [last day], live calls included, and your Toolbox with it." / "From that day, AISC+ and AI Labs are open to you until [last day]. Your Toolbox opens with them." / "From that day, AI Labs is open to you until [last day]. Your Toolbox opens with it." / "From that day, your Toolbox is open to you, and Labs offers you its plans." The same day Labs settings became "Your access: the Toolbox. AI Labs and AISC+ open with a plan.", "[Tier] is open to you until [last day]. When it ends, your Toolbox stays open to you." and "[Tier] is open to you, with your Toolbox.", and the Plans page's Toolbox sentence came out. The door walk checks the pop-up word for word.
 
 **Button:** Close.
 

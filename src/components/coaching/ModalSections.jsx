@@ -29,11 +29,27 @@ export function ValueInModal() {
 // - top padding so its arrows clear the pop-up's floating X;
 // - more height on phones (the inline 100dvh clips the visuals), so the
 //   pop-up scrolls instead. `!` is required to beat the inline style.
-// startPanel: opens on that panel (3 = Roadmap) by pressing the section's
+// startPanel: opens on that panel (2 = Roadmap) by pressing the section's
 // own "Next" control on mount, with the slide animation suppressed.
+// The Labs panel's closing sentence is swapped for coaching's: all of Labs
+// comes with coaching (founder, 2026-11-02). Demo never re-renders that
+// text, so the swap holds while the pop-up is open.
+const LABS_HOME_LINE = "Labs is by subscription.";
+const LABS_COACHING_LINE =
+  "All of Labs is included in coaching, at no additional fee, for as long as your coaching runs.";
+
 export function DemoInModal({ startPanel = 0 }) {
   const ref = useRef(null);
   const done = useRef(false);
+
+  useEffect(() => {
+    ref.current?.querySelectorAll("#demo p").forEach((p) => {
+      if (p.textContent.endsWith(LABS_HOME_LINE)) {
+        p.textContent =
+          p.textContent.slice(0, -LABS_HOME_LINE.length) + LABS_COACHING_LINE;
+      }
+    });
+  }, []);
 
   useEffect(() => {
     if (done.current || !startPanel) return;

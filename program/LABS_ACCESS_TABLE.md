@@ -3,6 +3,7 @@
 > **Named "the record of access" until 2026-10-16,** when the founder settled on two terms: challenge access, and Labs access (`LABS_BLUEPRINT.md`, "Two kinds of access"). The SQL below keeps its first comment as it was run.
 
 > **What this is:** the proposal for tracker step 24, written 2026-10-16 for the founder to review, at his word: "Approved. Start step 24: propose the record of access as SQL for me to review and run, tested on a throwaway database first." **Approved the same day,** after his answers to its two questions: "Table approved. I'll run the SQL in Supabase and tell you when it's done." He runs the SQL at the foot of this file in the Supabase SQL editor.
+> **Since 2026-11-02, nothing in Labs is free.** No challenge carries free months, so the lines below about them are the record only. AICC rows are all of Labs, free, for six months, then a subscription; On Demand gets the AISC teachings and the Toolbox, with no free AI Labs row. The table and its SQL are unchanged. Decisions word for word: `LABS_BLUEPRINT.md`, "Labs is no longer free".
 > **Goes with:** `LABS_TRACKER.md` (the steps), `LABS_BLUEPRINT.md` (the decisions) and `LABS_LIBRARY_TABLE.md` (the library, the first table).
 
 ## In short
@@ -66,8 +67,8 @@ A person can hold several rows at once, and the highest tier open that day wins.
 
 - **The ladder,** and which source may open which tier: coaching and AICC open AI Stakeholder Labs, subscriptions AI Labs or AISC+, and by hand any tier. The admin page will hold that rule, where it is easy to change.
 - **Payment details.** Subscription codes, cards and amounts belong with the payments, the way `aisc_payments` and `aicc_payments` hold theirs. When subscriptions are built (step 44), each paid month writes a row here. This table holds access only.
-- **The challenge's free months** stay worked out from the challenge, as they are today. They are not copied into this table.
-- **The On Demand seat** (steps 56 and 59): "An on demand user gets AI labs for free from day 1 of purchase." When the seat is built, its free AI Labs can be written here as a row from the day of purchase. That would need one more allowed source, a single line of SQL at that time.
+- **The challenge's free months** stay worked out from the challenge, as they are today. They are not copied into this table. *(Superseded 2026-11-02: no free months. See `LABS_BLUEPRINT.md`, "Labs is no longer free".)*
+- **The On Demand seat** (steps 56 and 59): "An on demand user gets AI labs for free from day 1 of purchase." When the seat is built, its free AI Labs can be written here as a row from the day of purchase. That would need one more allowed source, a single line of SQL at that time. *(Superseded 2026-11-02: "on demand now gets only the AISC teachings and toolbox", so no free row, and no new source is needed for it.)*
 
 ## His answers to this proposal (2026-10-16)
 
@@ -86,7 +87,7 @@ These are the norms of subscription billing, and they shape steps 44 to 47. None
 3. **Nothing has to run at midnight.** Labs works out access from these dates on every page, so a term that ends closes by itself, with no scheduled job.
 4. **Only Paystack's notice opens a term, and it is checked.** A term opens when Paystack's own notice arrives and its signature is verified, as the app's Paystack route already does for one-off payments (`intelligence/src/app/api/paystack/webhook/route.js`). It never opens because a browser says a payment went through. A notice that arrives twice changes nothing (rule 5 above).
 5. **Cancelling stops the next renewal, not the current term.** The leader keeps what they paid for until the term ends.
-6. **A failed renewal gets a short grace period.** The leader is asked to update their card for a few days. If the renewal still fails, Labs falls back to what their challenge gives them: Platform Awareness and the Toolbox. How many days is his to set with step 46.
+6. **A failed renewal gets a short grace period.** The leader is asked to update their card for a few days. If the renewal still fails, Labs falls back to what their challenge gives them: Platform Awareness and the Toolbox. *(The Toolbox alone since 2026-11-02.)* How many days is his to set with step 46.
 7. **History is not rewritten.** Ending a term early, or a refund, sets an end date. The row stays. Only a row put in by mistake is deleted.
 8. **Coaching, paid outside Paystack, takes the same shape,** a row per paid term, given in admin, which ends by itself. So that a renewal is not forgotten, the admin page will list the terms ending in the next seven days (step 47).
 9. **Upgrades follow his rule:** a new term from the day of the upgrade (step 43). Many services also credit the unused part of the lower tier. Whether to do that is already the open question on step 44.

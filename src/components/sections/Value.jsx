@@ -45,7 +45,7 @@ export default function Value() {
         <h2 className="font-ptsans text-3xl font-bold uppercase leading-none tracking-tight text-dark-blue sm:text-4xl lg:text-5xl">
           Transformation,
           <br />
-          from AI consumer to AI leader.
+          from passive AI awareness to AI leader.
         </h2>
       </div>
 

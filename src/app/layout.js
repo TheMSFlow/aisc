@@ -22,7 +22,7 @@ const ptsans = PT_Sans_Narrow({
 });
 
 export const metadata = {
-  title: "AI Stakeholder Challenge | From AI Consumer to AI Leader",
+  title: "AI Stakeholder Challenge | From Passive AI Awareness to AI Leader",
   description:
     "A 7-day community based engagement for leaders who want to move from passive AI awareness to active, deliberate AI leadership.",
 
@@ -43,7 +43,7 @@ export const metadata = {
   },
 
   openGraph: {
-    title: "AISC | From AI Consumer to AI Leader",
+    title: "AISC | From Passive AI Awareness to AI Leader",
     description:
       "A 7-day community based engagement for leaders who want to move from passive AI awareness to active, deliberate AI leadership.",
     url: process.env.NEXT_PUBLIC_SITE_URL,
@@ -54,7 +54,7 @@ export const metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "AISC | From AI Consumer to AI Leader",
+    title: "AISC | From Passive AI Awareness to AI Leader",
     description:
       "A 7-day community based engagement for leaders who want to move from passive AI awareness to active, deliberate AI leadership",
   },
