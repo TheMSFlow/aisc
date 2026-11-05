@@ -22,6 +22,19 @@ const nextConfig = {
         destination: "/awakening/theme/ai-value",
         permanent: true,
       },
+      // The VVIP call was renamed the Clarity Call (founder, 2026-11-05).
+      // /discovery-call was already shared (links page, LinkedIn), so it
+      // keeps working, query string (UTMs) included.
+      {
+        source: "/discovery-call",
+        destination: "/clarity-call",
+        permanent: true,
+      },
+      {
+        source: "/discovery-call/:path*",
+        destination: "/clarity-call/:path*",
+        permanent: true,
+      },
     ];
   },
 };

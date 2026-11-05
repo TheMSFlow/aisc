@@ -2,7 +2,7 @@ import QuickLinks from "@/components/links/QuickLinks";
 
 const TITLE = "Links | AI Stakeholder Challenge";
 const DESCRIPTION =
-  "A private 1:1 discovery call, the free AI Readiness Check, the AI Stakeholder Challenge and its next cohort, a private Awakening briefing, and the AI Career Apprentice. Every way in, in one place.";
+  "A private 1:1 clarity call, the free AI Readiness Check, the AI Stakeholder Challenge and its next cohort, a private Awakening briefing, and the AI Career Apprentice. Every way in, in one place.";
 
 // The share card stays the generated AISC one from src/app/opengraph-image.js
 // The VVIP call artwork lives inside the hero card instead, so

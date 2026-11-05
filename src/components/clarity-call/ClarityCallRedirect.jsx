@@ -3,16 +3,17 @@
 import { useEffect } from "react";
 import Image from "next/image";
 
-// The 30-minute AISC VVIP discovery call (founder, 2026-11-02). Cal.com, as
+// The 20-minute AISC VVIP clarity call (founder, 2026-11-02; 20 minutes
+// since 2026-11-04; its own Cal.com slug since 2026-11-05). Cal.com, as
 // it has no backend write: see "Booking" in SOURCE_OF_TRUTH.md.
 export const BOOKING_URL =
-  "https://cal.com/michaelsteve/ai-stakeholder-challenge-30min-discovery-call";
+  "https://cal.com/michaelsteve/aisc-clarity-call";
 
 // How long to wait for gtag before leaving anyway. The visit itself is the
 // page_view; the event only marks that the hop completed.
 const MAX_WAIT_MS = 1500;
 
-export default function DiscoveryCallRedirect() {
+export default function ClarityCallRedirect() {
   useEffect(() => {
     let left = false;
     const go = () => {
@@ -26,7 +27,7 @@ export default function DiscoveryCallRedirect() {
       if (typeof window.gtag !== "function") return;
       clearInterval(poll);
       window.gtag("event", "cta_click", {
-        placement: "discovery_call",
+        placement: "clarity_call",
         destination: "vvip_call",
         event_callback: go,
       });
@@ -67,7 +68,7 @@ export default function DiscoveryCallRedirect() {
             Opening Michael Steve&rsquo;s calendar
           </h1>
           <p className="text-sm font-light leading-relaxed text-white/65">
-            Your 30-minute discovery call for the AI Stakeholder Challenge,
+            Your 20-minute clarity call for the AI Stakeholder Challenge,
             privately 1:1. Pick a time that suits you.
           </p>
         </div>

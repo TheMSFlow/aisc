@@ -1,30 +1,30 @@
-import DiscoveryCallRedirect from "@/components/discovery-call/DiscoveryCallRedirect";
+import ClarityCallRedirect from "@/components/clarity-call/ClarityCallRedirect";
 
-const TITLE = "Book a 1:1 Discovery Call | AI Stakeholder Challenge";
+const TITLE = "Book a 1:1 Clarity Call | AI Stakeholder Challenge";
 const DESCRIPTION =
-  "Thirty minutes with Michael Steve on the AI Stakeholder Challenge delivered privately, one-on-one, and scheduled around your calendar.";
+  "Twenty minutes with Michael Steve on the AI Stakeholder Challenge delivered privately, one-on-one, and scheduled around your calendar.";
 
 // This page exists so the VVIP call is shared under our own domain (founder,
 // 2026-11-02). A bare Cal.com link previews with Cal.com's card; this one
 // carries the founder's artwork, GA counts every visit, and the booking URL
 // lives in one place (BOOKING_URL in the component) if it ever changes.
 const OG_IMAGE = {
-  url: "/discovery-call/og.jpg",
+  url: "/clarity-call/og.jpg",
   width: 1200,
   height: 627,
-  alt: "Book a 1:1 Discovery Call with Michael Steve",
+  alt: "Book a 1:1 Clarity Call with Michael Steve",
 };
 
 export const metadata = {
   title: TITLE,
   description: DESCRIPTION,
   alternates: {
-    canonical: "/discovery-call",
+    canonical: "/clarity-call",
   },
   openGraph: {
     title: TITLE,
     description: DESCRIPTION,
-    url: "/discovery-call",
+    url: "/clarity-call",
     type: "website",
     images: [OG_IMAGE],
   },
@@ -41,6 +41,6 @@ export const metadata = {
   },
 };
 
-export default function DiscoveryCallPage() {
-  return <DiscoveryCallRedirect />;
+export default function ClarityCallPage() {
+  return <ClarityCallRedirect />;
 }

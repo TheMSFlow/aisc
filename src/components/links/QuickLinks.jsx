@@ -23,7 +23,7 @@ const BRIEFING_URL =
   "?utm_source=links&utm_medium=bio&utm_campaign=awakening_briefing";
 
 // Order is the founder's (2026-11-02), with the studio now focused on AISC
-// and on VVIP seats in particular: the VVIP discovery call leads; the free
+// and on VVIP seats in particular: the VVIP clarity call leads; the free
 // readiness check comes next, as the free step before the paid ones; the AISC
 // explainer and its checkout link sit adjacent so "decide" and "act" read as
 // one unit; the paid Awakening briefing follows; AICA closes, for the
@@ -39,16 +39,16 @@ const links = [
     persona:
       "You are the one people turn to for the AI answer, and your calendar does not wait for a cohort. VVIP is the full seven days delivered to you alone, with the facilitator beside you throughout. On the call we confirm it fits and set your start date.",
     highlights: ["Starts when you choose", "Facilitator with you all 7 days"],
-    cta: "Book Your 30-Minute Call",
+    cta: "Book Your 20-Minute Call",
     // Our own hop to Cal.com, not the Cal.com link itself: see
-    // app/discovery-call/page.js.
-    href: "/discovery-call",
+    // app/clarity-call/page.js.
+    href: "/clarity-call",
     external: false,
     // The founder's artwork, 1440x450. The artwork is the button's promise
-    // ("Book A 1:1 Discovery Call"), so the card's headline names the offer.
+    // ("Book A 1:1 Clarity Call"), so the card's headline names the offer.
     image: {
-      src: "/discovery-call/banner.jpg",
-      alt: "Book a 1:1 discovery call with Michael Steve",
+      src: "/clarity-call/banner.jpg",
+      alt: "Book a 1:1 Clarity Call with Michael Steve",
       aspect: "aspect-[1440/450]",
     },
     // Balanced across business, government and faith; managers and team
