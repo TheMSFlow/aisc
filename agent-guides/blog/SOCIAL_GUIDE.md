@@ -303,6 +303,8 @@ https://aistakeholderchallenge.com/awakening/the-cfos-ai-question-is-a-capital-q
 
 Never invent a fifth parameter, never reuse a campaign name across two briefings, and never post a bare URL.
 
+**Where the viewer ends up, settled 2026-11-09 (`TASKS.md` #16).** The first-comment link and the bio link still point at the briefing, with the UTMs above, and scripts and decks still end on "the briefing". The briefing is no longer a dead end: every briefing page carries the free AI readiness check as the third button of its footer card, and the briefings that raise the question name it in their own text. A viewer goes video → briefing → check, and the check is where an email is captured (the `leads` table, with permission to email later asked for separately). Linking a post straight to the check instead is Michael's call, not an agent's: keeping the briefing in between lets it earn the trust first, and its own footer tags the check with the briefing's slug (`src=briefing:<slug>:footer`), so the lead still shows which piece sent it.
+
 **Scope, settled 2026-09-22. UTMs belong to links pointing at an AISC briefing, not to social posts as such.** The parameters above exist to answer one question: which asset earned a click through to the blog. A social post that drives no traffic to a briefing has nothing to tag and needs no UTM, and that includes repurposed material such as carousels and standalone posts built from session or talk content rather than from a published briefing. Do not invent a campaign name to make such a post fit the scheme. If a post does link to a briefing, the full convention applies with no exceptions.
 
 ## Infographics — only where they fit

@@ -190,6 +190,22 @@ export const THEMES = {
     blurb:
       "The clarity pieces. Each one changes how you see AI, your exposure, and your moment, so the position you hold is one you built rather than borrowed.",
   },
+  // Added 2026-11-09 (founder), after Day 2 became AI Readiness and the free
+  // check went live at /ai-readiness. Sits second, as Day 2 follows Day 1.
+  "ai-readiness": {
+    id: "ai-readiness",
+    label: "AI Readiness",
+    shortLabel: "Readiness",
+    description:
+      "Where you stand before you start: your plan, your data, your skills, your processes, how you measure, and who you work with.",
+    seo: {
+      title: "AI Readiness for Leaders | Know Where You Stand",
+      description:
+        "Briefings on AI readiness for leaders: how ready you really are, how ready your data is, and where to begin, measured honestly before you spend.",
+    },
+    blurb:
+      "The readiness pieces. Most leaders guess how ready they are for AI. Each briefing replaces a guess with a measure, so you know where you are strong and exactly where to start.",
+  },
   "ai-fluency": {
     id: "ai-fluency",
     label: "AI Fluency",

@@ -25,7 +25,9 @@ function FooterLink({ href, children, external = false, newTab = false }) {
   );
 }
 
-export default function BriefingsFooter() {
+// `awakeningInviteUrl` is THE_AWAKENING_WHATSAPP_INVITE_URL, read on the server
+// by app/awakening/layout.js. While it is unset, its link is left out.
+export default function BriefingsFooter({ awakeningInviteUrl }) {
   return (
     <footer>
       {/* Zone 1 — light, white→lilac fade, carries the CTA card */}
@@ -85,9 +87,14 @@ export default function BriefingsFooter() {
                 <FooterLink href="/ai-apprentice" newTab>
                   Career Apprentice
                 </FooterLink>
-                <FooterLink href="https://aiclarityforchiefs.com" external>
-                  AI Clarity for Chiefs
+                <FooterLink href="/ai-readiness?src=awakening:explore">
+                  AI Readiness Check
                 </FooterLink>
+                {awakeningInviteUrl && (
+                  <FooterLink href={awakeningInviteUrl} external>
+                    Join The Awakening live
+                  </FooterLink>
+                )}
               </ul>
             </div>
           </div>

@@ -55,6 +55,7 @@ const PACE_PLATFORM = PLATFORMS.find((p) => p.key === "LinkedIn");
 
 const THEME_LABEL = {
   "ai-clarity": "AI Clarity",
+  "ai-readiness": "AI Readiness",
   "ai-fluency": "AI Fluency",
   "ai-value": "AI Value",
   "ai-governance": "AI Governance",

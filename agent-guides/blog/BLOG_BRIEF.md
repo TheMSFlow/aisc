@@ -24,6 +24,7 @@ Its three content pillars, in order:
 |---------|-----------|-------|
 | The Awakening (blog) | Public article hub, this system | `/awakening`, content in `content/awakening/` |
 | The Awakening (briefing) | 13-slide executive briefing slideshow, plus a private briefing offer in the personalize catalog | Homepage hero, `src/components/awakening/`, `src/lib/personalize/catalog.js` |
+| The Awakening (live session) | The free private briefing Michael runs live, joined through its WhatsApp group. Invited on the hub (`AwakeningInvite.jsx`) and in the blog footer, from `THE_AWAKENING_WHATSAPP_INVITE_URL`. Evergreen: no dates, schedules or prices (founder, 2026-11-19) | Hub band and footer link only; the challenge card stays the lead on every page |
 
 Blog work never modifies the slideshow or the catalog offer. Articles may link to the homepage but never claim to BE the executive briefing.
 
@@ -65,6 +66,7 @@ The canonical machine-readable taxonomy lives in `src/lib/blog/taxonomy.js`. Thi
 | ID | Label | What belongs here | URL |
 |----|-------|-------------------|-----|
 | `ai-clarity` | AI Clarity | Explains AI itself: what it is, what it is not, what the moment asks | `/awakening/theme/ai-clarity` |
+| `ai-readiness` | AI Readiness | Where the leader stands before starting: their plan, data, skills, processes, how they measure, who they work with. Added 2026-11-09, after Day 2 became AI Readiness and the free check went live | `/awakening/theme/ai-readiness` |
 | `ai-fluency` | AI Fluency | Working with AI deliberately: directing, delegating, verifying, briefing | `/awakening/theme/ai-fluency` |
 | `ai-value` | AI Value | Margin, revenue, new offers, territory: the money AI opens in the reader's world | `/awakening/theme/ai-value` |
 | `ai-governance` | AI Governance | Risk, data lines, policy, vendor diligence, oversight | `/awakening/theme/ai-governance` |
@@ -72,11 +74,13 @@ The canonical machine-readable taxonomy lives in `src/lib/blog/taxonomy.js`. Thi
 
 **The Clarity/Leadership line:** Clarity helps the reader *see* AI. Leadership helps them *stand on it*. A piece telling a leader to take a position is Leadership even when it opens by explaining something.
 
+**The Readiness line:** Readiness helps the reader *measure where they stand* before they act. A piece that asks "how ready am I, or my data, and where do I start?" is Readiness. Once the piece is about what to do with AI (direct it, claim value with it, govern it), it belongs to that theme instead. Readiness pieces speak to the leader personally, as Day 2 does, and are the natural home for naming the [free AI readiness check](/ai-readiness) (`CONTENT_GUIDE.md` § Structure Rules). Its six dimensions (Strategy, Data Governance, Talent, Processes, Impact Evaluation, Collaboration) are public on the check, so a briefing may name them, but it never reproduces the check's 24 statements or the participants' Day 2 guide, which is confidential to the challenge.
+
 ### Covers (`cover` in frontmatter)
 
 **Social media only.** Picks the video-cover background for LinkedIn and Instagram assets. Never rendered on the site, never a URL. Exactly one per post.
 
-Five mirror the themes (`ai-clarity`, `ai-fluency`, `ai-value`, `ai-governance`, `ai-leadership`) and are the default: `cover` usually equals `theme`.
+Five mirror the themes (`ai-clarity`, `ai-fluency`, `ai-value`, `ai-governance`, `ai-leadership`) and are the default: `cover` usually equals `theme`. **The sixth theme, `ai-readiness`, has no cover yet**: its background is the founder's to design, and until it is in `content/backgrounds/` a readiness piece takes the cover closest to its subject.
 
 Three are the audience-dedicated lines, used **only when the piece's subject is that seat itself**, not merely when it targets that audience:
 

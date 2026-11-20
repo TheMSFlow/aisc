@@ -1,8 +1,26 @@
 "use client";
 
-import { Sparkles } from "lucide-react";
+import { usePathname } from "next/navigation";
+import { Gauge, Sparkles } from "lucide-react";
 import Button from "../global/Button";
 import { trackEvent } from "@/lib/analytics";
+
+// The `src` tag the free readiness check stores with the lead, so the leads
+// table shows which page sent each person. /awakening/<slug> becomes
+// "briefing:<slug>:footer"; hub and category pages become
+// "awakening:<path>:footer". intelligence keeps up to 100 characters of
+// letters, digits, spaces and _ . - + : / (lib/attribution/campaign.js).
+// Links written inside a briefing use "briefing:<slug>" with no suffix.
+function readinessSrc(pathname) {
+  const parts = (pathname || "/awakening").split("/").filter(Boolean);
+  const isArticle =
+    parts.length === 2 &&
+    !["industry", "for", "theme", "type", "feed.xml"].includes(parts[1]);
+  const tag = isArticle
+    ? `briefing:${parts[1]}`
+    : parts.join(":") || "awakening";
+  return `${tag}:footer`;
+}
 
 /**
  * The briefing-to-challenge CTA, rendered as a white card. Used in the blog
@@ -13,6 +31,9 @@ export default function ArticleCta({
   className = "my-14",
   placement = "article_body",
 }) {
+  const pathname = usePathname();
+  const readinessHref = `/ai-readiness?src=${readinessSrc(pathname)}`;
+
   return (
     <aside
       className={`rounded-3xl border border-dark-blue/10 bg-white px-6 py-10 shadow-[0_1px_2px_rgba(0,3,76,0.06),0_16px_50px_rgba(0,3,76,0.10)] sm:px-10 sm:py-12 ${className}`}
@@ -47,6 +68,17 @@ export default function ArticleCta({
           }
         >
           Secure Your Spot
+        </Button>
+        <Button
+          to={readinessHref}
+          variant="ghost-light-flush"
+          iconLeft={Gauge}
+          className="gap-2"
+          onClick={() =>
+            trackEvent("cta_click", { placement, destination: "ai_readiness" })
+          }
+        >
+          Take the free readiness check
         </Button>
       </div>
     </aside>

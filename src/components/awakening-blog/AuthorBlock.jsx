@@ -11,7 +11,7 @@ export default function AuthorBlock() {
           Michael Steve
         </p>
         <p className="text-sm font-light text-dark-blue/60">
-          AI Clarity Consultant and founder of the{" "}
+          AI Clarity Catalyst and founder of the{" "}
           <Link
             href="/"
             className="text-msaccent underline decoration-msaccent/40 underline-offset-2 hover:decoration-msaccent"

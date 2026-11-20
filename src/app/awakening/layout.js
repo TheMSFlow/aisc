@@ -20,7 +20,9 @@ export default function AwakeningLayout({ children }) {
     <>
       <Header />
       <main className="bg-offwhite">{children}</main>
-      <BriefingsFooter />
+      <BriefingsFooter
+        awakeningInviteUrl={process.env.THE_AWAKENING_WHATSAPP_INVITE_URL}
+      />
     </>
   );
 }

@@ -145,8 +145,9 @@ export default function Footer({ showBriefings = true }) {
                 {/* Four links at most (founder, 2026-10-17). "The Awakening"
                     gave way to "Partner with us": the briefings band above
                     already links the blog. "AI Clarity for Chiefs" gave way to
-                    the free AI Readiness Check (founder, 2026-10-25); the
-                    blog's own footer still links to aiclarityforchiefs.com. */}
+                    the free AI Readiness Check (founder, 2026-10-25). The
+                    blog's own footer dropped it too, for The Awakening's
+                    WhatsApp group (founder, 2026-11-19). */}
                 <FooterLink href="/personalize">Find your path</FooterLink>
                 <FooterLink href="/ai-apprentice" newTab>
                   Career Apprentice

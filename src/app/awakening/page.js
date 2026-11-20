@@ -1,3 +1,4 @@
+import AwakeningInvite from "@/components/awakening-blog/AwakeningInvite";
 import FeaturedArticle from "@/components/awakening-blog/FeaturedArticle";
 import PostGrid from "@/components/awakening-blog/PostGrid";
 import TaxonomyNav from "@/components/awakening-blog/TaxonomyNav";
@@ -26,6 +27,8 @@ export const metadata = {
 export default function AwakeningHub() {
   const posts = getAllPosts();
   const featured = getFeaturedPost();
+  // Read on the server only (no NEXT_PUBLIC_ prefix); unset draws nothing.
+  const awakeningInviteUrl = process.env.THE_AWAKENING_WHATSAPP_INVITE_URL;
   const rest = featured ? posts.filter((p) => p.slug !== featured.slug) : posts;
 
   return (
@@ -54,6 +57,11 @@ export default function AwakeningHub() {
       <section className="w-full px-5 py-14 sm:px-6 md:py-16 lg:px-8">
         <div className="mx-auto w-full max-w-7xl">
           {featured && <FeaturedArticle post={featured} />}
+
+          <AwakeningInvite
+            inviteUrl={awakeningInviteUrl}
+            className={featured ? "mt-10" : ""}
+          />
 
           <div className="mt-16">
             <TaxonomyNav />
