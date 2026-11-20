@@ -76,6 +76,12 @@ export default function RateStep({
   return (
     <div>
       <p className="text-sm text-dark-blue/50">
+        {dimension.group ? (
+          <>
+            <span className="font-semibold text-msaccent">{dimension.group}</span>
+            <span className="text-dark-blue/30"> · </span>
+          </>
+        ) : null}
         Dimension {index + 1} of {total}
       </p>
       <h2 className="mt-2 font-ptsans text-4xl font-bold uppercase leading-none tracking-tight text-dark-blue sm:text-5xl">

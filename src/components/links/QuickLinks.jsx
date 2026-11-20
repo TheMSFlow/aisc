@@ -74,10 +74,10 @@ const links = [
     // The six dimensions, in the check's own order.
     tags: [
       "Strategy",
+      "Impact Evaluation",
       "Data Governance",
       "Talent",
       "Processes",
-      "Impact Evaluation",
       "Collaboration",
     ],
   },

@@ -8,7 +8,7 @@ import { B, ContactLink, Heading, Lead, List, P, PolicyPage } from "@/components
 // The two values below were proposed in the draft and are the founder's to
 // confirm. Site pages show no raw email address, so requests go through the
 // intelligence inquiry form.
-const LAST_UPDATED = "25 October 2026";
+const LAST_UPDATED = "19 November 2026";
 const REPLY_WITHIN = "30 days";
 const CONTACT_URL = "https://intelligence.michaelsteve.com/form/inquiry?src=AISC";
 
@@ -36,12 +36,11 @@ export default function AiReadinessCheckPolicyPage() {
             </li>
             <li>
               <B>Your answers and your scores</B>: how you rated the 24 statements, your six scores,
-              your strongest dimension and where you chose to start.
+              your strongest dimension and where to start.
             </li>
             <li>
-              <B>What you asked for</B>: whether you asked to join our private WhatsApp community,
-              whether you asked us to email you later, the exact words of each box you ticked, and
-              when.
+              <B>What you asked for</B>: whether you asked us to email you later, the exact words of
+              the box if you ticked it, and when.
             </li>
             <li>
               <B>Where you came from</B>: the link or social post that brought you, the website
@@ -64,8 +63,7 @@ export default function AiReadinessCheckPolicyPage() {
               your email.
             </li>
             <li>
-              <B>To send you the invite to our private WhatsApp community</B>, if you ticked the
-              box that asks for it.
+              <B>To send you an invitation to our private WhatsApp community</B>, with your report.
             </li>
             <li>
               <B>To send you practical notes on AI and news of our programs</B>, only if you ticked
@@ -83,9 +81,9 @@ export default function AiReadinessCheckPolicyPage() {
 
           <Heading>The private WhatsApp community</Heading>
           <P>
-            If you ask to join, we show you the invite on the page and include it in your report
-            email. Joining is your choice, and you join through WhatsApp yourself. We do not add your
-            number.
+            Everyone who finishes the check is invited: the invitation is on the page and in your
+            report email. Joining is your choice, and you join through WhatsApp yourself. We do not
+            add your number.
           </P>
           <P>
             WhatsApp, a service run by Meta, runs the community under its own terms and privacy
@@ -137,8 +135,8 @@ export default function AiReadinessCheckPolicyPage() {
 
           <Heading>Changes to this policy</Heading>
           <P>
-            If we change this policy, we will update the date below. The wording of each box you
-            ticked is kept with your record, so a later change never alters what you asked for.
+            If we change this policy, we will update the date below. The wording of the box, if you
+            ticked it, is kept with your record, so a later change never alters what you asked for.
           </P>
     </PolicyPage>
   );

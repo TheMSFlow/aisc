@@ -672,10 +672,10 @@ const READY_STATEMENTS = [
 // Each score is out of 20, as in the tool. There is no total.
 const READY_SCORES = [
   { name: "Strategy", score: 17, mark: "Strongest" },
+  { name: "Impact Evaluation", score: 7, mark: "Start here" },
   { name: "Data Governance", score: 9 },
   { name: "Talent", score: 14 },
   { name: "Processes", score: 12 },
-  { name: "Impact Evaluation", score: 7, mark: "Start here" },
   { name: "Collaboration", score: 13 },
 ];
 
@@ -708,7 +708,7 @@ function ReadinessSim({ running }) {
         {step !== "profile" && (
           <div className="h-full flex flex-col">
             <p className="text-[7px] sm:text-[8px] font-semibold uppercase tracking-[0.2em] text-slate-400 mb-0.5">
-              Dimension 1 of 6
+              Direction · Dimension 1 of 6
             </p>
             <p className="text-[10px] sm:text-xs font-bold text-slate-800">
               Strategy
