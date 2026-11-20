@@ -59,8 +59,8 @@ export default function Hero() {
                 That question is where it starts. AI is changing how work gets
                 done and how value is created, and the people who trust you
                 will look to you to lead them through it. The AI Stakeholder
-                Challenge gives you a clear position on AI and the mandate to
-                take them from uncertainty to clarity and prosperity, safely.
+                Challenge gives you a clear position on AI and the mandate to safely
+                take them from uncertainty to clarity and prosperity.
               </p>
             </div>
 
