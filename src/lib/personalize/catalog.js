@@ -48,12 +48,16 @@ export const CATALOG = {
     priceKind: "fixed",
     price: PRICING.vvip,
     priceNote: null,
+    // Same name and destination as the home page (founder, 2026-11-20):
+    // the 1:1 is booked through the 20-minute Clarity Call, not checkout.
+    // Absolute, because the recommendation email reuses this link.
     cta: "Secure 1:1 Access",
-    href: `${PAY_BASE}?package=vvip`,
+    href: "https://aistakeholderchallenge.com/clarity-call",
     buttonVariant: "vvip",
+    ctaNote: "It starts with a 20-minute Clarity Call.",
     description:
-      "The full 7-day experience delivered privately, one on one, scheduled around the participant's calendar. Direct facilitator access across all 7 days, and every GA and VIP inclusion.",
-    fit: "The natural fit for the most senior leaders who set direction: private, conversational, directional delivery with no cohort schedule to follow.",
+      "The full challenge delivered privately in three days, one on one, tailored to the participant from the very start and scheduled around their calendar. Direct facilitator access across all three days, and every GA and VIP inclusion. Public cohorts take seven days; the private challenge holds everything in three. The first step is a 20-minute Clarity Call.",
+    fit: "For a leader whose situation is specific and needs answers now, who wants the challenge fitted to them rather than to a cohort: often a leader answering in both directions with real issues on their desk. For a direction-setter, it is the private challenge without the coaching months, so it sits beside coaching rather than above it.",
   },
   customCohort: {
     id: "customCohort",
@@ -66,8 +70,10 @@ export const CATALOG = {
     href: "https://intelligence.michaelsteve.com/form/inquiry?src=CC",
     buttonVariant: "premium",
     description:
-      "The same 7-day challenge delivered privately to an organization, leadership team, or high-trust group that wants alignment as a unit. Custom pricing and scheduling.",
-    fit: "Qualifies one of two ways. Option A: a minimum of 3 VIP seats combined with 5 or more General Admission seats. Option B: a baseline of 10 VIP seats with no upper cap. Only recommend as primary when the visitor is clearly deciding for a whole team or organization at plausible scale; below the thresholds, recommend VIP as primary and mention the thresholds plainly.",
+      "The same challenge delivered privately to an organization, leadership team, or high-trust group that wants alignment as a unit. Custom pricing and scheduling.",
+    // No seat thresholds are stated to visitors (founder, 2026-11-20: "no
+    // need to box anyone"); they stay in SOURCE_OF_TRUTH for inquiries.
+    fit: "For a visitor who is clearly deciding for a whole team, organization or group and wants them to go through it together. Never state seat minimums or thresholds; anyone deciding for a group is welcome to talk to us.",
   },
   coaching: {
     id: "coaching",
@@ -86,8 +92,8 @@ export const CATALOG = {
     buttonVariant: "dark",
     ctaNote: COACHING_CALL_NOTE,
     description:
-      "Opens with the full challenge delivered privately at VVIP level, one-on-one, at no additional fee. Then live group coaching through the 6-Month Roadmap: three Saturday sessions a month at 7PM WAT, 2 hours each, with recordings, a private group channel, direct facilitator messages, and all of Labs for as long as coaching lasts. Rolling entry, no intake to wait for. Every plan includes everything; only the commitment length and total cost differ. Always mention that the first step is a 15-minute discovery call.",
-    fit: "For leaders who want a guide alongside them for the months after the challenge, or who already know they want ongoing support. The primary answer for anyone who wants both private delivery and coaching, since it includes the private VVIP-level challenge. A soft, natural next step, never a hard close.",
+      "Opens with the full challenge delivered privately at VVIP level, one-on-one, in three days, at no additional fee. Then live group coaching through the 6-Month Roadmap: three Saturday sessions a month at 7PM WAT, 2 hours each, with recordings, a private group channel, direct facilitator messages, and all of Labs for as long as coaching lasts. Rolling entry, no intake to wait for. Every plan includes everything; only the commitment length and total cost differ. Always mention that the first step is a 15-minute discovery call.",
+    fit: "The path for a direction-setter (chief) going all in on becoming an AI stakeholder, who wants coaching support for a faster transformation. Also for any leader who wants a guide alongside them for the months after the challenge. It includes the private VVIP-level challenge, so it is the answer for anyone who wants both private delivery and ongoing support. A natural next step, never a hard close.",
   },
   awakening: {
     id: "awakening",

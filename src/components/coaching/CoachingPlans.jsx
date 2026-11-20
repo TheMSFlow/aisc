@@ -30,7 +30,7 @@ const ANCHOR = "sixMonths";
 
 const INCLUDED = [
   "The AI Stakeholder Challenge, delivered privately at VVIP level",
-  "Direct facilitator access for all seven challenge days",
+  "Direct facilitator access for all three challenge days",
   "The Toolbox, with its guides and tools",
   "The 6-Month Roadmap: three phases and how to approach each one",
   "Certificate of Declaration",

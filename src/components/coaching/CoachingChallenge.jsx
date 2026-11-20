@@ -72,7 +72,7 @@ export default function CoachingChallenge() {
             The private challenge
           </p>
           <h2 className="font-ptsans text-3xl font-bold uppercase leading-none tracking-tight text-dark-blue sm:text-4xl lg:text-5xl">
-            Seven days, four live sessions, and nobody else in the room.
+            Three days, all four live sessions, and nobody else in the room.
           </h2>
         </div>
         <p className="mt-6 max-w-2xl text-base font-light leading-relaxed text-dark-blue/65">

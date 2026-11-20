@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import Section from "@/components/layout/Section";
 import Button from "@/components/global/Button";
-import SlideShow from "@/components/awakening/SlideShow";
 
 const AUDIENCE_WORDS = ["Boss", "Congregation", "Following", "Audience", "Staff", "Student"];
 
@@ -41,47 +40,52 @@ export default function Hero() {
   return (
     <div className="bg-dark-blue text-white">
       <Section id="hero" spacing="hero">
-        {/* Two-column: copy left, briefing right */}
-        <div className="grid gap-12 lg:grid-cols-[5fr_6fr] lg:gap-16 xl:gap-20 items-center">
-          {/* Left — headline + body + CTA */}
-          <div className="flex flex-col justify-between gap-10 lg:py-2">
-            <div>
-              <h1 className="font-ptsans text-4xl font-bold uppercase leading-none tracking-tight text-white sm:text-5xl lg:text-4xl xl:text-5xl">
-                How will you respond when your {" "}
-                <RotatingWord words={AUDIENCE_WORDS} /> <br />
-                asks you about AI?
-              </h1>
+        {/* One column (founder, 2026-11-20). The Awakening slideshow left the
+            hero that day: a video will take a place here when it is ready.
+            SlideShow is kept in components/awakening, not deleted. */}
+        <div className="flex flex-col gap-10">
+          {/* On large screens the question runs the full width with no line
+              breaks; the rotating word keeps the width of the longest word,
+              so the line never jumps (founder, 2026-11-20). */}
+          <h1 className="font-ptsans text-4xl font-bold uppercase leading-none tracking-tight text-white sm:text-5xl xl:text-6xl">
+            How will you respond when your{" "}
+            <RotatingWord words={AUDIENCE_WORDS} /> <br className="lg:hidden" />
+            asks you about AI?
+          </h1>
 
-              <p className="mt-8 max-w-lg text-sm lg:text-base leading-relaxed text-white/55">
-                In seven days, you won't just have the right answer. You'll have
-                the clarity, the readiness, and the value to back it up. <br />
-                This engagement is for leaders with{" "}
-                <strong className="text-lilac">Responsibility</strong>,{" "}
-                <strong className="text-lilac">Influence</strong>, and access to{" "}
-                <strong className="text-lilac">Resources</strong>.
+          <div className="flex flex-col gap-8">
+            <div className="flex max-w-2xl flex-col gap-4 text-sm leading-relaxed text-white/55 lg:text-base">
+              <p>
+                That question is where it starts. AI is changing how work gets
+                done and how value is created, and the people who trust you
+                will look to you to lead them through it. The AI Stakeholder
+                Challenge gives you a clear position on AI and the mandate to
+                take them from uncertainty to clarity and prosperity, safely.
               </p>
             </div>
 
-            <div className="flex flex-row flex-wrap items-center gap-4">
-              <Button
-                href="#pricing"
-                variant="primary"
-                className="px-8 py-3 text-sm font-semibold"
-              >
-                Secure Your Spot
-              </Button>
-              <a
-                href="#awakening"
-                className="text-sm text-lilac/50 transition-colors hover:text-lilac"
-              >
-                Read The Awakening →
-              </a>
+            <div className="flex flex-col gap-4">
+              <p className="max-w-md text-xs italic leading-relaxed text-white/45 lg:text-sm">
+                Take it privately, one-on-one, fitted to your calendar or grow
+                into it alongside other leaders in the next cohort.
+              </p>
+              <div className="flex flex-row flex-wrap items-center gap-3">
+                <Button
+                  href="/clarity-call"
+                  variant="primary"
+                  className="px-7 py-3 text-sm font-semibold"
+                >
+                  Secure 1:1 Access
+                </Button>
+                <Button
+                  href="#pricing"
+                  variant="secondary"
+                  className="px-7 py-3 text-sm font-semibold"
+                >
+                  Join the Next Cohort
+                </Button>
+              </div>
             </div>
-          </div>
-
-          {/* Right — The Awakening briefing */}
-          <div id="awakening" className="w-full">
-            <SlideShow />
           </div>
         </div>
       </Section>

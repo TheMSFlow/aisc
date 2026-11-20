@@ -266,7 +266,7 @@ A Chief is anyone who has real decision authority, commands a following or team,
 
 **Their reality:** They are the ones being asked what the plan is — by their board, their congregation, their team, their fans, their voters. They have heard about AI from every direction. What they do not have is a clear, personal framework for deciding what AI means for them, their domain, and the people who depend on their leadership.
 
-**Chief engagement mode:** Chiefs typically do not have the time to engage with every assignment and task in the challenge. They come primarily for AI Clarity and a conversational, directional experience — not community-based execution. They need to understand what AI means for their domain, where the profit is, and what direction to give the leaders who will execute it for them. After AISC, a Chief passes the mandate and the framework down to their Leaders of Leaders. VVIP (private, 1:1 delivery) is the natural fit for most senior chiefs. Copy written for this audience should reflect this: they are acquiring a governing mandate and a direction to hand down, not a hands-on execution plan.
+**Chief engagement mode:** Chiefs typically do not have the time to engage with every assignment and task in the challenge. They come primarily for AI Clarity and a conversational, directional experience — not community-based execution. They need to understand what AI means for their domain, where the profit is, and what direction to give the leaders who will execute it for them. After AISC, a Chief passes the mandate and the framework down to their Leaders of Leaders. A Chief's route is **AI Stakeholder Coaching**, which opens with the full challenge at VVIP level (private, 1:1) and continues as group coaching through the Roadmap (founder, 2026-11-18: "Chiefs qualify for Stakeholder Coaching and the program starts with a VVIP Challenge"). VIP and VVIP on their own suit team leads and managers, for whom coaching often does not fit on cost, level of influence or how they operate. Copy written for this audience should reflect this: they are acquiring a governing mandate and a direction to hand down, not a hands-on execution plan.
 
 - **Core fear:** Losing ground — strategically, financially, or in influence — as others move faster with more clarity.
 - **Core desire:** A mandate. Not more information — a decision. Where do I stand? What do I own? How do I lead this?
@@ -325,9 +325,9 @@ Young and Emerging Leaders use AISC to get hired, promoted, or given more respon
 
 | Tier | USD | NGN | Key Differentiator |
 |------|-----|-----|--------------------|
-| General Admission | $99 | ₦120,000 | Full 7-day experience, all assignments, Toolbox, 6-month roadmap, peer reflection, community |
+| General Admission | $199 | ₦220,000 | Full 7-day experience, all assignments, Toolbox, 6-month roadmap, peer reflection, community |
 | VIP (10 seats only) | $399 | ₦520,000 | GA + Milestone Review, Day 5 live Q&A (1 hr), Day 6 Deep Dive with Q&A (2 hrs) |
-| VVIP | $1,099 | ₦1,350,000 | Private, one-on-one delivery with direct facilitator access throughout |
+| VVIP | $1,099 | ₦1,350,000 | Private, one-on-one delivery with direct facilitator access throughout. **The seven days collapsed to three** *(founder, 2026-11-20: "the same quality in a shorter period. Nothing else changes")*; coaching opens with the same 3-day private challenge. The founder delivers each day to the leader's schedule. On the site its button books the 20-minute Clarity Call (`/clarity-call`) |
 | Private / Enterprise | Custom | Custom | Same foundation, delivered privately to leadership teams/organizations |
 | Coaching (includes AISC) | $1,200/mo · $6,000/6mo · $10,000/yr | ₦1.5M/mo · ₦7.5M/6mo · ₦12.5M/yr | Opens with the challenge delivered privately at VVIP level (1:1), then guided through the 6-Month Roadmap in live group coaching three Saturdays a month, 7PM WAT, 2 hrs (group setting, not 1:1). Rolling entry. All plans include everything. Page: `/coaching` |
 

@@ -70,9 +70,19 @@ function trimTail(text) {
 // outside the ladder and exempt.
 const CORE_RANK = { ga: 1, vip: 2, vvip: 3, coaching: 4 };
 
+// The two allowed steps down (founder, 2026-11-20). Coaching first, VVIP
+// second: a chief goes all in through coaching, and VVIP is the private
+// challenge alone. VVIP first, VIP second: a leader of leaders needs the
+// challenge fitted to their situation, and VIP keeps the facilitator close
+// inside a cohort; coaching rarely fits this seat.
+const ALLOWED_STEP_DOWN = { coaching: "vvip", vvip: "vip" };
+
 function enforceUpsell(result) {
   const primaryRank = CORE_RANK[result.primary.offerId];
   const alternateRank = CORE_RANK[result.alternate.offerId];
+  if (ALLOWED_STEP_DOWN[result.primary.offerId] === result.alternate.offerId) {
+    return result;
+  }
   if (primaryRank && alternateRank && alternateRank <= primaryRank) {
     console.warn(
       "[personalize] downsold alternate corrected:",

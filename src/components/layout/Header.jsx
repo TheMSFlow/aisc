@@ -6,11 +6,9 @@ import { Menu, Sparkles, X } from "lucide-react";
 import Button from "../global/Button";
 import CohortBar from "@/components/cohort/CohortBar";
 
-const NAV = [
-  { label: "Pricing", href: "/#pricing" },
-  { label: "FAQ", href: "/#faq" },
-  { label: "Coaching", href: "/coaching" },
-];
+// Pricing and Guide me only, to keep a visitor on the one decision
+// (founder, 2026-11-20). FAQ and Coaching stay in the footer.
+const NAV = [{ label: "Pricing", href: "/#pricing" }];
 
 // Hash links stay plain anchors (in-page scroll); routes get Link prefetch.
 function NavLink({ href, ...props }) {

@@ -262,18 +262,25 @@ They do not enter AISC with influence or resources. They leave with a path to ea
 Headline (the audience word rotates):
 > How will you respond when your [Boss / Congregation / Following / Audience / Staff / Student] asks you about AI?
 
-Body (the entire hero must be visible on large screens without scrolling):
-> In seven days, you won't just have the right answer. You'll have the clarity, the readiness, and the value to back it up. This engagement is for leaders with **Responsibility**, **Influence**, and access to **Resources**.
+**Hero, as built 2026-11-20 (founder):** one column: headline, body, the line naming the two ways in, then the buttons. The Awakening slideshow left the hero; a video will take its place when it is ready (`SlideShow` is kept in `components/awakening`).
 
-*(Confirmed as live by the founder on 2026-10-16, replacing the earlier record "Every leader is being asked about AI. Seven days from now, you'll be the one with the answer worth hearing." The founder approved "readiness" in place of "fluency" in the body on 2026-10-13: never promise fluency inside the seven days.)*
+Body (borrowed from the AI stakeholder definition, so it never shrinks AISC to having an answer):
+> That question is where it starts. AI is changing how work gets done and how value is created, and the people who trust you will look to you to lead them through it. The AI Stakeholder Challenge gives you a clear position on AI and the mandate to take them from uncertainty to clarity and prosperity, safely.
+
+*(The line "This engagement is for leaders with Responsibility, Influence, and access to Resources." was removed from the hero on 2026-11-20 at the founder's word. On large screens the headline has no line break and runs the full width.)*
+
+Line above the buttons, in italics (says which tier each button leads to; founder's wording, 2026-11-20):
+> *Take it privately, one-on-one, fitted to your calendar or grow into it alongside other leaders in the next cohort.*
 
 CTAs:
-- Primary: "Secure Your Spot" (links to #pricing)
-- Secondary: "Watch The Awakening →" (links to The Awakening slideshow — a 13-slide executive briefing on why AI Fluency is the next non-negotiable leadership layer, embedded in the right column of the hero)
+- Primary: "Secure 1:1 Access" (goes straight to the booking page, `/clarity-call`; founder, 2026-11-20)
+- Secondary: "Join the Next Cohort" (links to `#pricing`)
+
+*(Until 2026-11-20 the body was "In seven days, you won't just have the right answer...", with "Secure Your Spot" and "Read The Awakening".)*
 
 **Direction notes:**
 - The stats row has been removed from the hero. Stats belong in the Curriculum section where the reader is already in detail mode
-- The hero has one window to create an impression. The headline does the work. The body names the one thing that creates the shift (Fluency). The CTAs give two paths: understand why (The Awakening) or act now (Secure Your Spot)
+- The hero has one window to create an impression. The headline does the work. The body says what an AI stakeholder does. The CTAs give the two ways in: private 1:1 or the next cohort
 - The Awakening is a named piece of content — always refer to it by name in copy, never as "the briefing" or "the slideshow"
 - Do NOT open with "AI STAKEHOLDER CHALLENGE" as the first read. That is the logo's job
 - Apply the three headline rules to any future headline candidates before use
@@ -324,18 +331,30 @@ Label: This challenge is for
 H2: Leaders with responsibility, influence, and access to resources.
 Intro: Responsibility means you have initiative and accountability. Influence means you have people who listen to you. Resources — or access to them, directly or indirectly — means you have the wherewithal to act on the highest level of value this challenge provides. Most leaders reading this have some combination of all three. The three cards below show where you sit.
 
-**Chief** — Qualifier: `Responsibility · Influence · Resources`
-Who: You set the direction. You do not need to run AI tasks yourself. You need to know what AI means for your domain, where the profit is, and what to tell the people who will build it for you. AISC gives you that clarity, that mandate, and the knowledge to monitor and govern what your team does with it.
+**Chief** (qualifier `Responsibility · Influence · Resources`; button "Go All In with Coaching", to `/coaching`)
+Who: You are ready to get hands-on, beyond the tools, in how AI is understood, adopted and governed in the world you lead. Your market, congregation, constituency or following trusts you and acts on your word. You have the resources and the partnerships to take whatever you start to any scale. What you need is a clear position on AI and the mandate to lead your people through it safely, into prosperity.
 
-**Leader of Leaders** — Qualifier: `Responsibility · Influence`
-Who: You are accountable in both directions. Above you, someone wants results. Below you, a team needs direction, and many of them are already using AI in ways you have not yet structured. AISC is where you get your hands on the tools, run the real tasks, and leave with a framework you can implement immediately and teach to the people who execute for you.
+*(Summarised the same day at the founder's word, from a longer approved version: "This is better. Now summarize without losing the quality and delivery.")*
 
-**Emerging Leader** — Qualifier: `Responsibility · Building toward influence`
-Who: You are doing the work. You often see what others above you are missing when it comes to AI. But no one has handed you the authority to lead it yet. AI Fluency is a career asset — the kind that earns trust, positions you for the roles you actually want, and gives you a foundation to build something worth noticing. AISC gives you the clarity, the readiness, and a declared AI position before anyone above you has thought to look for it.
+*(2026-11-20, after several rounds with the founder. Built on his own points (hands-on and involved, influence and a ready audience formed by trust, resources to scale to any length, partnerships, done-for-you and collaborations not a challenge), kept in his voice. Two corrections shape it: **the Chief is not a business** ("We have summarized the chief as a business. That's not the idea"), so the audience is named across a market, a congregation, a constituency and a following; and **AISC is not only value creation, and hands-on is not about AI tools alone**, so the card names understanding, adoption and governance, and ends on the AI stakeholder definition (a clear position, and the mandate to lead people through AI safely). Never "purchase" on this card. No coaching sentence: the button does that job.)*
+
+**Leader of Leaders** (qualifier `Responsibility · Influence · Access to resources`; button "Secure 1:1 Access", straight to the booking page `/clarity-call`, founder 2026-11-20)
+Who: You are accountable in both directions. Above you, someone expects results. Below you, a team or a department looks to you for direction, often already using AI without structure from you. The problems on your desk are specific and need answers now. Taken privately, the challenge is fitted to your calendar and your situation, so you leave with a position you can defend upward and a framework for how AI is used below you.
+
+*(Polished 2026-11-20 the same way as the Chief card, with more than one outcome; approved by the founder ("Good"), who then took "ministry" out of this card ("Leave ministry out of this one"). The version before read: "You are accountable in both directions. Above you, someone wants results. Below you, a team needs direction, and many of them are already using AI in ways you have not yet structured. The issues on your desk are specific and need fixing now. Take the challenge privately, fitted to your calendar and worked on your exact situation, and leave with a framework you can apply immediately and teach to the people who execute for you.")*
+
+**Emerging Leader** (qualifier `Responsibility · Building toward influence`; button "Join the Next Cohort", to `#pricing`)
+Who: You are ambitious, and this challenge is your move. You do the work, and you often see what others above you are missing about AI. AISC teaches you to speak the language of senior leadership on AI, and gives you the foundation to grow your influence fast, long before anyone hands you the title.
+
+*(After a critique of all three cards, the founder approved every recommendation but the em-dash one, 2026-11-20. Here: "senior leadership" for "the C-suite", so faith and public-service readers see themselves too; the opening matches the other cards' "You are…"; "and that is the point" dropped as filler.)*
+
+*(Rewritten 2026-11-20 around the founder's points: "For the emerging leader, the advantage is being able to speak leadership and C-suite language. The AISC gives an emerging leader the foundational advantage to grow influence fast." and, after rejecting a first draft, "For the emerging leader the AISC is an ambitious move." The version before read: "You are doing the work. You often see what others above you are missing when it comes to AI. But no one has handed you the authority to lead it yet. AI Fluency is a career asset, the kind that earns trust, positions you for the roles you actually want, and gives you a foundation to build something worth noticing. AISC gives you the clarity, the readiness, and a declared AI position before anyone above you has thought to look for it.")*
+
+*(Rewritten 2026-11-20, founder. The old Chief card described an AI Clarity for Chiefs executive who delegates the work. The AISC Chief is involved in building what AI makes possible, has people who act on their trust, and has the resources to scale; partnerships, done-for-you support and collaborations are within reach. He explained it with a business owner, but it is written across industries, not for business owners only. Each card has its button, following the tier map: Chief to coaching, Leader of Leaders to the private 1:1, Emerging Leader to the cohort. The Leader of Leaders card no longer says "get your hands on the tools, run the real tasks": no work with AI happens inside the challenge.)*
 
 **Direction notes:**
 - The "leaves with" bullet structure is removed from this section. It is held for a future interactive leader-type tool. Cards consist of qualifier tag and "who" paragraph only
-- Each "who" paragraph reflects the audience's specific engagement mode: Chief acquires a mandate and delegates execution; Leader of Leaders gets hands-on and trains their team; Emerging Leader builds a career asset and competitive position
+- Each "who" paragraph reflects the audience's specific engagement mode: Chief is involved in building and goes all in through coaching; Leader of Leaders needs the challenge fitted to their situation and trains their team; Emerging Leader builds a career asset and competitive position
 - Resources means access — direct or indirect. Never write "resources" as if it requires ownership of capital. Access to resources is the qualifier
 - Do not list job titles. Describe the situation so a VP, a pastor, and a small business owner all recognize themselves in the same card
 
@@ -403,9 +422,12 @@ Body: "Fluency is built by practice. In Labs you put AI to work on your own task
 - Never apologize for the price
 - Frame General Admission as access to the full 7-day transformation — not "the basic tier"
 - Frame VIP as decision confidence and direct access, not "more content": "10 seats only. The constraint is real."
-- Frame VVIP as the private path for leaders who want the full experience without a cohort. CTA: "Secure 1:1 Access"
-- Private / Enterprise: "The same foundational experience, delivered privately to your leadership team. Not a scaled version of the public challenge. Alignment, clarity, and decision confidence built as a unit, without external noise. Minimum 5 seats. Custom pricing and scheduling."
-- CTA language: "Secure Your Spot" (GA), "Secure Your VIP Spot" (VIP), "Secure 1:1 Access" (VVIP). "Contact Sales" for private/enterprise. Never "Sign Up" or "Register"
+- **Heading (2026-11-20):** "Choose your seat." (was "Choose your path."), so it matches the last words of the hero video script, "Choose your seat below."
+- **VVIP in three days still holds every GA and VIP inclusion** *(founder, 2026-11-20: "Since the VVIP has me for 3 days, we can easily achieve all the tasks and even get more because the solutions from Day 1 will be tailored to his unique challenges")*. He clarified: every day is tailored to the leader, from the very beginning, not only Day 1. Copy that names VVIP beside the Day 4 to 6 extras stays true.
+- **Layout (2026-11-20):** GA and VIP side by side as the cohort offer. Below them, in the same two columns, two separate cards for the private ways in: VVIP under GA, an `msblue` card (lighter than VIP's dark-blue) with the VVIP gradient as a thin top edge and one low magenta glow; and the custom cohort under VIP, its own card on `msaccent/10` with an outline "Contact Sales" (`secondary-light`). The founder turned down a white VVIP card and a shared container.
+- Frame VVIP as the private path: the full challenge in three days, one-on-one, fitted to the leader's situation. CTA: "Secure 1:1 Access", the same name as the hero and Leader of Leaders buttons that lead to this card, going to `/clarity-call`, with "It starts with a 20-minute Clarity Call." under it (2026-11-20)
+- Private / Enterprise: "The same foundational experience, delivered privately to your leadership team. Not a scaled version of the public challenge. Alignment, clarity, and decision confidence built as a unit, without external noise." **No seat thresholds on the site** *(founder, 2026-11-20: "no need to box anyone")*: Options A and B are commented out in `Pricing.jsx`, and the thresholds stay in SOURCE_OF_TRUTH for inquiries. The custom cohort stays, with "Contact Sales"
+- CTA language: "Secure Your Spot" (GA), "Secure Your VIP Spot" (VIP), "Secure 1:1 Access" (VVIP, to the Clarity Call). "Contact Sales" for private/enterprise. Never "Sign Up" or "Register"
 **Confirmed feature lists (with tooltip info):**
 
 General Admission:
@@ -433,8 +455,8 @@ VIP (10 seats):
 VVIP:
 | Feature | Info tooltip |
 |---------|-------------|
-| Private, one-on-one delivery | The full 7-day challenge delivered to you alone. No cohort, no shared sessions. Scheduled around your availability. |
-| Direct facilitator access for all 7 days | The facilitator is present and available throughout all seven days, not just at key milestone moments. |
+| Private, one-on-one delivery | The full challenge delivered to you alone, in three days. No cohort, no shared sessions. Scheduled around your availability. |
+| Direct facilitator access for all 3 days | The facilitator is present and available throughout all three days, not just at key milestone moments. |
 | Customized schedule and pacing | Delivery is structured around your calendar, not a fixed cohort timeline. |
 | All GA + VIP inclusions | Every resource, tool, output, and access point from General Admission and VIP, delivered in a fully private setting. |
 
@@ -499,7 +521,7 @@ Body: The 6-Month Roadmap runs in three phases over 180 days: AI Clarity and Lab
 
 The AI Stakeholder Coaching Program opens with the challenge delivered to you privately, then continues as live group coaching: three Saturday sessions a month, alongside leaders executing their own Roadmaps. Your questions get answered directly, and your thinking sharpens as you watch other leaders navigate the same phases. Your fluency compounds. The territory you discovered in the challenge gets built.
 
-Facts: 3 sessions a month / 2 hrs live / 1 private 7-day challenge included (the same set as the /coaching hero, from `COACHING_FACTS` in `src/lib/coaching.js`; 2026-09-28 replaced "180 days" and "$0", which misled monthly clients and naira visitors). Never use "1:1" as a standalone fact: readers take it to mean the whole program is one-on-one
+Facts: 3 sessions a month / 2 hrs live / 1 private 3-day challenge included (the same set as the /coaching hero, from `COACHING_FACTS` in `src/lib/coaching.js`; 2026-09-28 replaced "180 days" and "$0", which misled monthly clients and naira visitors). Never use "1:1" as a standalone fact: readers take it to mean the whole program is one-on-one
 
 Closing note: Coaching includes the AI Stakeholder Challenge at no additional fee. If you already know you want a guide through the roadmap, this is the more complete path.
 
@@ -521,11 +543,11 @@ The dedicated page sells Coaching actively, as a package in its own right, while
 - Confirmed headlines *(founder, 2026-09-28; each passes the three headline rules)*:
   - Hero H1: "Find where AI pays off in the world you lead. Then build it with a coach." *("the world you lead", not "what you lead": founder preferred a domain word that fits all three audiences, not only organisations.) *(2026-09-28: replaced "You declare your AI territory in seven days. Coaching is where it gets built.", which was too insider for a cold visitor: "AI territory" and "seven days" meant nothing without context.)*
   - Hero first sentence (the connector, written for someone who has never heard of AISC): "AI Stakeholder Coaching is live group coaching for leaders. It starts with the AI Stakeholder Challenge: seven days, delivered to you privately, where you get clear on AI and choose the one place it can make the biggest difference in your world. Then, three times a month, a facilitator helps you turn that into results." Keep "territory" out of the hero; it is explained further down the page.
-  - Hero facts strip, directly under the header: "3 sessions a month" / "2 hrs live" / "1 private 7-day challenge included" (reads 3, 2, 1 by design: only the number is bold, every unit sits in the label). **Never state a plan length such as "180 days" as a coaching fact**: plans run one, six or twelve months. Keep "Saturday" out of summary facts; the day and time live in the Rhythm section.
+  - Hero facts strip, directly under the header: "3 sessions a month" / "2 hrs live" / "1 private 3-day challenge included" (reads 3, 2, 1 by design: only the number is bold, every unit sits in the label). **Never state a plan length such as "180 days" as a coaching fact**: plans run one, six or twelve months. Keep "Saturday" out of summary facts; the day and time live in the Rhythm section.
   - The process (formerly "How it runs"): **no H2**, only the label "The process". The hero already makes the promise; repeating it here was redundant *(founder, 2026-09-28)*.
 - **The facilitator's coaching is the product; the group is an added benefit** *(founder, 2026-09-28)*. Lead with what the facilitator does. Never write that the group helps build the territory.
   - 180-day track title: "Three phases. A facilitator in every one." (replaced "The 180 days you are coached through", which implied every plan lasts 180 days).
-  - Private challenge H2: "Seven days, four live sessions, and nobody else in the room."
+  - Private challenge H2: "Three days, all four live sessions, and nobody else in the room." (was "Seven days, four live sessions…" until VVIP became three days, 2026-11-20)
   - Why a group pull quote: "You begin privately. You continue among leaders working through the same Roadmap."
 - Rejected: "Seven days on your own. Then 180 days in the room with other leaders." (plan length, and 'on your own' hides the facilitator), "Most Roadmaps lose momentum around Day 45. Yours has a room full of leaders waiting on Saturday." (problem-first, not benefit-first), "The Roadmap tells you where to go. Coaching walks it with you.", "You start alone. You finish with a mandate.", and "...leaders doing the same hard thing".
 - The private challenge section shows four cards (Curriculum, Transformation, Toolbox, Roadmap), each with a one-line summary. Each opens the real home-page section in a full-screen pop-up, so the visitor never leaves `/coaching` *(founder, 2026-09-28)*. Card summaries *(founder, 2026-09-28)*: Transformation names the four changes (AI clarity, fluency, value, governance); **Toolbox never states how many tools there are**, since the set keeps changing; **the Roadmap is described only as its three phases and how to approach them**. The prerequisite documents are not the Roadmap and are never named or counted, on `/coaching` or anywhere else. Only the one-line card summaries are written for this page; keep them true to Curriculum.jsx, Value.jsx and Demo.jsx.
@@ -588,7 +610,7 @@ The coaching copy should not compete with the challenge copy or restate it. It s
 - 10 VIP seats — a real constraint, not manufactured scarcity
 - 6-month roadmap, reusable every 6 months
 - Coaching: opens with the challenge delivered privately (VVIP level, 1:1) at no additional fee, then live group coaching (not 1:1) three Saturdays a month, 7PM WAT, 2 hours each. The fourth week of each month belongs to the public challenge cohort. Rolling entry. Between sessions: recordings, private group channel, direct facilitator messages, all of Labs for as long as coaching lasts. All three plans include everything; monthly just costs more over time
-- GA: $99 / ₦120,000 · VIP: $399 / ₦520,000 · VVIP: $1,099 / ₦1,350,000
+- GA: $199 / ₦220,000 (since 2026-11-20) · VIP: $399 / ₦520,000 · VVIP: $1,099 / ₦1,350,000
 - The Margin Calculator produces a real weekly and annual number: use "hours", not "efficiency". It is a Toolbox tool whose work is done in Labs, so never "you leave Day 2 with a number"
 - 4 mini apps: Delegation Tool, Readiness Scorecard, Territory Builder, Margin Calculator
 - Day 2's Readiness Scorecard: 24 statements, six scores, no total

@@ -92,37 +92,42 @@ const TIERS = [
     href: "https://intelligence.michaelsteve.com/pay/challenge/aisc?package=vip",
     highlight: true,
   },
-  {
-    id: "vvip",
-    name: "VVIP",
-    badge: "Private 1:1",
-    price: PRICING.vvip,
-    description:
-      "The full 7-day experience delivered privately, one-on-one, with direct facilitator access throughout.",
-    features: [
-      {
-        label: "Private, one-on-one delivery",
-        info: "The full 7-day challenge delivered to you alone. No cohort, no shared sessions. Scheduled around your availability.",
-      },
-      {
-        label: "Direct facilitator access for all 7 days",
-        info: "The facilitator is present and available throughout all seven days, not just at key milestone moments.",
-      },
-      {
-        label: "Customized schedule and pacing",
-        info: "Delivery is structured around your calendar, not a fixed cohort timeline.",
-      },
-      {
-        label: "All GA + VIP inclusions",
-        info: "Every instrument, resource, output, and access point from General Admission and VIP, delivered in a fully private setting.",
-      },
-    ],
-    cta: "Secure 1:1 Access",
-    href: "https://intelligence.michaelsteve.com/pay/challenge/aisc?package=vvip",
-    highlight: false,
-    buttonVariant: "vvip",
-  },
 ];
+
+// VVIP sits under the cohort cards as its own offering (founder,
+// 2026-11-20). The same challenge, collapsed from seven days to three for
+// one leader; nothing else changes. Its button keeps the hero's name,
+// "Secure 1:1 Access", and books the 20-minute Clarity Call, where the
+// private challenge is fitted; the line under it says so.
+const VVIP = {
+  id: "vvip",
+  name: "VVIP",
+  badge: "Private 1:1",
+  price: PRICING.vvip,
+  description:
+    "The full challenge delivered privately in three days, one-on-one, with direct facilitator access throughout.",
+  features: [
+    {
+      label: "Private, one-on-one delivery",
+      info: "The full challenge delivered to you alone, in three days. No cohort, no shared sessions. Scheduled around your availability.",
+    },
+    {
+      label: "Direct facilitator access for all 3 days",
+      info: "The facilitator is present and available throughout all three days, not just at key milestone moments.",
+    },
+    {
+      label: "Customized schedule and pacing",
+      info: "Delivery is structured around your calendar, not a fixed cohort timeline.",
+    },
+    {
+      label: "All GA + VIP inclusions",
+      info: "Every instrument, resource, output, and access point from General Admission and VIP, delivered in a fully private setting.",
+    },
+  ],
+  cta: "Secure 1:1 Access",
+  href: "/clarity-call",
+  note: "It starts with a 20-minute Clarity Call.",
+};
 
 function FeatureItem({ feature, highlight }) {
   const [open, setOpen] = useState(false);
@@ -211,7 +216,7 @@ export default function Pricing() {
             Join the Challenge
           </p>
           <h2 className="font-ptsans text-3xl font-bold uppercase leading-none tracking-tight text-dark-blue sm:text-4xl lg:text-5xl">
-            Choose your path.
+            Choose your seat.
           </h2>
           {targetDate && (
             <p className="mt-3 text-sm text-dark-blue/50">
@@ -230,7 +235,7 @@ export default function Pricing() {
         <div className="pointer-events-none absolute -top-28 right-[10%] h-95 w-145 bg-[radial-gradient(ellipse_at_center,rgba(99,104,218,0.16),transparent_60%)]" />
         <div className="pointer-events-none absolute -bottom-24 left-[2%] h-80 w-120 bg-[radial-gradient(ellipse_at_center,rgba(135,5,113,0.09),transparent_60%)]" />
 
-        <div className="relative grid gap-6 lg:grid-cols-3">
+        <div className="relative grid gap-6 md:grid-cols-2">
         {TIERS.map((t) => (
           <div
             key={t.id}
@@ -301,16 +306,70 @@ export default function Pricing() {
         </div>
       </div>
 
-      <div className="mt-8 rounded-3xl bg-msaccent/10 p-8 lg:p-10">
-        <div className="flex flex-col gap-8">
-          <div>
+      {/* The private ways to take the challenge (founder, 2026-11-20): VVIP
+          for one leader, the custom cohort for a group. Two cards in the same
+          columns as GA and VIP, set apart from them so they read as a
+          different offering. */}
+      <div className="mt-12">
+        <div className="grid gap-6 md:grid-cols-2">
+          {/* VVIP */}
+          <div
+            id="vvip"
+            className="relative flex scroll-mt-24 flex-col overflow-hidden rounded-3xl bg-msblue p-8 text-white shadow-[0_2px_4px_rgba(1,5,121,0.15),0_16px_40px_rgba(1,5,121,0.25)] lg:p-10"
+          >
+            {/* msblue, not VIP's dark-blue, so the two never read as one
+                tier. The VVIP gradient runs along the top edge, so VVIP is
+                marked even when the cards stack on a phone; one low magenta
+                glow carries the colour into the card. */}
+            <div className="gradient-100 absolute inset-x-0 top-0 h-1" />
+            <div className="pointer-events-none absolute -bottom-32 -right-24 h-96 w-120 bg-[radial-gradient(ellipse_at_center,rgba(135,5,113,0.4),transparent_60%)]" />
+
+            <div className="flex items-center justify-between gap-3">
+              <h3 className="relative font-ptsans text-xl font-bold uppercase tracking-tight text-white">
+                {VVIP.name}
+              </h3>
+              <span className="relative shrink-0 rounded-full border border-white/25 px-2.5 py-0.5 text-[9px] font-semibold uppercase tracking-widest text-white/60">
+                {VVIP.badge}
+              </span>
+            </div>
+
+            <div className="relative mt-5">
+              <CurrencyPrice
+                {...VVIP.price}
+                className="font-ptsans text-4xl font-bold leading-none text-white"
+              />
+            </div>
+            <p className="relative mt-3 max-w-md text-sm leading-relaxed text-white/60">
+              {VVIP.description}
+            </p>
+
+            <ul className="relative mt-7 flex flex-1 flex-col gap-3">
+              {VVIP.features.map((f, i) => (
+                <FeatureItem key={i} feature={f} highlight />
+              ))}
+            </ul>
+
+            <Button
+              href={VVIP.href}
+              variant="secondary-light"
+              className="relative mt-8 w-full justify-center border-white py-3 font-semibold"
+            >
+              {VVIP.cta}
+            </Button>
+            <p className="relative mt-3 text-center text-xs text-white/55">
+              {VVIP.note}
+            </p>
+          </div>
+
+          {/* Custom cohort: its own card, on the background it always had */}
+          <div className="flex flex-col rounded-3xl bg-msaccent/10 p-8 lg:p-10">
             <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.35em] text-dark-blue/40">
               Request A Private Challenge
             </p>
             <h3 className="font-ptsans text-xl font-bold uppercase tracking-tight text-dark-blue">
               Run the challenge with your own group.
             </h3>
-            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-dark-blue/55">
+            <p className="mt-3 text-sm leading-relaxed text-dark-blue/55">
               Designed for enterprises, organizations, leadership teams, and
               high-trust groups who want alignment, clarity, and decision
               confidence around AI, together. This is not a scaled version of
@@ -318,55 +377,65 @@ export default function Pricing() {
               delivered privately to support alignment as a unit and build
               collective confidence without external noise.
             </p>
-          </div>
 
-          <div className="grid gap-4 sm:grid-cols-2">
-            <div className="rounded-2xl border border-white/60 bg-white p-6 shadow-[0_1px_2px_rgba(0,3,76,0.05),0_6px_16px_rgba(0,3,76,0.06)]">
-              <p className="text-[9px] font-semibold uppercase tracking-widest text-dark-blue/40">
-                Option A
-              </p>
-              <p className="mt-1 font-ptsans text-sm font-bold uppercase tracking-tight text-dark-blue">
-                Multi-Tier Hybrid
-              </p>
-              <p className="mt-2 text-sm leading-relaxed text-dark-blue/55">
-                <strong>
-                  A minimum of 3 VIP Seats combined with 5+ General Admission
-                  seats
-                </strong>
-                . Suited for teams where select members need deeper facilitator
-                access and the broader group participates at General Admission
-                level.
-              </p>
-            </div>
-            <div className="rounded-2xl border border-white/60 bg-white p-6 shadow-[0_1px_2px_rgba(0,3,76,0.05),0_6px_16px_rgba(0,3,76,0.06)]">
-              <p className="text-[9px] font-semibold uppercase tracking-widest text-dark-blue/40">
-                Option B
-              </p>
-              <p className="mt-1 font-ptsans text-sm font-bold uppercase tracking-tight text-dark-blue">
-                VIP Intensive
-              </p>
-              <p className="mt-2 text-sm leading-relaxed text-dark-blue/55">
-                <strong>
-                  A baseline of 10 VIP Seats with no upper cap on enrollment
-                </strong>
-                . Every participant receives direct facilitator access and the
-                full VIP experience from start to finish.
-              </p>
-            </div>
-          </div>
+              {/* Options A and B are off the site (founder, 2026-11-20: "no need
+                  to box anyone"). The custom cohort stays, and the thresholds
+                  stay in SOURCE_OF_TRUTH for when inquiries come in. Kept here,
+                  not deleted.
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div className="rounded-2xl border border-white/60 bg-white p-6 shadow-[0_1px_2px_rgba(0,3,76,0.05),0_6px_16px_rgba(0,3,76,0.06)]">
+                  <p className="text-[9px] font-semibold uppercase tracking-widest text-dark-blue/40">
+                    Option A
+                  </p>
+                  <p className="mt-1 font-ptsans text-sm font-bold uppercase tracking-tight text-dark-blue">
+                    Multi-Tier Hybrid
+                  </p>
+                  <p className="mt-2 text-sm leading-relaxed text-dark-blue/55">
+                    <strong>
+                      A minimum of 3 VIP Seats combined with 5+ General Admission
+                      seats
+                    </strong>
+                    . Suited for teams where select members need deeper facilitator
+                    access and the broader group participates at General Admission
+                    level.
+                  </p>
+                </div>
+                <div className="rounded-2xl border border-white/60 bg-white p-6 shadow-[0_1px_2px_rgba(0,3,76,0.05),0_6px_16px_rgba(0,3,76,0.06)]">
+                  <p className="text-[9px] font-semibold uppercase tracking-widest text-dark-blue/40">
+                    Option B
+                  </p>
+                  <p className="mt-1 font-ptsans text-sm font-bold uppercase tracking-tight text-dark-blue">
+                    VIP Intensive
+                  </p>
+                  <p className="mt-2 text-sm leading-relaxed text-dark-blue/55">
+                    <strong>
+                      A baseline of 10 VIP Seats with no upper cap on enrollment
+                    </strong>
+                    . Every participant receives direct facilitator access and the
+                    full VIP experience from start to finish.
+                  </p>
+                </div>
+              </div>
 
-          <p className="text-xs leading-relaxed text-dark-blue/40">
-            If your organization or high-trust group meets either condition,
-            the challenge is delivered as a private, synchronized experience
-            focused on your unique strategic goals.
-          </p>
-          <Button
-            href="https://intelligence.michaelsteve.com/form/inquiry?src=CC"
-            variant="premium"
-            className="w-full mx-auto justify-center py-3"
-          >
-            Contact Sales
-          </Button>
+              <p className="text-xs leading-relaxed text-dark-blue/40">
+                If your organization or high-trust group meets either condition,
+                the challenge is delivered as a private, synchronized experience
+                focused on your unique strategic goals.
+              </p>
+              */}
+
+            <Button
+              href="https://intelligence.michaelsteve.com/form/inquiry?src=CC"
+              variant="secondary-light"
+              className="mt-8 w-full justify-center py-3 font-semibold lg:mt-auto"
+            >
+              Contact Sales
+            </Button>
+            {/* holds the space of the VVIP call line, so both buttons align */}
+            <p aria-hidden="true" className="invisible mt-3 hidden text-xs md:block">
+              &nbsp;
+            </p>
+          </div>
         </div>
       </div>
     </Section>

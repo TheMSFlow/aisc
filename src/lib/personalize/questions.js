@@ -10,7 +10,9 @@ export const SEAT_QUESTION = {
   options: [
     {
       id: "chief",
-      label: "I set the direction. Others execute what I decide.",
+      // The AISC Chief, not the AICC one who delegates (founder,
+      // 2026-11-20): involved, trusted, resourced. The id stays "chief".
+      label: "People act on my word, and I have the resources to take what I start to any scale.",
     },
     {
       id: "leader_of_leaders",

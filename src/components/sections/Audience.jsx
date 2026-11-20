@@ -1,25 +1,29 @@
 import Section from "@/components/layout/Section";
+import Button from "@/components/global/Button";
 import GuideMeButton from "@/components/personalize/GuideMeButton";
 
 const AUDIENCES = [
   {
     tier: "Chief",
     qualifier: "Responsibility · Influence · Resources",
-    who: "You set the direction. You do not need to run AI tasks yourself. You need to know what AI means for your domain, where the profit is, and what to tell the people who will build it for you. AISC gives you that clarity, that mandate, and the knowledge to monitor and govern what your team does with it.",
+    who: "You are ready to get hands-on, beyond the tools, in how AI is understood, adopted and governed in the world you lead. Your market, congregation, constituency or following trusts you and acts on your word. You have the resources and the partnerships to take whatever you start to any scale. What you need is a clear position on AI and the mandate to lead your people through it safely, into prosperity.",
+    cta: { label: "Go All In with Coaching", href: "/coaching" },
     dark: true,
     accent: false,
   },
   {
     tier: "Leader of Leaders",
     qualifier: "Responsibility · Influence · Access to resources",
-    who: "You are accountable in both directions. Above you, someone wants results. Below you, a team needs direction, and many of them are already using AI in ways you have not yet structured. AISC is where you get your hands on the tools, run the real tasks, and leave with a framework you can implement immediately and teach to the people who execute for you.",
+    who: "You are accountable in both directions. Above you, someone expects results. Below you, a team or a department looks to you for direction, often already using AI without structure from you. The problems on your desk are specific and need answers now. Taken privately, the challenge is fitted to your calendar and your situation, so you leave with a position you can defend upward and a framework for how AI is used below you.",
+    cta: { label: "Secure 1:1 Access", href: "/clarity-call" },
     dark: false,
     accent: true,
   },
   {
     tier: "Emerging Leader",
     qualifier: "Responsibility · Building toward influence",
-    who: "You are doing the work. You often see what others above you are missing when it comes to AI. But no one has handed you the authority to lead it yet. AI Fluency is a career asset, the kind that earns trust, positions you for the roles you actually want, and gives you a foundation to build something worth noticing. AISC gives you the clarity, the readiness, and a declared AI position before anyone above you has thought to look for it.",
+    who: "You are ambitious, and this challenge is your move. You do the work, and you often see what others above you are missing about AI. AISC teaches you to speak the language of senior leadership on AI, and gives you the foundation to grow your influence fast, long before anyone hands you the title.",
+    cta: { label: "Join the Next Cohort", href: "#pricing" },
     dark: false,
     accent: false,
   },
@@ -88,6 +92,14 @@ export default function Audience() {
               >
                 {a.who}
               </p>
+
+              <Button
+                href={a.cta.href}
+                variant={a.dark ? "secondary" : "secondary-light"}
+                className="relative mt-auto w-full justify-center py-3 font-semibold"
+              >
+                {a.cta.label}
+              </Button>
             </div>
           ))}
           </div>

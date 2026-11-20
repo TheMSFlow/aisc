@@ -8,7 +8,7 @@ import Demo from "@/components/sections/Demo";
 import Proof from "@/components/sections/Proof";
 import Pricing from "@/components/sections/Pricing";
 import FAQ from "@/components/sections/FAQ";
-import Coaching from "@/components/sections/Coaching";
+// import Coaching from "@/components/sections/Coaching";
 
 export default function Home() {
   return (
@@ -22,7 +22,9 @@ export default function Home() {
         <Demo />
         {/* <Proof /> */}
         <Pricing />
-        <Coaching />
+        {/* Coaching has its own landing page, /coaching, reached from the
+            Chief card (founder, 2026-11-20). Kept, not deleted. */}
+        {/* <Coaching /> */}
         <FAQ />
       </main>
       <Footer />

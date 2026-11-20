@@ -37,8 +37,8 @@ const links = [
     badge: "Private 1:1",
     headline: "AI Stakeholder Challenge, VVIP",
     persona:
-      "You are the one people turn to for the AI answer, and your calendar does not wait for a cohort. VVIP is the full seven days delivered to you alone, with the facilitator beside you throughout. On the call we confirm it fits and set your start date.",
-    highlights: ["Starts when you choose", "Facilitator with you all 7 days"],
+      "People look to you for direction, and your calendar does not wait for a cohort. VVIP is the full challenge delivered to you alone in three days, tailored to you from the start, with the facilitator beside you throughout. On the call we confirm it fits and set your start date.",
+    highlights: ["Starts when you choose", "Facilitator with you all 3 days"],
     cta: "Book Your 20-Minute Call",
     // Our own hop to Cal.com, not the Cal.com link itself: see
     // app/clarity-call/page.js.
@@ -88,7 +88,7 @@ const links = [
     // Speaks to Emerging Leaders too (founder, 2026-11-02): their
     // organization is already looking for someone AI fluent.
     persona:
-      "If you set the direction, you are the one people turn to for the AI answer. If you are still rising, your organization is already looking for someone who knows how to use AI well. Why not you? Seven days is what it takes.",
+      "If you set the direction, people look to you to lead them through AI. If you are still rising, your organization is already looking for someone who knows how to use AI well. Why not you? Seven days in a cohort, or three privately, is what it takes.",
     cta: "See the Full Programme",
     href: "/",
     external: false,

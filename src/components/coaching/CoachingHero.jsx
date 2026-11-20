@@ -46,7 +46,7 @@ export default function CoachingHero() {
             {/* Written for a visitor who has never heard of the challenge:
                 what this is, who it is for, and how the two parts connect. */}
             AI Stakeholder Coaching is live group coaching for leaders. It
-            starts with the AI Stakeholder Challenge: seven days, delivered to
+            starts with the AI Stakeholder Challenge: three days, delivered to
             you privately, where you get clear on AI and choose the one place
             it can make the biggest difference in your world. Then, three times
             a month, a facilitator helps you turn that into results.

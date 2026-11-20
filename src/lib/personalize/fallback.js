@@ -4,35 +4,35 @@
 
 const FALLBACKS = {
   chief: {
-    headline: "Clarity, delivered on your calendar",
+    headline: "Go all in on leading your people through AI",
     primary: {
-      offerId: "vvip",
-      subPath: null,
-      reasoning:
-        "You set direction, and your time is the scarcest resource in the room. The full 7-day experience delivered privately, one on one, scheduled around your calendar, is the path built for the seat you hold.",
-    },
-    alternate: {
       offerId: "coaching",
       subPath: null,
       reasoning:
-        "If you want a guide alongside you for the months that follow, coaching walks with you through the full 6-month plan and includes the complete challenge, delivered to you privately, at no additional fee. It starts with a 15-minute discovery call.",
+        "People act on your word, and you have what it takes to carry an idea a long way. Coaching opens with the full challenge delivered to you privately, then stays with you through the months that follow, so the change comes faster. It starts with a 15-minute discovery call.",
+    },
+    alternate: {
+      offerId: "vvip",
+      subPath: null,
+      reasoning:
+        "If you would rather begin with the challenge on its own, VVIP delivers it to you privately in three days, tailored to you from the start. It begins with a 20-minute Clarity Call.",
     },
     awakeningNote: null,
     confidence: "low",
   },
   leader_of_leaders: {
-    headline: "A framework you can stand on in both directions",
+    headline: "A position you can defend in both directions",
     primary: {
-      offerId: "vip",
-      subPath: null,
-      reasoning:
-        "You answer upward for results and downward for direction. VIP keeps the facilitator close to your specific situation at the moments that matter most, with written feedback on your milestone work. It is capped at 10 seats for exactly that reason.",
-    },
-    alternate: {
       offerId: "vvip",
       subPath: null,
       reasoning:
-        "If you would rather have the full 7-day experience delivered privately, one on one and scheduled around your calendar, VVIP removes the cohort schedule entirely and keeps the facilitator with you across all 7 days.",
+        "You answer upward for results and downward for direction, and the problems on your desk need answers now. VVIP delivers the full challenge to you privately in three days, fitted to your calendar and your exact situation. It begins with a 20-minute Clarity Call.",
+    },
+    alternate: {
+      offerId: "vip",
+      subPath: null,
+      reasoning:
+        "If you would rather go through it alongside other leaders, VIP keeps the facilitator close to your situation inside the cohort, with written feedback on your milestone work. It is capped at 10 seats.",
     },
     awakeningNote: null,
     confidence: "low",
@@ -92,7 +92,7 @@ export const UPSELL_ALTERNATES = {
     offerId: "vvip",
     subPath: null,
     reasoning:
-      "If you would rather have the full 7-day experience delivered privately, one on one and scheduled around your calendar, VVIP keeps the facilitator with you across all 7 days.",
+      "If you would rather have the challenge to yourself, VVIP delivers it privately in three days, fitted to your calendar and your exact situation. It begins with a 20-minute Clarity Call.",
   },
   vvip: {
     offerId: "coaching",

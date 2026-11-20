@@ -11,7 +11,7 @@ import {
 const QUESTIONS = [
   {
     q: "Is coaching one-on-one?",
-    a: "The challenge that opens it is. You take the full AI Stakeholder Challenge privately, at VVIP level, with direct facilitator access for all seven days. The coaching that follows is a group. Your questions and your situation still get direct attention, alongside leaders working through the same phases of their own Roadmaps.",
+    a: "The challenge that opens it is. You take the full AI Stakeholder Challenge privately, at VVIP level, with direct facilitator access for all three days. The coaching that follows is a group. Your questions and your situation still get direct attention, alongside leaders working through the same phases of their own Roadmaps.",
   },
   {
     q: "Do I need any AI experience?",
