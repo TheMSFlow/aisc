@@ -1,4 +1,5 @@
 import { Flag } from "lucide-react";
+import { INTELLIGENCE_URL } from "@/lib/sites";
 
 // ─────────────────────────────────────────────
 // The programme, as four full-screen stages.
@@ -38,7 +39,7 @@ import { Flag } from "lucide-react";
 // ─────────────────────────────────────────────
 
 const APPLY_URL =
-  "https://intelligence.michaelsteve.com/form/opportunity/ai-apprentice";
+  `${INTELLIGENCE_URL}/form/opportunity/ai-apprentice`;
 const APPLY_LABEL = "Apply Now";
 
 // Shown beside the bottom button while the CTA points at the free form.

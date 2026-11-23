@@ -1,6 +1,7 @@
 import Link from "next/link";
 import PersonalizeFlow from "@/components/personalize/PersonalizeFlow";
 import { EMAIL_OPT_IN_TEXT } from "@/lib/leads/optIns";
+import { INTELLIGENCE_API_BASE } from "@/lib/sites";
 
 export const metadata = {
   title: "Find Your Path | AI Stakeholder Challenge",
@@ -15,7 +16,7 @@ export const metadata = {
 // lib/leads/optIns.js is shown instead, so the box never disappears; a check
 // in intelligence keeps the two copies word for word the same.
 async function getEmailOptInText() {
-  const base = process.env.NEXT_PUBLIC_API_BASE;
+  const base = INTELLIGENCE_API_BASE;
   if (!base) return null;
   try {
     const res = await fetch(`${base}/api/public/leads/opt-ins`, {

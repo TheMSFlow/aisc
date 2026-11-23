@@ -1,0 +1,419 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import Section from "@/components/layout/Section";
+import {
+  OFFICE_SPRINT_DAYS as DAYS,
+  OFFICE_SPRINT_SLOTS as SLOTS,
+} from "@/lib/officeSprint";
+import { INTELLIGENCE_API_BASE } from "@/lib/sites";
+
+// The signature element: the sprint week drawn as it runs. Columns are the
+// days, rows are the three slots, and Thursday holds the advisory call.
+//
+// Visitors outside WAT also see each slot in their own time, like /coaching.
+// Before the browser reports its zone the card shows WAT alone.
+
+function nextMondayAt(utcHour, utcMinute, now = new Date()) {
+  const d = new Date(
+    Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), utcHour, utcMinute),
+  );
+  const ahead = (1 - d.getUTCDay() + 7) % 7;
+  d.setUTCDate(d.getUTCDate() + ahead);
+  if (d <= now) d.setUTCDate(d.getUTCDate() + 7);
+  return d;
+}
+
+function useLocalSlots() {
+  const [local, setLocal] = useState(null);
+
+  useEffect(() => {
+    // Read once the browser is ready, so the server's render and the first
+    // paint agree (WAT until then).
+    const t = setTimeout(() => {
+      try {
+        const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+        const out = {};
+        let differs = false;
+        for (const s of SLOTS) {
+          const at = nextMondayAt(s.utcHour, s.utcMinute);
+          const fmt = (opts, zone) =>
+            new Intl.DateTimeFormat("en-US", { timeZone: zone, ...opts }).format(at);
+          const time = fmt({ hour: "numeric", minute: "2-digit" }, tz);
+          const day = fmt({ weekday: "short" }, tz);
+          const wat = fmt({ hour: "numeric", minute: "2-digit" }, "Africa/Lagos");
+          if (time !== wat || day !== "Mon") differs = true;
+          out[s.key] = day === "Mon" ? `${time} your time` : `${time} ${day} your time`;
+        }
+        setLocal(differs ? out : null);
+      } catch {
+        setLocal(null);
+      }
+    }, 0);
+    return () => clearTimeout(t);
+  }, []);
+
+  return local;
+}
+
+// Live places left per upcoming week, from Intelligence (founder approved,
+// 2026-11-22). Counts only, never who holds a slot. If the read fails, or
+// there is nothing to show, the section renders exactly as before.
+// Local reads local, live reads live (founder, 2026-11-22): under npm run dev
+// the page asks the Intelligence dev server, wherever NEXT_PUBLIC_API_BASE
+// points (the same rule as every link, in lib/sites.js).
+const AVAILABILITY_PATH = "/api/office-sprint/availability";
+
+function availabilityUrl() {
+  const base = INTELLIGENCE_API_BASE;
+  return base ? `${base}${AVAILABILITY_PATH}` : null;
+}
+
+function useAvailability() {
+  const [weeks, setWeeks] = useState(null);
+
+  useEffect(() => {
+    const url = availabilityUrl();
+    if (!url) return undefined;
+    const ctrl = new AbortController();
+    fetch(url, { signal: ctrl.signal })
+      .then((r) => (r.ok ? r.json() : null))
+      .then((data) => {
+        const list = Array.isArray(data?.weeks)
+          ? data.weeks.filter(
+              (w) =>
+                /^\d{4}-\d{2}-\d{2}$/.test(w?.week) &&
+                Number.isInteger(w?.left) &&
+                Number.isInteger(w?.total) &&
+                Array.isArray(w?.held),
+            )
+          : [];
+        if (list.length) setWeeks(list);
+      })
+      .catch(() => {});
+    return () => ctrl.abort();
+  }, []);
+
+  return weeks;
+}
+
+// The sprint days, Monday to Wednesday, so a visitor can check them against
+// their calendar (founder, 2026-11-22): "Mon 30 Nov – Wed 2 Dec".
+function weekLabel(iso) {
+  const fmt = (d) =>
+    new Intl.DateTimeFormat("en-GB", {
+      weekday: "short",
+      day: "numeric",
+      month: "short",
+      timeZone: "UTC",
+    })
+      .format(d)
+      .replace(",", "");
+  const mon = new Date(`${iso}T00:00:00Z`);
+  const wed = new Date(mon);
+  wed.setUTCDate(wed.getUTCDate() + 2);
+  return `${fmt(mon)} – ${fmt(wed)}`;
+}
+
+// Intelligence names the slots with underscores ("evening_1"), this site with
+// hyphens ("evening-1").
+const apiSlotKey = (key) => key.replace("-", "_");
+
+// Morning or evening, from the slot's hour in WAT (UTC+1).
+const partOfDay = (s) => (s.utcHour + 1 < 12 ? "Morning" : "Evening");
+
+// Onboarding must be complete 48 hours before the first sprint (Monday
+// 7:15 AM WAT), so a week closes on the Saturday before at 7:15 AM WAT. The
+// same rule as registrationDeadline() in Intelligence.
+function closesLabel(iso) {
+  const d = new Date(`${iso}T06:15:00Z`);
+  d.setUTCDate(d.getUTCDate() - 2);
+  const day = new Intl.DateTimeFormat("en-GB", {
+    weekday: "short",
+    day: "numeric",
+    month: "short",
+    timeZone: "Africa/Lagos",
+  })
+    .format(d)
+    .replace(",", "");
+  return `${day}, 7:15 AM WAT`;
+}
+
+function Chevron() {
+  return (
+    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-dark-blue/[0.06] text-dark-blue/60 transition-colors duration-200 group-open:bg-dark-blue group-open:text-white">
+      <svg
+        viewBox="0 0 16 16"
+        aria-hidden="true"
+        className="h-4 w-4 transition-transform duration-200 group-open:rotate-180"
+      >
+        <path
+          d="M4 6l4 4 4-4"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    </span>
+  );
+}
+
+// Below the week card: each upcoming week, opened to show which of its three
+// slots are still open (founder, 2026-11-22: one accordion per week, open and
+// closed clearly different). Called "slots" throughout the page, never
+// "times" or "places", and never "free", which on this page means no cost.
+function AvailableTimes({ weeks, local }) {
+  if (!weeks) return null;
+  return (
+    <div className="mt-16 grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] lg:gap-14">
+      <div>
+        <p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.35em] text-dark-blue/40">
+          Available slots
+        </p>
+        <p className="max-w-md text-base font-light leading-relaxed text-dark-blue/60">
+          Open a week to see which slots are still open. A slot is held for one
+          organization for all three sprints. To keep your slot, onboarding
+          must be complete at least 48 hours before your first sprint.
+        </p>
+      </div>
+
+      <ul className="space-y-3">
+        {weeks.map((w) => {
+          const held = new Set(w.held);
+          return (
+            <li key={w.week}>
+              <details className="group rounded-2xl border border-dark-blue/10 bg-white transition-[border-color,background-color,box-shadow] duration-200 hover:border-dark-blue/25 open:border-dark-blue/60 open:bg-dark-blue/[0.04] open:shadow-[0_2px_4px_rgba(0,3,76,0.06),0_12px_28px_rgba(0,3,76,0.08)]">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 [&::-webkit-details-marker]:hidden">
+                  <span>
+                    <span className="block text-base text-dark-blue/75 group-open:font-semibold group-open:text-dark-blue">
+                      {weekLabel(w.week)}
+                    </span>
+                    <span className="mt-0.5 block text-xs text-dark-blue/45">
+                      {w.left === 0
+                        ? "No slots left this week"
+                        : `${w.left} of ${w.total} slots open`}
+                    </span>
+                  </span>
+                  <Chevron />
+                </summary>
+
+                <div className="mx-5 border-t border-dark-blue/10 pb-5 pt-4">
+                  <p className="mb-3 text-xs text-dark-blue/50">
+                    Onboarding closes {closesLabel(w.week)}.
+                  </p>
+                  <ul className="space-y-2">
+                    {SLOTS.map((s) => {
+                      const taken = held.has(apiSlotKey(s.key));
+                      return (
+                        <li
+                          key={s.key}
+                          className={
+                            taken
+                              ? "flex items-center justify-between gap-4 rounded-xl border border-dashed border-dark-blue/15 px-4 py-3"
+                              : "flex items-center justify-between gap-4 rounded-xl border border-dark-blue/10 bg-white px-4 py-3"
+                          }
+                        >
+                          <span className={taken ? "text-dark-blue/35" : "text-dark-blue"}>
+                            <span className="block text-sm">
+                              <span className="font-semibold">{partOfDay(s)}</span>
+                              {" · "}
+                              {s.wat}
+                            </span>
+                            <span
+                              className={
+                                taken
+                                  ? "mt-0.5 block text-xs text-dark-blue/30"
+                                  : "mt-0.5 block text-xs text-dark-blue/45"
+                              }
+                            >
+                              {s.name}, Monday to Wednesday
+                              {local ? ` · ${local[s.key]}` : ""}
+                            </span>
+                          </span>
+                          <span
+                            className={
+                              taken
+                                ? "shrink-0 text-xs text-dark-blue/35"
+                                : "shrink-0 rounded-full bg-dark-blue px-3 py-1 text-xs font-semibold text-white"
+                            }
+                          >
+                            {taken ? "Taken" : "Available"}
+                          </span>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              </details>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+}
+
+function SessionCell({ sprint }) {
+  return (
+    <div className="flex h-full min-h-14 items-center rounded-2xl border border-white/10 bg-white/[0.06] px-4">
+      <span className="text-sm text-white/80">Sprint {sprint} · 45 min</span>
+    </div>
+  );
+}
+
+export default function OfficeSprintWeek() {
+  const local = useLocalSlots();
+  const availability = useAvailability();
+
+  return (
+    <div className="bg-white">
+      <Section id="the-week" spacing="compact" className="scroll-mt-20">
+        <div className="mb-10 max-w-3xl">
+          <p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.35em] text-dark-blue/40">
+            The Schedule
+          </p>
+          <h2 className="font-ptsans text-3xl font-bold uppercase leading-none tracking-tight text-dark-blue sm:text-4xl lg:text-5xl">
+            One time slot is yours, Monday to Wednesday.
+          </h2>
+          <p className="mt-5 max-w-xl text-base font-light leading-relaxed text-dark-blue/60">
+            The sprints run outside normal working hours, so your business
+            doesn&rsquo;t stop. Each slot belongs to one organization for the
+            week, so there are only three slots a week. All times are West Africa
+            Time (WAT).
+          </p>
+        </div>
+
+        <div className="relative overflow-hidden rounded-3xl bg-dark-blue p-6 text-white shadow-[0_2px_4px_rgba(0,3,76,0.15),0_16px_40px_rgba(0,3,76,0.25)] sm:p-8 lg:p-10">
+          {/* aurora */}
+          <div className="pointer-events-none absolute -top-40 left-[-10%] h-130 w-200 bg-[radial-gradient(ellipse_at_center,rgba(99,104,218,0.26),transparent_60%)]" />
+          <div className="pointer-events-none absolute -bottom-40 right-[-10%] h-120 w-180 bg-[radial-gradient(ellipse_at_center,rgba(135,5,113,0.15),transparent_60%)]" />
+
+          {/* Desktop and tablet: the week as a grid */}
+          <div className="relative hidden md:block">
+            <div className="grid grid-cols-[10rem_repeat(3,minmax(0,1fr))_minmax(0,1.15fr)] gap-3">
+              <div />
+              {DAYS.map((d) => (
+                <div key={d.day} className="pb-3">
+                  <p className="font-ptsans text-lg font-bold uppercase tracking-tight">
+                    {d.day}
+                  </p>
+                  <p className="mt-1 text-xs leading-snug text-lilac/70">{d.short}</p>
+                </div>
+              ))}
+              <div className="pb-3">
+                <p className="font-ptsans text-lg font-bold uppercase tracking-tight">
+                  Thursday
+                </p>
+                <p className="mt-1 text-xs leading-snug text-lilac/70">Your leadership</p>
+              </div>
+
+              {/* The slots down the side; each sprint once per day, since an
+                  organization has one slot (founder, 2026-11-22). */}
+              {SLOTS.map((s, i) => (
+                <div key={s.key} className="contents">
+                  <div className="flex flex-col justify-center py-3 pr-2">
+                    <p className="text-sm font-semibold text-white">{s.wat}</p>
+                    <p className="mt-0.5 text-xs text-white/45">
+                      {local ? local[s.key] : s.name}
+                    </p>
+                  </div>
+                  {i === 0 && (
+                    <>
+                      {DAYS.map((d) => (
+                        <div
+                          key={d.day}
+                          className="row-span-3 flex flex-col justify-center rounded-2xl border border-white/10 bg-white/[0.06] px-5"
+                        >
+                          <p className="font-ptsans text-2xl font-bold uppercase tracking-tight text-white">
+                            Sprint {d.sprint}
+                          </p>
+                          <p className="mt-1 text-sm text-white/70">Live, 45 min</p>
+                        </div>
+                      ))}
+                      <div className="row-span-3 flex flex-col justify-center rounded-2xl border border-lilac/25 bg-lilac/[0.08] p-5">
+                        <p className="font-ptsans text-base font-bold uppercase tracking-tight text-white">
+                          Advisory call
+                        </p>
+                        <p className="mt-2 text-sm font-light leading-relaxed text-white/70">
+                          Thirty minutes with your leadership: we share your
+                          report and what it means for your organization.
+                        </p>
+                        <p className="mt-3 text-xs text-white/50">
+                          The time is arranged with you.
+                        </p>
+                      </div>
+                    </>
+                  )}
+                </div>
+              ))}
+
+              {/* the team's task after each sprint */}
+              <div className="flex items-center pr-2 pt-2">
+                <p className="text-xs text-white/45">After sprint</p>
+              </div>
+              {DAYS.map((d) => (
+                <p key={d.day} className="pt-2 text-xs leading-snug text-white/60">
+                  <span className="font-semibold text-white/85">
+                    Your team&rsquo;s task · {d.taskMinutes} min
+                  </span>
+                </p>
+              ))}
+              <div />
+            </div>
+
+          </div>
+
+          {/* Phones: the week as a list */}
+          <div className="relative md:hidden">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-white/40">
+              Your slot, one of three
+            </p>
+            <ul className="mt-3 space-y-2">
+              {SLOTS.map((s) => (
+                <li
+                  key={s.key}
+                  className="flex items-baseline justify-between gap-3 rounded-2xl border border-white/10 bg-white/[0.06] px-4 py-3"
+                >
+                  <span className="text-sm font-semibold">{s.wat}</span>
+                  <span className="text-right text-xs text-white/45">
+                    {local ? local[s.key] : s.name}
+                  </span>
+                </li>
+              ))}
+            </ul>
+
+            <ol className="mt-6 space-y-5 border-l border-white/15 pl-5">
+              {DAYS.map((d) => (
+                <li key={d.day}>
+                  <p className="font-ptsans text-base font-bold uppercase tracking-tight">
+                    {d.day}
+                  </p>
+                  <p className="text-sm text-lilac/75">{d.short}</p>
+                  <p className="mt-1 text-xs text-white/55">
+                    Sprint {d.sprint}, live, 45 min. Then your team&rsquo;s
+                    task, {d.taskMinutes} min.
+                  </p>
+                </li>
+              ))}
+              <li>
+                <p className="font-ptsans text-base font-bold uppercase tracking-tight">
+                  Thursday
+                </p>
+                <p className="text-sm text-lilac/75">Advisory call with your leadership</p>
+                <p className="mt-1 text-xs text-white/55">
+                  Thirty minutes: we share your report and what it means for
+                  your organization. The time is arranged with you.
+                </p>
+              </li>
+            </ol>
+
+          </div>
+        </div>
+
+        <AvailableTimes weeks={availability} local={local} />
+      </Section>
+    </div>
+  );
+}

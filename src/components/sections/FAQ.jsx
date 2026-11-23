@@ -1,5 +1,6 @@
 import Section from "@/components/layout/Section";
 import FAQAccordion from "@/components/ui/FAQAccordion";
+import { INTELLIGENCE_URL } from "@/lib/sites";
 
 const QUESTIONS = [
   {
@@ -61,7 +62,7 @@ export default function FAQ() {
           <p className="text-sm text-dark-blue/55">
             Still have a question?{" "}
             <a
-              href="https://intelligence.michaelsteve.com/form/inquiry?src=AISC"
+              href={`${INTELLIGENCE_URL}/form/inquiry?src=AISC`}
               className="text-msblue underline underline-offset-2 transition-colors hover:text-dark-blue"
               target="_blank"
               rel="noopener noreferrer"

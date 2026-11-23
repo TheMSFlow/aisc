@@ -10,16 +10,17 @@ import { formatCohortDates } from "@/utils/cohortFormat";
 import { trackEvent } from "@/lib/analytics";
 import CurrencyPrice from "@/components/global/CurrencyPrice";
 import { PRICING } from "@/lib/pricing";
+import { INTELLIGENCE_URL } from "@/lib/sites";
 
 const SITE_URL = "https://aistakeholderchallenge.com";
 
 // Only the payment links leave the domain, so they are the only ones that
 // carry UTMs. Tagging the internal links would split the GA session.
 const CHECKOUT_URL =
-  "https://intelligence.michaelsteve.com/pay/challenge/aisc" +
+  `${INTELLIGENCE_URL}/pay/challenge/aisc` +
   "?utm_source=links&utm_medium=bio&utm_campaign=aisc_register";
 const BRIEFING_URL =
-  "https://intelligence.michaelsteve.com/pay/vip" +
+  `${INTELLIGENCE_URL}/pay/vip` +
   "?utm_source=links&utm_medium=bio&utm_campaign=awakening_briefing";
 
 // Order is the founder's (2026-11-02), with the studio now focused on AISC
@@ -93,6 +94,18 @@ const links = [
     href: "/",
     external: false,
     tags: ["Chiefs", "Leaders of Leaders", "Emerging Leaders"],
+  },
+  {
+    // The free sprint for organizations (founder, 2026-11-21).
+    id: "office-sprint",
+    badge: "For Organizations",
+    headline: "AI Stakeholder Office Sprint",
+    persona:
+      "Three live sprints introduce your people to AI Leadership, Monday to Wednesday. On Thursday, your leadership reads how ready they are and where AI fits in your work.",
+    cta: "See the AI Stakeholder Office Sprint",
+    href: "/office-sprint",
+    external: false,
+    tags: ["Delegation", "Readiness", "AI Value"],
   },
   {
     // `register` survives as a code identifier only. The reader never sees it:

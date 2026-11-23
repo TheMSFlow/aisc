@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ReadinessCheck from "@/components/readiness/ReadinessCheck";
+import { INTELLIGENCE_API_BASE } from "@/lib/sites";
 
 // The free AI readiness check. A public version of the Learning Center's Day 2
 // Readiness Scorecard: first name and email first, the 24 statements, six
@@ -18,7 +19,7 @@ export const metadata = {
 // the server and refreshed hourly; if this read fails, the check asks again
 // from the browser.
 async function getScorecard() {
-  const base = process.env.NEXT_PUBLIC_API_BASE;
+  const base = INTELLIGENCE_API_BASE;
   if (!base) return null;
   try {
     const res = await fetch(`${base}/api/public/aisc/readiness/scorecard`, {

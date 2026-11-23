@@ -1,4 +1,5 @@
 import { B, ContactLink, Heading, Lead, List, P, PolicyPage } from "@/components/policy/PolicyText";
+import { INTELLIGENCE_URL } from "@/lib/sites";
 
 // The Find your path policy, linked from the email form on the /personalize
 // results screen. Source: program/FIND_YOUR_PATH_POLICY.md. Same shape as the
@@ -7,7 +8,7 @@ import { B, ContactLink, Heading, Lead, List, P, PolicyPage } from "@/components
 // intelligence inquiry form.
 const LAST_UPDATED = "25 October 2026";
 const REPLY_WITHIN = "30 days";
-const CONTACT_URL = "https://intelligence.michaelsteve.com/form/inquiry?src=AISC";
+const CONTACT_URL = `${INTELLIGENCE_URL}/form/inquiry?src=AISC`;
 
 export const metadata = {
   title: "Find Your Path Policy | AI Stakeholder Challenge",

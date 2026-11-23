@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
+import { INTELLIGENCE_API_BASE } from "@/lib/sites";
 
-const API_BASE = process.env.NEXT_PUBLIC_API_BASE;
+const API_BASE = INTELLIGENCE_API_BASE;
 
 export async function GET(request) {
   const { searchParams } = new URL(request.url);

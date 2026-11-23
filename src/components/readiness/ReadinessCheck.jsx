@@ -9,6 +9,7 @@ import { isComplete, prioritised } from "@/lib/readiness/profile";
 import GateForm from "./GateForm";
 import RateStep from "./RateStep";
 import ResultsView from "./ResultsView";
+import { INTELLIGENCE_API_BASE } from "@/lib/sites";
 
 // The free AI readiness check, start to finish: the gate, the scale, six
 // dimensions, and the results. The report is emailed as soon as the last
@@ -19,7 +20,7 @@ import ResultsView from "./ResultsView";
 // intelligence and is not affected by this one.
 
 const STORE_KEY = "aisc_readiness_v1";
-const API = process.env.NEXT_PUBLIC_API_BASE;
+const API = INTELLIGENCE_API_BASE;
 
 const EMPTY = {
   stage: "gate", // gate | intro | rate | results

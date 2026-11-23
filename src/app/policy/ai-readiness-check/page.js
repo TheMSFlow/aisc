@@ -1,4 +1,5 @@
 import { B, ContactLink, Heading, Lead, List, P, PolicyPage } from "@/components/policy/PolicyText";
+import { INTELLIGENCE_URL } from "@/lib/sites";
 
 // The AI Readiness Check policy, linked from the gate at /ai-readiness. Source:
 // program/AI_READINESS_CHECK_POLICY.md. It covers the free check only (founder,
@@ -10,7 +11,7 @@ import { B, ContactLink, Heading, Lead, List, P, PolicyPage } from "@/components
 // intelligence inquiry form.
 const LAST_UPDATED = "19 November 2026";
 const REPLY_WITHIN = "30 days";
-const CONTACT_URL = "https://intelligence.michaelsteve.com/form/inquiry?src=AISC";
+const CONTACT_URL = `${INTELLIGENCE_URL}/form/inquiry?src=AISC`;
 
 export const metadata = {
   title: "AI Readiness Check Policy | AI Stakeholder Challenge",

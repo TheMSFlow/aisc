@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Button from "@/components/global/Button";
+import { INTELLIGENCE_API_BASE } from "@/lib/sites";
 
 // The gate: first name and best email before the check, and two optional
 // checkboxes, both unticked: the WhatsApp community invite, and permission to
@@ -66,7 +67,7 @@ export default function GateForm({ whatsappOptInText, emailOptInText, onStarted 
       }
 
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_BASE}/api/public/aisc/readiness/start`,
+        `${INTELLIGENCE_API_BASE}/api/public/aisc/readiness/start`,
         {
           method: "POST",
           headers: { "content-type": "application/json" },

@@ -7,6 +7,7 @@ import { fallbackResult, UPSELL_ALTERNATES } from "@/lib/personalize/fallback";
 import { allowRequest, clientIp } from "@/lib/personalize/rateLimit";
 import { presentOffer } from "@/lib/personalize/catalog";
 import { qualityProblems } from "@/lib/personalize/quality";
+import { INTELLIGENCE_API_BASE } from "@/lib/sites";
 
 // Thinking plus one retry can take longer than a single quick call.
 export const maxDuration = 60;
@@ -136,7 +137,7 @@ function toPayload(raw, fallbackUsed) {
 const STORE_TIMEOUT_MS = 6000;
 
 async function attachId(payload, input, request) {
-  const apiBase = process.env.NEXT_PUBLIC_API_BASE;
+  const apiBase = INTELLIGENCE_API_BASE;
   const key = process.env.ECOSYSTEM_INTERNAL_KEY;
   if (!apiBase || !key) return payload;
 

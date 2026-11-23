@@ -42,6 +42,12 @@ export default function sitemap() {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/office-sprint`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/ai-readiness`,
       lastModified: new Date(),
       changeFrequency: "monthly",
@@ -49,6 +55,12 @@ export default function sitemap() {
     },
     {
       url: `${baseUrl}/policy/ai-readiness-check`,
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}/policy/office-sprint`,
       lastModified: new Date(),
       changeFrequency: "yearly",
       priority: 0.3,

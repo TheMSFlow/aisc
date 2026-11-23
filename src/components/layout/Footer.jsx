@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { getAllPosts } from "@/lib/blog/posts";
 import { formatDate } from "@/lib/blog/format";
 import { getTheme } from "@/lib/blog/taxonomy";
+import { INTELLIGENCE_URL } from "@/lib/sites";
 
 function FooterLink({ href, children, external = false, newTab = false }) {
   const className =
@@ -117,7 +118,7 @@ export default function Footer({ showBriefings = true }) {
               <p className="mt-5 text-sm font-light text-lilac/60">
                 For inquiries,{" "}
                 <a
-                  href="https://intelligence.michaelsteve.com/form/inquiry?src=AISC"
+                  href={`${INTELLIGENCE_URL}/form/inquiry?src=AISC`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="relative inline-block text-lilac/70 transition-colors hover:text-white after:absolute after:-bottom-0.5 after:left-0 after:h-px after:w-0 after:bg-msaccent after:transition-[width] after:duration-200 hover:after:w-full"
@@ -153,8 +154,9 @@ export default function Footer({ showBriefings = true }) {
                   Career Apprentice
                 </FooterLink>
                 <FooterLink href="/ai-readiness">AI Readiness Check</FooterLink>
+                <FooterLink href="/office-sprint">AI Stakeholder Office Sprint</FooterLink>
                 <FooterLink
-                  href="https://intelligence.michaelsteve.com/community/sponsor"
+                  href={`${INTELLIGENCE_URL}/community/sponsor`}
                   external
                 >
                   Partner with us

@@ -9,6 +9,7 @@ import Button from "@/components/global/Button";
 import CurrencyToggle from "@/components/global/CurrencyToggle";
 import CurrencyPrice from "@/components/global/CurrencyPrice";
 import { PRICING } from "@/lib/pricing";
+import { INTELLIGENCE_URL } from "@/lib/sites";
 
 const TIERS = [
   {
@@ -56,7 +57,7 @@ const TIERS = [
       },
     ],
     cta: "Secure Your Spot",
-    href: "https://intelligence.michaelsteve.com/pay/challenge/aisc?package=general-admission",
+    href: `${INTELLIGENCE_URL}/pay/challenge/aisc?package=general-admission`,
     highlight: false,
   },
   {
@@ -89,7 +90,7 @@ const TIERS = [
       },
     ],
     cta: "Secure Your VIP Spot",
-    href: "https://intelligence.michaelsteve.com/pay/challenge/aisc?package=vip",
+    href: `${INTELLIGENCE_URL}/pay/challenge/aisc?package=vip`,
     highlight: true,
   },
 ];
@@ -377,6 +378,17 @@ export default function Pricing() {
               delivered privately to support alignment as a unit and build
               collective confidence without external noise.
             </p>
+            {/* The Office Sprint is a natural way into a custom cohort
+                (founder, 2026-11-21). */}
+            <p className="mt-4 text-sm leading-relaxed text-dark-blue/55">
+              Not ready for a private cohort yet?{" "}
+              <a
+                href="/office-sprint"
+                className="font-semibold text-msblue underline decoration-msblue/30 underline-offset-4 transition-colors hover:decoration-msblue"
+              >
+                Start with a free AI Stakeholder Office Sprint for your team.
+              </a>
+            </p>
 
               {/* Options A and B are off the site (founder, 2026-11-20: "no need
                   to box anyone"). The custom cohort stays, and the thresholds
@@ -425,7 +437,7 @@ export default function Pricing() {
               */}
 
             <Button
-              href="https://intelligence.michaelsteve.com/form/inquiry?src=CC"
+              href={`${INTELLIGENCE_URL}/form/inquiry?src=CC`}
               variant="secondary-light"
               className="mt-8 w-full justify-center py-3 font-semibold lg:mt-auto"
             >

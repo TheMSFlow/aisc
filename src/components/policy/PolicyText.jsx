@@ -4,7 +4,9 @@ import Link from "next/link";
 // wordmark, a narrow article, and the heading, paragraph, list and bold styles.
 // No site footer and no briefings on these pages (founder, 2026-10-25).
 
-export function PolicyPage({ title, lastUpdated, children }) {
+// `back` (optional) is a { href, label } link shown above the title, for a
+// policy reached from a page other than the Challenge's own.
+export function PolicyPage({ title, lastUpdated, back, children }) {
   return (
     <main className="flex min-h-screen flex-col bg-offwhite">
       <div className="px-5 py-5 sm:px-6 lg:px-8">
@@ -15,6 +17,14 @@ export function PolicyPage({ title, lastUpdated, children }) {
 
       <article className="w-full px-5 pb-24 pt-10 sm:px-6 md:pt-16 lg:px-8">
         <div className="mx-auto w-full max-w-2xl">
+          {back && (
+            <Link
+              href={back.href}
+              className="mb-6 inline-block text-sm text-dark-blue/60 underline-offset-2 hover:text-dark-blue hover:underline"
+            >
+              &larr; {back.label}
+            </Link>
+          )}
           <h1 className="text-balance font-ptsans text-4xl font-bold uppercase leading-none tracking-tight text-dark-blue sm:text-5xl">
             {title}
           </h1>

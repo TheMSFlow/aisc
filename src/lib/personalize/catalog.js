@@ -4,12 +4,13 @@ import {
   COACHING_CALL_NOTE,
   COACHING_CALL_URL,
 } from "@/lib/coaching";
+import { INTELLIGENCE_URL } from "@/lib/sites";
 
 // Single source of truth for everything the recommendation UI and the
 // system prompt know about the offers. The model only ever outputs offerIds
 // and reasoning text; names, prices, CTA labels, and URLs come from here.
 
-const PAY_BASE = "https://intelligence.michaelsteve.com/pay/challenge/aisc";
+const PAY_BASE = `${INTELLIGENCE_URL}/pay/challenge/aisc`;
 
 export const CATALOG = {
   ga: {
@@ -67,7 +68,7 @@ export const CATALOG = {
     price: null,
     priceNote: "Custom pricing",
     cta: "Contact Sales",
-    href: "https://intelligence.michaelsteve.com/form/inquiry?src=CC",
+    href: `${INTELLIGENCE_URL}/form/inquiry?src=CC`,
     buttonVariant: "premium",
     description:
       "The same challenge delivered privately to an organization, leadership team, or high-trust group that wants alignment as a unit. Custom pricing and scheduling.",
@@ -111,7 +112,7 @@ export const CATALOG = {
         priceKind: "onRequest",
         priceNote: "Priced on request",
         cta: "Request Briefing",
-        href: "https://intelligence.michaelsteve.com/pay/vip",
+        href: `${INTELLIGENCE_URL}/pay/vip`,
         buttonVariant: "dark",
       },
       sponsor: {
@@ -119,7 +120,7 @@ export const CATALOG = {
         priceKind: "free",
         priceNote: "Free for communities of 50+ leaders",
         cta: "Partner with us",
-        href: "https://intelligence.michaelsteve.com/community/sponsor",
+        href: `${INTELLIGENCE_URL}/community/sponsor`,
         buttonVariant: "premium",
       },
     },

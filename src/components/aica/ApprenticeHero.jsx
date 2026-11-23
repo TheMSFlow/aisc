@@ -1,7 +1,8 @@
 import Image from "next/image";
+import { INTELLIGENCE_URL } from "@/lib/sites";
 
 const APPLY_URL =
-  "https://intelligence.michaelsteve.com/form/opportunity/ai-apprentice";
+  `${INTELLIGENCE_URL}/form/opportunity/ai-apprentice`;
 
 
 

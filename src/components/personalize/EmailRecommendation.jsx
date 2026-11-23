@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Button from "@/components/global/Button";
 import { trackEvent } from "@/lib/analytics";
+import { INTELLIGENCE_API_BASE } from "@/lib/sites";
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const HONEYPOT_FIELD = "fax_extension";
@@ -62,7 +63,7 @@ export default function EmailRecommendation({ id, seat, emailOptInText }) {
       }
 
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_BASE}/api/public/aisc/personalize/email`,
+        `${INTELLIGENCE_API_BASE}/api/public/aisc/personalize/email`,
         {
           method: "POST",
           headers: { "content-type": "application/json" },
