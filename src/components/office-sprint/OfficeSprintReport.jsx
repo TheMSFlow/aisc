@@ -531,7 +531,7 @@ const PANELS = [
     id: "rules",
     name: "Governance",
     source: "Sprint 3 · 14 policies",
-    finding: "13 of 14 already keep the rule that matters most.",
+    finding: "13 of 14 chose the rule that matters most.",
     page: <TheirRules />,
   },
   {

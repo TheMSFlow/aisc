@@ -54,14 +54,14 @@ export function OfficeSprintHero() {
             For organizations
           </p>
           <h1 className="font-ptsans text-4xl font-bold uppercase leading-[0.95] tracking-tight text-white sm:text-5xl xl:text-6xl">
-            Three live sprints introduce your people to AI Leadership.
+            Know your next step with AI in one week.
           </h1>
           <p className="mt-8 max-w-2xl text-base font-light leading-relaxed text-white/70 sm:text-lg">
-            As your people learn, they also show you where AI could fit in
-            their daily work, how ready they really are, what stands in the
-            way, and the rules they would keep. By Thursday you know what your
-            organization needs before it adopts AI, all drawn from your own
-            people.
+            Three live sprints introduce your people to AI Leadership. As they
+            learn, they also show you where AI could fit in their daily work,
+            how ready they really are, what stands in the way, and the rules
+            they would keep. By Thursday you know what your organization needs
+            before it adopts AI, all drawn from your own people.
           </p>
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
             <Button
@@ -98,39 +98,35 @@ export function OfficeSprintHero() {
 }
 
 // Where organizations are with AI today, and where they are after the sprint
-// (founder, 2026-11-22). Buy-in first: AI fails when it is pushed from the
-// top and works when the workforce owns it. Each "after" is a state backed by
-// a real output of the sprint; nothing promises adoption or hands-on skill.
+// (founder, 2026-11-23). It opens on what most organizations feel, not knowing
+// what to do next, then follows a leader's questions: what do we do, where
+// does it help, will my people accept it, is it safe? Each "after" is backed
+// by a real output of the sprint; nothing promises adoption or hands-on skill.
 const PAINS = [
+  {
+    pain: "You know AI matters, but not what to do next.",
+    answer:
+      "You see how ready your organization is across six areas, what stands in the way, and where to start.",
+  },
+  {
+    pain: "Nobody can say where AI would help most.",
+    answer:
+      "You have a map of the work your teams would hand to AI and the problems they want solved the most, including where AI could create new value.",
+  },
+  {
+    pain: "Your people fear AI will replace them, so they quietly resist it.",
+    answer:
+      "They learn what AI can and cannot do, and what makes them more valuable alongside it, so they move from uncertainty to clarity.",
+  },
   {
     pain: "AI tools get bought, then sit unused.",
     answer:
-      "Your people help decide where AI goes, so what you bring in answers needs they named themselves, with their buy-in from day one.",
+      "Your people show you where they want help from AI, so any tool you choose later solves a problem they already care about.",
   },
   {
-    pain: "Your people expect AI to replace them, so they quietly resist it.",
+    pain: "Your people may already be putting company information into public AI tools.",
     answer:
-      "They see AI as something they direct, not something done to them, and they learn what makes them more valuable alongside it. Uncertainty gives way to clarity.",
-  },
-  {
-    pain: "Your people already put company information into public AI tools without any governance.",
-    answer:
-      "Your people understand the risks of using AI without approval, and each writes and submits their own AI policy, so you know the rules your people are willing to keep. Your governance starts from there.",
-  },
-  {
-    pain: "Nobody can say where AI would save the most time or money.",
-    answer:
-      "You have a map of the tasks your teams would hand to AI, drawn by the people who do them.",
-  },
-  {
-    pain: "AI is treated as a way to cut costs, so the new value it could create goes unclaimed.",
-    answer:
-      "Your people have named and ranked the problems worth solving: the places where AI can create new value, not just save time.",
-  },
-  {
-    pain: "You can't tell how ready your organization is for AI.",
-    answer:
-      "You have readiness scores across six areas, and you know which one to start with.",
+      "They learn the risks and each writes their own AI policy, so you can see the rules they would keep and build your governance from there.",
   },
 ];
 
@@ -140,7 +136,7 @@ export function OfficeSprintPains() {
       <Section id="what-changes" spacing="compact" className="scroll-mt-20">
         <p className={LABEL}>What changes</p>
         <h2 className={`${H2} max-w-4xl`}>
-          From AI decided at the top to AI your people stand behind.
+          From unsure about AI to a clear next step your people support.
         </h2>
 
         {/* Column heads on wider screens; on phones each row labels itself */}
@@ -179,45 +175,64 @@ export function OfficeSprintPains() {
   );
 }
 
+// The line above each sprint deepens from Monday to Wednesday.
+const SPRINT_LINE = ["border-t-msaccent/35", "border-t-msaccent/65", "border-t-msaccent"];
+
 export function OfficeSprintDays() {
   return (
     <div className="bg-linear-to-b from-[#f4f5ff] to-lilac">
       <Section id="the-days" spacing="compact" className="scroll-mt-20">
         <p className={LABEL}>The three sprints</p>
         <h2 className={`${H2} max-w-4xl`}>
-          Each sprint teaches one theme, then captures what your people know.
+          Three sprints to find where AI fits, how ready you are and what to solve first.
         </h2>
         <p className="mt-5 max-w-2xl text-base font-light leading-relaxed text-dark-blue/70">
           Built from resources in the AI Stakeholder Challenge, the essentials
-          are delivered in three sprints. After each sprint,
-          your people do a short, guided task using what they already know
-          about their job.
+          are delivered in three sprints. After each sprint, your people do a
+          short, guided task the same day, using what they already know about
+          their job.
         </p>
 
-        <ol className="mt-12 grid gap-6 lg:grid-cols-3">
-          {DAYS.map((d) => (
+        {/* One panel read left to right, Monday to Wednesday (founder,
+            2026-11-23: the separate cards looked scattered). Subgrid keeps
+            each kind of information on the same line across the three days.
+            Reading aids, kept quiet: a large faint number and a top line that
+            deepens day by day mark the sprint; each part steps from white
+            through lilac to the navy result. On smaller screens each day is
+            its own card. */}
+        <ol className="mt-12 grid gap-5 lg:grid-cols-3 lg:grid-rows-[auto_auto_auto_auto] lg:gap-0 lg:overflow-hidden lg:rounded-3xl lg:shadow-[0_1px_2px_rgba(0,3,76,0.06),0_16px_40px_rgba(0,3,76,0.1)]">
+          {DAYS.map((d, i) => (
             <li
               key={d.day}
-              className="flex flex-col rounded-3xl bg-white p-7 shadow-[0_1px_2px_rgba(0,3,76,0.06),0_8px_24px_rgba(0,3,76,0.08)] lg:p-8"
+              className="grid overflow-hidden rounded-3xl bg-white shadow-[0_1px_2px_rgba(0,3,76,0.06),0_12px_30px_rgba(0,3,76,0.08)] lg:row-span-4 lg:grid-rows-subgrid lg:rounded-none lg:shadow-none lg:[&:not(:first-child)>*]:border-l"
             >
-              <p className="text-xs font-semibold text-msaccent">
-                Sprint {d.sprint} · {d.day}
-              </p>
-              <h3 className="mt-3 font-ptsans text-xl font-bold uppercase leading-tight tracking-tight text-dark-blue">
-                {d.title}
-              </h3>
-              <p className="mt-4 text-sm leading-relaxed text-dark-blue/75">{d.taught}</p>
-              <dl className="mt-5 flex flex-1 flex-col gap-3 text-sm leading-relaxed">
-                <div className="rounded-2xl bg-lilac/60 p-4">
-                  <dt className="text-xs font-semibold text-msblue">Your team&rsquo;s task · {d.taskMinutes} min</dt>
-                  <dd className="mt-1 text-dark-blue/80">{d.after}</dd>
+              <div className={`border-t-[3px] border-l-dark-blue/10 px-6 pb-6 pt-6 lg:px-8 ${SPRINT_LINE[i]}`}>
+                <div className="flex items-start justify-between gap-3">
+                  <p className="pt-1 text-base font-semibold text-dark-blue">{d.day}</p>
+                  <p className="font-ptsans text-7xl font-bold leading-[0.8] text-msaccent/25">
+                    <span className="sr-only">Sprint </span>
+                    {d.sprint}
+                  </p>
                 </div>
-                {/* The result, set apart as the change it brings. */}
-                <div className="mt-auto rounded-2xl bg-msblue p-4">
-                  <dt className="text-xs font-semibold text-lilac">What you get</dt>
-                  <dd className="mt-1 font-medium text-white">{d.gain}</dd>
-                </div>
-              </dl>
+                <h3 className="mt-4 font-ptsans text-3xl font-bold leading-[1.05] tracking-tight text-dark-blue">
+                  {d.question}
+                </h3>
+                <p className="mt-3 text-sm font-medium text-dark-blue/60">{d.title}</p>
+              </div>
+              <div className="border-dark-blue/10 bg-lilac/30 px-6 py-5 lg:px-8">
+                <p className="text-xs font-semibold text-msblue">What they learn</p>
+                <p className="mt-1.5 text-sm leading-relaxed text-dark-blue/75">{d.taught}</p>
+              </div>
+              <div className="border-dark-blue/10 bg-lilac/70 px-6 py-5 lg:px-8">
+                <p className="text-xs font-semibold text-msblue">
+                  Your team&rsquo;s task, {d.taskMinutes} min
+                </p>
+                <p className="mt-1.5 text-sm leading-relaxed text-dark-blue/80">{d.after}</p>
+              </div>
+              <div className="border-white/15 bg-dark-blue px-6 py-6 text-white lg:px-8">
+                <p className="text-xs font-semibold text-lilac">What you get</p>
+                <p className="mt-1.5 text-base font-medium leading-snug">{d.gain}</p>
+              </div>
             </li>
           ))}
         </ol>
@@ -230,7 +245,7 @@ const STEPS = [
   { title: "Apply for a sprint", body: "Choose your date and time slot. It takes two minutes." },
   {
     title: "Book your discovery call",
-    body: "A 20-minute video call, so we get to know your organization and what it needs.",
+    body: "A 20-minute video call about why you need the sprint, what you want to achieve and what you have tried so far. If that's nothing yet, that's fine.",
   },
   {
     // "Onboarding", complete at least 48 hours before the start to claim the
@@ -261,14 +276,13 @@ export function OfficeSprintBehind() {
             <p>
               The sprint is built on the studio&rsquo;s flagship program, the{" "}
               <span className="font-semibold text-dark-blue">AI Stakeholder Challenge</span>.
-              Over seven days, senior leaders move from knowing about AI to
-              leading with it on purpose. It starts with judgment rather than
-              tools: what AI really is, how to get ready for it, where it
-              creates value, and how to govern it.
+              Over seven days, it prepares senior leaders to take a clear
+              position on AI and safely lead their people from uncertainty to
+              clarity and prosperity.
             </p>
             <p>
-              The Office Sprint brings that program&rsquo;s resources, guided
-              tools and reporting to your people, in three sprints.
+              The Office Sprint brings its resources, guided tools and reporting
+              to your people, in three sprints.
             </p>
             <Link
               href="/"
@@ -291,13 +305,14 @@ export function OfficeSprintFit() {
           <div>
             <p className={LABEL}>Who it is for</p>
             <h2 className="font-ptsans text-3xl font-bold uppercase leading-none tracking-tight text-dark-blue sm:text-4xl">
-              Startups, businesses and enterprises.
+              For organizations that know AI matters, but not what to do next.
             </h2>
             <p className="mt-6 max-w-md text-base font-light leading-relaxed text-dark-blue/65">
-              Any organization whose people will work alongside AI, from a young
-              startup to a growing business or a team inside an enterprise.
-              Choose 5 to 20 key people, from your leadership down through each
-              team. The wider the mix, the more your report shows.
+              You don&rsquo;t need an AI plan or any AI experience to start.
+              Whether you are a young startup, a growing business or a team
+              inside an enterprise, choose 5 to 20 key people, from your
+              leadership down through each team. The wider the mix, the more
+              your report shows.
             </p>
           </div>
 
@@ -364,6 +379,11 @@ export function OfficeSprintOutside() {
 
 const QUESTIONS = [
   {
+    // The main audience's first worry (founder, 2026-11-23).
+    q: "We don't have an AI plan yet. Is this for us?",
+    a: "Yes. This is who it's built for. You need no plan, no tools and no AI experience. By Thursday you know where your organization stands and what to do next.",
+  },
+  {
     q: "Is it really free?",
     a: "Yes, once, for a team of 5 to 20 in one of the three time slots. We run it free so organizations can see our work before deciding anything bigger. A team of fewer than 5 or more than 20, or a time of your own, is a paid sprint we design with you.",
   },
@@ -414,10 +434,10 @@ const QUESTIONS = [
     a: "Yes. Each day is a 45-minute live sprint, then a guided task of 10, 20 or 30 minutes. The resources and work come from the AI Stakeholder Challenge, compressed into three days with only the most important parts kept. A mini app built for each day guides the work and produces a PDF, so nobody starts from a blank page. Your people bring what they already know about their job, and their attention.",
   },
   {
-    // No replays are promised (founder, 2026-11-22); the tasks stay open
-    // until 48 hours after Wednesday's sprint (CLOSE_AFTER_HOURS).
+    // It is a sprint: no replays, and every task closes at the end of
+    // Wednesday, so the report is ready for Thursday (founder, 2026-11-23).
     q: "What if someone misses a live sprint?",
-    a: "They can still do the day's task. Every task stays open until 48 hours after Wednesday's sprint.",
+    a: "There is no replay, but they can still do the day's task until Wednesday at 11:59 PM WAT. Your report is built from the work that is in by then.",
   },
   {
     q: "Do our people need to know anything about AI?",
@@ -432,7 +452,7 @@ const QUESTIONS = [
   },
   {
     q: "What happens after the sprint?",
-    a: "On Thursday, in a 30-minute advisory call, we share the report with your leadership and explain what it means for your organization. The sprint is the first step, and it shows you how your people respond, what stands in the way and what to fix first. Next comes deeper training, then a few small pilots, then adopting what works. On the call we recommend the training that fits, such as the AI Stakeholder Challenge, delivered privately to your leaders.",
+    a: "On Thursday, in a 30-minute advisory call, we share the report with your leadership and explain what it means for your organization. The sprint is the first step, and it shows you how your people respond, what stands in the way and what to fix first. Next comes deeper training, then a few small pilots, then adopting what works. Your results determine the training and other steps we recommend on the call.",
   },
 ];
 

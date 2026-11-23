@@ -378,7 +378,7 @@ The sprint shows an organization what we can do and how its people respond while
 - **Hero:** "By Thursday you know what your organization needs before it adopts AI, all drawn from your own people."
 - **Sample report:** "could go to AI" is now "they would hand to AI", since these are the views of people still learning. The last page is "Three moves before your first pilot", its third move "Train, then pilot", with no week bars.
 - **FAQ, after the sprint:** states the sprint, deeper training, small pilots, then adopting what works.
-- **Public copy names only AISC as an example.** AICC and Labs are raised on the advisory call when they fit.
+- **Public copy names no program as the next step** (founder, 2026-11-23: "Don't mention any program yet. The results and diagnosis will determine the training and other steps required"). The FAQ says: "Your results determine the training and other steps we recommend on the call." "Who runs it" still names AISC, as the program the sprint is built on.
 - **Do not undersell it:** keep the concrete promises (how your people respond, what stands in the way, what to fix first). The real report and advisory call follow the same rule.
 
 ### The booking window (founder, 2026-11-22)
@@ -449,3 +449,50 @@ For Office Sprint visitors only (`?src=OS`); other inquiry types are unchanged. 
 ### The schedule section (founder, 2026-11-23)
 
 Label "The Schedule", heading "One time slot is yours, Monday to Wednesday."
+
+### "What changes" (founder, 2026-11-23)
+
+The section now also speaks to organizations that do not know what to do next, not only to AI pushed from the top. Heading: "From unsure about AI to a clear next step your people support." Five rows, in a leader's order: what to do next, where AI would help most, fear of replacement, tools that sit unused, company information in public AI tools. The two rows on saving and creating value were merged.
+
+### The main audience (founder, 2026-11-23)
+
+**Organizations that know AI matters and do not know what to do next.** Every line on the page answers to them.
+
+- **Hero:** "Know your next step with AI in one week." The founder's earlier headline now opens the paragraph.
+- **The sprints:** "Three sprints to find where AI fits, how ready you are and what to solve first." Each card carries its question: "Where could AI help us?", "Are we ready?", "What should we solve first, and under what rules?" (Not "answers one question": that implied an agreed list.)
+- **Who it is for:** "For organizations that know AI matters, but not what to do next." No plan or experience needed.
+- **FAQ:** opens with "We don't have an AI plan yet. Is this for us?"
+- **Link previews and quick links** open with the audience.
+- **Honest wording:** people "chose" or "agree on" rules and "would" keep them. Writing a rule does not prove anyone keeps it.
+
+### "What changes" wording (founder, 2026-11-23)
+
+His lines: "You have a map of the work your teams would hand to AI and the problems they want solved the most, including where AI could create new value." and "They learn what AI can and cannot do, and what makes them more valuable alongside it, so they move from uncertainty to clarity."
+
+The Available slots list appears only when the page can read live availability from Intelligence. If Intelligence is down, the section is hidden.
+
+### The three sprints, redesigned (founder, 2026-11-23)
+
+The three separate cards ("it currently looks scattered") are now one panel read Monday to Wednesday. Each day's question is the large text, with the program title beneath it. "What they learn", "Your team's task" and "What you get" sit on the same lines across the days, and the results form one navy band along the bottom. On phones the days stack.
+
+Reading aids (founder, 2026-11-23): "Sprint 1" is now a large, faint "1". A thin top line deepens from Monday to Wednesday to mark each sprint, and the parts step from white through lilac to the navy result. On phones and tablets each day is its own card.
+
+"What you get", in simple language everyone can understand (founder, 2026-11-23). Monday: "The tasks your people would give to AI, and the ones they would handle." Tuesday: "How ready your organization is for AI, and how well your information is kept." Wednesday stays: "The problems worth solving first, and the rules your people would keep."
+
+### "Who runs it" (founder, 2026-11-23)
+
+This section answers who is behind the sprint; it does not sell AISC. "The sprint is built on the studio's flagship program, the AI Stakeholder Challenge. Over seven days, it prepares senior leaders to take a clear position on AI and safely lead their people from uncertainty to clarity and prosperity. The Office Sprint brings its resources, guided tools and reporting to your people, in three sprints."
+
+### Task deadlines (founder, 2026-11-23)
+
+"I'm sticking to Thursday. The tasks should be simple enough to finish same day. By Thursday morning I create the report. So they have all of Wednesday to finish. It's a sprint and it should be treated as such. That's why there are no replays."
+
+- **Each task is due the same day, by 11:59 PM WAT.** Everything closes **Wednesday at 11:59 PM WAT for every slot**, and the server refuses work after that. This replaces "48 hours after Wednesday's sprint".
+- **Thursday:** the founder creates the report in the morning from the work that is in, then holds the advisory call with leadership. The call needs a time after the report is ready.
+- **To build with the report (checkpoint 3):** it shows how many took part, and any part with fewer than 5 responses says there were not enough to show it.
+
+### Visitors in other time zones (founder, 2026-11-23: "we have to highlight it properly")
+
+The schedule shows "Showing your time in [place]". Each slot leads with the visitor's own time and days, with the slot and WAT beside it. The days are worked out for them: Slot 1 is Sunday to Tuesday in Los Angeles. For these visitors the "outside normal working hours" line says "in West Africa", because that is not true everywhere. Visitors in WAT see the page as before.
+
+The application form and the screen after it also show the visitor's own time (founder, 2026-11-23: "Yes, add it"), with exact local dates once a week is chosen. It is display only: the saved slot does not change. Emails stay in WAT, because the server does not know the applicant's time zone.

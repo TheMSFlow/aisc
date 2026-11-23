@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Share, Check, ChevronRight } from "lucide-react";
+import { Share2, Check, ChevronRight, Info } from "lucide-react";
 
 import { useCohort } from "@/context/CohortContext";
 import { formatCohortDates } from "@/utils/cohortFormat";
@@ -11,6 +11,7 @@ import { trackEvent } from "@/lib/analytics";
 import CurrencyPrice from "@/components/global/CurrencyPrice";
 import { PRICING } from "@/lib/pricing";
 import { INTELLIGENCE_URL } from "@/lib/sites";
+import { OFFICE_SPRINT_FACTS as FACTS } from "@/lib/officeSprint";
 
 const SITE_URL = "https://aistakeholderchallenge.com";
 
@@ -32,7 +33,23 @@ const BRIEFING_URL =
 //
 // Copy note: no em-dashes, and no "Register"/"Sign up" as CTA language. Both
 // are hard rules in agent-guides/COPY_GUIDE.md.
+//
+// Since 2026-11-23 (founder) the Office Sprint comes first and the clarity call
+// second. These two are the featured hero cards, ahead of "More Opportunities".
 const links = [
+  {
+    // The free sprint for organizations (founder, 2026-11-21).
+    id: "office-sprint",
+    badge: "For Organizations",
+    headline: "AI Stakeholder Office Sprint",
+    persona:
+      "For organizations that know AI matters, but not what to do next. Three live sprints introduce your people to AI Leadership, Monday to Wednesday. On Thursday, your leadership reads how ready they are and where AI fits in your work.",
+    promise: "Know your next step with AI in one week.",
+    note: "Online, no AI tools needed, and no company data shared.",
+    cta: "See the AI Stakeholder Office Sprint",
+    href: "/office-sprint",
+    external: false,
+  },
   {
     id: "vvip_call",
     badge: "Private 1:1",
@@ -94,18 +111,6 @@ const links = [
     href: "/",
     external: false,
     tags: ["Chiefs", "Leaders of Leaders", "Emerging Leaders"],
-  },
-  {
-    // The free sprint for organizations (founder, 2026-11-21).
-    id: "office-sprint",
-    badge: "For Organizations",
-    headline: "AI Stakeholder Office Sprint",
-    persona:
-      "Three live sprints introduce your people to AI Leadership, Monday to Wednesday. On Thursday, your leadership reads how ready they are and where AI fits in your work.",
-    cta: "See the AI Stakeholder Office Sprint",
-    href: "/office-sprint",
-    external: false,
-    tags: ["Delegation", "Readiness", "AI Value"],
   },
   {
     // `register` survives as a code identifier only. The reader never sees it:
@@ -222,7 +227,7 @@ function ShareButton({ href, title, className = "bg-white/60 hover:bg-white" }) 
       {copied ? (
         <Check className="w-4 h-4 text-green-600" />
       ) : (
-        <Share className="w-4 h-4 text-dark-blue/50" />
+        <Share2 className="w-4 h-4 text-dark-blue/50" />
       )}
     </button>
   );
@@ -361,6 +366,68 @@ function HeroCard({ link }) {
   );
 }
 
+// The Office Sprint's own card, drawn from the hero of /office-sprint: navy with
+// a soft glow, the facts strip, the promise in large capitals and a light pill.
+// Deliberately unlike the clarity call's lilac card (founder, 2026-11-23).
+function SprintCard({ link }) {
+  return (
+    <CardShell
+      link={link}
+      className="block group relative overflow-hidden rounded-2xl bg-dark-blue text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-msaccent"
+    >
+      <div className="pointer-events-none absolute -top-24 -left-24 h-72 w-96 bg-[radial-gradient(ellipse_at_center,rgba(99,104,218,0.28),transparent_65%)]" />
+      <div className="pointer-events-none absolute -top-20 -right-28 h-72 w-96 bg-[radial-gradient(ellipse_at_center,rgba(135,5,113,0.22),transparent_65%)]" />
+
+      <div className="relative flex items-center justify-between gap-3 px-5 py-3.5">
+        <p className="font-ptsans text-[15px] tracking-wide text-white">
+          AI STAKEHOLDER <span className="font-bold">OFFICE SPRINT</span>
+        </p>
+        <ShareButton
+          href={link.href}
+          title={link.headline}
+          className="bg-lilac hover:bg-white"
+        />
+      </div>
+
+      <dl className="relative grid grid-cols-3 divide-x divide-white/10 border-y border-white/10 bg-white/[0.03]">
+        {FACTS.map((fact) => (
+          <div key={fact.label} className="min-w-0 px-3 py-3 first:pl-5 last:pr-4">
+            <dt className="sr-only">{`${fact.value} ${fact.label}`}</dt>
+            <dd className="font-ptsans text-base font-bold leading-tight text-white">
+              {fact.value}
+            </dd>
+            <dd className="mt-0.5 text-[11px] leading-snug text-white/55">
+              {fact.label}
+            </dd>
+          </div>
+        ))}
+      </dl>
+
+      <div className="relative px-5 pt-7 pb-5">
+        <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.3em] text-lilac/60">
+          {link.badge}
+        </p>
+        <h2 className="font-ptsans text-[2.15rem] font-bold uppercase leading-[0.95] tracking-tight text-white">
+          {link.promise}
+        </h2>
+        <p className="mt-5 text-sm font-light leading-relaxed text-white/70">
+          {link.persona}
+        </p>
+
+        <span className="mt-6 flex items-center justify-center gap-1.5 rounded-full bg-lilac px-4 py-3 text-sm font-semibold text-dark-blue transition-colors duration-150 group-hover:bg-white">
+          {link.cta}
+          <ChevronRight className="h-4 w-4 shrink-0 transition-transform duration-150 group-hover:translate-x-0.5 motion-reduce:transition-none" />
+        </span>
+
+        <div className="mt-4 flex items-start gap-2.5 rounded-xl border border-lilac/20 bg-lilac/[0.08] px-3.5 py-3">
+          <Info className="mt-0.5 h-3.5 w-3.5 shrink-0 text-lilac" aria-hidden="true" />
+          <p className="text-xs leading-relaxed text-white/85">{link.note}</p>
+        </div>
+      </div>
+    </CardShell>
+  );
+}
+
 function StandardCard({ link }) {
   return (
     <CardShell
@@ -456,7 +523,7 @@ function Divider({ label, strong = false }) {
 }
 
 export default function QuickLinks() {
-  const [hero, ...rest] = links;
+  const [sprint, clarityCall, ...rest] = links;
   const leaders = rest.filter((link) => !link.section);
   const sectioned = rest.filter((link) => link.section);
 
@@ -481,7 +548,10 @@ export default function QuickLinks() {
           </p>
         </header>
 
-        <HeroCard link={hero} />
+        <div className="space-y-4">
+          <SprintCard link={sprint} />
+          <HeroCard link={clarityCall} />
+        </div>
 
         <Divider label="More Opportunities" />
 

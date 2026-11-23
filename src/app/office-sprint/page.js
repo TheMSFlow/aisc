@@ -13,7 +13,7 @@ import {
 
 const TITLE = "AI Stakeholder Office Sprint | Michael Steve";
 const DESCRIPTION =
-  "A three-day AI leadership sprint for 5 to 20 key people in your organization, Monday to Wednesday. Three live sprints of 45 minutes, then a report for your leadership on Thursday: where AI fits, what stands in the way, how your people respond and the AI policy they would keep.";
+  "For organizations that know AI matters, but not what to do next. Three live sprints of 45 minutes for 5 to 20 key people, Monday to Wednesday, then a report for your leadership on Thursday: where AI fits, what stands in the way, how your people respond and the AI policy they would keep.";
 
 export const metadata = {
   title: TITLE,

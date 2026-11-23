@@ -121,7 +121,7 @@ export const SAMPLE_MOVES = [
     // (founder, 2026-11-22). 13 of 14 ban public AI tools for customer details,
     // yet nobody said which tools are allowed, and the first project (WhatsApp
     // orders) will need one. The added rule closes that gap.
-    body: "Start from the four rules most of your people already keep, and add one they did not write: only AI tools the company has approved may be used for work.",
+    body: "Start from the four rules most of your people agree on, and add one they did not write: only AI tools the company has approved may be used for work.",
   },
   {
     // Adoption does not follow the sprint directly: training, then a few

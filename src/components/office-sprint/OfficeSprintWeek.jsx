@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { Globe2 } from "lucide-react";
 import Section from "@/components/layout/Section";
 import {
   OFFICE_SPRINT_DAYS as DAYS,
@@ -11,8 +12,10 @@ import { INTELLIGENCE_API_BASE } from "@/lib/sites";
 // The signature element: the sprint week drawn as it runs. Columns are the
 // days, rows are the three slots, and Thursday holds the advisory call.
 //
-// Visitors outside WAT also see each slot in their own time, like /coaching.
-// Before the browser reports its zone the card shows WAT alone.
+// Visitors outside WAT see each slot in their own time first, with its days as
+// they fall there: Slot 1 is Sunday to Tuesday in Los Angeles (founder,
+// 2026-11-23: "we have to highlight it properly"). WAT stays beside it. Before
+// the browser reports its zone the card shows WAT alone.
 
 function nextMondayAt(utcHour, utcMinute, now = new Date()) {
   const d = new Date(
@@ -22,6 +25,20 @@ function nextMondayAt(utcHour, utcMinute, now = new Date()) {
   d.setUTCDate(d.getUTCDate() + ahead);
   if (d <= now) d.setUTCDate(d.getUTCDate() + 7);
   return d;
+}
+
+const SESSION_MS = 45 * 60 * 1000;
+const DAY_MS = 24 * 60 * 60 * 1000;
+
+// "10:15 to 11:00 PM", or "11:30 PM to 12:15 AM" across a change of period.
+function timeRange(start, end, zone) {
+  const fmt = (d) =>
+    new Intl.DateTimeFormat("en-US", { timeZone: zone, hour: "numeric", minute: "2-digit" })
+      .format(d)
+      .replace(/\s/g, " ");
+  const a = fmt(start);
+  const b = fmt(end);
+  return a.slice(-2) === b.slice(-2) ? `${a.slice(0, -3)} to ${b}` : `${a} to ${b}`;
 }
 
 function useLocalSlots() {
@@ -37,15 +54,20 @@ function useLocalSlots() {
         let differs = false;
         for (const s of SLOTS) {
           const at = nextMondayAt(s.utcHour, s.utcMinute);
-          const fmt = (opts, zone) =>
-            new Intl.DateTimeFormat("en-US", { timeZone: zone, ...opts }).format(at);
+          const fmt = (opts, zone, date = at) =>
+            new Intl.DateTimeFormat("en-US", { timeZone: zone, ...opts }).format(date);
           const time = fmt({ hour: "numeric", minute: "2-digit" }, tz);
           const day = fmt({ weekday: "short" }, tz);
+          const lastDay = fmt({ weekday: "short" }, tz, new Date(at.getTime() + 2 * DAY_MS));
           const wat = fmt({ hour: "numeric", minute: "2-digit" }, "Africa/Lagos");
           if (time !== wat || day !== "Mon") differs = true;
-          out[s.key] = day === "Mon" ? `${time} your time` : `${time} ${day} your time`;
+          out[s.key] = {
+            range: timeRange(at, new Date(at.getTime() + SESSION_MS), tz),
+            days: `${day} to ${lastDay}`,
+          };
         }
-        setLocal(differs ? out : null);
+        const place = tz.split("/").pop().replace(/_/g, " ");
+        setLocal(differs ? { place, slots: out } : null);
       } catch {
         setLocal(null);
       }
@@ -174,7 +196,7 @@ function AvailableTimes({ weeks, local }) {
         </p>
         <p className="max-w-md text-base font-light leading-relaxed text-dark-blue/60">
           Open a week to see which slots are still open. A slot is held for one
-          organization for all three sprints. To keep your slot, onboarding
+          organization for all three sprints. To claim your slot, onboarding
           must be complete at least 48 hours before your first sprint.
         </p>
       </div>
@@ -206,6 +228,7 @@ function AvailableTimes({ weeks, local }) {
                   <ul className="space-y-2">
                     {SLOTS.map((s) => {
                       const taken = held.has(apiSlotKey(s.key));
+                      const mine = local?.slots[s.key];
                       return (
                         <li
                           key={s.key}
@@ -217,9 +240,19 @@ function AvailableTimes({ weeks, local }) {
                         >
                           <span className={taken ? "text-dark-blue/35" : "text-dark-blue"}>
                             <span className="block text-sm">
-                              <span className="font-semibold">{partOfDay(s)}</span>
-                              {" · "}
-                              {s.wat}
+                              {mine ? (
+                                <>
+                                  <span className="font-semibold">{mine.range}</span>
+                                  {", "}
+                                  {mine.days}
+                                </>
+                              ) : (
+                                <>
+                                  <span className="font-semibold">{partOfDay(s)}</span>
+                                  {" · "}
+                                  {s.wat}
+                                </>
+                              )}
                             </span>
                             <span
                               className={
@@ -228,8 +261,9 @@ function AvailableTimes({ weeks, local }) {
                                   : "mt-0.5 block text-xs text-dark-blue/45"
                               }
                             >
-                              {s.name}, Monday to Wednesday
-                              {local ? ` · ${local[s.key]}` : ""}
+                              {mine
+                                ? `${s.name}, ${s.wat} WAT`
+                                : `${s.name}, Monday to Wednesday`}
                             </span>
                           </span>
                           <span
@@ -278,11 +312,19 @@ export default function OfficeSprintWeek() {
             One time slot is yours, Monday to Wednesday.
           </h2>
           <p className="mt-5 max-w-xl text-base font-light leading-relaxed text-dark-blue/60">
-            The sprints run outside normal working hours, so your business
-            doesn&rsquo;t stop. Each slot belongs to one organization for the
-            week, so there are only three slots a week. All times are West Africa
-            Time (WAT).
+            {local
+              ? "The sprints run outside normal working hours in West Africa. "
+              : "The sprints run outside normal working hours, so your business doesn\u2019t stop. "}
+            Each slot belongs to one organization for the week, so there are
+            only three slots a week.
+            {!local && " All times are West Africa Time (WAT)."}
           </p>
+          {local && (
+            <p className="mt-5 inline-flex items-center gap-2.5 rounded-full bg-lilac px-4 py-2 text-sm font-semibold text-dark-blue">
+              <Globe2 className="h-4 w-4 shrink-0 text-msblue" aria-hidden="true" />
+              Showing your time in {local.place}
+            </p>
+          )}
         </div>
 
         <div className="relative overflow-hidden rounded-3xl bg-dark-blue p-6 text-white shadow-[0_2px_4px_rgba(0,3,76,0.15),0_16px_40px_rgba(0,3,76,0.25)] sm:p-8 lg:p-10">
@@ -314,10 +356,22 @@ export default function OfficeSprintWeek() {
               {SLOTS.map((s, i) => (
                 <div key={s.key} className="contents">
                   <div className="flex flex-col justify-center py-3 pr-2">
-                    <p className="text-sm font-semibold text-white">{s.wat}</p>
-                    <p className="mt-0.5 text-xs text-white/45">
-                      {local ? local[s.key] : s.name}
-                    </p>
+                    {local ? (
+                      <>
+                        <p className="text-sm font-semibold text-white">{local.slots[s.key].range}</p>
+                        <p className="mt-0.5 text-xs font-medium text-lilac">
+                          {local.slots[s.key].days}, your time
+                        </p>
+                        <p className="mt-1 text-[11px] leading-snug text-white/45">
+                          {s.name}, {s.wat} WAT
+                        </p>
+                      </>
+                    ) : (
+                      <>
+                        <p className="text-sm font-semibold text-white">{s.wat}</p>
+                        <p className="mt-0.5 text-xs text-white/45">{s.name}</p>
+                      </>
+                    )}
                   </div>
                   {i === 0 && (
                     <>
@@ -376,10 +430,26 @@ export default function OfficeSprintWeek() {
                   key={s.key}
                   className="flex items-baseline justify-between gap-3 rounded-2xl border border-white/10 bg-white/[0.06] px-4 py-3"
                 >
-                  <span className="text-sm font-semibold">{s.wat}</span>
-                  <span className="text-right text-xs text-white/45">
-                    {local ? local[s.key] : s.name}
-                  </span>
+                  {local ? (
+                    <>
+                      <span>
+                        <span className="block text-sm font-semibold">{local.slots[s.key].range}</span>
+                        <span className="mt-0.5 block text-xs font-medium text-lilac">
+                          {local.slots[s.key].days}, your time
+                        </span>
+                      </span>
+                      <span className="text-right text-xs leading-snug text-white/45">
+                        {s.name}
+                        <br />
+                        {s.wat} WAT
+                      </span>
+                    </>
+                  ) : (
+                    <>
+                      <span className="text-sm font-semibold">{s.wat}</span>
+                      <span className="text-right text-xs text-white/45">{s.name}</span>
+                    </>
+                  )}
                 </li>
               ))}
             </ul>

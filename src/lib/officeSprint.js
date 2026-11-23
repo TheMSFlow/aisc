@@ -30,10 +30,11 @@ export const OFFICE_SPRINT_DAYS = [
     day: "Monday",
     title: "AI Clarity and Task Delegation",
     short: "Clarity and Delegation",
+    question: "Where could AI help us?",
     taught: "What AI is and what it isn't, in plain words, and what work is worth handing to it.",
     after:
       "Each person lists the tasks they do again and again, and a simple guided tool sorts which ones AI could help with.",
-    gain: "A map of the work your teams would hand to AI.",
+    gain: "The tasks your people would give to AI, and the ones they would handle.",
   },
   {
     sprint: 2,
@@ -41,10 +42,11 @@ export const OFFICE_SPRINT_DAYS = [
     day: "Tuesday",
     title: "AI Readiness and Data Audit",
     short: "Readiness and Data Audit",
+    question: "Are we ready?",
     taught: "What being ready for AI takes, and why it starts with your information.",
     after:
       "Each person rates how ready they are, then lists the information their work depends on, where it is kept and who looks after it. Nobody shares the information itself.",
-    gain: "Your readiness across six areas, and a map of your data.",
+    gain: "How ready your organization is for AI, and how well your information is kept.",
   },
   {
     sprint: 3,
@@ -52,10 +54,11 @@ export const OFFICE_SPRINT_DAYS = [
     day: "Wednesday",
     title: "AI Value Creation and Governance",
     short: "Value and Governance",
+    question: "What should we solve first, and under what rules?",
     taught: "Where AI creates new value, and the risks of using it without rules.",
     after:
       "Each person lists what slows their work down, ranks it, and picks the problem most worth solving. Then they write their own rules for using AI at work.",
-    gain: "The problems worth solving first, and the rules your people will keep.",
+    gain: "The problems worth solving first, and the rules your people would keep.",
   },
 ];
 
