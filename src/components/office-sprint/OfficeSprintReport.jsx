@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Section from "@/components/layout/Section";
 import Button from "@/components/global/Button";
@@ -30,6 +30,58 @@ import {
 
 const teamName = (key) => SAMPLE_ORG.teams.find((t) => t.key === key)?.name || key;
 const pct = (n, d) => Math.round((n / d) * 100);
+
+// A key number that counts up once, the first time it is on screen (founder,
+// 2026-11-24). The server sends the real figure; the count only starts in the
+// browser, and not at all for visitors who prefer reduced motion. The first
+// number in the text counts; the rest of the text stays as it is.
+function CountUp({ text, delay = 250 }) {
+  const ref = useRef(null);
+
+  useLayoutEffect(() => {
+    const el = ref.current;
+    const match = String(text).match(/\d+/);
+    if (
+      !el ||
+      !match ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
+      !("IntersectionObserver" in window)
+    ) {
+      return undefined;
+    }
+
+    const target = Number(match[0]);
+    const show = (n) => {
+      el.textContent = String(text).replace(match[0], String(n));
+    };
+    show(0);
+
+    let frame = 0;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        observer.disconnect();
+        const start = performance.now() + delay;
+        const step = (now) => {
+          const p = Math.min(1, Math.max(0, (now - start) / 1300));
+          show(Math.round(target * (1 - Math.pow(1 - p, 3))));
+          if (p < 1) frame = requestAnimationFrame(step);
+        };
+        frame = requestAnimationFrame(step);
+      },
+      { threshold: 0.6 },
+    );
+    observer.observe(el);
+
+    return () => {
+      observer.disconnect();
+      cancelAnimationFrame(frame);
+      show(target);
+    };
+  }, [text, delay]);
+
+  return <span ref={ref}>{text}</span>;
+}
 
 // ── Report page frame ─────────────────────────
 
@@ -76,6 +128,8 @@ function Donut({ parts, size = 168, stroke = 22, children }) {
           return (
             <circle
               key={p.key}
+              className="os-donut-seg"
+              style={{ "--c": c, "--os-seg": `${i * 160}ms` }}
               cx={size / 2}
               cy={size / 2}
               r={r}
@@ -143,7 +197,7 @@ function AtAGlance() {
                     <span className="text-xs font-normal text-dark-blue/40"> /{registered}</span>
                   </p>
                   <div className="mt-1.5 flex h-24 items-end rounded-t-md bg-white">
-                    <div className="w-full rounded-t-md bg-msblue" style={{ height: `${(n / registered) * 100}%` }} />
+                    <div className="os-bar-y w-full rounded-t-md bg-msblue" style={{ height: `${(n / registered) * 100}%` }} />
                   </div>
                   <p className="mt-1.5 text-[11px] text-dark-blue/55">Sprint {i + 1}</p>
                 </div>
@@ -155,7 +209,9 @@ function AtAGlance() {
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
           {tiles.map((t) => (
             <div key={t.label} className="rounded-2xl border border-dark-blue/8 p-3.5">
-              <p className="font-ptsans text-3xl font-bold leading-none tracking-tight">{t.value}</p>
+              <p className="font-ptsans text-3xl font-bold leading-none tracking-tight">
+                <CountUp text={t.value} />
+              </p>
               <p className="mt-1.5 text-xs leading-snug text-dark-blue/60">{t.label}</p>
             </div>
           ))}
@@ -186,7 +242,9 @@ function WhereAiFits() {
         <Legend items={QUADRANTS} />
         <div className="mt-5 flex flex-1 flex-col items-center gap-6 sm:flex-row sm:items-center">
           <Donut parts={totals}>
-            <p className="font-ptsans text-3xl font-bold leading-none">{pct(toAi, all)}%</p>
+            <p className="font-ptsans text-3xl font-bold leading-none">
+              <CountUp text={`${pct(toAi, all)}%`} />
+            </p>
             <p className="mt-1 max-w-20 text-[11px] leading-tight text-dark-blue/55">
               of {all} tasks they would hand to AI
             </p>
@@ -207,7 +265,7 @@ function WhereAiFits() {
                       <div
                         key={q.key}
                         title={`${q.label}: ${t[q.key]} tasks`}
-                        className="flex items-center justify-center text-[11px] font-semibold text-white"
+                        className="os-bar-x flex items-center justify-center text-[11px] font-semibold text-white"
                         style={{ width: `${(t[q.key] / total) * 100}%`, background: q.color }}
                       >
                         {t[q.key]}
@@ -251,11 +309,11 @@ function Radar({ areas, outOf }) {
         const [x, y] = at(i, 1);
         return <line key={i} x1={cx} y1={cy} x2={x} y2={y} stroke="#00034c" strokeOpacity="0.08" />;
       })}
-      <polygon points={shape} fill="#6368da" fillOpacity="0.18" stroke="#6368da" strokeWidth="2" strokeLinejoin="round" />
+      <polygon className="os-radar" style={{ transformOrigin: `${cx}px ${cy}px` }} points={shape} fill="#6368da" fillOpacity="0.18" stroke="#6368da" strokeWidth="2" strokeLinejoin="round" />
       {areas.map((a, i) => {
         const [x, y] = at(i, a.score / outOf);
         const start = a.tag === "Start here";
-        return <circle key={a.name} cx={x} cy={y} r={start ? 5 : 4} fill={start ? "#00034c" : "#6368da"} stroke="white" strokeWidth="2" />;
+        return <circle key={a.name} className="os-radar-dot" cx={x} cy={y} r={start ? 5 : 4} fill={start ? "#00034c" : "#6368da"} stroke="white" strokeWidth="2" />;
       })}
       {areas.map((a, i) => {
         const [x, y] = at(i, 1.12);
@@ -298,7 +356,7 @@ function Readiness() {
                   )}
                 </div>
                 <div className="mt-1 h-1.5 overflow-hidden rounded-full bg-lilac" title={`${a.name}: ${a.score} of ${outOf}`}>
-                  <div className="h-full rounded-full bg-msaccent" style={{ width: `${(a.score / outOf) * 100}%` }} />
+                  <div className="os-bar-x h-full rounded-full bg-msaccent" style={{ width: `${(a.score / outOf) * 100}%` }} />
                 </div>
               </div>
               <p className="font-ptsans text-lg font-bold tabular-nums">
@@ -333,7 +391,7 @@ function YourData() {
           <Caption>All {sets} data sets, by how ready they are for AI</Caption>
           <div className="mt-3 grid max-w-[25rem] grid-cols-8 gap-2" role="img" aria-label={`${DATA_STATUS.map((s) => `${status[s.key]} ${s.label}`).join(", ")}; ${SAMPLE_DATA.nobodyOwns} with nobody answering for them`}>
             {cells.map((c, i) => (
-              <span key={i} title={`${c.label}${c.noOwner ? ", nobody answers for it" : ""}`} className="relative aspect-square rounded-[5px]" style={{ background: c.color }}>
+              <span key={i} title={`${c.label}${c.noOwner ? ", nobody answers for it" : ""}`} className="os-cell relative aspect-square rounded-[5px]" style={{ background: c.color, "--i": i }}>
                 {c.noOwner && <span className="absolute inset-[30%] rounded-full bg-white" />}
               </span>
             ))}
@@ -355,7 +413,7 @@ function YourData() {
               <li key={k.place} className="grid grid-cols-[8.5rem_1fr_1.5rem] items-center gap-3 text-xs">
                 <span className="text-dark-blue/75">{k.place}</span>
                 <span className="h-2.5 overflow-hidden rounded-full bg-lilac" title={`${k.place}: ${k.sets} sets`}>
-                  <span className="block h-full rounded-full bg-msaccent" style={{ width: `${(k.sets / max) * 100}%` }} />
+                  <span className="os-bar-x block h-full rounded-full bg-msaccent" style={{ width: `${(k.sets / max) * 100}%` }} />
                 </span>
                 <span className="text-right font-semibold tabular-nums">{k.sets}</span>
               </li>
@@ -395,7 +453,7 @@ function WhereValueIs() {
                   <span className="hidden sm:inline"> of {of}</span>
                 </p>
                 <div className="mt-1 h-1.5 rounded-full bg-[#eef0fb]">
-                  <div className="h-full rounded-full bg-[#9da1ea]" style={{ width: `${(p.named / of) * 100}%` }} />
+                  <div className="os-bar-x h-full rounded-full bg-[#9da1ea]" style={{ width: `${(p.named / of) * 100}%` }} />
                 </div>
               </div>
               <div title={`${p.chosen} of ${of} want it solved first`}>
@@ -405,7 +463,7 @@ function WhereValueIs() {
                   <span className="hidden sm:inline"> of {of}</span>
                 </p>
                 <div className="mt-1 h-1.5 rounded-full bg-[#eef0fb]">
-                  <div className="h-full rounded-full bg-msblue" style={{ width: `${(p.chosen / of) * 100}%` }} />
+                  <div className="os-bar-x h-full rounded-full bg-msblue" style={{ width: `${(p.chosen / of) * 100}%` }} />
                 </div>
               </div>
             </li>
@@ -432,7 +490,7 @@ function TheirRules() {
             ]}
           >
             <p className="font-ptsans text-2xl font-bold leading-none">
-              {submitted}
+              <CountUp text={String(submitted)} />
               <span className="text-sm font-normal text-dark-blue/40">/{people}</span>
             </p>
           </Donut>
@@ -451,7 +509,7 @@ function TheirRules() {
                   <p className="shrink-0 font-ptsans text-lg font-bold tabular-nums">{share}%</p>
                 </div>
                 <div className="mt-1 h-2 overflow-hidden rounded-full bg-lilac" title={`${r.people} of ${submitted}`}>
-                  <div className={`h-full rounded-full ${split ? "bg-[#c98a12]" : "bg-msaccent"}`} style={{ width: `${share}%` }} />
+                  <div className={`os-bar-x h-full rounded-full ${split ? "bg-[#c98a12]" : "bg-msaccent"}`} style={{ width: `${share}%` }} />
                 </div>
                 {split && (
                   <p className="mt-1 text-xs font-medium text-[#8a5a00]">Split: worth settling together.</p>
@@ -579,7 +637,7 @@ export default function OfficeSprintReport() {
         </h2>
 
         {/* The report window */}
-        <div className="mt-10 overflow-hidden rounded-3xl bg-white text-dark-blue shadow-[0_2px_4px_rgba(0,3,76,0.2),0_30px_80px_rgba(0,3,76,0.55)]">
+        <div data-motion className="mt-10 overflow-hidden rounded-3xl bg-white text-dark-blue shadow-[0_2px_4px_rgba(0,3,76,0.2),0_30px_80px_rgba(0,3,76,0.55)]">
           <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-1 border-b border-dark-blue/8 px-5 py-3.5 sm:px-6">
             <p className="text-sm font-semibold">{SAMPLE_ORG.name}</p>
             <p className="text-xs text-dark-blue/45">
@@ -637,7 +695,7 @@ export default function OfficeSprintReport() {
               <p className="mt-2 max-w-2xl font-ptsans text-2xl font-bold uppercase leading-[1.05] tracking-tight sm:text-3xl">
                 {panel.finding}
               </p>
-              <div key={panel.id} className="mt-6 min-h-0 flex-1">
+              <div key={panel.id} className="os-panel-in mt-6 min-h-0 flex-1">
                 {panel.page}
               </div>
               <div className="mt-6 flex items-center justify-between border-t border-dark-blue/8 pt-4">
@@ -696,7 +754,7 @@ export function ReportPreview() {
   return (
     <a
       href="#your-report"
-      className="group block w-full max-w-[30rem] focus-visible:outline-none"
+      className="os-report-in group block w-full max-w-[30rem] focus-visible:outline-none"
       aria-label="Go to the full report"
     >
       <div className="overflow-hidden rounded-2xl bg-white text-dark-blue shadow-[0_2px_4px_rgba(0,3,76,0.25),0_30px_70px_rgba(0,0,0,0.45)] transition-transform duration-300 group-hover:-translate-y-1 group-focus-visible:ring-2 group-focus-visible:ring-lilac">
@@ -721,7 +779,7 @@ export function ReportPreview() {
               <p className="text-[10px] font-semibold text-dark-blue/55">Where AI fits · {tasks} tasks</p>
               <div className="mt-2 flex h-4 gap-[2px] overflow-hidden rounded" aria-hidden="true">
                 {totals.map((q) => (
-                  <span key={q.key} style={{ width: `${(q.value / tasks) * 100}%`, background: q.color }} />
+                  <span key={q.key} className="os-bar-x" style={{ width: `${(q.value / tasks) * 100}%`, background: q.color }} />
                 ))}
               </div>
               <p className="mt-2 font-ptsans text-2xl font-bold leading-none">{pct(aiTasks, tasks)}%</p>
@@ -732,7 +790,7 @@ export function ReportPreview() {
               <div className="mt-2 grid flex-1 grid-cols-3 items-end gap-1.5" aria-hidden="true">
                 {finished.map((n, i) => (
                   <div key={i} className="flex h-full flex-col justify-end">
-                    <div className="rounded-t bg-msblue" style={{ height: `${(n / registered) * 100}%`, minHeight: 8 }} />
+                    <div className="os-bar-y rounded-t bg-msblue" style={{ height: `${(n / registered) * 100}%`, minHeight: 8 }} />
                     <p className="mt-1 text-center text-[9px] text-dark-blue/50">S{i + 1}</p>
                   </div>
                 ))}

@@ -1,0 +1,220 @@
+/* Office Sprint motion. Opacity and transform only, so the browser never has to
+   lay the page out again. Everything plays once, and nothing loops. */
+
+:root {
+  --os-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Reveal on scroll */
+[data-motion] {
+  transition:
+    opacity 560ms var(--os-ease) var(--os-delay, 0ms),
+    transform 560ms var(--os-ease) var(--os-delay, 0ms);
+}
+
+[data-motion-state="pending"] {
+  opacity: 0;
+  transform: translate3d(0, 14px, 0);
+}
+
+/* "What changes": the answer arrives just after the problem */
+[data-motion="change"] {
+  transition: none;
+}
+
+[data-motion="change"][data-motion-state="pending"] {
+  opacity: 1;
+  transform: none;
+}
+
+[data-motion="change"] > * {
+  transition:
+    opacity 520ms var(--os-ease),
+    transform 520ms var(--os-ease);
+}
+
+[data-motion="change"] > :last-child {
+  transition-delay: 170ms;
+}
+
+[data-motion="change"][data-motion-state="pending"] > :first-child {
+  opacity: 0;
+}
+
+[data-motion="change"][data-motion-state="pending"] > :last-child {
+  opacity: 0;
+  transform: translate3d(-12px, 0, 0);
+}
+
+/* Once the answer is in, the problem steps back a little (founder,
+   2026-11-24): the shift is what the reader should see. */
+[data-motion="change"][data-motion-state="in"] > :first-child {
+  opacity: 0.6;
+  transition: opacity 900ms var(--os-ease) 900ms;
+}
+
+/* The line that runs Monday to Wednesday */
+.os-line {
+  transform-origin: left;
+  transition: transform 720ms var(--os-ease) calc(var(--os-delay, 0ms) + 120ms);
+}
+
+[data-motion-state="pending"] .os-line {
+  transform: scaleX(0);
+}
+
+/* Charts grow when a report page opens */
+@keyframes os-grow-x {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@keyframes os-grow-y {
+  from { transform: scaleY(0); }
+  to { transform: scaleY(1); }
+}
+
+@keyframes os-rise {
+  from { opacity: 0; transform: translate3d(0, 10px, 0); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes os-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* The report demo moves slower than the rest (founder, 2026-11-24: "The demo
+   motion is too fast"), and side-by-side pieces follow one another. */
+.os-bar-x {
+  transform-origin: left;
+  animation: os-grow-x 1150ms var(--os-ease) both;
+  animation-delay: calc(var(--os-bar-delay, 120ms) + var(--os-seg, 0ms));
+}
+
+.os-bar-y {
+  transform-origin: bottom;
+  animation: os-grow-y 1150ms var(--os-ease) both;
+  animation-delay: calc(var(--os-bar-delay, 120ms) + var(--os-seg, 0ms));
+}
+
+.os-bar-x:nth-child(2),
+.os-bar-y:nth-child(2) {
+  --os-seg: 110ms;
+}
+
+.os-bar-x:nth-child(3),
+.os-bar-y:nth-child(3) {
+  --os-seg: 220ms;
+}
+
+.os-bar-x:nth-child(4),
+.os-bar-y:nth-child(4) {
+  --os-seg: 330ms;
+}
+
+.os-panel-in {
+  animation: os-rise 520ms var(--os-ease) both;
+}
+
+/* Each chart draws in its own way: rings trace round, the readiness shape
+   opens from the centre, the data squares fill in one by one. */
+@keyframes os-dash {
+  from { stroke-dasharray: 0 var(--c); }
+}
+
+@keyframes os-open {
+  from { transform: scale(0); }
+}
+
+@keyframes os-pop {
+  from { opacity: 0; transform: scale(0.6); }
+}
+
+.os-donut-seg {
+  animation: os-dash 1200ms var(--os-ease) both;
+  animation-delay: calc(150ms + var(--os-seg, 0ms));
+}
+
+.os-radar {
+  transform-box: view-box;
+  animation: os-open 1100ms var(--os-ease) 150ms both;
+}
+
+.os-radar-dot {
+  animation: os-fade 500ms ease 1050ms both;
+}
+
+.os-cell {
+  animation: os-pop 460ms var(--os-ease) both;
+  animation-delay: calc(150ms + var(--i, 0) * 24ms);
+}
+
+[data-motion-state="pending"] .os-bar-x,
+[data-motion-state="pending"] .os-bar-y,
+[data-motion-state="pending"] .os-panel-in,
+[data-motion-state="pending"] .os-donut-seg,
+[data-motion-state="pending"] .os-radar,
+[data-motion-state="pending"] .os-radar-dot,
+[data-motion-state="pending"] .os-cell {
+  animation-play-state: paused;
+}
+
+/* Hero: the headline and text never wait; the report assembles beside them */
+.os-hero-rise {
+  animation: os-rise 520ms var(--os-ease) 90ms both;
+}
+
+.os-hero-rise-late {
+  animation: os-rise 520ms var(--os-ease) 190ms both;
+}
+
+.os-report-in {
+  --os-bar-delay: 700ms;
+  animation: os-rise 950ms var(--os-ease) 150ms both;
+}
+
+/* The three "finished" bars rise one after another */
+.os-report-in .grid > div:nth-child(2) > .os-bar-y {
+  --os-seg: 160ms;
+}
+
+.os-report-in .grid > div:nth-child(3) > .os-bar-y {
+  --os-seg: 320ms;
+}
+
+/* Live availability arrives after the page */
+.os-fade-in {
+  animation: os-fade 420ms ease both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-motion],
+  [data-motion] > *,
+  .os-line,
+  .os-bar-x,
+  .os-bar-y,
+  .os-panel-in,
+  .os-donut-seg,
+  .os-radar,
+  .os-radar-dot,
+  .os-cell,
+  .os-hero-rise,
+  .os-hero-rise-late,
+  .os-report-in,
+  .os-fade-in {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+@media print {
+  [data-motion-state="pending"],
+  [data-motion-state="pending"] > *,
+  [data-motion-state="pending"] .os-line {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

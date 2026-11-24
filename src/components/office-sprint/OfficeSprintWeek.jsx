@@ -189,7 +189,7 @@ function Chevron() {
 function AvailableTimes({ weeks, local }) {
   if (!weeks) return null;
   return (
-    <div className="mt-16 grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] lg:gap-14">
+    <div className="os-fade-in mt-16 grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] lg:gap-14">
       <div>
         <p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.35em] text-dark-blue/40">
           Available slots
@@ -378,6 +378,8 @@ export default function OfficeSprintWeek() {
                       {DAYS.map((d) => (
                         <div
                           key={d.day}
+                          data-motion
+                          style={{ "--os-delay": `${(d.sprint - 1) * 110}ms` }}
                           className="row-span-3 flex flex-col justify-center rounded-2xl border border-white/10 bg-white/[0.06] px-5"
                         >
                           <p className="font-ptsans text-2xl font-bold uppercase tracking-tight text-white">
@@ -386,7 +388,11 @@ export default function OfficeSprintWeek() {
                           <p className="mt-1 text-sm text-white/70">Live, 45 min</p>
                         </div>
                       ))}
-                      <div className="row-span-3 flex flex-col justify-center rounded-2xl border border-lilac/25 bg-lilac/[0.08] p-5">
+                      <div
+                        data-motion
+                        style={{ "--os-delay": "330ms" }}
+                        className="row-span-3 flex flex-col justify-center rounded-2xl border border-lilac/25 bg-lilac/[0.08] p-5"
+                      >
                         <p className="font-ptsans text-base font-bold uppercase tracking-tight text-white">
                           Advisory call
                         </p>

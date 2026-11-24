@@ -1,5 +1,6 @@
 import OfficeSprintHeader from "@/components/office-sprint/OfficeSprintHeader";
 import OfficeSprintWeek from "@/components/office-sprint/OfficeSprintWeek";
+import SprintMotion from "@/components/office-sprint/SprintMotion";
 import OfficeSprintReport from "@/components/office-sprint/OfficeSprintReport";
 import {
   OfficeSprintHero,
@@ -37,6 +38,7 @@ export const metadata = {
 export default function OfficeSprintPage() {
   return (
     <>
+      <SprintMotion />
       <OfficeSprintHeader />
       <main>
         <OfficeSprintHero />

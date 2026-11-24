@@ -496,3 +496,24 @@ This section answers who is behind the sprint; it does not sell AISC. "The sprin
 The schedule shows "Showing your time in [place]". Each slot leads with the visitor's own time and days, with the slot and WAT beside it. The days are worked out for them: Slot 1 is Sunday to Tuesday in Los Angeles. For these visitors the "outside normal working hours" line says "in West Africa", because that is not true everywhere. Visitors in WAT see the page as before.
 
 The application form and the screen after it also show the visitor's own time (founder, 2026-11-23: "Yes, add it"), with exact local dates once a week is chosen. It is display only: the saved slot does not change. Emails stay in WAT, because the server does not know the applicant's time zone.
+
+### Checkpoint 1 test fixes (founder, 2026-11-24)
+
+The live test passed and all the emails arrived. Three fixes followed:
+- The form's consent error names the "AI Stakeholder Office Sprint policy".
+- The admin shows the number of people and "Paid sprint", for any reason a sprint is paid.
+- **"Paid" is said only once.** Applicants get one note however many reasons apply: "For 25 people at a time of your own, we design a paid sprint with you." ("Saying it twice feels like we are soo interested in the money.")
+
+Noted, not changed: the first server version of the admin page leaves out the phone menu button, and React rebuilds the page in the browser. It is admin only and affects no data.
+
+### Checkpoint 1 live test (2026-11-24)
+
+Landing page, policy, free and paid applications, Contact Sales, the emails and the admin records passed. **The discovery call now runs on Google Meet** (founder switched from Zoom on Cal.com), and his test of the link and recording passed. All test calls are cancelled and the test records deleted. The final fixes are live (commit `1490ea2`). **Checkpoint 1 is closed (2026-11-24): the sprint can be promoted.** Steer first organizations to a week when Checkpoints 2 and 3 are ready.
+
+### Motion on the landing page (founder, 2026-11-24: "subtle but effective and efficient")
+
+One small script (`SprintMotion.jsx`) and one stylesheet, with no library. Opacity and transform only, each part plays once, nothing loops, and it is off for visitors who prefer reduced motion. The headline and hero text never wait on an animation. The moments: the hero report assembles; each "After" arrives just after its "Today"; the three sprints appear in order as the top line draws; the schedule's days and the "How it starts" steps follow in order; report charts grow when a page opens. Only content below the fold is held back, so the page is complete without JavaScript.
+
+The report demo moves slower than the rest (founder, 2026-11-24: "The demo motion is too fast. Every other thing looks good"): its bars grow over about 1.2 seconds, side-by-side pieces follow one another, and the hero report card settles over about 1 second.
+
+Motion, taken up a notch (founder, 2026-11-24: "Build all three"): each report chart draws in its own way (rings trace round, the readiness shape opens from the centre, data squares fill in one by one); key numbers count up once when first on screen (the "At a glance" tiles, "50%", and the policies written); in "What changes", each "Today" steps back a little once its answer is in. Still once only, and off for reduced motion. The hero report preview does not count up, so its numbers never flash.

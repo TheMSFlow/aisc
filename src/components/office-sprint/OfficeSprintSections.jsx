@@ -63,7 +63,7 @@ export function OfficeSprintHero() {
             they would keep. By Thursday you know what your organization needs
             before it adopts AI, all drawn from your own people.
           </p>
-          <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
+          <div className="os-hero-rise mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
             <Button
               href={REQUEST_URL}
               variant="primary"
@@ -81,7 +81,7 @@ export function OfficeSprintHero() {
           </div>
           {/* The risk-free facts, set apart so they stand out without
               competing with the buttons (founder, 2026-11-22). */}
-          <div className="mt-8 flex w-fit max-w-2xl items-start gap-3 rounded-2xl border border-lilac/20 bg-lilac/[0.08] px-4 py-3.5 sm:px-5">
+          <div className="os-hero-rise-late mt-8 flex w-fit max-w-2xl items-start gap-3 rounded-2xl border border-lilac/20 bg-lilac/[0.08] px-4 py-3.5 sm:px-5">
             <Info className="mt-0.5 h-4 w-4 shrink-0 text-lilac" aria-hidden="true" />
             <p className="text-sm leading-relaxed text-white/85">
               Online, no AI tools needed, and no company data shared.
@@ -149,6 +149,7 @@ export function OfficeSprintPains() {
           {PAINS.map((p) => (
             <li
               key={p.pain}
+              data-motion="change"
               className="grid gap-4 border-b border-dark-blue/10 py-7 md:grid-cols-2 md:gap-12"
             >
               <div>
@@ -176,7 +177,7 @@ export function OfficeSprintPains() {
 }
 
 // The line above each sprint deepens from Monday to Wednesday.
-const SPRINT_LINE = ["border-t-msaccent/35", "border-t-msaccent/65", "border-t-msaccent"];
+const SPRINT_LINE = ["bg-msaccent/35", "bg-msaccent/65", "bg-msaccent"];
 
 export function OfficeSprintDays() {
   return (
@@ -204,9 +205,12 @@ export function OfficeSprintDays() {
           {DAYS.map((d, i) => (
             <li
               key={d.day}
+              data-motion
+              style={{ "--os-delay": `${i * 130}ms` }}
               className="grid overflow-hidden rounded-3xl bg-white shadow-[0_1px_2px_rgba(0,3,76,0.06),0_12px_30px_rgba(0,3,76,0.08)] lg:row-span-4 lg:grid-rows-subgrid lg:rounded-none lg:shadow-none lg:[&:not(:first-child)>*]:border-l"
             >
-              <div className={`border-t-[3px] border-l-dark-blue/10 px-6 pb-6 pt-6 lg:px-8 ${SPRINT_LINE[i]}`}>
+              <div className="relative border-dark-blue/10 px-6 pb-6 pt-7 lg:px-8">
+                <span aria-hidden="true" className={`os-line absolute inset-x-0 top-0 h-[3px] ${SPRINT_LINE[i]}`} />
                 <div className="flex items-start justify-between gap-3">
                   <p className="pt-1 text-base font-semibold text-dark-blue">{d.day}</p>
                   <p className="font-ptsans text-7xl font-bold leading-[0.8] text-msaccent/25">
@@ -320,7 +324,12 @@ export function OfficeSprintFit() {
             <p className={LABEL}>How it starts</p>
             <ol className="space-y-6">
               {STEPS.map((s, i) => (
-                <li key={s.title} className="flex gap-5">
+                <li
+                  key={s.title}
+                  data-motion
+                  style={{ "--os-delay": `${i * 110}ms` }}
+                  className="flex gap-5"
+                >
                   <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-lilac font-ptsans text-base font-bold text-dark-blue">
                     {i + 1}
                   </span>
