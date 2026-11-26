@@ -67,8 +67,26 @@ Asset columns record production. Platform columns record the actual post: date a
 | 17 | `ai-in-the-clinic-what-stays-human` | ai-governance | — | — | — | — | — | — | — | — |
 | 18 | `become-the-ai-authority-at-work-without-the-title` | emerging-leader | ✓ local (docx) | ✓ local (pptx, v3 summary format) | — | ✓ local | ✓ local (list) | — | — | — |
 | 19 | `your-data-is-the-advantage-competitors-cannot-buy` | ai-value | — | — | — | — | — | — | — | — |
+| 20 | `is-your-business-ready-for-ai-start-with-whether-you-are` | ai-leadership | — | — | — | — | — | — | — | — |
+| 21 | `ai-in-public-office-lead-the-agenda-or-answer-to-it` | ai-leadership | — | — | — | — | — | — | — | — |
+| 22 | `before-you-sign-a-leaders-ai-vendor-questions` | ai-governance | — | — | — | — | — | — | — | — |
+| 23 | `decide-how-you-will-measure-ai-before-you-start` | ai-value | — | — | — | — | — | — | — | — |
+| 24 | `digital-ministry-reach-without-losing-the-shepherd` | ai-value | — | — | — | — | — | — | — | — |
+| 25 | `relationships-beat-reach-in-the-ai-ecosystem` | ai-leadership | — | — | — | — | — | — | — | — |
+| 26 | `six-positions-a-leader-can-take-on-ai` | ai-leadership | — | — | — | — | — | — | — | — |
+| 27 | `the-care-hours-buried-in-healthcare-paperwork` | ai-value | — | — | — | — | — | — | — | — |
+| 28 | `the-data-line-what-never-goes-into-an-ai-tool` | ai-governance | — | — | — | — | — | — | — | — |
+| 29 | `the-discernment-checklist-before-you-trust-an-ai-output` | ai-fluency | — | — | — | — | — | — | — | — |
+| 30 | `the-nonprofit-leverage-moment` | ai-value | — | — | — | — | — | — | — | — |
+| 31 | `the-school-leaders-ai-position-beyond-the-cheating-debate` | ai-leadership | — | — | — | — | — | — | — | — |
+| 32 | `the-trusted-voice-premium-ai-and-your-audience` | ai-value | — | — | — | — | — | — | — | — |
+| 33 | `write-your-personal-ai-policy-before-someone-writes-it-for-you` | ai-governance | — | — | — | — | — | — | — | — |
+| 34 | `you-cannot-keep-up-with-ai-stop-trying` | ai-clarity | — | — | — | — | — | — | — | — |
+| 35 | `your-organizations-ai-gap-is-a-literacy-gap` | ai-fluency | — | — | — | — | — | — | — | — |
 
-19 published briefings as of 2026-09-22. The 14 banked drafts join this table as they publish.
+35 published briefings as of 2026-11-26.
+
+**Rows 20 to 35 added 2026-11-26 on publish, per rule 4.** Sixteen briefings published the same day: the 14 banked July drafts, aligned to the current program first, and the readiness flagship and the measure-first briefing. Rule 2 orders them by inbound links, then slug, since they share a publish date. No asset built yet: each waits at gate 2 for a cover headline approved as text, and Session notes stay `—` while rule 8 is unanswered. Rule 3 still holds: one post per platform, no bulk catch-up.
 
 **Row 19 added 2026-09-22 on publish, per rule 4. No asset built yet.** Gate 1 (published) has cleared and gate 2 (headline approved as text) has not, so nothing downstream starts until Michael approves a cover headline. **Its Session notes cell is `—` deliberately**, for the same reason as row 16: rule 8's open question is still unanswered, so a deck was not assumed. Unlike rows 16 to 18, this briefing did not come from the 2026-07-12 banked set. It was written from separate session material, which is why it publishes out of the drip order.
 
