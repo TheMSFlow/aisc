@@ -144,11 +144,10 @@ const apiSlotKey = (key) => key.replace("-", "_");
 // Morning or evening, from the slot's hour in WAT (UTC+1).
 const partOfDay = (s) => (s.utcHour + 1 < 12 ? "Morning" : "Evening");
 
-// Onboarding must be complete 48 hours before the first sprint (Monday
-// 7:15 AM WAT), so a week closes on the Saturday before at 7:15 AM WAT. The
-// same rule as registrationDeadline() in Intelligence.
+// Registration closes at 11:59 PM WAT on the Saturday before the sprint
+// (founder, 2026-11-26). The same rule as registrationDeadline() in Intelligence.
 function closesLabel(iso) {
-  const d = new Date(`${iso}T06:15:00Z`);
+  const d = new Date(`${iso}T22:59:00Z`);
   d.setUTCDate(d.getUTCDate() - 2);
   const day = new Intl.DateTimeFormat("en-GB", {
     weekday: "short",
@@ -158,7 +157,7 @@ function closesLabel(iso) {
   })
     .format(d)
     .replace(",", "");
-  return `${day}, 7:15 AM WAT`;
+  return `${day}, 11:59 PM WAT`;
 }
 
 function Chevron() {
@@ -196,8 +195,8 @@ function AvailableTimes({ weeks, local }) {
         </p>
         <p className="max-w-md text-base font-light leading-relaxed text-dark-blue/60">
           Open a week to see which slots are still open. A slot is held for one
-          organization for all three sprints. To claim your slot, onboarding
-          must be complete at least 48 hours before your first sprint.
+          organization for all three sprints. To claim your slot, registration
+          must be complete by 11:59 PM WAT on the Saturday before your sprint.
         </p>
       </div>
 

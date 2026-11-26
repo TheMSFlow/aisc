@@ -252,10 +252,10 @@ const STEPS = [
     body: "A 20-minute video call about why you need the sprint, what you want to achieve and what you have tried so far. If that's nothing yet, that's fine.",
   },
   {
-    // "Onboarding", complete at least 48 hours before the start to claim the
-    // week (founder, 2026-11-22).
+    // "Onboarding": registration complete by 11:59 PM WAT on the Saturday
+    // before, to claim the slot (founder, 2026-11-26).
     title: "Onboarding",
-    body: "You share your organization's code and each person registers with their own email. Onboarding must be complete at least 48 hours before your first sprint to claim your slot.",
+    body: "You share your organization's code and each person registers with their own email. To claim your slot, registration must be complete by 11:59 PM WAT on the Saturday before your sprint.",
   },
 ];
 

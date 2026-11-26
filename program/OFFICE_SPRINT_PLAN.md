@@ -566,3 +566,20 @@ Every step of Checkpoint 2 is reviewed with screenshots of all its screens (foun
 - The Before Monday points live once, in `lib/officeSprint/beforeMonday.js`, for the sprint home and the confirmed message.
 
 **Checkpoint 2 is reviewed end to end** (2026-11-25): steps 1 to 6 done, uncommitted, in both repos.
+
+### Registration deadline moved (founder, 2026-11-26, during the Checkpoint 2 live test)
+
+- **Registration closes at 11:59 PM WAT on the Saturday before the sprint**, for every slot (founder: "Registration can't close 7:15 AM WAT. That's awkward. It should close 11:59pm of saturday"). `registrationDeadline()` in `lib/officeSprint/schedule.js` and `closesLabel()` in the landing page's `OfficeSprintWeek.jsx` both use 22:59 UTC. The spot is released after it, and a week leaves the form and the availability once it passes.
+- **The 48-hour line is replaced everywhere** (landing page twice, the application form, the thank-you screen and the application email) with: "To claim your slot, registration must be complete by 11:59 PM WAT on the Saturday before your sprint." (`CLAIM_SLOT_LINE`).
+- **"Registration deadline:", never "Register by"** (founder): the registration form, the forwarded message ("Registration deadline: Saturday 5 December, 11:59 PM WAT"), the contact's card and the admin's Schedule box.
+- **The card's second step is "Registration"**, not "Your people register" (founder).
+- Test note: themichaelsteve@gmail.com has an AISC challenge seat, so its homepage keeps the Awakening block by design (sprint-only applies only to people with nothing else with us).
+
+### The contact can take part, registered from the admin (founder, 2026-11-26: "Yes, build it")
+
+Founder: "During VIP account creation, I should be able to register the VIP as a participant automatically if they say they will be part of the sprint during the discovery call. That's easier and less stressful for the VIP."
+
+- **The checklist's last item:** "Will they take part in the sprint themselves? If yes, which department or team?"
+- **The VIP account box:** before setup, a tick box "They take part in the sprint" shows their role (from the application) and their department or team; **Set up VIP account** then also registers them. Once the account exists and they are not registered, the box offers **Register them as a participant** with the same fields.
+- **What it does** (`lib/officeSprint/contactParticipant.js`): the same registration a participant makes with the code, linked to the contact's account. They count as one of the participants; once a number is set, it is refused when every place is taken; the sprint is confirmed if their registration completes it. No "You're registered" email to them; the "date is set" email adds "You're registered as one of the participants."
+- If the account is set up but the registration is refused, the account stands and the box says why.
