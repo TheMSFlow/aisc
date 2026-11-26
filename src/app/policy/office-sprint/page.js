@@ -43,11 +43,7 @@ export default function OfficeSprintPolicyPage() {
           <B>Contact person</B>: your name, your role, your work email and your phone number.
         </li>
         <li>
-          <B>Sprint details</B>: your preferred week and slot, and any note you add.
-        </li>
-        <li>
-          <B>Questionnaire answers</B>: what you tell us about your organization, its teams and its
-          use of AI.
+          <B>Sprint details</B>: your preferred date and time slot, and any note you add.
         </li>
         <li>
           <B>Discovery call recording</B>: a recording of your call, made with your OK.
@@ -104,8 +100,8 @@ export default function OfficeSprintPolicyPage() {
       </List>
       <P>
         Before the sprint, your organization agrees never to ask us for anyone&rsquo;s individual
-        answers, and we will not give them. Before they start, your people see a sample of the
-        report, so they know exactly what their leadership will see.
+        answers, and we will not give them. Each person can download their own results. The
+        report goes to your leadership first, and then they share with the team.
       </P>
       <P>
         For a paid sprint with fewer than 5 people, how each person&rsquo;s work is shared is

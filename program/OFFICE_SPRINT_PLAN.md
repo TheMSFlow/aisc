@@ -217,8 +217,8 @@ Six protections, now promised on the page ("How your people are protected", in t
 1. **No small groups:** any team or department under 5 is folded into "Other" in every view of the report.
 2. **Themes, never quotes:** frictions, findings and policies are reported as themes and counts, never anyone's own words.
 3. **Completion as counts:** the contact sees how many registered and how many finished each day, not who (chunk 3's contact view and the report card "How your people responded").
-4. **A sample report shown before they start:** at registration and on Monday. Needs a sample report designed before the first sprint.
-5. **Leadership's promise:** when the week is set, the contact accepts that no one's individual answers will be asked for (to build: an acceptance on the contact card or at scheduling); the studio refuses such requests.
+4. **Replaced (founder, 2026-11-25):** no sample report is shown to participants. "Each person can download their own results. The report goes to your leadership first, and then they share with the team." Only leadership receives the report, on Thursday; participants download their own results; leadership shares Thursday's findings with the team themselves.
+5. **Leadership's promise:** agreed on the discovery call (founder, 2026-11-25: "On the call"), the last item of the checklist's Agree part, held by the recording; the studio refuses such requests.
 6. **Dropped (founder, 2026-11-22):** names removed 30 days after the closing meeting. See "No timed deletion" below. Five protections remain.
 - **The second section (founder, 2026-11-22)** is now Today / After the sprint, under the title "From AI decided at the top to AI your whole workforce stands behind." It sits at section size so it does not compete with the hero: the hero says what they get, this says why it matters. Six rows, buy-in first: unused tools → buy-in; fear of replacement → understanding, a part in deciding, and seeing how to thrive alongside AI; ungoverned use → every person's AI policy, the rules the workforce will keep; where AI saves time or money → the task map; value creation (cost-cutting only → frictions worth solving, new value); readiness → scores and where to start.
 - **Naming:** the full name for titles, headers, buttons and first mentions; "Office Sprint" is fine in running sentences, used with discretion (founder, 2026-11-22).
@@ -401,7 +401,7 @@ Redesigned so each kind of information stands apart (`ApplicationReceived.jsx`):
 
 - **What it covers, everywhere:** "Why your organization needs this sprint now", "What you want to achieve from it", "What you have tried so far" (`DISCOVERY_CALL_TOPICS`: the screen after applying, the email, the admin checklist).
 - **The admin has a call checklist** (founder: "all i need is a checklist of what to ask in the admin. The call will be recorded so I can get all the info i need"): Open, Ask, Learn, Agree. Learn carries what the questionnaire asked, so nothing is lost if it goes. Ticks are not saved.
-- **The questionnaire "might" be scrapped: not removed yet.** Decide at touchpoint #9. It appears on the VIP card, the admin, its API, the FAQ ("answers a short questionnaire") and the policy page.
+- **The questionnaire is scrapped** (founder, 2026-11-25, Checkpoint 2 step 1: "Scrap it"). The call checklist covers all nine questions. It is gone from the welcome email, the admin's VIP account text and the policy; the contact's dashboard card follows in step 2. Its code (`QUESTIONNAIRE`, `api/office-sprint/questionnaire`) and any saved answers stay, unused, and the admin still shows answers already saved. Nothing in the database changes.
 - **Recording is in the policy** (founder, 2026-11-22: "Yes, add it"). The checklist opens with telling them the call is recorded and getting their OK. The policy lists the recording, says why, offers notes instead if they would rather not be recorded, and says it stays with us and is not shared with their people.
 
 ### No timed deletion (founder, 2026-11-22)
@@ -517,3 +517,52 @@ One small script (`SprintMotion.jsx`) and one stylesheet, with no library. Opaci
 The report demo moves slower than the rest (founder, 2026-11-24: "The demo motion is too fast. Every other thing looks good"): its bars grow over about 1.2 seconds, side-by-side pieces follow one another, and the hero report card settles over about 1 second.
 
 Motion, taken up a notch (founder, 2026-11-24: "Build all three"): each report chart draws in its own way (rings trace round, the readiness shape opens from the centre, data squares fill in one by one); key numbers count up once when first on screen (the "At a glance" tiles, "50%", and the policies written); in "What changes", each "Today" steps back a little once its answer is in. Still once only, and off for reduced motion. The hero report preview does not count up, so its numbers never flash.
+
+### Checkpoint 2, step 1: the call and account setup (founder, 2026-11-25: "Yes, apply all")
+
+Every step of Checkpoint 2 is reviewed with screenshots of all its screens (founder: "For every step I have to see all the screens too to confirm the design"); they are kept in `screenshots/office-sprint/checkpoint2/`.
+
+- **Welcome email** ("Your AI Stakeholder Office Sprint dashboard"): "Your dashboard for [organization]'s AI Stakeholder Office Sprint is ready. Once your date and time slot are set, we'll email you, and your dashboard will show the link and code your people use to register." No questionnaire.
+- **The admin drawer follows the call:** contact buttons, the checklist, call notes, their application, then VIP account, Schedule, registration and Status.
+- **Admin wording follows "application":** "Organizations applying for a sprint", "Applied [date]", "Their application", "Preferred date", list column "Date", "Preferred: [date]".
+- **Policy:** "Questionnaire answers" removed; sprint details read "your preferred date and time slot".
+- **The sign-in code page stays as it is** (founder, 2026-11-25): it is shared by every program.
+
+### Checkpoint 2, step 2: the contact's homepage (founder, 2026-11-25: "Sprint only", "Yes, build it")
+
+- **The card** (`components/officeSprint/OfficeSprintCard.jsx`) shows where the sprint stands in three steps: "Date and time slot set", "Your people register", "Sprint week", with a status label (Date to be set, Registration open, Confirmed, Spot released, Finished). Before scheduling: "We set your date and time slot after the discovery call, then email you. The link and code for your people will appear here." Scheduled: Dates (Mon 7 Dec – Wed 9 Dec), Time slot (with the contact's own time and days when abroad), "Registered 5 of 12", "Registration closes …", the code shown large, and **Copy the link** and **Copy the code**. Confirmed: "Your sprint is confirmed. Your people sign in with the email they registered with." (the old "sign-in details before Monday" promise was not true). The questionnaire form is gone.
+- **Sprint-only homepage:** on `/vip`, someone whose only business with us is the sprint (no VIP briefing seat, no AISC challenge seat: `sprintOnly()` in `lib/officeSprint/contactSprint.js`) sees the card alone, with the logo and "Hello, [name]" (sign out) in the header: no Awakening block, Challenge Access, Labs or menu. Everyone else, and the VVIP and Chief homes, are unchanged.
+- **The card is white on the blue homepage** (founder, 2026-11-25: "The card background can't be in blue"): dark blue text, purple accents, the code on a soft lilac panel.
+- **"Go to Sprint"** (founder's words) on the card once the date is set (registration open or confirmed), to `/sprint`. **A contact who has not registered sees the sprint view-only** (founder's choice): the days, times and what each day's work is, with "You're viewing your organization's sprint. To join the sessions and do the work, register with your code [code] like everyone else." No session link and no work of their own (`getContactViewSprint()` in `lib/officeSprint/staffSprint.js`; a registered member still sees their own sprint first). Saving work still checks membership, so a viewer cannot save. The sprint home's drawing moved to `components/officeSprint/SprintHomeView.jsx` so it can be checked with sample data.
+
+### Checkpoint 2, step 3: scheduling and the "date is set" email (founder, 2026-11-25: "Apply")
+
+- **"Participants", not "people taking part"** (founder: "People taking part should simply be 'participants'"): the emails' details box, the admin's Schedule box, the application details, "Participants registered: N of M" and "12 participants · Free".
+- **Dates read "Mon 7 Dec – Wed 9 Dec"** in the emails' details box (with "Time slot: 5:15 to 6:00 PM WAT"), the admin's date picker ("Date"), the registration box and the list. The shared details box is used by the scheduled, registered, confirmed and date-changed emails.
+- **The scheduled email:** subject "Your AI Stakeholder Office Sprint is scheduled: Mon 7 Dec – Wed 9 Dec"; heading "Your date is set, [name]"; "Share the link and code with your people… Your sprint is confirmed once N people have registered… your date is opened to other organizations"; it ends with "Sign in to your dashboard to see how many people have registered."
+- **"Forward to all participants"** (founder's heading): a ready-made message in the email, and **Copy the message** on the contact's card, built by one function (`lib/officeSprint/forwardMessage.js`): "Our organization is taking part in the AI Stakeholder Office Sprint: three live sessions of 45 minutes, Monday to Wednesday, each followed by a short piece of work the same day." then Dates, Time, Register here (link), Code, and "Please register by [deadline]."
+- Admin: "Edit the week" is "Edit the date".
+
+### Checkpoint 2, step 4: registration and "You're registered" (founder, 2026-11-25: "Yes apply them")
+
+- **The registration form** opens with what the sprint is ("Three live sessions of 45 minutes, Monday to Wednesday, each followed by a short piece of work the same day."), then Dates and Time slot (with the participant's own time and days when abroad), then "Register by [deadline]." The email field says "You'll sign in with this email."
+- **The screen after registering, redesigned** (founder: "There's too much text and it's hard to read"): "You're registered, [first name]", the Dates and Time slot box, "What's next" in two numbered steps ("Sign in with [email]", "Open your sprint from your dashboard"), a **Sign In** button, and "We've emailed you a copy."
+- **The "You're registered" email** leaves out the participant count (it is the organization's) and says "three live sessions".
+
+### Checkpoint 2, step 5: the participant's homepage and the sprint home before Monday (founder, 2026-11-25: "Yes, apply")
+
+- **The sample-report promise is replaced** (founder: "Only leadership sees reports by Thursday. Participants do the sprint and download their individual results. If leadership decides to share Thursdays finding with the team, they do that themselves."). The FAQ protection and the policy now read: "Each person can download their own results. The report goes to your leadership first, and then they share with the team."
+- **Leadership's agreement is made on the call:** the checklist's Agree part ends with "Leadership never asks for anyone's individual answers" before "Set up their account".
+- **Participant homepage, sprint-only** (same rule as the contact's): on `/leader`, a participant whose only business with us is the sprint sees the sprint card and sign-out alone. The participant card (`SprintStaffCard.jsx`, on every homepage) is white with **Go to Sprint**. `/leader/page.jsx` is now a server page that decides; the old homepage is `LeaderHome.jsx`.
+- **Sprint home:** header "AI Stakeholder Office Sprint" (not capitals); top line "Mon 7 Dec – Wed 9 Dec · 5:15 to 6:00 PM WAT" with the participant's own time when abroad; "three live sessions"; day cards say "Your task". A white **Before Monday** box, shown until the first session (approved word for word): keep 45 minutes free for each session and time for the work (about 10, 20 and 30 minutes); a laptop or phone with a steady connection, the link appears 15 minutes before; think about the tasks that fill your week, Monday starts there; answers seen only as group totals, and leadership has agreed never to ask for anyone's individual answers.
+
+### Checkpoint 2, step 6: confirmed and dates-changed emails (founder, 2026-11-25)
+
+- **Nothing is booked ahead for now** (founder: "Let's leave out anything that'll need us to book ahead. Any information can be sent to the VIP then they tell their people. For now. Later we can set it up when a more robust infrastructure is in place"). So no reminder before Monday and no spot-released email yet; participants hear through the contact. Date changes go to the contact only.
+- **"Confirmed", to the contact:** subject "…is confirmed: Mon 7 Dec – Wed 9 Dec"; heading "Your sprint is confirmed"; "All N participants have registered…"; "Your participants sign in with the email they registered with. Their sprint home shows what to get ready and, 15 minutes before each session, the link to join."; "On Thursday, your leadership joins the 30-minute advisory call. We'll arrange the time with you."; a **Forward to all participants** message (the dates, time, sign-in link and the first three Before Monday points, `confirmedMessage()`); **Go to Your Dashboard**. The untrue "Before Monday, your people receive their sign-in details and the session link" is gone.
+- **The contact's confirmed card** offers **Copy the message** with the same text.
+- **"Confirmed", to sales@:** new date format, "participants", the contact's name, email and phone, and **Open in Admin**.
+- **"Dates changed", to the contact:** subject "Your AI Stakeholder Office Sprint dates have changed: …"; heading "Your sprint dates have changed"; "Please let your participants know…"; and a Forward to all participants message with the new dates and time (`changedMessage()`).
+- The Before Monday points live once, in `lib/officeSprint/beforeMonday.js`, for the sprint home and the confirmed message.
+
+**Checkpoint 2 is reviewed end to end** (2026-11-25): steps 1 to 6 done, uncommitted, in both repos.

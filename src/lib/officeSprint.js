@@ -81,6 +81,7 @@ export const OFFICE_SPRINT_PROTECTIONS = [
   "Group totals only, and no group under 5 people is ever shown on its own.",
   "Themes and counts, never anyone's own words.",
   "Your leadership sees how many finished each day, not who.",
-  "Before they start, your people see a sample of the report, so they know exactly what goes up the line.",
+  // Replaced the sample-report promise (founder, 2026-11-25).
+  "Each person can download their own results. The report goes to your leadership first, and then they share with the team.",
   "Your leadership agrees never to ask for anyone's individual answers.",
 ];
