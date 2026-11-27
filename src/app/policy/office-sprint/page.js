@@ -5,7 +5,7 @@ import { INTELLIGENCE_URL } from "@/lib/sites";
 // intelligence.michaelsteve.com/form/office-sprint (consent box) and the
 // sprint's FAQ. Built on the AI Readiness Check policy (2026-11-22). It covers
 // the request and, once a sprint runs, the staff's work.
-const LAST_UPDATED = "22 November 2026";
+const LAST_UPDATED = "27 November 2026";
 const REPLY_WITHIN = "30 days";
 // The general inquiry form, with no preset: ?src=OS would open an Office Sprint
 // request, which is wrong for a data request (founder, 2026-11-22).
@@ -75,7 +75,7 @@ export default function OfficeSprintPolicyPage() {
           submit.
         </li>
         <li>
-          <B>Attendance</B>: whether they joined each live sprint and finished each day&rsquo;s work.
+          <B>Completion</B>: whether they finished each day&rsquo;s work.
         </li>
       </List>
       <P>
@@ -145,6 +145,11 @@ export default function OfficeSprintPolicyPage() {
         </li>
         <li>
           <B>The video call service</B> we use for the discovery call and the live sprints.
+        </li>
+        <li>
+          <B>Anthropic</B>, whose AI service drafts a summary of the discovery call from its
+          transcript, and groups your people&rsquo;s answers into themes for the report. It
+          receives answers without names, and we check and edit everything it drafts.
         </li>
       </List>
       <P>These services may store data outside your country, including in the United States.</P>

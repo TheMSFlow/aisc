@@ -8,6 +8,7 @@ import {
   OFFICE_SPRINT_SLOTS as SLOTS,
 } from "@/lib/officeSprint";
 import { INTELLIGENCE_API_BASE } from "@/lib/sites";
+import { Contours, DEEP_BAND } from "./Backdrops";
 
 // The signature element: the sprint week drawn as it runs. Columns are the
 // days, rows are the three slots, and Thursday holds the advisory call.
@@ -19,7 +20,13 @@ import { INTELLIGENCE_API_BASE } from "@/lib/sites";
 
 function nextMondayAt(utcHour, utcMinute, now = new Date()) {
   const d = new Date(
-    Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), utcHour, utcMinute),
+    Date.UTC(
+      now.getUTCFullYear(),
+      now.getUTCMonth(),
+      now.getUTCDate(),
+      utcHour,
+      utcMinute,
+    ),
   );
   const ahead = (1 - d.getUTCDay() + 7) % 7;
   d.setUTCDate(d.getUTCDate() + ahead);
@@ -33,12 +40,18 @@ const DAY_MS = 24 * 60 * 60 * 1000;
 // "10:15 to 11:00 PM", or "11:30 PM to 12:15 AM" across a change of period.
 function timeRange(start, end, zone) {
   const fmt = (d) =>
-    new Intl.DateTimeFormat("en-US", { timeZone: zone, hour: "numeric", minute: "2-digit" })
+    new Intl.DateTimeFormat("en-US", {
+      timeZone: zone,
+      hour: "numeric",
+      minute: "2-digit",
+    })
       .format(d)
       .replace(/\s/g, " ");
   const a = fmt(start);
   const b = fmt(end);
-  return a.slice(-2) === b.slice(-2) ? `${a.slice(0, -3)} to ${b}` : `${a} to ${b}`;
+  return a.slice(-2) === b.slice(-2)
+    ? `${a.slice(0, -3)} to ${b}`
+    : `${a} to ${b}`;
 }
 
 function useLocalSlots() {
@@ -55,11 +68,21 @@ function useLocalSlots() {
         for (const s of SLOTS) {
           const at = nextMondayAt(s.utcHour, s.utcMinute);
           const fmt = (opts, zone, date = at) =>
-            new Intl.DateTimeFormat("en-US", { timeZone: zone, ...opts }).format(date);
+            new Intl.DateTimeFormat("en-US", {
+              timeZone: zone,
+              ...opts,
+            }).format(date);
           const time = fmt({ hour: "numeric", minute: "2-digit" }, tz);
           const day = fmt({ weekday: "short" }, tz);
-          const lastDay = fmt({ weekday: "short" }, tz, new Date(at.getTime() + 2 * DAY_MS));
-          const wat = fmt({ hour: "numeric", minute: "2-digit" }, "Africa/Lagos");
+          const lastDay = fmt(
+            { weekday: "short" },
+            tz,
+            new Date(at.getTime() + 2 * DAY_MS),
+          );
+          const wat = fmt(
+            { hour: "numeric", minute: "2-digit" },
+            "Africa/Lagos",
+          );
           if (time !== wat || day !== "Mon") differs = true;
           out[s.key] = {
             range: timeRange(at, new Date(at.getTime() + SESSION_MS), tz),
@@ -190,7 +213,7 @@ function AvailableTimes({ weeks, local }) {
   return (
     <div className="os-fade-in mt-16 grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] lg:gap-14">
       <div>
-        <p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.35em] text-dark-blue/40">
+        <p className="mb-4 text-[13px] font-semibold tracking-normal text-[#2c37c4]">
           Available slots
         </p>
         <p className="max-w-md text-base font-light leading-relaxed text-dark-blue/60">
@@ -205,7 +228,7 @@ function AvailableTimes({ weeks, local }) {
           const held = new Set(w.held);
           return (
             <li key={w.week}>
-              <details className="group rounded-2xl border border-dark-blue/10 bg-white transition-[border-color,background-color,box-shadow] duration-200 hover:border-dark-blue/25 open:border-dark-blue/60 open:bg-dark-blue/[0.04] open:shadow-[0_2px_4px_rgba(0,3,76,0.06),0_12px_28px_rgba(0,3,76,0.08)]">
+              <details className="group rounded-none border border-dark-blue/10 bg-white transition-[border-color,background-color,box-shadow] duration-200 hover:border-dark-blue/25 open:border-dark-blue/60 open:bg-dark-blue/[0.04] open:shadow-[0_2px_4px_rgba(0,3,76,0.06),0_12px_28px_rgba(0,3,76,0.08)]">
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 [&::-webkit-details-marker]:hidden">
                   <span>
                     <span className="block text-base text-dark-blue/75 group-open:font-semibold group-open:text-dark-blue">
@@ -237,17 +260,25 @@ function AvailableTimes({ weeks, local }) {
                               : "flex items-center justify-between gap-4 rounded-xl border border-dark-blue/10 bg-white px-4 py-3"
                           }
                         >
-                          <span className={taken ? "text-dark-blue/35" : "text-dark-blue"}>
+                          <span
+                            className={
+                              taken ? "text-dark-blue/35" : "text-dark-blue"
+                            }
+                          >
                             <span className="block text-sm">
                               {mine ? (
                                 <>
-                                  <span className="font-semibold">{mine.range}</span>
+                                  <span className="font-semibold">
+                                    {mine.range}
+                                  </span>
                                   {", "}
                                   {mine.days}
                                 </>
                               ) : (
                                 <>
-                                  <span className="font-semibold">{partOfDay(s)}</span>
+                                  <span className="font-semibold">
+                                    {partOfDay(s)}
+                                  </span>
                                   {" · "}
                                   {s.wat}
                                 </>
@@ -290,7 +321,7 @@ function AvailableTimes({ weeks, local }) {
 
 function SessionCell({ sprint }) {
   return (
-    <div className="flex h-full min-h-14 items-center rounded-2xl border border-white/10 bg-white/[0.06] px-4">
+    <div className="flex h-full min-h-14 items-center rounded-none border border-white/10 bg-white/[0.06] px-4">
       <span className="text-sm text-white/80">Sprint {sprint} · 45 min</span>
     </div>
   );
@@ -304,10 +335,10 @@ export default function OfficeSprintWeek() {
     <div className="bg-white">
       <Section id="the-week" spacing="compact" className="scroll-mt-20">
         <div className="mb-10 max-w-3xl">
-          <p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.35em] text-dark-blue/40">
-            The Schedule
+          <p className="mb-4 text-[13px] font-semibold tracking-normal text-[#2c37c4]">
+            The schedule
           </p>
-          <h2 className="font-ptsans text-3xl font-bold uppercase leading-none tracking-tight text-dark-blue sm:text-4xl lg:text-5xl">
+          <h2 className="os-serif text-3xl font-medium leading-[1.05] tracking-[-0.01em] text-dark-blue sm:text-4xl lg:text-5xl">
             One time slot is yours, Monday to Wednesday.
           </h2>
           <p className="mt-5 max-w-xl text-base font-light leading-relaxed text-dark-blue/60">
@@ -319,17 +350,20 @@ export default function OfficeSprintWeek() {
             {!local && " All times are West Africa Time (WAT)."}
           </p>
           {local && (
-            <p className="mt-5 inline-flex items-center gap-2.5 rounded-full bg-lilac px-4 py-2 text-sm font-semibold text-dark-blue">
-              <Globe2 className="h-4 w-4 shrink-0 text-msblue" aria-hidden="true" />
+            <p className="mt-5 inline-flex items-center gap-2.5 rounded-none bg-[#e6e8ef] px-4 py-2 text-sm font-semibold text-dark-blue">
+              <Globe2
+                className="h-4 w-4 shrink-0 text-msblue"
+                aria-hidden="true"
+              />
               Showing your time in {local.place}
             </p>
           )}
         </div>
 
-        <div className="relative overflow-hidden rounded-3xl bg-dark-blue p-6 text-white shadow-[0_2px_4px_rgba(0,3,76,0.15),0_16px_40px_rgba(0,3,76,0.25)] sm:p-8 lg:p-10">
-          {/* aurora */}
-          <div className="pointer-events-none absolute -top-40 left-[-10%] h-130 w-200 bg-[radial-gradient(ellipse_at_center,rgba(99,104,218,0.26),transparent_60%)]" />
-          <div className="pointer-events-none absolute -bottom-40 right-[-10%] h-120 w-180 bg-[radial-gradient(ellipse_at_center,rgba(135,5,113,0.15),transparent_60%)]" />
+        <div
+          className={`relative overflow-hidden ${DEEP_BAND} p-6 text-white sm:p-8 lg:p-10`}
+        >
+          <Contours />
 
           {/* Desktop and tablet: the week as a grid */}
           <div className="relative hidden md:block">
@@ -337,17 +371,21 @@ export default function OfficeSprintWeek() {
               <div />
               {DAYS.map((d) => (
                 <div key={d.day} className="pb-3">
-                  <p className="font-ptsans text-lg font-bold uppercase tracking-tight">
+                  <p className="os-serif text-lg font-medium tracking-[-0.01em]">
                     {d.day}
                   </p>
-                  <p className="mt-1 text-xs leading-snug text-lilac/70">{d.short}</p>
+                  <p className="mt-1 text-xs leading-snug text-lilac/70">
+                    {d.short}
+                  </p>
                 </div>
               ))}
               <div className="pb-3">
-                <p className="font-ptsans text-lg font-bold uppercase tracking-tight">
+                <p className="os-serif text-lg font-medium tracking-[-0.01em]">
                   Thursday
                 </p>
-                <p className="mt-1 text-xs leading-snug text-lilac/70">Your leadership</p>
+                <p className="mt-1 text-xs leading-snug text-lilac/70">
+                  Your leadership
+                </p>
               </div>
 
               {/* The slots down the side; each sprint once per day, since an
@@ -357,7 +395,9 @@ export default function OfficeSprintWeek() {
                   <div className="flex flex-col justify-center py-3 pr-2">
                     {local ? (
                       <>
-                        <p className="text-sm font-semibold text-white">{local.slots[s.key].range}</p>
+                        <p className="text-sm font-semibold text-white">
+                          {local.slots[s.key].range}
+                        </p>
                         <p className="mt-0.5 text-xs font-medium text-lilac">
                           {local.slots[s.key].days}, your time
                         </p>
@@ -367,7 +407,9 @@ export default function OfficeSprintWeek() {
                       </>
                     ) : (
                       <>
-                        <p className="text-sm font-semibold text-white">{s.wat}</p>
+                        <p className="text-sm font-semibold text-white">
+                          {s.wat}
+                        </p>
                         <p className="mt-0.5 text-xs text-white/45">{s.name}</p>
                       </>
                     )}
@@ -379,20 +421,22 @@ export default function OfficeSprintWeek() {
                           key={d.day}
                           data-motion
                           style={{ "--os-delay": `${(d.sprint - 1) * 110}ms` }}
-                          className="row-span-3 flex flex-col justify-center rounded-2xl border border-white/10 bg-white/[0.06] px-5"
+                          className="row-span-3 flex flex-col justify-center rounded-none border border-white/10 bg-white/[0.06] px-5"
                         >
-                          <p className="font-ptsans text-2xl font-bold uppercase tracking-tight text-white">
+                          <p className="os-serif text-2xl font-medium tracking-[-0.01em] text-white">
                             Sprint {d.sprint}
                           </p>
-                          <p className="mt-1 text-sm text-white/70">Live, 45 min</p>
+                          <p className="mt-1 text-sm text-white/70">
+                            Live, 45 min
+                          </p>
                         </div>
                       ))}
                       <div
                         data-motion
                         style={{ "--os-delay": "330ms" }}
-                        className="row-span-3 flex flex-col justify-center rounded-2xl border border-lilac/25 bg-lilac/[0.08] p-5"
+                        className="row-span-3 flex flex-col justify-center rounded-none border border-lilac/25 bg-lilac/[0.08] p-5"
                       >
-                        <p className="font-ptsans text-base font-bold uppercase tracking-tight text-white">
+                        <p className="os-serif text-base font-medium tracking-[-0.01em] text-white">
                           Advisory call
                         </p>
                         <p className="mt-2 text-sm font-light leading-relaxed text-white/70">
@@ -413,7 +457,10 @@ export default function OfficeSprintWeek() {
                 <p className="text-xs text-white/45">After sprint</p>
               </div>
               {DAYS.map((d) => (
-                <p key={d.day} className="pt-2 text-xs leading-snug text-white/60">
+                <p
+                  key={d.day}
+                  className="pt-2 text-xs leading-snug text-white/60"
+                >
                   <span className="font-semibold text-white/85">
                     Your team&rsquo;s task · {d.taskMinutes} min
                   </span>
@@ -421,24 +468,25 @@ export default function OfficeSprintWeek() {
               ))}
               <div />
             </div>
-
           </div>
 
           {/* Phones: the week as a list */}
           <div className="relative md:hidden">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-white/40">
+            <p className="text-[13px] font-semibold tracking-normal text-white/40">
               Your slot, one of three
             </p>
             <ul className="mt-3 space-y-2">
               {SLOTS.map((s) => (
                 <li
                   key={s.key}
-                  className="flex items-baseline justify-between gap-3 rounded-2xl border border-white/10 bg-white/[0.06] px-4 py-3"
+                  className="flex items-baseline justify-between gap-3 rounded-none border border-white/10 bg-white/[0.06] px-4 py-3"
                 >
                   {local ? (
                     <>
                       <span>
-                        <span className="block text-sm font-semibold">{local.slots[s.key].range}</span>
+                        <span className="block text-sm font-semibold">
+                          {local.slots[s.key].range}
+                        </span>
                         <span className="mt-0.5 block text-xs font-medium text-lilac">
                           {local.slots[s.key].days}, your time
                         </span>
@@ -452,7 +500,9 @@ export default function OfficeSprintWeek() {
                   ) : (
                     <>
                       <span className="text-sm font-semibold">{s.wat}</span>
-                      <span className="text-right text-xs text-white/45">{s.name}</span>
+                      <span className="text-right text-xs text-white/45">
+                        {s.name}
+                      </span>
                     </>
                   )}
                 </li>
@@ -462,7 +512,7 @@ export default function OfficeSprintWeek() {
             <ol className="mt-6 space-y-5 border-l border-white/15 pl-5">
               {DAYS.map((d) => (
                 <li key={d.day}>
-                  <p className="font-ptsans text-base font-bold uppercase tracking-tight">
+                  <p className="os-serif text-base font-medium tracking-[-0.01em]">
                     {d.day}
                   </p>
                   <p className="text-sm text-lilac/75">{d.short}</p>
@@ -473,17 +523,18 @@ export default function OfficeSprintWeek() {
                 </li>
               ))}
               <li>
-                <p className="font-ptsans text-base font-bold uppercase tracking-tight">
+                <p className="os-serif text-base font-medium tracking-[-0.01em]">
                   Thursday
                 </p>
-                <p className="text-sm text-lilac/75">Advisory call with your leadership</p>
+                <p className="text-sm text-lilac/75">
+                  Advisory call with your leadership
+                </p>
                 <p className="mt-1 text-xs text-white/55">
                   Thirty minutes: we share your report and what it means for
                   your organization. The time is arranged with you.
                 </p>
               </li>
             </ol>
-
           </div>
         </div>
 

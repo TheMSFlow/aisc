@@ -1,3 +1,4 @@
+import { Newsreader } from "next/font/google";
 import OfficeSprintHeader from "@/components/office-sprint/OfficeSprintHeader";
 import OfficeSprintWeek from "@/components/office-sprint/OfficeSprintWeek";
 import SprintMotion from "@/components/office-sprint/SprintMotion";
@@ -11,6 +12,15 @@ import {
   OfficeSprintOutside,
   OfficeSprintFAQ,
 } from "@/components/office-sprint/OfficeSprintSections";
+
+// The report's title face, on this page only (founder, 2026-11-27: the page
+// and its sample report rebuilt in the report's executive style).
+const newsreader = Newsreader({
+  subsets: ["latin"],
+  axes: ["opsz"],
+  variable: "--font-newsreader",
+  display: "swap",
+});
 
 const TITLE = "AI Stakeholder Office Sprint | Michael Steve";
 const DESCRIPTION =
@@ -37,7 +47,7 @@ export const metadata = {
 
 export default function OfficeSprintPage() {
   return (
-    <>
+    <div className={`${newsreader.variable} os-page`}>
       <SprintMotion />
       <OfficeSprintHeader />
       <main>
@@ -52,6 +62,6 @@ export default function OfficeSprintPage() {
         <OfficeSprintFAQ />
       </main>
       {/* No footer, as on /coaching: the page exists to take applications. */}
-    </>
+    </div>
   );
 }

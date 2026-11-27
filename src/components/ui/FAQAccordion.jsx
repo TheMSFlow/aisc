@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-export default function FAQAccordion({ items }) {
+export default function FAQAccordion({ items, questionClassName = "font-ptsans text-base font-bold" }) {
   const [open, setOpen] = useState(null);
 
   return (
@@ -14,7 +14,7 @@ export default function FAQAccordion({ items }) {
             className="flex w-full items-center justify-between gap-4 py-5 text-left transition-colors hover:text-msblue"
             aria-expanded={open === i}
           >
-            <span className="font-ptsans text-base font-bold text-dark-blue">
+            <span className={`${questionClassName} text-dark-blue`}>
               {f.q}
             </span>
             <span

@@ -29,12 +29,28 @@ export const SAMPLE_PARTICIPATION = {
 };
 
 // Sprint 1: the tasks people listed, placed by the Delegation Tool.
-// Quadrant order and colours are fixed (validated for colour-blind readers).
+// Quadrant order is fixed. Colours: the report's blue scale (2026-11-27), deep
+// for the work that could go to AI, lighter as people keep more of it.
 export const QUADRANTS = [
-  { key: "automate", label: "Automate", note: "AI can own it", color: "#2e9e5b" },
-  { key: "augment", label: "Augment", note: "People and AI together", color: "#6368da" },
-  { key: "streamline", label: "Streamline", note: "Question the task first", color: "#16999c" },
-  { key: "own", label: "Own", note: "People lead it", color: "#bf7410" },
+  {
+    key: "automate",
+    label: "Automate",
+    note: "AI can own it",
+    color: "#00034c",
+  },
+  {
+    key: "augment",
+    label: "Augment",
+    note: "People and AI together",
+    color: "#2c37c4",
+  },
+  {
+    key: "streamline",
+    label: "Streamline",
+    note: "Question the task first",
+    color: "#7f86e3",
+  },
+  { key: "own", label: "Own", note: "People lead it", color: "#c6c9f3" },
 ];
 
 export const SAMPLE_TASKS = [
@@ -66,9 +82,9 @@ export const SAMPLE_READINESS = {
 
 // Sprint 2: the data audit, every set of information people described.
 export const DATA_STATUS = [
-  { key: "ready", label: "Ready", color: "#1f8a4c" },
-  { key: "nearly", label: "Nearly ready", color: "#c98a12" },
-  { key: "not", label: "Not ready", color: "#b4321f" },
+  { key: "ready", label: "Ready", color: "#7f86e3" },
+  { key: "nearly", label: "Nearly ready", color: "#c6c9f3" },
+  { key: "not", label: "Not ready", color: "#00034c" },
 ];
 
 export const SAMPLE_DATA = {
@@ -109,24 +125,57 @@ export const SAMPLE_RULES = {
   ],
 };
 
-// What it means: the moves the advisory call turns the findings into.
-export const SAMPLE_MOVES = [
+// The report ends in two sets, as the real report does (founder, 2026-11-27:
+// "True next steps that if not taken can harm adoption and make it fail. Then
+// value creation solutions"). Foundations are named as the general challenge,
+// never a task; AI Fluency is always one, and it means full training, not more
+// of the sprint. Every figure below comes from the sample above.
+export const SAMPLE_FOUNDATIONS = [
   {
-    title: "Give every set of data an owner",
-    body: "Before any AI tool touches it, name who answers for the 9 sets nobody owns, starting with the customer list.",
+    title: "AI Fluency",
+    body: "Three days of sprints train no one. Your people need full AI Fluency: using AI effectively, efficiently, ethically and safely, knowing the platforms that suit their work, and hands-on practice.",
+    why: "They would hand half the work they listed to AI, and have yet to work with it.",
+    risk: "People avoid AI or use it carelessly, and no pilot delivers.",
   },
   {
-    title: "Write your AI policy together",
-    // Not only their rules: theirs plus one the findings call for, named
-    // (founder, 2026-11-22). 13 of 14 ban public AI tools for customer details,
-    // yet nobody said which tools are allowed, and the first project (WhatsApp
-    // orders) will need one. The added rule closes that gap.
-    body: "Start from the four rules most of your people agree on, and add one they did not write: only AI tools the company has approved may be used for work.",
+    title: "AI Governance",
+    body: "One AI policy the company adopts, built from the rules your people already agree on, with the ones nobody wrote.",
+    why: "13 of 14 rule out customer details in public AI tools, yet nobody said which tools are allowed.",
+    risk: "Fourteen personal rulebooks collide, and one slip exposes customer data.",
   },
   {
-    // Adoption does not follow the sprint directly: training, then a few
-    // pilots, then adoption (founder, 2026-11-22).
-    title: "Train, then pilot",
-    body: "Train the people who will lead it, then test AI on one small pilot. Re-typing WhatsApp orders is the strongest candidate: 9 people named it and 5 want it solved first.",
+    title: "Data Audit",
+    body: "Every set of data the work depends on needs an owner, one agreed home and a clear status before AI touches it.",
+    why: "9 of 31 data sets have nobody answering for them, and Data Governance scores 7 of 20.",
+    risk: "AI works from wrong figures faster than anyone can catch them.",
+  },
+];
+
+// Opportunities, strongest first; `needs` names the foundation to put in place
+// first, or nothing when it can start now.
+export const SAMPLE_OPPORTUNITIES = [
+  {
+    kind: "Pilot",
+    title: "Turn WhatsApp orders into bookings without re-typing",
+    body: "9 people named it and 5 want it solved first. Orders arrive in chats and are typed in again by hand.",
+    needs: "AI Governance",
+  },
+  {
+    kind: "Pilot",
+    title: "Match payments to invoices automatically",
+    body: "7 people named chasing late payments and 4 want it solved first. Matching payments is the task most often placed in Automate.",
+    needs: "Data Audit",
+  },
+  {
+    kind: "Internal tool",
+    title: "Keep one shared stock record",
+    body: "6 people count stock by hand, and the weekly stock report is among the tasks most often placed in Automate.",
+    needs: "",
+  },
+  {
+    kind: "Customer",
+    title: "Confirm orders to customers as they come in",
+    body: "Order confirmations are among the tasks most often placed in Automate, and 5 people answer the same customer questions.",
+    needs: "AI Governance",
   },
 ];

@@ -218,3 +218,18 @@
     transform: none !important;
   }
 }
+
+/* The report's title face on this page (2026-11-27). */
+.os-serif {
+  font-family: var(--font-newsreader), Georgia, serif;
+}
+
+/* No narrow headline face anywhere on this page (founder, 2026-11-27): the
+   site sets h1 to h3 in PT Sans Narrow; here every heading is Newsreader. */
+.os-page h1,
+.os-page h2,
+.os-page h3,
+.os-page h4,
+.os-page summary {
+  font-family: var(--font-newsreader), Georgia, serif;
+}

@@ -12,20 +12,24 @@ import {
   OFFICE_SPRINT_PROTECTIONS as PROTECTIONS,
   OFFICE_SPRINT_SALES_URL as SALES_URL,
 } from "@/lib/officeSprint";
+import { Arcs, Contours, DEEP_BAND, DotGrid } from "./Backdrops";
 
 // Copy approved by the founder, 2026-11-21. Headline in his words.
 
-const LABEL =
-  "mb-4 text-[10px] font-semibold uppercase tracking-[0.35em] text-dark-blue/40";
+// The executive-report look (founder, 2026-11-27: "rebuild the landing page
+// and report in the new McKinsey style we adopted for the report"): Newsreader
+// titles in sentence case, a short label in strong blue, square corners, thin
+// rules, and faint arcs on the deep blue instead of glows.
+const LABEL = "mb-3 text-[13px] font-semibold text-[#2c37c4]";
+const LABEL_ON_DEEP = "mb-3 text-[13px] font-semibold text-[#b9bcff]";
 const H2 =
-  "font-ptsans text-3xl font-bold uppercase leading-none tracking-tight text-dark-blue sm:text-4xl lg:text-5xl";
+  "os-serif text-3xl font-medium leading-[1.08] tracking-[-0.01em] text-dark-blue sm:text-4xl lg:text-5xl";
 
 export function OfficeSprintHero() {
   return (
-    <div className="relative overflow-hidden bg-dark-blue text-white">
-      {/* aurora */}
-      <div className="pointer-events-none absolute -top-40 left-[-10%] h-150 w-225 bg-[radial-gradient(ellipse_at_center,rgba(99,104,218,0.2),transparent_60%)]" />
-      <div className="pointer-events-none absolute -top-32 right-[-15%] h-130 w-190 bg-[radial-gradient(ellipse_at_center,rgba(135,5,113,0.13),transparent_60%)]" />
+    <div className={`relative overflow-hidden ${DEEP_BAND} text-white`}>
+      <Arcs />
+      <Contours className="opacity-40 [mask-image:linear-gradient(to_right,transparent,#000_70%)]" />
 
       {/* facts strip */}
       <div className="relative border-b border-white/8 bg-white/[0.03] px-5 sm:px-6 lg:px-8">
@@ -36,7 +40,7 @@ export function OfficeSprintHero() {
               className="flex min-w-0 flex-col gap-0.5 px-3 py-4 first:pl-0 last:pr-0 sm:px-6 md:flex-row md:items-baseline md:gap-2 md:py-5"
             >
               <dt className="sr-only">{`${f.value} ${f.label}`}</dt>
-              <dd className="font-ptsans text-lg font-bold leading-tight text-white sm:text-xl">
+              <dd className="os-serif text-lg font-medium leading-tight text-white sm:text-xl">
                 {f.value}
               </dd>
               <dd className="text-xs text-white/55 sm:text-sm">{f.label}</dd>
@@ -45,52 +49,58 @@ export function OfficeSprintHero() {
         </dl>
       </div>
 
-      <Section spacing="none" className="relative pt-12 pb-12 md:pt-16 md:pb-16">
+      <Section
+        spacing="none"
+        className="relative pt-12 pb-12 md:pt-16 md:pb-16"
+      >
         {/* The report preview sits beside the promise on wide screens
             (founder, 2026-11-22). */}
         <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1fr)_28rem] xl:grid-cols-[minmax(0,1fr)_30rem]">
-        <div className="max-w-4xl">
-          <p className="mb-6 text-[10px] font-semibold uppercase tracking-[0.35em] text-lilac/60">
-            For organizations
-          </p>
-          <h1 className="font-ptsans text-4xl font-bold uppercase leading-[0.95] tracking-tight text-white sm:text-5xl xl:text-6xl">
-            Know your next step with AI in one week.
-          </h1>
-          <p className="mt-8 max-w-2xl text-base font-light leading-relaxed text-white/70 sm:text-lg">
-            Three live sprints introduce your people to AI Leadership. As they
-            learn, they also show you where AI could fit in their daily work,
-            how ready they really are, what stands in the way, and the rules
-            they would keep. By Thursday you know what your organization needs
-            before it adopts AI, all drawn from your own people.
-          </p>
-          <div className="os-hero-rise mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
-            <Button
-              href={REQUEST_URL}
-              variant="primary"
-              className="justify-center px-7 py-3 font-semibold"
-            >
-              {REQUEST_LABEL}
-            </Button>
-            <Button
-              href="#what-changes"
-              variant="secondary"
-              className="justify-center px-7 py-3"
-            >
-              See details
-            </Button>
-          </div>
-          {/* The risk-free facts, set apart so they stand out without
-              competing with the buttons (founder, 2026-11-22). */}
-          <div className="os-hero-rise-late mt-8 flex w-fit max-w-2xl items-start gap-3 rounded-2xl border border-lilac/20 bg-lilac/[0.08] px-4 py-3.5 sm:px-5">
-            <Info className="mt-0.5 h-4 w-4 shrink-0 text-lilac" aria-hidden="true" />
-            <p className="text-sm leading-relaxed text-white/85">
-              Online, no AI tools needed, and no company data shared.
+          <div className="max-w-4xl">
+            <p className="mb-6 text-[13px] font-semibold tracking-normal text-lilac/60">
+              For organizations
             </p>
+            <h1 className="os-serif text-4xl font-medium leading-[1.05] tracking-[-0.01em] text-white sm:text-5xl xl:text-6xl">
+              Know your next step with AI in one week.
+            </h1>
+            <p className="mt-8 max-w-2xl text-base font-light leading-relaxed text-white/70 sm:text-lg">
+              Three live sprints introduce your people to AI Leadership. As they
+              learn, they also show you where AI could fit in their daily work,
+              how ready they really are, what stands in the way, and the rules
+              they would keep. By Thursday you know what your organization needs
+              before it adopts AI, all drawn from your own people.
+            </p>
+            <div className="os-hero-rise mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
+              <Button
+                className="justify-center px-7 py-3 font-semibold !rounded-none"
+                href={REQUEST_URL}
+                variant="primary"
+              >
+                {REQUEST_LABEL}
+              </Button>
+              <Button
+                className="justify-center px-7 py-3 !rounded-none"
+                href="#what-changes"
+                variant="secondary"
+              >
+                See details
+              </Button>
+            </div>
+            {/* The risk-free facts, set apart so they stand out without
+              competing with the buttons (founder, 2026-11-22). */}
+            <div className="os-hero-rise-late mt-8 flex w-fit max-w-2xl items-start gap-3 rounded-none border border-lilac/20 bg-lilac/[0.08] px-4 py-3.5 sm:px-5">
+              <Info
+                className="mt-0.5 h-4 w-4 shrink-0 text-lilac"
+                aria-hidden="true"
+              />
+              <p className="text-sm leading-relaxed text-white/85">
+                Online, no AI tools needed, and no company data shared.
+              </p>
+            </div>
           </div>
-        </div>
-        <div className="hidden justify-center lg:flex">
-          <ReportPreview />
-        </div>
+          <div className="hidden justify-center lg:flex">
+            <ReportPreview />
+          </div>
         </div>
       </Section>
     </div>
@@ -141,11 +151,13 @@ export function OfficeSprintPains() {
 
         {/* Column heads on wider screens; on phones each row labels itself */}
         <div className="mt-10 hidden grid-cols-2 gap-12 pb-3 md:grid">
-          <p className="text-xs font-semibold text-warning">Today</p>
-          <p className="text-xs font-semibold text-msblue">After the sprint</p>
+          <p className="text-[13px] font-semibold text-dark-blue/45">Today</p>
+          <p className="text-[13px] font-semibold text-[#2c37c4]">
+            After the sprint
+          </p>
         </div>
 
-        <ul className="border-t border-dark-blue/10 max-md:mt-8">
+        <ul className="border-t-[3px] border-dark-blue max-md:mt-8">
           {PAINS.map((p) => (
             <li
               key={p.pain}
@@ -153,10 +165,10 @@ export function OfficeSprintPains() {
               className="grid gap-4 border-b border-dark-blue/10 py-7 md:grid-cols-2 md:gap-12"
             >
               <div>
-                <p className="mb-1 text-xs font-semibold text-warning md:hidden">
+                <p className="mb-1 text-xs font-semibold text-dark-blue/45 md:hidden">
                   Today
                 </p>
-                <p className="text-lg font-semibold leading-snug text-dark-blue">
+                <p className="os-serif text-xl font-medium leading-snug tracking-[-0.01em] text-dark-blue">
                   {p.pain}
                 </p>
               </div>
@@ -177,15 +189,17 @@ export function OfficeSprintPains() {
 }
 
 // The line above each sprint deepens from Monday to Wednesday.
-const SPRINT_LINE = ["bg-msaccent/35", "bg-msaccent/65", "bg-msaccent"];
+const SPRINT_LINE = ["bg-dark-blue", "bg-dark-blue", "bg-dark-blue"];
 
 export function OfficeSprintDays() {
   return (
-    <div className="bg-linear-to-b from-[#f4f5ff] to-lilac">
-      <Section id="the-days" spacing="compact" className="scroll-mt-20">
+    <div className="relative bg-[#f3f4f7]">
+      <DotGrid />
+      <Section id="the-days" spacing="compact" className="relative scroll-mt-20">
         <p className={LABEL}>The three sprints</p>
         <h2 className={`${H2} max-w-4xl`}>
-          Three sprints to find where AI fits, how ready you are and what to solve first.
+          Three sprints to find where AI fits, how ready you are and what to
+          solve first.
         </h2>
         <p className="mt-5 max-w-2xl text-base font-light leading-relaxed text-dark-blue/70">
           Built from resources in the AI Stakeholder Challenge, the essentials
@@ -201,41 +215,52 @@ export function OfficeSprintDays() {
             deepens day by day mark the sprint; each part steps from white
             through lilac to the navy result. On smaller screens each day is
             its own card. */}
-        <ol className="mt-12 grid gap-5 lg:grid-cols-3 lg:grid-rows-[auto_auto_auto_auto] lg:gap-0 lg:overflow-hidden lg:rounded-3xl lg:shadow-[0_1px_2px_rgba(0,3,76,0.06),0_16px_40px_rgba(0,3,76,0.1)]">
+        <ol className="mt-12 grid gap-5 lg:grid-cols-3 lg:grid-rows-[auto_auto_auto_auto] lg:gap-0 lg:overflow-hidden lg:rounded-none ">
           {DAYS.map((d, i) => (
             <li
               key={d.day}
               data-motion
               style={{ "--os-delay": `${i * 130}ms` }}
-              className="grid overflow-hidden rounded-3xl bg-white shadow-[0_1px_2px_rgba(0,3,76,0.06),0_12px_30px_rgba(0,3,76,0.08)] lg:row-span-4 lg:grid-rows-subgrid lg:rounded-none lg:shadow-none lg:[&:not(:first-child)>*]:border-l"
+              className="grid overflow-hidden rounded-none bg-white border border-dark-blue/10 lg:row-span-4 lg:grid-rows-subgrid lg:rounded-none lg:shadow-none lg:[&:not(:first-child)>*]:border-l"
             >
               <div className="relative border-dark-blue/10 px-6 pb-6 pt-7 lg:px-8">
-                <span aria-hidden="true" className={`os-line absolute inset-x-0 top-0 h-[3px] ${SPRINT_LINE[i]}`} />
-                <div className="flex items-start justify-between gap-3">
-                  <p className="pt-1 text-base font-semibold text-dark-blue">{d.day}</p>
-                  <p className="font-ptsans text-7xl font-bold leading-[0.8] text-msaccent/25">
-                    <span className="sr-only">Sprint </span>
-                    {d.sprint}
-                  </p>
-                </div>
-                <h3 className="mt-4 font-ptsans text-3xl font-bold leading-[1.05] tracking-tight text-dark-blue">
+                <span
+                  aria-hidden="true"
+                  className={`os-line absolute inset-x-0 top-0 h-[4px] ${SPRINT_LINE[i]}`}
+                />
+                <p className="text-[13px] font-semibold text-[#2c37c4]">
+                  Sprint {d.sprint}, {d.day}
+                </p>
+                <h3 className="mt-4 os-serif text-3xl font-medium leading-[1.05] tracking-[-0.01em] text-dark-blue">
                   {d.question}
                 </h3>
-                <p className="mt-3 text-sm font-medium text-dark-blue/60">{d.title}</p>
+                <p className="mt-3 text-sm font-medium text-dark-blue/60">
+                  {d.title}
+                </p>
               </div>
-              <div className="border-dark-blue/10 bg-lilac/30 px-6 py-5 lg:px-8">
-                <p className="text-xs font-semibold text-msblue">What they learn</p>
-                <p className="mt-1.5 text-sm leading-relaxed text-dark-blue/75">{d.taught}</p>
+              <div className="border-dark-blue/10 bg-[#f8f9fb] px-6 py-5 lg:px-8">
+                <p className="text-xs font-semibold text-msblue">
+                  What they learn
+                </p>
+                <p className="mt-1.5 text-sm leading-relaxed text-dark-blue/75">
+                  {d.taught}
+                </p>
               </div>
-              <div className="border-dark-blue/10 bg-lilac/70 px-6 py-5 lg:px-8">
+              <div className="border-dark-blue/10 bg-[#eef0f4] px-6 py-5 lg:px-8">
                 <p className="text-xs font-semibold text-msblue">
                   Your team&rsquo;s task, {d.taskMinutes} min
                 </p>
-                <p className="mt-1.5 text-sm leading-relaxed text-dark-blue/80">{d.after}</p>
+                <p className="mt-1.5 text-sm leading-relaxed text-dark-blue/80">
+                  {d.after}
+                </p>
               </div>
               <div className="border-white/15 bg-dark-blue px-6 py-6 text-white lg:px-8">
-                <p className="text-xs font-semibold text-lilac">What you get</p>
-                <p className="mt-1.5 text-base font-medium leading-snug">{d.gain}</p>
+                <p className="text-xs font-semibold text-[#b9bcff]">
+                  What you get
+                </p>
+                <p className="mt-1.5 text-base font-medium leading-snug">
+                  {d.gain}
+                </p>
               </div>
             </li>
           ))}
@@ -246,7 +271,10 @@ export function OfficeSprintDays() {
 }
 
 const STEPS = [
-  { title: "Apply for a sprint", body: "Choose your date and time slot. It takes two minutes." },
+  {
+    title: "Apply for a sprint",
+    body: "Choose your date and time slot. It takes two minutes.",
+  },
   {
     title: "Book your discovery call",
     body: "A 20-minute video call about why you need the sprint, what you want to achieve and what you have tried so far. If that's nothing yet, that's fine.",
@@ -266,9 +294,9 @@ export function OfficeSprintBehind() {
     <div className="border-b border-dark-blue/8 bg-white">
       <Section spacing="none" className="py-12 md:py-16">
         <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)] lg:gap-16">
-          <div>
+          <div className="border-l-[3px] border-dark-blue pl-5">
             <p className={LABEL}>Who runs it</p>
-            <h2 className="font-ptsans text-2xl font-bold uppercase leading-tight tracking-tight text-dark-blue sm:text-3xl">
+            <h2 className="os-serif text-2xl font-medium leading-tight tracking-[-0.01em] text-dark-blue sm:text-3xl">
               Michael Steve Clarity Studio.
             </h2>
             <p className="mt-3 text-sm leading-relaxed text-dark-blue/60">
@@ -279,8 +307,10 @@ export function OfficeSprintBehind() {
           <div className="space-y-4 text-base leading-relaxed text-dark-blue/75">
             <p>
               The sprint is built on the studio&rsquo;s flagship program, the{" "}
-              <span className="font-semibold text-dark-blue">AI Stakeholder Challenge</span>.
-              Over seven days, it prepares senior leaders to take a clear
+              <span className="font-semibold text-dark-blue">
+                AI Stakeholder Challenge
+              </span>
+              . Over seven days, it prepares senior leaders to take a clear
               position on AI and safely lead their people from uncertainty to
               clarity and prosperity.
             </p>
@@ -303,12 +333,13 @@ export function OfficeSprintBehind() {
 
 export function OfficeSprintFit() {
   return (
-    <div className="bg-white">
-      <Section spacing="compact">
+    <div className="relative bg-[#f3f4f7]">
+      <DotGrid />
+      <Section spacing="compact" className="relative">
         <div className="grid gap-14 lg:grid-cols-2 lg:gap-20">
           <div>
             <p className={LABEL}>Who it is for</p>
-            <h2 className="font-ptsans text-3xl font-bold uppercase leading-none tracking-tight text-dark-blue sm:text-4xl">
+            <h2 className="os-serif text-3xl font-medium leading-[1.05] tracking-[-0.01em] text-dark-blue sm:text-4xl">
               For organizations that know AI matters, but not what to do next.
             </h2>
             <p className="mt-6 max-w-md text-base font-light leading-relaxed text-dark-blue/65">
@@ -330,11 +361,11 @@ export function OfficeSprintFit() {
                   style={{ "--os-delay": `${i * 110}ms` }}
                   className="flex gap-5"
                 >
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-lilac font-ptsans text-base font-bold text-dark-blue">
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-none bg-dark-blue os-serif text-base font-medium text-white">
                     {i + 1}
                   </span>
                   <div>
-                    <p className="font-ptsans text-lg font-bold uppercase tracking-tight text-dark-blue">
+                    <p className="os-serif text-lg font-medium tracking-[-0.01em] text-dark-blue">
                       {s.title}
                     </p>
                     <p className="mt-1 text-sm font-light leading-relaxed text-dark-blue/65">
@@ -345,9 +376,9 @@ export function OfficeSprintFit() {
               ))}
             </ol>
             <Button
+              className="mt-10 w-full px-7 py-3 font-semibold sm:w-fit !rounded-none"
               href={REQUEST_URL}
               variant="dark"
-              className="mt-10 w-full px-7 py-3 font-semibold sm:w-fit"
             >
               {REQUEST_LABEL}
             </Button>
@@ -361,22 +392,25 @@ export function OfficeSprintFit() {
 export function OfficeSprintOutside() {
   return (
     <div className="bg-white">
-      <Section spacing="none" className="pb-4 md:pb-6">
-        <div className="flex flex-col gap-6 rounded-3xl bg-msaccent/10 p-8 md:flex-row md:items-center md:justify-between lg:p-10">
-          <div>
-            <h2 className="font-ptsans text-xl font-bold uppercase tracking-tight text-dark-blue">
+      <Section spacing="none" className="pb-4 pt-12 md:pb-6 md:pt-16">
+        <div
+          className={`relative flex flex-col gap-6 overflow-hidden ${DEEP_BAND} p-8 text-white md:flex-row md:items-center md:justify-between lg:p-12`}
+        >
+          <Arcs corner="top-left" />
+          <div className="relative">
+            <h2 className="os-serif text-3xl font-medium tracking-[-0.01em] text-white">
               Need something custom?
             </h2>
-            <p className="mt-2 max-w-lg text-sm leading-relaxed text-dark-blue/60">
-              For a team of fewer than 5 or more than 20, we design a paid sprint
-              with you. Only sprints in the three time slots are free. A time of
-              your own requires a paid sprint.
+            <p className="mt-2 max-w-lg text-sm leading-relaxed text-white/70">
+              For a team of fewer than 5 or more than 20, we design a paid
+              sprint with you. Only sprints in the three time slots are free. A
+              time of your own requires a paid sprint.
             </p>
           </div>
           <Button
+            className="relative shrink-0 justify-center !border-white !bg-white px-7 py-3 font-semibold !text-dark-blue !rounded-none"
             href={SALES_URL}
             variant="secondary-light"
-            className="shrink-0 justify-center px-7 py-3 font-semibold"
           >
             Contact Sales
           </Button>
@@ -410,7 +444,10 @@ const QUESTIONS = [
         <ul className="mt-3 space-y-2">
           {PROTECTIONS.map((line) => (
             <li key={line} className="flex gap-3">
-              <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-msaccent" />
+              <span
+                aria-hidden="true"
+                className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#2c37c4]"
+              />
               {line}
             </li>
           ))}
@@ -468,15 +505,24 @@ const QUESTIONS = [
 export function OfficeSprintFAQ() {
   return (
     <div className="bg-white">
-      <Section id="faq" spacing="compact" width="narrow" className="scroll-mt-20">
+      <Section
+        id="faq"
+        spacing="compact"
+        width="narrow"
+        className="scroll-mt-20"
+      >
         <p className={LABEL}>Questions</p>
-        <h2 className="font-ptsans text-3xl font-bold uppercase leading-none tracking-tight text-dark-blue sm:text-4xl">
+        <h2 className="os-serif text-3xl font-medium leading-[1.05] tracking-[-0.01em] text-dark-blue sm:text-4xl">
           Before you apply for a sprint.
         </h2>
-        <FAQAccordion items={QUESTIONS} />
+        <FAQAccordion items={QUESTIONS} questionClassName="os-serif text-lg font-medium tracking-[-0.01em]" />
 
         <div className="mt-12 flex flex-col items-center">
-          <Button href={REQUEST_URL} variant="dark" className="px-8 py-3 font-semibold">
+          <Button
+            className="px-8 py-3 font-semibold !rounded-none"
+            href={REQUEST_URL}
+            variant="dark"
+          >
             {REQUEST_LABEL}
           </Button>
         </div>

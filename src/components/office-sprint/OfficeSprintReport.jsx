@@ -12,7 +12,8 @@ import {
   DATA_STATUS,
   QUADRANTS,
   SAMPLE_DATA,
-  SAMPLE_MOVES,
+  SAMPLE_FOUNDATIONS,
+  SAMPLE_OPPORTUNITIES,
   SAMPLE_ORG,
   SAMPLE_PARTICIPATION,
   SAMPLE_PROBLEMS,
@@ -21,14 +22,15 @@ import {
   SAMPLE_TASKS,
   SAMPLE_TOP_TASKS,
 } from "@/lib/officeSprintSample";
+import { Contours, DEEP_BAND } from "./Backdrops";
 
 // "Your report": show, not tell (founder, 2026-11-22). The report presented as
 // an organization would see it, in one window with its pages as tabs (after
 // Stripe's product sections), for a fictional company. The numbers live in
 // lib/officeSprintSample.js.
 
-
-const teamName = (key) => SAMPLE_ORG.teams.find((t) => t.key === key)?.name || key;
+const teamName = (key) =>
+  SAMPLE_ORG.teams.find((t) => t.key === key)?.name || key;
 const pct = (n, d) => Math.round((n / d) * 100);
 
 // A key number that counts up once, the first time it is on screen (founder,
@@ -95,8 +97,15 @@ function Legend({ items }) {
   return (
     <ul className="flex flex-wrap gap-x-4 gap-y-1.5">
       {items.map((q) => (
-        <li key={q.key} className="flex items-center gap-1.5 text-xs text-dark-blue/70">
-          <span className="h-2.5 w-2.5 rounded-sm" style={{ background: q.color }} aria-hidden="true" />
+        <li
+          key={q.key}
+          className="flex items-center gap-1.5 text-xs text-dark-blue/70"
+        >
+          <span
+            className="h-2.5 w-2.5 rounded-none"
+            style={{ background: q.color }}
+            aria-hidden="true"
+          />
           {q.label}
         </li>
       ))}
@@ -106,7 +115,7 @@ function Legend({ items }) {
 
 // ── The pages ─────────────────────────────────
 
-const SOFT = "bg-[#f4f5ff]";
+const SOFT = "bg-[#f3f4f7]";
 
 function Caption({ children }) {
   return <p className="text-xs font-semibold text-dark-blue/55">{children}</p>;
@@ -122,7 +131,11 @@ function Donut({ parts, size = 168, stroke = 22, children }) {
   );
   return (
     <div className="relative shrink-0" style={{ width: size, height: size }}>
-      <svg viewBox={`0 0 ${size} ${size}`} className="-rotate-90" aria-hidden="true">
+      <svg
+        viewBox={`0 0 ${size} ${size}`}
+        className="-rotate-90"
+        aria-hidden="true"
+      >
         {parts.map((p, i) => {
           const len = (p.value / total) * c;
           return (
@@ -152,30 +165,47 @@ function Donut({ parts, size = 168, stroke = 22, children }) {
 }
 
 function AtAGlance() {
-  const tasks = SAMPLE_TASKS.reduce((n, t) => n + t.automate + t.augment + t.streamline + t.own, 0);
+  const tasks = SAMPLE_TASKS.reduce(
+    (n, t) => n + t.automate + t.augment + t.streamline + t.own,
+    0,
+  );
   const aiTasks = SAMPLE_TASKS.reduce((n, t) => n + t.automate + t.augment, 0);
   const start = SAMPLE_READINESS.areas.find((a) => a.tag === "Start here");
   const top = SAMPLE_PROBLEMS[0];
   const { registered, finished } = SAMPLE_PARTICIPATION;
   const tiles = [
-    { value: `${pct(aiTasks, tasks)}%`, label: "of their tasks they would hand to AI" },
-    { value: `${SAMPLE_DATA.nobodyOwns}`, label: "data sets nobody answers for" },
-    { value: `${top.chosen} of ${finished[2]}`, label: "want the same problem solved first" },
+    {
+      value: `${pct(aiTasks, tasks)}%`,
+      label: "of their tasks they would hand to AI",
+    },
+    {
+      value: `${SAMPLE_DATA.nobodyOwns}`,
+      label: "data sets nobody answers for",
+    },
+    {
+      value: `${top.chosen} of ${finished[2]}`,
+      label: "want the same problem solved first",
+    },
   ];
   return (
     <Page>
       <div className="flex h-full flex-col gap-4">
         <div className="grid gap-4 lg:grid-cols-[1.25fr_1fr]">
           {/* The company and who joined */}
-          <div className={`rounded-2xl ${SOFT} p-4`}>
+          <div className={`rounded-none ${SOFT} p-4`}>
             <Caption>About {SAMPLE_ORG.name}</Caption>
-            <p className="mt-1.5 text-sm leading-relaxed text-dark-blue/75">{SAMPLE_ORG.about}</p>
+            <p className="mt-1.5 text-sm leading-relaxed text-dark-blue/75">
+              {SAMPLE_ORG.about}
+            </p>
             <div className="mt-4 flex flex-wrap gap-x-5 gap-y-3">
               {SAMPLE_ORG.teams.map((t) => (
                 <div key={t.key}>
                   <div className="flex gap-1" aria-hidden="true">
                     {Array.from({ length: t.people }).map((_, i) => (
-                      <span key={i} className="h-3 w-3 rounded-full bg-msaccent" />
+                      <span
+                        key={i}
+                        className="h-3 w-3 rounded-full bg-[#2c37c4]"
+                      />
                     ))}
                   </div>
                   <p className="mt-1.5 text-[11px] text-dark-blue/60">
@@ -187,19 +217,33 @@ function AtAGlance() {
           </div>
 
           {/* Who finished each sprint */}
-          <div className={`flex flex-col rounded-2xl ${SOFT} p-4`}>
+          <div className={`flex flex-col rounded-none ${SOFT} p-4`}>
             <Caption>Finished each sprint&rsquo;s task</Caption>
-            <div className="mt-3 grid flex-1 grid-cols-3 items-end gap-3" role="img" aria-label={finished.map((n, i) => `Sprint ${i + 1}: ${n} of ${registered}`).join(", ")}>
+            <div
+              className="mt-3 grid flex-1 grid-cols-3 items-end gap-3"
+              role="img"
+              aria-label={finished
+                .map((n, i) => `Sprint ${i + 1}: ${n} of ${registered}`)
+                .join(", ")}
+            >
               {finished.map((n, i) => (
                 <div key={i} className="flex h-full flex-col justify-end">
-                  <p className="font-ptsans text-xl font-bold tabular-nums leading-none">
+                  <p className="os-serif text-xl font-medium tabular-nums leading-[1.05]">
                     {n}
-                    <span className="text-xs font-normal text-dark-blue/40"> /{registered}</span>
+                    <span className="text-xs font-normal text-dark-blue/40">
+                      {" "}
+                      /{registered}
+                    </span>
                   </p>
-                  <div className="mt-1.5 flex h-24 items-end rounded-t-md bg-white">
-                    <div className="os-bar-y w-full rounded-t-md bg-msblue" style={{ height: `${(n / registered) * 100}%` }} />
+                  <div className="mt-1.5 flex h-24 items-end rounded-none bg-white">
+                    <div
+                      className="os-bar-y w-full rounded-none bg-msblue"
+                      style={{ height: `${(n / registered) * 100}%` }}
+                    />
                   </div>
-                  <p className="mt-1.5 text-[11px] text-dark-blue/55">Sprint {i + 1}</p>
+                  <p className="mt-1.5 text-[11px] text-dark-blue/55">
+                    Sprint {i + 1}
+                  </p>
                 </div>
               ))}
             </div>
@@ -208,15 +252,20 @@ function AtAGlance() {
 
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
           {tiles.map((t) => (
-            <div key={t.label} className="rounded-2xl border border-dark-blue/8 p-3.5">
-              <p className="font-ptsans text-3xl font-bold leading-none tracking-tight">
+            <div
+              key={t.label}
+              className="rounded-none border border-dark-blue/8 p-3.5"
+            >
+              <p className="os-serif text-3xl font-medium leading-[1.05] tracking-[-0.01em]">
                 <CountUp text={t.value} />
               </p>
-              <p className="mt-1.5 text-xs leading-snug text-dark-blue/60">{t.label}</p>
+              <p className="mt-1.5 text-xs leading-snug text-dark-blue/60">
+                {t.label}
+              </p>
             </div>
           ))}
-          <div className="flex flex-col rounded-2xl bg-msblue p-3.5 text-white">
-            <p className="font-ptsans text-lg font-bold uppercase leading-tight tracking-tight">
+          <div className="flex flex-col rounded-none bg-msblue p-3.5 text-white">
+            <p className="os-serif text-lg font-medium leading-tight tracking-[-0.01em]">
               {start.name}
             </p>
             <p className="mt-1.5 text-xs text-lilac">is where to start</p>
@@ -242,7 +291,7 @@ function WhereAiFits() {
         <Legend items={QUADRANTS} />
         <div className="mt-5 flex flex-1 flex-col items-center gap-6 sm:flex-row sm:items-center">
           <Donut parts={totals}>
-            <p className="font-ptsans text-3xl font-bold leading-none">
+            <p className="os-serif text-3xl font-medium leading-[1.05]">
               <CountUp text={`${pct(toAi, all)}%`} />
             </p>
             <p className="mt-1 max-w-20 text-[11px] leading-tight text-dark-blue/55">
@@ -260,13 +309,20 @@ function WhereAiFits() {
                       {pct(t.automate + t.augment, total)}% to AI
                     </p>
                   </div>
-                  <div className="mt-1.5 flex h-7 gap-[2px] overflow-hidden rounded-md" role="img" aria-label={`${teamName(t.team)}: ${QUADRANTS.map((q) => `${t[q.key]} ${q.label}`).join(", ")}`}>
+                  <div
+                    className="mt-1.5 flex h-7 gap-[2px] overflow-hidden rounded-none"
+                    role="img"
+                    aria-label={`${teamName(t.team)}: ${QUADRANTS.map((q) => `${t[q.key]} ${q.label}`).join(", ")}`}
+                  >
                     {QUADRANTS.map((q) => (
                       <div
                         key={q.key}
                         title={`${q.label}: ${t[q.key]} tasks`}
                         className="os-bar-x flex items-center justify-center text-[11px] font-semibold text-white"
-                        style={{ width: `${(t[q.key] / total) * 100}%`, background: q.color }}
+                        style={{
+                          width: `${(t[q.key] / total) * 100}%`,
+                          background: q.color,
+                        }}
                       >
                         {t[q.key]}
                       </div>
@@ -278,9 +334,14 @@ function WhereAiFits() {
           </ul>
         </div>
         <div className="mt-5 flex flex-wrap items-center gap-2 border-t border-dark-blue/8 pt-3">
-          <span className="text-xs text-dark-blue/55">Most often placed in Automate:</span>
+          <span className="text-xs text-dark-blue/55">
+            Most often placed in Automate:
+          </span>
           {SAMPLE_TOP_TASKS.map((t) => (
-            <span key={t} className="rounded-full bg-[#e6f4ec] px-2.5 py-1 text-[11px] font-medium text-[#1d6b3f]">
+            <span
+              key={t}
+              className="rounded-none bg-[#eceefb] px-2.5 py-1 text-[11px] font-medium text-dark-blue"
+            >
               {t}
             </span>
           ))}
@@ -293,7 +354,11 @@ function WhereAiFits() {
 // Six areas on a hexagon: the shape shows where the organization is strong
 // and where it is thin. The ranked list beside it carries the numbers.
 function Radar({ areas, outOf }) {
-  const W = 420, H = 290, cx = W / 2, cy = H / 2, R = 108;
+  const W = 420,
+    H = 290,
+    cx = W / 2,
+    cy = H / 2,
+    R = 108;
   const at = (i, v) => {
     const a = ((i * 60 - 90) * Math.PI) / 180;
     return [cx + Math.cos(a) * R * v, cy + Math.sin(a) * R * v];
@@ -301,26 +366,80 @@ function Radar({ areas, outOf }) {
   const ring = (v) => areas.map((_, i) => at(i, v).join(",")).join(" ");
   const shape = areas.map((a, i) => at(i, a.score / outOf).join(",")).join(" ");
   return (
-    <svg viewBox={`0 0 ${W} ${H}`} className="w-full max-w-[28rem]" role="img" aria-label={areas.map((a) => `${a.name} ${a.score} of ${outOf}`).join(", ")}>
+    <svg
+      viewBox={`0 0 ${W} ${H}`}
+      className="w-full max-w-[28rem]"
+      role="img"
+      aria-label={areas
+        .map((a) => `${a.name} ${a.score} of ${outOf}`)
+        .join(", ")}
+    >
       {[0.25, 0.5, 0.75, 1].map((v) => (
-        <polygon key={v} points={ring(v)} fill="none" stroke="#00034c" strokeOpacity="0.08" />
+        <polygon
+          key={v}
+          points={ring(v)}
+          fill="none"
+          stroke="#00034c"
+          strokeOpacity="0.08"
+        />
       ))}
       {areas.map((_, i) => {
         const [x, y] = at(i, 1);
-        return <line key={i} x1={cx} y1={cy} x2={x} y2={y} stroke="#00034c" strokeOpacity="0.08" />;
+        return (
+          <line
+            key={i}
+            x1={cx}
+            y1={cy}
+            x2={x}
+            y2={y}
+            stroke="#00034c"
+            strokeOpacity="0.08"
+          />
+        );
       })}
-      <polygon className="os-radar" style={{ transformOrigin: `${cx}px ${cy}px` }} points={shape} fill="#6368da" fillOpacity="0.18" stroke="#6368da" strokeWidth="2" strokeLinejoin="round" />
+      <polygon
+        className="os-radar"
+        style={{ transformOrigin: `${cx}px ${cy}px` }}
+        points={shape}
+        fill="#2c37c4"
+        fillOpacity="0.18"
+        stroke="#2c37c4"
+        strokeWidth="2"
+        strokeLinejoin="round"
+      />
       {areas.map((a, i) => {
         const [x, y] = at(i, a.score / outOf);
         const start = a.tag === "Start here";
-        return <circle key={a.name} className="os-radar-dot" cx={x} cy={y} r={start ? 5 : 4} fill={start ? "#00034c" : "#6368da"} stroke="white" strokeWidth="2" />;
+        return (
+          <circle
+            key={a.name}
+            className="os-radar-dot"
+            cx={x}
+            cy={y}
+            r={start ? 5 : 4}
+            fill={start ? "#00034c" : "#2c37c4"}
+            stroke="white"
+            strokeWidth="2"
+          />
+        );
       })}
       {areas.map((a, i) => {
         const [x, y] = at(i, 1.12);
         const cos = Math.cos(((i * 60 - 90) * Math.PI) / 180);
-        const anchor = Math.abs(cos) < 0.1 ? "middle" : cos > 0 ? "start" : "end";
+        const anchor =
+          Math.abs(cos) < 0.1 ? "middle" : cos > 0 ? "start" : "end";
         return (
-          <text key={a.name} x={x} y={y} textAnchor={anchor} dominantBaseline="middle" fontSize="11" fill="#00034c" fillOpacity={a.tag === "Start here" ? 1 : 0.6} fontWeight={a.tag === "Start here" ? 700 : 400}>
+          <text
+            key={a.name}
+            x={x}
+            y={y}
+            textAnchor={anchor}
+            dominantBaseline="middle"
+            fontSize="11"
+            fill="#00034c"
+            fillOpacity={a.tag === "Start here" ? 1 : 0.6}
+            fontWeight={a.tag === "Start here" ? 700 : 400}
+          >
             {a.name}
           </text>
         );
@@ -333,8 +452,14 @@ function Readiness() {
   const { areas, outOf } = SAMPLE_READINESS;
   // The hexagon reads clockwise in a fixed order, strongest to weakest is
   // the list's job.
-  const ring = ["Strategy", "Data Governance", "Processes", "Talent", "Collaboration", "Impact Evaluation"]
-    .map((n) => areas.find((a) => a.name === n));
+  const ring = [
+    "Strategy",
+    "Data Governance",
+    "Processes",
+    "Talent",
+    "Collaboration",
+    "Impact Evaluation",
+  ].map((n) => areas.find((a) => a.name === n));
   return (
     <Page>
       <div className="grid h-full items-center gap-6 md:grid-cols-[1.1fr_1fr]">
@@ -344,24 +469,40 @@ function Readiness() {
         </div>
         <ol className="flex flex-col gap-3">
           {areas.map((a, i) => (
-            <li key={a.name} className="grid grid-cols-[1.25rem_1fr_auto] items-center gap-x-3">
-              <span className="text-[11px] font-semibold tabular-nums text-dark-blue/40">{i + 1}</span>
+            <li
+              key={a.name}
+              className="grid grid-cols-[1.25rem_1fr_auto] items-center gap-x-3"
+            >
+              <span className="text-[11px] font-semibold tabular-nums text-dark-blue/40">
+                {i + 1}
+              </span>
               <div className="min-w-0">
                 <div className="flex flex-wrap items-center gap-2">
                   <p className="text-sm font-semibold">{a.name}</p>
                   {a.tag && (
-                    <span className={`rounded-full px-2 py-0.5 text-[10px] font-semibold ${a.tag === "Start here" ? "bg-msblue text-white" : "bg-lilac text-msblue"}`}>
+                    <span
+                      className={`rounded-none px-2 py-0.5 text-[10px] font-semibold ${a.tag === "Start here" ? "bg-msblue text-white" : "bg-[#e6e8ef] text-msblue"}`}
+                    >
                       {a.tag}
                     </span>
                   )}
                 </div>
-                <div className="mt-1 h-1.5 overflow-hidden rounded-full bg-lilac" title={`${a.name}: ${a.score} of ${outOf}`}>
-                  <div className="os-bar-x h-full rounded-full bg-msaccent" style={{ width: `${(a.score / outOf) * 100}%` }} />
+                <div
+                  className="mt-1 h-1.5 overflow-hidden rounded-none bg-[#e6e8ef]"
+                  title={`${a.name}: ${a.score} of ${outOf}`}
+                >
+                  <div
+                    className="os-bar-x h-full rounded-none bg-[#2c37c4]"
+                    style={{ width: `${(a.score / outOf) * 100}%` }}
+                  />
                 </div>
               </div>
-              <p className="font-ptsans text-lg font-bold tabular-nums">
+              <p className="os-serif text-lg font-medium tabular-nums">
                 {a.score}
-                <span className="text-xs font-normal text-dark-blue/40"> /{outOf}</span>
+                <span className="text-xs font-normal text-dark-blue/40">
+                  {" "}
+                  /{outOf}
+                </span>
               </p>
             </li>
           ))}
@@ -389,18 +530,32 @@ function YourData() {
       <div className="grid h-full items-center gap-6 md:grid-cols-[1.1fr_1fr]">
         <div className="flex flex-col">
           <Caption>All {sets} data sets, by how ready they are for AI</Caption>
-          <div className="mt-3 grid max-w-[25rem] grid-cols-8 gap-2" role="img" aria-label={`${DATA_STATUS.map((s) => `${status[s.key]} ${s.label}`).join(", ")}; ${SAMPLE_DATA.nobodyOwns} with nobody answering for them`}>
+          <div
+            className="mt-3 grid max-w-[25rem] grid-cols-8 gap-2"
+            role="img"
+            aria-label={`${DATA_STATUS.map((s) => `${status[s.key]} ${s.label}`).join(", ")}; ${SAMPLE_DATA.nobodyOwns} with nobody answering for them`}
+          >
             {cells.map((c, i) => (
-              <span key={i} title={`${c.label}${c.noOwner ? ", nobody answers for it" : ""}`} className="os-cell relative aspect-square rounded-[5px]" style={{ background: c.color, "--i": i }}>
-                {c.noOwner && <span className="absolute inset-[30%] rounded-full bg-white" />}
+              <span
+                key={i}
+                title={`${c.label}${c.noOwner ? ", nobody answers for it" : ""}`}
+                className="os-cell relative aspect-square rounded-none"
+                style={{ background: c.color, "--i": i }}
+              >
+                {c.noOwner && (
+                  <span className="absolute inset-[30%] rounded-none bg-white" />
+                )}
               </span>
             ))}
           </div>
           <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1.5">
             <Legend items={DATA_STATUS} />
             <span className="flex items-center gap-1.5 text-xs text-dark-blue/70">
-              <span className="relative h-2.5 w-2.5 rounded-sm bg-dark-blue/40" aria-hidden="true">
-                <span className="absolute inset-[28%] rounded-full bg-white" />
+              <span
+                className="relative h-2.5 w-2.5 rounded-none bg-dark-blue/40"
+                aria-hidden="true"
+              >
+                <span className="absolute inset-[28%] rounded-none bg-white" />
               </span>
               Nobody answers for it
             </span>
@@ -410,12 +565,23 @@ function YourData() {
           <Caption>Where it is kept</Caption>
           <ul className="mt-3 space-y-3">
             {keptIn.map((k) => (
-              <li key={k.place} className="grid grid-cols-[8.5rem_1fr_1.5rem] items-center gap-3 text-xs">
+              <li
+                key={k.place}
+                className="grid grid-cols-[8.5rem_1fr_1.5rem] items-center gap-3 text-xs"
+              >
                 <span className="text-dark-blue/75">{k.place}</span>
-                <span className="h-2.5 overflow-hidden rounded-full bg-lilac" title={`${k.place}: ${k.sets} sets`}>
-                  <span className="os-bar-x block h-full rounded-full bg-msaccent" style={{ width: `${(k.sets / max) * 100}%` }} />
+                <span
+                  className="h-2.5 overflow-hidden rounded-none bg-[#e6e8ef]"
+                  title={`${k.place}: ${k.sets} sets`}
+                >
+                  <span
+                    className="os-bar-x block h-full rounded-none bg-[#2c37c4]"
+                    style={{ width: `${(k.sets / max) * 100}%` }}
+                  />
                 </span>
-                <span className="text-right font-semibold tabular-nums">{k.sets}</span>
+                <span className="text-right font-semibold tabular-nums">
+                  {k.sets}
+                </span>
               </li>
             ))}
           </ul>
@@ -439,31 +605,46 @@ function WhereValueIs() {
         </div>
         <ul className="flex flex-1 flex-col justify-center divide-y divide-dark-blue/6">
           {SAMPLE_PROBLEMS.map((p, i) => (
-            <li key={p.theme} className="grid grid-cols-2 gap-x-4 gap-y-1.5 py-2.5 sm:grid-cols-[1fr_9rem_9rem] sm:items-center">
+            <li
+              key={p.theme}
+              className="grid grid-cols-2 gap-x-4 gap-y-1.5 py-2.5 sm:grid-cols-[1fr_9rem_9rem] sm:items-center"
+            >
               <p className="col-span-2 flex items-center gap-2 text-sm font-semibold sm:col-span-1">
                 {p.theme}
                 {i === 0 && (
-                  <span className="rounded-full bg-msblue px-2 py-0.5 text-[10px] font-semibold text-white">Top pick</span>
+                  <span className="rounded-none bg-msblue px-2 py-0.5 text-[10px] font-semibold text-white">
+                    Top pick
+                  </span>
                 )}
               </p>
               <div title={`${p.named} of ${of} named it`}>
                 <p className="text-xs text-dark-blue/70">
-                  <span className="font-semibold tabular-nums text-dark-blue">{p.named}</span>
+                  <span className="font-semibold tabular-nums text-dark-blue">
+                    {p.named}
+                  </span>
                   <span className="sm:hidden"> named it</span>
                   <span className="hidden sm:inline"> of {of}</span>
                 </p>
-                <div className="mt-1 h-1.5 rounded-full bg-[#eef0fb]">
-                  <div className="os-bar-x h-full rounded-full bg-[#9da1ea]" style={{ width: `${(p.named / of) * 100}%` }} />
+                <div className="mt-1 h-1.5 rounded-none bg-[#e6e8ef]">
+                  <div
+                    className="os-bar-x h-full rounded-none bg-[#7f86e3]"
+                    style={{ width: `${(p.named / of) * 100}%` }}
+                  />
                 </div>
               </div>
               <div title={`${p.chosen} of ${of} want it solved first`}>
                 <p className="text-xs text-dark-blue/70">
-                  <span className="font-semibold tabular-nums text-dark-blue">{p.chosen}</span>
+                  <span className="font-semibold tabular-nums text-dark-blue">
+                    {p.chosen}
+                  </span>
                   <span className="sm:hidden"> want it first</span>
                   <span className="hidden sm:inline"> of {of}</span>
                 </p>
-                <div className="mt-1 h-1.5 rounded-full bg-[#eef0fb]">
-                  <div className="os-bar-x h-full rounded-full bg-msblue" style={{ width: `${(p.chosen / of) * 100}%` }} />
+                <div className="mt-1 h-1.5 rounded-none bg-[#e6e8ef]">
+                  <div
+                    className="os-bar-x h-full rounded-none bg-msblue"
+                    style={{ width: `${(p.chosen / of) * 100}%` }}
+                  />
                 </div>
               </div>
             </li>
@@ -485,13 +666,25 @@ function TheirRules() {
             size={132}
             stroke={16}
             parts={[
-              { key: "wrote", label: "Wrote a policy", value: submitted, color: "#6368da" },
-              { key: "not", label: "Did not", value: people - submitted, color: "#e4e5f7" },
+              {
+                key: "wrote",
+                label: "Wrote a policy",
+                value: submitted,
+                color: "#2c37c4",
+              },
+              {
+                key: "not",
+                label: "Did not",
+                value: people - submitted,
+                color: "#e6e8ef",
+              },
             ]}
           >
-            <p className="font-ptsans text-2xl font-bold leading-none">
+            <p className="os-serif text-2xl font-medium leading-[1.05]">
               <CountUp text={String(submitted)} />
-              <span className="text-sm font-normal text-dark-blue/40">/{people}</span>
+              <span className="text-sm font-normal text-dark-blue/40">
+                /{people}
+              </span>
             </p>
           </Donut>
           <p className="max-w-36 text-xs leading-snug text-dark-blue/60">
@@ -506,13 +699,23 @@ function TheirRules() {
               <li key={r.rule}>
                 <div className="flex items-baseline justify-between gap-3">
                   <p className="text-sm font-semibold">{r.rule}</p>
-                  <p className="shrink-0 font-ptsans text-lg font-bold tabular-nums">{share}%</p>
+                  <p className="shrink-0 os-serif text-lg font-medium tabular-nums">
+                    {share}%
+                  </p>
                 </div>
-                <div className="mt-1 h-2 overflow-hidden rounded-full bg-lilac" title={`${r.people} of ${submitted}`}>
-                  <div className={`os-bar-x h-full rounded-full ${split ? "bg-[#c98a12]" : "bg-msaccent"}`} style={{ width: `${share}%` }} />
+                <div
+                  className="mt-1 h-2 overflow-hidden rounded-none bg-[#e6e8ef]"
+                  title={`${r.people} of ${submitted}`}
+                >
+                  <div
+                    className={`os-bar-x h-full rounded-none ${split ? "bg-[#7f86e3]" : "bg-[#2c37c4]"}`}
+                    style={{ width: `${share}%` }}
+                  />
                 </div>
                 {split && (
-                  <p className="mt-1 text-xs font-medium text-[#8a5a00]">Split: worth settling together.</p>
+                  <p className="mt-1 text-xs font-medium text-dark-blue/70">
+                    Split: worth settling together.
+                  </p>
                 )}
               </li>
             );
@@ -523,26 +726,76 @@ function TheirRules() {
   );
 }
 
-// The three moves toward a first pilot, in order. No calendar: how long the
-// training takes depends on the organization (founder, 2026-11-22).
-function WhatItMeans() {
+// Foundations: what adoption depends on, each with the finding behind it and
+// what fails without it, and the programme that addresses them (2026-11-27,
+// matching the real report). Not a sequence, so not numbered.
+function Foundations() {
   return (
     <Page>
-      <div className="flex h-full flex-col justify-center">
-        <ol className="flex flex-col gap-3">
-          {SAMPLE_MOVES.map((m, i) => (
-            <li key={m.title} className={`flex gap-3.5 rounded-2xl ${SOFT} p-4 sm:p-5`}>
-              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-msblue font-ptsans text-sm font-bold text-white">
-                {i + 1}
-              </span>
-              <div>
-                <p className="font-ptsans text-base font-bold uppercase leading-tight tracking-tight">{m.title}</p>
-                <p className="mt-1 max-w-2xl text-xs leading-relaxed text-dark-blue/65 sm:text-sm">{m.body}</p>
-              </div>
+      <div className="flex h-full flex-col gap-4">
+        <ul className="grid gap-3 md:grid-cols-3">
+          {SAMPLE_FOUNDATIONS.map((f) => (
+            <li
+              key={f.title}
+              className={`flex flex-col rounded-none ${SOFT} p-4`}
+            >
+              <p className="os-serif text-lg font-medium leading-tight tracking-[-0.01em]">
+                {f.title}
+              </p>
+              <p className="mt-1.5 text-xs leading-relaxed text-dark-blue/70">
+                {f.body}
+              </p>
+              <dl className="mt-auto space-y-2 pt-4 text-xs leading-snug">
+                <div className="border-t border-dark-blue/8 pt-2">
+                  <dt className="font-semibold text-dark-blue">Why</dt>
+                  <dd className="mt-0.5 text-dark-blue/65">{f.why}</dd>
+                </div>
+                <div className="border-t border-dark-blue/8 pt-2">
+                  <dt className="font-semibold text-dark-blue">
+                    If it is left unaddressed
+                  </dt>
+                  <dd className="mt-0.5 text-dark-blue/65">{f.risk}</dd>
+                </div>
+              </dl>
             </li>
           ))}
-        </ol>
+        </ul>
       </div>
+    </Page>
+  );
+}
+
+// Opportunities: the solutions that create value, strongest first, each
+// saying whether it can start now or which foundation comes first.
+function Opportunities() {
+  return (
+    <Page>
+      <ol className="flex h-full flex-col justify-center divide-y divide-dark-blue/6">
+        {SAMPLE_OPPORTUNITIES.map((o, i) => (
+          <li
+            key={o.title}
+            className="grid grid-cols-[1.75rem_1fr] gap-x-3 py-3 first:pt-0 last:pb-0 sm:grid-cols-[1.75rem_1fr_auto] sm:items-center sm:gap-x-4"
+          >
+            <span className="os-serif text-xl font-medium tabular-nums text-[#2c37c4]">
+              {i + 1}
+            </span>
+            <div className="min-w-0">
+              <p className="text-[11px] font-semibold text-[#2c37c4]">
+                {o.kind}
+              </p>
+              <p className="text-sm font-semibold">{o.title}</p>
+              <p className="mt-0.5 text-xs leading-relaxed text-dark-blue/65">
+                {o.body}
+              </p>
+            </div>
+            <span
+              className={`col-start-2 mt-2 justify-self-start whitespace-nowrap rounded-none px-2.5 py-1 text-[11px] font-medium sm:col-start-3 sm:mt-0 ${o.needs ? "border border-dark-blue/20 bg-white text-dark-blue/70" : "bg-[#eceefb] text-dark-blue"}`}
+            >
+              {o.needs ? `After ${o.needs}` : "Ready to start"}
+            </span>
+          </li>
+        ))}
+      </ol>
     </Page>
   );
 }
@@ -582,7 +835,8 @@ const PANELS = [
     id: "value",
     name: "Where value is",
     source: "Sprint 3 · themes",
-    finding: "9 people named re-typing WhatsApp orders. 5 want it solved first.",
+    finding:
+      "9 people named re-typing WhatsApp orders. 5 want it solved first.",
     page: <WhereValueIs />,
   },
   {
@@ -593,11 +847,18 @@ const PANELS = [
     page: <TheirRules />,
   },
   {
-    id: "means",
-    name: "What it means",
+    id: "foundations",
+    name: "Foundations",
     source: "The advisory call",
-    finding: "Three moves before your first pilot.",
-    page: <WhatItMeans />,
+    finding: "Three foundations your adoption depends on.",
+    page: <Foundations />,
+  },
+  {
+    id: "opportunities",
+    name: "Opportunities",
+    source: "The advisory call",
+    finding: "Four opportunities, strongest first.",
+    page: <Opportunities />,
   },
 ];
 
@@ -612,7 +873,10 @@ export default function OfficeSprintReport() {
     const row = tabs.current;
     if (tab && row.scrollWidth > row.clientWidth) {
       const left =
-        tab.getBoundingClientRect().left - row.getBoundingClientRect().left + row.scrollLeft - 8;
+        tab.getBoundingClientRect().left -
+        row.getBoundingClientRect().left +
+        row.scrollLeft -
+        8;
       row.scrollTo({ left, behavior: "smooth" });
     }
   }, [active]);
@@ -624,24 +888,33 @@ export default function OfficeSprintReport() {
   };
 
   return (
-    <section id="your-report" className="relative scroll-mt-20 overflow-hidden bg-dark-blue text-white">
-      <div className="pointer-events-none absolute -top-40 left-[-10%] h-150 w-225 bg-[radial-gradient(ellipse_at_center,rgba(99,104,218,0.22),transparent_60%)]" />
-      <div className="pointer-events-none absolute -bottom-40 right-[-10%] h-150 w-225 bg-[radial-gradient(ellipse_at_center,rgba(135,5,113,0.13),transparent_60%)]" />
-
-      <Section spacing="none" className="relative pb-16 pt-16 md:pb-20 md:pt-20">
-        <p className="mb-4 text-[10px] font-semibold uppercase tracking-[0.35em] text-lilac/60">
+    <section
+      id="your-report"
+      className={`relative scroll-mt-20 overflow-hidden ${DEEP_BAND} text-white`}
+    >
+      <Contours className="opacity-80" />
+      <Section
+        spacing="none"
+        className="relative pb-16 pt-16 md:pb-20 md:pt-20"
+      >
+        <p className="mb-3 text-[13px] font-semibold tracking-normal text-[#b9bcff]">
           After the sprint
         </p>
-        <h2 className="font-ptsans text-3xl font-bold uppercase leading-none tracking-tight sm:text-4xl lg:text-5xl">
+        <h2 className="os-serif text-3xl font-medium leading-[1.05] tracking-[-0.01em] sm:text-4xl lg:text-5xl">
           A full report and advisory on next steps.
         </h2>
 
         {/* The report window */}
-        <div data-motion className="mt-10 overflow-hidden rounded-3xl bg-white text-dark-blue shadow-[0_2px_4px_rgba(0,3,76,0.2),0_30px_80px_rgba(0,3,76,0.55)]">
+        <div
+          data-motion
+          className="mt-10 overflow-hidden rounded-none bg-white text-dark-blue shadow-[0_2px_4px_rgba(0,3,76,0.2),0_30px_80px_rgba(0,3,76,0.55)]"
+        >
           <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-1 border-b border-dark-blue/8 px-5 py-3.5 sm:px-6">
             <p className="text-sm font-semibold">{SAMPLE_ORG.name}</p>
             <p className="text-xs text-dark-blue/45">
-              <span className="hidden sm:inline">AI Stakeholder Office Sprint report</span>
+              <span className="hidden sm:inline">
+                AI Stakeholder Office Sprint report
+              </span>
             </p>
           </div>
 
@@ -652,7 +925,7 @@ export default function OfficeSprintReport() {
               role="tablist"
               aria-label="Report pages"
               onKeyDown={onKey}
-              className="flex gap-1 overflow-x-auto border-b border-dark-blue/8 bg-[#f7f7fd] p-2 [scrollbar-width:none] md:flex-col md:overflow-visible md:border-b-0 md:border-r md:p-3 [&::-webkit-scrollbar]:hidden"
+              className="flex gap-1 overflow-x-auto border-b border-dark-blue/8 bg-[#f6f7f9] p-2 [scrollbar-width:none] md:flex-col md:overflow-visible md:border-b-0 md:border-r md:p-3 [&::-webkit-scrollbar]:hidden"
             >
               {PANELS.map((p, i) => (
                 <button
@@ -665,16 +938,10 @@ export default function OfficeSprintReport() {
                   aria-controls="report-page"
                   tabIndex={i === active ? 0 : -1}
                   onClick={() => setActive(i)}
-                  className={`flex shrink-0 cursor-pointer items-center gap-2.5 whitespace-nowrap rounded-xl px-3 py-2 text-left text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-msaccent ${
-                    i === active
-                      ? "bg-white font-semibold text-dark-blue shadow-sm"
-                      : "text-dark-blue/55 hover:text-dark-blue"
-                  }`}
+                  className={`flex shrink-0 cursor-pointer items-center gap-2.5 whitespace-nowrap rounded-none px-3 py-2 text-left text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2c37c4] ${i === active ? "bg-white font-semibold text-dark-blue shadow-sm" : "text-dark-blue/55 hover:text-dark-blue"}`}
                 >
                   <span
-                    className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[10px] font-semibold tabular-nums ${
-                      i === active ? "bg-msblue text-white" : "bg-dark-blue/8 text-dark-blue/50"
-                    }`}
+                    className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[10px] font-semibold tabular-nums ${i === active ? "bg-msblue text-white" : "bg-dark-blue/8 text-dark-blue/50"}`}
                   >
                     {i + 1}
                   </span>
@@ -689,18 +956,22 @@ export default function OfficeSprintReport() {
               aria-labelledby={`report-tab-${panel.id}`}
               className="flex flex-col p-5 sm:p-8 md:min-h-[36rem]"
             >
-              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-dark-blue/40">
+              <p className="text-[13px] font-semibold tracking-normal text-[#2c37c4]">
                 {panel.source}
               </p>
-              <p className="mt-2 max-w-2xl font-ptsans text-2xl font-bold uppercase leading-[1.05] tracking-tight sm:text-3xl">
+              <p className="mt-2 max-w-2xl os-serif text-2xl font-medium leading-[1.05] tracking-[-0.01em] sm:text-3xl">
                 {panel.finding}
               </p>
               <div key={panel.id} className="os-panel-in mt-6 min-h-0 flex-1">
                 {panel.page}
               </div>
               <div className="mt-6 flex items-center justify-between border-t border-dark-blue/8 pt-4">
-                <span className="text-xs tabular-nums text-dark-blue/40">
-                  {active + 1} / {PANELS.length}
+                <span className="text-[11px] tabular-nums leading-snug text-dark-blue/45">
+                  Source: AI Stakeholder Office Sprint,{" "}
+                  {SAMPLE_ORG.name.replace(/\.$/, "")}. {panel.source}.
+                  <span className="ml-2">
+                    {active + 1} / {PANELS.length}
+                  </span>
                 </span>
                 <div className="flex gap-2">
                   <button
@@ -729,10 +1000,16 @@ export default function OfficeSprintReport() {
 
         {/* The moment the reader most wants it (founder, 2026-11-22). */}
         <div className="mt-10 flex flex-col items-center gap-3 text-center">
-          <Button href={REQUEST_URL} variant="primary" className="justify-center px-8 py-3 font-semibold">
+          <Button
+            className="justify-center px-8 py-3 font-semibold !rounded-none"
+            href={REQUEST_URL}
+            variant="primary"
+          >
             {REQUEST_LABEL}
           </Button>
-          <p className="text-sm text-white/55">Your own report, from your own people, by Thursday.</p>
+          <p className="text-sm text-white/55">
+            Your own report, from your own people, by Thursday.
+          </p>
         </div>
       </Section>
     </section>
@@ -743,7 +1020,10 @@ export default function OfficeSprintReport() {
 // you hold…" has its proof beside it (founder, 2026-11-22). Wider screens
 // only; it links down to the full report.
 export function ReportPreview() {
-  const tasks = SAMPLE_TASKS.reduce((n, t) => n + t.automate + t.augment + t.streamline + t.own, 0);
+  const tasks = SAMPLE_TASKS.reduce(
+    (n, t) => n + t.automate + t.augment + t.streamline + t.own,
+    0,
+  );
   const aiTasks = SAMPLE_TASKS.reduce((n, t) => n + t.automate + t.augment, 0);
   const start = SAMPLE_READINESS.areas.find((a) => a.tag === "Start here");
   const { registered, finished } = SAMPLE_PARTICIPATION;
@@ -757,57 +1037,105 @@ export function ReportPreview() {
       className="os-report-in group block w-full max-w-[30rem] focus-visible:outline-none"
       aria-label="Go to the full report"
     >
-      <div className="overflow-hidden rounded-2xl bg-white text-dark-blue shadow-[0_2px_4px_rgba(0,3,76,0.25),0_30px_70px_rgba(0,0,0,0.45)] transition-transform duration-300 group-hover:-translate-y-1 group-focus-visible:ring-2 group-focus-visible:ring-lilac">
+      <div className="overflow-hidden rounded-none bg-white text-dark-blue shadow-[0_2px_4px_rgba(0,3,76,0.25),0_30px_70px_rgba(0,0,0,0.45)] transition-transform duration-300 group-hover:-translate-y-1 group-focus-visible:ring-2 group-focus-visible:ring-lilac">
         <div className="flex items-center justify-between border-b border-dark-blue/8 px-4 py-2.5">
           <p className="text-xs font-semibold">{SAMPLE_ORG.name}</p>
-          <p className="text-[10px] text-dark-blue/45">AI Stakeholder Office Sprint report</p>
+          <p className="text-[10px] text-dark-blue/45">
+            AI Stakeholder Office Sprint report
+          </p>
         </div>
-        <div className="flex gap-1 border-b border-dark-blue/8 bg-[#f7f7fd] px-3 py-1.5 text-[10px]">
-          {["At a glance", "Where AI fits", "Readiness", "Your data"].map((t, i) => (
-            <span key={t} className={`rounded-md px-2 py-1 ${i === 0 ? "bg-white font-semibold shadow-sm" : "text-dark-blue/50"}`}>
-              {t}
-            </span>
-          ))}
+        <div className="flex gap-1 border-b border-dark-blue/8 bg-[#f6f7f9] px-3 py-1.5 text-[10px]">
+          {["At a glance", "Where AI fits", "Readiness", "Your data"].map(
+            (t, i) => (
+              <span
+                key={t}
+                className={`rounded-none px-2 py-1 ${i === 0 ? "bg-white font-semibold shadow-sm" : "text-dark-blue/50"}`}
+              >
+                {t}
+              </span>
+            ),
+          )}
         </div>
         <div className="p-4">
-          <p className="text-[9px] font-semibold uppercase tracking-[0.2em] text-dark-blue/40">All three sprints</p>
-          <p className="mt-1 font-ptsans text-lg font-bold uppercase leading-tight tracking-tight">
+          <p className="text-[13px] font-semibold tracking-normal text-[#2c37c4]">
+            All three sprints
+          </p>
+          <p className="mt-1 os-serif text-lg font-medium leading-tight tracking-[-0.01em]">
             All 16 took part. 14 finished all three sprints.
           </p>
           <div className="mt-3 grid grid-cols-[1fr_8.5rem] gap-2.5">
-            <div className="rounded-xl bg-[#f4f5ff] p-3">
-              <p className="text-[10px] font-semibold text-dark-blue/55">Where AI fits · {tasks} tasks</p>
-              <div className="mt-2 flex h-4 gap-[2px] overflow-hidden rounded" aria-hidden="true">
+            <div className="rounded-none bg-[#f3f4f7] p-3">
+              <p className="text-[10px] font-semibold text-dark-blue/55">
+                Where AI fits · {tasks} tasks
+              </p>
+              <div
+                className="mt-2 flex h-4 gap-[2px] overflow-hidden rounded-none"
+                aria-hidden="true"
+              >
                 {totals.map((q) => (
-                  <span key={q.key} className="os-bar-x" style={{ width: `${(q.value / tasks) * 100}%`, background: q.color }} />
+                  <span
+                    key={q.key}
+                    className="os-bar-x"
+                    style={{
+                      width: `${(q.value / tasks) * 100}%`,
+                      background: q.color,
+                    }}
+                  />
                 ))}
               </div>
-              <p className="mt-2 font-ptsans text-2xl font-bold leading-none">{pct(aiTasks, tasks)}%</p>
-              <p className="mt-0.5 text-[10px] text-dark-blue/55">they would hand to AI</p>
+              <p className="mt-2 os-serif text-2xl font-medium leading-[1.05]">
+                {pct(aiTasks, tasks)}%
+              </p>
+              <p className="mt-0.5 text-[10px] text-dark-blue/55">
+                they would hand to AI
+              </p>
             </div>
-            <div className="flex flex-col rounded-xl bg-[#f4f5ff] p-3">
-              <p className="text-[10px] font-semibold text-dark-blue/55">Finished</p>
-              <div className="mt-2 grid flex-1 grid-cols-3 items-end gap-1.5" aria-hidden="true">
+            <div className="flex flex-col rounded-none bg-[#f3f4f7] p-3">
+              <p className="text-[10px] font-semibold text-dark-blue/55">
+                Finished
+              </p>
+              <div
+                className="mt-2 grid flex-1 grid-cols-3 items-end gap-1.5"
+                aria-hidden="true"
+              >
                 {finished.map((n, i) => (
                   <div key={i} className="flex h-full flex-col justify-end">
-                    <div className="os-bar-y rounded-t bg-msblue" style={{ height: `${(n / registered) * 100}%`, minHeight: 8 }} />
-                    <p className="mt-1 text-center text-[9px] text-dark-blue/50">S{i + 1}</p>
+                    <div
+                      className="os-bar-y rounded-none bg-msblue"
+                      style={{
+                        height: `${(n / registered) * 100}%`,
+                        minHeight: 8,
+                      }}
+                    />
+                    <p className="mt-1 text-center text-[9px] text-dark-blue/50">
+                      S{i + 1}
+                    </p>
                   </div>
                 ))}
               </div>
             </div>
           </div>
           <div className="mt-2.5 grid grid-cols-3 gap-2.5">
-            <div className="rounded-xl border border-dark-blue/8 p-2.5">
-              <p className="font-ptsans text-xl font-bold leading-none">{SAMPLE_DATA.nobodyOwns}</p>
-              <p className="mt-1 text-[10px] leading-snug text-dark-blue/55">data sets nobody answers for</p>
+            <div className="rounded-none border border-dark-blue/8 p-2.5">
+              <p className="os-serif text-xl font-medium leading-[1.05]">
+                {SAMPLE_DATA.nobodyOwns}
+              </p>
+              <p className="mt-1 text-[10px] leading-snug text-dark-blue/55">
+                data sets nobody answers for
+              </p>
             </div>
-            <div className="rounded-xl border border-dark-blue/8 p-2.5">
-              <p className="font-ptsans text-xl font-bold leading-none">{SAMPLE_PROBLEMS[0].chosen} of {finished[2]}</p>
-              <p className="mt-1 text-[10px] leading-snug text-dark-blue/55">want the same problem solved first</p>
+            <div className="rounded-none border border-dark-blue/8 p-2.5">
+              <p className="os-serif text-xl font-medium leading-[1.05]">
+                {SAMPLE_PROBLEMS[0].chosen} of {finished[2]}
+              </p>
+              <p className="mt-1 text-[10px] leading-snug text-dark-blue/55">
+                want the same problem solved first
+              </p>
             </div>
-            <div className="rounded-xl bg-msblue p-2.5 text-white">
-              <p className="font-ptsans text-sm font-bold uppercase leading-tight">{start.name}</p>
+            <div className="rounded-none bg-msblue p-2.5 text-white">
+              <p className="os-serif text-sm font-medium leading-tight">
+                {start.name}
+              </p>
               <p className="mt-1 text-[10px] text-lilac">is where to start</p>
             </div>
           </div>
