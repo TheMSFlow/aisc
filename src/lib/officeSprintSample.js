@@ -133,7 +133,7 @@ export const SAMPLE_RULES = {
 export const SAMPLE_FOUNDATIONS = [
   {
     title: "AI Fluency",
-    body: "Three days of sprints train no one. Your people need full AI Fluency: using AI effectively, efficiently, ethically and safely, knowing the platforms that suit their work, and hands-on practice.",
+    body: "The sprints train your people, but three days cannot give them all they need. Full AI Fluency adds using AI effectively, efficiently, ethically and safely, knowing the platforms that suit their work, and hands-on practice.",
     why: "They would hand half the work they listed to AI, and have yet to work with it.",
     risk: "People avoid AI or use it carelessly, and no pilot delivers.",
   },

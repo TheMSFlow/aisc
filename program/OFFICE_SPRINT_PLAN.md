@@ -742,7 +742,7 @@ Founder's choices (2026-11-27): the contact learns the time **on their dashboard
 ### The landing page's sample report updated (2026-11-27)
 
 The sample report on `/office-sprint` (Alder Lane Co.) now ends as the real report does: **"What it means" (three moves) is replaced by two pages**, built from the sample's own figures (`aisc/src/lib/officeSprintSample.js`, `src/components/office-sprint/OfficeSprintReport.jsx`):
-- **Foundations**: "Three foundations your adoption depends on." AI Fluency (full training: "Three days of sprints train no one"), AI Governance (13 of 14 rule out customer details, yet nobody said which tools are allowed) and Data Audit (9 of 31 data sets have nobody answering for them; Data Governance 7 of 20), each with "Why" and "If it is left unaddressed"; then "Recommended: the AI Stakeholder Challenge. It addresses all three foundations: AI Fluency, AI Governance and Data Audit." Not numbered, because they are not a sequence.
+- **Foundations**: "Three foundations your adoption depends on." AI Fluency (full training: "The sprints train your people, but three days cannot give them all they need"), AI Governance (13 of 14 rule out customer details, yet nobody said which tools are allowed) and Data Audit (9 of 31 data sets have nobody answering for them; Data Governance 7 of 20), each with "Why" and "If it is left unaddressed"; then "Recommended: the AI Stakeholder Challenge. It addresses all three foundations: AI Fluency, AI Governance and Data Audit." Not numbered, because they are not a sequence.
 - **Opportunities**: "Four opportunities, strongest first." The WhatsApp orders pilot (after AI Governance), matching payments to invoices (after Data Audit), one shared stock record (an internal tool, ready to start), and confirming orders to customers (after AI Governance).
 - The sample keeps the landing page's own look (PT Sans Narrow titles): the site-wide font change waits until Newsreader has proven itself in the report. Screens: `aisc/screenshots/office-sprint/checkpoint3/landing-*.png`.
 
@@ -769,6 +769,35 @@ Founder: "One thing is sure, all the former headlines and titles with the conden
 - **Details:** the pale 1, 2, 3 numerals are gone; each day card reads "Sprint 1, Monday" over a deep top rule. "What changes" has a deep rule over the table, "Today" in grey and "After the sprint" in strong blue, and the problems in Newsreader. The steps in "How it starts" are deep squares. The header button is white and square.
 - Screens: `aisc/screenshots/office-sprint/checkpoint3/landing-page-*.png` and `landing-page-phone-*.png`.
 - **Next for the site:** roll the same look out across aistakeholderchallenge.com, page by page, when the founder says.
+- **Housekeeping (founder, 2026-11-27):** the report's AI drafting uses the production key already set, `TERRITORY_BUILDER_ANTHROPIC_API_KEY` ("let's use it"); the `SPRINT_ZOOM_*` settings are retired (removed from `intelligence/.env.local`; the founder deletes them in Vercel); the checkpoint 2 test organization is deleted; the onboarding video is not yet recorded ("comes soon"), so `ONBOARDING_VIDEO` stays empty and the page shows its preparation list without a video.
+- **The "not registered" screen redesigned** (founder, 2026-11-27: "This page is not designed properly"): `intelligence/src/components/officeSprint/SprintNotice.jsx`, used by the learning center's layout. Deep blue with faint arcs, the wordmark, a Newsreader title, the same words, and a square white "Back to your dashboard" button. Note: Intelligence's site-wide rule sets h1 in PT Sans Narrow outside Tailwind's layers, so a heading needs its font set directly.
+
+- **AI Fluency wording corrected** (founder, 2026-11-27: "you said 'Three days of sprints train no one.' That's wrong. It trains but it doesn't supply all they need"). The sample now reads "The sprints train your people, but three days cannot give them all they need. Full AI Fluency adds…", and the real report's draft is told the same: the sprint trains, but three days cannot give staff all they need; it must never say the sprint trained no one.
+
+- **The schedule's lines softened** (founder, 2026-11-27: "The lines in the blue background of the schedule section is too strong and it's distracting and competing with the copy. Consider softening it or given the sprint cards 1-3 and the 4th one a glass blur"). The contour lines behind the schedule are at 40% (`<Contours className="opacity-40" />` in `OfficeSprintWeek.jsx`). Glass was tried on the cards as well and taken off: "You can't do both. If you've soften the lines then remove the frosted glass." The cards keep their earlier flat fill. Screens: `aisc/screenshots/office-sprint/checkpoint3/schedule-after*.png`.
+
+### Office Sprint resources not yet in the new design (inventory, 2026-11-27; founder: "We are not redesigning yet. We simply need a list.")
+
+**Already in the new design:** the `/office-sprint` landing page and its sample report (AISC); the report window, the slides and the report PDF; the "not registered" screen (Intelligence).
+
+**Participants (Intelligence):**
+1. The learning center: its frame (`SprintShell`, slate theme in `sprint.css`), Overview, Onboarding, the three day pages with the session strip, and Your results.
+2. The five tools in sprint mode: Delegation Tool (`MSDelegationMatrix`), Readiness Scorecard, Data Audit (`SprintDataAudit`), Value Creation (`TerritoryBuilder`), My AI Policy (`SprintAiPolicy`).
+3. The five personal PDFs: Delegation, Readiness summary (`readinessSummaryPdf.js`), Data Audit, Value Creation, My AI Policy (`sprintPdfs.js`, plain Helvetica).
+4. Registration: `/form/office-sprint/join` and its "You're registered" screen.
+
+**The contact (Intelligence):**
+5. The application form `/form/office-sprint` and its "Application received" screen.
+6. The dashboard: the Office Sprint card with the questionnaire (`OfficeSprintCard`), the day tiles and the two week tiles (`SprintPanels`, `SprintDayTiles`), and a participant's sprint panel (`SprintStaffCard`), all in the glass home style.
+
+**Emails (Intelligence, 8):** the application (to the studio); "Your application is in: book your discovery call"; "Your AI Stakeholder Office Sprint dashboard" (the contact's account); "…is scheduled"; "…dates have changed"; "You're registered…" (each participant); "…is confirmed" (to the contact); "…confirmed" (to the studio).
+
+**AISC:** the policy page `/policy/office-sprint` (shared policy layout, narrow-font titles). The landing page has no share image of its own (the site's default is used).
+
+**Sales and outreach (local): done 2026-11-27** (founder: "For now I only need the Sales and outreach (local) redesigned"). `brief.html` was rebuilt in the new style with the same words: deep header with arcs, Newsreader title and facts, sentence-case labels in strong blue, square day cards with deep top rules, the practical box on light grey with a dot grid, deep footer. The referral note gained a matching `referral.html`, printed to `REFERRAL_NOTE.pdf`, with the three notes word for word (small labels "Note 1", "Note 2", "For the referrer" added above his headings). `make_pdf.ps1` prints both. Newsreader comes from `brief/fonts/newsreader-latin.woff2`, copied from the AISC build, not downloaded. The `.md` and `.docx` copies stay plain text for the wording.
+
+**Internal only:** the admin pages (`/admin/sprint` and each sprint's page, in the admin kit), the Excel "Download all work" workbook, the calendar file (text only), and the content plans in `_content/AI-Stakeholder-Office-Sprint/` (Word documents).
+
 - **The live test of checkpoint 3 is postponed** (founder, 2026-11-27: "We need to postpone this test for later"). Open when it resumes: 5 participants with Gmail + addresses so the report shows real numbers, or 2 for the flows only; a custom-time week so no public slot is taken.
 
 - **Wording comes later.** "Later we'll work on the right wordings for the report content header, titles and other areas."

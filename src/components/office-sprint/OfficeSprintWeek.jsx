@@ -363,7 +363,10 @@ export default function OfficeSprintWeek() {
         <div
           className={`relative overflow-hidden ${DEEP_BAND} p-6 text-white sm:p-8 lg:p-10`}
         >
-          <Contours />
+          {/* Softened so the lines sit behind the copy (founder, 2026-11-27:
+              "too strong… competing with the copy"). Not both: no glass
+              on the cards as well (founder, same day). */}
+          <Contours className="opacity-40" />
 
           {/* Desktop and tablet: the week as a grid */}
           <div className="relative hidden md:block">
