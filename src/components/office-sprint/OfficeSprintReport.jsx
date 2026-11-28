@@ -807,7 +807,7 @@ const PANELS = [
     id: "glance",
     name: "At a glance",
     source: "All three sprints",
-    finding: "All 16 took part. 14 finished all three sprints.",
+    finding: "16 registered. 14 finished all three sprints.",
     page: <AtAGlance />,
   },
   {
@@ -1061,7 +1061,7 @@ export function ReportPreview() {
             All three sprints
           </p>
           <p className="mt-1 os-serif text-lg font-medium leading-tight tracking-[-0.01em]">
-            All 16 took part. 14 finished all three sprints.
+            16 registered. 14 finished all three sprints.
           </p>
           <div className="mt-3 grid grid-cols-[1fr_8.5rem] gap-2.5">
             <div className="rounded-none bg-[#f3f4f7] p-3">

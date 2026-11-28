@@ -185,7 +185,7 @@ function closesLabel(iso) {
 
 function Chevron() {
   return (
-    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-dark-blue/[0.06] text-dark-blue/60 transition-colors duration-200 group-open:bg-dark-blue group-open:text-white">
+    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-none bg-dark-blue/[0.06] text-dark-blue/60 transition-colors duration-200 group-open:bg-dark-blue group-open:text-white">
       <svg
         viewBox="0 0 16 16"
         aria-hidden="true"
@@ -228,7 +228,7 @@ function AvailableTimes({ weeks, local }) {
           const held = new Set(w.held);
           return (
             <li key={w.week}>
-              <details className="group rounded-none border border-dark-blue/10 bg-white transition-[border-color,background-color,box-shadow] duration-200 hover:border-dark-blue/25 open:border-dark-blue/60 open:bg-dark-blue/[0.04] open:shadow-[0_2px_4px_rgba(0,3,76,0.06),0_12px_28px_rgba(0,3,76,0.08)]">
+              <details className="group rounded-none border border-dark-blue/10 bg-white transition-[border-color,background-color] duration-200 hover:border-dark-blue/25 open:border-dark-blue/60 open:bg-dark-blue/[0.04]">
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 [&::-webkit-details-marker]:hidden">
                   <span>
                     <span className="block text-base text-dark-blue/75 group-open:font-semibold group-open:text-dark-blue">
@@ -245,7 +245,7 @@ function AvailableTimes({ weeks, local }) {
 
                 <div className="mx-5 border-t border-dark-blue/10 pb-5 pt-4">
                   <p className="mb-3 text-xs text-dark-blue/50">
-                    Onboarding closes {closesLabel(w.week)}.
+                    Registration deadline: {closesLabel(w.week)}.
                   </p>
                   <ul className="space-y-2">
                     {SLOTS.map((s) => {
@@ -256,8 +256,8 @@ function AvailableTimes({ weeks, local }) {
                           key={s.key}
                           className={
                             taken
-                              ? "flex items-center justify-between gap-4 rounded-xl border border-dashed border-dark-blue/15 px-4 py-3"
-                              : "flex items-center justify-between gap-4 rounded-xl border border-dark-blue/10 bg-white px-4 py-3"
+                              ? "flex items-center justify-between gap-4 rounded-none border border-dashed border-dark-blue/15 px-4 py-3"
+                              : "flex items-center justify-between gap-4 rounded-none border border-dark-blue/10 bg-white px-4 py-3"
                           }
                         >
                           <span
@@ -300,7 +300,7 @@ function AvailableTimes({ weeks, local }) {
                             className={
                               taken
                                 ? "shrink-0 text-xs text-dark-blue/35"
-                                : "shrink-0 rounded-full bg-dark-blue px-3 py-1 text-xs font-semibold text-white"
+                                : "shrink-0 rounded-none bg-dark-blue px-3 py-1 text-xs font-semibold text-white"
                             }
                           >
                             {taken ? "Taken" : "Available"}
